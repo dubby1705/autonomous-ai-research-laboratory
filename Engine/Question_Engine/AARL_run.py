@@ -11,6 +11,7 @@ os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
 from Problem_analyser import analyze_research_problem, print_analysis_report
 from Knowledge import build_knowledge_base
+from DOSCAN import run_doscan_algorithm  # <-- NEW IMPORT
 
 def main():
     print("="*80)
@@ -30,15 +31,10 @@ def main():
     print("\n>>> PHASE 1: Executing Matrix Decomposition...")
     analysis_result = analyze_research_problem(user_problem)
     if not analysis_result:
-        print("Phase 1 collapsed. Halting pipeline.")
         return
-
     print_analysis_report(analysis_result)
-
-    # Condense structural data to build a complete landscape for Phase 2
     analysis_summary = (
-        f"Domain: {analysis_result.main_domain}. "
-        f"Subs: {', '.join(analysis_result.sub_domains)}. "
+        f"Domain: {analysis_result.main_domain}. Subs: {', '.join(analysis_result.sub_domains)}. "
         f"Formulas/Laws: {', '.join(analysis_result.governing_laws_and_equations)}. "
         f"Core Focus Items: {', '.join(analysis_result.problem_breakdown)}."
     )
@@ -46,24 +42,17 @@ def main():
     # --- PHASE 2: RIGOROUS KNOWLEDGE DEPLOYMENT ---
     print("\n>>> PHASE 2: Mapping Scientific Prior Art, Gaps, and Hypotheses...")
     knowledge_result = build_knowledge_base(user_problem, analysis_summary)
+    if not knowledge_result:
+        return
+    print("\n[AARL Status] Knowledge Base built.")
 
-    if knowledge_result:
-        print("\n" + "="*80)
-        print("🧠 DEEP KNOWLEDGE INGESTION COMPLETE")
-        print("="*80)
-        print(f"\n🎯 CORE THESIS: {knowledge_result.get('core_research_thesis')}")
-        
-        print("\n🚨 CRITICAL SCIENTIFIC GAPS / UNKNOWNS DETECTED:")
-        for unknown in knowledge_result.get("critical_unanswered_unknowns", []):
-            print(f"  ⚡ {unknown}")
-            
-        print("\n🧪 ACTIONABLE HYPOTHESES & EXPERIMENTAL VERIFICATION FLAGS:")
-        for hyp, metric in knowledge_result.get("proposed_testable_hypotheses", {}).items():
-            print(f"  • Claim: {hyp}")
-            print(f"    ↳ Validate via: {metric}")
-            
-        print("\n[AARL Pipeline State] Structured research data asset finalized and output to 'deep_research_knowledge_base.json'.")
-        print("================================================================================")
+    # --- PHASE 3: DOSCAN PARALLEL LATERAL THINKING ---
+    print("\n>>> PHASE 3: Initializing DOSCAN Lateral Neural Expansion...")
+    run_doscan_algorithm()
+    
+    print("\n================================================================================")
+    print("🔬 RESEARCH CYCLE COMPLETE. ALL DATA ARTIFACTS SAVED TO DISK.")
+    print("================================================================================")
 
 if __name__ == "__main__":
     main()
