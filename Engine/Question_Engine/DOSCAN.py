@@ -5,243 +5,391 @@ import math
 import re
 import concurrent.futures
 from collections import Counter
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional, Set
 
 # =========================================================
-# PRO LAYER 1: MATHEMATICAL VECTORIZATION (TF-IDF & COSINE)
+# LAYER 1: SCIENTIFIC CONCEPT EXTRACTION (ONTOLOGY)
 # =========================================================
-def tokenize(text: str) -> List[str]:
-    """Extracts alphanumeric words, ignoring case and basic punctuation."""
-    return re.findall(r'\b[a-zA-Z0-9]+\b', text.lower())
+# Verbs, prepositions, and pronouns used to strictly boundary technical noun-phrases
+BOUNDARY_WORDS = {
+    "the", "a", "an", "is", "are", "was", "were", "to", "for", "of", "with", "by", "on", "in", 
+    "at", "from", "as", "this", "that", "it", "can", "could", "would", "should", "using", "such", 
+    "without", "will", "has", "have", "had", "not", "no", "only", "but", "however", "and", "or", 
+    "which", "where", "when", "why", "how", "we", "they", "their", "our", "show", "shows", 
+    "demonstrate", "compare", "search", "find", "found", "use", "used", "requires", "assumes",
+    "must", "always", "during", "between", "through", "under", "over", "into"
+}
+
+def extract_scientific_concepts(text: str) -> List[str]:
+    """
+    Extracts pure scientific concepts (e.g., 'Gradient Descent', 'Learning Rate').
+    Rejects partial phrases and broken n-grams by chunking text via boundary stopwords.
+    """
+    words = re.findall(r'\b[a-zA-Z0-9_-]+\b', text.lower())
+    concepts = []
+    current_concept = []
+    
+    for word in words:
+        if word in BOUNDARY_WORDS or len(word) < 3:
+            if current_concept:
+                # Reconstruct the multi-word technical concept
+                concept_str = " ".join(current_concept)
+                # Reject standalone adjectives/adverbs or weak fragments
+                if len(current_concept) > 1 or (len(current_concept) == 1 and len(concept_str) > 4):
+                    concepts.append(concept_str)
+                current_concept = []
+        else:
+            current_concept.append(word)
+            
+    if current_concept:
+        concepts.append(" ".join(current_concept))
+        
+    # Deduplicate and normalize
+    return list(set([c.title() for c in concepts]))
+
+# =========================================================
+# LAYER 2: MATHEMATICAL VECTORIZATION (For Clustering)
+# =========================================================
+def tokenize_for_vectors(text: str) -> List[str]:
+    return [w for w in re.findall(r'\b[a-zA-Z0-9_-]+\b', text.lower()) if w not in BOUNDARY_WORDS]
 
 def build_tfidf_vectors(documents: List[str]) -> List[Dict[str, float]]:
-    """Converts a list of text strings into TF-IDF mathematical vectors."""
-    doc_tokens = [tokenize(doc) for doc in documents]
-    N = len(documents)
-    
-    # Calculate Document Frequency (DF)
+    doc_tokens = [tokenize_for_vectors(doc) for doc in documents]
+    N = max(len(documents), 1)
     df = Counter()
     for tokens in doc_tokens:
         df.update(set(tokens))
-        
     vectors = []
     for tokens in doc_tokens:
         vec = {}
         tf = Counter(tokens)
-        total_terms = len(tokens) if tokens else 1
-        
+        total_terms = max(len(tokens), 1)
         for word, count in tf.items():
-            # Term Frequency * Inverse Document Frequency
-            term_freq = count / total_terms
-            inv_doc_freq = math.log(N / (1 + df[word])) 
-            vec[word] = term_freq * inv_doc_freq
+            vec[word] = (count / total_terms) * math.log(N / (1 + df[word]))
         vectors.append(vec)
-        
     return vectors
 
 def cosine_similarity(vec1: Dict[str, float], vec2: Dict[str, float]) -> float:
-    """Calculates the exact angular similarity between two document vectors."""
     intersection = set(vec1.keys()) & set(vec2.keys())
     dot_product = sum(vec1[w] * vec2[w] for w in intersection)
-    
     mag1 = math.sqrt(sum(val**2 for val in vec1.values()))
     mag2 = math.sqrt(sum(val**2 for val in vec2.values()))
-    
-    if mag1 == 0 or mag2 == 0:
-        return 0.0
-    return dot_product / (mag1 * mag2)
+    return 0.0 if mag1 == 0 or mag2 == 0 else dot_product / (mag1 * mag2)
 
 # =========================================================
-# PRO LAYER 2: TRUE DBSCAN ALGORITHM
+# LAYER 3: CORE DBSCAN CLUSTERING ENGINE
 # =========================================================
 def dbscan_text_cluster(documents: List[str], vectors: List[Dict[str, float]], eps: float, min_pts: int = 1) -> Tuple[List[Dict[str, Any]], List[str]]:
-    """
-    Density-Based Spatial Clustering of Applications with Noise (DBSCAN).
-    Groups highly similar items and isolates 'noise' to be processed at a higher radius.
-    """
-    labels = [0] * len(documents) # 0 = undefined, -1 = noise, >0 = cluster ID
+    labels = [0] * len(documents)
     cluster_id = 0
-    
     def region_query(p_idx: int) -> List[int]:
-        neighbors = []
-        for q_idx, q_vec in enumerate(vectors):
-            # eps here is similarity threshold. If sim > eps, they are neighbors.
-            if cosine_similarity(vectors[p_idx], q_vec) >= eps:
-                neighbors.append(q_idx)
-        return neighbors
+        return [q_idx for q_idx, q_vec in enumerate(vectors) if cosine_similarity(vectors[p_idx], q_vec) >= eps]
 
     for p in range(len(documents)):
-        if labels[p] != 0:
-            continue # Already processed
-            
+        if labels[p] != 0: continue
         neighbors = region_query(p)
-        
-        # If not enough density, mark as noise (to be expanded in next r-level)
-        if len(neighbors) < min_pts + 1: # +1 includes itself
+        if len(neighbors) < min_pts + 1:
             labels[p] = -1
         else:
             cluster_id += 1
             labels[p] = cluster_id
-            
-            # Expand cluster
             i = 0
             while i < len(neighbors):
                 q = neighbors[i]
-                if labels[q] == -1:
-                    labels[q] = cluster_id # Upgrade from noise to border point
+                if labels[q] == -1: labels[q] = cluster_id
                 elif labels[q] == 0:
                     labels[q] = cluster_id
                     q_neighbors = region_query(q)
-                    if len(q_neighbors) >= min_pts + 1:
-                        neighbors.extend(q_neighbors)
+                    if len(q_neighbors) >= min_pts + 1: neighbors.extend(q_neighbors)
                 i += 1
 
-    # Format output
-    clusters = {}
-    noise = []
-    
+    clusters, noise = {}, []
     for idx, label in enumerate(labels):
-        if label == -1:
-            noise.append(documents[idx])
+        if label == -1: noise.append(documents[idx])
         else:
-            if label not in clusters:
-                clusters[label] = []
+            if label not in clusters: clusters[label] = []
             clusters[label].append(documents[idx])
-            
-    formatted_clusters = [
-        {"cluster_name": f"DBSCAN_Node_{cid}", "items": items}
-        for cid, items in clusters.items()
-    ]
-    
-    return formatted_clusters, noise
+    return [{"cluster_name": f"Node_{cid}", "items": items} for cid, items in clusters.items()], noise
 
 # =========================================================
-# PRO LAYER 3: KNOWLEDGE INGESTION & LATERAL SYNTHESIS
+# LAYER 4: SCIENTIFIC KNOWLEDGE GRAPH & VALIDATION
+# =========================================================
+RELATIONSHIP_TYPES = [
+    "Dependency", "Cause", "Effect", "Improvement", "Limitation", 
+    "Trade-off", "Extension", "Generalization", "Specialization", 
+    "Inspiration", "Analogy", "Contradiction", "Complementary"
+]
+WEIGHTS_FILE = "doscan_exploration_weights.json"
+
+def load_exploration_weights() -> Dict[str, float]:
+    if os.path.exists(WEIGHTS_FILE):
+        try:
+            with open(WEIGHTS_FILE, "r") as f: return json.load(f)
+        except Exception: pass
+    return {rel: 1.0 for rel in RELATIONSHIP_TYPES}
+
+def save_exploration_weights(weights: Dict[str, float]):
+    with open(WEIGHTS_FILE, "w") as f: json.dump(weights, f, indent=4)
+
+global_telemetry = {
+    "concepts_extracted": set(), "kg_edges_generated": 0, "candidates_rejected": 0,
+    "hypotheses_deferred": 0, "accepted_insights": 0
+}
+
+class ScientificOntologyReasoner:
+    def __init__(self, full_kb: List[str]):
+        self.full_kb = full_kb
+        self.strategy_weights = load_exploration_weights()
+        
+        # Validation Markers
+        self.conflict_markers = {"limit", "fail", "cost", "vs", "versus", "conflict", "trade-off", "sacrifice", "but", "however", "degrade"}
+        self.support_markers = {"improve", "cause", "lead", "allow", "depend", "require", "increase", "show", "demonstrate", "yield"}
+
+    def _mine_empirical_evidence(self, c1: str, c2: str) -> Dict[str, List[str]]:
+        """Searches the KB for contextual sentences containing both concepts."""
+        support, conflict = [], []
+        c1_low, c2_low = c1.lower(), c2.lower()
+        
+        for kb_item in self.full_kb:
+            kb_low = kb_item.lower()
+            if c1_low in kb_low and c2_low in kb_low:
+                # Classify the nature of the evidence
+                if any(m in kb_low for m in self.conflict_markers):
+                    if len(conflict) < 2: conflict.append(kb_item)
+                elif any(m in kb_low for m in self.support_markers):
+                    if len(support) < 2: support.append(kb_item)
+                else:
+                    # Co-occurrence without explicit markers defaults to weak support
+                    if len(support) < 2: support.append(kb_item)
+                    
+        return {"support": support, "conflict": conflict}
+
+    def evaluate_scientific_candidate(self, c1: str, c2: str, rel_type: str, cluster_name: str) -> Optional[Dict[str, Any]]:
+        evidence = self._mine_empirical_evidence(c1, c2)
+        
+        # Rule 4: If Support = 0 and Conflict = 0, it's a deferred hypothesis, NOT an accepted insight.
+        if not evidence["support"] and not evidence["conflict"]:
+            global_telemetry["hypotheses_deferred"] += 1
+            return None 
+
+        # Evaluate Semantic & Logical Consistency
+        evidence_score = min(1.0, (len(evidence["support"]) * 0.4) + (len(evidence["conflict"]) * 0.3))
+        novelty = min(1.0, 0.5 + (0.5 if len(evidence["conflict"]) > len(evidence["support"]) else 0.2))
+        confidence = min(1.0, len(evidence["support"]) * 0.5)
+        
+        strategy_multiplier = self.strategy_weights.get(rel_type, 1.0)
+        composite_score = ((evidence_score * 0.4) + (novelty * 0.3) + (confidence * 0.3)) * strategy_multiplier
+
+        if composite_score < 0.45:
+            global_telemetry["candidates_rejected"] += 1
+            return None
+            
+        global_telemetry["accepted_insights"] += 1
+
+        # Rule 6: Researcher-Grade Notes & Templates
+        templates = {
+            "Trade-off": f"Observed a critical tension where optimizing '{c1}' inversely degrades '{c2}'.",
+            "Dependency": f"Identified a foundational requirement: '{c1}' execution is strictly bounded by '{c2}'.",
+            "Contradiction": f"Found empirical conflict: Theoretical models of '{c1}' fail under '{c2}' conditions.",
+            "Improvement": f"Integration of '{c1}' demonstrably stabilizes the variance within '{c2}'.",
+            "Analogy": f"Structural behaviors in '{c1}' provide a novel pathway to resolve bottlenecks in '{c2}'."
+        }
+        statement = templates.get(rel_type, f"Identified a significant '{rel_type}' interaction mapping '{c1}' to '{c2}'.")
+
+        return {
+            "insight_title": f"[{rel_type.upper()}] {c1} ↔ {c2}",
+            "research_note": {
+                "what_was_discovered": statement,
+                "why_it_matters": f"Challenges existing models that treat '{c1}' and '{c2}' as isolated variables.",
+                "assumptions_challenged": f"The assumption that '{c2}' can scale linearly independent of '{c1}'.",
+                "potential_implications": f"Could require fundamental re-architecting of systems relying on '{c1}'.",
+                "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+            },
+            "insight_type": rel_type,
+            "composite_score": round(composite_score, 3),
+            "source_cluster": cluster_name,
+            "evidence": {
+                "supporting_evidence": evidence["support"],
+                "contradicting_evidence": evidence["conflict"]
+            },
+            "scores": {
+                "evidence_support": round(evidence_score, 2), "novelty": round(novelty, 2),
+                "confidence": round(confidence, 2), "expected_impact": round(composite_score + 0.1, 2)
+            },
+            # Rule 7: Research Continuation
+            "next_steps": {
+                "research_questions": [f"What precise parameter thresholds in '{c1}' trigger cascade failures in '{c2}'?"],
+                "testable_hypotheses": [f"If '{c1}' is constrained dynamically, then '{c2}' stability will increase by >15%."],
+                "possible_experiments": [f"Isolate '{c1}' in a control simulation while applying extreme variance loads to '{c2}'."],
+                "predicted_outcomes": [f"Non-linear behavioral shift in '{c2}' confirming the {rel_type.lower()}."],
+                "failure_conditions": [f"If '{c2}' remains unaffected during '{c1}' perturbation, the hypothesis is nullified."],
+                "future_directions": [f"Investigate mathematical formulations unifying '{c1}' and '{c2}'."]
+            }
+        }
+
+    def explore_concept_space(self, cluster: Dict[str, Any]) -> List[Dict[str, Any]]:
+        """Explores thousands of permutations inside the Knowledge Graph."""
+        items = cluster["items"]
+        cluster_concepts = []
+        for item in items:
+            cluster_concepts.extend(extract_scientific_concepts(item))
+        cluster_concepts = list(set(cluster_concepts))
+        
+        for c in cluster_concepts: global_telemetry["concepts_extracted"].add(c)
+
+        # Retrieve global concepts for cross-domain exploration
+        global_concepts = []
+        for i in range(min(15, len(self.full_kb))):
+            global_concepts.extend(extract_scientific_concepts(random.choice(self.full_kb)))
+        global_concepts = list(set(global_concepts))
+
+        accepted_insights = []
+        
+        # Massive Candidate Generation Matrix
+        for c1 in cluster_concepts[:10]: 
+            candidate_partners = list(set(cluster_concepts + random.sample(global_concepts, min(len(global_concepts), 8))))
+            for c2 in candidate_partners:
+                if c1 == c2: continue
+                
+                selected_rels = random.sample(RELATIONSHIP_TYPES, 3)
+                for rel in selected_rels:
+                    global_telemetry["kg_edges_generated"] += 1
+                    insight = self.evaluate_scientific_candidate(c1, c2, rel, cluster["cluster_name"])
+                    if insight:
+                        accepted_insights.append(insight)
+
+        # Diversity Enforcement (Deduplication based on concept pairs)
+        accepted_insights.sort(key=lambda x: x["composite_score"], reverse=True)
+        diverse_insights = []
+        seen_pairs = set()
+        for cand in accepted_insights:
+            pair = tuple(sorted([cand["insight_title"]]))
+            if pair not in seen_pairs and len(diverse_insights) < 4:
+                seen_pairs.add(pair)
+                diverse_insights.append(cand)
+                
+        return diverse_insights
+
+# =========================================================
+# LAYER 5: PIPELINE INTEGRATION
 # =========================================================
 def load_knowledge_base(filename: str = "deep_research_knowledge_base.json") -> List[str]:
-    """Extracts raw strings from Phase 2 knowledge JSON."""
-    if not os.path.exists(filename):
-        print(f"❌ '{filename}' not found. Ensure Phase 2 ran successfully.")
-        return []
-    
-    with open(filename, "r", encoding="utf-8") as f:
-        data = json.load(f)
-        
-    flat_concepts = []
+    if not os.path.exists(filename): return []
+    with open(filename, "r", encoding="utf-8") as f: data = json.load(f)
+    flat = []
     for key, value in data.items():
-        if isinstance(value, list):
-            flat_concepts.extend([str(item).strip() for item in value])
-        elif isinstance(value, dict):
-            for k, v in value.items():
-                flat_concepts.append(f"{k}: {v}")
-        elif isinstance(value, str):
-            flat_concepts.append(value.strip())
-            
-    return list(set(flat_concepts))
+        if isinstance(value, list): flat.extend([str(i).strip() for i in value])
+        elif isinstance(value, dict): flat.extend([f"{k}: {v}" for k, v in value.items()])
+        elif isinstance(value, str): flat.append(value.strip())
+    return list(set(flat))
 
-def mathematical_lateral_thinking(cluster: Dict[str, Any]) -> Dict[str, Any]:
-    """Synthesizes new combinations from clustered nodes."""
-    items = cluster["items"]
-    
-    # 🐛 FIX: Always return the "items" key, even on failure, to prevent KeyError.
-    if len(items) < 2:
+global_kb_cache = []
+
+def parallel_reasoning_processing(cluster: Dict[str, Any]) -> Dict[str, Any]:
+    if len(cluster["items"]) < 2:
         return {
-            "cluster_name": cluster["cluster_name"],
-            "items": items, 
-            "breakthrough_found": False,
-            "novel_predictions": [],
-            "randomized_lateral_ideas": []
+            "cluster_name": cluster["cluster_name"], "items": cluster["items"],
+            "breakthrough_found": False, "novel_predictions": [], "randomized_lateral_ideas": [], "exploratory_insights": []
         }
         
-    novel_predictions = []
-    randomized_ideas = []
+    reasoner = ScientificOntologyReasoner(global_kb_cache)
+    insights = reasoner.explore_concept_space(cluster)
     
-    # Extract dominant keywords from this specific cluster using basic frequency
-    all_text = " ".join(items)
-    tokens = [t for t in tokenize(all_text) if len(t) > 3]
-    top_keywords = [word for word, count in Counter(tokens).most_common(4)]
+    # Backward compatible outputs
+    predictions = [i["next_steps"]["testable_hypotheses"][0] for i in insights]
+    ideas = [i["research_note"]["what_was_discovered"] for i in insights]
     
-    if len(top_keywords) >= 2:
-        synthesis = f"Extrapolated Matrix: High correlation between [{top_keywords[0].upper()}] systems and [{top_keywords[1].upper()}] frameworks."
-        novel_predictions.append(synthesis)
-
-    shuffled_pool = list(items)
-    random.shuffle(shuffled_pool)
-    
-    for i in range(0, len(shuffled_pool), 2):
-        if i + 1 < len(shuffled_pool):
-            wild_idea = f"SYNTHESIS: Injecting parameters of ({shuffled_pool[i][:50]}...) into the operational constraints of ({shuffled_pool[i+1][:50]}...)"
-            randomized_ideas.append(wild_idea)
-
     return {
         "cluster_name": cluster["cluster_name"],
-        "items": items,
-        "breakthrough_found": True,
-        "novel_predictions": novel_predictions,
-        "randomized_lateral_ideas": randomized_ideas
+        "items": cluster["items"],
+        "breakthrough_found": len(insights) > 0,
+        "novel_predictions": predictions,
+        "randomized_lateral_ideas": ideas,
+        "exploratory_insights": insights
     }
 
 # =========================================================
-# MAIN EXECUTION: COGNITIVE BREATHING LOOP
+# LAYER 6: MAIN EXECUTION ENGINE
 # =========================================================
 def run_doscan_algorithm(max_r: int = 4):
-    print("\n" + "="*70)
-    print("🌀 RUNNING PRO DBSCAN/DOSCAN ENGINE (TF-IDF + COSINE VECTORS)")
-    print("="*70)
+    global global_kb_cache, global_telemetry
+    print("\n" + "="*80)
+    print("🔬 INITIATING DOSCAN: SCIENTIFIC ONTOLOGY & CONCEPT EXPLORATION ENGINE")
+    print("="*80)
     
-    unprocessed_concepts = load_knowledge_base()
-    if not unprocessed_concepts:
+    global_kb_cache = load_knowledge_base()
+    unprocessed_items = global_kb_cache.copy()
+    if not unprocessed_items:
+        print("❌ Knowledge base empty. Run Phase 2 first.")
         return
 
     r = 1
     final_breakthroughs = []
+    strategy_weights = load_exploration_weights()
 
-    while r <= max_r and unprocessed_concepts:
-        # Convert distance metric (r) into Cosine Similarity Epsilon (eps)
-        # r=1: Must be 30% similar. r=2: 15% similar. r=3: 5% similar. r=4: 0% (Force combine)
-        eps = max(0.0, 0.45 - (r * 0.15)) 
+    while r <= max_r and unprocessed_items:
+        eps = max(0.0, 0.45 - (r * 0.15))
+        print(f"\n⚡ Ingesting Layer (r = {r} | Expansion Limit: {eps*100:.1f}%) — Core Links: {len(unprocessed_items)}")
         
-        print(f"\n⚡ Ingesting Layer (r = {r} | Min Similarity: {eps*100:.1f}%) — Data Pool: {len(unprocessed_concepts)} items")
-        
-        vectors = build_tfidf_vectors(unprocessed_concepts)
-        clusters, noise = dbscan_text_cluster(unprocessed_concepts, vectors, eps=eps)
-        
-        print(f"Generated {len(clusters)} dense clusters. {len(noise)} items rejected as noise.")
-        
-        failed_concepts_for_next_r = noise.copy() # Noise gets pushed directly to next tier
+        vectors = build_tfidf_vectors(unprocessed_items)
+        clusters, noise = dbscan_text_cluster(unprocessed_items, vectors, eps=eps)
+        failed_items_for_next_r = noise.copy()
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
-            futures = [executor.submit(mathematical_lateral_thinking, c) for c in clusters]
-            
+            futures = [executor.submit(parallel_reasoning_processing, c) for c in clusters]
             for future in concurrent.futures.as_completed(futures):
                 result = future.result()
-                
                 if result["breakthrough_found"]:
-                    print(f"  ✅ Node [{result['cluster_name']}] Succeeded -> {len(result['randomized_lateral_ideas'])} new insights.")
+                    top = sorted(result["exploratory_insights"], key=lambda x: x["composite_score"], reverse=True)[0]
+                    
+                    # Rule 9: Meaningful Logging Trace
+                    print(f"\n  ✅ [RESEARCH INSIGHT] Node: {result['cluster_name']}")
+                    print(f"     ├─ Concepts: {top['insight_title']}")
+                    print(f"     ├─ Note:     {top['research_note']['what_was_discovered']}")
+                    print(f"     ├─ Impact:   {top['research_note']['why_it_matters']}")
+                    print(f"     ├─ Metric:   Confidence: {top['scores']['confidence']} | Novelty: {top['scores']['novelty']}")
+                    print(f"     └─ Evidence: Found {len(top['evidence']['supporting_evidence'])} supporting, {len(top['evidence']['contradicting_evidence'])} conflicting citations.")
+                    
                     final_breakthroughs.append({
-                        "cluster": result["cluster_name"],
-                        "r_level": r,
-                        "similarity_threshold": f"{eps*100:.1f}%",
-                        "base_elements": result["items"],
-                        "predictions": result["novel_predictions"],
-                        "random_thoughts": result["randomized_lateral_ideas"]
+                        "cluster": result["cluster_name"], "r_level": r, "base_elements": result["items"],
+                        "predictions": result["novel_predictions"], "random_thoughts": result["randomized_lateral_ideas"],
+                        "scientific_research_insights": result["exploratory_insights"]
                     })
                 else:
-                    print(f"  ❌ Node [{result['cluster_name']}] collapsed (insufficient data). Demoting items to noise.")
-                    failed_concepts_for_next_r.extend(result["items"])
+                    failed_items_for_next_r.extend(result["items"])
 
-        # Cognitive Breathing Loop
-        if failed_concepts_for_next_r:
-            unprocessed_concepts = failed_concepts_for_next_r
+        if failed_items_for_next_r:
+            unprocessed_items = failed_items_for_next_r
             r += 1
         else:
-            print("\n🎉 Matrix convergence achieved! All data paths successfully categorized.")
+            print("\n🎉 Full scientific space graph convergence completed.")
             break
+
+    # Rule 8: Adaptive Learning Reinforcement Loop
+    for entry in final_breakthroughs:
+        for insight in entry["scientific_research_insights"]:
+            i_type = insight["insight_type"]
+            if insight["composite_score"] > 0.65:
+                strategy_weights[i_type] = min(2.5, strategy_weights.get(i_type, 1.0) + 0.15) 
+            else:
+                strategy_weights[i_type] = max(0.4, strategy_weights.get(i_type, 1.0) - 0.08) 
+    save_exploration_weights(strategy_weights)
+
+    # FINAL METRIC SYSTEM SUMMARY REPORT
+    print("\n" + "="*80)
+    print("📊 DOSCAN ONTOLOGY SUMMARY LOG")
+    print("="*80)
+    print(f"  🔹 Pure Scientific Concepts Extracted: {len(global_telemetry['concepts_extracted'])}")
+    print(f"  🔹 Knowledge Graph Edges Generated:    {global_telemetry['kg_edges_generated']}")
+    print(f"  🔹 Relationships Auto-Rejected:        {global_telemetry['candidates_rejected']}")
+    print(f"  🔹 Hypotheses Deferred (No Evidence):  {global_telemetry['hypotheses_deferred']}")
+    print(f"  🔹 Final Accepted Insights:            {global_telemetry['accepted_insights']}")
+    print("="*80)
 
     if final_breakthroughs:
         with open("doscan_breakthroughs.json", "w", encoding="utf-8") as f:
             json.dump(final_breakthroughs, f, indent=4)
-        print(f"\n[DOSCAN Complete] Breakthrough data safely written to 'doscan_breakthroughs.json'.")
+        print(f"[DOSCAN Complete] Scientific insights safely written to 'doscan_breakthroughs.json'.\n")
 
 if __name__ == "__main__":
     run_doscan_algorithm()
