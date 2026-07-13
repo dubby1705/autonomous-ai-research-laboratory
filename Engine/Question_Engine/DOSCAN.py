@@ -6,11 +6,14 @@ import re
 import concurrent.futures
 from collections import Counter
 from typing import List, Dict, Any, Tuple, Optional, Set
+import threading # Added for thread-safe printing
+
+# Lock to prevent overlapping prints in the console when multi-threading
+print_lock = threading.Lock()
 
 # =========================================================
 # LAYER 1: SCIENTIFIC CONCEPT EXTRACTION (ONTOLOGY)
 # =========================================================
-# Verbs, prepositions, and pronouns used to strictly boundary technical noun-phrases
 BOUNDARY_WORDS = {
     "the", "a", "an", "is", "are", "was", "were", "to", "for", "of", "with", "by", "on", "in", 
     "at", "from", "as", "this", "that", "it", "can", "could", "would", "should", "using", "such", 
@@ -21,10 +24,6 @@ BOUNDARY_WORDS = {
 }
 
 def extract_scientific_concepts(text: str) -> List[str]:
-    """
-    Extracts pure scientific concepts (e.g., 'Gradient Descent', 'Learning Rate').
-    Rejects partial phrases and broken n-grams by chunking text via boundary stopwords.
-    """
     words = re.findall(r'\b[a-zA-Z0-9_-]+\b', text.lower())
     concepts = []
     current_concept = []
@@ -32,9 +31,7 @@ def extract_scientific_concepts(text: str) -> List[str]:
     for word in words:
         if word in BOUNDARY_WORDS or len(word) < 3:
             if current_concept:
-                # Reconstruct the multi-word technical concept
                 concept_str = " ".join(current_concept)
-                # Reject standalone adjectives/adverbs or weak fragments
                 if len(current_concept) > 1 or (len(current_concept) == 1 and len(concept_str) > 4):
                     concepts.append(concept_str)
                 current_concept = []
@@ -44,7 +41,6 @@ def extract_scientific_concepts(text: str) -> List[str]:
     if current_concept:
         concepts.append(" ".join(current_concept))
         
-    # Deduplicate and normalize
     return list(set([c.title() for c in concepts]))
 
 # =========================================================
@@ -140,26 +136,21 @@ class ScientificOntologyReasoner:
     def __init__(self, full_kb: List[str]):
         self.full_kb = full_kb
         self.strategy_weights = load_exploration_weights()
-        
-        # Validation Markers
         self.conflict_markers = {"limit", "fail", "cost", "vs", "versus", "conflict", "trade-off", "sacrifice", "but", "however", "degrade"}
         self.support_markers = {"improve", "cause", "lead", "allow", "depend", "require", "increase", "show", "demonstrate", "yield"}
 
     def _mine_empirical_evidence(self, c1: str, c2: str) -> Dict[str, List[str]]:
-        """Searches the KB for contextual sentences containing both concepts."""
         support, conflict = [], []
         c1_low, c2_low = c1.lower(), c2.lower()
         
         for kb_item in self.full_kb:
             kb_low = kb_item.lower()
             if c1_low in kb_low and c2_low in kb_low:
-                # Classify the nature of the evidence
                 if any(m in kb_low for m in self.conflict_markers):
                     if len(conflict) < 2: conflict.append(kb_item)
                 elif any(m in kb_low for m in self.support_markers):
                     if len(support) < 2: support.append(kb_item)
                 else:
-                    # Co-occurrence without explicit markers defaults to weak support
                     if len(support) < 2: support.append(kb_item)
                     
         return {"support": support, "conflict": conflict}
@@ -167,12 +158,13 @@ class ScientificOntologyReasoner:
     def evaluate_scientific_candidate(self, c1: str, c2: str, rel_type: str, cluster_name: str) -> Optional[Dict[str, Any]]:
         evidence = self._mine_empirical_evidence(c1, c2)
         
-        # Rule 4: If Support = 0 and Conflict = 0, it's a deferred hypothesis, NOT an accepted insight.
+        # LOGGING 1: Deferred Hypotheses (No evidence)
         if not evidence["support"] and not evidence["conflict"]:
             global_telemetry["hypotheses_deferred"] += 1
+            with print_lock:
+                print(f" ⏸️ [DEFERRED - NO EVIDENCE] {rel_type.upper()}: {c1} ↔ {c2}")
             return None 
 
-        # Evaluate Semantic & Logical Consistency
         evidence_score = min(1.0, (len(evidence["support"]) * 0.4) + (len(evidence["conflict"]) * 0.3))
         novelty = min(1.0, 0.5 + (0.5 if len(evidence["conflict"]) > len(evidence["support"]) else 0.2))
         confidence = min(1.0, len(evidence["support"]) * 0.5)
@@ -180,13 +172,20 @@ class ScientificOntologyReasoner:
         strategy_multiplier = self.strategy_weights.get(rel_type, 1.0)
         composite_score = ((evidence_score * 0.4) + (novelty * 0.3) + (confidence * 0.3)) * strategy_multiplier
 
+        # LOGGING 2: Unexpected Conflicts (Conflict outweighs support)
+        if len(evidence["conflict"]) > len(evidence["support"]):
+            with print_lock:
+                print(f" ⚠️ [UNEXPECTED CONFLICT] {rel_type.upper()}: {c1} ↔ {c2} (Conflicts: {len(evidence['conflict'])}, Support: {len(evidence['support'])})")
+
+        # LOGGING 3: Rejected Candidates (Score too low despite some evidence)
         if composite_score < 0.45:
             global_telemetry["candidates_rejected"] += 1
+            with print_lock:
+                print(f" ❌ [REJECTED - LOW SCORE] {rel_type.upper()}: {c1} ↔ {c2} | Score: {composite_score:.3f}")
             return None
             
         global_telemetry["accepted_insights"] += 1
 
-        # Rule 6: Researcher-Grade Notes & Templates
         templates = {
             "Trade-off": f"Observed a critical tension where optimizing '{c1}' inversely degrades '{c2}'.",
             "Dependency": f"Identified a foundational requirement: '{c1}' execution is strictly bounded by '{c2}'.",
@@ -216,7 +215,6 @@ class ScientificOntologyReasoner:
                 "evidence_support": round(evidence_score, 2), "novelty": round(novelty, 2),
                 "confidence": round(confidence, 2), "expected_impact": round(composite_score + 0.1, 2)
             },
-            # Rule 7: Research Continuation
             "next_steps": {
                 "research_questions": [f"What precise parameter thresholds in '{c1}' trigger cascade failures in '{c2}'?"],
                 "testable_hypotheses": [f"If '{c1}' is constrained dynamically, then '{c2}' stability will increase by >15%."],
@@ -228,7 +226,6 @@ class ScientificOntologyReasoner:
         }
 
     def explore_concept_space(self, cluster: Dict[str, Any]) -> List[Dict[str, Any]]:
-        """Explores thousands of permutations inside the Knowledge Graph."""
         items = cluster["items"]
         cluster_concepts = []
         for item in items:
@@ -237,7 +234,6 @@ class ScientificOntologyReasoner:
         
         for c in cluster_concepts: global_telemetry["concepts_extracted"].add(c)
 
-        # Retrieve global concepts for cross-domain exploration
         global_concepts = []
         for i in range(min(15, len(self.full_kb))):
             global_concepts.extend(extract_scientific_concepts(random.choice(self.full_kb)))
@@ -245,7 +241,6 @@ class ScientificOntologyReasoner:
 
         accepted_insights = []
         
-        # Massive Candidate Generation Matrix
         for c1 in cluster_concepts[:10]: 
             candidate_partners = list(set(cluster_concepts + random.sample(global_concepts, min(len(global_concepts), 8))))
             for c2 in candidate_partners:
@@ -258,7 +253,6 @@ class ScientificOntologyReasoner:
                     if insight:
                         accepted_insights.append(insight)
 
-        # Diversity Enforcement (Deduplication based on concept pairs)
         accepted_insights.sort(key=lambda x: x["composite_score"], reverse=True)
         diverse_insights = []
         seen_pairs = set()
@@ -295,7 +289,6 @@ def parallel_reasoning_processing(cluster: Dict[str, Any]) -> Dict[str, Any]:
     reasoner = ScientificOntologyReasoner(global_kb_cache)
     insights = reasoner.explore_concept_space(cluster)
     
-    # Backward compatible outputs
     predictions = [i["next_steps"]["testable_hypotheses"][0] for i in insights]
     ideas = [i["research_note"]["what_was_discovered"] for i in insights]
     
@@ -314,7 +307,7 @@ def parallel_reasoning_processing(cluster: Dict[str, Any]) -> Dict[str, Any]:
 def run_doscan_algorithm(max_r: int = 4):
     global global_kb_cache, global_telemetry
     print("\n" + "="*80)
-    print("🔬 INITIATING DOSCAN: SCIENTIFIC ONTOLOGY & CONCEPT EXPLORATION ENGINE")
+    print("🔬 INITIATING DOSCAN: FAILED / UNEXPECTED PREDICTION LOGGING MODE")
     print("="*80)
     
     global_kb_cache = load_knowledge_base()
@@ -329,7 +322,7 @@ def run_doscan_algorithm(max_r: int = 4):
 
     while r <= max_r and unprocessed_items:
         eps = max(0.0, 0.45 - (r * 0.15))
-        print(f"\n⚡ Ingesting Layer (r = {r} | Expansion Limit: {eps*100:.1f}%) — Core Links: {len(unprocessed_items)}")
+        print(f"\n⚡ Ingesting Layer (r = {r} | Expansion Limit: {eps*100:.1f}%) — Core Links: {len(unprocessed_items)}\n")
         
         vectors = build_tfidf_vectors(unprocessed_items)
         clusters, noise = dbscan_text_cluster(unprocessed_items, vectors, eps=eps)
@@ -340,15 +333,11 @@ def run_doscan_algorithm(max_r: int = 4):
             for future in concurrent.futures.as_completed(futures):
                 result = future.result()
                 if result["breakthrough_found"]:
-                    top = sorted(result["exploratory_insights"], key=lambda x: x["composite_score"], reverse=True)[0]
-                    
-                    # Rule 9: Meaningful Logging Trace
-                    print(f"\n  ✅ [RESEARCH INSIGHT] Node: {result['cluster_name']}")
-                    print(f"     ├─ Concepts: {top['insight_title']}")
-                    print(f"     ├─ Note:     {top['research_note']['what_was_discovered']}")
-                    print(f"     ├─ Impact:   {top['research_note']['why_it_matters']}")
-                    print(f"     ├─ Metric:   Confidence: {top['scores']['confidence']} | Novelty: {top['scores']['novelty']}")
-                    print(f"     └─ Evidence: Found {len(top['evidence']['supporting_evidence'])} supporting, {len(top['evidence']['contradicting_evidence'])} conflicting citations.")
+                    # COMMENTED OUT FINAL SUCCESSFUL INSIGHTS AS REQUESTED
+                    # top = sorted(result["exploratory_insights"], key=lambda x: x["composite_score"], reverse=True)[0]
+                    # print(f"\n  ✅ [RESEARCH INSIGHT] Node: {result['cluster_name']}")
+                    # print(f"    ├─ Concepts: {top['insight_title']}")
+                    # print(f"    ├─ Note:     {top['research_note']['what_was_discovered']}")
                     
                     final_breakthroughs.append({
                         "cluster": result["cluster_name"], "r_level": r, "base_elements": result["items"],
@@ -365,7 +354,6 @@ def run_doscan_algorithm(max_r: int = 4):
             print("\n🎉 Full scientific space graph convergence completed.")
             break
 
-    # Rule 8: Adaptive Learning Reinforcement Loop
     for entry in final_breakthroughs:
         for insight in entry["scientific_research_insights"]:
             i_type = insight["insight_type"]
@@ -375,7 +363,6 @@ def run_doscan_algorithm(max_r: int = 4):
                 strategy_weights[i_type] = max(0.4, strategy_weights.get(i_type, 1.0) - 0.08) 
     save_exploration_weights(strategy_weights)
 
-    # FINAL METRIC SYSTEM SUMMARY REPORT
     print("\n" + "="*80)
     print("📊 DOSCAN ONTOLOGY SUMMARY LOG")
     print("="*80)
