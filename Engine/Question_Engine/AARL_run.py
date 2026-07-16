@@ -25,7 +25,6 @@ if engine_path not in sys.path:
 # ==========================================
 # CONFIGURATION
 # ==========================================
-# PASTE YOUR *NEW* REVOKED/GENERATED API KEY HERE:
 GROQ_API_KEY = "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"
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
@@ -35,8 +34,7 @@ os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 from Problem_analyser import analyze_research_problem, print_analysis_report
 from Knowledge import build_knowledge_base
 from DOSCAN import run_doscan_algorithm  
-
-# Note: HypothesisEngine import removed since the module was deleted.
+from Hypothesis.hypothesis import run_hypothesis_engine
 
 def main():
     print("="*80)
@@ -75,7 +73,9 @@ def main():
     print("\n>>> PHASE 3: Initializing DOSCAN Lateral Neural Expansion...")
     run_doscan_algorithm()
     
-    # Note: Phase 4 (Hypothesis Generation) removed since the code was deleted.
+    # --- PHASE 4: HYPOTHESIS GENERATION & VERIFICATION ---
+    print("\n>>> PHASE 4: Initializing Lateral Hypothesis Engine...")
+    run_hypothesis_engine(user_problem)
     
     print("\n================================================================================")
     print("🔬 RESEARCH CYCLE COMPLETE. ALL DATA ARTIFACTS SAVED TO DISK.")

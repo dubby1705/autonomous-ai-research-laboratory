@@ -1,241 +1,177 @@
 [
     {
-        "cluster": "Node_1",
+        "cluster": "Node_2",
         "r_level": 1,
         "base_elements": [
-            "Hypothesis: Optimized electrode porosity and surface area improve power density: Verification Metric/Test Method: Scanning electron microscopy and galvanostatic charge-discharge cycling",
-            "Hypothesis: Lithium-rich cathode materials enhance energy density: Verification Metric/Test Method: Galvanostatic charge-discharge cycling and X-ray diffraction analysis"
+            "The relationship between electrolyte composition and battery safety and reliability",
+            "Electrolyte composition and transport properties"
         ],
         "predictions": [
-            "If 'X-Ray Diffraction Analysis' is constrained dynamically, then 'Galvanostatic Charge-Discharge Cycling' stability will increase by >15%.",
-            "If 'X-Ray Diffraction Analysis' is constrained dynamically, then 'Galvanostatic Charge-Discharge Cycling' stability will increase by >15%.",
-            "If 'Galvanostatic Charge-Discharge Cycling' is constrained dynamically, then 'X-Ray Diffraction Analysis' stability will increase by >15%.",
-            "If 'Galvanostatic Charge-Discharge Cycling' is constrained dynamically, then 'X-Ray Diffraction Analysis' stability will increase by >15%."
+            "If 'Reliability' is constrained dynamically, then 'Battery Safety' stability will increase by >15%.",
+            "If 'Reliability' is constrained dynamically, then 'Battery Safety' stability will increase by >15%.",
+            "If 'Battery Safety' is constrained dynamically, then 'Reliability' stability will increase by >15%.",
+            "If 'Battery Safety' is constrained dynamically, then 'Batteries' stability will increase by >15%."
         ],
         "random_thoughts": [
-            "Identified a significant 'Generalization' interaction mapping 'X-Ray Diffraction Analysis' to 'Galvanostatic Charge-Discharge Cycling'.",
-            "Found empirical conflict: Theoretical models of 'X-Ray Diffraction Analysis' fail under 'Galvanostatic Charge-Discharge Cycling' conditions.",
-            "Integration of 'Galvanostatic Charge-Discharge Cycling' demonstrably stabilizes the variance within 'X-Ray Diffraction Analysis'.",
-            "Identified a significant 'Cause' interaction mapping 'Galvanostatic Charge-Discharge Cycling' to 'X-Ray Diffraction Analysis'."
+            "Integration of 'Reliability' demonstrably stabilizes the variance within 'Battery Safety'.",
+            "Identified a significant 'Generalization' interaction mapping 'Reliability' to 'Battery Safety'.",
+            "Observed a critical tension where optimizing 'Battery Safety' inversely degrades 'Reliability'.",
+            "Identified a significant 'Generalization' interaction mapping 'Battery Safety' to 'Batteries'."
         ],
         "scientific_research_insights": [
             {
-                "insight_title": "[GENERALIZATION] X-Ray Diffraction Analysis \u2194 Galvanostatic Charge-Discharge Cycling",
+                "insight_title": "[IMPROVEMENT] Reliability \u2194 Battery Safety",
                 "research_note": {
-                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'X-Ray Diffraction Analysis' to 'Galvanostatic Charge-Discharge Cycling'.",
-                    "why_it_matters": "Challenges existing models that treat 'X-Ray Diffraction Analysis' and 'Galvanostatic Charge-Discharge Cycling' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Galvanostatic Charge-Discharge Cycling' can scale linearly independent of 'X-Ray Diffraction Analysis'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'X-Ray Diffraction Analysis'.",
+                    "what_was_discovered": "Integration of 'Reliability' demonstrably stabilizes the variance within 'Battery Safety'.",
+                    "why_it_matters": "Challenges existing models that treat 'Reliability' and 'Battery Safety' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Battery Safety' can scale linearly independent of 'Reliability'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Reliability'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 2.075,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "The relationship between electrolyte composition and battery safety and reliability",
+                        "Using a solid electrolyte will improve battery safety and reliability: Conduct accelerated life testing and abuse testing of solid-state batteries"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 2.18
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Reliability' trigger cascade failures in 'Battery Safety'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Reliability' is constrained dynamically, then 'Battery Safety' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Reliability' in a control simulation while applying extreme variance loads to 'Battery Safety'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Battery Safety' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Battery Safety' remains unaffected during 'Reliability' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Reliability' and 'Battery Safety'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] Reliability \u2194 Battery Safety",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Reliability' to 'Battery Safety'.",
+                    "why_it_matters": "Challenges existing models that treat 'Reliability' and 'Battery Safety' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Battery Safety' can scale linearly independent of 'Reliability'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Reliability'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 2.075,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "The relationship between electrolyte composition and battery safety and reliability",
+                        "Using a solid electrolyte will improve battery safety and reliability: Conduct accelerated life testing and abuse testing of solid-state batteries"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 2.18
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Reliability' trigger cascade failures in 'Battery Safety'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Reliability' is constrained dynamically, then 'Battery Safety' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Reliability' in a control simulation while applying extreme variance loads to 'Battery Safety'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Battery Safety' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Battery Safety' remains unaffected during 'Reliability' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Reliability' and 'Battery Safety'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[TRADE-OFF] Battery Safety \u2194 Reliability",
+                "research_note": {
+                    "what_was_discovered": "Observed a critical tension where optimizing 'Battery Safety' inversely degrades 'Reliability'.",
+                    "why_it_matters": "Challenges existing models that treat 'Battery Safety' and 'Reliability' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Reliability' can scale linearly independent of 'Battery Safety'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Battery Safety'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Trade-off",
+                "composite_score": 1.826,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "The relationship between electrolyte composition and battery safety and reliability",
+                        "Using a solid electrolyte will improve battery safety and reliability: Conduct accelerated life testing and abuse testing of solid-state batteries"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 1.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Battery Safety' trigger cascade failures in 'Reliability'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Battery Safety' is constrained dynamically, then 'Reliability' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Battery Safety' in a control simulation while applying extreme variance loads to 'Reliability'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Reliability' confirming the trade-off."
+                    ],
+                    "failure_conditions": [
+                        "If 'Reliability' remains unaffected during 'Battery Safety' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Battery Safety' and 'Reliability'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] Battery Safety \u2194 Batteries",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Battery Safety' to 'Batteries'.",
+                    "why_it_matters": "Challenges existing models that treat 'Battery Safety' and 'Batteries' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Batteries' can scale linearly independent of 'Battery Safety'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Battery Safety'.",
                     "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
                 },
                 "insight_type": "Generalization",
                 "composite_score": 1.3,
-                "source_cluster": "Node_1",
-                "evidence": {
-                    "supporting_evidence": [
-                        "Hypothesis: Lithium-rich cathode materials enhance energy density: Verification Metric/Test Method: Galvanostatic charge-discharge cycling and X-ray diffraction analysis"
-                    ],
-                    "contradicting_evidence": []
-                },
-                "scores": {
-                    "evidence_support": 0.4,
-                    "novelty": 0.7,
-                    "confidence": 0.5,
-                    "expected_impact": 1.4
-                },
-                "next_steps": {
-                    "research_questions": [
-                        "What precise parameter thresholds in 'X-Ray Diffraction Analysis' trigger cascade failures in 'Galvanostatic Charge-Discharge Cycling'?"
-                    ],
-                    "testable_hypotheses": [
-                        "If 'X-Ray Diffraction Analysis' is constrained dynamically, then 'Galvanostatic Charge-Discharge Cycling' stability will increase by >15%."
-                    ],
-                    "possible_experiments": [
-                        "Isolate 'X-Ray Diffraction Analysis' in a control simulation while applying extreme variance loads to 'Galvanostatic Charge-Discharge Cycling'."
-                    ],
-                    "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Galvanostatic Charge-Discharge Cycling' confirming the generalization."
-                    ],
-                    "failure_conditions": [
-                        "If 'Galvanostatic Charge-Discharge Cycling' remains unaffected during 'X-Ray Diffraction Analysis' perturbation, the hypothesis is nullified."
-                    ],
-                    "future_directions": [
-                        "Investigate mathematical formulations unifying 'X-Ray Diffraction Analysis' and 'Galvanostatic Charge-Discharge Cycling'."
-                    ]
-                }
-            },
-            {
-                "insight_title": "[CONTRADICTION] X-Ray Diffraction Analysis \u2194 Galvanostatic Charge-Discharge Cycling",
-                "research_note": {
-                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'X-Ray Diffraction Analysis' fail under 'Galvanostatic Charge-Discharge Cycling' conditions.",
-                    "why_it_matters": "Challenges existing models that treat 'X-Ray Diffraction Analysis' and 'Galvanostatic Charge-Discharge Cycling' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Galvanostatic Charge-Discharge Cycling' can scale linearly independent of 'X-Ray Diffraction Analysis'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'X-Ray Diffraction Analysis'.",
-                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
-                },
-                "insight_type": "Contradiction",
-                "composite_score": 1.3,
-                "source_cluster": "Node_1",
-                "evidence": {
-                    "supporting_evidence": [
-                        "Hypothesis: Lithium-rich cathode materials enhance energy density: Verification Metric/Test Method: Galvanostatic charge-discharge cycling and X-ray diffraction analysis"
-                    ],
-                    "contradicting_evidence": []
-                },
-                "scores": {
-                    "evidence_support": 0.4,
-                    "novelty": 0.7,
-                    "confidence": 0.5,
-                    "expected_impact": 1.4
-                },
-                "next_steps": {
-                    "research_questions": [
-                        "What precise parameter thresholds in 'X-Ray Diffraction Analysis' trigger cascade failures in 'Galvanostatic Charge-Discharge Cycling'?"
-                    ],
-                    "testable_hypotheses": [
-                        "If 'X-Ray Diffraction Analysis' is constrained dynamically, then 'Galvanostatic Charge-Discharge Cycling' stability will increase by >15%."
-                    ],
-                    "possible_experiments": [
-                        "Isolate 'X-Ray Diffraction Analysis' in a control simulation while applying extreme variance loads to 'Galvanostatic Charge-Discharge Cycling'."
-                    ],
-                    "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Galvanostatic Charge-Discharge Cycling' confirming the contradiction."
-                    ],
-                    "failure_conditions": [
-                        "If 'Galvanostatic Charge-Discharge Cycling' remains unaffected during 'X-Ray Diffraction Analysis' perturbation, the hypothesis is nullified."
-                    ],
-                    "future_directions": [
-                        "Investigate mathematical formulations unifying 'X-Ray Diffraction Analysis' and 'Galvanostatic Charge-Discharge Cycling'."
-                    ]
-                }
-            },
-            {
-                "insight_title": "[IMPROVEMENT] Galvanostatic Charge-Discharge Cycling \u2194 X-Ray Diffraction Analysis",
-                "research_note": {
-                    "what_was_discovered": "Integration of 'Galvanostatic Charge-Discharge Cycling' demonstrably stabilizes the variance within 'X-Ray Diffraction Analysis'.",
-                    "why_it_matters": "Challenges existing models that treat 'Galvanostatic Charge-Discharge Cycling' and 'X-Ray Diffraction Analysis' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'X-Ray Diffraction Analysis' can scale linearly independent of 'Galvanostatic Charge-Discharge Cycling'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Galvanostatic Charge-Discharge Cycling'.",
-                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
-                },
-                "insight_type": "Improvement",
-                "composite_score": 1.3,
-                "source_cluster": "Node_1",
-                "evidence": {
-                    "supporting_evidence": [
-                        "Hypothesis: Lithium-rich cathode materials enhance energy density: Verification Metric/Test Method: Galvanostatic charge-discharge cycling and X-ray diffraction analysis"
-                    ],
-                    "contradicting_evidence": []
-                },
-                "scores": {
-                    "evidence_support": 0.4,
-                    "novelty": 0.7,
-                    "confidence": 0.5,
-                    "expected_impact": 1.4
-                },
-                "next_steps": {
-                    "research_questions": [
-                        "What precise parameter thresholds in 'Galvanostatic Charge-Discharge Cycling' trigger cascade failures in 'X-Ray Diffraction Analysis'?"
-                    ],
-                    "testable_hypotheses": [
-                        "If 'Galvanostatic Charge-Discharge Cycling' is constrained dynamically, then 'X-Ray Diffraction Analysis' stability will increase by >15%."
-                    ],
-                    "possible_experiments": [
-                        "Isolate 'Galvanostatic Charge-Discharge Cycling' in a control simulation while applying extreme variance loads to 'X-Ray Diffraction Analysis'."
-                    ],
-                    "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'X-Ray Diffraction Analysis' confirming the improvement."
-                    ],
-                    "failure_conditions": [
-                        "If 'X-Ray Diffraction Analysis' remains unaffected during 'Galvanostatic Charge-Discharge Cycling' perturbation, the hypothesis is nullified."
-                    ],
-                    "future_directions": [
-                        "Investigate mathematical formulations unifying 'Galvanostatic Charge-Discharge Cycling' and 'X-Ray Diffraction Analysis'."
-                    ]
-                }
-            },
-            {
-                "insight_title": "[CAUSE] Galvanostatic Charge-Discharge Cycling \u2194 X-Ray Diffraction Analysis",
-                "research_note": {
-                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Galvanostatic Charge-Discharge Cycling' to 'X-Ray Diffraction Analysis'.",
-                    "why_it_matters": "Challenges existing models that treat 'Galvanostatic Charge-Discharge Cycling' and 'X-Ray Diffraction Analysis' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'X-Ray Diffraction Analysis' can scale linearly independent of 'Galvanostatic Charge-Discharge Cycling'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Galvanostatic Charge-Discharge Cycling'.",
-                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
-                },
-                "insight_type": "Cause",
-                "composite_score": 0.52,
-                "source_cluster": "Node_1",
-                "evidence": {
-                    "supporting_evidence": [
-                        "Hypothesis: Lithium-rich cathode materials enhance energy density: Verification Metric/Test Method: Galvanostatic charge-discharge cycling and X-ray diffraction analysis"
-                    ],
-                    "contradicting_evidence": []
-                },
-                "scores": {
-                    "evidence_support": 0.4,
-                    "novelty": 0.7,
-                    "confidence": 0.5,
-                    "expected_impact": 0.62
-                },
-                "next_steps": {
-                    "research_questions": [
-                        "What precise parameter thresholds in 'Galvanostatic Charge-Discharge Cycling' trigger cascade failures in 'X-Ray Diffraction Analysis'?"
-                    ],
-                    "testable_hypotheses": [
-                        "If 'Galvanostatic Charge-Discharge Cycling' is constrained dynamically, then 'X-Ray Diffraction Analysis' stability will increase by >15%."
-                    ],
-                    "possible_experiments": [
-                        "Isolate 'Galvanostatic Charge-Discharge Cycling' in a control simulation while applying extreme variance loads to 'X-Ray Diffraction Analysis'."
-                    ],
-                    "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'X-Ray Diffraction Analysis' confirming the cause."
-                    ],
-                    "failure_conditions": [
-                        "If 'X-Ray Diffraction Analysis' remains unaffected during 'Galvanostatic Charge-Discharge Cycling' perturbation, the hypothesis is nullified."
-                    ],
-                    "future_directions": [
-                        "Investigate mathematical formulations unifying 'Galvanostatic Charge-Discharge Cycling' and 'X-Ray Diffraction Analysis'."
-                    ]
-                }
-            }
-        ]
-    },
-    {
-        "cluster": "Node_2",
-        "r_level": 1,
-        "base_elements": [
-            "Solid-state batteries with enhanced safety and reduced charging times",
-            "Hypothesis: Solid-state electrolytes reduce charging times and improve safety: Verification Metric/Test Method: Electrochemical impedance spectroscopy and thermal runaway testing"
-        ],
-        "predictions": [
-            "If 'Thermal Runaway Testing' is constrained dynamically, then 'Safety' stability will increase by >15%.",
-            "If 'Thermal Runaway Testing' is constrained dynamically, then 'Safety' stability will increase by >15%.",
-            "If 'Enhanced Safety' is constrained dynamically, then 'Solid-State Batteries' stability will increase by >15%.",
-            "If 'Enhanced Safety' is constrained dynamically, then 'Solid-State Batteries' stability will increase by >15%."
-        ],
-        "random_thoughts": [
-            "Identified a significant 'Complementary' interaction mapping 'Thermal Runaway Testing' to 'Safety'.",
-            "Structural behaviors in 'Thermal Runaway Testing' provide a novel pathway to resolve bottlenecks in 'Safety'.",
-            "Integration of 'Enhanced Safety' demonstrably stabilizes the variance within 'Solid-State Batteries'.",
-            "Structural behaviors in 'Enhanced Safety' provide a novel pathway to resolve bottlenecks in 'Solid-State Batteries'."
-        ],
-        "scientific_research_insights": [
-            {
-                "insight_title": "[COMPLEMENTARY] Thermal Runaway Testing \u2194 Safety",
-                "research_note": {
-                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Thermal Runaway Testing' to 'Safety'.",
-                    "why_it_matters": "Challenges existing models that treat 'Thermal Runaway Testing' and 'Safety' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Safety' can scale linearly independent of 'Thermal Runaway Testing'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Thermal Runaway Testing'.",
-                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
-                },
-                "insight_type": "Complementary",
-                "composite_score": 1.3,
                 "source_cluster": "Node_2",
                 "evidence": {
                     "supporting_evidence": [
-                        "Hypothesis: Solid-state electrolytes reduce charging times and improve safety: Verification Metric/Test Method: Electrochemical impedance spectroscopy and thermal runaway testing"
+                        "Using a solid electrolyte will improve battery safety and reliability: Conduct accelerated life testing and abuse testing of solid-state batteries"
                     ],
                     "contradicting_evidence": []
                 },
@@ -247,157 +183,22 @@
                 },
                 "next_steps": {
                     "research_questions": [
-                        "What precise parameter thresholds in 'Thermal Runaway Testing' trigger cascade failures in 'Safety'?"
+                        "What precise parameter thresholds in 'Battery Safety' trigger cascade failures in 'Batteries'?"
                     ],
                     "testable_hypotheses": [
-                        "If 'Thermal Runaway Testing' is constrained dynamically, then 'Safety' stability will increase by >15%."
+                        "If 'Battery Safety' is constrained dynamically, then 'Batteries' stability will increase by >15%."
                     ],
                     "possible_experiments": [
-                        "Isolate 'Thermal Runaway Testing' in a control simulation while applying extreme variance loads to 'Safety'."
+                        "Isolate 'Battery Safety' in a control simulation while applying extreme variance loads to 'Batteries'."
                     ],
                     "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Safety' confirming the complementary."
+                        "Non-linear behavioral shift in 'Batteries' confirming the generalization."
                     ],
                     "failure_conditions": [
-                        "If 'Safety' remains unaffected during 'Thermal Runaway Testing' perturbation, the hypothesis is nullified."
+                        "If 'Batteries' remains unaffected during 'Battery Safety' perturbation, the hypothesis is nullified."
                     ],
                     "future_directions": [
-                        "Investigate mathematical formulations unifying 'Thermal Runaway Testing' and 'Safety'."
-                    ]
-                }
-            },
-            {
-                "insight_title": "[ANALOGY] Thermal Runaway Testing \u2194 Safety",
-                "research_note": {
-                    "what_was_discovered": "Structural behaviors in 'Thermal Runaway Testing' provide a novel pathway to resolve bottlenecks in 'Safety'.",
-                    "why_it_matters": "Challenges existing models that treat 'Thermal Runaway Testing' and 'Safety' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Safety' can scale linearly independent of 'Thermal Runaway Testing'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Thermal Runaway Testing'.",
-                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
-                },
-                "insight_type": "Analogy",
-                "composite_score": 1.3,
-                "source_cluster": "Node_2",
-                "evidence": {
-                    "supporting_evidence": [
-                        "Hypothesis: Solid-state electrolytes reduce charging times and improve safety: Verification Metric/Test Method: Electrochemical impedance spectroscopy and thermal runaway testing"
-                    ],
-                    "contradicting_evidence": []
-                },
-                "scores": {
-                    "evidence_support": 0.4,
-                    "novelty": 0.7,
-                    "confidence": 0.5,
-                    "expected_impact": 1.4
-                },
-                "next_steps": {
-                    "research_questions": [
-                        "What precise parameter thresholds in 'Thermal Runaway Testing' trigger cascade failures in 'Safety'?"
-                    ],
-                    "testable_hypotheses": [
-                        "If 'Thermal Runaway Testing' is constrained dynamically, then 'Safety' stability will increase by >15%."
-                    ],
-                    "possible_experiments": [
-                        "Isolate 'Thermal Runaway Testing' in a control simulation while applying extreme variance loads to 'Safety'."
-                    ],
-                    "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Safety' confirming the analogy."
-                    ],
-                    "failure_conditions": [
-                        "If 'Safety' remains unaffected during 'Thermal Runaway Testing' perturbation, the hypothesis is nullified."
-                    ],
-                    "future_directions": [
-                        "Investigate mathematical formulations unifying 'Thermal Runaway Testing' and 'Safety'."
-                    ]
-                }
-            },
-            {
-                "insight_title": "[IMPROVEMENT] Enhanced Safety \u2194 Solid-State Batteries",
-                "research_note": {
-                    "what_was_discovered": "Integration of 'Enhanced Safety' demonstrably stabilizes the variance within 'Solid-State Batteries'.",
-                    "why_it_matters": "Challenges existing models that treat 'Enhanced Safety' and 'Solid-State Batteries' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Solid-State Batteries' can scale linearly independent of 'Enhanced Safety'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Enhanced Safety'.",
-                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
-                },
-                "insight_type": "Improvement",
-                "composite_score": 1.3,
-                "source_cluster": "Node_2",
-                "evidence": {
-                    "supporting_evidence": [
-                        "Solid-state batteries with enhanced safety and reduced charging times"
-                    ],
-                    "contradicting_evidence": []
-                },
-                "scores": {
-                    "evidence_support": 0.4,
-                    "novelty": 0.7,
-                    "confidence": 0.5,
-                    "expected_impact": 1.4
-                },
-                "next_steps": {
-                    "research_questions": [
-                        "What precise parameter thresholds in 'Enhanced Safety' trigger cascade failures in 'Solid-State Batteries'?"
-                    ],
-                    "testable_hypotheses": [
-                        "If 'Enhanced Safety' is constrained dynamically, then 'Solid-State Batteries' stability will increase by >15%."
-                    ],
-                    "possible_experiments": [
-                        "Isolate 'Enhanced Safety' in a control simulation while applying extreme variance loads to 'Solid-State Batteries'."
-                    ],
-                    "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Solid-State Batteries' confirming the improvement."
-                    ],
-                    "failure_conditions": [
-                        "If 'Solid-State Batteries' remains unaffected during 'Enhanced Safety' perturbation, the hypothesis is nullified."
-                    ],
-                    "future_directions": [
-                        "Investigate mathematical formulations unifying 'Enhanced Safety' and 'Solid-State Batteries'."
-                    ]
-                }
-            },
-            {
-                "insight_title": "[ANALOGY] Enhanced Safety \u2194 Solid-State Batteries",
-                "research_note": {
-                    "what_was_discovered": "Structural behaviors in 'Enhanced Safety' provide a novel pathway to resolve bottlenecks in 'Solid-State Batteries'.",
-                    "why_it_matters": "Challenges existing models that treat 'Enhanced Safety' and 'Solid-State Batteries' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Solid-State Batteries' can scale linearly independent of 'Enhanced Safety'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Enhanced Safety'.",
-                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
-                },
-                "insight_type": "Analogy",
-                "composite_score": 1.3,
-                "source_cluster": "Node_2",
-                "evidence": {
-                    "supporting_evidence": [
-                        "Solid-state batteries with enhanced safety and reduced charging times"
-                    ],
-                    "contradicting_evidence": []
-                },
-                "scores": {
-                    "evidence_support": 0.4,
-                    "novelty": 0.7,
-                    "confidence": 0.5,
-                    "expected_impact": 1.4
-                },
-                "next_steps": {
-                    "research_questions": [
-                        "What precise parameter thresholds in 'Enhanced Safety' trigger cascade failures in 'Solid-State Batteries'?"
-                    ],
-                    "testable_hypotheses": [
-                        "If 'Enhanced Safety' is constrained dynamically, then 'Solid-State Batteries' stability will increase by >15%."
-                    ],
-                    "possible_experiments": [
-                        "Isolate 'Enhanced Safety' in a control simulation while applying extreme variance loads to 'Solid-State Batteries'."
-                    ],
-                    "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Solid-State Batteries' confirming the analogy."
-                    ],
-                    "failure_conditions": [
-                        "If 'Solid-State Batteries' remains unaffected during 'Enhanced Safety' perturbation, the hypothesis is nullified."
-                    ],
-                    "future_directions": [
-                        "Investigate mathematical formulations unifying 'Enhanced Safety' and 'Solid-State Batteries'."
+                        "Investigate mathematical formulations unifying 'Battery Safety' and 'Batteries'."
                     ]
                 }
             }
@@ -407,30 +208,740 @@
         "cluster": "Node_3",
         "r_level": 1,
         "base_elements": [
-            "Electrolyte properties (e.g., ionic conductivity, viscosity, and thermal stability)",
-            "Electrode material properties (e.g., conductivity, diffusivity, and reactivity)",
-            "Role of electrolyte additives in enhancing ionic conductivity and stability"
+            "Using a solid electrolyte will improve battery safety and reliability: Conduct accelerated life testing and abuse testing of solid-state batteries",
+            "Accelerated life testing and failure analysis data",
+            "Solid-state batteries with solid electrolytes"
         ],
         "predictions": [
-            "If 'Stability' is constrained dynamically, then 'Thermal Stability' stability will increase by >15%.",
-            "If 'Stability' is constrained dynamically, then 'Electrolyte Properties' stability will increase by >15%.",
-            "If 'Stability' is constrained dynamically, then 'Enhancing Ionic Conductivity' stability will increase by >15%.",
-            "If 'Stability' is constrained dynamically, then 'Electrolyte Additives' stability will increase by >15%."
+            "If 'Solid Electrolyte' is constrained dynamically, then 'Solid-State Batteries' stability will increase by >15%.",
+            "If 'Solid Electrolyte' is constrained dynamically, then 'Solid-State Batteries' stability will increase by >15%.",
+            "If 'Solid-State Batteries' is constrained dynamically, then 'Improve Battery Safety' stability will increase by >15%.",
+            "If 'Solid-State Batteries' is constrained dynamically, then 'Improve Battery Safety' stability will increase by >15%."
         ],
         "random_thoughts": [
-            "Identified a significant 'Complementary' interaction mapping 'Stability' to 'Thermal Stability'.",
-            "Identified a significant 'Extension' interaction mapping 'Stability' to 'Electrolyte Properties'.",
-            "Structural behaviors in 'Stability' provide a novel pathway to resolve bottlenecks in 'Enhancing Ionic Conductivity'.",
-            "Found empirical conflict: Theoretical models of 'Stability' fail under 'Electrolyte Additives' conditions."
+            "Identified a significant 'Generalization' interaction mapping 'Solid Electrolyte' to 'Solid-State Batteries'.",
+            "Integration of 'Solid Electrolyte' demonstrably stabilizes the variance within 'Solid-State Batteries'.",
+            "Identified a significant 'Generalization' interaction mapping 'Solid-State Batteries' to 'Improve Battery Safety'.",
+            "Integration of 'Solid-State Batteries' demonstrably stabilizes the variance within 'Improve Battery Safety'."
         ],
         "scientific_research_insights": [
             {
-                "insight_title": "[COMPLEMENTARY] Stability \u2194 Thermal Stability",
+                "insight_title": "[GENERALIZATION] Solid Electrolyte \u2194 Solid-State Batteries",
                 "research_note": {
-                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Stability' to 'Thermal Stability'.",
-                    "why_it_matters": "Challenges existing models that treat 'Stability' and 'Thermal Stability' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Thermal Stability' can scale linearly independent of 'Stability'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Stability'.",
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Solid Electrolyte' to 'Solid-State Batteries'.",
+                    "why_it_matters": "Challenges existing models that treat 'Solid Electrolyte' and 'Solid-State Batteries' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Solid-State Batteries' can scale linearly independent of 'Solid Electrolyte'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Solid Electrolyte'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 2.075,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Using a solid electrolyte will improve battery safety and reliability: Conduct accelerated life testing and abuse testing of solid-state batteries",
+                        "Solid-state batteries with solid electrolytes"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 2.18
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Solid Electrolyte' trigger cascade failures in 'Solid-State Batteries'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Solid Electrolyte' is constrained dynamically, then 'Solid-State Batteries' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Solid Electrolyte' in a control simulation while applying extreme variance loads to 'Solid-State Batteries'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Solid-State Batteries' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Solid-State Batteries' remains unaffected during 'Solid Electrolyte' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Solid Electrolyte' and 'Solid-State Batteries'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Solid Electrolyte \u2194 Solid-State Batteries",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Solid Electrolyte' demonstrably stabilizes the variance within 'Solid-State Batteries'.",
+                    "why_it_matters": "Challenges existing models that treat 'Solid Electrolyte' and 'Solid-State Batteries' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Solid-State Batteries' can scale linearly independent of 'Solid Electrolyte'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Solid Electrolyte'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 2.075,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Using a solid electrolyte will improve battery safety and reliability: Conduct accelerated life testing and abuse testing of solid-state batteries",
+                        "Solid-state batteries with solid electrolytes"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 2.18
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Solid Electrolyte' trigger cascade failures in 'Solid-State Batteries'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Solid Electrolyte' is constrained dynamically, then 'Solid-State Batteries' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Solid Electrolyte' in a control simulation while applying extreme variance loads to 'Solid-State Batteries'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Solid-State Batteries' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Solid-State Batteries' remains unaffected during 'Solid Electrolyte' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Solid Electrolyte' and 'Solid-State Batteries'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] Solid-State Batteries \u2194 Improve Battery Safety",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Solid-State Batteries' to 'Improve Battery Safety'.",
+                    "why_it_matters": "Challenges existing models that treat 'Solid-State Batteries' and 'Improve Battery Safety' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Improve Battery Safety' can scale linearly independent of 'Solid-State Batteries'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Solid-State Batteries'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 1.3,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Using a solid electrolyte will improve battery safety and reliability: Conduct accelerated life testing and abuse testing of solid-state batteries"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Solid-State Batteries' trigger cascade failures in 'Improve Battery Safety'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Solid-State Batteries' is constrained dynamically, then 'Improve Battery Safety' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Solid-State Batteries' in a control simulation while applying extreme variance loads to 'Improve Battery Safety'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Improve Battery Safety' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Improve Battery Safety' remains unaffected during 'Solid-State Batteries' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Solid-State Batteries' and 'Improve Battery Safety'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Solid-State Batteries \u2194 Improve Battery Safety",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Solid-State Batteries' demonstrably stabilizes the variance within 'Improve Battery Safety'.",
+                    "why_it_matters": "Challenges existing models that treat 'Solid-State Batteries' and 'Improve Battery Safety' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Improve Battery Safety' can scale linearly independent of 'Solid-State Batteries'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Solid-State Batteries'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 1.3,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Using a solid electrolyte will improve battery safety and reliability: Conduct accelerated life testing and abuse testing of solid-state batteries"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Solid-State Batteries' trigger cascade failures in 'Improve Battery Safety'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Solid-State Batteries' is constrained dynamically, then 'Improve Battery Safety' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Solid-State Batteries' in a control simulation while applying extreme variance loads to 'Improve Battery Safety'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Improve Battery Safety' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Improve Battery Safety' remains unaffected during 'Solid-State Batteries' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Solid-State Batteries' and 'Improve Battery Safety'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "r_level": 1,
+        "base_elements": [
+            "The trade-offs between energy density, power density, and safety in battery design",
+            "Optimizing the electrolyte composition will improve battery energy density: Measure the energy density of batteries with varying electrolyte compositions using galvanostatic cycling",
+            "Designing an optimal battery requires a comprehensive understanding of electrochemical principles, materials science, electrical engineering, and thermodynamics to achieve high energy density, power density, safety, and reliability",
+            "The optimal electrode material and design for high energy density and power density"
+        ],
+        "predictions": [
+            "If 'Energy Density' is constrained dynamically, then 'Power Density' stability will increase by >15%.",
+            "If 'Energy Density' is constrained dynamically, then 'Power Density' stability will increase by >15%.",
+            "If 'Energy Density' is constrained dynamically, then 'Design' stability will increase by >15%.",
+            "If 'Reliability' is constrained dynamically, then 'Safety' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Generalization' interaction mapping 'Energy Density' to 'Power Density'.",
+            "Found empirical conflict: Theoretical models of 'Energy Density' fail under 'Power Density' conditions.",
+            "Integration of 'Energy Density' demonstrably stabilizes the variance within 'Design'.",
+            "Structural behaviors in 'Reliability' provide a novel pathway to resolve bottlenecks in 'Safety'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[GENERALIZATION] Energy Density \u2194 Power Density",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Energy Density' to 'Power Density'.",
+                    "why_it_matters": "Challenges existing models that treat 'Energy Density' and 'Power Density' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Power Density' can scale linearly independent of 'Energy Density'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Energy Density'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 2.275,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Designing an optimal battery requires a comprehensive understanding of electrochemical principles, materials science, electrical engineering, and thermodynamics to achieve high energy density, power density, safety, and reliability",
+                        "The optimal electrode material and design for high energy density and power density"
+                    ],
+                    "contradicting_evidence": [
+                        "The trade-offs between energy density, power density, and safety in battery design"
+                    ]
+                },
+                "scores": {
+                    "evidence_support": 1.0,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 2.38
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Energy Density' trigger cascade failures in 'Power Density'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Energy Density' is constrained dynamically, then 'Power Density' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Energy Density' in a control simulation while applying extreme variance loads to 'Power Density'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Power Density' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Power Density' remains unaffected during 'Energy Density' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Energy Density' and 'Power Density'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CONTRADICTION] Energy Density \u2194 Power Density",
+                "research_note": {
+                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'Energy Density' fail under 'Power Density' conditions.",
+                    "why_it_matters": "Challenges existing models that treat 'Energy Density' and 'Power Density' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Power Density' can scale linearly independent of 'Energy Density'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Energy Density'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Contradiction",
+                "composite_score": 2.275,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Designing an optimal battery requires a comprehensive understanding of electrochemical principles, materials science, electrical engineering, and thermodynamics to achieve high energy density, power density, safety, and reliability",
+                        "The optimal electrode material and design for high energy density and power density"
+                    ],
+                    "contradicting_evidence": [
+                        "The trade-offs between energy density, power density, and safety in battery design"
+                    ]
+                },
+                "scores": {
+                    "evidence_support": 1.0,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 2.38
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Energy Density' trigger cascade failures in 'Power Density'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Energy Density' is constrained dynamically, then 'Power Density' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Energy Density' in a control simulation while applying extreme variance loads to 'Power Density'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Power Density' confirming the contradiction."
+                    ],
+                    "failure_conditions": [
+                        "If 'Power Density' remains unaffected during 'Energy Density' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Energy Density' and 'Power Density'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Energy Density \u2194 Design",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Energy Density' demonstrably stabilizes the variance within 'Design'.",
+                    "why_it_matters": "Challenges existing models that treat 'Energy Density' and 'Design' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Design' can scale linearly independent of 'Energy Density'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Energy Density'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 2.275,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Designing an optimal battery requires a comprehensive understanding of electrochemical principles, materials science, electrical engineering, and thermodynamics to achieve high energy density, power density, safety, and reliability",
+                        "The optimal electrode material and design for high energy density and power density"
+                    ],
+                    "contradicting_evidence": [
+                        "The trade-offs between energy density, power density, and safety in battery design"
+                    ]
+                },
+                "scores": {
+                    "evidence_support": 1.0,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 2.38
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Energy Density' trigger cascade failures in 'Design'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Energy Density' is constrained dynamically, then 'Design' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Energy Density' in a control simulation while applying extreme variance loads to 'Design'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Design' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Design' remains unaffected during 'Energy Density' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Energy Density' and 'Design'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[ANALOGY] Reliability \u2194 Safety",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Reliability' provide a novel pathway to resolve bottlenecks in 'Safety'.",
+                    "why_it_matters": "Challenges existing models that treat 'Reliability' and 'Safety' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Safety' can scale linearly independent of 'Reliability'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Reliability'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 2.075,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "The relationship between electrolyte composition and battery safety and reliability",
+                        "Using a solid electrolyte will improve battery safety and reliability: Conduct accelerated life testing and abuse testing of solid-state batteries"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 2.18
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Reliability' trigger cascade failures in 'Safety'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Reliability' is constrained dynamically, then 'Safety' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Reliability' in a control simulation while applying extreme variance loads to 'Safety'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Safety' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Safety' remains unaffected during 'Reliability' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Reliability' and 'Safety'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_4",
+        "r_level": 2,
+        "base_elements": [
+            "Lithium-ion batteries with graphite anodes and lithium cobalt oxide cathodes",
+            "Sodium-ion batteries with sodium-rich cathodes"
+        ],
+        "predictions": [
+            "If 'Sodium-Rich Cathodes' is constrained dynamically, then 'Sodium-Ion Batteries' stability will increase by >15%.",
+            "If 'Sodium-Rich Cathodes' is constrained dynamically, then 'Sodium-Ion Batteries' stability will increase by >15%.",
+            "If 'Lithium Cobalt Oxide Cathodes' is constrained dynamically, then 'Lithium-Ion Batteries' stability will increase by >15%.",
+            "If 'Lithium Cobalt Oxide Cathodes' is constrained dynamically, then 'Lithium-Ion Batteries' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Generalization' interaction mapping 'Sodium-Rich Cathodes' to 'Sodium-Ion Batteries'.",
+            "Identified a significant 'Complementary' interaction mapping 'Sodium-Rich Cathodes' to 'Sodium-Ion Batteries'.",
+            "Found empirical conflict: Theoretical models of 'Lithium Cobalt Oxide Cathodes' fail under 'Lithium-Ion Batteries' conditions.",
+            "Identified a significant 'Extension' interaction mapping 'Lithium Cobalt Oxide Cathodes' to 'Lithium-Ion Batteries'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[GENERALIZATION] Sodium-Rich Cathodes \u2194 Sodium-Ion Batteries",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Sodium-Rich Cathodes' to 'Sodium-Ion Batteries'.",
+                    "why_it_matters": "Challenges existing models that treat 'Sodium-Rich Cathodes' and 'Sodium-Ion Batteries' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Sodium-Ion Batteries' can scale linearly independent of 'Sodium-Rich Cathodes'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Sodium-Rich Cathodes'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 1.3,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Sodium-ion batteries with sodium-rich cathodes"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Sodium-Rich Cathodes' trigger cascade failures in 'Sodium-Ion Batteries'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Sodium-Rich Cathodes' is constrained dynamically, then 'Sodium-Ion Batteries' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Sodium-Rich Cathodes' in a control simulation while applying extreme variance loads to 'Sodium-Ion Batteries'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Sodium-Ion Batteries' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Sodium-Ion Batteries' remains unaffected during 'Sodium-Rich Cathodes' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Sodium-Rich Cathodes' and 'Sodium-Ion Batteries'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[COMPLEMENTARY] Sodium-Rich Cathodes \u2194 Sodium-Ion Batteries",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Sodium-Rich Cathodes' to 'Sodium-Ion Batteries'.",
+                    "why_it_matters": "Challenges existing models that treat 'Sodium-Rich Cathodes' and 'Sodium-Ion Batteries' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Sodium-Ion Batteries' can scale linearly independent of 'Sodium-Rich Cathodes'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Sodium-Rich Cathodes'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Complementary",
+                "composite_score": 1.3,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Sodium-ion batteries with sodium-rich cathodes"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Sodium-Rich Cathodes' trigger cascade failures in 'Sodium-Ion Batteries'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Sodium-Rich Cathodes' is constrained dynamically, then 'Sodium-Ion Batteries' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Sodium-Rich Cathodes' in a control simulation while applying extreme variance loads to 'Sodium-Ion Batteries'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Sodium-Ion Batteries' confirming the complementary."
+                    ],
+                    "failure_conditions": [
+                        "If 'Sodium-Ion Batteries' remains unaffected during 'Sodium-Rich Cathodes' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Sodium-Rich Cathodes' and 'Sodium-Ion Batteries'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CONTRADICTION] Lithium Cobalt Oxide Cathodes \u2194 Lithium-Ion Batteries",
+                "research_note": {
+                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'Lithium Cobalt Oxide Cathodes' fail under 'Lithium-Ion Batteries' conditions.",
+                    "why_it_matters": "Challenges existing models that treat 'Lithium Cobalt Oxide Cathodes' and 'Lithium-Ion Batteries' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Lithium-Ion Batteries' can scale linearly independent of 'Lithium Cobalt Oxide Cathodes'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Lithium Cobalt Oxide Cathodes'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Contradiction",
+                "composite_score": 1.3,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Lithium-ion batteries with graphite anodes and lithium cobalt oxide cathodes"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Lithium Cobalt Oxide Cathodes' trigger cascade failures in 'Lithium-Ion Batteries'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Lithium Cobalt Oxide Cathodes' is constrained dynamically, then 'Lithium-Ion Batteries' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Lithium Cobalt Oxide Cathodes' in a control simulation while applying extreme variance loads to 'Lithium-Ion Batteries'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Lithium-Ion Batteries' confirming the contradiction."
+                    ],
+                    "failure_conditions": [
+                        "If 'Lithium-Ion Batteries' remains unaffected during 'Lithium Cobalt Oxide Cathodes' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Lithium Cobalt Oxide Cathodes' and 'Lithium-Ion Batteries'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Lithium Cobalt Oxide Cathodes \u2194 Lithium-Ion Batteries",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Lithium Cobalt Oxide Cathodes' to 'Lithium-Ion Batteries'.",
+                    "why_it_matters": "Challenges existing models that treat 'Lithium Cobalt Oxide Cathodes' and 'Lithium-Ion Batteries' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Lithium-Ion Batteries' can scale linearly independent of 'Lithium Cobalt Oxide Cathodes'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Lithium Cobalt Oxide Cathodes'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 1.3,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Lithium-ion batteries with graphite anodes and lithium cobalt oxide cathodes"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Lithium Cobalt Oxide Cathodes' trigger cascade failures in 'Lithium-Ion Batteries'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Lithium Cobalt Oxide Cathodes' is constrained dynamically, then 'Lithium-Ion Batteries' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Lithium Cobalt Oxide Cathodes' in a control simulation while applying extreme variance loads to 'Lithium-Ion Batteries'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Lithium-Ion Batteries' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Lithium-Ion Batteries' remains unaffected during 'Lithium Cobalt Oxide Cathodes' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Lithium Cobalt Oxide Cathodes' and 'Lithium-Ion Batteries'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_3",
+        "r_level": 2,
+        "base_elements": [
+            "Battery performance data under various operating conditions",
+            "The effects of temperature and pressure on battery performance and lifespan"
+        ],
+        "predictions": [
+            "If 'Battery Performance Data' is constrained dynamically, then 'Various Operating Conditions' stability will increase by >15%.",
+            "If 'Battery Performance Data' is constrained dynamically, then 'Battery Performance' stability will increase by >15%.",
+            "If 'Various Operating Conditions' is constrained dynamically, then 'Battery Performance Data' stability will increase by >15%.",
+            "If 'Various Operating Conditions' is constrained dynamically, then 'Battery Performance Data' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Generalization' interaction mapping 'Battery Performance Data' to 'Various Operating Conditions'.",
+            "Integration of 'Battery Performance Data' demonstrably stabilizes the variance within 'Battery Performance'.",
+            "Identified a significant 'Complementary' interaction mapping 'Various Operating Conditions' to 'Battery Performance Data'.",
+            "Identified a significant 'Generalization' interaction mapping 'Various Operating Conditions' to 'Battery Performance Data'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[GENERALIZATION] Battery Performance Data \u2194 Various Operating Conditions",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Battery Performance Data' to 'Various Operating Conditions'.",
+                    "why_it_matters": "Challenges existing models that treat 'Battery Performance Data' and 'Various Operating Conditions' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Various Operating Conditions' can scale linearly independent of 'Battery Performance Data'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Battery Performance Data'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 1.3,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Battery performance data under various operating conditions"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Battery Performance Data' trigger cascade failures in 'Various Operating Conditions'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Battery Performance Data' is constrained dynamically, then 'Various Operating Conditions' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Battery Performance Data' in a control simulation while applying extreme variance loads to 'Various Operating Conditions'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Various Operating Conditions' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Various Operating Conditions' remains unaffected during 'Battery Performance Data' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Battery Performance Data' and 'Various Operating Conditions'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Battery Performance Data \u2194 Battery Performance",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Battery Performance Data' demonstrably stabilizes the variance within 'Battery Performance'.",
+                    "why_it_matters": "Challenges existing models that treat 'Battery Performance Data' and 'Battery Performance' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Battery Performance' can scale linearly independent of 'Battery Performance Data'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Battery Performance Data'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 1.3,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Battery performance data under various operating conditions"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Battery Performance Data' trigger cascade failures in 'Battery Performance'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Battery Performance Data' is constrained dynamically, then 'Battery Performance' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Battery Performance Data' in a control simulation while applying extreme variance loads to 'Battery Performance'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Battery Performance' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Battery Performance' remains unaffected during 'Battery Performance Data' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Battery Performance Data' and 'Battery Performance'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[COMPLEMENTARY] Various Operating Conditions \u2194 Battery Performance Data",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Various Operating Conditions' to 'Battery Performance Data'.",
+                    "why_it_matters": "Challenges existing models that treat 'Various Operating Conditions' and 'Battery Performance Data' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Battery Performance Data' can scale linearly independent of 'Various Operating Conditions'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Various Operating Conditions'.",
                     "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
                 },
                 "insight_type": "Complementary",
@@ -438,7 +949,7 @@
                 "source_cluster": "Node_3",
                 "evidence": {
                     "supporting_evidence": [
-                        "Electrolyte properties (e.g., ionic conductivity, viscosity, and thermal stability)"
+                        "Battery performance data under various operating conditions"
                     ],
                     "contradicting_evidence": []
                 },
@@ -450,40 +961,197 @@
                 },
                 "next_steps": {
                     "research_questions": [
-                        "What precise parameter thresholds in 'Stability' trigger cascade failures in 'Thermal Stability'?"
+                        "What precise parameter thresholds in 'Various Operating Conditions' trigger cascade failures in 'Battery Performance Data'?"
                     ],
                     "testable_hypotheses": [
-                        "If 'Stability' is constrained dynamically, then 'Thermal Stability' stability will increase by >15%."
+                        "If 'Various Operating Conditions' is constrained dynamically, then 'Battery Performance Data' stability will increase by >15%."
                     ],
                     "possible_experiments": [
-                        "Isolate 'Stability' in a control simulation while applying extreme variance loads to 'Thermal Stability'."
+                        "Isolate 'Various Operating Conditions' in a control simulation while applying extreme variance loads to 'Battery Performance Data'."
                     ],
                     "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Thermal Stability' confirming the complementary."
+                        "Non-linear behavioral shift in 'Battery Performance Data' confirming the complementary."
                     ],
                     "failure_conditions": [
-                        "If 'Thermal Stability' remains unaffected during 'Stability' perturbation, the hypothesis is nullified."
+                        "If 'Battery Performance Data' remains unaffected during 'Various Operating Conditions' perturbation, the hypothesis is nullified."
                     ],
                     "future_directions": [
-                        "Investigate mathematical formulations unifying 'Stability' and 'Thermal Stability'."
+                        "Investigate mathematical formulations unifying 'Various Operating Conditions' and 'Battery Performance Data'."
                     ]
                 }
             },
             {
-                "insight_title": "[EXTENSION] Stability \u2194 Electrolyte Properties",
+                "insight_title": "[GENERALIZATION] Various Operating Conditions \u2194 Battery Performance Data",
                 "research_note": {
-                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Stability' to 'Electrolyte Properties'.",
-                    "why_it_matters": "Challenges existing models that treat 'Stability' and 'Electrolyte Properties' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Electrolyte Properties' can scale linearly independent of 'Stability'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Stability'.",
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Various Operating Conditions' to 'Battery Performance Data'.",
+                    "why_it_matters": "Challenges existing models that treat 'Various Operating Conditions' and 'Battery Performance Data' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Battery Performance Data' can scale linearly independent of 'Various Operating Conditions'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Various Operating Conditions'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 1.3,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Battery performance data under various operating conditions"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Various Operating Conditions' trigger cascade failures in 'Battery Performance Data'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Various Operating Conditions' is constrained dynamically, then 'Battery Performance Data' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Various Operating Conditions' in a control simulation while applying extreme variance loads to 'Battery Performance Data'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Battery Performance Data' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Battery Performance Data' remains unaffected during 'Various Operating Conditions' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Various Operating Conditions' and 'Battery Performance Data'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "r_level": 2,
+        "base_elements": [
+            "Electrolyte leakage and corrosion due to poor sealing or material degradation",
+            "Electrode degradation and capacity fade due to cycling and aging"
+        ],
+        "predictions": [
+            "If 'Cycling' is constrained dynamically, then 'Capacity Fade Due' stability will increase by >15%.",
+            "If 'Cycling' is constrained dynamically, then 'Capacity Fade Due' stability will increase by >15%.",
+            "If 'Cycling' is constrained dynamically, then 'Capacity Fade Due' stability will increase by >15%.",
+            "If 'Cycling' is constrained dynamically, then 'Electrode Degradation' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Complementary' interaction mapping 'Cycling' to 'Capacity Fade Due'.",
+            "Integration of 'Cycling' demonstrably stabilizes the variance within 'Capacity Fade Due'.",
+            "Identified a significant 'Extension' interaction mapping 'Cycling' to 'Capacity Fade Due'.",
+            "Identified a significant 'Extension' interaction mapping 'Cycling' to 'Electrode Degradation'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[COMPLEMENTARY] Cycling \u2194 Capacity Fade Due",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Cycling' to 'Capacity Fade Due'.",
+                    "why_it_matters": "Challenges existing models that treat 'Cycling' and 'Capacity Fade Due' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Capacity Fade Due' can scale linearly independent of 'Cycling'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Cycling'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Complementary",
+                "composite_score": 1.3,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Electrode degradation and capacity fade due to cycling and aging"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Cycling' trigger cascade failures in 'Capacity Fade Due'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Cycling' is constrained dynamically, then 'Capacity Fade Due' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Cycling' in a control simulation while applying extreme variance loads to 'Capacity Fade Due'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Capacity Fade Due' confirming the complementary."
+                    ],
+                    "failure_conditions": [
+                        "If 'Capacity Fade Due' remains unaffected during 'Cycling' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Cycling' and 'Capacity Fade Due'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Cycling \u2194 Capacity Fade Due",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Cycling' demonstrably stabilizes the variance within 'Capacity Fade Due'.",
+                    "why_it_matters": "Challenges existing models that treat 'Cycling' and 'Capacity Fade Due' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Capacity Fade Due' can scale linearly independent of 'Cycling'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Cycling'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 1.3,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Electrode degradation and capacity fade due to cycling and aging"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Cycling' trigger cascade failures in 'Capacity Fade Due'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Cycling' is constrained dynamically, then 'Capacity Fade Due' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Cycling' in a control simulation while applying extreme variance loads to 'Capacity Fade Due'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Capacity Fade Due' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Capacity Fade Due' remains unaffected during 'Cycling' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Cycling' and 'Capacity Fade Due'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Cycling \u2194 Capacity Fade Due",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Cycling' to 'Capacity Fade Due'.",
+                    "why_it_matters": "Challenges existing models that treat 'Cycling' and 'Capacity Fade Due' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Capacity Fade Due' can scale linearly independent of 'Cycling'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Cycling'.",
                     "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
                 },
                 "insight_type": "Extension",
                 "composite_score": 1.3,
-                "source_cluster": "Node_3",
+                "source_cluster": "Node_1",
                 "evidence": {
                     "supporting_evidence": [
-                        "Electrolyte properties (e.g., ionic conductivity, viscosity, and thermal stability)"
+                        "Electrode degradation and capacity fade due to cycling and aging"
                     ],
                     "contradicting_evidence": []
                 },
@@ -495,40 +1163,40 @@
                 },
                 "next_steps": {
                     "research_questions": [
-                        "What precise parameter thresholds in 'Stability' trigger cascade failures in 'Electrolyte Properties'?"
+                        "What precise parameter thresholds in 'Cycling' trigger cascade failures in 'Capacity Fade Due'?"
                     ],
                     "testable_hypotheses": [
-                        "If 'Stability' is constrained dynamically, then 'Electrolyte Properties' stability will increase by >15%."
+                        "If 'Cycling' is constrained dynamically, then 'Capacity Fade Due' stability will increase by >15%."
                     ],
                     "possible_experiments": [
-                        "Isolate 'Stability' in a control simulation while applying extreme variance loads to 'Electrolyte Properties'."
+                        "Isolate 'Cycling' in a control simulation while applying extreme variance loads to 'Capacity Fade Due'."
                     ],
                     "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Electrolyte Properties' confirming the extension."
+                        "Non-linear behavioral shift in 'Capacity Fade Due' confirming the extension."
                     ],
                     "failure_conditions": [
-                        "If 'Electrolyte Properties' remains unaffected during 'Stability' perturbation, the hypothesis is nullified."
+                        "If 'Capacity Fade Due' remains unaffected during 'Cycling' perturbation, the hypothesis is nullified."
                     ],
                     "future_directions": [
-                        "Investigate mathematical formulations unifying 'Stability' and 'Electrolyte Properties'."
+                        "Investigate mathematical formulations unifying 'Cycling' and 'Capacity Fade Due'."
                     ]
                 }
             },
             {
-                "insight_title": "[ANALOGY] Stability \u2194 Enhancing Ionic Conductivity",
+                "insight_title": "[EXTENSION] Cycling \u2194 Electrode Degradation",
                 "research_note": {
-                    "what_was_discovered": "Structural behaviors in 'Stability' provide a novel pathway to resolve bottlenecks in 'Enhancing Ionic Conductivity'.",
-                    "why_it_matters": "Challenges existing models that treat 'Stability' and 'Enhancing Ionic Conductivity' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Enhancing Ionic Conductivity' can scale linearly independent of 'Stability'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Stability'.",
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Cycling' to 'Electrode Degradation'.",
+                    "why_it_matters": "Challenges existing models that treat 'Cycling' and 'Electrode Degradation' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Electrode Degradation' can scale linearly independent of 'Cycling'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Cycling'.",
                     "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
                 },
-                "insight_type": "Analogy",
+                "insight_type": "Extension",
                 "composite_score": 1.3,
-                "source_cluster": "Node_3",
+                "source_cluster": "Node_1",
                 "evidence": {
                     "supporting_evidence": [
-                        "Role of electrolyte additives in enhancing ionic conductivity and stability"
+                        "Electrode degradation and capacity fade due to cycling and aging"
                     ],
                     "contradicting_evidence": []
                 },
@@ -540,67 +1208,22 @@
                 },
                 "next_steps": {
                     "research_questions": [
-                        "What precise parameter thresholds in 'Stability' trigger cascade failures in 'Enhancing Ionic Conductivity'?"
+                        "What precise parameter thresholds in 'Cycling' trigger cascade failures in 'Electrode Degradation'?"
                     ],
                     "testable_hypotheses": [
-                        "If 'Stability' is constrained dynamically, then 'Enhancing Ionic Conductivity' stability will increase by >15%."
+                        "If 'Cycling' is constrained dynamically, then 'Electrode Degradation' stability will increase by >15%."
                     ],
                     "possible_experiments": [
-                        "Isolate 'Stability' in a control simulation while applying extreme variance loads to 'Enhancing Ionic Conductivity'."
+                        "Isolate 'Cycling' in a control simulation while applying extreme variance loads to 'Electrode Degradation'."
                     ],
                     "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Enhancing Ionic Conductivity' confirming the analogy."
+                        "Non-linear behavioral shift in 'Electrode Degradation' confirming the extension."
                     ],
                     "failure_conditions": [
-                        "If 'Enhancing Ionic Conductivity' remains unaffected during 'Stability' perturbation, the hypothesis is nullified."
+                        "If 'Electrode Degradation' remains unaffected during 'Cycling' perturbation, the hypothesis is nullified."
                     ],
                     "future_directions": [
-                        "Investigate mathematical formulations unifying 'Stability' and 'Enhancing Ionic Conductivity'."
-                    ]
-                }
-            },
-            {
-                "insight_title": "[CONTRADICTION] Stability \u2194 Electrolyte Additives",
-                "research_note": {
-                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'Stability' fail under 'Electrolyte Additives' conditions.",
-                    "why_it_matters": "Challenges existing models that treat 'Stability' and 'Electrolyte Additives' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Electrolyte Additives' can scale linearly independent of 'Stability'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Stability'.",
-                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
-                },
-                "insight_type": "Contradiction",
-                "composite_score": 1.3,
-                "source_cluster": "Node_3",
-                "evidence": {
-                    "supporting_evidence": [
-                        "Role of electrolyte additives in enhancing ionic conductivity and stability"
-                    ],
-                    "contradicting_evidence": []
-                },
-                "scores": {
-                    "evidence_support": 0.4,
-                    "novelty": 0.7,
-                    "confidence": 0.5,
-                    "expected_impact": 1.4
-                },
-                "next_steps": {
-                    "research_questions": [
-                        "What precise parameter thresholds in 'Stability' trigger cascade failures in 'Electrolyte Additives'?"
-                    ],
-                    "testable_hypotheses": [
-                        "If 'Stability' is constrained dynamically, then 'Electrolyte Additives' stability will increase by >15%."
-                    ],
-                    "possible_experiments": [
-                        "Isolate 'Stability' in a control simulation while applying extreme variance loads to 'Electrolyte Additives'."
-                    ],
-                    "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Electrolyte Additives' confirming the contradiction."
-                    ],
-                    "failure_conditions": [
-                        "If 'Electrolyte Additives' remains unaffected during 'Stability' perturbation, the hypothesis is nullified."
-                    ],
-                    "future_directions": [
-                        "Investigate mathematical formulations unifying 'Stability' and 'Electrolyte Additives'."
+                        "Investigate mathematical formulations unifying 'Cycling' and 'Electrode Degradation'."
                     ]
                 }
             }
@@ -610,74 +1233,29 @@
         "cluster": "Node_2",
         "r_level": 2,
         "base_elements": [
-            "Faraday's Law of Electrolysis relates charge to mass and valence",
-            "Ohm's Law governs the relationship between voltage, current, and resistance"
+            "Thermal and electrical characterization of battery components and systems",
+            "Thermal runaway and fire due to overheating or electrical shorts"
         ],
         "predictions": [
-            "If 'Electrolysis Relates Charge' is constrained dynamically, then 'Valence' stability will increase by >15%.",
-            "If 'Electrolysis Relates Charge' is constrained dynamically, then 'Valence' stability will increase by >15%.",
-            "If 'Electrolysis Relates Charge' is constrained dynamically, then 'Faraday' stability will increase by >15%.",
-            "If 'Resistance' is constrained dynamically, then 'Relationship' stability will increase by >15%."
+            "If 'Systems' is constrained dynamically, then 'Electrical Characterization' stability will increase by >15%.",
+            "If 'Systems' is constrained dynamically, then 'Thermal' stability will increase by >15%.",
+            "If 'Systems' is constrained dynamically, then 'Thermal' stability will increase by >15%.",
+            "If 'Systems' is constrained dynamically, then 'Electrochemical Systems' stability will increase by >15%."
         ],
         "random_thoughts": [
-            "Structural behaviors in 'Electrolysis Relates Charge' provide a novel pathway to resolve bottlenecks in 'Valence'.",
-            "Integration of 'Electrolysis Relates Charge' demonstrably stabilizes the variance within 'Valence'.",
-            "Integration of 'Electrolysis Relates Charge' demonstrably stabilizes the variance within 'Faraday'.",
-            "Integration of 'Resistance' demonstrably stabilizes the variance within 'Relationship'."
+            "Integration of 'Systems' demonstrably stabilizes the variance within 'Electrical Characterization'.",
+            "Identified a significant 'Complementary' interaction mapping 'Systems' to 'Thermal'.",
+            "Identified a significant 'Generalization' interaction mapping 'Systems' to 'Thermal'.",
+            "Found empirical conflict: Theoretical models of 'Systems' fail under 'Electrochemical Systems' conditions."
         ],
         "scientific_research_insights": [
             {
-                "insight_title": "[ANALOGY] Electrolysis Relates Charge \u2194 Valence",
+                "insight_title": "[IMPROVEMENT] Systems \u2194 Electrical Characterization",
                 "research_note": {
-                    "what_was_discovered": "Structural behaviors in 'Electrolysis Relates Charge' provide a novel pathway to resolve bottlenecks in 'Valence'.",
-                    "why_it_matters": "Challenges existing models that treat 'Electrolysis Relates Charge' and 'Valence' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Valence' can scale linearly independent of 'Electrolysis Relates Charge'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Electrolysis Relates Charge'.",
-                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
-                },
-                "insight_type": "Analogy",
-                "composite_score": 1.3,
-                "source_cluster": "Node_2",
-                "evidence": {
-                    "supporting_evidence": [
-                        "Faraday's Law of Electrolysis relates charge to mass and valence"
-                    ],
-                    "contradicting_evidence": []
-                },
-                "scores": {
-                    "evidence_support": 0.4,
-                    "novelty": 0.7,
-                    "confidence": 0.5,
-                    "expected_impact": 1.4
-                },
-                "next_steps": {
-                    "research_questions": [
-                        "What precise parameter thresholds in 'Electrolysis Relates Charge' trigger cascade failures in 'Valence'?"
-                    ],
-                    "testable_hypotheses": [
-                        "If 'Electrolysis Relates Charge' is constrained dynamically, then 'Valence' stability will increase by >15%."
-                    ],
-                    "possible_experiments": [
-                        "Isolate 'Electrolysis Relates Charge' in a control simulation while applying extreme variance loads to 'Valence'."
-                    ],
-                    "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Valence' confirming the analogy."
-                    ],
-                    "failure_conditions": [
-                        "If 'Valence' remains unaffected during 'Electrolysis Relates Charge' perturbation, the hypothesis is nullified."
-                    ],
-                    "future_directions": [
-                        "Investigate mathematical formulations unifying 'Electrolysis Relates Charge' and 'Valence'."
-                    ]
-                }
-            },
-            {
-                "insight_title": "[IMPROVEMENT] Electrolysis Relates Charge \u2194 Valence",
-                "research_note": {
-                    "what_was_discovered": "Integration of 'Electrolysis Relates Charge' demonstrably stabilizes the variance within 'Valence'.",
-                    "why_it_matters": "Challenges existing models that treat 'Electrolysis Relates Charge' and 'Valence' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Valence' can scale linearly independent of 'Electrolysis Relates Charge'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Electrolysis Relates Charge'.",
+                    "what_was_discovered": "Integration of 'Systems' demonstrably stabilizes the variance within 'Electrical Characterization'.",
+                    "why_it_matters": "Challenges existing models that treat 'Systems' and 'Electrical Characterization' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Electrical Characterization' can scale linearly independent of 'Systems'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Systems'.",
                     "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
                 },
                 "insight_type": "Improvement",
@@ -685,7 +1263,7 @@
                 "source_cluster": "Node_2",
                 "evidence": {
                     "supporting_evidence": [
-                        "Faraday's Law of Electrolysis relates charge to mass and valence"
+                        "Thermal and electrical characterization of battery components and systems"
                     ],
                     "contradicting_evidence": []
                 },
@@ -697,40 +1275,40 @@
                 },
                 "next_steps": {
                     "research_questions": [
-                        "What precise parameter thresholds in 'Electrolysis Relates Charge' trigger cascade failures in 'Valence'?"
+                        "What precise parameter thresholds in 'Systems' trigger cascade failures in 'Electrical Characterization'?"
                     ],
                     "testable_hypotheses": [
-                        "If 'Electrolysis Relates Charge' is constrained dynamically, then 'Valence' stability will increase by >15%."
+                        "If 'Systems' is constrained dynamically, then 'Electrical Characterization' stability will increase by >15%."
                     ],
                     "possible_experiments": [
-                        "Isolate 'Electrolysis Relates Charge' in a control simulation while applying extreme variance loads to 'Valence'."
+                        "Isolate 'Systems' in a control simulation while applying extreme variance loads to 'Electrical Characterization'."
                     ],
                     "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Valence' confirming the improvement."
+                        "Non-linear behavioral shift in 'Electrical Characterization' confirming the improvement."
                     ],
                     "failure_conditions": [
-                        "If 'Valence' remains unaffected during 'Electrolysis Relates Charge' perturbation, the hypothesis is nullified."
+                        "If 'Electrical Characterization' remains unaffected during 'Systems' perturbation, the hypothesis is nullified."
                     ],
                     "future_directions": [
-                        "Investigate mathematical formulations unifying 'Electrolysis Relates Charge' and 'Valence'."
+                        "Investigate mathematical formulations unifying 'Systems' and 'Electrical Characterization'."
                     ]
                 }
             },
             {
-                "insight_title": "[IMPROVEMENT] Electrolysis Relates Charge \u2194 Faraday",
+                "insight_title": "[COMPLEMENTARY] Systems \u2194 Thermal",
                 "research_note": {
-                    "what_was_discovered": "Integration of 'Electrolysis Relates Charge' demonstrably stabilizes the variance within 'Faraday'.",
-                    "why_it_matters": "Challenges existing models that treat 'Electrolysis Relates Charge' and 'Faraday' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Faraday' can scale linearly independent of 'Electrolysis Relates Charge'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Electrolysis Relates Charge'.",
+                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Systems' to 'Thermal'.",
+                    "why_it_matters": "Challenges existing models that treat 'Systems' and 'Thermal' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Thermal' can scale linearly independent of 'Systems'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Systems'.",
                     "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
                 },
-                "insight_type": "Improvement",
+                "insight_type": "Complementary",
                 "composite_score": 1.3,
                 "source_cluster": "Node_2",
                 "evidence": {
                     "supporting_evidence": [
-                        "Faraday's Law of Electrolysis relates charge to mass and valence"
+                        "Thermal and electrical characterization of battery components and systems"
                     ],
                     "contradicting_evidence": []
                 },
@@ -742,40 +1320,40 @@
                 },
                 "next_steps": {
                     "research_questions": [
-                        "What precise parameter thresholds in 'Electrolysis Relates Charge' trigger cascade failures in 'Faraday'?"
+                        "What precise parameter thresholds in 'Systems' trigger cascade failures in 'Thermal'?"
                     ],
                     "testable_hypotheses": [
-                        "If 'Electrolysis Relates Charge' is constrained dynamically, then 'Faraday' stability will increase by >15%."
+                        "If 'Systems' is constrained dynamically, then 'Thermal' stability will increase by >15%."
                     ],
                     "possible_experiments": [
-                        "Isolate 'Electrolysis Relates Charge' in a control simulation while applying extreme variance loads to 'Faraday'."
+                        "Isolate 'Systems' in a control simulation while applying extreme variance loads to 'Thermal'."
                     ],
                     "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Faraday' confirming the improvement."
+                        "Non-linear behavioral shift in 'Thermal' confirming the complementary."
                     ],
                     "failure_conditions": [
-                        "If 'Faraday' remains unaffected during 'Electrolysis Relates Charge' perturbation, the hypothesis is nullified."
+                        "If 'Thermal' remains unaffected during 'Systems' perturbation, the hypothesis is nullified."
                     ],
                     "future_directions": [
-                        "Investigate mathematical formulations unifying 'Electrolysis Relates Charge' and 'Faraday'."
+                        "Investigate mathematical formulations unifying 'Systems' and 'Thermal'."
                     ]
                 }
             },
             {
-                "insight_title": "[IMPROVEMENT] Resistance \u2194 Relationship",
+                "insight_title": "[GENERALIZATION] Systems \u2194 Thermal",
                 "research_note": {
-                    "what_was_discovered": "Integration of 'Resistance' demonstrably stabilizes the variance within 'Relationship'.",
-                    "why_it_matters": "Challenges existing models that treat 'Resistance' and 'Relationship' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Relationship' can scale linearly independent of 'Resistance'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Resistance'.",
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Systems' to 'Thermal'.",
+                    "why_it_matters": "Challenges existing models that treat 'Systems' and 'Thermal' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Thermal' can scale linearly independent of 'Systems'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Systems'.",
                     "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
                 },
-                "insight_type": "Improvement",
+                "insight_type": "Generalization",
                 "composite_score": 1.3,
                 "source_cluster": "Node_2",
                 "evidence": {
                     "supporting_evidence": [
-                        "Ohm's Law governs the relationship between voltage, current, and resistance"
+                        "Thermal and electrical characterization of battery components and systems"
                     ],
                     "contradicting_evidence": []
                 },
@@ -787,236 +1365,269 @@
                 },
                 "next_steps": {
                     "research_questions": [
-                        "What precise parameter thresholds in 'Resistance' trigger cascade failures in 'Relationship'?"
+                        "What precise parameter thresholds in 'Systems' trigger cascade failures in 'Thermal'?"
                     ],
                     "testable_hypotheses": [
-                        "If 'Resistance' is constrained dynamically, then 'Relationship' stability will increase by >15%."
+                        "If 'Systems' is constrained dynamically, then 'Thermal' stability will increase by >15%."
                     ],
                     "possible_experiments": [
-                        "Isolate 'Resistance' in a control simulation while applying extreme variance loads to 'Relationship'."
+                        "Isolate 'Systems' in a control simulation while applying extreme variance loads to 'Thermal'."
                     ],
                     "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Relationship' confirming the improvement."
+                        "Non-linear behavioral shift in 'Thermal' confirming the generalization."
                     ],
                     "failure_conditions": [
-                        "If 'Relationship' remains unaffected during 'Resistance' perturbation, the hypothesis is nullified."
+                        "If 'Thermal' remains unaffected during 'Systems' perturbation, the hypothesis is nullified."
                     ],
                     "future_directions": [
-                        "Investigate mathematical formulations unifying 'Resistance' and 'Relationship'."
+                        "Investigate mathematical formulations unifying 'Systems' and 'Thermal'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CONTRADICTION] Systems \u2194 Electrochemical Systems",
+                "research_note": {
+                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'Systems' fail under 'Electrochemical Systems' conditions.",
+                    "why_it_matters": "Challenges existing models that treat 'Systems' and 'Electrochemical Systems' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Electrochemical Systems' can scale linearly independent of 'Systems'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Systems'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Contradiction",
+                "composite_score": 1.3,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Thermodynamic laws govern the energy and entropy of electrochemical systems"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Systems' trigger cascade failures in 'Electrochemical Systems'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Systems' is constrained dynamically, then 'Electrochemical Systems' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Systems' in a control simulation while applying extreme variance loads to 'Electrochemical Systems'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Electrochemical Systems' confirming the contradiction."
+                    ],
+                    "failure_conditions": [
+                        "If 'Electrochemical Systems' remains unaffected during 'Systems' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Systems' and 'Electrochemical Systems'."
                     ]
                 }
             }
         ]
     },
     {
-        "cluster": "Node_1",
+        "cluster": "Node_5",
         "r_level": 2,
         "base_elements": [
-            "Thermal management data (e.g., temperature distributions, heat transfer coefficients, and thermal conductivity)",
-            "Inadequate battery management system leading to overcharging or over-discharging",
-            "Optimal electrode material composition for maximum energy density and power density",
-            "Thermal runaway and fire hazards due to inadequate thermal management",
-            "Battery management system data (e.g., state of charge, state of health, and control algorithms)",
-            "Lithium-ion batteries with high energy density and long cycle life",
-            "Flow batteries for large-scale energy storage applications",
-            "Battery performance data (e.g., charge-discharge curves, capacity, and power density)",
-            "Influence of battery architecture and configuration on thermal management and safety",
-            "Electrode material degradation and capacity fade over time"
+            "Thermodynamic laws govern the energy and entropy of electrochemical systems",
+            "Fick's laws of diffusion govern the transport of ions in electrolytes"
         ],
         "predictions": [
-            "If 'Time' is constrained dynamically, then 'Safety' stability will increase by >15%.",
-            "If 'Time' is constrained dynamically, then 'State' stability will increase by >15%.",
-            "If 'Time' is constrained dynamically, then 'State' stability will increase by >15%.",
-            "If 'Time' is constrained dynamically, then 'Safety' stability will increase by >15%."
+            "If 'Thermodynamic Laws Govern' is constrained dynamically, then 'Electrochemical Systems' stability will increase by >15%.",
+            "If 'Thermodynamic Laws Govern' is constrained dynamically, then 'Entropy' stability will increase by >15%.",
+            "If 'Thermodynamic Laws Govern' is constrained dynamically, then 'Energy' stability will increase by >15%.",
+            "If 'Transport' is constrained dynamically, then 'Electrolytes' stability will increase by >15%."
         ],
         "random_thoughts": [
-            "Identified a significant 'Extension' interaction mapping 'Time' to 'Safety'.",
-            "Structural behaviors in 'Time' provide a novel pathway to resolve bottlenecks in 'State'.",
-            "Found empirical conflict: Theoretical models of 'Time' fail under 'State' conditions.",
-            "Observed a critical tension where optimizing 'Time' inversely degrades 'Safety'."
+            "Identified a significant 'Extension' interaction mapping 'Thermodynamic Laws Govern' to 'Electrochemical Systems'.",
+            "Integration of 'Thermodynamic Laws Govern' demonstrably stabilizes the variance within 'Entropy'.",
+            "Found empirical conflict: Theoretical models of 'Thermodynamic Laws Govern' fail under 'Energy' conditions.",
+            "Identified a significant 'Complementary' interaction mapping 'Transport' to 'Electrolytes'."
         ],
         "scientific_research_insights": [
             {
-                "insight_title": "[EXTENSION] Time \u2194 Safety",
+                "insight_title": "[EXTENSION] Thermodynamic Laws Govern \u2194 Electrochemical Systems",
                 "research_note": {
-                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Time' to 'Safety'.",
-                    "why_it_matters": "Challenges existing models that treat 'Time' and 'Safety' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Safety' can scale linearly independent of 'Time'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Time'.",
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Thermodynamic Laws Govern' to 'Electrochemical Systems'.",
+                    "why_it_matters": "Challenges existing models that treat 'Thermodynamic Laws Govern' and 'Electrochemical Systems' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Electrochemical Systems' can scale linearly independent of 'Thermodynamic Laws Govern'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Thermodynamic Laws Govern'.",
                     "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
                 },
                 "insight_type": "Extension",
-                "composite_score": 2.075,
-                "source_cluster": "Node_1",
+                "composite_score": 1.3,
+                "source_cluster": "Node_5",
                 "evidence": {
                     "supporting_evidence": [
-                        "Solid-state batteries with enhanced safety and reduced charging times",
-                        "Hypothesis: Solid-state electrolytes reduce charging times and improve safety: Verification Metric/Test Method: Electrochemical impedance spectroscopy and thermal runaway testing"
+                        "Thermodynamic laws govern the energy and entropy of electrochemical systems"
                     ],
                     "contradicting_evidence": []
                 },
                 "scores": {
-                    "evidence_support": 0.8,
+                    "evidence_support": 0.4,
                     "novelty": 0.7,
-                    "confidence": 1.0,
-                    "expected_impact": 2.18
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
                 },
                 "next_steps": {
                     "research_questions": [
-                        "What precise parameter thresholds in 'Time' trigger cascade failures in 'Safety'?"
+                        "What precise parameter thresholds in 'Thermodynamic Laws Govern' trigger cascade failures in 'Electrochemical Systems'?"
                     ],
                     "testable_hypotheses": [
-                        "If 'Time' is constrained dynamically, then 'Safety' stability will increase by >15%."
+                        "If 'Thermodynamic Laws Govern' is constrained dynamically, then 'Electrochemical Systems' stability will increase by >15%."
                     ],
                     "possible_experiments": [
-                        "Isolate 'Time' in a control simulation while applying extreme variance loads to 'Safety'."
+                        "Isolate 'Thermodynamic Laws Govern' in a control simulation while applying extreme variance loads to 'Electrochemical Systems'."
                     ],
                     "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Safety' confirming the extension."
+                        "Non-linear behavioral shift in 'Electrochemical Systems' confirming the extension."
                     ],
                     "failure_conditions": [
-                        "If 'Safety' remains unaffected during 'Time' perturbation, the hypothesis is nullified."
+                        "If 'Electrochemical Systems' remains unaffected during 'Thermodynamic Laws Govern' perturbation, the hypothesis is nullified."
                     ],
                     "future_directions": [
-                        "Investigate mathematical formulations unifying 'Time' and 'Safety'."
+                        "Investigate mathematical formulations unifying 'Thermodynamic Laws Govern' and 'Electrochemical Systems'."
                     ]
                 }
             },
             {
-                "insight_title": "[ANALOGY] Time \u2194 State",
+                "insight_title": "[IMPROVEMENT] Thermodynamic Laws Govern \u2194 Entropy",
                 "research_note": {
-                    "what_was_discovered": "Structural behaviors in 'Time' provide a novel pathway to resolve bottlenecks in 'State'.",
-                    "why_it_matters": "Challenges existing models that treat 'Time' and 'State' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'State' can scale linearly independent of 'Time'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Time'.",
+                    "what_was_discovered": "Integration of 'Thermodynamic Laws Govern' demonstrably stabilizes the variance within 'Entropy'.",
+                    "why_it_matters": "Challenges existing models that treat 'Thermodynamic Laws Govern' and 'Entropy' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Entropy' can scale linearly independent of 'Thermodynamic Laws Govern'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Thermodynamic Laws Govern'.",
                     "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
                 },
-                "insight_type": "Analogy",
-                "composite_score": 2.075,
-                "source_cluster": "Node_1",
+                "insight_type": "Improvement",
+                "composite_score": 1.3,
+                "source_cluster": "Node_5",
                 "evidence": {
                     "supporting_evidence": [
-                        "Solid-state batteries with enhanced safety and reduced charging times",
-                        "Hypothesis: Solid-state electrolytes reduce charging times and improve safety: Verification Metric/Test Method: Electrochemical impedance spectroscopy and thermal runaway testing"
+                        "Thermodynamic laws govern the energy and entropy of electrochemical systems"
                     ],
                     "contradicting_evidence": []
                 },
                 "scores": {
-                    "evidence_support": 0.8,
+                    "evidence_support": 0.4,
                     "novelty": 0.7,
-                    "confidence": 1.0,
-                    "expected_impact": 2.18
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
                 },
                 "next_steps": {
                     "research_questions": [
-                        "What precise parameter thresholds in 'Time' trigger cascade failures in 'State'?"
+                        "What precise parameter thresholds in 'Thermodynamic Laws Govern' trigger cascade failures in 'Entropy'?"
                     ],
                     "testable_hypotheses": [
-                        "If 'Time' is constrained dynamically, then 'State' stability will increase by >15%."
+                        "If 'Thermodynamic Laws Govern' is constrained dynamically, then 'Entropy' stability will increase by >15%."
                     ],
                     "possible_experiments": [
-                        "Isolate 'Time' in a control simulation while applying extreme variance loads to 'State'."
+                        "Isolate 'Thermodynamic Laws Govern' in a control simulation while applying extreme variance loads to 'Entropy'."
                     ],
                     "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'State' confirming the analogy."
+                        "Non-linear behavioral shift in 'Entropy' confirming the improvement."
                     ],
                     "failure_conditions": [
-                        "If 'State' remains unaffected during 'Time' perturbation, the hypothesis is nullified."
+                        "If 'Entropy' remains unaffected during 'Thermodynamic Laws Govern' perturbation, the hypothesis is nullified."
                     ],
                     "future_directions": [
-                        "Investigate mathematical formulations unifying 'Time' and 'State'."
+                        "Investigate mathematical formulations unifying 'Thermodynamic Laws Govern' and 'Entropy'."
                     ]
                 }
             },
             {
-                "insight_title": "[CONTRADICTION] Time \u2194 State",
+                "insight_title": "[CONTRADICTION] Thermodynamic Laws Govern \u2194 Energy",
                 "research_note": {
-                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'Time' fail under 'State' conditions.",
-                    "why_it_matters": "Challenges existing models that treat 'Time' and 'State' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'State' can scale linearly independent of 'Time'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Time'.",
+                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'Thermodynamic Laws Govern' fail under 'Energy' conditions.",
+                    "why_it_matters": "Challenges existing models that treat 'Thermodynamic Laws Govern' and 'Energy' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Energy' can scale linearly independent of 'Thermodynamic Laws Govern'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Thermodynamic Laws Govern'.",
                     "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
                 },
                 "insight_type": "Contradiction",
-                "composite_score": 2.075,
-                "source_cluster": "Node_1",
+                "composite_score": 1.3,
+                "source_cluster": "Node_5",
                 "evidence": {
                     "supporting_evidence": [
-                        "Solid-state batteries with enhanced safety and reduced charging times",
-                        "Hypothesis: Solid-state electrolytes reduce charging times and improve safety: Verification Metric/Test Method: Electrochemical impedance spectroscopy and thermal runaway testing"
+                        "Thermodynamic laws govern the energy and entropy of electrochemical systems"
                     ],
                     "contradicting_evidence": []
                 },
                 "scores": {
-                    "evidence_support": 0.8,
+                    "evidence_support": 0.4,
                     "novelty": 0.7,
-                    "confidence": 1.0,
-                    "expected_impact": 2.18
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
                 },
                 "next_steps": {
                     "research_questions": [
-                        "What precise parameter thresholds in 'Time' trigger cascade failures in 'State'?"
+                        "What precise parameter thresholds in 'Thermodynamic Laws Govern' trigger cascade failures in 'Energy'?"
                     ],
                     "testable_hypotheses": [
-                        "If 'Time' is constrained dynamically, then 'State' stability will increase by >15%."
+                        "If 'Thermodynamic Laws Govern' is constrained dynamically, then 'Energy' stability will increase by >15%."
                     ],
                     "possible_experiments": [
-                        "Isolate 'Time' in a control simulation while applying extreme variance loads to 'State'."
+                        "Isolate 'Thermodynamic Laws Govern' in a control simulation while applying extreme variance loads to 'Energy'."
                     ],
                     "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'State' confirming the contradiction."
+                        "Non-linear behavioral shift in 'Energy' confirming the contradiction."
                     ],
                     "failure_conditions": [
-                        "If 'State' remains unaffected during 'Time' perturbation, the hypothesis is nullified."
+                        "If 'Energy' remains unaffected during 'Thermodynamic Laws Govern' perturbation, the hypothesis is nullified."
                     ],
                     "future_directions": [
-                        "Investigate mathematical formulations unifying 'Time' and 'State'."
+                        "Investigate mathematical formulations unifying 'Thermodynamic Laws Govern' and 'Energy'."
                     ]
                 }
             },
             {
-                "insight_title": "[TRADE-OFF] Time \u2194 Safety",
+                "insight_title": "[COMPLEMENTARY] Transport \u2194 Electrolytes",
                 "research_note": {
-                    "what_was_discovered": "Observed a critical tension where optimizing 'Time' inversely degrades 'Safety'.",
-                    "why_it_matters": "Challenges existing models that treat 'Time' and 'Safety' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Safety' can scale linearly independent of 'Time'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Time'.",
+                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Transport' to 'Electrolytes'.",
+                    "why_it_matters": "Challenges existing models that treat 'Transport' and 'Electrolytes' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Electrolytes' can scale linearly independent of 'Transport'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Transport'.",
                     "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
                 },
-                "insight_type": "Trade-off",
-                "composite_score": 1.701,
-                "source_cluster": "Node_1",
+                "insight_type": "Complementary",
+                "composite_score": 1.3,
+                "source_cluster": "Node_5",
                 "evidence": {
                     "supporting_evidence": [
-                        "Solid-state batteries with enhanced safety and reduced charging times",
-                        "Hypothesis: Solid-state electrolytes reduce charging times and improve safety: Verification Metric/Test Method: Electrochemical impedance spectroscopy and thermal runaway testing"
+                        "Fick's laws of diffusion govern the transport of ions in electrolytes"
                     ],
                     "contradicting_evidence": []
                 },
                 "scores": {
-                    "evidence_support": 0.8,
+                    "evidence_support": 0.4,
                     "novelty": 0.7,
-                    "confidence": 1.0,
-                    "expected_impact": 1.8
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
                 },
                 "next_steps": {
                     "research_questions": [
-                        "What precise parameter thresholds in 'Time' trigger cascade failures in 'Safety'?"
+                        "What precise parameter thresholds in 'Transport' trigger cascade failures in 'Electrolytes'?"
                     ],
                     "testable_hypotheses": [
-                        "If 'Time' is constrained dynamically, then 'Safety' stability will increase by >15%."
+                        "If 'Transport' is constrained dynamically, then 'Electrolytes' stability will increase by >15%."
                     ],
                     "possible_experiments": [
-                        "Isolate 'Time' in a control simulation while applying extreme variance loads to 'Safety'."
+                        "Isolate 'Transport' in a control simulation while applying extreme variance loads to 'Electrolytes'."
                     ],
                     "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Safety' confirming the trade-off."
+                        "Non-linear behavioral shift in 'Electrolytes' confirming the complementary."
                     ],
                     "failure_conditions": [
-                        "If 'Safety' remains unaffected during 'Time' perturbation, the hypothesis is nullified."
+                        "If 'Electrolytes' remains unaffected during 'Transport' perturbation, the hypothesis is nullified."
                     ],
                     "future_directions": [
-                        "Investigate mathematical formulations unifying 'Time' and 'Safety'."
+                        "Investigate mathematical formulations unifying 'Transport' and 'Electrolytes'."
                     ]
                 }
             }
@@ -1026,35 +1637,169 @@
         "cluster": "Node_1",
         "r_level": 3,
         "base_elements": [
-            "Electrolyte leakage and contamination resulting in reduced performance and safety",
-            "The Nernst equation relates electrode potential to concentration and temperature",
+            "Ohm's law relates voltage, current, and resistance in electrical circuits",
             "The Butler-Volmer equation describes the kinetics of electrochemical reactions",
-            "Effects of electrode morphology and surface area on battery performance",
-            "Development of accurate models for predicting battery lifespan and degradation mechanisms",
-            "Thermodynamic laws dictate the behavior of energy and entropy in battery systems",
-            "Short circuits and electrical faults due to manufacturing defects or improper handling",
-            "Designing an optimal battery requires the integration of electrochemistry, materials science, electrical engineering, and thermodynamics to achieve high performance, efficiency, and lifespan"
+            "Electrode material properties and microstructure",
+            "Increasing the surface area of electrodes will improve battery power density: Measure the power density of batteries with varying electrode surface areas using electrochemical impedance spectroscopy",
+            "Short circuits and electrical shocks due to manufacturing defects or user error",
+            "The Nernst equation relates electrode potential to concentration and temperature",
+            "Flow batteries with vanadium redox couples"
         ],
         "predictions": [
-            "If 'Optimal Battery' is constrained dynamically, then 'Thermodynamics' stability will increase by >15%.",
-            "If 'Optimal Battery' is constrained dynamically, then 'Thermodynamics' stability will increase by >15%.",
-            "If 'Optimal Battery' is constrained dynamically, then 'Integration' stability will increase by >15%.",
-            "If 'Optimal Battery' is constrained dynamically, then 'Lifespan' stability will increase by >15%."
+            "If 'Increasing' is constrained dynamically, then 'Surface Area' stability will increase by >15%.",
+            "If 'Increasing' is constrained dynamically, then 'Power Density' stability will increase by >15%.",
+            "If 'Increasing' is constrained dynamically, then 'Varying Electrode Surface Areas' stability will increase by >15%.",
+            "If 'Increasing' is constrained dynamically, then 'Varying Electrode Surface Areas' stability will increase by >15%."
         ],
         "random_thoughts": [
-            "Integration of 'Optimal Battery' demonstrably stabilizes the variance within 'Thermodynamics'.",
-            "Identified a significant 'Complementary' interaction mapping 'Optimal Battery' to 'Thermodynamics'.",
-            "Identified a significant 'Generalization' interaction mapping 'Optimal Battery' to 'Integration'.",
-            "Identified a significant 'Generalization' interaction mapping 'Optimal Battery' to 'Lifespan'."
+            "Structural behaviors in 'Increasing' provide a novel pathway to resolve bottlenecks in 'Surface Area'.",
+            "Structural behaviors in 'Increasing' provide a novel pathway to resolve bottlenecks in 'Power Density'.",
+            "Structural behaviors in 'Increasing' provide a novel pathway to resolve bottlenecks in 'Varying Electrode Surface Areas'.",
+            "Integration of 'Increasing' demonstrably stabilizes the variance within 'Varying Electrode Surface Areas'."
         ],
         "scientific_research_insights": [
             {
-                "insight_title": "[IMPROVEMENT] Optimal Battery \u2194 Thermodynamics",
+                "insight_title": "[ANALOGY] Increasing \u2194 Surface Area",
                 "research_note": {
-                    "what_was_discovered": "Integration of 'Optimal Battery' demonstrably stabilizes the variance within 'Thermodynamics'.",
-                    "why_it_matters": "Challenges existing models that treat 'Optimal Battery' and 'Thermodynamics' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Thermodynamics' can scale linearly independent of 'Optimal Battery'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Optimal Battery'.",
+                    "what_was_discovered": "Structural behaviors in 'Increasing' provide a novel pathway to resolve bottlenecks in 'Surface Area'.",
+                    "why_it_matters": "Challenges existing models that treat 'Increasing' and 'Surface Area' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Surface Area' can scale linearly independent of 'Increasing'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Increasing'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 1.3,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Increasing the surface area of electrodes will improve battery power density: Measure the power density of batteries with varying electrode surface areas using electrochemical impedance spectroscopy"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Increasing' trigger cascade failures in 'Surface Area'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Increasing' is constrained dynamically, then 'Surface Area' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Increasing' in a control simulation while applying extreme variance loads to 'Surface Area'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Surface Area' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Surface Area' remains unaffected during 'Increasing' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Increasing' and 'Surface Area'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[ANALOGY] Increasing \u2194 Power Density",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Increasing' provide a novel pathway to resolve bottlenecks in 'Power Density'.",
+                    "why_it_matters": "Challenges existing models that treat 'Increasing' and 'Power Density' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Power Density' can scale linearly independent of 'Increasing'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Increasing'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 1.3,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Increasing the surface area of electrodes will improve battery power density: Measure the power density of batteries with varying electrode surface areas using electrochemical impedance spectroscopy"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Increasing' trigger cascade failures in 'Power Density'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Increasing' is constrained dynamically, then 'Power Density' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Increasing' in a control simulation while applying extreme variance loads to 'Power Density'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Power Density' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Power Density' remains unaffected during 'Increasing' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Increasing' and 'Power Density'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[ANALOGY] Increasing \u2194 Varying Electrode Surface Areas",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Increasing' provide a novel pathway to resolve bottlenecks in 'Varying Electrode Surface Areas'.",
+                    "why_it_matters": "Challenges existing models that treat 'Increasing' and 'Varying Electrode Surface Areas' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Varying Electrode Surface Areas' can scale linearly independent of 'Increasing'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Increasing'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 1.3,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Increasing the surface area of electrodes will improve battery power density: Measure the power density of batteries with varying electrode surface areas using electrochemical impedance spectroscopy"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 1.4
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Increasing' trigger cascade failures in 'Varying Electrode Surface Areas'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Increasing' is constrained dynamically, then 'Varying Electrode Surface Areas' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Increasing' in a control simulation while applying extreme variance loads to 'Varying Electrode Surface Areas'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Varying Electrode Surface Areas' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Varying Electrode Surface Areas' remains unaffected during 'Increasing' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Increasing' and 'Varying Electrode Surface Areas'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Increasing \u2194 Varying Electrode Surface Areas",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Increasing' demonstrably stabilizes the variance within 'Varying Electrode Surface Areas'.",
+                    "why_it_matters": "Challenges existing models that treat 'Increasing' and 'Varying Electrode Surface Areas' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Varying Electrode Surface Areas' can scale linearly independent of 'Increasing'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Increasing'.",
                     "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
                 },
                 "insight_type": "Improvement",
@@ -1062,7 +1807,7 @@
                 "source_cluster": "Node_1",
                 "evidence": {
                     "supporting_evidence": [
-                        "Designing an optimal battery requires the integration of electrochemistry, materials science, electrical engineering, and thermodynamics to achieve high performance, efficiency, and lifespan"
+                        "Increasing the surface area of electrodes will improve battery power density: Measure the power density of batteries with varying electrode surface areas using electrochemical impedance spectroscopy"
                     ],
                     "contradicting_evidence": []
                 },
@@ -1074,157 +1819,22 @@
                 },
                 "next_steps": {
                     "research_questions": [
-                        "What precise parameter thresholds in 'Optimal Battery' trigger cascade failures in 'Thermodynamics'?"
+                        "What precise parameter thresholds in 'Increasing' trigger cascade failures in 'Varying Electrode Surface Areas'?"
                     ],
                     "testable_hypotheses": [
-                        "If 'Optimal Battery' is constrained dynamically, then 'Thermodynamics' stability will increase by >15%."
+                        "If 'Increasing' is constrained dynamically, then 'Varying Electrode Surface Areas' stability will increase by >15%."
                     ],
                     "possible_experiments": [
-                        "Isolate 'Optimal Battery' in a control simulation while applying extreme variance loads to 'Thermodynamics'."
+                        "Isolate 'Increasing' in a control simulation while applying extreme variance loads to 'Varying Electrode Surface Areas'."
                     ],
                     "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Thermodynamics' confirming the improvement."
+                        "Non-linear behavioral shift in 'Varying Electrode Surface Areas' confirming the improvement."
                     ],
                     "failure_conditions": [
-                        "If 'Thermodynamics' remains unaffected during 'Optimal Battery' perturbation, the hypothesis is nullified."
+                        "If 'Varying Electrode Surface Areas' remains unaffected during 'Increasing' perturbation, the hypothesis is nullified."
                     ],
                     "future_directions": [
-                        "Investigate mathematical formulations unifying 'Optimal Battery' and 'Thermodynamics'."
-                    ]
-                }
-            },
-            {
-                "insight_title": "[COMPLEMENTARY] Optimal Battery \u2194 Thermodynamics",
-                "research_note": {
-                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Optimal Battery' to 'Thermodynamics'.",
-                    "why_it_matters": "Challenges existing models that treat 'Optimal Battery' and 'Thermodynamics' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Thermodynamics' can scale linearly independent of 'Optimal Battery'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Optimal Battery'.",
-                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
-                },
-                "insight_type": "Complementary",
-                "composite_score": 1.3,
-                "source_cluster": "Node_1",
-                "evidence": {
-                    "supporting_evidence": [
-                        "Designing an optimal battery requires the integration of electrochemistry, materials science, electrical engineering, and thermodynamics to achieve high performance, efficiency, and lifespan"
-                    ],
-                    "contradicting_evidence": []
-                },
-                "scores": {
-                    "evidence_support": 0.4,
-                    "novelty": 0.7,
-                    "confidence": 0.5,
-                    "expected_impact": 1.4
-                },
-                "next_steps": {
-                    "research_questions": [
-                        "What precise parameter thresholds in 'Optimal Battery' trigger cascade failures in 'Thermodynamics'?"
-                    ],
-                    "testable_hypotheses": [
-                        "If 'Optimal Battery' is constrained dynamically, then 'Thermodynamics' stability will increase by >15%."
-                    ],
-                    "possible_experiments": [
-                        "Isolate 'Optimal Battery' in a control simulation while applying extreme variance loads to 'Thermodynamics'."
-                    ],
-                    "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Thermodynamics' confirming the complementary."
-                    ],
-                    "failure_conditions": [
-                        "If 'Thermodynamics' remains unaffected during 'Optimal Battery' perturbation, the hypothesis is nullified."
-                    ],
-                    "future_directions": [
-                        "Investigate mathematical formulations unifying 'Optimal Battery' and 'Thermodynamics'."
-                    ]
-                }
-            },
-            {
-                "insight_title": "[GENERALIZATION] Optimal Battery \u2194 Integration",
-                "research_note": {
-                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Optimal Battery' to 'Integration'.",
-                    "why_it_matters": "Challenges existing models that treat 'Optimal Battery' and 'Integration' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Integration' can scale linearly independent of 'Optimal Battery'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Optimal Battery'.",
-                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
-                },
-                "insight_type": "Generalization",
-                "composite_score": 1.3,
-                "source_cluster": "Node_1",
-                "evidence": {
-                    "supporting_evidence": [
-                        "Designing an optimal battery requires the integration of electrochemistry, materials science, electrical engineering, and thermodynamics to achieve high performance, efficiency, and lifespan"
-                    ],
-                    "contradicting_evidence": []
-                },
-                "scores": {
-                    "evidence_support": 0.4,
-                    "novelty": 0.7,
-                    "confidence": 0.5,
-                    "expected_impact": 1.4
-                },
-                "next_steps": {
-                    "research_questions": [
-                        "What precise parameter thresholds in 'Optimal Battery' trigger cascade failures in 'Integration'?"
-                    ],
-                    "testable_hypotheses": [
-                        "If 'Optimal Battery' is constrained dynamically, then 'Integration' stability will increase by >15%."
-                    ],
-                    "possible_experiments": [
-                        "Isolate 'Optimal Battery' in a control simulation while applying extreme variance loads to 'Integration'."
-                    ],
-                    "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Integration' confirming the generalization."
-                    ],
-                    "failure_conditions": [
-                        "If 'Integration' remains unaffected during 'Optimal Battery' perturbation, the hypothesis is nullified."
-                    ],
-                    "future_directions": [
-                        "Investigate mathematical formulations unifying 'Optimal Battery' and 'Integration'."
-                    ]
-                }
-            },
-            {
-                "insight_title": "[GENERALIZATION] Optimal Battery \u2194 Lifespan",
-                "research_note": {
-                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Optimal Battery' to 'Lifespan'.",
-                    "why_it_matters": "Challenges existing models that treat 'Optimal Battery' and 'Lifespan' as isolated variables.",
-                    "assumptions_challenged": "The assumption that 'Lifespan' can scale linearly independent of 'Optimal Battery'.",
-                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Optimal Battery'.",
-                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
-                },
-                "insight_type": "Generalization",
-                "composite_score": 1.3,
-                "source_cluster": "Node_1",
-                "evidence": {
-                    "supporting_evidence": [
-                        "Designing an optimal battery requires the integration of electrochemistry, materials science, electrical engineering, and thermodynamics to achieve high performance, efficiency, and lifespan"
-                    ],
-                    "contradicting_evidence": []
-                },
-                "scores": {
-                    "evidence_support": 0.4,
-                    "novelty": 0.7,
-                    "confidence": 0.5,
-                    "expected_impact": 1.4
-                },
-                "next_steps": {
-                    "research_questions": [
-                        "What precise parameter thresholds in 'Optimal Battery' trigger cascade failures in 'Lifespan'?"
-                    ],
-                    "testable_hypotheses": [
-                        "If 'Optimal Battery' is constrained dynamically, then 'Lifespan' stability will increase by >15%."
-                    ],
-                    "possible_experiments": [
-                        "Isolate 'Optimal Battery' in a control simulation while applying extreme variance loads to 'Lifespan'."
-                    ],
-                    "predicted_outcomes": [
-                        "Non-linear behavioral shift in 'Lifespan' confirming the generalization."
-                    ],
-                    "failure_conditions": [
-                        "If 'Lifespan' remains unaffected during 'Optimal Battery' perturbation, the hypothesis is nullified."
-                    ],
-                    "future_directions": [
-                        "Investigate mathematical formulations unifying 'Optimal Battery' and 'Lifespan'."
+                        "Investigate mathematical formulations unifying 'Increasing' and 'Varying Electrode Surface Areas'."
                     ]
                 }
             }
