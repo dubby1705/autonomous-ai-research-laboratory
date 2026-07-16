@@ -316,13 +316,75 @@ def run_doscan_algorithm(max_r: int = 4):
         print("❌ Knowledge base empty. Run Phase 2 first.")
         return
 
+    _doscan_cluster_loop(unprocessed_items, max_r=max_r, phase_label="PRIMARY")
+
+def run_doscan_deepening(injected_hypotheses: List[str], max_r: int = 4):
+    """
+    Recursively deepens research on approved hypotheses from the Hypothesis Engine.
+    Takes refined hypotheses, injects them into the knowledge base, and runs
+    DOSCAN's full r=1→r=4 clustering cycle to discover deeper relationships.
+    """
+    global global_kb_cache, global_telemetry
+    
+    if not injected_hypotheses:
+        print("\n⏸️  [DEEPENING] No approved hypotheses to deepen. Skipping feedback loop.")
+        return
+    
+    print("\n" + "="*80)
+    print("🔄 DOSCAN DEEPENING CYCLE — Recursive Hypothesis-Driven Clustering")
+    print("="*80)
+    
+    # Step 1: Reload updated knowledge base
+    global_kb_cache = load_knowledge_base()
+    
+    # Step 2: Tag and inject the approved hypotheses as fresh research material
+    tagged_hypotheses = [f"[APPROVED_HYPOTHESIS] {h}" for h in injected_hypotheses]
+    
+    # Step 3: Append them to the knowledge base cache for clustering context
+    global_kb_cache.extend(tagged_hypotheses)
+    
+    # Step 4: Also inject them as a separate unprocessed cluster input
+    # The hypotheses themselves become the primary items to cluster
+    deep_items = tagged_hypotheses.copy()
+    
+    print(f"\n📥 Injected {len(deep_items)} approved hypotheses into DOSCAN deepening pipeline...")
+    print(f"📚 Knowledge base expanded to {len(global_kb_cache)} total items.\n")
+    
+    # Step 5: Run the full multi-resolution clustering loop (r=1 to r=4) on the hypotheses
+    _doscan_cluster_loop(deep_items, max_r=max_r, phase_label="DEEPEN")
+    
+    print(f"\n🔁 [DEEPENING CYCLE COMPLETE] Hypotheses have been clustered and deepened.")
+    print("="*80)
+
+def _doscan_cluster_loop(unprocessed_items: List[str], max_r: int = 4, phase_label: str = "PRIMARY"):
+    """
+    Internal shared clustering loop used by both the primary DOSCAN run
+    and the deepening feedback cycle.
+    """
+    global global_kb_cache, global_telemetry
+    
+    # Reset telemetry counters for this cycle
+    global_telemetry = {
+        "concepts_extracted": set(), "kg_edges_generated": 0, "candidates_rejected": 0,
+        "hypotheses_deferred": 0, "accepted_insights": 0
+    }
+    
+    # Load existing breakthroughs so we don't overwrite them
+    existing_breakthroughs = []
+    if os.path.exists("doscan_breakthroughs.json"):
+        try:
+            with open("doscan_breakthroughs.json", "r", encoding="utf-8") as f:
+                existing_breakthroughs = json.load(f)
+        except Exception:
+            existing_breakthroughs = []
+
     r = 1
-    final_breakthroughs = []
+    final_breakthroughs = list(existing_breakthroughs)
     strategy_weights = load_exploration_weights()
 
     while r <= max_r and unprocessed_items:
         eps = max(0.0, 0.45 - (r * 0.15))
-        print(f"\n⚡ Ingesting Layer (r = {r} | Expansion Limit: {eps*100:.1f}%) — Core Links: {len(unprocessed_items)}\n")
+        print(f"\n⚡ [{phase_label}] Layer (r = {r} | Expansion Limit: {eps*100:.1f}%) — Items: {len(unprocessed_items)}\n")
         
         vectors = build_tfidf_vectors(unprocessed_items)
         clusters, noise = dbscan_text_cluster(unprocessed_items, vectors, eps=eps)
@@ -333,15 +395,13 @@ def run_doscan_algorithm(max_r: int = 4):
             for future in concurrent.futures.as_completed(futures):
                 result = future.result()
                 if result["breakthrough_found"]:
-                    # COMMENTED OUT FINAL SUCCESSFUL INSIGHTS AS REQUESTED
-                    # top = sorted(result["exploratory_insights"], key=lambda x: x["composite_score"], reverse=True)[0]
-                    # print(f"\n  ✅ [RESEARCH INSIGHT] Node: {result['cluster_name']}")
-                    # print(f"    ├─ Concepts: {top['insight_title']}")
-                    # print(f"    ├─ Note:     {top['research_note']['what_was_discovered']}")
-                    
                     final_breakthroughs.append({
-                        "cluster": result["cluster_name"], "r_level": r, "base_elements": result["items"],
-                        "predictions": result["novel_predictions"], "random_thoughts": result["randomized_lateral_ideas"],
+                        "cluster": result["cluster_name"],
+                        "phase": phase_label,
+                        "r_level": r,
+                        "base_elements": result["items"],
+                        "predictions": result["novel_predictions"],
+                        "random_thoughts": result["randomized_lateral_ideas"],
                         "scientific_research_insights": result["exploratory_insights"]
                     })
                 else:
@@ -351,20 +411,22 @@ def run_doscan_algorithm(max_r: int = 4):
             unprocessed_items = failed_items_for_next_r
             r += 1
         else:
-            print("\n🎉 Full scientific space graph convergence completed.")
+            print(f"\n🎉 [{phase_label}] Full scientific space graph convergence completed.")
             break
 
+    # Update strategy weights using insights from this cycle
     for entry in final_breakthroughs:
-        for insight in entry["scientific_research_insights"]:
-            i_type = insight["insight_type"]
-            if insight["composite_score"] > 0.65:
-                strategy_weights[i_type] = min(2.5, strategy_weights.get(i_type, 1.0) + 0.15) 
-            else:
-                strategy_weights[i_type] = max(0.4, strategy_weights.get(i_type, 1.0) - 0.08) 
+        for insight in entry.get("scientific_research_insights", []):
+            i_type = insight.get("insight_type")
+            if i_type and "composite_score" in insight:
+                if insight["composite_score"] > 0.65:
+                    strategy_weights[i_type] = min(2.5, strategy_weights.get(i_type, 1.0) + 0.15) 
+                else:
+                    strategy_weights[i_type] = max(0.4, strategy_weights.get(i_type, 1.0) - 0.08)
     save_exploration_weights(strategy_weights)
 
     print("\n" + "="*80)
-    print("📊 DOSCAN ONTOLOGY SUMMARY LOG")
+    print(f"📊 [{phase_label}] DOSCAN ONTOLOGY SUMMARY LOG")
     print("="*80)
     print(f"  🔹 Pure Scientific Concepts Extracted: {len(global_telemetry['concepts_extracted'])}")
     print(f"  🔹 Knowledge Graph Edges Generated:    {global_telemetry['kg_edges_generated']}")
@@ -376,7 +438,7 @@ def run_doscan_algorithm(max_r: int = 4):
     if final_breakthroughs:
         with open("doscan_breakthroughs.json", "w", encoding="utf-8") as f:
             json.dump(final_breakthroughs, f, indent=4)
-        print(f"[DOSCAN Complete] Scientific insights safely written to 'doscan_breakthroughs.json'.\n")
+        print(f"[DOSCAN {phase_label}] Scientific insights merged into 'doscan_breakthroughs.json'.\n")
 
 if __name__ == "__main__":
     run_doscan_algorithm()

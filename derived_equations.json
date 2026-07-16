@@ -1,0 +1,323 @@
+{
+    "total_derived": 5,
+    "total_rejected": 0,
+    "equations": [
+        {
+            "equation": {
+                "equation_id": "EQ-001",
+                "name": "Quantum Internet Architecture Feasibility",
+                "equation_latex": "F = \\frac{Q \\cdot A \\cdot \\lambda}{N \\cdot D \\cdot T}",
+                "equation_text": "F = Q * A * lambda / (N * D * T)",
+                "variables": {
+                    "F": "Feasibility of Quantum Internet Architecture (dimensionless)",
+                    "Q": "Quantum Error Correction Efficiency (dimensionless)",
+                    "A": "Anyon-based Quantum Computing Advantage (dimensionless)",
+                    "lambda": "Quantum Communication Protocol Latency (T^1)",
+                    "N": "Number of Quantum Nodes (dimensionless)",
+                    "D": "Distance between Quantum Nodes (L^1)",
+                    "T": "Time for Quantum Information Transmission (T^1)"
+                },
+                "left_hand_units": "1",
+                "right_hand_units": "1",
+                "dimensionally_consistent": true,
+                "derived_from_hypothesis": "Hybrid approach combining topological quantum codes with other quantum error correction methods",
+                "derivation_logic": "By considering the trade-offs between quantum error correction efficiency, anyon-based quantum computing advantage, and quantum communication protocol latency, we can derive an equation that captures the feasibility of the proposed quantum internet architecture.",
+                "domain_constraints": [
+                    "Q > 0",
+                    "A > 0",
+                    "lambda > 0",
+                    "N > 0",
+                    "D > 0",
+                    "T > 0"
+                ],
+                "boundary_conditions": [
+                    "as N -> infinity",
+                    "as D -> 0",
+                    "as T -> 0"
+                ],
+                "computational_complexity": "O(N^2)",
+                "num_operations": 100
+            },
+            "validation": {
+                "equation_id": "EQ-001",
+                "is_physically_plausible": true,
+                "is_mathematically_consistent": true,
+                "potential_issues": [
+                    "Contains division \u2014 check for denominator approaching zero."
+                ],
+                "suggested_fixes": [
+                    "Add guard clauses for: Contains division \u2014 check for denominator approaching zero."
+                ],
+                "plausibility_score": 0.9
+            },
+            "complexity": {
+                "big_o": "O(n^3)",
+                "total_operations": 5,
+                "num_additions": 0,
+                "num_multiplications": 4,
+                "num_divisions": 1,
+                "num_powers": 0,
+                "num_function_calls": 0,
+                "num_variables": 7
+            },
+            "numerical_stability_issues": [
+                "Contains division \u2014 check for denominator approaching zero."
+            ],
+            "timestamp": "2026-07-17T01:17:03.577134"
+        },
+        {
+            "equation": {
+                "equation_id": "EQ-001",
+                "name": "Quantum Entanglement-Based Secure Key Distribution Rate",
+                "equation_latex": "R = \\frac{N_{photons} \\cdot f_{entanglement} \\cdot P_{success}}{d_{satellite} \\cdot d_{fiber} \\cdot \\tau_{decoherence}}",
+                "equation_text": "R = (N_photons * f_entanglement * P_success) / (d_satellite * d_fiber * tau_decoherence)",
+                "variables": {
+                    "R": "Secure Key Distribution Rate (bit s^-1)",
+                    "N_{photons}": "Number of Photons (dimensionless)",
+                    "f_{entanglement}": "Entanglement Frequency (s^-1)",
+                    "P_{success}": "Probability of Successful Entanglement (dimensionless)",
+                    "d_{satellite}": "Distance between Satellites (L^1)",
+                    "d_{fiber}": "Distance of Fiber Optic Network (L^1)",
+                    "tau_{decoherence}": "Decoherence Time (T^1)"
+                },
+                "left_hand_units": "bit s^-1",
+                "right_hand_units": "bit s^-1",
+                "dimensionally_consistent": true,
+                "derived_from_hypothesis": "Hybrid approach combining low-Earth orbit quantum satellites with terrestrial fiber optic networks",
+                "derivation_logic": "By considering the rate of secure key distribution as a function of the number of photons, entanglement frequency, probability of successful entanglement, distance between satellites, distance of fiber optic network, and decoherence time",
+                "domain_constraints": [
+                    "N_{photons} > 0",
+                    "f_{entanglement} > 0",
+                    "0 \\leq P_{success} \\leq 1",
+                    "d_{satellite} > 0",
+                    "d_{fiber} > 0",
+                    "tau_{decoherence} > 0"
+                ],
+                "boundary_conditions": [
+                    "as d_{satellite} -> 0",
+                    "as d_{fiber} -> 0",
+                    "as tau_{decoherence} -> 0"
+                ],
+                "computational_complexity": "O(1)",
+                "num_operations": 7
+            },
+            "validation": {
+                "equation_id": "EQ-001",
+                "is_physically_plausible": true,
+                "is_mathematically_consistent": true,
+                "potential_issues": [
+                    "Contains division \u2014 check for denominator approaching zero."
+                ],
+                "suggested_fixes": [
+                    "Add guard clauses for: Contains division \u2014 check for denominator approaching zero."
+                ],
+                "plausibility_score": 0.9
+            },
+            "complexity": {
+                "big_o": "O(n^3)",
+                "total_operations": 6,
+                "num_additions": 0,
+                "num_multiplications": 4,
+                "num_divisions": 1,
+                "num_powers": 0,
+                "num_function_calls": 1,
+                "num_variables": 7
+            },
+            "numerical_stability_issues": [
+                "Contains division \u2014 check for denominator approaching zero."
+            ],
+            "timestamp": "2026-07-17T01:17:09.899270"
+        },
+        {
+            "equation": {
+                "equation_id": "EQ-001",
+                "name": "Quantum Network Decoherence Compensation",
+                "equation_latex": "\\frac{d\\phi}{dz} = -\\alpha\\phi + \\beta\\phi^3",
+                "equation_text": "d\u03c6/dz = -\u03b1\u03c6 + \u03b2\u03c6^3",
+                "variables": {
+                    "\u03c6": "Optical phase (dimensionless)",
+                    "z": "Distance along the fiber (L^1)",
+                    "\u03b1": "Linear loss coefficient (L^-1)",
+                    "\u03b2": "Nonlinear gain coefficient (L^-1)",
+                    "t": "Time (T^1)"
+                },
+                "left_hand_units": "dimensionless L^-1",
+                "right_hand_units": "dimensionless L^-1",
+                "dimensionally_consistent": true,
+                "derived_from_hypothesis": "Ultra-coherent optical fibers with integrated nonlinear optical elements",
+                "derivation_logic": "By considering the effects of linear loss and nonlinear gain on the optical phase along the fiber",
+                "domain_constraints": [
+                    "z > 0",
+                    "\u03c6 \u2208 \u211d",
+                    "\u03b1, \u03b2 > 0"
+                ],
+                "boundary_conditions": [
+                    "\u03c6(z=0) = \u03c6_0",
+                    "as z -> \u221e"
+                ],
+                "computational_complexity": "O(n^2)",
+                "num_operations": 100
+            },
+            "validation": {
+                "equation_id": "EQ-001",
+                "is_physically_plausible": true,
+                "is_mathematically_consistent": true,
+                "potential_issues": [
+                    "Contains division \u2014 check for denominator approaching zero.",
+                    "Contains exponentiation \u2014 check for overflow with large exponents."
+                ],
+                "suggested_fixes": [
+                    "Add guard clauses for: Contains division \u2014 check for denominator approaching zero.",
+                    "Add guard clauses for: Contains exponentiation \u2014 check for overflow with large exponents."
+                ],
+                "plausibility_score": 0.8
+            },
+            "complexity": {
+                "big_o": "O(n^3)",
+                "total_operations": 4,
+                "num_additions": 2,
+                "num_multiplications": 0,
+                "num_divisions": 1,
+                "num_powers": 1,
+                "num_function_calls": 0,
+                "num_variables": 5
+            },
+            "numerical_stability_issues": [
+                "Contains division \u2014 check for denominator approaching zero.",
+                "Contains exponentiation \u2014 check for overflow with large exponents."
+            ],
+            "timestamp": "2026-07-17T01:17:14.074363"
+        },
+        {
+            "equation": {
+                "equation_id": "EQ-001",
+                "name": "Quantum-Classical Network Fidelity",
+                "equation_latex": "F = \\frac{1}{\\sqrt{2 \\pi \\sigma^2}} \\int_{-\\infty}^{\\infty} e^{-(\\frac{E - E_0}{\\sqrt{2} \\sigma})^2} dE \\cdot (1 - P_{error})",
+                "equation_text": "F = (1 / sqrt(2 * pi * sigma^2)) * integral from -inf to inf of exp(-((E - E0) / sqrt(2) * sigma)^2) dE * (1 - P_error)",
+                "variables": {
+                    "F": "Network Fidelity (dimensionless)",
+                    "E": "Quantum Energy (M^1 L^2 T^-2)",
+                    "E0": "Reference Quantum Energy (M^1 L^2 T^-2)",
+                    "sigma": "Quantum Energy Standard Deviation (M^1 L^2 T^-2)",
+                    "P_error": "Classical Error Probability (dimensionless)"
+                },
+                "left_hand_units": "dimensionless",
+                "right_hand_units": "dimensionless",
+                "dimensionally_consistent": true,
+                "derived_from_hypothesis": "Hybrid quantum-classical network hypothesis",
+                "derivation_logic": "By applying principles of quantum mechanics and classical error correction, we derive an equation for network fidelity as a function of quantum energy, energy standard deviation, and classical error probability.",
+                "domain_constraints": [
+                    "E > 0",
+                    "sigma > 0",
+                    "0 <= P_error <= 1"
+                ],
+                "boundary_conditions": [
+                    "as E -> 0",
+                    "as sigma -> 0",
+                    "as P_error -> 0"
+                ],
+                "computational_complexity": "O(n^3)",
+                "num_operations": 1000
+            },
+            "validation": {
+                "equation_id": "EQ-001",
+                "is_physically_plausible": true,
+                "is_mathematically_consistent": true,
+                "potential_issues": [
+                    "Contains division \u2014 check for denominator approaching zero.",
+                    "Contains exponentiation \u2014 check for overflow with large exponents.",
+                    "Contains subtraction \u2014 potential catastrophic cancellation.",
+                    "Contains square root \u2014 ensure argument is non-negative."
+                ],
+                "suggested_fixes": [
+                    "Add guard clauses for: Contains division \u2014 check for denominator approaching zero.",
+                    "Add guard clauses for: Contains exponentiation \u2014 check for overflow with large exponents.",
+                    "Add guard clauses for: Contains subtraction \u2014 potential catastrophic cancellation.",
+                    "Add guard clauses for: Contains square root \u2014 ensure argument is non-negative."
+                ],
+                "plausibility_score": 0.7
+            },
+            "complexity": {
+                "big_o": "O(n^3)",
+                "total_operations": 16,
+                "num_additions": 4,
+                "num_multiplications": 5,
+                "num_divisions": 2,
+                "num_powers": 2,
+                "num_function_calls": 3,
+                "num_variables": 5
+            },
+            "numerical_stability_issues": [
+                "Contains division \u2014 check for denominator approaching zero.",
+                "Contains exponentiation \u2014 check for overflow with large exponents.",
+                "Contains subtraction \u2014 potential catastrophic cancellation.",
+                "Contains square root \u2014 ensure argument is non-negative."
+            ],
+            "timestamp": "2026-07-17T01:17:16.526495"
+        },
+        {
+            "equation": {
+                "equation_id": "EQ-001",
+                "name": "Quantum Error Correction Rate",
+                "equation_latex": "R_{ec} = \\frac{1}{t} \\int_{0}^{t} \\left( \\frac{P_{e} \\cdot \\lambda_{q}}{1 - P_{e}} \\right) dt",
+                "equation_text": "R_ec = (1/t) * integral from 0 to t of ((P_e * lambda_q) / (1 - P_e)) dt",
+                "variables": {
+                    "R_ec": "Error Correction Rate (T^-1)",
+                    "t": "Time (T^1)",
+                    "P_e": "Error Probability (dimensionless)",
+                    "lambda_q": "Quantum Error Rate (T^-1)"
+                },
+                "left_hand_units": "T^-1",
+                "right_hand_units": "T^-1",
+                "dimensionally_consistent": true,
+                "derived_from_hypothesis": "Integrating neuromorphic principles with quantum error correction techniques",
+                "derivation_logic": "By applying the concept of adaptive encoding and decoding strategies based on real-time error rates and network conditions",
+                "domain_constraints": [
+                    "0 <= P_e <= 1",
+                    "t > 0"
+                ],
+                "boundary_conditions": [
+                    "as t -> 0, R_ec -> lambda_q"
+                ],
+                "computational_complexity": "O(n)",
+                "num_operations": 100
+            },
+            "validation": {
+                "equation_id": "EQ-001",
+                "is_physically_plausible": true,
+                "is_mathematically_consistent": true,
+                "potential_issues": [
+                    "Contains division \u2014 check for denominator approaching zero.",
+                    "Contains subtraction \u2014 potential catastrophic cancellation."
+                ],
+                "suggested_fixes": [
+                    "Add guard clauses for: Contains division \u2014 check for denominator approaching zero.",
+                    "Add guard clauses for: Contains subtraction \u2014 potential catastrophic cancellation."
+                ],
+                "plausibility_score": 0.8
+            },
+            "complexity": {
+                "big_o": "O(n^3)",
+                "total_operations": 5,
+                "num_additions": 1,
+                "num_multiplications": 2,
+                "num_divisions": 2,
+                "num_powers": 0,
+                "num_function_calls": 0,
+                "num_variables": 4
+            },
+            "numerical_stability_issues": [
+                "Contains division \u2014 check for denominator approaching zero.",
+                "Contains subtraction \u2014 potential catastrophic cancellation."
+            ],
+            "timestamp": "2026-07-17T01:17:20.400726"
+        }
+    ],
+    "rejected": [],
+    "summary": {
+        "dimensionally_consistent": 5,
+        "physically_plausible": 5,
+        "avg_plausibility": 0.82,
+        "total_operations_avg": 7.2
+    }
+}

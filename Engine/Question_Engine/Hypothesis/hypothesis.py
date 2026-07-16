@@ -11,10 +11,17 @@ class GeneratedPredictions(BaseModel):
     predictions: List[str] = Field(description="A list of highly lateral, randomized, and creative scientific hypotheses.")
 
 class VerificationResult(BaseModel):
-    makes_sense: bool = Field(description="True if the prediction logically addresses the core problem, False if it is complete nonsense.")
-    relevance_score: int = Field(description="Score from 1 to 10 evaluating the scientific viability of the prediction.")
-    reasoning: str = Field(description="Deep logical analysis of WHY it makes sense or why it fails.")
-    refined_hypothesis: str = Field(description="If it makes sense, a polished version of the hypothesis. If not, explain the fatal flaw.")
+    classification: str = Field(description="One of: Excellent, Plausible, Speculative, Weak, Contradicted")
+    novelty: int = Field(description="Score 1-10: How new/unexpected is the idea?")
+    feasibility: int = Field(description="Score 1-10: Can this be realistically tested with current technology?")
+    evidence: int = Field(description="Score 1-10: How much existing evidence supports this?")
+    consistency: int = Field(description="Score 1-10: Is it logically consistent with known laws?")
+    testability: int = Field(description="Score 1-10: Can we design a clear experiment to test it?")
+    risk: int = Field(description="Score 1-10: How likely is catastrophic failure or fatal flaw (higher = riskier)?")
+    final_score: float = Field(description="Weighted average (0.0-10.0): novelty*0.15 + evidence*0.25 + feasibility*0.15 + consistency*0.20 + testability*0.15 + (10-risk)*0.10")
+    reasoning: str = Field(description="Detailed analysis of each dimension and the overall judgment.")
+    refined_hypothesis: str = Field(description="A polished version of the hypothesis incorporating identified weaknesses.")
+    primary_weakness: str = Field(description="The single biggest weakness of this hypothesis.")
 
 # ==========================================
 # HYPOTHESIS ENGINE LOGIC
@@ -54,19 +61,41 @@ def generate_random_predictions(client: Groq, problem_statement: str, kb_context
 
 def verify_prediction(client: Groq, problem_statement: str, prediction: str) -> dict:
     system_prompt = (
-        "You are the strict Scientific Verifier of an Autonomous AI Research Lab. "
-        "You will be given a core problem and a random prediction. Your job is to rigorously "
-        "evaluate if this prediction makes ANY logical sense in solving or understanding the problem.\n\n"
-        "You MUST respond purely with a valid JSON object matching this schema:\n"
+        "You are a rigorous Scientific Reviewer. Evaluate hypotheses across 6 dimensions.\n\n"
+        "CLASSIFICATION (choose one):\n"
+        "- Excellent: Strong evidence, clear mechanism, testable, consistent with known laws\n"
+        "- Plausible: Reasonable idea, some evidence, testable but may have challenges\n"
+        "- Speculative: Interesting but lacks evidence or clear mechanism; worth exploring\n"
+        "- Weak: Significant flaws, unclear mechanism, poor evidence, or untestable\n"
+        "- Contradicted: Conflicts with established laws or strong contradictory evidence\n\n"
+        "SCORING (1-10 for each dimension):\n"
+        "- novelty: How new/unexpected is the idea? (1=well-known, 10=truly novel)\n"
+        "- feasibility: Can this be realistically tested with current technology? (1=impossible, 10=trivial)\n"
+        "- evidence: How much existing evidence supports this? (1=none, 10=strong empirical support)\n"
+        "- consistency: Is it logically consistent with known laws? (1=contradicts known laws, 10=perfectly consistent)\n"
+        "- testability: Can we design a clear experiment? (1=untestable, 10=clear experiment exists)\n"
+        "- risk: How likely is catastrophic failure or fatal flaw? (1=very safe, 10=extremely risky)\n\n"
+        "final_score = novelty*0.15 + evidence*0.25 + feasibility*0.15 + consistency*0.20 + testability*0.15 + (10-risk)*0.10\n\n"
+        "IMPORTANT: 'Hard' is NOT the same as 'Impossible'. A hypothesis can be difficult but still Plausible.\n"
+        "Active research areas (quantum computing, fusion, etc.) are NOT 'Contradicted' just because they're hard.\n"
+        "Be fair: distinguish between 'this is hard' and 'this violates physics'.\n\n"
+        "You MUST respond with a valid JSON object:\n"
         "{\n"
-        '  "makes_sense": boolean,\n'
-        '  "relevance_score": integer (1-10),\n'
-        '  "reasoning": "string",\n'
-        '  "refined_hypothesis": "string"\n'
+        '  "classification": "Plausible",\n'
+        '  "novelty": 7,\n'
+        '  "feasibility": 5,\n'
+        '  "evidence": 4,\n'
+        '  "consistency": 8,\n'
+        '  "testability": 6,\n'
+        '  "risk": 5,\n'
+        '  "final_score": 6.0,\n'
+        '  "reasoning": "Detailed analysis...",\n'
+        '  "refined_hypothesis": "Improved version...",\n'
+        '  "primary_weakness": "The single biggest weakness"\n'
         "}\n"
     )
 
-    prompt = f"Core Problem: {problem_statement}\nRandom Prediction to Verify: {prediction}"
+    prompt = f"Core Problem: {problem_statement}\n\nHypothesis to Evaluate: {prediction}\n\nScore across all 6 dimensions. Be fair but rigorous."
 
     try:
         completion = client.chat.completions.create(
@@ -85,9 +114,13 @@ def verify_prediction(client: Groq, problem_statement: str, prediction: str) -> 
         print(f"❌ Error in Verifier: {e}")
         return None
 
-def run_hypothesis_engine(problem_statement: str):
+def run_hypothesis_engine(problem_statement: str) -> List[str]:
+    """
+    Returns a list of approved refined hypotheses (classification in Excellent,Plausible,Speculative).
+    These are fed back into DOSCAN for deeper recursive clustering.
+    """
     print("\n" + "="*80)
-    print("🧠 PHASE 4: HYPOTHESIS ENGINE (RANDOM GENERATION & VERIFICATION)")
+    print("🧠 PHASE 4: HYPOTHESIS ENGINE (6-DIMENSION SCORING & CLASSIFICATION)")
     print("="*80)
     
     client = Groq()
@@ -103,32 +136,66 @@ def run_hypothesis_engine(problem_statement: str):
     raw_predictions = generate_random_predictions(client, problem_statement, kb_context)
     if not raw_predictions:
         print("❌ Failed to generate hypotheses.")
-        return
+        return []
 
     # Step 2: Verify
     verified_results = []
-    print("\n   [Verifier] Cross-examining predictions against the core problem...")
+    approved_refined_hypotheses = []
+    summary_stats = {"Excellent": 0, "Plausible": 0, "Speculative": 0, "Weak": 0, "Contradicted": 0}
+    
+    print("\n   [Verifier] Evaluating predictions across 6 dimensions...")
     
     for i, pred in enumerate(raw_predictions, 1):
-        print(f"\n   Testing Hypothesis #{i}...")
+        print(f"\n   Evaluating Hypothesis #{i}...")
         verification = verify_prediction(client, problem_statement, pred)
         
         if verification:
             verification["original_prediction"] = pred
             verified_results.append(verification)
             
-            # Console output formatting
-            status = "✅ MAKES SENSE" if verification["makes_sense"] else "❌ NONSENSE"
-            score = verification["relevance_score"]
-            print(f"      Status: {status} (Score: {score}/10)")
-            print(f"      Original: {pred}")
-            print(f"      Reasoning: {verification['reasoning']}")
-
+            cls = verification.get("classification", "Weak")
+            score = verification.get("final_score", 0.0)
+            summary_stats[cls] = summary_stats.get(cls, 0) + 1
+            
+            # Console output
+            status_icons = {
+                "Excellent": "🏆", "Plausible": "✅", "Speculative": "🔮",
+                "Weak": "⚠️", "Contradicted": "❌"
+            }
+            icon = status_icons.get(cls, "❓")
+            print(f"      {icon} Classification: {cls} (Score: {score:.1f}/10)")
+            print(f"      N:{verification.get('novelty',0)} F:{verification.get('feasibility',0)} "
+                  f"E:{verification.get('evidence',0)} C:{verification.get('consistency',0)} "
+                  f"T:{verification.get('testability',0)} R:{verification.get('risk',0)}")
+            print(f"      Original: {pred[:100]}...")
+            print(f"      Weakness: {verification.get('primary_weakness', 'N/A')[:120]}")
+            
+            # Collect approved: Excellent, Plausible, and Speculative all move forward
+            if cls in ("Excellent", "Plausible", "Speculative"):
+                refined = verification.get("refined_hypothesis", pred)
+                approved_refined_hypotheses.append(refined)
+                print(f"      ⬆️  [ACCEPTED] Queued for DOSCAN deepening & experiments")
+            else:
+                print(f"      ⬇️  [FILTERED] Insufficient for further research")
+    
     # Save to disk
     output_filename = "verified_hypotheses.json"
     with open(output_filename, "w", encoding="utf-8") as f:
         json.dump(verified_results, f, indent=4)
         
+    total = len(raw_predictions)
+    accepted = len(approved_refined_hypotheses)
+    
     print("\n" + "="*80)
-    print(f"💾 Verified hypotheses successfully saved to '{output_filename}'")
+    print(f"� HYPOTHESIS VERIFICATION SUMMARY")
     print("="*80)
+    print(f"   Generated: {total}")
+    for cls, count in summary_stats.items():
+        pct = count / total * 100 if total > 0 else 0
+        print(f"   {cls}: {count} ({pct:.0f}%)")
+    print(f"   ─────────────────────────────")
+    print(f"   Accepted (Ex+Pl+Sp): {accepted}/{total} ({accepted/total*100:.0f}%)")
+    print(f"   Filtered (Weak+Cont): {total-accepted}/{total} ({(total-accepted)/total*100:.0f}%)")
+    print("="*80)
+    
+    return approved_refined_hypotheses

@@ -1,0 +1,1116 @@
+{
+    "scores": {
+        "A hierarchical lattice structure utilizing topological quantum codes, such as surface codes or color codes, could be used to encode and decode quantum information. This architecture would require the development of robust methods for quantum error correction, as well as the implementation of quantum teleportation or other quantum communication protocols to facilitate long-distance transmission.": {
+            "claim": "A hierarchical lattice structure utilizing topological quantum codes, such as surface codes or color codes, could be used to encode and decode quantum information. This architecture would require the development of robust methods for quantum error correction, as well as the implementation of quantum teleportation or other quantum communication protocols to facilitate long-distance transmission.",
+            "confidence": 0.0,
+            "evidence_sources": {
+                "literature": [],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": []
+            },
+            "missing_evidence": [
+                "literature",
+                "experiment",
+                "simulation",
+                "logical_deduction"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "A hybrid approach combining satellite-based quantum repeaters with terrestrial fiber optic links could further enhance the scalability and reliability of the quantum internet, allowing for seamless integration with existing communication infrastructure while maintaining the security benefits of quantum key distribution.": {
+            "claim": "A hybrid approach combining satellite-based quantum repeaters with terrestrial fiber optic links could further enhance the scalability and reliability of the quantum internet, allowing for seamless integration with existing communication infrastructure while maintaining the security benefits of quantum key distribution.",
+            "confidence": 0.0,
+            "evidence_sources": {
+                "literature": [],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": []
+            },
+            "missing_evidence": [
+                "literature",
+                "experiment",
+                "simulation",
+                "logical_deduction"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "A quantum internet architecture based on quantum teleportation and entanglement swapping could be designed with a hierarchical structure, where local clusters of nodes are connected through entanglement-swapped links, and these clusters are further interconnected to achieve continental-scale coverage, thus minimizing the reliance on trusted repeater stations.": {
+            "claim": "A quantum internet architecture based on quantum teleportation and entanglement swapping could be designed with a hierarchical structure, where local clusters of nodes are connected through entanglement-swapped links, and these clusters are further interconnected to achieve continental-scale coverage, thus minimizing the reliance on trusted repeater stations.",
+            "confidence": 0.0,
+            "evidence_sources": {
+                "literature": [],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": []
+            },
+            "missing_evidence": [
+                "literature",
+                "experiment",
+                "simulation",
+                "logical_deduction"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "A hybrid quantum internet architecture leveraging superconducting quantum processors, ultra-long haul optical fiber links, dynamic decoupling, and machine learning-based noise mitigation could enable reliable quantum key distribution over distances exceeding 1,000 km without repeaters, but further research is needed to optimize the system's performance, scalability, and security.": {
+            "claim": "A hybrid quantum internet architecture leveraging superconducting quantum processors, ultra-long haul optical fiber links, dynamic decoupling, and machine learning-based noise mitigation could enable reliable quantum key distribution over distances exceeding 1,000 km without repeaters, but further research is needed to optimize the system's performance, scalability, and security.",
+            "confidence": 0.0,
+            "evidence_sources": {
+                "literature": [],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": []
+            },
+            "missing_evidence": [
+                "literature",
+                "experiment",
+                "simulation",
+                "logical_deduction"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "A hybrid quantum internet architecture utilizing CV-QKD for key exchange and discrete-variable quantum error correction for error correction, implemented over untrusted commercial optical fiber, could provide a scalable and fault-tolerant solution for secure quantum communication over continental distances.": {
+            "claim": "A hybrid quantum internet architecture utilizing CV-QKD for key exchange and discrete-variable quantum error correction for error correction, implemented over untrusted commercial optical fiber, could provide a scalable and fault-tolerant solution for secure quantum communication over continental distances.",
+            "confidence": 0.0,
+            "evidence_sources": {
+                "literature": [],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": []
+            },
+            "missing_evidence": [
+                "literature",
+                "experiment",
+                "simulation",
+                "logical_deduction"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "Core problem: Design a scalable quantum internet architecture that is fault-tolerant over continental distances without requiring trusted repeater stations.": {
+            "claim": "Core problem: Design a scalable quantum internet architecture that is fault-tolerant over continental distances without requiring trusted repeater stations.",
+            "confidence": 0.0,
+            "evidence_sources": {
+                "literature": [],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": []
+            },
+            "missing_evidence": [
+                "literature",
+                "experiment",
+                "simulation",
+                "logical_deduction"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "A hybrid quantum internet architecture utilizing satellites as trusted relays in conjunction with fiber-optic networks, incorporating quantum error correction and advanced modulation techniques to enhance fault tolerance and security.": {
+            "claim": "A hybrid quantum internet architecture utilizing satellites as trusted relays in conjunction with fiber-optic networks, incorporating quantum error correction and advanced modulation techniques to enhance fault tolerance and security.",
+            "confidence": 0.1133,
+            "evidence_sources": {
+                "literature": [
+                    {
+                        "claim": "A hybrid quantum internet architecture utilizing satellites as trusted relays in conjunction with fiber-optic networks, incorporating quantum error correction and advanced modulation techniques to enhance fault tolerance and security.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Topological quantum error correction codes for fault tolerance",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.858863"
+                    },
+                    {
+                        "claim": "A hybrid quantum internet architecture utilizing satellites as trusted relays in conjunction with fiber-optic networks, incorporating quantum error correction and advanced modulation techniques to enhance fault tolerance and security.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Scalable quantum internet architecture design without trusted repeater stations",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.859009"
+                    },
+                    {
+                        "claim": "A hybrid quantum internet architecture utilizing satellites as trusted relays in conjunction with fiber-optic networks, incorporating quantum error correction and advanced modulation techniques to enhance fault tolerance and security.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Optimal quantum error correction codes for long-distance quantum communication",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.859026"
+                    },
+                    {
+                        "claim": "A hybrid quantum internet architecture utilizing satellites as trusted relays in conjunction with fiber-optic networks, incorporating quantum error correction and advanced modulation techniques to enhance fault tolerance and security.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Network topology and architecture for fault-tolerant quantum internet",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.859044"
+                    }
+                ],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": [
+                    {
+                        "claim": "A hybrid quantum internet architecture utilizing satellites as trusted relays in conjunction with fiber-optic networks, incorporating quantum error correction and advanced modulation techniques to enhance fault tolerance and security.",
+                        "source_hypothesis": "",
+                        "evidence_type": "logical_deduction",
+                        "content": "Related hypothesis: Hypothesis 1: Quantum entanglement-based quantum key distribution can achieve secure communication over 1000 km without trusted repeater stations (test: Verification via experimental demonstration of secure quantum key distribution over long-distance fiber optic links)",
+                        "confidence": 0.4,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proposed_testable_hypotheses"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.858946"
+                    },
+                    {
+                        "claim": "A hybrid quantum internet architecture utilizing satellites as trusted relays in conjunction with fiber-optic networks, incorporating quantum error correction and advanced modulation techniques to enhance fault tolerance and security.",
+                        "source_hypothesis": "",
+                        "evidence_type": "logical_deduction",
+                        "content": "Related hypothesis: Hypothesis 2: Topological quantum error correction codes can maintain fault tolerance over continental distances (test: Verification via simulation and experimental demonstration of topological quantum error correction codes in long-distance quantum communication)",
+                        "confidence": 0.4,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proposed_testable_hypotheses"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.858973"
+                    },
+                    {
+                        "claim": "A hybrid quantum internet architecture utilizing satellites as trusted relays in conjunction with fiber-optic networks, incorporating quantum error correction and advanced modulation techniques to enhance fault tolerance and security.",
+                        "source_hypothesis": "",
+                        "evidence_type": "logical_deduction",
+                        "content": "Related hypothesis: Hypothesis 3: Satellite-based quantum communication can enable global quantum internet connectivity (test: Verification via experimental demonstration of satellite-based quantum key distribution and quantum communication)",
+                        "confidence": 0.4,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proposed_testable_hypotheses"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.858992"
+                    }
+                ]
+            },
+            "missing_evidence": [
+                "experiment",
+                "simulation"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.": {
+            "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+            "confidence": 0.1597,
+            "evidence_sources": {
+                "literature": [
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Proven fact: Quantum mechanics principles govern the behavior of quantum systems",
+                        "confidence": 0.7,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proven_facts"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865139"
+                    },
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Proven fact: No-cloning theorem limits the amplification of quantum information",
+                        "confidence": 0.7,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proven_facts"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865175"
+                    },
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Proven fact: Quantum entanglement enables secure quantum key distribution",
+                        "confidence": 0.7,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proven_facts"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865192"
+                    },
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Proven fact: Heisenberg uncertainty principle sets fundamental limits on quantum measurement precision",
+                        "confidence": 0.7,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proven_facts"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865207"
+                    },
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Proven fact: Shannon-Hartley theorem bounds the capacity of quantum channels",
+                        "confidence": 0.7,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proven_facts"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865223"
+                    },
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Quantum teleportation protocols for long-distance quantum communication",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865239"
+                    },
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Superdense coding for enhanced quantum channel capacity",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865436"
+                    },
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Quantum entanglement swapping for repeaterless quantum communication",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865456"
+                    },
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Topological quantum error correction codes for fault tolerance",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865471"
+                    },
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Satellite-based quantum key distribution for global secure communication",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865486"
+                    },
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Scalable quantum internet architecture design without trusted repeater stations",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865543"
+                    },
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Optimal quantum error correction codes for long-distance quantum communication",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865558"
+                    },
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Network topology and architecture for fault-tolerant quantum internet",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865575"
+                    },
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Quantum communication channel capacity limits over long distances",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865588"
+                    }
+                ],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": [
+                    {
+                        "claim": "Employing a modular, hierarchical architecture that integrates topological quantum error correction codes with quantum teleportation and entanglement swapping, allowing for the dynamic adjustment of error correction parameters based on real-time channel conditions and error rates.",
+                        "source_hypothesis": "",
+                        "evidence_type": "logical_deduction",
+                        "content": "Related hypothesis: Hypothesis 2: Topological quantum error correction codes can maintain fault tolerance over continental distances (test: Verification via simulation and experimental demonstration of topological quantum error correction codes in long-distance quantum communication)",
+                        "confidence": 0.4,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proposed_testable_hypotheses"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.865521"
+                    }
+                ]
+            },
+            "missing_evidence": [
+                "experiment",
+                "simulation"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "A decentralized, blockchain-based quantum network that utilizes satellite-based quantum key distribution for intercontinental links and local node-to-node quantum key distribution for metropolitan areas, ensuring end-to-end security without trusted repeaters.": {
+            "claim": "A decentralized, blockchain-based quantum network that utilizes satellite-based quantum key distribution for intercontinental links and local node-to-node quantum key distribution for metropolitan areas, ensuring end-to-end security without trusted repeaters.",
+            "confidence": 0.1408,
+            "evidence_sources": {
+                "literature": [
+                    {
+                        "claim": "A decentralized, blockchain-based quantum network that utilizes satellite-based quantum key distribution for intercontinental links and local node-to-node quantum key distribution for metropolitan areas, ensuring end-to-end security without trusted repeaters.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Proven fact: Quantum entanglement enables secure quantum key distribution",
+                        "confidence": 0.7,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proven_facts"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.871874"
+                    },
+                    {
+                        "claim": "A decentralized, blockchain-based quantum network that utilizes satellite-based quantum key distribution for intercontinental links and local node-to-node quantum key distribution for metropolitan areas, ensuring end-to-end security without trusted repeaters.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Quantum teleportation protocols for long-distance quantum communication",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.871920"
+                    },
+                    {
+                        "claim": "A decentralized, blockchain-based quantum network that utilizes satellite-based quantum key distribution for intercontinental links and local node-to-node quantum key distribution for metropolitan areas, ensuring end-to-end security without trusted repeaters.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Superdense coding for enhanced quantum channel capacity",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.871934"
+                    },
+                    {
+                        "claim": "A decentralized, blockchain-based quantum network that utilizes satellite-based quantum key distribution for intercontinental links and local node-to-node quantum key distribution for metropolitan areas, ensuring end-to-end security without trusted repeaters.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Quantum entanglement swapping for repeaterless quantum communication",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.871946"
+                    },
+                    {
+                        "claim": "A decentralized, blockchain-based quantum network that utilizes satellite-based quantum key distribution for intercontinental links and local node-to-node quantum key distribution for metropolitan areas, ensuring end-to-end security without trusted repeaters.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Topological quantum error correction codes for fault tolerance",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.871963"
+                    },
+                    {
+                        "claim": "A decentralized, blockchain-based quantum network that utilizes satellite-based quantum key distribution for intercontinental links and local node-to-node quantum key distribution for metropolitan areas, ensuring end-to-end security without trusted repeaters.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Satellite-based quantum key distribution for global secure communication",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.871983"
+                    },
+                    {
+                        "claim": "A decentralized, blockchain-based quantum network that utilizes satellite-based quantum key distribution for intercontinental links and local node-to-node quantum key distribution for metropolitan areas, ensuring end-to-end security without trusted repeaters.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Scalable quantum internet architecture design without trusted repeater stations",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.872045"
+                    },
+                    {
+                        "claim": "A decentralized, blockchain-based quantum network that utilizes satellite-based quantum key distribution for intercontinental links and local node-to-node quantum key distribution for metropolitan areas, ensuring end-to-end security without trusted repeaters.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Optimal quantum error correction codes for long-distance quantum communication",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.872060"
+                    },
+                    {
+                        "claim": "A decentralized, blockchain-based quantum network that utilizes satellite-based quantum key distribution for intercontinental links and local node-to-node quantum key distribution for metropolitan areas, ensuring end-to-end security without trusted repeaters.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Robust quantum key distribution protocols over continental distances",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.872072"
+                    },
+                    {
+                        "claim": "A decentralized, blockchain-based quantum network that utilizes satellite-based quantum key distribution for intercontinental links and local node-to-node quantum key distribution for metropolitan areas, ensuring end-to-end security without trusted repeaters.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Network topology and architecture for fault-tolerant quantum internet",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.872084"
+                    }
+                ],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": [
+                    {
+                        "claim": "A decentralized, blockchain-based quantum network that utilizes satellite-based quantum key distribution for intercontinental links and local node-to-node quantum key distribution for metropolitan areas, ensuring end-to-end security without trusted repeaters.",
+                        "source_hypothesis": "",
+                        "evidence_type": "logical_deduction",
+                        "content": "Related hypothesis: Hypothesis 1: Quantum entanglement-based quantum key distribution can achieve secure communication over 1000 km without trusted repeater stations (test: Verification via experimental demonstration of secure quantum key distribution over long-distance fiber optic links)",
+                        "confidence": 0.4,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proposed_testable_hypotheses"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.872007"
+                    },
+                    {
+                        "claim": "A decentralized, blockchain-based quantum network that utilizes satellite-based quantum key distribution for intercontinental links and local node-to-node quantum key distribution for metropolitan areas, ensuring end-to-end security without trusted repeaters.",
+                        "source_hypothesis": "",
+                        "evidence_type": "logical_deduction",
+                        "content": "Related hypothesis: Hypothesis 3: Satellite-based quantum communication can enable global quantum internet connectivity (test: Verification via experimental demonstration of satellite-based quantum key distribution and quantum communication)",
+                        "confidence": 0.4,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proposed_testable_hypotheses"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.872030"
+                    }
+                ]
+            },
+            "missing_evidence": [
+                "experiment",
+                "simulation"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "A hybrid quantum internet architecture that combines entanglement swapping with advanced quantum error correction techniques and dynamically reconfigurable networks to enhance fault-tolerance and scalability over continental distances.": {
+            "claim": "A hybrid quantum internet architecture that combines entanglement swapping with advanced quantum error correction techniques and dynamically reconfigurable networks to enhance fault-tolerance and scalability over continental distances.",
+            "confidence": 0.1271,
+            "evidence_sources": {
+                "literature": [
+                    {
+                        "claim": "A hybrid quantum internet architecture that combines entanglement swapping with advanced quantum error correction techniques and dynamically reconfigurable networks to enhance fault-tolerance and scalability over continental distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Proven fact: Quantum entanglement enables secure quantum key distribution",
+                        "confidence": 0.7,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proven_facts"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.879758"
+                    },
+                    {
+                        "claim": "A hybrid quantum internet architecture that combines entanglement swapping with advanced quantum error correction techniques and dynamically reconfigurable networks to enhance fault-tolerance and scalability over continental distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Quantum entanglement swapping for repeaterless quantum communication",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.879852"
+                    },
+                    {
+                        "claim": "A hybrid quantum internet architecture that combines entanglement swapping with advanced quantum error correction techniques and dynamically reconfigurable networks to enhance fault-tolerance and scalability over continental distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Topological quantum error correction codes for fault tolerance",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.879871"
+                    },
+                    {
+                        "claim": "A hybrid quantum internet architecture that combines entanglement swapping with advanced quantum error correction techniques and dynamically reconfigurable networks to enhance fault-tolerance and scalability over continental distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Scalable quantum internet architecture design without trusted repeater stations",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.879949"
+                    },
+                    {
+                        "claim": "A hybrid quantum internet architecture that combines entanglement swapping with advanced quantum error correction techniques and dynamically reconfigurable networks to enhance fault-tolerance and scalability over continental distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Optimal quantum error correction codes for long-distance quantum communication",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.879963"
+                    },
+                    {
+                        "claim": "A hybrid quantum internet architecture that combines entanglement swapping with advanced quantum error correction techniques and dynamically reconfigurable networks to enhance fault-tolerance and scalability over continental distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Robust quantum key distribution protocols over continental distances",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.879976"
+                    },
+                    {
+                        "claim": "A hybrid quantum internet architecture that combines entanglement swapping with advanced quantum error correction techniques and dynamically reconfigurable networks to enhance fault-tolerance and scalability over continental distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Network topology and architecture for fault-tolerant quantum internet",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.879988"
+                    },
+                    {
+                        "claim": "A hybrid quantum internet architecture that combines entanglement swapping with advanced quantum error correction techniques and dynamically reconfigurable networks to enhance fault-tolerance and scalability over continental distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Quantum communication channel capacity limits over long distances",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.880000"
+                    }
+                ],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": [
+                    {
+                        "claim": "A hybrid quantum internet architecture that combines entanglement swapping with advanced quantum error correction techniques and dynamically reconfigurable networks to enhance fault-tolerance and scalability over continental distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "logical_deduction",
+                        "content": "Related hypothesis: Hypothesis 1: Quantum entanglement-based quantum key distribution can achieve secure communication over 1000 km without trusted repeater stations (test: Verification via experimental demonstration of secure quantum key distribution over long-distance fiber optic links)",
+                        "confidence": 0.4,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proposed_testable_hypotheses"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.879899"
+                    },
+                    {
+                        "claim": "A hybrid quantum internet architecture that combines entanglement swapping with advanced quantum error correction techniques and dynamically reconfigurable networks to enhance fault-tolerance and scalability over continental distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "logical_deduction",
+                        "content": "Related hypothesis: Hypothesis 2: Topological quantum error correction codes can maintain fault tolerance over continental distances (test: Verification via simulation and experimental demonstration of topological quantum error correction codes in long-distance quantum communication)",
+                        "confidence": 0.4,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proposed_testable_hypotheses"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.879918"
+                    },
+                    {
+                        "claim": "A hybrid quantum internet architecture that combines entanglement swapping with advanced quantum error correction techniques and dynamically reconfigurable networks to enhance fault-tolerance and scalability over continental distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "logical_deduction",
+                        "content": "Related hypothesis: Hypothesis 3: Satellite-based quantum communication can enable global quantum internet connectivity (test: Verification via experimental demonstration of satellite-based quantum key distribution and quantum communication)",
+                        "confidence": 0.4,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proposed_testable_hypotheses"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.879934"
+                    }
+                ]
+            },
+            "missing_evidence": [
+                "experiment",
+                "simulation"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.": {
+            "claim": "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.",
+            "confidence": 0.1568,
+            "evidence_sources": {
+                "literature": [
+                    {
+                        "claim": "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Proven fact: Quantum mechanics principles govern the behavior of quantum systems",
+                        "confidence": 0.7,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proven_facts"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.887036"
+                    },
+                    {
+                        "claim": "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Proven fact: No-cloning theorem limits the amplification of quantum information",
+                        "confidence": 0.7,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proven_facts"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.887070"
+                    },
+                    {
+                        "claim": "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Proven fact: Shannon-Hartley theorem bounds the capacity of quantum channels",
+                        "confidence": 0.7,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proven_facts"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.887097"
+                    },
+                    {
+                        "claim": "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Quantum teleportation protocols for long-distance quantum communication",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.887111"
+                    },
+                    {
+                        "claim": "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Superdense coding for enhanced quantum channel capacity",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.887567"
+                    },
+                    {
+                        "claim": "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Quantum entanglement swapping for repeaterless quantum communication",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.887609"
+                    },
+                    {
+                        "claim": "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Topological quantum error correction codes for fault tolerance",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.887623"
+                    },
+                    {
+                        "claim": "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Satellite-based quantum key distribution for global secure communication",
+                        "confidence": 0.5,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.887637"
+                    },
+                    {
+                        "claim": "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Optimal quantum error correction codes for long-distance quantum communication",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.887708"
+                    },
+                    {
+                        "claim": "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Network topology and architecture for fault-tolerant quantum internet",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.887725"
+                    },
+                    {
+                        "claim": "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Quantum communication channel capacity limits over long distances",
+                        "confidence": 0.2,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.887739"
+                    }
+                ],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": [
+                    {
+                        "claim": "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.",
+                        "source_hypothesis": "",
+                        "evidence_type": "logical_deduction",
+                        "content": "Related hypothesis: Hypothesis 1: Quantum entanglement-based quantum key distribution can achieve secure communication over 1000 km without trusted repeater stations (test: Verification via experimental demonstration of secure quantum key distribution over long-distance fiber optic links)",
+                        "confidence": 0.4,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proposed_testable_hypotheses"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.887663"
+                    },
+                    {
+                        "claim": "Implementing a hybrid approach that combines optical mesh networks with satellite-based quantum communication could further enhance the scalability and reliability of the quantum internet, potentially reducing the need for extensive ground-based infrastructure.",
+                        "source_hypothesis": "",
+                        "evidence_type": "logical_deduction",
+                        "content": "Related hypothesis: Hypothesis 3: Satellite-based quantum communication can enable global quantum internet connectivity (test: Verification via experimental demonstration of satellite-based quantum key distribution and quantum communication)",
+                        "confidence": 0.4,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proposed_testable_hypotheses"
+                        },
+                        "timestamp": "2026-07-17T01:07:28.887687"
+                    }
+                ]
+            },
+            "missing_evidence": [
+                "experiment",
+                "simulation"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "A hybrid approach combining topological quantum codes with other quantum error correction methods and integrating anyon-based quantum computing with existing quantum communication protocols could enhance the feasibility and scalability of the proposed quantum internet architecture.": {
+            "claim": "A hybrid approach combining topological quantum codes with other quantum error correction methods and integrating anyon-based quantum computing with existing quantum communication protocols could enhance the feasibility and scalability of the proposed quantum internet architecture.",
+            "confidence": 0.0363,
+            "evidence_sources": {
+                "literature": [
+                    {
+                        "claim": "A hybrid approach combining topological quantum codes with other quantum error correction methods and integrating anyon-based quantum computing with existing quantum communication protocols could enhance the feasibility and scalability of the proposed quantum internet architecture.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Proven fact: Quantum Error Correction Codes can mitigate quantum noise in communication",
+                        "confidence": 0.177,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proven_facts",
+                            "similarity": 0.208
+                        },
+                        "timestamp": "2026-07-17T01:16:35.689547"
+                    }
+                ],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": []
+            },
+            "missing_evidence": [
+                "experiment",
+                "simulation",
+                "logical_deduction"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "A hybrid approach combining low-Earth orbit quantum satellites with terrestrial fiber optic networks, utilizing quantum entanglement-based secure key distribution for inter-satellite and satellite-to-ground communications, could offer a more feasible and scalable path towards a continental-scale quantum internet.": {
+            "claim": "A hybrid approach combining low-Earth orbit quantum satellites with terrestrial fiber optic networks, utilizing quantum entanglement-based secure key distribution for inter-satellite and satellite-to-ground communications, could offer a more feasible and scalable path towards a continental-scale quantum internet.",
+            "confidence": 0.0,
+            "evidence_sources": {
+                "literature": [],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": []
+            },
+            "missing_evidence": [
+                "literature",
+                "experiment",
+                "simulation",
+                "logical_deduction"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "Develop ultra-coherent optical fibers with integrated nonlinear optical elements that can adaptively compensate for decoherence, enabling the creation of trusted-node-free quantum networks. This could involve the use of novel materials, such as nonlinear optical crystals or metamaterials, and advanced fiber designs that maximize the self-healing properties.": {
+            "claim": "Develop ultra-coherent optical fibers with integrated nonlinear optical elements that can adaptively compensate for decoherence, enabling the creation of trusted-node-free quantum networks. This could involve the use of novel materials, such as nonlinear optical crystals or metamaterials, and advanced fiber designs that maximize the self-healing properties.",
+            "confidence": 0.0,
+            "evidence_sources": {
+                "literature": [],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": []
+            },
+            "missing_evidence": [
+                "literature",
+                "experiment",
+                "simulation",
+                "logical_deduction"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "A hybrid quantum-classical network that utilizes quantum key distribution for secure key exchange, supplemented by classical machine learning algorithms for real-time error correction and network optimization, could potentially achieve high-fidelity quantum communication over continental distances. This would require the development of advanced quantum error correction codes, high-speed classical processing for real-time adaptation, and innovative methods for maintaining quantum coherence over long distances.": {
+            "claim": "A hybrid quantum-classical network that utilizes quantum key distribution for secure key exchange, supplemented by classical machine learning algorithms for real-time error correction and network optimization, could potentially achieve high-fidelity quantum communication over continental distances. This would require the development of advanced quantum error correction codes, high-speed classical processing for real-time adaptation, and innovative methods for maintaining quantum coherence over long distances.",
+            "confidence": 0.0412,
+            "evidence_sources": {
+                "literature": [
+                    {
+                        "claim": "A hybrid quantum-classical network that utilizes quantum key distribution for secure key exchange, supplemented by classical machine learning algorithms for real-time error correction and network optimization, could potentially achieve high-fidelity quantum communication over continental distances. This would require the development of advanced quantum error correction codes, high-speed classical processing for real-time adaptation, and innovative methods for maintaining quantum coherence over long distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Proven fact: Quantum Error Correction Codes can mitigate quantum noise in communication",
+                        "confidence": 0.162,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proven_facts",
+                            "similarity": 0.19
+                        },
+                        "timestamp": "2026-07-17T01:16:35.712837"
+                    },
+                    {
+                        "claim": "A hybrid quantum-classical network that utilizes quantum key distribution for secure key exchange, supplemented by classical machine learning algorithms for real-time error correction and network optimization, could potentially achieve high-fidelity quantum communication over continental distances. This would require the development of advanced quantum error correction codes, high-speed classical processing for real-time adaptation, and innovative methods for maintaining quantum coherence over long distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Prior art: Quantum key distribution protocols like BB84 and Ekert91 for secure key exchange",
+                        "confidence": 0.127,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "state_of_the_art_prior_art",
+                            "similarity": 0.182
+                        },
+                        "timestamp": "2026-07-17T01:16:35.713625"
+                    },
+                    {
+                        "claim": "A hybrid quantum-classical network that utilizes quantum key distribution for secure key exchange, supplemented by classical machine learning algorithms for real-time error correction and network optimization, could potentially achieve high-fidelity quantum communication over continental distances. This would require the development of advanced quantum error correction codes, high-speed classical processing for real-time adaptation, and innovative methods for maintaining quantum coherence over long distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Scalable methods for distributing entanglement over continental distances without trusted repeaters",
+                        "confidence": 0.087,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns",
+                            "similarity": 0.173
+                        },
+                        "timestamp": "2026-07-17T01:16:35.715320"
+                    }
+                ],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": [
+                    {
+                        "claim": "A hybrid quantum-classical network that utilizes quantum key distribution for secure key exchange, supplemented by classical machine learning algorithms for real-time error correction and network optimization, could potentially achieve high-fidelity quantum communication over continental distances. This would require the development of advanced quantum error correction codes, high-speed classical processing for real-time adaptation, and innovative methods for maintaining quantum coherence over long distances.",
+                        "source_hypothesis": "",
+                        "evidence_type": "logical_deduction",
+                        "content": "Related hypothesis: Hypothesis 1: Entanglement-based quantum networks can achieve fault-tolerant communication over 1000 km without trusted repeaters (test: Verification through experimental demonstration of entanglement distribution and quantum key distribution over long distances)",
+                        "confidence": 0.103,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "proposed_testable_hypotheses",
+                            "similarity": 0.172
+                        },
+                        "timestamp": "2026-07-17T01:16:35.714179"
+                    }
+                ]
+            },
+            "missing_evidence": [
+                "experiment",
+                "simulation"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        },
+        "A more refined approach might involve integrating neuromorphic principles with established quantum error correction techniques to enhance the resilience of quantum communication networks. This could involve developing quantum processors that can adaptively adjust their encoding and decoding strategies based on real-time error rates and network conditions.": {
+            "claim": "A more refined approach might involve integrating neuromorphic principles with established quantum error correction techniques to enhance the resilience of quantum communication networks. This could involve developing quantum processors that can adaptively adjust their encoding and decoding strategies based on real-time error rates and network conditions.",
+            "confidence": 0.0166,
+            "evidence_sources": {
+                "literature": [
+                    {
+                        "claim": "A more refined approach might involve integrating neuromorphic principles with established quantum error correction techniques to enhance the resilience of quantum communication networks. This could involve developing quantum processors that can adaptively adjust their encoding and decoding strategies based on real-time error rates and network conditions.",
+                        "source_hypothesis": "",
+                        "evidence_type": "literature",
+                        "content": "Known gap: Robust quantum error correction techniques for high-speed, long-distance quantum communication",
+                        "confidence": 0.081,
+                        "source_details": {
+                            "source": "knowledge_base",
+                            "section": "critical_unanswered_unknowns",
+                            "similarity": 0.163
+                        },
+                        "timestamp": "2026-07-17T01:16:35.723511"
+                    }
+                ],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": []
+            },
+            "missing_evidence": [
+                "experiment",
+                "simulation",
+                "logical_deduction"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.0,
+            "falsifiability_score": 0.0
+        }
+    },
+    "accuracy_history": [],
+    "last_updated": "2026-07-17T01:16:35.727291"
+}
