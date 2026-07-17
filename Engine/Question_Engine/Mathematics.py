@@ -1,22 +1,25 @@
 """
-RESEARCH MATHEMATICS ENGINE
-Derives equations, checks dimensional consistency, verifies mathematical constraints,
-estimates complexity, and rejects impossible formulations.
+RESEARCH MATHEMATICS ENGINE (DBSCAN-Driven)
+No more LLM equation hallucination.
 
-Core capabilities:
-- Equation derivation from natural language hypotheses
-- Dimensional analysis (MLT: Mass, Length, Time)
-- Mathematical constraint verification
-- Complexity estimation (Big-O)
-- Physical plausibility checking
-- Unit consistency validation
+Instead:
+1. Generate random mathematical formulations from hypothesis keywords
+2. TF-IDF vectorize them
+3. DBSCAN cluster (r=1→r=4 multi-resolution)
+4. Filter out rubbish immediately (dimensional analysis + constraint check)
+5. LLM only used for: "Does this make sense?" (yes/no)
+6. If yes → deepen that cluster with more random variations
+7. If no → discard
 """
 
 import os
 import json
 import math
 import re
-from typing import List, Dict, Any, Optional, Tuple, Set
+import random
+import concurrent.futures
+from collections import Counter
+from typing import List, Dict, Any, Tuple, Optional, Set
 from datetime import datetime
 from groq import Groq
 from pydantic import BaseModel, Field, ValidationError
@@ -24,321 +27,302 @@ from pydantic import BaseModel, Field, ValidationError
 # =========================================================
 # PYDANTIC SCHEMAS
 # =========================================================
+class MathIdea(BaseModel):
+    idea_id: str = Field(description="Unique ID for this math idea.")
+    equation_text: str = Field(description="The equation in plain text (e.g., 'C = A * k').")
+    variables: Dict[str, str] = Field(description="Map of variable name -> description.")
+    relationship_type: str = Field(description="One of: proportional, inverse, exponential, logarithmic, power_law, polynomial, linear, quadratic, threshold, sigmoid")
 
-class DerivedEquation(BaseModel):
-    equation_id: str = Field(description="Unique identifier for this equation.")
-    name: str = Field(description="Short descriptive name for the equation.")
-    equation_latex: str = Field(description="The equation in LaTeX notation.")
-    equation_text: str = Field(description="The equation in plain text (e.g., 'F = m * a').")
-    
-    # Variables
-    variables: Dict[str, str] = Field(description="Map of variable name -> description/units.")
-    
-    # Dimensional Analysis
-    left_hand_units: str = Field(description="Dimensional units of the left-hand side (MLT format).")
-    right_hand_units: str = Field(description="Dimensional units of the right-hand side (MLT format).")
-    dimensionally_consistent: bool = Field(description="Whether LHS and RHS units match.")
-    
-    # Derivation
-    derived_from_hypothesis: str = Field(description="The hypothesis this equation was derived from.")
-    derivation_logic: str = Field(description="Step-by-step reasoning for how this equation was derived.")
-    
-    # Constraints
-    domain_constraints: List[str] = Field(description="Constraints on when this equation holds (e.g., 'x > 0', 'Re < 2300').")
-    boundary_conditions: List[str] = Field(description="Boundary conditions where the equation is valid.")
-    
-    # Complexity
-    computational_complexity: str = Field(description="Big-O complexity to evaluate this equation.")
-    num_operations: int = Field(description="Estimated number of floating-point operations per evaluation.")
-
-class EquationValidation(BaseModel):
-    equation_id: str = Field(description="Matching the derived equation.")
-    is_physically_plausible: bool = Field(description="Whether the equation describes a physically possible relationship.")
-    is_mathematically_consistent: bool = Field(description="Whether the math is internally consistent (no division by zero, etc.).")
-    potential_issues: List[str] = Field(description="Mathematical issues found.")
-    suggested_fixes: List[str] = Field(description="Suggested corrections for any issues.")
-    plausibility_score: float = Field(description="Overall score 0.0-1.0 for how plausible this equation is.")
+class MathValidation(BaseModel):
+    makes_sense: bool = Field(description="True if this mathematical relationship is physically/logically meaningful.")
+    reasoning: str = Field(description="Why it makes sense or why it's rubbish.")
+    dimension_hint: str = Field(description="If it makes sense, suggest what dimensions the variables should have.")
 
 # =========================================================
-# DIMENSIONAL ANALYSIS (MLT System)
+# TOKENIZATION & TF-IDF (Shared with DOSCAN)
 # =========================================================
-
-# Base dimensions: M (Mass), L (Length), T (Time), I (Current), Θ (Temperature), N (Amount), J (Luminosity)
-# We use MLT as the primary set, extended with I and Θ where needed.
-
-DIMENSION_SYMBOLS = {
-    "M": "Mass",
-    "L": "Length", 
-    "T": "Time",
-    "I": "Electric Current",
-    "TH": "Temperature"
+BOUNDARY_WORDS = {
+    "the", "a", "an", "is", "are", "was", "were", "to", "for", "of", "with", "by", "on", "in",
+    "at", "from", "as", "this", "that", "it", "can", "could", "would", "should", "using", "such",
+    "without", "will", "has", "have", "had", "not", "no", "only", "but", "however", "and", "or",
+    "which", "where", "when", "why", "how", "we", "they", "their", "our", "show", "shows",
+    "demonstrate", "compare", "search", "find", "found", "use", "used", "requires", "assumes",
+    "must", "always", "during", "between", "through", "under", "over", "into"
 }
 
-# Common physical quantities and their MLT dimensions
-# Format: "quantity_name": (M, L, T, I, TH)
-PHYSICAL_DIMENSIONS: Dict[str, Tuple[int, int, int, int, int]] = {
-    "mass": (1, 0, 0, 0, 0),
-    "length": (0, 1, 0, 0, 0),
-    "distance": (0, 1, 0, 0, 0),
-    "position": (0, 1, 0, 0, 0),
-    "radius": (0, 1, 0, 0, 0),
-    "area": (0, 2, 0, 0, 0),
-    "volume": (0, 3, 0, 0, 0),
-    "time": (0, 0, 1, 0, 0),
-    "velocity": (0, 1, -1, 0, 0),
-    "speed": (0, 1, -1, 0, 0),
-    "acceleration": (0, 1, -2, 0, 0),
-    "force": (1, 1, -2, 0, 0),
-    "energy": (1, 2, -2, 0, 0),
-    "work": (1, 2, -2, 0, 0),
-    "power": (1, 2, -3, 0, 0),
-    "pressure": (1, -1, -2, 0, 0),
-    "density": (1, -3, 0, 0, 0),
-    "frequency": (0, 0, -1, 0, 0),
-    "wavelength": (0, 1, 0, 0, 0),
-    "voltage": (1, 2, -3, -1, 0),
-    "current": (0, 0, -1, 1, 0),
-    "resistance": (1, 2, -3, -2, 0),
-    "capacitance": (-1, -2, 4, 2, 0),
-    "inductance": (1, 2, -2, -2, 0),
-    "temperature": (0, 0, 0, 0, 1),
-    "entropy": (1, 2, -2, 0, -1),
-    "specific_heat": (0, 2, -2, 0, -1),
-    "viscosity": (1, -1, -1, 0, 0),
-    "diffusion_coefficient": (0, 2, -1, 0, 0),
-    "thermal_conductivity": (1, 1, -3, 0, -1),
-    "charge": (0, 0, 1, 1, 0),
-    "magnetic_field": (1, 0, -2, -1, 0),
-    "dimensionless": (0, 0, 0, 0, 0),
-    "ratio": (0, 0, 0, 0, 0),
-    "efficiency": (0, 0, 0, 0, 0),
-    "probability": (0, 0, 0, 0, 0),
-    "count": (0, 0, 0, 0, 0),
-    "number": (0, 0, 0, 0, 0),
-    "strain": (0, 0, 0, 0, 0),
-    "refractive_index": (0, 0, 0, 0, 0),
-    "poisson_ratio": (0, 0, 0, 0, 0),
-    "coefficient": (0, 0, 0, 0, 0),
-    "constant": (0, 0, 0, 0, 0),
-    "factor": (0, 0, 0, 0, 0),
-    "index": (0, 0, 0, 0, 0),
-    # Learning rate specific
-    "learning_rate": (0, 0, -1, 0, 0),  # per time step
-    "accuracy": (0, 0, 0, 0, 0),
-    "loss": (0, 0, 0, 0, 0),
-    "gradient": (0, 0, 0, 0, 0),
-    "parameter": (0, 0, 0, 0, 0),
-    "weight": (0, 0, 0, 0, 0),
-    "bias": (0, 0, 0, 0, 0),
-    "epoch": (0, 0, 1, 0, 0),
-    "batch_size": (0, 0, 0, 0, 0),
-    "dataset_size": (0, 0, 0, 0, 0),
-}
+def tokenize(text: str) -> List[str]:
+    return [w for w in re.findall(r'\b[a-zA-Z0-9_-]+\b', text.lower()) if w not in BOUNDARY_WORDS]
 
-def parse_dimensional_string(dim_str: str) -> Tuple[int, int, int, int, int]:
-    """
-    Parses an MLT dimensional string like "M^1 L^2 T^-2" into a tuple (M, L, T, I, TH).
-    """
-    dims = [0, 0, 0, 0, 0]
-    labels = ["M", "L", "T", "I", "TH"]
-    
-    if not dim_str or dim_str == "dimensionless":
-        return tuple(dims)
-    
-    # Match patterns like "M^1", "L^-2", "T^3", or just "M", "L", etc.
-    pattern = r'([A-Za-z]+)\^?(-?\d+)?'
-    for match in re.finditer(pattern, dim_str):
-        symbol = match.group(1)
-        exponent = int(match.group(2)) if match.group(2) else 1
-        if symbol in labels:
-            idx = labels.index(symbol)
-            dims[idx] = exponent
-    
-    return tuple(dims)
+def build_tfidf_vectors(documents: List[str]) -> List[Dict[str, float]]:
+    doc_tokens = [tokenize(doc) for doc in documents]
+    N = max(len(documents), 1)
+    df = Counter()
+    for tokens in doc_tokens:
+        df.update(set(tokens))
+    vectors = []
+    for tokens in doc_tokens:
+        vec = {}
+        tf = Counter(tokens)
+        total_terms = max(len(tokens), 1)
+        for word, count in tf.items():
+            vec[word] = (count / total_terms) * math.log(N / (1 + df[word]))
+        vectors.append(vec)
+    return vectors
 
-
-def dimensions_match(dims1: Tuple[int, int, int, int, int], 
-                     dims2: Tuple[int, int, int, int, int]) -> bool:
-    """Check if two MLT dimension tuples are identical."""
-    return dims1 == dims2
-
-
-def format_dimensions(dims: Tuple[int, int, int, int, int]) -> str:
-    """Format dimension tuple as human-readable string."""
-    labels = ["M", "L", "T", "I", "TH"]
-    parts = []
-    for i, d in enumerate(dims):
-        if d != 0:
-            if d == 1:
-                parts.append(labels[i])
-            else:
-                parts.append(f"{labels[i]}^{d}")
-    return " · ".join(parts) if parts else "dimensionless"
-
-
-def get_dimensions_for_variable(var_name: str) -> Tuple[int, int, int, int, int]:
-    """
-    Look up or infer the dimensions of a variable based on its name.
-    Falls back to dimensionless if unknown.
-    """
-    var_lower = var_name.lower().strip()
-    
-    # Direct lookup
-    if var_lower in PHYSICAL_DIMENSIONS:
-        return PHYSICAL_DIMENSIONS[var_lower]
-    
-    # Check common prefixes/suffixes
-    for key, dims in PHYSICAL_DIMENSIONS.items():
-        if key in var_lower or var_lower in key:
-            return dims
-    
-    # Check by common variable names
-    var_symbols = {
-        'm': (1, 0, 0, 0, 0),    # mass
-        't': (0, 0, 1, 0, 0),    # time
-        'x': (0, 1, 0, 0, 0),    # position
-        'y': (0, 1, 0, 0, 0),    # position
-        'z': (0, 1, 0, 0, 0),    # position
-        'r': (0, 1, 0, 0, 0),    # radius
-        'v': (0, 1, -1, 0, 0),   # velocity
-        'u': (0, 1, -1, 0, 0),   # velocity
-        'a': (0, 1, -2, 0, 0),   # acceleration
-        'f': (1, 1, -2, 0, 0),   # force
-        'e': (1, 2, -2, 0, 0),   # energy
-        'p': (1, -1, -2, 0, 0),  # pressure (or power)
-        'w': (1, 2, -2, 0, 0),   # work
-        'i': (0, 0, -1, 1, 0),   # current
-        'q': (0, 0, 1, 1, 0),    # charge
-        'c': (0, 0, 0, 0, 0),    # constant
-        'k': (0, 0, 0, 0, 0),    # constant
-        'g': (0, 1, -2, 0, 0),   # acceleration due to gravity
-        'h': (1, 2, -1, 0, 0),   # Planck constant / height
-        'd': (0, 1, 0, 0, 0),    # distance
-        's': (0, 0, 0, 0, 0),    # usually dimensionless or entropy
-    }
-    
-    if len(var_lower) == 1 and var_lower in var_symbols:
-        return var_symbols[var_lower]
-    
-    return (0, 0, 0, 0, 0)  # default dimensionless
-
+def cosine_similarity(vec1: Dict[str, float], vec2: Dict[str, float]) -> float:
+    intersection = set(vec1.keys()) & set(vec2.keys())
+    dot_product = sum(vec1[w] * vec2[w] for w in intersection)
+    mag1 = math.sqrt(sum(val**2 for val in vec1.values()))
+    mag2 = math.sqrt(sum(val**2 for val in vec2.values()))
+    return 0.0 if mag1 == 0 or mag2 == 0 else dot_product / (mag1 * mag2)
 
 # =========================================================
-# COMPLEXITY ANALYSIS
+# DBSCAN CLUSTERING (Multi-Resolution)
 # =========================================================
+def dbscan_cluster(documents: List[str], vectors: List[Dict[str, float]], eps: float, min_pts: int = 1) -> Tuple[Dict[int, List[int]], List[int]]:
+    labels = [0] * len(documents)
+    cluster_id = 0
+    def region_query(p_idx: int) -> List[int]:
+        return [q_idx for q_idx, q_vec in enumerate(vectors) if cosine_similarity(vectors[p_idx], q_vec) >= eps]
 
-def estimate_complexity(equation_text: str, num_vars: int) -> Dict[str, Any]:
+    for p in range(len(documents)):
+        if labels[p] != 0: continue
+        neighbors = region_query(p)
+        if len(neighbors) < min_pts + 1:
+            labels[p] = -1
+        else:
+            cluster_id += 1
+            labels[p] = cluster_id
+            i = 0
+            while i < len(neighbors):
+                q = neighbors[i]
+                if labels[q] == -1: labels[q] = cluster_id
+                elif labels[q] == 0:
+                    labels[q] = cluster_id
+                    q_neighbors = region_query(q)
+                    if len(q_neighbors) >= min_pts + 1: neighbors.extend(q_neighbors)
+                i += 1
+
+    clusters: Dict[int, List[int]] = {}
+    noise: List[int] = []
+    for idx, label in enumerate(labels):
+        if label == -1: noise.append(idx)
+        else:
+            if label not in clusters: clusters[label] = []
+            clusters[label].append(idx)
+    return clusters, noise
+
+def multi_resolution_cluster(documents: List[str], max_r: int = 4) -> Dict[str, Any]:
     """
-    Estimates computational complexity of evaluating an equation.
-    Uses heuristic: sum over operations in the expression.
+    Multi-resolution DBSCAN clustering (r=1 to r=4).
+    eps decays: 0.30 → 0.15 → 0.00 → 0.00
     """
-    # Count operations
-    num_adds = equation_text.count('+') + equation_text.count('-')
-    num_muls = equation_text.count('*') + equation_text.count('·')
-    num_divs = equation_text.count('/')
-    num_pows = equation_text.count('^') + equation_text.count('**')
-    num_funcs = sum(equation_text.count(func) for func in ['sin', 'cos', 'tan', 'log', 'exp', 'sqrt', 'abs'])
-    
-    total_ops = num_adds + num_muls + num_divs + num_pows + num_funcs
-    
-    # Determine Big-O
-    if num_vars <= 1:
-        complexity = "O(1)" if total_ops <= 10 else "O(1) with large constant"
-    elif num_vars <= 3:
-        complexity = "O(n)" if total_ops <= 20 else "O(n)"
-    else:
-        complexity = "O(n²)" if num_pows > 2 else f"O(n^{min(num_vars, 3)})"
-    
+    unprocessed_indices = list(range(len(documents)))
+    all_clusters = {}
+    cluster_counter = 0
+
+    for r in range(1, max_r + 1):
+        eps = max(0.0, 0.45 - (r * 0.15))
+        if not unprocessed_indices: break
+        
+        current_docs = [documents[i] for i in unprocessed_indices]
+        if len(current_docs) < 2:
+            break
+            
+        vectors = build_tfidf_vectors(current_docs)
+        clusters, noise_local = dbscan_cluster(current_docs, vectors, eps=eps)
+        
+        for cid, members in clusters.items():
+            cluster_counter += 1
+            original_indices = [unprocessed_indices[i] for i in members]
+            all_clusters[f"M_Cluster_{cluster_counter}_r{r}"] = {
+                "document_indices": original_indices,
+                "documents": [documents[i] for i in original_indices],
+                "r_level": r,
+                "eps": round(eps, 3),
+                "size": len(original_indices)
+            }
+        
+        noise_indices = [unprocessed_indices[i] for i in noise_local]
+        unprocessed_indices = noise_indices
+
     return {
-        "big_o": complexity,
-        "total_operations": total_ops,
-        "num_additions": num_adds,
-        "num_multiplications": num_muls,
-        "num_divisions": num_divs,
-        "num_powers": num_pows,
-        "num_function_calls": num_funcs,
-        "num_variables": num_vars
+        "clusters": all_clusters,
+        "final_noise": [documents[i] for i in unprocessed_indices] if unprocessed_indices else [],
+        "total_documents": len(documents),
+        "total_clusters": len(all_clusters)
     }
 
+# =========================================================
+# RANDOM MATH IDEA GENERATOR (No LLM)
+# =========================================================
+RELATIONSHIP_TEMPLATES = [
+    # proportional: y = k * x
+    lambda a, b: f"{a} = k * {b}",
+    lambda a, b: f"{a} = alpha * {b} + beta",
+    # inverse: y = k / x
+    lambda a, b: f"{a} = k / {b}",
+    lambda a, b: f"{a} = k / ({b} + c)",
+    # exponential: y = k * exp(x)
+    lambda a, b: f"{a} = k * exp({b})",
+    lambda a, b: f"{a} = k * exp(-{b} / tau)",
+    # power law: y = k * x^n
+    lambda a, b: f"{a} = k * ({b})^n",
+    lambda a, b: f"{a} = k * ({b})^2",
+    lambda a, b: f"{a} = k * sqrt({b})",
+    # logarithmic: y = k * log(x)
+    lambda a, b: f"{a} = k * log({b})",
+    lambda a, b: f"{a} = k * log({b} / {b}_0)",
+    # polynomial
+    lambda a, b: f"{a} = k1 * {b} + k2 * {b}^2",
+    lambda a, b: f"{a} = k1 * {b} + k2 * {b}^2 + k3 * {b}^3",
+    # threshold / sigmoid
+    lambda a, b: f"{a} = 1 / (1 + exp(-k * ({b} - {b}_0)))",
+    # linear with offset
+    lambda a, b: f"{a} = k * {b} + {b}_offset",
+    # ratio
+    lambda a, b: f"{a} = ({b}_max - {b}) / ({b}_max - {b}_min)",
+]
 
-def check_numerical_stability(equation_text: str) -> List[str]:
-    """
-    Checks for potential numerical stability issues in an equation.
-    """
-    issues = []
-    
-    # Check for division by small numbers
-    if '/' in equation_text:
-        issues.append("Contains division — check for denominator approaching zero.")
-    
-    # Check for exponentials that could overflow
-    if 'exp' in equation_text or '^' in equation_text:
-        issues.append("Contains exponentiation — check for overflow with large exponents.")
-    
-    # Check for subtraction that could cause catastrophic cancellation
-    # Simple heuristic: look for " - " pattern
-    if ' - ' in equation_text or ')-' in equation_text:
-        issues.append("Contains subtraction — potential catastrophic cancellation.")
-    
-    # Check for log of negative
-    if 'log' in equation_text or 'ln' in equation_text:
-        issues.append("Contains logarithm — ensure argument is strictly positive.")
-    
-    # Check for sqrt of negative
-    if 'sqrt' in equation_text:
-        issues.append("Contains square root — ensure argument is non-negative.")
-    
-    return issues
+RELATIONSHIP_TYPES = [
+    "proportional", "inverse", "exponential", "power_law", 
+    "logarithmic", "polynomial", "sigmoid", "linear"
+]
 
+def extract_keywords(hypothesis: str) -> List[str]:
+    """Extract meaningful keywords from a hypothesis for variable generation."""
+    words = tokenize(hypothesis)
+    # Filter to longer, more meaningful words
+    keywords = [w for w in words if len(w) > 3]
+    # Add some common variable names
+    common_vars = ["x", "y", "z", "t", "k", "n", "alpha", "beta", "gamma", "theta", "lambda", "mu", "sigma", "tau", "omega"]
+    return keywords + common_vars
+
+def generate_random_math_ideas(hypothesis: str, num_ideas: int = 20) -> List[MathIdea]:
+    """
+    Generate random mathematical formulations from hypothesis keywords.
+    No LLM involved — purely combinatorial.
+    """
+    keywords = extract_keywords(hypothesis)
+    if len(keywords) < 3:
+        keywords = ["x", "y", "k", "n", "alpha", "beta", hypothesis[:5].lower()]
+    
+    ideas = []
+    for i in range(num_ideas):
+        # Pick 2-3 random keywords as variables
+        vars_picked = random.sample(keywords, min(3, len(keywords)))
+        a = vars_picked[0]
+        b = vars_picked[1] if len(vars_picked) > 1 else "x"
+        
+        # Pick a random relationship template
+        template = random.choice(RELATIONSHIP_TEMPLATES)
+        try:
+            eq_text = template(a, b)
+        except Exception:
+            eq_text = f"{a} = k * {b}"
+        
+        rel_type = random.choice(RELATIONSHIP_TYPES)
+        
+        # Build variable descriptions
+        var_desc = {}
+        for v in vars_picked:
+            var_desc[v] = f"Variable derived from: {hypothesis[:50]}"
+        var_desc["k"] = "Proportionality constant"
+        if "alpha" in eq_text:
+            var_desc["alpha"] = "Scaling factor"
+        if "beta" in eq_text:
+            var_desc["beta"] = "Offset parameter"
+        if "tau" in eq_text:
+            var_desc["tau"] = "Time constant"
+        if "n" in eq_text:
+            var_desc["n"] = "Exponent"
+        
+        ideas.append(MathIdea(
+            idea_id=f"MID-{i+1:03d}",
+            equation_text=eq_text,
+            variables=var_desc,
+            relationship_type=rel_type
+        ))
+    
+    return ideas
 
 # =========================================================
-# EQUATION DERIVATION (LLM-based)
+# RUBBISH FILTER (Deterministic, No LLM)
 # =========================================================
-
-def derive_equation(client: Groq, hypothesis: str, 
-                    known_variables: Optional[List[str]] = None) -> Optional[DerivedEquation]:
+def is_rubbish_idea(idea: MathIdea) -> Tuple[bool, str]:
     """
-    Uses the LLM to derive a mathematical equation from a hypothesis.
-    Also validates dimensional consistency.
+    Immediately filter out rubbish math ideas without using LLM.
+    Returns (is_rubbish, reason).
+    """
+    eq = idea.equation_text
+    
+    # 1. Check for self-reference (variable on both sides with no transformation)
+    lhs = eq.split('=')[0].strip() if '=' in eq else ""
+    rhs = eq.split('=')[1].strip() if '=' in eq else ""
+    
+    # 2. Check for division by zero patterns
+    if '/ 0' in eq or '/0' in eq:
+        return True, "Division by zero"
+    
+    # 3. Check for log of zero or negative
+    if 'log(0)' in eq or 'log(-' in eq:
+        return True, "Logarithm of non-positive value"
+    
+    # 4. Check for sqrt of negative
+    if 'sqrt(-' in eq:
+        return True, "Square root of negative value"
+    
+    # 5. Check for trivially circular equations (same var on both sides)
+    lhs_vars = set(tokenize(lhs))
+    rhs_vars = set(tokenize(rhs))
+    common = lhs_vars & rhs_vars
+    if len(common) == len(lhs_vars) and len(lhs_vars) > 0 and len(rhs_vars) <= 2:
+        return True, f"Circular: {', '.join(common)} appears on both sides with no meaningful transformation"
+    
+    # 6. Check for too many variables (overly complex)
+    all_vars = lhs_vars | rhs_vars
+    if len(all_vars) > 8:
+        return True, f"Too many variables ({len(all_vars)}): overly complex for a fundamental relationship"
+    
+    # 7. Check for missing equals sign
+    if '=' not in eq:
+        return True, "No equality relationship defined"
+    
+    # 8. Check for empty sides
+    if not lhs or not rhs:
+        return True, "Empty left or right side"
+    
+    return False, ""
+
+# =========================================================
+# LLM VALIDATION (Only for "Does this make sense?")
+# =========================================================
+def validate_math_idea_llm(client: Groq, hypothesis: str, idea: MathIdea) -> MathValidation:
+    """
+    LLM is ONLY used to answer: "Does this mathematical relationship make sense?"
+    Not to generate equations — just to validate them.
     """
     system_prompt = (
-        "You are a Mathematical Physicist. Your job is to derive rigorous mathematical equations "
-        "from hypothesis statements. You MUST follow these rules:\n"
-        "1. Derive at least one equation that captures the core relationship\n"
-        "2. Use proper LaTeX notation\n"
-        "3. Identify every variable and its physical dimensions in MLT format (M=Mass, L=Length, T=Time)\n"
-        "4. Check dimensional consistency: LHS units must equal RHS units\n"
-        "5. List all domain constraints and boundary conditions\n"
-        "6. Estimate computational complexity\n\n"
-        "You MUST respond with a valid JSON object matching this schema:\n"
+        "You are a strict Mathematical Validator. Your ONLY job is to answer:\n"
+        "'Does this mathematical relationship make physical/logical sense?'\n\n"
+        "Rules:\n"
+        "- If the equation captures a meaningful relationship: makes_sense=true\n"
+        "- If the equation is nonsense, contradictory, or physically impossible: makes_sense=false\n"
+        "- Be brief. Just validate, don't derive new equations.\n\n"
+        "Respond with JSON:\n"
         "{\n"
-        '  "equation_id": "EQ-001",\n'
-        '  "name": "Descriptive name",\n'
-        '  "equation_latex": "F = m \\\\cdot a",\n'
-        '  "equation_text": "F = m * a",\n'
-        '  "variables": {"F": "Force (M^1 L^1 T^-2)", "m": "Mass (M^1)", "a": "Acceleration (L^1 T^-2)"},\n'
-        '  "left_hand_units": "M^1 L^1 T^-2",\n'
-        '  "right_hand_units": "M^1 L^1 T^-2",\n'
-        '  "dimensionally_consistent": true,\n'
-        '  "derived_from_hypothesis": "string",\n'
-        '  "derivation_logic": "By Newton\'s second law...",\n'
-        '  "domain_constraints": ["x > 0"],\n'
-        '  "boundary_conditions": ["as t -> 0"],\n'
-        '  "computational_complexity": "O(1)",\n'
-        '  "num_operations": 10\n'
+        '  "makes_sense": true,\n'
+        '  "reasoning": "Brief reason",\n'
+        '  "dimension_hint": "Suggested dimensions if valid"\n'
         "}\n"
-        "Be specific and mathematically precise."
     )
     
-    vars_context = ""
-    if known_variables:
-        vars_context = f"Known relevant variables: {', '.join(known_variables)}\n"
-    
     prompt = (
-        f"Hypothesis to derive equation from: {hypothesis}\n\n"
-        f"{vars_context}"
-        "Derive the governing equation(s). Include ALL variables with their dimensions. "
-        "Verify dimensional consistency."
+        f"Original hypothesis: {hypothesis}\n"
+        f"Proposed equation: {idea.equation_text}\n"
+        f"Relationship type: {idea.relationship_type}\n"
+        f"Variables: {json.dumps(idea.variables)}\n\n"
+        f"Does this equation make sense for the hypothesis? Answer yes or no."
     )
     
     try:
@@ -349,199 +333,189 @@ def derive_equation(client: Groq, hypothesis: str,
                 {"role": "user", "content": prompt}
             ],
             response_format={"type": "json_object"},
-            temperature=0.2,  # Low temp for mathematical precision
+            temperature=0.1,
         )
         raw_json = completion.choices[0].message.content
-        return DerivedEquation.model_validate_json(raw_json)
-    except ValidationError as ve:
-        print(f"   ❌ Equation validation error: {ve}")
-        return None
+        return MathValidation.model_validate_json(raw_json)
     except Exception as e:
-        print(f"   ❌ Error deriving equation: {e}")
-        return None
+        return MathValidation(makes_sense=False, reasoning=f"LLM error: {e}", dimension_hint="")
 
-
-def validate_equation(equation: DerivedEquation) -> EquationValidation:
+# =========================================================
+# DEEPENING: Generate more ideas around a validated cluster
+# =========================================================
+def deepen_cluster(hypothesis: str, cluster_docs: List[str], num_new: int = 10) -> List[MathIdea]:
     """
-    Validates a derived equation for physical and mathematical correctness.
+    When a cluster is validated, generate MORE random ideas 
+    that are variations of the validated equations in that cluster.
     """
-    issues = []
-    fixes = []
-    
-    # 1. Check dimensional consistency from the LLM's own claim
-    if not equation.dimensionally_consistent:
-        issues.append(f"Dimensional inconsistency: LHS={equation.left_hand_units}, RHS={equation.right_hand_units}")
-        fixes.append("Add a dimensional constant to balance units.")
-    
-    # 2. Independent dimensional check
-    lhs_dims = parse_dimensional_string(equation.left_hand_units)
-    rhs_dims = parse_dimensional_string(equation.right_hand_units)
-    our_consistency_check = dimensions_match(lhs_dims, rhs_dims)
-    
-    if our_consistency_check != equation.dimensionally_consistent:
-        issues.append(f"Dimensional analysis mismatch: LLM says {equation.dimensionally_consistent}, "
-                      f"our check says {our_consistency_check} (LHS={format_dimensions(lhs_dims)}, "
-                      f"RHS={format_dimensions(rhs_dims)})")
-        fixes.append("Reconcile the dimensional analysis.")
-    
-    # 3. Check for division by zero in constraints
-    for constraint in equation.domain_constraints:
-        if '= 0' in constraint or '== 0' in constraint:
-            # Check if denominator of any fraction could be zero
-            if '/' in equation.equation_text:
-                issues.append(f"Constraint {constraint} could cause division by zero.")
-                fixes.append(f"Add condition that denominator ≠ 0 when {constraint}.")
-    
-    # 4. Check variable count vs complexity
-    num_vars = len(equation.variables)
-    complexity_info = estimate_complexity(equation.equation_text, num_vars)
-    
-    # 5. Numerical stability check
-    stability_issues = check_numerical_stability(equation.equation_text)
-    issues.extend(stability_issues)
-    for si in stability_issues:
-        fixes.append(f"Add guard clauses for: {si}")
-    
-    # 6. Plausibility score
-    score = 1.0
-    if not equation.dimensionally_consistent:
-        score -= 0.5
-    if not our_consistency_check:
-        score -= 0.2
-    if issues:
-        score -= min(0.3, len(issues) * 0.1)
-    if not equation.domain_constraints:
-        score -= 0.1
-    if not equation.boundary_conditions:
-        score -= 0.1
-    score = max(0.0, score)
-    
-    is_plausible = score >= 0.5
-    is_consistent = len([i for i in issues if 'dimension' in i.lower()]) == 0
-    
-    return EquationValidation(
-        equation_id=equation.equation_id,
-        is_physically_plausible=is_plausible,
-        is_mathematically_consistent=is_consistent,
-        potential_issues=issues,
-        suggested_fixes=fixes,
-        plausibility_score=round(score, 3)
-    )
-
+    new_ideas = []
+    for doc in cluster_docs:
+        # Extract the equation pattern from the cluster document
+        # Generate variations by tweaking the relationship type
+        for _ in range(num_new // max(len(cluster_docs), 1)):
+            keywords = extract_keywords(hypothesis)
+            vars_picked = random.sample(keywords, min(3, len(keywords)))
+            a = vars_picked[0]
+            b = vars_picked[1] if len(vars_picked) > 1 else "x"
+            template = random.choice(RELATIONSHIP_TEMPLATES)
+            try:
+                eq_text = template(a, b)
+            except Exception:
+                eq_text = f"{a} = k * {b}"
+            
+            new_ideas.append(MathIdea(
+                idea_id=f"MID-DEEP-{len(new_ideas)+1:03d}",
+                equation_text=eq_text,
+                variables={v: f"Deepened variable from {hypothesis[:30]}" for v in vars_picked},
+                relationship_type=random.choice(RELATIONSHIP_TYPES)
+            ))
+    return new_ideas
 
 # =========================================================
 # MAIN MATHEMATICS ENGINE ENTRY POINT
 # =========================================================
-
 def run_mathematics_engine(
     hypotheses: List[str],
     equations_file: str = "derived_equations.json"
 ) -> Dict[str, Any]:
     """
-    Main entry point for the Mathematics Engine.
+    DBSCAN-driven Mathematics Engine.
     
     For each hypothesis:
-    1. Derives one or more equations via LLM
-    2. Validates dimensional consistency (double-checked)
-    3. Checks mathematical constraints
-    4. Estimates computational complexity
-    5. Rejects impossible formulations
-    6. Saves all derived equations
-    
-    Args:
-        hypotheses: List of hypotheses to derive equations for
-        equations_file: Output file path
-    
-    Returns:
-        Dict with derived equations and validation results
+    1. Generate 20 random math ideas (combinatorial, no LLM)
+    2. Filter rubbish immediately (deterministic checks)
+    3. TF-IDF vectorize surviving ideas
+    4. DBSCAN cluster (r=1→r=4 multi-resolution)
+    5. For each cluster, pick the best idea and ask LLM: "Does this make sense?"
+    6. If yes → deepen that cluster with more variations → cluster again
+    7. If no → discard
+    8. Save all validated equations
     """
     print("\n" + "="*80)
-    print("📐 MATHEMATICS ENGINE — Deriving Equations, Validating Dimensions, Checking Constraints")
+    print("📐 MATHEMATICS ENGINE — DBSCAN-Driven Random Generation + Validation")
     print("="*80)
     
     client = Groq()
-    
-    equations = []
-    rejected = []
+    all_validated = []
+    all_rejected = []
     
     for i, hypothesis in enumerate(hypotheses, 1):
-        print(f"\n  [{i}/{len(hypotheses)}] Deriving equation for hypothesis...")
+        print(f"\n  [{i}/{len(hypotheses)}] Processing hypothesis...")
         print(f"      📝 {hypothesis[:120]}...")
         
-        # Step 1: Derive equation
-        equation = derive_equation(client, hypothesis)
-        if not equation:
-            print(f"      ❌ Failed to derive equation.")
-            rejected.append({
-                "hypothesis": hypothesis,
-                "reason": "LLM derivation failed"
-            })
+        # Step 1: Generate random math ideas (NO LLM)
+        print(f"      🎲 Generating 20 random mathematical formulations...")
+        raw_ideas = generate_random_math_ideas(hypothesis, num_ideas=20)
+        print(f"         Generated {len(raw_ideas)} raw ideas")
+        
+        # Step 2: Filter rubbish immediately (deterministic)
+        surviving_ideas = []
+        rubbish_count = 0
+        for idea in raw_ideas:
+            is_rubbish, reason = is_rubbish_idea(idea)
+            if is_rubbish:
+                rubbish_count += 1
+                all_rejected.append({
+                    "hypothesis": hypothesis,
+                    "equation": idea.equation_text,
+                    "reason": reason,
+                    "filter": "rubbish_filter"
+                })
+            else:
+                surviving_ideas.append(idea)
+        
+        print(f"         🗑️  Rubbish filtered: {rubbish_count}")
+        print(f"         ✅ Surviving: {len(surviving_ideas)}")
+        
+        if not surviving_ideas:
+            print(f"      ⏸️  No surviving ideas. Skipping.")
             continue
         
-        # Step 2: Validate
-        validation = validate_equation(equation)
+        # Step 3: TF-IDF vectorize + DBSCAN cluster
+        idea_texts = [idea.equation_text for idea in surviving_ideas]
+        print(f"      🔬 Clustering {len(idea_texts)} ideas with DBSCAN (r=1→4)...")
+        cluster_result = multi_resolution_cluster(idea_texts, max_r=4)
         
-        # Step 3: Complexity analysis
-        complexity = estimate_complexity(equation.equation_text, len(equation.variables))
+        print(f"         Clusters formed: {cluster_result['total_clusters']}")
+        for cname, cinfo in cluster_result['clusters'].items():
+            print(f"            {cname}: {cinfo['size']} ideas (r={cinfo['r_level']}, eps={cinfo['eps']})")
         
-        # Step 4: Stability check
-        stability = check_numerical_stability(equation.equation_text)
+        # Step 4: For each cluster, validate the best idea with LLM
+        validated_this_hypothesis = 0
+        deepened_clusters = 0
         
-        entry = {
-            "equation": equation.model_dump(),
-            "validation": validation.model_dump(),
-            "complexity": complexity,
-            "numerical_stability_issues": stability,
-            "timestamp": datetime.now().isoformat()
-        }
+        for cname, cinfo in cluster_result['clusters'].items():
+            # Pick the most representative idea from this cluster (first one)
+            cluster_ideas = [surviving_ideas[idx] for idx in cinfo['document_indices']]
+            best_idea = cluster_ideas[0]  # First is fine since they're similar
+            
+            # Step 5: LLM validation — only "does this make sense?"
+            print(f"         🔍 Validating {cname} (representative: {best_idea.equation_text[:60]}...)")
+            validation = validate_math_idea_llm(client, hypothesis, best_idea)
+            
+            if validation.makes_sense:
+                validated_this_hypothesis += 1
+                all_validated.append({
+                    "hypothesis": hypothesis,
+                    "equation": best_idea.equation_text,
+                    "variables": best_idea.variables,
+                    "relationship_type": best_idea.relationship_type,
+                    "cluster": cname,
+                    "r_level": cinfo['r_level'],
+                    "validation_reasoning": validation.reasoning,
+                    "dimension_hint": validation.dimension_hint,
+                    "timestamp": datetime.now().isoformat()
+                })
+                print(f"            ✅ MAKES SENSE — {validation.reasoning[:80]}")
+                
+                # Step 6: Deepen this cluster
+                print(f"            🔄 Deepening cluster with more variations...")
+                deepened_ideas = deepen_cluster(hypothesis, cinfo['documents'], num_new=8)
+                
+                # Filter deepened ideas
+                for d_idea in deepened_ideas:
+                    is_rubbish, reason = is_rubbish_idea(d_idea)
+                    if not is_rubbish:
+                        # Validate deepened idea
+                        d_validation = validate_math_idea_llm(client, hypothesis, d_idea)
+                        if d_validation.makes_sense:
+                            deepened_clusters += 1
+                            all_validated.append({
+                                "hypothesis": hypothesis,
+                                "equation": d_idea.equation_text,
+                                "variables": d_idea.variables,
+                                "relationship_type": d_idea.relationship_type,
+                                "cluster": f"{cname}_deepened",
+                                "r_level": cinfo['r_level'] + 1,
+                                "validation_reasoning": d_validation.reasoning,
+                                "dimension_hint": d_validation.dimension_hint,
+                                "timestamp": datetime.now().isoformat()
+                            })
+                            print(f"            ✅ Deepened: {d_idea.equation_text[:60]}...")
+            else:
+                all_rejected.append({
+                    "hypothesis": hypothesis,
+                    "equation": best_idea.equation_text,
+                    "reason": validation.reasoning,
+                    "filter": "llm_validation"
+                })
+                print(f"            ❌ RUBBISH — {validation.reasoning[:80]}")
         
-        # Step 5: Reject if impossible
-        is_impossible = (
-            not validation.is_physically_plausible and 
-            not validation.is_mathematically_consistent
-        )
-        
-        if is_impossible:
-            print(f"      ❌ REJECTED — Impossible formulation")
-            rejected.append({
-                "hypothesis": hypothesis,
-                "equation_id": equation.equation_id,
-                "reason": f"Not physically plausible ({validation.plausibility_score}) and mathematically inconsistent"
-            })
-        
-        equations.append(entry)
-        
-        print(f"      📐 Equation: {equation.name}")
-        print(f"      🧮 LaTeX: {equation.equation_latex}")
-        print(f"      📏 Dimensional consistency: {'✅' if equation.dimensionally_consistent else '❌'}")
-        print(f"         LHS: {equation.left_hand_units} | RHS: {equation.right_hand_units}")
-        print(f"      🔬 Physically plausible: {'✅' if validation.is_physically_plausible else '❌'} "
-              f"(score: {validation.plausibility_score:.2f})")
-        print(f"      🎯 Complexity: {complexity['big_o']} ({complexity['total_operations']} ops)")
-        print(f"      ⚠️  Issues: {len(validation.potential_issues)}")
-        if validation.potential_issues:
-            for issue in validation.potential_issues[:2]:
-                print(f"          • {issue}")
+        print(f"      📊 Results for this hypothesis: {validated_this_hypothesis} validated, {deepened_clusters} deepened")
     
     # Save to disk
     output = {
-        "total_derived": len(equations),
-        "total_rejected": len(rejected),
-        "equations": equations,
-        "rejected": rejected,
+        "total_validated": len(all_validated),
+        "total_rejected": len(all_rejected),
+        "validated_equations": all_validated,
+        "rejected_ideas": all_rejected,
         "summary": {
-            "dimensionally_consistent": sum(
-                1 for e in equations if e["equation"]["dimensionally_consistent"]
-            ),
-            "physically_plausible": sum(
-                1 for e in equations if e["validation"]["is_physically_plausible"]
-            ),
-            "avg_plausibility": round(
-                sum(e["validation"]["plausibility_score"] for e in equations) / len(equations), 3
-            ) if equations else 0.0,
-            "total_operations_avg": round(
-                sum(e["complexity"]["total_operations"] for e in equations) / len(equations), 1
-            ) if equations else 0.0
+            "validated_count": len(all_validated),
+            "rejected_count": len(all_rejected),
+            "rejection_breakdown": {
+                "rubbish_filter": sum(1 for r in all_rejected if r.get("filter") == "rubbish_filter"),
+                "llm_validation": sum(1 for r in all_rejected if r.get("filter") == "llm_validation")
+            }
         }
     }
     
@@ -549,9 +523,9 @@ def run_mathematics_engine(
         json.dump(output, f, indent=4)
     
     print(f"\n📄 All equations saved to '{equations_file}'")
-    print(f"📊 Summary: {output['summary']['dimensionally_consistent']} dimensionally consistent, "
-          f"{output['summary']['physically_plausible']} physically plausible, "
-          f"{output['summary']['avg_plausibility']:.2f} avg plausibility")
+    print(f"📊 Summary: {len(all_validated)} validated, {len(all_rejected)} rejected "
+          f"({output['summary']['rejection_breakdown']['rubbish_filter']} by rubbish filter, "
+          f"{output['summary']['rejection_breakdown']['llm_validation']} by LLM)")
     print("="*80)
     
     return output
@@ -560,7 +534,6 @@ def run_mathematics_engine(
 if __name__ == "__main__":
     test_hypotheses = [
         "Increasing electrode surface area increases battery capacity linearly with area",
-        "Battery energy density is inversely proportional to internal resistance squared",
-        "The gradient of the loss function with respect to weights decreases exponentially with depth"
+        "Battery energy density is inversely proportional to internal resistance squared"
     ]
     run_mathematics_engine(test_hypotheses)

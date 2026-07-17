@@ -1,5 +1,7 @@
 import os
 import sys
+import json
+import random as _random
 
 # ==========================================
 # DYNAMIC PATH & ROOT RESOLUTION
@@ -89,24 +91,108 @@ def main():
     print("\n>>> PHASE 4: Initializing Lateral Hypothesis Engine...")
     approved_hypotheses = run_hypothesis_engine(user_problem)
     
-    # --- PHASE 5: DOSCAN DEEPENING FEEDBACK LOOP (Recursive) ---
+    # --- PHASE 5: DEEPENING FEEDBACK LOOP (Knowledge Base + DBSCAN + LLM Validation) ---
+    # For each approved hypothesis: mine knowledge base → TF-IDF → DBSCAN cluster (r=1→r=4)
+    # → LLM only says "does this make sense?" → deepen if yes
     if deepen_depth > 0 and approved_hypotheses:
         for cycle in range(1, deepen_depth + 1):
             print(f"\n{'='*80}")
-            print(f"🔄 DEEPENING CYCLE {cycle}/{deepen_depth} — Feeding approved hypotheses back into DOSCAN")
+            print(f"🔄 DEEPENING CYCLE {cycle}/{deepen_depth} — KB + DBSCAN + LLM Validation")
             print(f"{'='*80}")
             
-            # Run DOSCAN deepening on the approved hypotheses
-            # The hypotheses are clustered with r=1→r=4 multi-resolution expansion
-            run_doscan_deepening(approved_hypotheses, max_r=4)
+            deepened_hypotheses = []
             
-            # After DOSCAN deepening, run hypothesis engine again on the new insights
-            # to generate even deeper hypotheses from the newly discovered relationships
-            print(f"\n>>> PHASE 4 (Cycle {cycle}): Regenerating hypotheses on deepened knowledge...")
-            approved_hypotheses = run_hypothesis_engine(user_problem)
+            for hyp in approved_hypotheses:
+                print(f"\n   📝 Deepening: {hyp[:100]}...")
+                
+                # Step 1: Load knowledge base content
+                kb_items = []
+                if os.path.exists("deep_research_knowledge_base.json"):
+                    with open("deep_research_knowledge_base.json", "r", encoding="utf-8") as f:
+                        kb_data = json.load(f)
+                    for key, value in kb_data.items():
+                        if isinstance(value, list):
+                            kb_items.extend(value)
+                        elif isinstance(value, dict):
+                            for k, v in value.items():
+                                kb_items.append(f"{k}: {v}")
+                        elif isinstance(value, str):
+                            kb_items.append(value)
+                
+                if not kb_items:
+                    print(f"      ⏸️  No KB data. Skipping.")
+                    continue
+                
+                # Step 2: Filter KB items relevant to the hypothesis (simple keyword overlap)
+                hyp_words = set(hyp.lower().split())
+                relevant_items = []
+                for item in kb_items:
+                    item_words = set(item.lower().split())
+                    overlap = len(hyp_words & item_words)
+                    if overlap >= 2:  # At least 2 words in common
+                        relevant_items.append(item)
+                
+                if len(relevant_items) < 3:
+                    # If not enough relevant items, add some random ones from KB
+                    relevant_items.extend(_random.sample(kb_items, min(5, len(kb_items))))
+                
+                print(f"      📚 Found {len(relevant_items)} relevant KB items for deepening")
+                
+                # Step 3: TF-IDF + DBSCAN cluster (r=1→r=4) on the relevant KB items
+                from DOSCAN import build_tfidf_vectors as doscan_tfidf, dbscan_text_cluster as doscan_dbscan
+                
+                current_items = list(set(relevant_items))  # Deduplicate
+                
+                for r in range(1, 5):  # r=1 to r=4
+                    eps = max(0.0, 0.45 - (r * 0.15))
+                    if len(current_items) < 2:
+                        break
+                    
+                    vectors = doscan_tfidf(current_items)
+                    clusters, noise = doscan_dbscan(current_items, vectors, eps=eps)
+                    
+                    print(f"      🔬 r={r} (eps={eps:.2f}): {len(clusters)} clusters, {len(noise)} noise items")
+                    
+                    # Extract insights from each cluster
+                    for ci, cluster in enumerate(clusters, 1):
+                        cluster_text = " | ".join(cluster["items"][:3])  # Top 3 items
+                        print(f"         Cluster {ci}: '{cluster_text[:80]}...'")
+                        
+                        # Use LLM to validate if this cluster's content deepens the hypothesis
+                        from groq import Groq
+                        v_client = Groq()
+                        try:
+                            from groq import Groq as _G
+                            
+                            completion = v_client.chat.completions.create(
+                                model="llama-3.3-70b-versatile",
+                                messages=[
+                                    {"role": "system", "content": "You validate if a knowledge cluster deepens a hypothesis. Answer ONLY with JSON: {\"deepens\": true/false, \"reason\": \"brief\", \"refined_hypothesis\": \"improved version if deepens\"}"},
+                                    {"role": "user", "content": f"Hypothesis: {hyp}\n\nNew knowledge cluster: {cluster_text}\n\nDoes this knowledge deepen the hypothesis? If yes, produce a refined hypothesis."}
+                                ],
+                                response_format={"type": "json_object"},
+                                temperature=0.1,
+                            )
+                            result = json.loads(completion.choices[0].message.content)
+                            
+                            if result.get("deepens", False):
+                                refined = result.get("refined_hypothesis", hyp)
+                                deepened_hypotheses.append(refined)
+                                print(f"            ✅ Deepens: {refined[:100]}...")
+                            else:
+                                print(f"            ❌ Does not deepen: {result.get('reason', '')[:80]}")
+                        except Exception as e:
+                            print(f"            ⚠️ Validation error: {e}")
+                    
+                    # Noise becomes input for next round
+                    current_items = noise
             
-            if not approved_hypotheses:
-                print(f"\n⏸️  [Cycle {cycle}] No new approved hypotheses. Ending deepening loop early.")
+            # Replace approved hypotheses with deepened versions
+            if deepened_hypotheses:
+                approved_hypotheses = deepened_hypotheses
+                print(f"\n   📊 Cycle {cycle} produced {len(deepened_hypotheses)} deepened hypotheses")
+            else:
+                print(f"\n   ⏸️  No hypotheses deepened in cycle {cycle}. Ending loop.")
                 break
     
     # --- PHASE 6: SOCRATIC QUESTIONING & FINAL SOLUTION ---
