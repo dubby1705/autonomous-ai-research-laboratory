@@ -2,6 +2,7 @@ import os
 import sys
 import json
 import random as _random
+import time
 
 # ==========================================
 # DYNAMIC PATH & ROOT RESOLUTION
@@ -42,7 +43,30 @@ from Evidence import run_evidence_engine
 from Experiment import run_experiment_engine
 from Mathematics import run_mathematics_engine
 
+def _load_json(path: str) -> dict:
+    """Safely load a JSON file, returning empty dict on failure."""
+    if os.path.exists(path):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
+def _count_items(data, key: str) -> int:
+    """Count items in a JSON key, handling both lists and dicts."""
+    val = data.get(key, {})
+    if isinstance(val, list):
+        return len(val)
+    if isinstance(val, dict):
+        return len(val)
+    if isinstance(val, str):
+        return 1
+    return 0
+
 def main():
+    aarl_start = time.time()
+    
     print("="*80)
     print("🚀 AUTONOMOUS AI RESEARCH LABORATORY (AARL) — MACRO KNOWLEDGE PIPELINE")
     print("="*80)
@@ -63,6 +87,20 @@ def main():
     except ValueError:
         deepen_depth = 1
     print(f"[AARL Config] Deepening cycles: {deepen_depth}\n")
+    
+    # ---- Stats tracking across all phases ----
+    stats = {
+        "problem": user_problem,
+        "kb_nodes": 0,
+        "relationships": 0,
+        "doscan_clusters": 0,
+        "hypotheses_generated": 0,
+        "hypotheses_approved": 0,
+        "hypotheses_rejected": 0,
+        "experiments_designed": 0,
+        "top_confidence": 0.0,
+        "deepening_cycles": 0
+    }
 
     # --- PHASE 1: STRUCTURAL ANALYSIS ---
     print("\n>>> PHASE 1: Executing Matrix Decomposition...")
@@ -243,23 +281,120 @@ def main():
     print("\n>>> PHASE 9: Initializing Mathematics Engine...")
     equations = run_mathematics_engine(fallback_hypotheses)
     
+    # ---- Gather all stats from output files ----
+    aarl_elapsed = time.time() - aarl_start
+    
+    kb_data = _load_json("deep_research_knowledge_base.json")
+    doscan_data = _load_json("doscan_breakthroughs.json")
+    verified_data = _load_json("verified_hypotheses.json")
+    experiment_data = _load_json("experiment_designs.json")
+    equations_data = _load_json("derived_equations.json")
+    evidence_data = _load_json("evidence_scoring_db.json")
+    
+    # Knowledge base: count total strings across all fields
+    total_kb_items = 0
+    for v in kb_data.values():
+        if isinstance(v, list):
+            total_kb_items += len(v)
+        elif isinstance(v, dict):
+            total_kb_items += len(v)
+        elif isinstance(v, str):
+            total_kb_items += 1
+    stats["kb_nodes"] = total_kb_items
+    
+    # Relationships: from doscan telemetry concepts extracted
+    stats["relationships"] = len(doscan_data) * 3 if isinstance(doscan_data, list) else 0
+    if isinstance(doscan_data, list):
+        total_rel = 0
+        for entry in doscan_data:
+            insights = entry.get("scientific_research_insights", [])
+            total_rel += len(insights)
+        stats["relationships"] = total_rel
+    
+    # DOSCAN clusters
+    if isinstance(doscan_data, list):
+        stats["doscan_clusters"] = len(doscan_data)
+    
+    # Hypotheses from verified_hypotheses.json
+    if isinstance(verified_data, list):
+        stats["hypotheses_generated"] = len(verified_data)
+        stats["hypotheses_approved"] = sum(
+            1 for v in verified_data 
+            if v.get("classification") in ("Excellent", "Plausible", "Speculative")
+        )
+        stats["hypotheses_rejected"] = stats["hypotheses_generated"] - stats["hypotheses_approved"]
+    
+    # Experiments
+    stats["experiments_designed"] = experiment_data.get("total_experiments_designed", 0) if isinstance(experiment_data, dict) else 0
+    
+    # Top confidence from evidence scoring
+    if isinstance(evidence_data, dict):
+        scores = evidence_data.get("scores", {})
+        if scores:
+            confs = [s.get("confidence", 0) for s in scores.values() if isinstance(s, dict)]
+            if confs:
+                stats["top_confidence"] = max(confs) * 100
+    
+    # Deepening cycles used
+    stats["deepening_cycles"] = deepen_depth if deepen_depth > 0 and approved_hypotheses else 0
+    
+    # Mathematics: count validated equations
+    math_validated = len(equations_data.get("validated_equations", [])) if isinstance(equations_data, dict) else 0
+    math_rejected = len(equations_data.get("rejected_ideas", [])) if isinstance(equations_data, dict) else 0
+    
+    # ---- Print professional summary ----
+    mins = int(aarl_elapsed // 60)
+    secs = int(aarl_elapsed % 60)
+    if mins > 0:
+        runtime_str = f"{mins}m {secs}s"
+    else:
+        runtime_str = f"{secs}s"
+    
     print("\n" + "="*80)
-    print("🔬 AARL RESEARCH CYCLE COMPLETE")
+    print("📊  A A R L   R E S E A R C H   S U M M A R Y")
     print("="*80)
-    print("   ✅ PHASE 1: Problem Decomposition")
-    print("   ✅ PHASE 2: Knowledge Base Construction")
-    print("   ✅ PHASE 3: DOSCAN Lateral Clustering")
-    print("   ✅ PHASE 4: Hypothesis Generation & Verification")
-    if deepen_depth > 0:
-        print(f"   ✅ PHASE 5: DOSCAN Deepening ({deepen_depth} cycles)")
-    print("   ✅ PHASE 6: Socratic Questioning & Final Solution")
-    print("   ✅ PHASE 7: Evidence Scoring (evidence_scoring_db.json)")
-    print("   ✅ PHASE 8: Experiment Design (experiment_designs.json)")
-    print("   ✅ PHASE 9: Mathematics Derivation (derived_equations.json)")
+    print(f"")
+    print(f"  Research Problem:")
+    print(f"    {stats['problem']}")
+    print(f"")
+    print(f"  Knowledge Graph")
+    print(f"    Knowledge Nodes:         {stats['kb_nodes']:>8,}")
+    print(f"    Relationships Found:     {stats['relationships']:>8,}")
+    print(f"    DOSCAN Clusters:         {stats['doscan_clusters']:>8,}")
+    print(f"")
+    print(f"  Hypothesis Pipeline")
+    print(f"    Hypotheses Generated:    {stats['hypotheses_generated']:>8,}")
+    print(f"    Approved:                {stats['hypotheses_approved']:>8,}")
+    print(f"    Rejected:                {stats['hypotheses_rejected']:>8,}")
+    print(f"    Deepening Cycles:        {stats['deepening_cycles']:>8,}")
+    print(f"")
+    print(f"  Experiments & Mathematics")
+    print(f"    Experiments Designed:    {stats['experiments_designed']:>8,}")
+    print(f"    Validated Equations:     {math_validated:>8,}")
+    print(f"    Rejected Equations:      {math_rejected:>8,}")
+    print(f"")
+    print(f"  Evidence & Confidence")
+    print(f"    Top Hypothesis Confidence:  {stats['top_confidence']:.0f}%")
+    print(f"")
+    print(f"  Performance")
+    print(f"    Total Runtime:           {runtime_str:>8}")
+    print(f"")
     print("="*80)
-    print("📁 Output files: deep_research_knowledge_base.json, doscan_breakthroughs.json,")
-    print("   verified_hypotheses.json, final_research_solution.json, evidence_scoring_db.json,")
-    print("   experiment_designs.json, derived_equations.json")
+    print("📁 Output Files Generated:")
+    files = [
+        ("Knowledge Base",     "deep_research_knowledge_base.json"),
+        ("DOSCAN Insights",    "doscan_breakthroughs.json"),
+        ("Verified Hypotheses","verified_hypotheses.json"),
+        ("Final Solution",     "final_research_solution.json"),
+        ("Evidence Scores",    "evidence_scoring_db.json"),
+        ("Experiment Designs", "experiment_designs.json"),
+        ("Derived Equations",  "derived_equations.json"),
+    ]
+    for label, fname in files:
+        exists = "✅" if os.path.exists(fname) else "❌"
+        print(f"    {exists} {label:20s} → {fname}")
+    print("="*80)
+    print(f"  🔬 AARL Research Cycle Complete — {runtime_str}")
     print("="*80)
 
 if __name__ == "__main__":
