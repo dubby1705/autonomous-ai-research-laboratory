@@ -1,251 +1,41 @@
 {
-    "total_experiments_designed": 19,
+    "total_experiments_designed": 11,
     "experiments": [
         {
             "design": {
-                "hypothesis": "A graphene-based nanomaterial with optimized piezoelectric properties, integrated into a high-surface-area electrode battery design, enhances energy harvesting efficiency from environmental vibrations by increasing energy density",
-                "experiment_name": "Graphene-Based Nanomaterial Energy Harvesting Experiment",
-                "dataset": "Environmental Vibration Dataset (EVD)",
-                "dataset_source": "National Instruments' Environmental Vibration Database",
-                "dataset_size": 10000,
-                "independent_variable": "Graphene-based nanomaterial composition",
-                "dependent_variable": "Energy harvesting efficiency",
+                "hypothesis": "Applying Calabi-Yau manifolds to 4D object design using Riemannian geometry improves the accuracy of geometric modeling and topology",
+                "experiment_name": "Calabi-Yau Manifold 4D Object Design Experiment",
+                "dataset": "ModelNet40",
+                "dataset_source": "Princeton University",
+                "dataset_size": 12311,
+                "independent_variable": "Calabi-Yau manifold application",
+                "dependent_variable": "Geometric modeling accuracy",
                 "controlled_variables": [
-                    "Electrode surface area",
-                    "Battery management system parameters"
+                    "Riemannian geometry parameters",
+                    "Differential geometry parameters"
                 ],
-                "architecture_or_method": "High-surface-area electrode battery design with optimized architecture",
-                "optimizer": "Genetic Algorithm",
-                "learning_rate": 0.01,
-                "batch_size": 64,
-                "epochs_or_iterations": 500,
-                "baseline_method": "Traditional piezoelectric material-based energy harvesting",
-                "baseline_performance": "20% energy harvesting efficiency",
-                "primary_metric": "Energy density (Wh/kg)",
-                "secondary_metrics": [
-                    "Power density (W/kg)",
-                    "Cycle life"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Energy harvesting efficiency increase of at least 30% compared to baseline",
-                "failure_criteria": "Energy harvesting efficiency decrease or no significant improvement",
-                "predicted_outcome": "Enhanced energy harvesting efficiency due to optimized graphene-based nanomaterial properties",
-                "predicted_effect_size": "30% increase in energy density",
-                "predicted_compute_cost": "High-performance computing resources for 100 hours",
-                "predicted_failure_modes": [
-                    "Inadequate graphene-based nanomaterial synthesis",
-                    "Insufficient electrode surface area optimization"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "5.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 5000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:00:51.470452"
-        },
-        {
-            "design": {
-                "hypothesis": "A graphene-based nanomaterial with optimized piezoelectric properties, integrated into a battery design with advanced electrolyte properties and a sophisticated battery management system, could enhance energy harvesting efficiency and safety in specific applications by effectively harnessing environmental vibrations while mitigating risks of overcharge or overdischarge.",
-                "experiment_name": "Graphene-Based Nanomaterial Energy Harvesting Experiment",
-                "dataset": "NREL's Vibrational Energy Harvesting Dataset",
-                "dataset_source": "National Renewable Energy Laboratory",
-                "dataset_size": 5000,
-                "independent_variable": "Graphene-based nanomaterial composition",
-                "dependent_variable": "Energy harvesting efficiency",
-                "controlled_variables": [
-                    "Electrolyte properties",
-                    "Battery management system parameters"
-                ],
-                "architecture_or_method": "Piezoelectric energy harvesting circuit",
-                "optimizer": "Genetic Algorithm",
-                "learning_rate": 0.01,
-                "batch_size": 16,
-                "epochs_or_iterations": 500,
-                "baseline_method": "Traditional piezoelectric material",
-                "baseline_performance": "20% energy harvesting efficiency",
-                "primary_metric": "Energy harvesting efficiency",
-                "secondary_metrics": [
-                    "Power density",
-                    "Cycle life",
-                    "Self-discharge rate"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Energy harvesting efficiency > 30% and power density > 10 mW/cm^3",
-                "failure_criteria": "Energy harvesting efficiency < 15% or power density < 5 mW/cm^3",
-                "predicted_outcome": "25% increase in energy harvesting efficiency and 15% increase in power density",
-                "predicted_effect_size": "Cohen's d = 0.8",
-                "predicted_compute_cost": "1000 CPU hours",
-                "predicted_failure_modes": [
-                    "Electrode material degradation",
-                    "Electrolyte leakage",
-                    "Battery management system malfunction"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "5.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 5000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:00:52.667055"
-        },
-        {
-            "design": {
-                "hypothesis": "A hybrid battery-supercapacitor system utilizing phase-change materials for thermal management, advanced electrode materials, and an optimized battery management system could achieve high energy density, rapid charging, and extended lifespan",
-                "experiment_name": "Hybrid Battery-Supercapacitor System Optimization",
-                "dataset": "NASA's Battery Data Repository and the Stanford Large Dataset of Battery Cycling",
-                "dataset_source": "Publicly available datasets and in-house experimental data",
-                "dataset_size": 50000,
-                "independent_variable": "Electrode material composition and phase-change material properties",
-                "dependent_variable": "Energy density, charging time, and cycle life",
-                "controlled_variables": [
-                    "Temperature",
-                    "Charge/Discharge rate",
-                    "Battery management system parameters"
-                ],
-                "architecture_or_method": "Genetic algorithm-based optimization with a physics-informed neural network model",
-                "optimizer": "Adam optimizer with a learning rate schedule",
-                "learning_rate": 0.01,
-                "batch_size": 128,
-                "epochs_or_iterations": 500,
-                "baseline_method": "Conventional lithium-ion battery system",
-                "baseline_performance": "120 Wh/kg energy density, 1C charging rate, 500 cycle life",
-                "primary_metric": "Energy density",
-                "secondary_metrics": [
-                    "Charging time",
-                    "Cycle life",
-                    "Thermal management efficiency"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Achieving an energy density of at least 150 Wh/kg, a charging time of less than 30 minutes, and a cycle life of over 1000 cycles",
-                "failure_criteria": "Failure to achieve the success criteria after 10 runs or a significant decrease in performance due to thermal management issues",
-                "predicted_outcome": "A hybrid battery-supercapacitor system with optimized electrode materials and phase-change materials will achieve high energy density, rapid charging, and extended lifespan",
-                "predicted_effect_size": "20-30% increase in energy density, 50-60% reduction in charging time, and 2-3 times increase in cycle life",
-                "predicted_compute_cost": "Approximately 1000 hours of computational time on a high-performance computing cluster",
-                "predicted_failure_modes": [
-                    "Inadequate thermal management",
-                    "Electrode material degradation",
-                    "Battery management system malfunction"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "5.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 5000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:00:58.431886"
-        },
-        {
-            "design": {
-                "hypothesis": "A hybrid battery-supercapacitor system utilizing phase-change materials for thermal management and high-surface-area electrode materials can achieve high energy density and rapid charging.",
-                "experiment_name": "Hybrid Battery-Supercapacitor Optimization Experiment",
-                "dataset": "NREL's Battery Data Repository",
-                "dataset_source": "National Renewable Energy Laboratory",
-                "dataset_size": 5000,
-                "independent_variable": "Electrode material surface area",
-                "dependent_variable": "Energy density and charging time",
-                "controlled_variables": [
-                    "Temperature",
-                    "Charge-discharge rate"
-                ],
-                "architecture_or_method": "Galvanostatic charge-discharge testing with machine learning optimization",
-                "optimizer": "Adam optimizer",
-                "learning_rate": 0.01,
-                "batch_size": 64,
-                "epochs_or_iterations": 500,
-                "baseline_method": "Conventional lithium-ion battery testing",
-                "baseline_performance": "120 Wh/kg energy density and 1 hour charging time",
-                "primary_metric": "Energy density (Wh/kg)",
-                "secondary_metrics": [
-                    "Charging time (minutes)",
-                    "Cycle life (number of cycles)"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Achieving 150 Wh/kg energy density and 30 minutes charging time with 1000 cycle life",
-                "failure_criteria": "Failing to achieve 120 Wh/kg energy density or exceeding 1 hour charging time after 500 iterations",
-                "predicted_outcome": "Hybrid battery-supercapacitor system outperforming conventional lithium-ion batteries in energy density and charging time",
-                "predicted_effect_size": "20% increase in energy density and 50% reduction in charging time",
-                "predicted_compute_cost": "1000 hours of computational time on a high-performance computing cluster",
-                "predicted_failure_modes": [
-                    "Electrode material degradation",
-                    "Thermal management system failure",
-                    "Optimization algorithm convergence issues"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "5.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 5000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:01:02.853537"
-        },
-        {
-            "design": {
-                "hypothesis": "A hybrid battery-supercapacitor system with phase-change materials, advanced electrode materials, and an optimized battery management system can achieve high energy density, rapid charging, and improved lifespan.",
-                "experiment_name": "Hybrid Battery-Supercapacitor System Optimization",
-                "dataset": "NASA Battery Dataset",
-                "dataset_source": "https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/",
-                "dataset_size": 10000,
-                "independent_variable": "Electrode Material Composition",
-                "dependent_variable": "Energy Density",
-                "controlled_variables": [
-                    "Temperature",
-                    "Charge/Discharge Rate"
-                ],
-                "architecture_or_method": "Genetic Algorithm Optimization",
+                "architecture_or_method": "Deep Learning with Geometric Neural Networks",
                 "optimizer": "Adam",
-                "learning_rate": 0.01,
-                "batch_size": 64,
+                "learning_rate": 0.0001,
+                "batch_size": 16,
                 "epochs_or_iterations": 500,
-                "baseline_method": "Traditional Battery Management System",
-                "baseline_performance": "120 Wh/kg",
-                "primary_metric": "Energy Density (Wh/kg)",
+                "baseline_method": "Traditional CAD software",
+                "baseline_performance": "90% accuracy",
+                "primary_metric": "Mean Absolute Error (MAE)",
                 "secondary_metrics": [
-                    "Charging Time (minutes)",
-                    "Cycle Life (cycles)"
+                    "Hausdorff Distance",
+                    "IoU (Intersection over Union)"
                 ],
                 "num_runs": 10,
                 "confidence_interval": 0.99,
-                "success_criteria": "Energy Density > 150 Wh/kg and Charging Time < 30 minutes",
-                "failure_criteria": "Energy Density < 100 Wh/kg or Charging Time > 60 minutes",
-                "predicted_outcome": "Improved energy density and rapid charging capabilities",
-                "predicted_effect_size": "20% increase in energy density and 30% reduction in charging time",
-                "predicted_compute_cost": "1000 CPU hours",
+                "success_criteria": "MAE < 0.05 and IoU > 0.8",
+                "failure_criteria": "MAE > 0.1 or IoU < 0.5",
+                "predicted_outcome": "Improved geometric modeling accuracy using Calabi-Yau manifolds",
+                "predicted_effect_size": "10% increase in accuracy",
+                "predicted_compute_cost": "High-performance computing cluster with 1000 GPU hours",
                 "predicted_failure_modes": [
-                    "Electrode material degradation",
-                    "Thermal management system failure"
+                    "Insufficient training data",
+                    "Inadequate Riemannian geometry parameter tuning"
                 ]
             },
             "validation": {
@@ -260,475 +50,43 @@
                 "total_epochs_across_runs": 5000,
                 "feasibility": "high"
             },
-            "timestamp": "2026-07-18T00:01:07.055777"
+            "timestamp": "2026-07-19T18:18:32.176692"
         },
         {
             "design": {
-                "hypothesis": "A hybrid battery-supercapacitor system with high-surface-area electrodes and tailored electrode morphology can achieve high energy density and rapid charging.",
-                "experiment_name": "Hybrid Battery-Supercapacitor Optimization Experiment",
-                "dataset": "The Materials Project dataset",
-                "dataset_source": "https://materialsproject.org/",
+                "hypothesis": "The application of Calabi-Yau manifolds in designing 4D objects using algebraic topology improves the accuracy of topological invariants and physical realizations",
+                "experiment_name": "Calabi-Yau Manifold 4D Object Design Experiment",
+                "dataset": "ModelNet40",
+                "dataset_source": "Princeton University",
                 "dataset_size": 10000,
-                "independent_variable": "Electrode surface area and morphology",
-                "dependent_variable": "Energy density and charging time",
+                "independent_variable": "Calabi-Yau manifold parameters",
+                "dependent_variable": "Topological invariant accuracy",
                 "controlled_variables": [
-                    "Temperature",
-                    "Electrolyte composition"
+                    "Riemannian geometry parameters",
+                    "Einstein field equations parameters"
                 ],
-                "architecture_or_method": "Genetic algorithm optimization with electrochemical modeling",
-                "optimizer": "Adam optimizer",
-                "learning_rate": 0.01,
-                "batch_size": 128,
-                "epochs_or_iterations": 500,
-                "baseline_method": "Conventional battery design",
-                "baseline_performance": "100 Wh/kg energy density and 1 hour charging time",
-                "primary_metric": "Energy density (Wh/kg)",
-                "secondary_metrics": [
-                    "Charging time (minutes)",
-                    "Cycle life (number of charge-discharge cycles)"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Achieving an energy density of 150 Wh/kg and a charging time of 30 minutes",
-                "failure_criteria": "Failure to achieve an energy density of 120 Wh/kg or a charging time of 1 hour",
-                "predicted_outcome": "A 20% increase in energy density and a 50% reduction in charging time compared to conventional battery designs",
-                "predicted_effect_size": "Cohen's d = 1.5",
-                "predicted_compute_cost": "1000 CPU hours",
-                "predicted_failure_modes": [
-                    "Electrode material degradation",
-                    "Electrolyte leakage",
-                    "Thermal management issues"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "5.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 5000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:01:11.349007"
-        },
-        {
-            "design": {
-                "hypothesis": "A bio-hybrid battery utilizing genetically engineered microbes with enhanced electron transfer capabilities, integrated with nanostructured electrodes, membranes, and optimized electrolyte composition, can efficiently convert organic waste into electrical energy.",
-                "experiment_name": "Bio-Hybrid Battery Efficiency Experiment",
-                "dataset": "Organic Waste Conversion Dataset",
-                "dataset_source": "National Renewable Energy Laboratory (NREL) and the United States Department of Energy (DOE)",
-                "dataset_size": 5000,
-                "independent_variable": "Electrode Material Composition",
-                "dependent_variable": "Energy Conversion Efficiency",
-                "controlled_variables": [
-                    "Temperature",
-                    "pH Level",
-                    "Electrolyte Concentration"
-                ],
-                "architecture_or_method": "Bio-Hybrid Battery Cell Architecture with Nanostructured Electrodes",
-                "optimizer": "Genetic Algorithm",
-                "learning_rate": 0.01,
-                "batch_size": 16,
-                "epochs_or_iterations": 500,
-                "baseline_method": "Traditional Chemical Battery",
-                "baseline_performance": "20% Energy Conversion Efficiency",
-                "primary_metric": "Energy Conversion Efficiency (%)",
-                "secondary_metrics": [
-                    "Power Density (W/m^2)",
-                    "Electrochemical Stability"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Energy Conversion Efficiency > 30%",
-                "failure_criteria": "Energy Conversion Efficiency < 15% or Electrochemical Stability < 80%",
-                "predicted_outcome": "The bio-hybrid battery will achieve an energy conversion efficiency of 35% with a power density of 100 W/m^2",
-                "predicted_effect_size": "25% increase in energy conversion efficiency compared to traditional chemical batteries",
-                "predicted_compute_cost": "High-Performance Computing (HPC) cluster with 1000 CPU hours",
-                "predicted_failure_modes": [
-                    "Electrode Material Degradation",
-                    "Microbial Contamination",
-                    "Electrolyte Imbalance"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "5.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 5000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:01:16.741408"
-        },
-        {
-            "design": {
-                "hypothesis": "A bio-hybrid battery that utilizes genetically engineered microbes with enhanced electron transfer capabilities, integrated with nanostructured electrodes and membranes, and optimized with an advanced battery management system, could efficiently convert organic waste into electrical energy",
-                "experiment_name": "Bio-Hybrid Battery Performance Evaluation",
-                "dataset": "Organic Waste Conversion Dataset (OWCD)",
-                "dataset_source": "National Renewable Energy Laboratory (NREL)",
-                "dataset_size": 5000,
-                "independent_variable": "Microbe strain and electrode material combination",
-                "dependent_variable": "Electrical energy output",
-                "controlled_variables": [
-                    "Temperature",
-                    "pH level",
-                    "Organic waste composition"
-                ],
-                "architecture_or_method": "Bio-electrochemical system with nanostructured electrodes and advanced battery management system",
-                "optimizer": "Genetic Algorithm",
-                "learning_rate": 0.01,
-                "batch_size": 16,
-                "epochs_or_iterations": 200,
-                "baseline_method": "Traditional chemical battery",
-                "baseline_performance": "80% efficiency",
-                "primary_metric": "Energy conversion efficiency",
-                "secondary_metrics": [
-                    "Power density",
-                    "Cycle life",
-                    "Cost-effectiveness"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Energy conversion efficiency > 90% and power density > 1000 W/m^2",
-                "failure_criteria": "Energy conversion efficiency < 70% or power density < 500 W/m^2",
-                "predicted_outcome": "Improved energy conversion efficiency and power density with reduced cost",
-                "predicted_effect_size": "20% increase in energy conversion efficiency",
-                "predicted_compute_cost": "Reduced by 30% due to optimized battery management system",
-                "predicted_failure_modes": [
-                    "Microbe strain instability",
-                    "Electrode material degradation",
-                    "System scaling issues"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "2.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 2000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:01:21.018838"
-        },
-        {
-            "design": {
-                "hypothesis": "A bio-hybrid battery utilizing genetically engineered microbes with enhanced electron transfer capabilities, integrated with high-surface-area nanostructured electrodes and optimized membranes, can efficiently convert organic waste into electrical energy",
-                "experiment_name": "Bio-Hybrid Battery Efficiency Experiment",
-                "dataset": "Organic Waste Conversion Dataset",
-                "dataset_source": "National Renewable Energy Laboratory (NREL) and the United States Department of Energy (DOE)",
-                "dataset_size": 5000,
-                "independent_variable": "Microbe strain and electrode material combination",
-                "dependent_variable": "Energy density and power density of the bio-hybrid battery",
-                "controlled_variables": [
-                    "Temperature",
-                    "pH level",
-                    "Organic waste composition"
-                ],
-                "architecture_or_method": "Bio-electrochemical system with a three-electrode configuration",
-                "optimizer": "Genetic Algorithm",
-                "learning_rate": 0.01,
-                "batch_size": 16,
-                "epochs_or_iterations": 500,
-                "baseline_method": "Traditional chemical battery",
-                "baseline_performance": "Energy density: 200 Wh/kg, Power density: 100 W/kg",
-                "primary_metric": "Energy density (Wh/kg)",
-                "secondary_metrics": [
-                    "Power density (W/kg)",
-                    "Efficiency (%)",
-                    "Cycle life"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Energy density > 250 Wh/kg and Power density > 150 W/kg",
-                "failure_criteria": "Energy density < 150 Wh/kg or Power density < 50 W/kg",
-                "predicted_outcome": "The bio-hybrid battery will achieve an energy density of 280 Wh/kg and a power density of 180 W/kg",
-                "predicted_effect_size": "25% increase in energy density and 30% increase in power density compared to the baseline method",
-                "predicted_compute_cost": "High-performance computing resources with a total cost of $10,000",
-                "predicted_failure_modes": [
-                    "Microbe strain instability",
-                    "Electrode material degradation",
-                    "Membrane fouling"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "5.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 5000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:01:25.559818"
-        },
-        {
-            "design": {
-                "hypothesis": "A bio-hybrid battery with genetically engineered microbes and optimized nanostructured electrodes can efficiently convert organic waste into electrical energy",
-                "experiment_name": "Bio-Hybrid Battery Performance Optimization",
-                "dataset": "Organic Waste Conversion Dataset (OWCD)",
-                "dataset_source": "National Renewable Energy Laboratory (NREL)",
-                "dataset_size": 5000,
-                "independent_variable": "Electrode Surface Area and Morphology",
-                "dependent_variable": "Battery Efficiency and Power Output",
-                "controlled_variables": [
-                    "Cell Design Parameters",
-                    "Microbe Strain and Concentration",
-                    "Operating Temperature and pH"
-                ],
-                "architecture_or_method": "Bio-Hybrid Battery Cell with Nanostructured Electrodes and Membranes",
-                "optimizer": "Genetic Algorithm with Adaptive Mutation Rate",
-                "learning_rate": 0.01,
-                "batch_size": 16,
-                "epochs_or_iterations": 500,
-                "baseline_method": "Conventional Microbial Fuel Cell (MFC) Architecture",
-                "baseline_performance": "30% Efficiency and 0.5 W/m^2 Power Output",
-                "primary_metric": "Battery Efficiency (%)",
-                "secondary_metrics": [
-                    "Power Output (W/m^2)",
-                    "Energy Density (Wh/kg)",
-                    "Cycle Life (hours)"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Battery Efficiency > 50% and Power Output > 1.0 W/m^2",
-                "failure_criteria": "Battery Efficiency < 20% or Power Output < 0.2 W/m^2",
-                "predicted_outcome": "Optimized Bio-Hybrid Battery with 60% Efficiency and 1.5 W/m^2 Power Output",
-                "predicted_effect_size": "25% Increase in Battery Efficiency and 50% Increase in Power Output",
-                "predicted_compute_cost": "1000 CPU Hours and 500 GB Storage",
-                "predicted_failure_modes": [
-                    "Electrode Degradation",
-                    "Microbe Inhibition",
-                    "Membrane Fouling"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "5.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 5000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:01:30.070084"
-        },
-        {
-            "design": {
-                "hypothesis": "A lithium-air battery with a solid-state electrolyte and nanostructured cathode can achieve high energy density, long cycle life, and improved safety",
-                "experiment_name": "Lithium-Air Battery Optimization Experiment",
-                "dataset": "Lithium-Air Battery Dataset (LABD)",
-                "dataset_source": "National Renewable Energy Laboratory (NREL)",
-                "dataset_size": 5000,
-                "independent_variable": "Solid-state electrolyte ionic conductivity",
-                "dependent_variable": "Battery energy density",
-                "controlled_variables": [
-                    "Cathode nanostructure",
-                    "Electrolyte thickness",
-                    "Operating temperature"
-                ],
-                "architecture_or_method": "Electrochemical impedance spectroscopy (EIS) and abuse testing",
-                "optimizer": "Genetic algorithm",
-                "learning_rate": 0.01,
-                "batch_size": 16,
-                "epochs_or_iterations": 500,
-                "baseline_method": "Traditional lithium-ion battery",
-                "baseline_performance": "120 Wh/kg energy density, 300 cycles",
-                "primary_metric": "Energy density (Wh/kg)",
-                "secondary_metrics": [
-                    "Cycle life",
-                    "Self-discharge rate",
-                    "Thermal stability"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Energy density > 200 Wh/kg, cycle life > 1000 cycles, self-discharge rate < 10%/month",
-                "failure_criteria": "Energy density < 150 Wh/kg, cycle life < 500 cycles, self-discharge rate > 20%/month",
-                "predicted_outcome": "Improved energy density, long cycle life, and enhanced safety",
-                "predicted_effect_size": "20-30% increase in energy density, 50-100% increase in cycle life",
-                "predicted_compute_cost": "1000-2000 CPU hours",
-                "predicted_failure_modes": [
-                    "Electrolyte degradation",
-                    "Cathode material instability",
-                    "Interface resistance increase"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "5.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 5000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:01:34.436678"
-        },
-        {
-            "design": {
-                "hypothesis": "A lithium-air battery with a solid-state electrolyte, a nanostructured cathode, a protective layer, and a tailored interface, integrated with an advanced battery management system, could optimize energy density, cycle life, and safety by leveraging real-time monitoring and adaptive control to mitigate degradation and enhance ionic conductivity.",
-                "experiment_name": "Lithium-Air Battery Optimization Experiment",
-                "dataset": "Lithium-Air Battery Dataset (LABD)",
-                "dataset_source": "National Renewable Energy Laboratory (NREL)",
-                "dataset_size": 5000,
-                "independent_variable": "Solid-state electrolyte composition",
-                "dependent_variable": "Energy density",
-                "controlled_variables": [
-                    "Cathode material",
-                    "Protective layer thickness",
-                    "Interface design",
-                    "Battery management system parameters"
-                ],
-                "architecture_or_method": "Genetic Algorithm Optimization",
-                "optimizer": "Adam Optimizer",
-                "learning_rate": 0.01,
-                "batch_size": 128,
-                "epochs_or_iterations": 500,
-                "baseline_method": "Traditional lithium-ion battery design",
-                "baseline_performance": "120 Wh/kg energy density, 300 cycle life",
-                "primary_metric": "Energy density (Wh/kg)",
-                "secondary_metrics": [
-                    "Cycle life",
-                    "Self-discharge rate",
-                    "Ionic conductivity"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Energy density > 150 Wh/kg, cycle life > 500",
-                "failure_criteria": "Energy density < 100 Wh/kg, cycle life < 200",
-                "predicted_outcome": "Optimized lithium-air battery design with enhanced energy density, cycle life, and safety",
-                "predicted_effect_size": "20% increase in energy density, 30% increase in cycle life",
-                "predicted_compute_cost": "1000 CPU hours",
-                "predicted_failure_modes": [
-                    "Solid-state electrolyte degradation",
-                    "Cathode material instability",
-                    "Interface design flaws"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "5.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 5000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:01:38.640037"
-        },
-        {
-            "design": {
-                "hypothesis": "A lithium-air battery with a solid-state electrolyte, a nanostructured cathode incorporating a high-surface-area electrode material, a protective layer to prevent degradation, and a tailored interface to enhance ionic conductivity, could achieve high energy density, long cycle life, and improved safety.",
-                "experiment_name": "Lithium-Air Battery Performance Optimization",
-                "dataset": "Lithium-Air Battery Dataset (LABD)",
-                "dataset_source": "National Renewable Energy Laboratory (NREL)",
-                "dataset_size": 5000,
-                "independent_variable": "Cathode material composition",
-                "dependent_variable": "Battery energy density and cycle life",
-                "controlled_variables": [
-                    "Electrolyte thickness",
-                    "Operating temperature",
-                    "Charge/discharge rate"
-                ],
-                "architecture_or_method": "Genetic Algorithm (GA) optimization",
-                "optimizer": "Particle Swarm Optimization (PSO)",
-                "learning_rate": 0.01,
-                "batch_size": 10,
-                "epochs_or_iterations": 500,
-                "baseline_method": "Traditional lithium-ion battery",
-                "baseline_performance": "120 Wh/kg energy density, 300 cycles",
-                "primary_metric": "Energy density (Wh/kg)",
-                "secondary_metrics": [
-                    "Cycle life",
-                    "Power density (W/kg)",
-                    "Coulombic efficiency"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Achieve energy density > 200 Wh/kg and cycle life > 1000 cycles",
-                "failure_criteria": "Energy density < 150 Wh/kg or cycle life < 500 cycles",
-                "predicted_outcome": "Improved energy density and cycle life with optimized cathode material composition",
-                "predicted_effect_size": "20-30% increase in energy density and 50-100% increase in cycle life",
-                "predicted_compute_cost": "1000-2000 CPU hours",
-                "predicted_failure_modes": [
-                    "Electrolyte degradation",
-                    "Cathode material instability",
-                    "Interface resistance increase"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "5.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 5000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:01:43.442440"
-        },
-        {
-            "design": {
-                "hypothesis": "A lithium-air battery with a solid-state electrolyte, nanostructured cathode, protective layer, and tailored interface, combined with an advanced battery management system, can achieve high energy density, long cycle life, and improved safety by leveraging the Nernst equation.",
-                "experiment_name": "Lithium-Air Battery Optimization Experiment",
-                "dataset": "Lithium-Air Battery Dataset (LABD)",
-                "dataset_source": "National Renewable Energy Laboratory (NREL)",
-                "dataset_size": 5000,
-                "independent_variable": "Cathode surface area and morphology",
-                "dependent_variable": "Energy density and cycle life",
-                "controlled_variables": [
-                    "Electrolyte composition",
-                    "Operating temperature"
-                ],
-                "architecture_or_method": "Genetic Algorithm (GA) optimization",
-                "optimizer": "Adam optimizer",
-                "learning_rate": 0.01,
+                "architecture_or_method": "Deep Learning with Geometric Neural Networks",
+                "optimizer": "Adam",
+                "learning_rate": 0.0001,
                 "batch_size": 64,
                 "epochs_or_iterations": 500,
-                "baseline_method": "Traditional lithium-ion battery design",
-                "baseline_performance": "120 Wh/kg energy density, 500 cycles",
-                "primary_metric": "Energy density (Wh/kg)",
+                "baseline_method": "Traditional CAD software",
+                "baseline_performance": "80% accuracy",
+                "primary_metric": "Topological invariant accuracy",
                 "secondary_metrics": [
-                    "Cycle life",
-                    "Coulombic efficiency",
-                    "Self-discharge rate"
+                    "Computational efficiency",
+                    "Physical realization fidelity"
                 ],
                 "num_runs": 10,
                 "confidence_interval": 0.99,
-                "success_criteria": "Achieve energy density > 150 Wh/kg and cycle life > 1000 cycles",
-                "failure_criteria": "Fail to achieve energy density > 120 Wh/kg or cycle life > 500 cycles",
-                "predicted_outcome": "Improved energy density and cycle life due to optimized cathode surface area and morphology",
-                "predicted_effect_size": "20% increase in energy density and 50% increase in cycle life",
-                "predicted_compute_cost": "1000 CPU hours",
+                "success_criteria": "Topological invariant accuracy > 90% and computational efficiency < 10 seconds",
+                "failure_criteria": "Topological invariant accuracy < 80% or computational efficiency > 30 seconds",
+                "predicted_outcome": "Improved topological invariant accuracy and physical realization fidelity",
+                "predicted_effect_size": "20% increase in topological invariant accuracy",
+                "predicted_compute_cost": "High-performance computing cluster with 1000 GPU hours",
                 "predicted_failure_modes": [
-                    "Electrolyte degradation",
-                    "Cathode material instability",
-                    "Interface resistance increase"
+                    "Insufficient training data",
+                    "Inadequate Calabi-Yau manifold parameter tuning"
                 ]
             },
             "validation": {
@@ -743,97 +101,43 @@
                 "total_epochs_across_runs": 5000,
                 "feasibility": "high"
             },
-            "timestamp": "2026-07-18T00:01:47.947477"
+            "timestamp": "2026-07-19T18:18:33.189918"
         },
         {
             "design": {
-                "hypothesis": "A thermally-driven electrochemical battery system that incorporates phase-change materials, nanostructured electrodes, and optimized electrolyte composition for enhanced ionic conductivity and safety could achieve efficiencies surpassing traditional battery technologies.",
-                "experiment_name": "Thermal-Electrochemical Battery Efficiency Enhancement",
-                "dataset": "National Renewable Energy Laboratory (NREL) Battery Dataset",
-                "dataset_source": "https://www.nrel.gov/",
+                "hypothesis": "A unified mathematical framework based on Riemannian geometry and algebraic topology can be applied to Calabi-Yau manifolds for designing 4D objects with precise geometric and topological properties.",
+                "experiment_name": "Calabi-Yau Manifold 4D Object Design Experiment",
+                "dataset": "K3 Surface Dataset",
+                "dataset_source": "University of Cambridge Mathematical Repository",
                 "dataset_size": 5000,
-                "independent_variable": "Temperature (25\u00b0C, 50\u00b0C, 75\u00b0C) and Electrolyte Composition (LiPF6, LiClO4, LiBF4)",
-                "dependent_variable": "Battery Efficiency (%) and Charge/Discharge Cycle Life",
+                "independent_variable": "Riemannian metric tensor",
+                "dependent_variable": "Geometric and topological properties of 4D objects",
                 "controlled_variables": [
-                    "Electrode Material (Lithium Cobalt Oxide, Lithium Manganese Oxide, Lithium Nickel Manganese Cobalt Oxide)",
-                    "Phase-Change Material (Paraffin Wax, Lauric Acid, Palmitic Acid)"
+                    "Einstein field equations",
+                    "Calabi-Yau manifold parameters"
                 ],
-                "architecture_or_method": "Genetic Algorithm Optimization with Nernst-Butler-Volmer Equation Modeling",
+                "architecture_or_method": "Deep Learning with Geometric Neural Networks",
                 "optimizer": "Adam Optimizer",
-                "learning_rate": 0.01,
-                "batch_size": 64,
-                "epochs_or_iterations": 500,
-                "baseline_method": "Traditional Battery Technology (Lithium-Ion Battery)",
-                "baseline_performance": "80% Efficiency, 1000 Charge/Discharge Cycles",
-                "primary_metric": "Battery Efficiency (%)",
-                "secondary_metrics": [
-                    "Charge/Discharge Cycle Life",
-                    "Self-Discharge Rate (%/hour)"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Achieve >90% Battery Efficiency and >2000 Charge/Discharge Cycles",
-                "failure_criteria": "Fail to achieve >80% Battery Efficiency or <1000 Charge/Discharge Cycles",
-                "predicted_outcome": "Thermally-driven electrochemical battery system with phase-change materials and optimized electrolyte composition will achieve >95% efficiency and >5000 charge/discharge cycles",
-                "predicted_effect_size": "20% increase in battery efficiency and 50% increase in charge/discharge cycle life compared to traditional battery technologies",
-                "predicted_compute_cost": "High-Performance Computing (HPC) resources with 1000 CPU hours and 100 GB memory",
-                "predicted_failure_modes": [
-                    "Electrolyte degradation due to high temperatures",
-                    "Electrode material instability",
-                    "Phase-change material solidification issues"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "5.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 5000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:01:52.849612"
-        },
-        {
-            "design": {
-                "hypothesis": "A thermally-driven electrochemical battery system with phase-change materials, nanostructured electrodes, and an advanced battery management system can achieve efficiencies surpassing traditional battery technologies.",
-                "experiment_name": "Thermal-Electrochemical Battery Efficiency Enhancement Experiment",
-                "dataset": "National Renewable Energy Laboratory (NREL) Battery Dataset",
-                "dataset_source": "https://www.nrel.gov/",
-                "dataset_size": 5000,
-                "independent_variable": "Temperature of phase-change materials",
-                "dependent_variable": "Battery efficiency",
-                "controlled_variables": [
-                    "Electrode material composition",
-                    "Battery management system parameters"
-                ],
-                "architecture_or_method": "Lithium-ion battery with nanostructured electrodes and phase-change materials",
-                "optimizer": "Genetic Algorithm",
-                "learning_rate": 0.01,
+                "learning_rate": 0.0001,
                 "batch_size": 16,
                 "epochs_or_iterations": 500,
-                "baseline_method": "Traditional lithium-ion battery without phase-change materials or nanostructured electrodes",
-                "baseline_performance": "80% efficiency at 25\u00b0C",
-                "primary_metric": "Battery efficiency at 40\u00b0C",
+                "baseline_method": "Traditional Computer-Aided Design",
+                "baseline_performance": "Mean Absolute Error of 0.05",
+                "primary_metric": "Mean Squared Error of Geometric and Topological Properties",
                 "secondary_metrics": [
-                    "Cycle life",
-                    "Self-discharge rate",
-                    "Power density"
+                    "Hausdorff Distance",
+                    "Gromov-Hausdorff Distance"
                 ],
                 "num_runs": 10,
                 "confidence_interval": 0.99,
-                "success_criteria": "Achieving a battery efficiency of 90% or higher at 40\u00b0C",
-                "failure_criteria": "Failure to achieve an efficiency of 80% or higher at 40\u00b0C after 500 iterations",
-                "predicted_outcome": "The thermally-driven electrochemical battery system will achieve an efficiency of 92% at 40\u00b0C",
-                "predicted_effect_size": "A 15% increase in efficiency compared to traditional lithium-ion batteries",
-                "predicted_compute_cost": "1000 hours of computational time on a high-performance computing cluster",
+                "success_criteria": "Mean Squared Error less than 0.01",
+                "failure_criteria": "Mean Squared Error greater than 0.1",
+                "predicted_outcome": "Successful design of 4D objects with precise geometric and topological properties",
+                "predicted_effect_size": "20% reduction in Mean Squared Error compared to baseline",
+                "predicted_compute_cost": "1000 GPU hours",
                 "predicted_failure_modes": [
-                    "Inadequate heat management",
-                    "Electrode material degradation",
-                    "Battery management system malfunction"
+                    "Insufficient training data",
+                    "Inadequate Riemannian metric tensor representation"
                 ]
             },
             "validation": {
@@ -848,150 +152,43 @@
                 "total_epochs_across_runs": 5000,
                 "feasibility": "high"
             },
-            "timestamp": "2026-07-18T00:01:57.085106"
+            "timestamp": "2026-07-19T18:18:36.459191"
         },
         {
             "design": {
-                "hypothesis": "A thermally-driven electrochemical battery system with phase-change materials and nanostructured electrodes can achieve higher efficiencies than traditional battery technologies",
-                "experiment_name": "Thermal-Driven Electrochemical Battery Optimization",
-                "dataset": "NREL's Battery Dataset",
-                "dataset_source": "National Renewable Energy Laboratory",
-                "dataset_size": 5000,
-                "independent_variable": "Phase-change material composition",
-                "dependent_variable": "Battery energy density and power density",
+                "hypothesis": "A mathematical framework for applying Calabi-Yau manifolds to 4D object design can be developed and validated",
+                "experiment_name": "Calabi-Yau 4D Object Design Validation",
+                "dataset": "ModelNet40",
+                "dataset_source": "Princeton University",
+                "dataset_size": 12311,
+                "independent_variable": "Dimensionality reduction technique",
+                "dependent_variable": "User study satisfaction score",
                 "controlled_variables": [
-                    "Electrode material",
-                    "Battery operating temperature"
+                    "Object complexity",
+                    "User expertise"
                 ],
-                "architecture_or_method": "Genetic Algorithm Optimization",
-                "optimizer": "Adam Optimizer",
-                "learning_rate": 0.01,
-                "batch_size": 128,
-                "epochs_or_iterations": 500,
-                "baseline_method": "Traditional Lithium-Ion Battery",
-                "baseline_performance": "120 Wh/kg energy density, 250 W/kg power density",
-                "primary_metric": "Energy Density (Wh/kg)",
-                "secondary_metrics": [
-                    "Power Density (W/kg)",
-                    "Cycle Life (number of charge/discharge cycles)"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Achieve energy density > 150 Wh/kg and power density > 300 W/kg",
-                "failure_criteria": "Fail to achieve energy density > 120 Wh/kg or power density > 250 W/kg after 500 iterations",
-                "predicted_outcome": "Improved energy density and power density due to enhanced heat management and high-surface-area nanostructured electrodes",
-                "predicted_effect_size": "20-30% increase in energy density and power density compared to traditional battery technologies",
-                "predicted_compute_cost": "High-performance computing resources with 1000 CPU hours and 100 GB memory",
-                "predicted_failure_modes": [
-                    "Inadequate phase-change material composition",
-                    "Insufficient nanostructured electrode surface area",
-                    "Inadequate battery management system optimization"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "5.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 5000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:02:01.523607"
-        },
-        {
-            "design": {
-                "hypothesis": "A thermally-driven electrochemical battery system with phase-change materials, nanostructured electrodes, and an advanced battery management system can achieve efficiencies surpassing traditional battery technologies.",
-                "experiment_name": "Thermal-Driven Electrochemical Battery System Efficiency Evaluation",
-                "dataset": "National Renewable Energy Laboratory (NREL) Battery Dataset",
-                "dataset_source": "https://www.nrel.gov/",
-                "dataset_size": 5000,
-                "independent_variable": "Battery temperature (20\u00b0C, 30\u00b0C, 40\u00b0C, 50\u00b0C)",
-                "dependent_variable": "Battery efficiency (%)",
-                "controlled_variables": [
-                    "Electrode material composition",
-                    "Phase-change material properties",
-                    "Charging/discharging protocol parameters"
-                ],
-                "architecture_or_method": "Lithium-ion battery with nanostructured electrodes and phase-change materials",
-                "optimizer": "Genetic Algorithm",
-                "learning_rate": 0.01,
-                "batch_size": 16,
-                "epochs_or_iterations": 500,
-                "baseline_method": "Traditional lithium-ion battery without phase-change materials or nanostructured electrodes",
-                "baseline_performance": "80% efficiency at 20\u00b0C",
-                "primary_metric": "Battery efficiency (%)",
-                "secondary_metrics": [
-                    "Cycle life (number of charge/discharge cycles)",
-                    "Self-discharge rate (%/hour)"
-                ],
-                "num_runs": 10,
-                "confidence_interval": 0.99,
-                "success_criteria": "Achieve an average battery efficiency of 90% or higher at 40\u00b0C",
-                "failure_criteria": "Fail to achieve an average battery efficiency of 80% at 40\u00b0C after 500 iterations",
-                "predicted_outcome": "The thermally-driven electrochemical battery system will achieve an average efficiency of 92% at 40\u00b0C",
-                "predicted_effect_size": "10% increase in efficiency compared to traditional lithium-ion batteries",
-                "predicted_compute_cost": "High-performance computing cluster with 100 nodes, 1000 hours of computation time",
-                "predicted_failure_modes": [
-                    "Inadequate thermal management",
-                    "Electrode material degradation",
-                    "Inaccurate state of charge estimation"
-                ]
-            },
-            "validation": {
-                "is_valid": true,
-                "issues": []
-            },
-            "compute_cost": {
-                "estimated_flops": "5.00e+15",
-                "estimated_gpu_hours": 0.0,
-                "estimated_cost_usd": 0.01,
-                "total_runs": 10,
-                "total_epochs_across_runs": 5000,
-                "feasibility": "high"
-            },
-            "timestamp": "2026-07-18T00:02:06.997528"
-        },
-        {
-            "design": {
-                "hypothesis": "A thermally-driven electrochemical battery system with phase-change materials, nanostructured electrodes, and optimized cell architecture can achieve higher efficiencies than traditional batteries",
-                "experiment_name": "Thermal-Electrochemical Battery Efficiency Experiment",
-                "dataset": "NASA's Advanced Space Battery Dataset",
-                "dataset_source": "National Aeronautics and Space Administration",
-                "dataset_size": 5000,
-                "independent_variable": "Temperature (20-100\u00b0C) and Electrode Material (Graphene, Carbon Nanotubes, Nickel Oxide)",
-                "dependent_variable": "Battery Efficiency (%) and Power Density (W/kg)",
-                "controlled_variables": [
-                    "Electrolyte Concentration",
-                    "Cell Architecture",
-                    "Charge/Discharge Rate"
-                ],
-                "architecture_or_method": "Machine Learning-based Optimization using Genetic Algorithm",
-                "optimizer": "Adam Optimizer",
-                "learning_rate": 0.01,
+                "architecture_or_method": "Autoencoder-based dimensionality reduction",
+                "optimizer": "Adam",
+                "learning_rate": 0.0005,
                 "batch_size": 64,
                 "epochs_or_iterations": 500,
-                "baseline_method": "Traditional Lithium-Ion Battery",
-                "baseline_performance": "80% Efficiency, 200 Wh/kg Power Density",
-                "primary_metric": "Battery Efficiency (%)",
+                "baseline_method": "Principal Component Analysis (PCA)",
+                "baseline_performance": "0.8 user study satisfaction score",
+                "primary_metric": "Mean Squared Error (MSE) between predicted and actual user satisfaction",
                 "secondary_metrics": [
-                    "Power Density (W/kg)",
-                    "Cycle Life (number of charge/discharge cycles)"
+                    "Peak Signal-to-Noise Ratio (PSNR)",
+                    "Structural Similarity Index (SSIM)"
                 ],
                 "num_runs": 10,
                 "confidence_interval": 0.99,
-                "success_criteria": "Achieving >90% Efficiency and >300 Wh/kg Power Density",
-                "failure_criteria": "Failure to achieve >80% Efficiency or <200 Wh/kg Power Density",
-                "predicted_outcome": "Improved battery efficiency and power density through optimized thermal management and electrode material selection",
-                "predicted_effect_size": "15-20% increase in efficiency and 20-30% increase in power density",
-                "predicted_compute_cost": "High-performance computing resources with >1000 CPU hours",
+                "success_criteria": "MSE < 0.1 and user study satisfaction score > 0.9",
+                "failure_criteria": "MSE > 0.2 or user study satisfaction score < 0.7",
+                "predicted_outcome": "Successful development and validation of the mathematical framework",
+                "predicted_effect_size": "Large (Cohen's d > 0.8)",
+                "predicted_compute_cost": "High (1000 GPU hours)",
                 "predicted_failure_modes": [
-                    "Electrode material degradation",
-                    "Thermal management system failure",
-                    "Electrolyte leakage"
+                    "Insufficient dimensionality reduction",
+                    "Inadequate user study design"
                 ]
             },
             "validation": {
@@ -1006,14 +203,376 @@
                 "total_epochs_across_runs": 5000,
                 "feasibility": "high"
             },
-            "timestamp": "2026-07-18T00:02:11.454194"
+            "timestamp": "2026-07-19T18:18:39.743582"
+        },
+        {
+            "design": {
+                "hypothesis": "The application of Calabi-Yau manifolds to 4D object design, utilizing efficient algorithms for real-time rendering and manipulation, will significantly enhance the intuitive visualization and understanding of higher-dimensional geometric and topological properties.",
+                "experiment_name": "Calabi-Yau 4D Object Visualization Experiment",
+                "dataset": "ModelNet40",
+                "dataset_source": "Princeton University",
+                "dataset_size": 10000,
+                "independent_variable": "Calabi-Yau manifold complexity",
+                "dependent_variable": "User understanding and visualization accuracy of 4D objects",
+                "controlled_variables": [
+                    "User prior knowledge of differential geometry",
+                    "User experience with 3D modeling software"
+                ],
+                "architecture_or_method": "Deep Learning-based Geometry Processing",
+                "optimizer": "Adam",
+                "learning_rate": 0.0005,
+                "batch_size": 16,
+                "epochs_or_iterations": 500,
+                "baseline_method": "Traditional 3D modeling software",
+                "baseline_performance": "80% user understanding accuracy",
+                "primary_metric": "Mean Average Precision (MAP) of user-identified geometric features",
+                "secondary_metrics": [
+                    "User engagement time",
+                    "Number of user errors in 4D object manipulation"
+                ],
+                "num_runs": 10,
+                "confidence_interval": 0.99,
+                "success_criteria": "MAP greater than 90% and user engagement time increase of at least 30%",
+                "failure_criteria": "MAP less than 70% or user error rate increase of more than 20%",
+                "predicted_outcome": "Significant improvement in user understanding and visualization of 4D objects",
+                "predicted_effect_size": "Cohen's d = 1.2",
+                "predicted_compute_cost": "High-performance computing cluster with 1000 GPU hours",
+                "predicted_failure_modes": [
+                    "Insufficient user training on Calabi-Yau manifold concepts",
+                    "Inadequate rendering performance for complex 4D objects"
+                ]
+            },
+            "validation": {
+                "is_valid": true,
+                "issues": []
+            },
+            "compute_cost": {
+                "estimated_flops": "5.00e+15",
+                "estimated_gpu_hours": 0.0,
+                "estimated_cost_usd": 0.01,
+                "total_runs": 10,
+                "total_epochs_across_runs": 5000,
+                "feasibility": "high"
+            },
+            "timestamp": "2026-07-19T18:18:43.390928"
+        },
+        {
+            "design": {
+                "hypothesis": "A mathematical framework for applying Calabi-Yau manifolds to 4D object design can be developed by integrating principles from differential geometry, algebraic topology, and computer-aided design",
+                "experiment_name": "Calabi-Yau 4D Object Visualization",
+                "dataset": "ModelNet40",
+                "dataset_source": "Princeton University",
+                "dataset_size": 10000,
+                "independent_variable": "Calabi-Yau manifold parameters",
+                "dependent_variable": "4D object visualization accuracy",
+                "controlled_variables": [
+                    "Riemannian geometry constraints",
+                    "Einstein field equations parameters"
+                ],
+                "architecture_or_method": "Deep Learning-based Geometric Modeling",
+                "optimizer": "Adam",
+                "learning_rate": 0.0001,
+                "batch_size": 64,
+                "epochs_or_iterations": 500,
+                "baseline_method": "Traditional CAD software",
+                "baseline_performance": "90% accuracy",
+                "primary_metric": "Mean Squared Error (MSE) between predicted and actual 4D object visualizations",
+                "secondary_metrics": [
+                    "Peak Signal-to-Noise Ratio (PSNR)",
+                    "Structural Similarity Index (SSIM)"
+                ],
+                "num_runs": 10,
+                "confidence_interval": 0.99,
+                "success_criteria": "Achieving an MSE of less than 0.01 and a PSNR of greater than 30 dB",
+                "failure_criteria": "Failing to achieve an MSE of less than 0.1 or a PSNR of less than 20 dB after 500 epochs",
+                "predicted_outcome": "Successful development of a mathematical framework for applying Calabi-Yau manifolds to 4D object design",
+                "predicted_effect_size": "20% improvement in 4D object visualization accuracy compared to traditional CAD software",
+                "predicted_compute_cost": "1000 GPU hours",
+                "predicted_failure_modes": [
+                    "Insufficient training data",
+                    "Inadequate Calabi-Yau manifold parameterization"
+                ]
+            },
+            "validation": {
+                "is_valid": true,
+                "issues": []
+            },
+            "compute_cost": {
+                "estimated_flops": "5.00e+15",
+                "estimated_gpu_hours": 0.0,
+                "estimated_cost_usd": 0.01,
+                "total_runs": 10,
+                "total_epochs_across_runs": 5000,
+                "feasibility": "high"
+            },
+            "timestamp": "2026-07-19T18:18:46.652916"
+        },
+        {
+            "design": {
+                "hypothesis": "The integration of algebraic topology and computer-aided design can create higher-dimensional shapes with tailored properties",
+                "experiment_name": "TopoCAD",
+                "dataset": "ModelNet40",
+                "dataset_source": "Princeton University",
+                "dataset_size": 10000,
+                "independent_variable": "Topological building blocks",
+                "dependent_variable": "Geometric and topological properties",
+                "controlled_variables": [
+                    "Dimensionality",
+                    "Curvature"
+                ],
+                "architecture_or_method": "Generative Adversarial Network (GAN) with Persistent Homology",
+                "optimizer": "Adam",
+                "learning_rate": 0.0001,
+                "batch_size": 64,
+                "epochs_or_iterations": 500,
+                "baseline_method": "Convolutional Neural Network (CNN)",
+                "baseline_performance": "90% accuracy on 3D shape classification",
+                "primary_metric": "Mean Average Precision (MAP) of topological feature detection",
+                "secondary_metrics": [
+                    "Hausdorff distance",
+                    "Fr\u00e9chet inception distance"
+                ],
+                "num_runs": 10,
+                "confidence_interval": 0.99,
+                "success_criteria": "MAP > 0.8 and Hausdorff distance < 0.1",
+                "failure_criteria": "MAP < 0.6 or Hausdorff distance > 0.2",
+                "predicted_outcome": "Successful creation of higher-dimensional shapes with tailored properties",
+                "predicted_effect_size": "20% increase in MAP compared to baseline",
+                "predicted_compute_cost": "1000 GPU-hours",
+                "predicted_failure_modes": [
+                    "Insufficient training data",
+                    "Inadequate topological feature extraction"
+                ]
+            },
+            "validation": {
+                "is_valid": true,
+                "issues": []
+            },
+            "compute_cost": {
+                "estimated_flops": "5.00e+15",
+                "estimated_gpu_hours": 0.0,
+                "estimated_cost_usd": 0.01,
+                "total_runs": 10,
+                "total_epochs_across_runs": 5000,
+                "feasibility": "high"
+            },
+            "timestamp": "2026-07-19T18:18:49.801914"
+        },
+        {
+            "design": {
+                "hypothesis": "The integration of algebraic topology and Riemannian geometry can be used to develop a unified mathematical framework for identifying and classifying fundamental 'topological building blocks' in 4D space",
+                "experiment_name": "TopoGeom4D",
+                "dataset": "ModelNet40",
+                "dataset_source": "Princeton University",
+                "dataset_size": 10000,
+                "independent_variable": "Dimensionality of the geometric model",
+                "dependent_variable": "Topological invariant (Betti numbers)",
+                "controlled_variables": [
+                    "Riemannian metric",
+                    "Algebraic topology algorithm"
+                ],
+                "architecture_or_method": "Persistent Homology with Riemannian Metric Learning",
+                "optimizer": "Adam",
+                "learning_rate": 0.0005,
+                "batch_size": 64,
+                "epochs_or_iterations": 500,
+                "baseline_method": "Traditional CAD modeling",
+                "baseline_performance": "Mean Average Precision (MAP) of 0.8",
+                "primary_metric": "Classification accuracy of topological invariants",
+                "secondary_metrics": [
+                    "Precision",
+                    "Recall",
+                    "F1-score"
+                ],
+                "num_runs": 10,
+                "confidence_interval": 0.99,
+                "success_criteria": "Achieving a classification accuracy of 0.9 or higher on the test set",
+                "failure_criteria": "Failing to achieve a classification accuracy of 0.7 or lower on the test set",
+                "predicted_outcome": "The proposed framework will outperform traditional CAD modeling methods in identifying and classifying topological building blocks in 4D space",
+                "predicted_effect_size": "A 20% increase in classification accuracy compared to traditional methods",
+                "predicted_compute_cost": "Approximately 1000 GPU hours",
+                "predicted_failure_modes": [
+                    "Insufficient training data",
+                    "Inadequate Riemannian metric learning",
+                    "Inability to generalize to higher-dimensional spaces"
+                ]
+            },
+            "validation": {
+                "is_valid": true,
+                "issues": []
+            },
+            "compute_cost": {
+                "estimated_flops": "5.00e+15",
+                "estimated_gpu_hours": 0.0,
+                "estimated_cost_usd": 0.01,
+                "total_runs": 10,
+                "total_epochs_across_runs": 5000,
+                "feasibility": "high"
+            },
+            "timestamp": "2026-07-19T18:18:53.156490"
+        },
+        {
+            "design": {
+                "hypothesis": "The integration of algebraic topology and computer-aided design can identify and classify fundamental 'topological building blocks' in 4D space",
+                "experiment_name": "TopoBlocks",
+                "dataset": "ModelNet40",
+                "dataset_source": "Princeton University",
+                "dataset_size": 10000,
+                "independent_variable": "Dimensionality of input space",
+                "dependent_variable": "Accuracy of topological building block classification",
+                "controlled_variables": [
+                    "Riemannian metric",
+                    "Einstein field equation parameters"
+                ],
+                "architecture_or_method": "U-Net with persistent homology",
+                "optimizer": "Adam",
+                "learning_rate": 0.0001,
+                "batch_size": 64,
+                "epochs_or_iterations": 500,
+                "baseline_method": "Random forest classifier",
+                "baseline_performance": "80% accuracy on 3D shape classification",
+                "primary_metric": "Wasserstein distance between predicted and actual topological building blocks",
+                "secondary_metrics": [
+                    "Precision",
+                    "Recall",
+                    "F1-score"
+                ],
+                "num_runs": 10,
+                "confidence_interval": 0.99,
+                "success_criteria": "Achieving a Wasserstein distance of less than 0.5 between predicted and actual topological building blocks",
+                "failure_criteria": "Failure to converge within 500 epochs or achieving a Wasserstein distance greater than 1.0",
+                "predicted_outcome": "Successful identification and classification of fundamental topological building blocks in 4D space",
+                "predicted_effect_size": "20% improvement in accuracy over baseline method",
+                "predicted_compute_cost": "1000 GPU-hours",
+                "predicted_failure_modes": [
+                    "Insufficient training data",
+                    "Inadequate hyperparameter tuning",
+                    "Numerical instability in persistent homology computations"
+                ]
+            },
+            "validation": {
+                "is_valid": true,
+                "issues": []
+            },
+            "compute_cost": {
+                "estimated_flops": "5.00e+15",
+                "estimated_gpu_hours": 0.0,
+                "estimated_cost_usd": 0.01,
+                "total_runs": 10,
+                "total_epochs_across_runs": 5000,
+                "feasibility": "high"
+            },
+            "timestamp": "2026-07-19T18:18:56.358211"
+        },
+        {
+            "design": {
+                "hypothesis": "The integration of algebraic topology, differential geometry, and computer-aided design can identify, classify, and interact with fundamental 'topological building blocks' in 4D space",
+                "experiment_name": "TopoBlock4D",
+                "dataset": "ModelNet40",
+                "dataset_source": "Princeton University",
+                "dataset_size": 10000,
+                "independent_variable": "Dimensionality of geometric models",
+                "dependent_variable": "Topological accuracy of 4D object reconstruction",
+                "controlled_variables": [
+                    "Mesh resolution",
+                    "Curvature threshold"
+                ],
+                "architecture_or_method": "U-Net with persistent homology",
+                "optimizer": "Adam",
+                "learning_rate": 0.0005,
+                "batch_size": 16,
+                "epochs_or_iterations": 500,
+                "baseline_method": "Traditional CAD software",
+                "baseline_performance": "80% accuracy on 3D object reconstruction",
+                "primary_metric": "Topological accuracy (TPR)",
+                "secondary_metrics": [
+                    "Geometric accuracy (MSE)",
+                    "Computational efficiency (FPS)"
+                ],
+                "num_runs": 10,
+                "confidence_interval": 0.99,
+                "success_criteria": "Achieving 90% topological accuracy on 4D object reconstruction",
+                "failure_criteria": "Failing to achieve 80% topological accuracy after 10 runs",
+                "predicted_outcome": "Successful identification and classification of topological building blocks in 4D space",
+                "predicted_effect_size": "20% increase in topological accuracy compared to baseline",
+                "predicted_compute_cost": "High-performance computing cluster with 1000 GPU hours",
+                "predicted_failure_modes": [
+                    "Insufficient mesh resolution",
+                    "Inadequate curvature thresholding"
+                ]
+            },
+            "validation": {
+                "is_valid": true,
+                "issues": []
+            },
+            "compute_cost": {
+                "estimated_flops": "5.00e+15",
+                "estimated_gpu_hours": 0.0,
+                "estimated_cost_usd": 0.01,
+                "total_runs": 10,
+                "total_epochs_across_runs": 5000,
+                "feasibility": "high"
+            },
+            "timestamp": "2026-07-19T18:19:02.078703"
+        },
+        {
+            "design": {
+                "hypothesis": "A 4D object's projection into 3D space will exhibit perspective-dependent changes in shape and size that can be predicted and modeled using algebraic topology and geometric tools from higher-dimensional geometry",
+                "experiment_name": "4D_Projection_Topology_Experiment",
+                "dataset": "4D_Object_Dataset_v1.0",
+                "dataset_source": "Generated using MATLAB and Python libraries for geometric modeling",
+                "dataset_size": 10000,
+                "independent_variable": "4D object's orientation in higher-dimensional space",
+                "dependent_variable": "Projected 3D shape and size of the 4D object",
+                "controlled_variables": [
+                    "Lighting conditions",
+                    "Viewer's perspective"
+                ],
+                "architecture_or_method": "Manifold Learning with Fiber Bundle Theory",
+                "optimizer": "Adam Optimizer",
+                "learning_rate": 0.0005,
+                "batch_size": 64,
+                "epochs_or_iterations": 500,
+                "baseline_method": "Linear Projection",
+                "baseline_performance": "Mean Squared Error (MSE) of 0.05",
+                "primary_metric": "Hausdorff Distance between predicted and actual projections",
+                "secondary_metrics": [
+                    "Mean Absolute Error (MAE)",
+                    "Structural Similarity Index (SSIM)"
+                ],
+                "num_runs": 10,
+                "confidence_interval": 0.99,
+                "success_criteria": "Hausdorff Distance < 0.01 and SSIM > 0.9",
+                "failure_criteria": "Hausdorff Distance > 0.1 or SSIM < 0.5",
+                "predicted_outcome": "The 4D object's projection will exhibit perspective-dependent changes in shape and size that can be accurately predicted and modeled using algebraic topology and geometric tools",
+                "predicted_effect_size": "Medium to large effect size (Cohen's d > 0.5)",
+                "predicted_compute_cost": "High-performance computing cluster with 1000 CPU hours",
+                "predicted_failure_modes": [
+                    "Insufficient training data",
+                    "Inadequate model complexity",
+                    "Numerical instability in manifold learning"
+                ]
+            },
+            "validation": {
+                "is_valid": true,
+                "issues": []
+            },
+            "compute_cost": {
+                "estimated_flops": "5.00e+15",
+                "estimated_gpu_hours": 0.0,
+                "estimated_cost_usd": 0.01,
+                "total_runs": 10,
+                "total_epochs_across_runs": 5000,
+                "feasibility": "high"
+            },
+            "timestamp": "2026-07-19T18:19:05.419541"
         }
     ],
     "validation_summary": {
-        "total_valid": 19,
+        "total_valid": 11,
         "total_invalid": 0,
         "feasibility_counts": {
-            "high": 19,
+            "high": 11,
             "medium": 0,
             "low": 0
         }
