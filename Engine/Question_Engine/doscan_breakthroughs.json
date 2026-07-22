@@ -1,0 +1,2041 @@
+[
+    {
+        "cluster": "Node_4",
+        "r_level": 1,
+        "base_elements": [
+            "What are the most effective strategies for preventing murders in high-risk communities?",
+            "Socioeconomic data for high-risk communities"
+        ],
+        "predictions": [
+            "If 'Preventing Murders' is constrained dynamically, then 'Most Effective Strategies' stability will increase by >15%.",
+            "If 'Most Effective Strategies' is constrained dynamically, then 'Preventing Murders' stability will increase by >15%.",
+            "If 'Socioeconomic Data' is constrained dynamically, then 'High-Risk Communities' stability will increase by >15%.",
+            "If 'Most Effective Strategies' is constrained dynamically, then 'Preventing Murders' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Extension' interaction mapping 'Preventing Murders' to 'Most Effective Strategies'.",
+            "Identified a significant 'Cause' interaction mapping 'Most Effective Strategies' to 'Preventing Murders'.",
+            "Identified a significant 'Cause' interaction mapping 'Socioeconomic Data' to 'High-Risk Communities'.",
+            "Identified a significant 'Effect' interaction mapping 'Most Effective Strategies' to 'Preventing Murders'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[EXTENSION] Preventing Murders \u2194 Most Effective Strategies",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Preventing Murders' to 'Most Effective Strategies'.",
+                    "why_it_matters": "Challenges existing models that treat 'Preventing Murders' and 'Most Effective Strategies' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Most Effective Strategies' can scale linearly independent of 'Preventing Murders'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Preventing Murders'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "What are the most effective strategies for preventing murders in high-risk communities?"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Preventing Murders' trigger cascade failures in 'Most Effective Strategies'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Preventing Murders' is constrained dynamically, then 'Most Effective Strategies' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Preventing Murders' in a control simulation while applying extreme variance loads to 'Most Effective Strategies'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Most Effective Strategies' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Most Effective Strategies' remains unaffected during 'Preventing Murders' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Preventing Murders' and 'Most Effective Strategies'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CAUSE] Most Effective Strategies \u2194 Preventing Murders",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Most Effective Strategies' to 'Preventing Murders'.",
+                    "why_it_matters": "Challenges existing models that treat 'Most Effective Strategies' and 'Preventing Murders' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Preventing Murders' can scale linearly independent of 'Most Effective Strategies'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Most Effective Strategies'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Cause",
+                "composite_score": 0.712,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "What are the most effective strategies for preventing murders in high-risk communities?"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.81
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Most Effective Strategies' trigger cascade failures in 'Preventing Murders'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Most Effective Strategies' is constrained dynamically, then 'Preventing Murders' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Most Effective Strategies' in a control simulation while applying extreme variance loads to 'Preventing Murders'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Preventing Murders' confirming the cause."
+                    ],
+                    "failure_conditions": [
+                        "If 'Preventing Murders' remains unaffected during 'Most Effective Strategies' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Most Effective Strategies' and 'Preventing Murders'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CAUSE] Socioeconomic Data \u2194 High-Risk Communities",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Socioeconomic Data' to 'High-Risk Communities'.",
+                    "why_it_matters": "Challenges existing models that treat 'Socioeconomic Data' and 'High-Risk Communities' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'High-Risk Communities' can scale linearly independent of 'Socioeconomic Data'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Socioeconomic Data'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Cause",
+                "composite_score": 0.712,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Socioeconomic data for high-risk communities"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.81
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Socioeconomic Data' trigger cascade failures in 'High-Risk Communities'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Socioeconomic Data' is constrained dynamically, then 'High-Risk Communities' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Socioeconomic Data' in a control simulation while applying extreme variance loads to 'High-Risk Communities'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'High-Risk Communities' confirming the cause."
+                    ],
+                    "failure_conditions": [
+                        "If 'High-Risk Communities' remains unaffected during 'Socioeconomic Data' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Socioeconomic Data' and 'High-Risk Communities'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EFFECT] Most Effective Strategies \u2194 Preventing Murders",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Effect' interaction mapping 'Most Effective Strategies' to 'Preventing Murders'.",
+                    "why_it_matters": "Challenges existing models that treat 'Most Effective Strategies' and 'Preventing Murders' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Preventing Murders' can scale linearly independent of 'Most Effective Strategies'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Most Effective Strategies'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Effect",
+                "composite_score": 0.676,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "What are the most effective strategies for preventing murders in high-risk communities?"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.78
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Most Effective Strategies' trigger cascade failures in 'Preventing Murders'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Most Effective Strategies' is constrained dynamically, then 'Preventing Murders' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Most Effective Strategies' in a control simulation while applying extreme variance loads to 'Preventing Murders'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Preventing Murders' confirming the effect."
+                    ],
+                    "failure_conditions": [
+                        "If 'Preventing Murders' remains unaffected during 'Most Effective Strategies' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Most Effective Strategies' and 'Preventing Murders'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_3",
+        "r_level": 1,
+        "base_elements": [
+            "Forensic evidence can be used to reconstruct crime scenes and identify perpetrators",
+            "Forensic analysis results from crime scenes"
+        ],
+        "predictions": [
+            "If 'Forensic Evidence' is constrained dynamically, then 'Reconstruct Crime Scenes' stability will increase by >15%.",
+            "If 'Reconstruct Crime Scenes' is constrained dynamically, then 'Forensic Evidence' stability will increase by >15%.",
+            "If 'Crime Scenes' is constrained dynamically, then 'Reconstruct Crime Scenes' stability will increase by >15%.",
+            "If 'Reconstruct Crime Scenes' is constrained dynamically, then 'Forensic Evidence' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Extension' interaction mapping 'Forensic Evidence' to 'Reconstruct Crime Scenes'.",
+            "Identified a significant 'Extension' interaction mapping 'Reconstruct Crime Scenes' to 'Forensic Evidence'.",
+            "Identified a significant 'Extension' interaction mapping 'Crime Scenes' to 'Reconstruct Crime Scenes'.",
+            "Identified a significant 'Cause' interaction mapping 'Reconstruct Crime Scenes' to 'Forensic Evidence'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[EXTENSION] Forensic Evidence \u2194 Reconstruct Crime Scenes",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Forensic Evidence' to 'Reconstruct Crime Scenes'.",
+                    "why_it_matters": "Challenges existing models that treat 'Forensic Evidence' and 'Reconstruct Crime Scenes' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Reconstruct Crime Scenes' can scale linearly independent of 'Forensic Evidence'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Forensic Evidence'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Forensic evidence can be used to reconstruct crime scenes and identify perpetrators"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Forensic Evidence' trigger cascade failures in 'Reconstruct Crime Scenes'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Forensic Evidence' is constrained dynamically, then 'Reconstruct Crime Scenes' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Forensic Evidence' in a control simulation while applying extreme variance loads to 'Reconstruct Crime Scenes'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Reconstruct Crime Scenes' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Reconstruct Crime Scenes' remains unaffected during 'Forensic Evidence' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Forensic Evidence' and 'Reconstruct Crime Scenes'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Reconstruct Crime Scenes \u2194 Forensic Evidence",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Reconstruct Crime Scenes' to 'Forensic Evidence'.",
+                    "why_it_matters": "Challenges existing models that treat 'Reconstruct Crime Scenes' and 'Forensic Evidence' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Forensic Evidence' can scale linearly independent of 'Reconstruct Crime Scenes'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Reconstruct Crime Scenes'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Forensic evidence can be used to reconstruct crime scenes and identify perpetrators"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Reconstruct Crime Scenes' trigger cascade failures in 'Forensic Evidence'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Reconstruct Crime Scenes' is constrained dynamically, then 'Forensic Evidence' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Reconstruct Crime Scenes' in a control simulation while applying extreme variance loads to 'Forensic Evidence'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Forensic Evidence' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Forensic Evidence' remains unaffected during 'Reconstruct Crime Scenes' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Reconstruct Crime Scenes' and 'Forensic Evidence'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Crime Scenes \u2194 Reconstruct Crime Scenes",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Crime Scenes' to 'Reconstruct Crime Scenes'.",
+                    "why_it_matters": "Challenges existing models that treat 'Crime Scenes' and 'Reconstruct Crime Scenes' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Reconstruct Crime Scenes' can scale linearly independent of 'Crime Scenes'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Crime Scenes'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Forensic evidence can be used to reconstruct crime scenes and identify perpetrators"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Crime Scenes' trigger cascade failures in 'Reconstruct Crime Scenes'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Crime Scenes' is constrained dynamically, then 'Reconstruct Crime Scenes' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Crime Scenes' in a control simulation while applying extreme variance loads to 'Reconstruct Crime Scenes'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Reconstruct Crime Scenes' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Reconstruct Crime Scenes' remains unaffected during 'Crime Scenes' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Crime Scenes' and 'Reconstruct Crime Scenes'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CAUSE] Reconstruct Crime Scenes \u2194 Forensic Evidence",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Reconstruct Crime Scenes' to 'Forensic Evidence'.",
+                    "why_it_matters": "Challenges existing models that treat 'Reconstruct Crime Scenes' and 'Forensic Evidence' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Forensic Evidence' can scale linearly independent of 'Reconstruct Crime Scenes'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Reconstruct Crime Scenes'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Cause",
+                "composite_score": 0.712,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Forensic evidence can be used to reconstruct crime scenes and identify perpetrators"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.81
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Reconstruct Crime Scenes' trigger cascade failures in 'Forensic Evidence'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Reconstruct Crime Scenes' is constrained dynamically, then 'Forensic Evidence' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Reconstruct Crime Scenes' in a control simulation while applying extreme variance loads to 'Forensic Evidence'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Forensic Evidence' confirming the cause."
+                    ],
+                    "failure_conditions": [
+                        "If 'Forensic Evidence' remains unaffected during 'Reconstruct Crime Scenes' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Reconstruct Crime Scenes' and 'Forensic Evidence'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_2",
+        "r_level": 1,
+        "base_elements": [
+            "Hypothesis: Advanced forensic analysis techniques can improve murder clearance rates: Verification Metric/Test Method: Comparative study of murder clearance rates using advanced forensic techniques versus traditional methods",
+            "Effective investigation techniques can significantly improve murder clearance rates"
+        ],
+        "predictions": [
+            "If 'Effective Investigation Techniques' is constrained dynamically, then 'Significantly Improve Murder Clearance Rates' stability will increase by >15%.",
+            "If 'Effective Investigation Techniques' is constrained dynamically, then 'Murder Clearance Rates' stability will increase by >15%.",
+            "If 'Significantly Improve Murder Clearance Rates' is constrained dynamically, then 'Effective Investigation Techniques' stability will increase by >15%.",
+            "If 'Effective Investigation Techniques' is constrained dynamically, then 'Murder Clearance Rates' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Extension' interaction mapping 'Effective Investigation Techniques' to 'Significantly Improve Murder Clearance Rates'.",
+            "Identified a significant 'Cause' interaction mapping 'Effective Investigation Techniques' to 'Murder Clearance Rates'.",
+            "Identified a significant 'Cause' interaction mapping 'Significantly Improve Murder Clearance Rates' to 'Effective Investigation Techniques'.",
+            "Found empirical conflict: Theoretical models of 'Effective Investigation Techniques' fail under 'Murder Clearance Rates' conditions."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[EXTENSION] Effective Investigation Techniques \u2194 Significantly Improve Murder Clearance Rates",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Effective Investigation Techniques' to 'Significantly Improve Murder Clearance Rates'.",
+                    "why_it_matters": "Challenges existing models that treat 'Effective Investigation Techniques' and 'Significantly Improve Murder Clearance Rates' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Significantly Improve Murder Clearance Rates' can scale linearly independent of 'Effective Investigation Techniques'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Effective Investigation Techniques'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Effective investigation techniques can significantly improve murder clearance rates"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Effective Investigation Techniques' trigger cascade failures in 'Significantly Improve Murder Clearance Rates'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Effective Investigation Techniques' is constrained dynamically, then 'Significantly Improve Murder Clearance Rates' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Effective Investigation Techniques' in a control simulation while applying extreme variance loads to 'Significantly Improve Murder Clearance Rates'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Significantly Improve Murder Clearance Rates' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Significantly Improve Murder Clearance Rates' remains unaffected during 'Effective Investigation Techniques' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Effective Investigation Techniques' and 'Significantly Improve Murder Clearance Rates'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CAUSE] Effective Investigation Techniques \u2194 Murder Clearance Rates",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Effective Investigation Techniques' to 'Murder Clearance Rates'.",
+                    "why_it_matters": "Challenges existing models that treat 'Effective Investigation Techniques' and 'Murder Clearance Rates' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Murder Clearance Rates' can scale linearly independent of 'Effective Investigation Techniques'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Effective Investigation Techniques'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Cause",
+                "composite_score": 0.712,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Effective investigation techniques can significantly improve murder clearance rates"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.81
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Effective Investigation Techniques' trigger cascade failures in 'Murder Clearance Rates'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Effective Investigation Techniques' is constrained dynamically, then 'Murder Clearance Rates' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Effective Investigation Techniques' in a control simulation while applying extreme variance loads to 'Murder Clearance Rates'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Murder Clearance Rates' confirming the cause."
+                    ],
+                    "failure_conditions": [
+                        "If 'Murder Clearance Rates' remains unaffected during 'Effective Investigation Techniques' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Effective Investigation Techniques' and 'Murder Clearance Rates'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CAUSE] Significantly Improve Murder Clearance Rates \u2194 Effective Investigation Techniques",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Significantly Improve Murder Clearance Rates' to 'Effective Investigation Techniques'.",
+                    "why_it_matters": "Challenges existing models that treat 'Significantly Improve Murder Clearance Rates' and 'Effective Investigation Techniques' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Effective Investigation Techniques' can scale linearly independent of 'Significantly Improve Murder Clearance Rates'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Significantly Improve Murder Clearance Rates'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Cause",
+                "composite_score": 0.712,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Effective investigation techniques can significantly improve murder clearance rates"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.81
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Significantly Improve Murder Clearance Rates' trigger cascade failures in 'Effective Investigation Techniques'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Significantly Improve Murder Clearance Rates' is constrained dynamically, then 'Effective Investigation Techniques' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Significantly Improve Murder Clearance Rates' in a control simulation while applying extreme variance loads to 'Effective Investigation Techniques'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Effective Investigation Techniques' confirming the cause."
+                    ],
+                    "failure_conditions": [
+                        "If 'Effective Investigation Techniques' remains unaffected during 'Significantly Improve Murder Clearance Rates' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Significantly Improve Murder Clearance Rates' and 'Effective Investigation Techniques'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CONTRADICTION] Effective Investigation Techniques \u2194 Murder Clearance Rates",
+                "research_note": {
+                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'Effective Investigation Techniques' fail under 'Murder Clearance Rates' conditions.",
+                    "why_it_matters": "Challenges existing models that treat 'Effective Investigation Techniques' and 'Murder Clearance Rates' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Murder Clearance Rates' can scale linearly independent of 'Effective Investigation Techniques'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Effective Investigation Techniques'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Contradiction",
+                "composite_score": 0.676,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Effective investigation techniques can significantly improve murder clearance rates"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.78
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Effective Investigation Techniques' trigger cascade failures in 'Murder Clearance Rates'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Effective Investigation Techniques' is constrained dynamically, then 'Murder Clearance Rates' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Effective Investigation Techniques' in a control simulation while applying extreme variance loads to 'Murder Clearance Rates'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Murder Clearance Rates' confirming the contradiction."
+                    ],
+                    "failure_conditions": [
+                        "If 'Murder Clearance Rates' remains unaffected during 'Effective Investigation Techniques' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Effective Investigation Techniques' and 'Murder Clearance Rates'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_6",
+        "r_level": 1,
+        "base_elements": [
+            "Crime prediction models using statistical analysis",
+            "Inadequate data collection and analysis for crime prediction models"
+        ],
+        "predictions": [
+            "If 'Analysis' is constrained dynamically, then 'Crime Prediction Models' stability will increase by >15%.",
+            "If 'Crime Prediction Models' is constrained dynamically, then 'Analysis' stability will increase by >15%.",
+            "If 'Analysis' is constrained dynamically, then 'Crime Prediction Models' stability will increase by >15%.",
+            "If 'Crime Prediction Models' is constrained dynamically, then 'Analysis' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Found empirical conflict: Theoretical models of 'Analysis' fail under 'Crime Prediction Models' conditions.",
+            "Observed a critical tension where optimizing 'Crime Prediction Models' inversely degrades 'Analysis'.",
+            "Structural behaviors in 'Analysis' provide a novel pathway to resolve bottlenecks in 'Crime Prediction Models'.",
+            "Identified a foundational requirement: 'Crime Prediction Models' execution is strictly bounded by 'Analysis'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[CONTRADICTION] Analysis \u2194 Crime Prediction Models",
+                "research_note": {
+                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'Analysis' fail under 'Crime Prediction Models' conditions.",
+                    "why_it_matters": "Challenges existing models that treat 'Analysis' and 'Crime Prediction Models' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Crime Prediction Models' can scale linearly independent of 'Analysis'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Analysis'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Contradiction",
+                "composite_score": 1.079,
+                "source_cluster": "Node_6",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Crime prediction models using statistical analysis",
+                        "Inadequate data collection and analysis for crime prediction models"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 1.18
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Analysis' trigger cascade failures in 'Crime Prediction Models'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Analysis' is constrained dynamically, then 'Crime Prediction Models' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Analysis' in a control simulation while applying extreme variance loads to 'Crime Prediction Models'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Crime Prediction Models' confirming the contradiction."
+                    ],
+                    "failure_conditions": [
+                        "If 'Crime Prediction Models' remains unaffected during 'Analysis' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Analysis' and 'Crime Prediction Models'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[TRADE-OFF] Crime Prediction Models \u2194 Analysis",
+                "research_note": {
+                    "what_was_discovered": "Observed a critical tension where optimizing 'Crime Prediction Models' inversely degrades 'Analysis'.",
+                    "why_it_matters": "Challenges existing models that treat 'Crime Prediction Models' and 'Analysis' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Analysis' can scale linearly independent of 'Crime Prediction Models'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Crime Prediction Models'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Trade-off",
+                "composite_score": 1.013,
+                "source_cluster": "Node_6",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Crime prediction models using statistical analysis",
+                        "Inadequate data collection and analysis for crime prediction models"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 1.11
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Crime Prediction Models' trigger cascade failures in 'Analysis'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Crime Prediction Models' is constrained dynamically, then 'Analysis' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Crime Prediction Models' in a control simulation while applying extreme variance loads to 'Analysis'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Analysis' confirming the trade-off."
+                    ],
+                    "failure_conditions": [
+                        "If 'Analysis' remains unaffected during 'Crime Prediction Models' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Crime Prediction Models' and 'Analysis'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[ANALOGY] Analysis \u2194 Crime Prediction Models",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Analysis' provide a novel pathway to resolve bottlenecks in 'Crime Prediction Models'.",
+                    "why_it_matters": "Challenges existing models that treat 'Analysis' and 'Crime Prediction Models' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Crime Prediction Models' can scale linearly independent of 'Analysis'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Analysis'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 0.955,
+                "source_cluster": "Node_6",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Crime prediction models using statistical analysis",
+                        "Inadequate data collection and analysis for crime prediction models"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 1.05
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Analysis' trigger cascade failures in 'Crime Prediction Models'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Analysis' is constrained dynamically, then 'Crime Prediction Models' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Analysis' in a control simulation while applying extreme variance loads to 'Crime Prediction Models'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Crime Prediction Models' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Crime Prediction Models' remains unaffected during 'Analysis' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Analysis' and 'Crime Prediction Models'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[DEPENDENCY] Crime Prediction Models \u2194 Analysis",
+                "research_note": {
+                    "what_was_discovered": "Identified a foundational requirement: 'Crime Prediction Models' execution is strictly bounded by 'Analysis'.",
+                    "why_it_matters": "Challenges existing models that treat 'Crime Prediction Models' and 'Analysis' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Analysis' can scale linearly independent of 'Crime Prediction Models'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Crime Prediction Models'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Dependency",
+                "composite_score": 0.888,
+                "source_cluster": "Node_6",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Crime prediction models using statistical analysis",
+                        "Inadequate data collection and analysis for crime prediction models"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.99
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Crime Prediction Models' trigger cascade failures in 'Analysis'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Crime Prediction Models' is constrained dynamically, then 'Analysis' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Crime Prediction Models' in a control simulation while applying extreme variance loads to 'Analysis'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Analysis' confirming the dependency."
+                    ],
+                    "failure_conditions": [
+                        "If 'Analysis' remains unaffected during 'Crime Prediction Models' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Crime Prediction Models' and 'Analysis'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_5",
+        "r_level": 1,
+        "base_elements": [
+            "Inadequate funding for community-based interventions",
+            "Evaluation data from community-based interventions and prevention strategies",
+            "Hypothesis: Increased community-based interventions can reduce murder rates: Verification Metric/Test Method: Randomized controlled trials of community-based interventions with murder rate outcomes"
+        ],
+        "predictions": [
+            "If 'Community-Based Interventions' is constrained dynamically, then 'Inadequate Funding' stability will increase by >15%.",
+            "If 'Prevention Strategies' is constrained dynamically, then 'Evaluation Data' stability will increase by >15%.",
+            "If 'Murder Rate Outcomes' is constrained dynamically, then 'Community-Based Interventions' stability will increase by >15%.",
+            "If 'Inadequate Funding' is constrained dynamically, then 'Community-Based Interventions' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Extension' interaction mapping 'Community-Based Interventions' to 'Inadequate Funding'.",
+            "Identified a significant 'Extension' interaction mapping 'Prevention Strategies' to 'Evaluation Data'.",
+            "Identified a significant 'Cause' interaction mapping 'Murder Rate Outcomes' to 'Community-Based Interventions'.",
+            "Identified a significant 'Cause' interaction mapping 'Inadequate Funding' to 'Community-Based Interventions'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[EXTENSION] Community-Based Interventions \u2194 Inadequate Funding",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Community-Based Interventions' to 'Inadequate Funding'.",
+                    "why_it_matters": "Challenges existing models that treat 'Community-Based Interventions' and 'Inadequate Funding' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Inadequate Funding' can scale linearly independent of 'Community-Based Interventions'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Community-Based Interventions'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_5",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Inadequate funding for community-based interventions"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Community-Based Interventions' trigger cascade failures in 'Inadequate Funding'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Community-Based Interventions' is constrained dynamically, then 'Inadequate Funding' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Community-Based Interventions' in a control simulation while applying extreme variance loads to 'Inadequate Funding'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Inadequate Funding' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Inadequate Funding' remains unaffected during 'Community-Based Interventions' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Community-Based Interventions' and 'Inadequate Funding'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Prevention Strategies \u2194 Evaluation Data",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Prevention Strategies' to 'Evaluation Data'.",
+                    "why_it_matters": "Challenges existing models that treat 'Prevention Strategies' and 'Evaluation Data' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Evaluation Data' can scale linearly independent of 'Prevention Strategies'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Prevention Strategies'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_5",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Evaluation data from community-based interventions and prevention strategies"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Prevention Strategies' trigger cascade failures in 'Evaluation Data'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Prevention Strategies' is constrained dynamically, then 'Evaluation Data' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Prevention Strategies' in a control simulation while applying extreme variance loads to 'Evaluation Data'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Evaluation Data' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Evaluation Data' remains unaffected during 'Prevention Strategies' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Prevention Strategies' and 'Evaluation Data'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CAUSE] Murder Rate Outcomes \u2194 Community-Based Interventions",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Murder Rate Outcomes' to 'Community-Based Interventions'.",
+                    "why_it_matters": "Challenges existing models that treat 'Murder Rate Outcomes' and 'Community-Based Interventions' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Community-Based Interventions' can scale linearly independent of 'Murder Rate Outcomes'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Murder Rate Outcomes'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Cause",
+                "composite_score": 0.712,
+                "source_cluster": "Node_5",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Hypothesis: Increased community-based interventions can reduce murder rates: Verification Metric/Test Method: Randomized controlled trials of community-based interventions with murder rate outcomes"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.81
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Murder Rate Outcomes' trigger cascade failures in 'Community-Based Interventions'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Murder Rate Outcomes' is constrained dynamically, then 'Community-Based Interventions' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Murder Rate Outcomes' in a control simulation while applying extreme variance loads to 'Community-Based Interventions'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Community-Based Interventions' confirming the cause."
+                    ],
+                    "failure_conditions": [
+                        "If 'Community-Based Interventions' remains unaffected during 'Murder Rate Outcomes' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Murder Rate Outcomes' and 'Community-Based Interventions'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CAUSE] Inadequate Funding \u2194 Community-Based Interventions",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Inadequate Funding' to 'Community-Based Interventions'.",
+                    "why_it_matters": "Challenges existing models that treat 'Inadequate Funding' and 'Community-Based Interventions' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Community-Based Interventions' can scale linearly independent of 'Inadequate Funding'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Inadequate Funding'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Cause",
+                "composite_score": 0.712,
+                "source_cluster": "Node_5",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Inadequate funding for community-based interventions"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.81
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Inadequate Funding' trigger cascade failures in 'Community-Based Interventions'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Inadequate Funding' is constrained dynamically, then 'Community-Based Interventions' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Inadequate Funding' in a control simulation while applying extreme variance loads to 'Community-Based Interventions'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Community-Based Interventions' confirming the cause."
+                    ],
+                    "failure_conditions": [
+                        "If 'Community-Based Interventions' remains unaffected during 'Inadequate Funding' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Inadequate Funding' and 'Community-Based Interventions'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "r_level": 1,
+        "base_elements": [
+            "Hypothesis: Psychological profiling can identify high-risk individuals and prevent murders: Verification Metric/Test Method: Longitudinal study of high-risk individuals with psychological profiling and intervention outcomes",
+            "Psychological profiles of offenders and high-risk individuals",
+            "Psychological profiling of offenders",
+            "Cultural and socioeconomic biases in psychological profiling"
+        ],
+        "predictions": [
+            "If 'Intervention Outcomes' is constrained dynamically, then 'High-Risk Individuals' stability will increase by >15%.",
+            "If 'Psychological Profiling' is constrained dynamically, then 'Socioeconomic Biases' stability will increase by >15%.",
+            "If 'Offenders' is constrained dynamically, then 'High-Risk Individuals' stability will increase by >15%.",
+            "If 'High-Risk Individuals' is constrained dynamically, then 'Identify High-Risk Individuals' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Extension' interaction mapping 'Intervention Outcomes' to 'High-Risk Individuals'.",
+            "Identified a significant 'Extension' interaction mapping 'Psychological Profiling' to 'Socioeconomic Biases'.",
+            "Identified a significant 'Extension' interaction mapping 'Offenders' to 'High-Risk Individuals'.",
+            "Identified a significant 'Extension' interaction mapping 'High-Risk Individuals' to 'Identify High-Risk Individuals'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[EXTENSION] Intervention Outcomes \u2194 High-Risk Individuals",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Intervention Outcomes' to 'High-Risk Individuals'.",
+                    "why_it_matters": "Challenges existing models that treat 'Intervention Outcomes' and 'High-Risk Individuals' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'High-Risk Individuals' can scale linearly independent of 'Intervention Outcomes'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Intervention Outcomes'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Hypothesis: Psychological profiling can identify high-risk individuals and prevent murders: Verification Metric/Test Method: Longitudinal study of high-risk individuals with psychological profiling and intervention outcomes"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Intervention Outcomes' trigger cascade failures in 'High-Risk Individuals'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Intervention Outcomes' is constrained dynamically, then 'High-Risk Individuals' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Intervention Outcomes' in a control simulation while applying extreme variance loads to 'High-Risk Individuals'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'High-Risk Individuals' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'High-Risk Individuals' remains unaffected during 'Intervention Outcomes' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Intervention Outcomes' and 'High-Risk Individuals'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Psychological Profiling \u2194 Socioeconomic Biases",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Psychological Profiling' to 'Socioeconomic Biases'.",
+                    "why_it_matters": "Challenges existing models that treat 'Psychological Profiling' and 'Socioeconomic Biases' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Socioeconomic Biases' can scale linearly independent of 'Psychological Profiling'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Psychological Profiling'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Cultural and socioeconomic biases in psychological profiling"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Psychological Profiling' trigger cascade failures in 'Socioeconomic Biases'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Psychological Profiling' is constrained dynamically, then 'Socioeconomic Biases' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Psychological Profiling' in a control simulation while applying extreme variance loads to 'Socioeconomic Biases'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Socioeconomic Biases' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Socioeconomic Biases' remains unaffected during 'Psychological Profiling' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Psychological Profiling' and 'Socioeconomic Biases'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Offenders \u2194 High-Risk Individuals",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Offenders' to 'High-Risk Individuals'.",
+                    "why_it_matters": "Challenges existing models that treat 'Offenders' and 'High-Risk Individuals' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'High-Risk Individuals' can scale linearly independent of 'Offenders'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Offenders'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Psychological profiles of offenders and high-risk individuals"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Offenders' trigger cascade failures in 'High-Risk Individuals'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Offenders' is constrained dynamically, then 'High-Risk Individuals' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Offenders' in a control simulation while applying extreme variance loads to 'High-Risk Individuals'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'High-Risk Individuals' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'High-Risk Individuals' remains unaffected during 'Offenders' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Offenders' and 'High-Risk Individuals'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] High-Risk Individuals \u2194 Identify High-Risk Individuals",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'High-Risk Individuals' to 'Identify High-Risk Individuals'.",
+                    "why_it_matters": "Challenges existing models that treat 'High-Risk Individuals' and 'Identify High-Risk Individuals' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Identify High-Risk Individuals' can scale linearly independent of 'High-Risk Individuals'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'High-Risk Individuals'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Hypothesis: Psychological profiling can identify high-risk individuals and prevent murders: Verification Metric/Test Method: Longitudinal study of high-risk individuals with psychological profiling and intervention outcomes"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'High-Risk Individuals' trigger cascade failures in 'Identify High-Risk Individuals'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'High-Risk Individuals' is constrained dynamically, then 'Identify High-Risk Individuals' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'High-Risk Individuals' in a control simulation while applying extreme variance loads to 'Identify High-Risk Individuals'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Identify High-Risk Individuals' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Identify High-Risk Individuals' remains unaffected during 'High-Risk Individuals' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'High-Risk Individuals' and 'Identify High-Risk Individuals'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_3",
+        "r_level": 2,
+        "base_elements": [
+            "Socioeconomic factors such as poverty and unemployment are correlated with higher murder rates",
+            "What are the precise mechanisms by which socioeconomic factors influence murder rates?"
+        ],
+        "predictions": [
+            "If 'Socioeconomic Factors' is constrained dynamically, then 'Socioeconomic Factors Influence Murder Rates' stability will increase by >15%.",
+            "If 'Poverty' is constrained dynamically, then 'Higher Murder Rates' stability will increase by >15%.",
+            "If 'Unemployment' is constrained dynamically, then 'Poverty' stability will increase by >15%.",
+            "If 'Socioeconomic Factors' is constrained dynamically, then 'Higher Murder Rates' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Extension' interaction mapping 'Socioeconomic Factors' to 'Socioeconomic Factors Influence Murder Rates'.",
+            "Identified a significant 'Extension' interaction mapping 'Poverty' to 'Higher Murder Rates'.",
+            "Identified a significant 'Extension' interaction mapping 'Unemployment' to 'Poverty'.",
+            "Identified a significant 'Cause' interaction mapping 'Socioeconomic Factors' to 'Higher Murder Rates'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[EXTENSION] Socioeconomic Factors \u2194 Socioeconomic Factors Influence Murder Rates",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Socioeconomic Factors' to 'Socioeconomic Factors Influence Murder Rates'.",
+                    "why_it_matters": "Challenges existing models that treat 'Socioeconomic Factors' and 'Socioeconomic Factors Influence Murder Rates' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Socioeconomic Factors Influence Murder Rates' can scale linearly independent of 'Socioeconomic Factors'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Socioeconomic Factors'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "What are the precise mechanisms by which socioeconomic factors influence murder rates?"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Socioeconomic Factors' trigger cascade failures in 'Socioeconomic Factors Influence Murder Rates'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Socioeconomic Factors' is constrained dynamically, then 'Socioeconomic Factors Influence Murder Rates' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Socioeconomic Factors' in a control simulation while applying extreme variance loads to 'Socioeconomic Factors Influence Murder Rates'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Socioeconomic Factors Influence Murder Rates' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Socioeconomic Factors Influence Murder Rates' remains unaffected during 'Socioeconomic Factors' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Socioeconomic Factors' and 'Socioeconomic Factors Influence Murder Rates'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Poverty \u2194 Higher Murder Rates",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Poverty' to 'Higher Murder Rates'.",
+                    "why_it_matters": "Challenges existing models that treat 'Poverty' and 'Higher Murder Rates' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Higher Murder Rates' can scale linearly independent of 'Poverty'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Poverty'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Socioeconomic factors such as poverty and unemployment are correlated with higher murder rates"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Poverty' trigger cascade failures in 'Higher Murder Rates'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Poverty' is constrained dynamically, then 'Higher Murder Rates' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Poverty' in a control simulation while applying extreme variance loads to 'Higher Murder Rates'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Higher Murder Rates' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Higher Murder Rates' remains unaffected during 'Poverty' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Poverty' and 'Higher Murder Rates'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Unemployment \u2194 Poverty",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Unemployment' to 'Poverty'.",
+                    "why_it_matters": "Challenges existing models that treat 'Unemployment' and 'Poverty' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Poverty' can scale linearly independent of 'Unemployment'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Unemployment'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Socioeconomic factors such as poverty and unemployment are correlated with higher murder rates"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Unemployment' trigger cascade failures in 'Poverty'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Unemployment' is constrained dynamically, then 'Poverty' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Unemployment' in a control simulation while applying extreme variance loads to 'Poverty'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Poverty' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Poverty' remains unaffected during 'Unemployment' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Unemployment' and 'Poverty'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CAUSE] Socioeconomic Factors \u2194 Higher Murder Rates",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Socioeconomic Factors' to 'Higher Murder Rates'.",
+                    "why_it_matters": "Challenges existing models that treat 'Socioeconomic Factors' and 'Higher Murder Rates' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Higher Murder Rates' can scale linearly independent of 'Socioeconomic Factors'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Socioeconomic Factors'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Cause",
+                "composite_score": 0.712,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Socioeconomic factors such as poverty and unemployment are correlated with higher murder rates"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.81
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Socioeconomic Factors' trigger cascade failures in 'Higher Murder Rates'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Socioeconomic Factors' is constrained dynamically, then 'Higher Murder Rates' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Socioeconomic Factors' in a control simulation while applying extreme variance loads to 'Higher Murder Rates'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Higher Murder Rates' confirming the cause."
+                    ],
+                    "failure_conditions": [
+                        "If 'Higher Murder Rates' remains unaffected during 'Socioeconomic Factors' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Socioeconomic Factors' and 'Higher Murder Rates'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "r_level": 2,
+        "base_elements": [
+            "Forensic analysis using Newton's laws of motion",
+            "Lack of standardization in forensic analysis techniques",
+            "How can forensic analysis be improved to increase the accuracy of crime scene reconstruction?"
+        ],
+        "predictions": [
+            "If 'Forensic Analysis' is constrained dynamically, then 'Forensic Analysis Techniques' stability will increase by >15%.",
+            "If 'Forensic Analysis' is constrained dynamically, then 'Crime Scene Reconstruction' stability will increase by >15%.",
+            "If 'Forensic Analysis' is constrained dynamically, then 'Increase' stability will increase by >15%.",
+            "If 'Accuracy' is constrained dynamically, then 'Improved' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Cause' interaction mapping 'Forensic Analysis' to 'Forensic Analysis Techniques'.",
+            "Identified a significant 'Extension' interaction mapping 'Forensic Analysis' to 'Crime Scene Reconstruction'.",
+            "Identified a significant 'Extension' interaction mapping 'Forensic Analysis' to 'Increase'.",
+            "Identified a significant 'Extension' interaction mapping 'Accuracy' to 'Improved'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[CAUSE] Forensic Analysis \u2194 Forensic Analysis Techniques",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Forensic Analysis' to 'Forensic Analysis Techniques'.",
+                    "why_it_matters": "Challenges existing models that treat 'Forensic Analysis' and 'Forensic Analysis Techniques' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Forensic Analysis Techniques' can scale linearly independent of 'Forensic Analysis'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Forensic Analysis'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Cause",
+                "composite_score": 0.877,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Lack of standardization in forensic analysis techniques"
+                    ],
+                    "contradicting_evidence": [
+                        "Hypothesis: Advanced forensic analysis techniques can improve murder clearance rates: Verification Metric/Test Method: Comparative study of murder clearance rates using advanced forensic techniques versus traditional methods"
+                    ]
+                },
+                "scores": {
+                    "evidence_support": 0.7,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.98
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Forensic Analysis' trigger cascade failures in 'Forensic Analysis Techniques'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Forensic Analysis' is constrained dynamically, then 'Forensic Analysis Techniques' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Forensic Analysis' in a control simulation while applying extreme variance loads to 'Forensic Analysis Techniques'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Forensic Analysis Techniques' confirming the cause."
+                    ],
+                    "failure_conditions": [
+                        "If 'Forensic Analysis Techniques' remains unaffected during 'Forensic Analysis' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Forensic Analysis' and 'Forensic Analysis Techniques'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Forensic Analysis \u2194 Crime Scene Reconstruction",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Forensic Analysis' to 'Crime Scene Reconstruction'.",
+                    "why_it_matters": "Challenges existing models that treat 'Forensic Analysis' and 'Crime Scene Reconstruction' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Crime Scene Reconstruction' can scale linearly independent of 'Forensic Analysis'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Forensic Analysis'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "How can forensic analysis be improved to increase the accuracy of crime scene reconstruction?"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Forensic Analysis' trigger cascade failures in 'Crime Scene Reconstruction'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Forensic Analysis' is constrained dynamically, then 'Crime Scene Reconstruction' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Forensic Analysis' in a control simulation while applying extreme variance loads to 'Crime Scene Reconstruction'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Crime Scene Reconstruction' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Crime Scene Reconstruction' remains unaffected during 'Forensic Analysis' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Forensic Analysis' and 'Crime Scene Reconstruction'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Forensic Analysis \u2194 Increase",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Forensic Analysis' to 'Increase'.",
+                    "why_it_matters": "Challenges existing models that treat 'Forensic Analysis' and 'Increase' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Increase' can scale linearly independent of 'Forensic Analysis'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Forensic Analysis'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "How can forensic analysis be improved to increase the accuracy of crime scene reconstruction?"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Forensic Analysis' trigger cascade failures in 'Increase'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Forensic Analysis' is constrained dynamically, then 'Increase' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Forensic Analysis' in a control simulation while applying extreme variance loads to 'Increase'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Increase' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Increase' remains unaffected during 'Forensic Analysis' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Forensic Analysis' and 'Increase'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Accuracy \u2194 Improved",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Accuracy' to 'Improved'.",
+                    "why_it_matters": "Challenges existing models that treat 'Accuracy' and 'Improved' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Improved' can scale linearly independent of 'Accuracy'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Accuracy'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "How can forensic analysis be improved to increase the accuracy of crime scene reconstruction?"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Accuracy' trigger cascade failures in 'Improved'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Accuracy' is constrained dynamically, then 'Improved' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Accuracy' in a control simulation while applying extreme variance loads to 'Improved'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Improved' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Improved' remains unaffected during 'Accuracy' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Accuracy' and 'Improved'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "r_level": 3,
+        "base_elements": [
+            "Understanding the multidisciplinary factors influencing murder rates to develop effective prevention and investigation strategies",
+            "Insufficient training for law enforcement officers in murder investigation",
+            "What are the long-term consequences of murder on victims' families and communities?",
+            "Murder rates vary significantly across different regions and cultures",
+            "How can psychological theories of aggression be used to predict and prevent murder?"
+        ],
+        "predictions": [
+            "If 'Communities' is constrained dynamically, then 'Murder' stability will increase by >15%.",
+            "If 'Prevent Murder' is constrained dynamically, then 'Murder' stability will increase by >15%.",
+            "If 'Prevent Murder' is constrained dynamically, then 'Murder' stability will increase by >15%.",
+            "If 'Communities' is constrained dynamically, then 'Murder' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Extension' interaction mapping 'Communities' to 'Murder'.",
+            "Identified a significant 'Complementary' interaction mapping 'Prevent Murder' to 'Murder'.",
+            "Found empirical conflict: Theoretical models of 'Prevent Murder' fail under 'Murder' conditions.",
+            "Structural behaviors in 'Communities' provide a novel pathway to resolve bottlenecks in 'Murder'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[EXTENSION] Communities \u2194 Murder",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Communities' to 'Murder'.",
+                    "why_it_matters": "Challenges existing models that treat 'Communities' and 'Murder' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Murder' can scale linearly independent of 'Communities'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Communities'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 1.262,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "What are the long-term consequences of murder on victims' families and communities?",
+                        "What are the most effective strategies for preventing murders in high-risk communities?"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 1.36
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Communities' trigger cascade failures in 'Murder'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Communities' is constrained dynamically, then 'Murder' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Communities' in a control simulation while applying extreme variance loads to 'Murder'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Murder' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Murder' remains unaffected during 'Communities' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Communities' and 'Murder'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[COMPLEMENTARY] Prevent Murder \u2194 Murder",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Prevent Murder' to 'Murder'.",
+                    "why_it_matters": "Challenges existing models that treat 'Prevent Murder' and 'Murder' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Murder' can scale linearly independent of 'Prevent Murder'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Prevent Murder'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Complementary",
+                "composite_score": 1.079,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Hypothesis: Psychological profiling can identify high-risk individuals and prevent murders: Verification Metric/Test Method: Longitudinal study of high-risk individuals with psychological profiling and intervention outcomes",
+                        "How can psychological theories of aggression be used to predict and prevent murder?"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 1.18
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Prevent Murder' trigger cascade failures in 'Murder'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Prevent Murder' is constrained dynamically, then 'Murder' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Prevent Murder' in a control simulation while applying extreme variance loads to 'Murder'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Murder' confirming the complementary."
+                    ],
+                    "failure_conditions": [
+                        "If 'Murder' remains unaffected during 'Prevent Murder' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Prevent Murder' and 'Murder'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CONTRADICTION] Prevent Murder \u2194 Murder",
+                "research_note": {
+                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'Prevent Murder' fail under 'Murder' conditions.",
+                    "why_it_matters": "Challenges existing models that treat 'Prevent Murder' and 'Murder' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Murder' can scale linearly independent of 'Prevent Murder'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Prevent Murder'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Contradiction",
+                "composite_score": 1.079,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Hypothesis: Psychological profiling can identify high-risk individuals and prevent murders: Verification Metric/Test Method: Longitudinal study of high-risk individuals with psychological profiling and intervention outcomes",
+                        "How can psychological theories of aggression be used to predict and prevent murder?"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 1.18
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Prevent Murder' trigger cascade failures in 'Murder'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Prevent Murder' is constrained dynamically, then 'Murder' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Prevent Murder' in a control simulation while applying extreme variance loads to 'Murder'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Murder' confirming the contradiction."
+                    ],
+                    "failure_conditions": [
+                        "If 'Murder' remains unaffected during 'Prevent Murder' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Prevent Murder' and 'Murder'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[ANALOGY] Communities \u2194 Murder",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Communities' provide a novel pathway to resolve bottlenecks in 'Murder'.",
+                    "why_it_matters": "Challenges existing models that treat 'Communities' and 'Murder' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Murder' can scale linearly independent of 'Communities'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Communities'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 0.955,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "What are the long-term consequences of murder on victims' families and communities?",
+                        "What are the most effective strategies for preventing murders in high-risk communities?"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 1.05
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Communities' trigger cascade failures in 'Murder'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Communities' is constrained dynamically, then 'Murder' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Communities' in a control simulation while applying extreme variance loads to 'Murder'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Murder' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Murder' remains unaffected during 'Communities' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Communities' and 'Murder'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "r_level": 4,
+        "base_elements": [
+            "Crime statistics and trends",
+            "Most murders are committed by individuals known to the victim",
+            "Social Learning Theory",
+            "Routine Activities Theory"
+        ],
+        "predictions": [
+            "If 'Committed' is constrained dynamically, then 'Victim' stability will increase by >15%.",
+            "If 'Victim' is constrained dynamically, then 'Committed' stability will increase by >15%.",
+            "If 'Victim' is constrained dynamically, then 'Individuals Known' stability will increase by >15%.",
+            "If 'Victim' is constrained dynamically, then 'Most Murders' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Extension' interaction mapping 'Committed' to 'Victim'.",
+            "Identified a significant 'Extension' interaction mapping 'Victim' to 'Committed'.",
+            "Identified a significant 'Extension' interaction mapping 'Victim' to 'Individuals Known'.",
+            "Identified a significant 'Extension' interaction mapping 'Victim' to 'Most Murders'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[EXTENSION] Committed \u2194 Victim",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Committed' to 'Victim'.",
+                    "why_it_matters": "Challenges existing models that treat 'Committed' and 'Victim' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Victim' can scale linearly independent of 'Committed'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Committed'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Most murders are committed by individuals known to the victim"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Committed' trigger cascade failures in 'Victim'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Committed' is constrained dynamically, then 'Victim' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Committed' in a control simulation while applying extreme variance loads to 'Victim'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Victim' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Victim' remains unaffected during 'Committed' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Committed' and 'Victim'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Victim \u2194 Committed",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Victim' to 'Committed'.",
+                    "why_it_matters": "Challenges existing models that treat 'Victim' and 'Committed' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Committed' can scale linearly independent of 'Victim'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Victim'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Most murders are committed by individuals known to the victim"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Victim' trigger cascade failures in 'Committed'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Victim' is constrained dynamically, then 'Committed' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Victim' in a control simulation while applying extreme variance loads to 'Committed'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Committed' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Committed' remains unaffected during 'Victim' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Victim' and 'Committed'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Victim \u2194 Individuals Known",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Victim' to 'Individuals Known'.",
+                    "why_it_matters": "Challenges existing models that treat 'Victim' and 'Individuals Known' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Individuals Known' can scale linearly independent of 'Victim'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Victim'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Most murders are committed by individuals known to the victim"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Victim' trigger cascade failures in 'Individuals Known'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Victim' is constrained dynamically, then 'Individuals Known' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Victim' in a control simulation while applying extreme variance loads to 'Individuals Known'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Individuals Known' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Individuals Known' remains unaffected during 'Victim' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Victim' and 'Individuals Known'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Victim \u2194 Most Murders",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Victim' to 'Most Murders'.",
+                    "why_it_matters": "Challenges existing models that treat 'Victim' and 'Most Murders' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Most Murders' can scale linearly independent of 'Victim'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Victim'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.79,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Most murders are committed by individuals known to the victim"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.89
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Victim' trigger cascade failures in 'Most Murders'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Victim' is constrained dynamically, then 'Most Murders' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Victim' in a control simulation while applying extreme variance loads to 'Most Murders'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Most Murders' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Most Murders' remains unaffected during 'Victim' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Victim' and 'Most Murders'."
+                    ]
+                }
+            }
+        ]
+    }
+]
