@@ -28,7 +28,7 @@ if engine_path not in sys.path:
 # ==========================================
 # CONFIGURATION
 # ==========================================
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "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"
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
 # ==========================================
@@ -42,6 +42,7 @@ from Hypothesis.Question_back import run_questioning_engine, print_final_solutio
 from Evidence import run_evidence_engine
 from Experiment import run_experiment_engine
 from Mathematics import run_mathematics_engine
+from Simulation import run_simulation_engine
 
 def _load_json(path: str) -> dict:
     """Safely load a JSON file, returning empty dict on failure."""
@@ -280,6 +281,15 @@ def main():
     # verifies mathematical constraints, estimates complexity, rejects impossible formulations
     print("\n>>> PHASE 9: Initializing Mathematics Engine...")
     equations = run_mathematics_engine(fallback_hypotheses)
+    
+    # --- PHASE 10: SIMULATION & EVIDENCE UPDATE ---
+    # Classifies problem domain, selects simulator, runs simulation,
+    # compares results with predictions, updates evidence confidence
+    print("\n>>> PHASE 10: Initializing Simulation Engine...")
+    simulation_results = run_simulation_engine(
+        problem=user_problem,
+        hypotheses=fallback_hypotheses
+    )
     
     # ---- Gather all stats from output files ----
     aarl_elapsed = time.time() - aarl_start
