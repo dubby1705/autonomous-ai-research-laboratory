@@ -1,0 +1,2433 @@
+[
+    {
+        "cluster": "Node_1",
+        "phase": "PRIMARY",
+        "r_level": 1,
+        "base_elements": [
+            "Efficient propulsion system for both environments",
+            "Hypothesis2: A hybrid propulsion system combining electric motors and water jets will provide efficient propulsion in both environments",
+            "Prototype testing in both water and land environments"
+        ],
+        "predictions": [
+            "If 'Provide Efficient Propulsion' is constrained dynamically, then 'Both Environments' stability will increase by >15%.",
+            "If 'Provide Efficient Propulsion' is constrained dynamically, then 'Both Environments' stability will increase by >15%.",
+            "If 'Provide Efficient Propulsion' is constrained dynamically, then 'Both Environments' stability will increase by >15%.",
+            "If 'Provide Efficient Propulsion' is constrained dynamically, then 'Hypothesis2' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Observed a critical tension where optimizing 'Provide Efficient Propulsion' inversely degrades 'Both Environments'.",
+            "Found empirical conflict: Theoretical models of 'Provide Efficient Propulsion' fail under 'Both Environments' conditions.",
+            "Identified a significant 'Complementary' interaction mapping 'Provide Efficient Propulsion' to 'Both Environments'.",
+            "Identified a significant 'Generalization' interaction mapping 'Provide Efficient Propulsion' to 'Hypothesis2'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[TRADE-OFF] Provide Efficient Propulsion \u2194 Both Environments",
+                "research_note": {
+                    "what_was_discovered": "Observed a critical tension where optimizing 'Provide Efficient Propulsion' inversely degrades 'Both Environments'.",
+                    "why_it_matters": "Challenges existing models that treat 'Provide Efficient Propulsion' and 'Both Environments' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Both Environments' can scale linearly independent of 'Provide Efficient Propulsion'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Provide Efficient Propulsion'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Trade-off",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Hypothesis2: A hybrid propulsion system combining electric motors and water jets will provide efficient propulsion in both environments"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Provide Efficient Propulsion' trigger cascade failures in 'Both Environments'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Provide Efficient Propulsion' is constrained dynamically, then 'Both Environments' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Provide Efficient Propulsion' in a control simulation while applying extreme variance loads to 'Both Environments'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Both Environments' confirming the trade-off."
+                    ],
+                    "failure_conditions": [
+                        "If 'Both Environments' remains unaffected during 'Provide Efficient Propulsion' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Provide Efficient Propulsion' and 'Both Environments'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CONTRADICTION] Provide Efficient Propulsion \u2194 Both Environments",
+                "research_note": {
+                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'Provide Efficient Propulsion' fail under 'Both Environments' conditions.",
+                    "why_it_matters": "Challenges existing models that treat 'Provide Efficient Propulsion' and 'Both Environments' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Both Environments' can scale linearly independent of 'Provide Efficient Propulsion'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Provide Efficient Propulsion'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Contradiction",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Hypothesis2: A hybrid propulsion system combining electric motors and water jets will provide efficient propulsion in both environments"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Provide Efficient Propulsion' trigger cascade failures in 'Both Environments'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Provide Efficient Propulsion' is constrained dynamically, then 'Both Environments' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Provide Efficient Propulsion' in a control simulation while applying extreme variance loads to 'Both Environments'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Both Environments' confirming the contradiction."
+                    ],
+                    "failure_conditions": [
+                        "If 'Both Environments' remains unaffected during 'Provide Efficient Propulsion' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Provide Efficient Propulsion' and 'Both Environments'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[COMPLEMENTARY] Provide Efficient Propulsion \u2194 Both Environments",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Provide Efficient Propulsion' to 'Both Environments'.",
+                    "why_it_matters": "Challenges existing models that treat 'Provide Efficient Propulsion' and 'Both Environments' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Both Environments' can scale linearly independent of 'Provide Efficient Propulsion'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Provide Efficient Propulsion'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Complementary",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Hypothesis2: A hybrid propulsion system combining electric motors and water jets will provide efficient propulsion in both environments"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Provide Efficient Propulsion' trigger cascade failures in 'Both Environments'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Provide Efficient Propulsion' is constrained dynamically, then 'Both Environments' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Provide Efficient Propulsion' in a control simulation while applying extreme variance loads to 'Both Environments'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Both Environments' confirming the complementary."
+                    ],
+                    "failure_conditions": [
+                        "If 'Both Environments' remains unaffected during 'Provide Efficient Propulsion' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Provide Efficient Propulsion' and 'Both Environments'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] Provide Efficient Propulsion \u2194 Hypothesis2",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Provide Efficient Propulsion' to 'Hypothesis2'.",
+                    "why_it_matters": "Challenges existing models that treat 'Provide Efficient Propulsion' and 'Hypothesis2' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Hypothesis2' can scale linearly independent of 'Provide Efficient Propulsion'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Provide Efficient Propulsion'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Hypothesis2: A hybrid propulsion system combining electric motors and water jets will provide efficient propulsion in both environments"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Provide Efficient Propulsion' trigger cascade failures in 'Hypothesis2'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Provide Efficient Propulsion' is constrained dynamically, then 'Hypothesis2' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Provide Efficient Propulsion' in a control simulation while applying extreme variance loads to 'Hypothesis2'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Hypothesis2' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Hypothesis2' remains unaffected during 'Provide Efficient Propulsion' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Provide Efficient Propulsion' and 'Hypothesis2'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_2",
+        "phase": "PRIMARY",
+        "r_level": 1,
+        "base_elements": [
+            "Design and development of an amphibious car that can float in water and navigate on land with optimal stability and control",
+            "Optimal hull design for stability and control in water",
+            "Loss of stability and control in water",
+            "Hypothesis1: A streamlined hull design with a low center of gravity will enhance stability in water"
+        ],
+        "predictions": [
+            "If 'Stability' is constrained dynamically, then 'Water' stability will increase by >15%.",
+            "If 'Stability' is constrained dynamically, then 'Water' stability will increase by >15%.",
+            "If 'Stability' is constrained dynamically, then 'Water' stability will increase by >15%.",
+            "If 'Stability' is constrained dynamically, then 'Design' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Structural behaviors in 'Stability' provide a novel pathway to resolve bottlenecks in 'Water'.",
+            "Identified a significant 'Inspiration' interaction mapping 'Stability' to 'Water'.",
+            "Identified a significant 'Generalization' interaction mapping 'Stability' to 'Water'.",
+            "Identified a significant 'Extension' interaction mapping 'Stability' to 'Design'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[ANALOGY] Stability \u2194 Water",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Stability' provide a novel pathway to resolve bottlenecks in 'Water'.",
+                    "why_it_matters": "Challenges existing models that treat 'Stability' and 'Water' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Water' can scale linearly independent of 'Stability'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Stability'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 0.83,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Design and development of an amphibious car that can float in water and navigate on land with optimal stability and control",
+                        "Optimal hull design for stability and control in water"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Stability' trigger cascade failures in 'Water'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Stability' is constrained dynamically, then 'Water' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Stability' in a control simulation while applying extreme variance loads to 'Water'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Water' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Water' remains unaffected during 'Stability' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Stability' and 'Water'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[INSPIRATION] Stability \u2194 Water",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Inspiration' interaction mapping 'Stability' to 'Water'.",
+                    "why_it_matters": "Challenges existing models that treat 'Stability' and 'Water' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Water' can scale linearly independent of 'Stability'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Stability'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Inspiration",
+                "composite_score": 0.83,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Design and development of an amphibious car that can float in water and navigate on land with optimal stability and control",
+                        "Optimal hull design for stability and control in water"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Stability' trigger cascade failures in 'Water'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Stability' is constrained dynamically, then 'Water' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Stability' in a control simulation while applying extreme variance loads to 'Water'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Water' confirming the inspiration."
+                    ],
+                    "failure_conditions": [
+                        "If 'Water' remains unaffected during 'Stability' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Stability' and 'Water'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] Stability \u2194 Water",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Stability' to 'Water'.",
+                    "why_it_matters": "Challenges existing models that treat 'Stability' and 'Water' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Water' can scale linearly independent of 'Stability'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Stability'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.83,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Design and development of an amphibious car that can float in water and navigate on land with optimal stability and control",
+                        "Optimal hull design for stability and control in water"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Stability' trigger cascade failures in 'Water'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Stability' is constrained dynamically, then 'Water' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Stability' in a control simulation while applying extreme variance loads to 'Water'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Water' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Water' remains unaffected during 'Stability' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Stability' and 'Water'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Stability \u2194 Design",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Stability' to 'Design'.",
+                    "why_it_matters": "Challenges existing models that treat 'Stability' and 'Design' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Design' can scale linearly independent of 'Stability'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Stability'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.83,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Design and development of an amphibious car that can float in water and navigate on land with optimal stability and control",
+                        "Optimal hull design for stability and control in water"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Stability' trigger cascade failures in 'Design'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Stability' is constrained dynamically, then 'Design' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Stability' in a control simulation while applying extreme variance loads to 'Design'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Design' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Design' remains unaffected during 'Stability' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Stability' and 'Design'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "phase": "PRIMARY",
+        "r_level": 2,
+        "base_elements": [
+            "Inadequate propulsion power for water navigation",
+            "Hydrodynamic simulations and testing",
+            "Propulsion systems must be adapted for both water and land",
+            "Materials testing for strength and durability",
+            "Materials and structural integrity for withstanding water and land stresses",
+            "Hypothesis3: A lightweight yet strong material like carbon fiber will provide the necessary structural integrity for the vehicle"
+        ],
+        "predictions": [
+            "If 'Land' is constrained dynamically, then 'Both Water' stability will increase by >15%.",
+            "If 'Land' is constrained dynamically, then 'Both Water' stability will increase by >15%.",
+            "If 'Land' is constrained dynamically, then 'Both Water' stability will increase by >15%.",
+            "If 'Both Water' is constrained dynamically, then 'Land' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Structural behaviors in 'Land' provide a novel pathway to resolve bottlenecks in 'Both Water'.",
+            "Identified a foundational requirement: 'Land' execution is strictly bounded by 'Both Water'.",
+            "Identified a significant 'Complementary' interaction mapping 'Land' to 'Both Water'.",
+            "Identified a significant 'Cause' interaction mapping 'Both Water' to 'Land'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[ANALOGY] Land \u2194 Both Water",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Land' provide a novel pathway to resolve bottlenecks in 'Both Water'.",
+                    "why_it_matters": "Challenges existing models that treat 'Land' and 'Both Water' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Both Water' can scale linearly independent of 'Land'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Land'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 0.83,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Propulsion systems must be adapted for both water and land",
+                        "Prototype testing in both water and land environments"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Land' trigger cascade failures in 'Both Water'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Land' is constrained dynamically, then 'Both Water' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Land' in a control simulation while applying extreme variance loads to 'Both Water'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Both Water' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Both Water' remains unaffected during 'Land' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Land' and 'Both Water'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[DEPENDENCY] Land \u2194 Both Water",
+                "research_note": {
+                    "what_was_discovered": "Identified a foundational requirement: 'Land' execution is strictly bounded by 'Both Water'.",
+                    "why_it_matters": "Challenges existing models that treat 'Land' and 'Both Water' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Both Water' can scale linearly independent of 'Land'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Land'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Dependency",
+                "composite_score": 0.83,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Propulsion systems must be adapted for both water and land",
+                        "Prototype testing in both water and land environments"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Land' trigger cascade failures in 'Both Water'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Land' is constrained dynamically, then 'Both Water' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Land' in a control simulation while applying extreme variance loads to 'Both Water'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Both Water' confirming the dependency."
+                    ],
+                    "failure_conditions": [
+                        "If 'Both Water' remains unaffected during 'Land' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Land' and 'Both Water'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[COMPLEMENTARY] Land \u2194 Both Water",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Land' to 'Both Water'.",
+                    "why_it_matters": "Challenges existing models that treat 'Land' and 'Both Water' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Both Water' can scale linearly independent of 'Land'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Land'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Complementary",
+                "composite_score": 0.83,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Propulsion systems must be adapted for both water and land",
+                        "Prototype testing in both water and land environments"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Land' trigger cascade failures in 'Both Water'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Land' is constrained dynamically, then 'Both Water' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Land' in a control simulation while applying extreme variance loads to 'Both Water'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Both Water' confirming the complementary."
+                    ],
+                    "failure_conditions": [
+                        "If 'Both Water' remains unaffected during 'Land' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Land' and 'Both Water'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CAUSE] Both Water \u2194 Land",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Both Water' to 'Land'.",
+                    "why_it_matters": "Challenges existing models that treat 'Both Water' and 'Land' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Land' can scale linearly independent of 'Both Water'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Both Water'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Cause",
+                "composite_score": 0.83,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Propulsion systems must be adapted for both water and land",
+                        "Prototype testing in both water and land environments"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Both Water' trigger cascade failures in 'Land'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Both Water' is constrained dynamically, then 'Land' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Both Water' in a control simulation while applying extreme variance loads to 'Land'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Land' confirming the cause."
+                    ],
+                    "failure_conditions": [
+                        "If 'Land' remains unaffected during 'Both Water' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Both Water' and 'Land'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "phase": "PRIMARY",
+        "r_level": 4,
+        "base_elements": [
+            "Archimedes' Principle can be applied to achieve buoyancy",
+            "Amphibious vehicles like the Gibbs Aquada",
+            "Seaworthy boats with retractable wheels",
+            "Corrosion and material degradation",
+            "Floating cars concept by Rinspeed",
+            "Sensor data for stability and control systems",
+            "Waterproofing and sealing mechanisms are crucial for floatation",
+            "Water ingress and flooding"
+        ],
+        "predictions": [
+            "If 'Achieve Buoyancy' is constrained dynamically, then 'Applied' stability will increase by >15%.",
+            "If 'Achieve Buoyancy' is constrained dynamically, then 'Applied' stability will increase by >15%.",
+            "If 'Achieve Buoyancy' is constrained dynamically, then 'Applied' stability will increase by >15%.",
+            "If 'Applied' is constrained dynamically, then 'Achieve Buoyancy' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Integration of 'Achieve Buoyancy' demonstrably stabilizes the variance within 'Applied'.",
+            "Found empirical conflict: Theoretical models of 'Achieve Buoyancy' fail under 'Applied' conditions.",
+            "Identified a significant 'Extension' interaction mapping 'Achieve Buoyancy' to 'Applied'.",
+            "Identified a significant 'Generalization' interaction mapping 'Applied' to 'Achieve Buoyancy'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[IMPROVEMENT] Achieve Buoyancy \u2194 Applied",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Achieve Buoyancy' demonstrably stabilizes the variance within 'Applied'.",
+                    "why_it_matters": "Challenges existing models that treat 'Achieve Buoyancy' and 'Applied' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Applied' can scale linearly independent of 'Achieve Buoyancy'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Achieve Buoyancy'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Archimedes' Principle can be applied to achieve buoyancy"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Achieve Buoyancy' trigger cascade failures in 'Applied'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Achieve Buoyancy' is constrained dynamically, then 'Applied' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Achieve Buoyancy' in a control simulation while applying extreme variance loads to 'Applied'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Applied' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Applied' remains unaffected during 'Achieve Buoyancy' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Achieve Buoyancy' and 'Applied'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CONTRADICTION] Achieve Buoyancy \u2194 Applied",
+                "research_note": {
+                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'Achieve Buoyancy' fail under 'Applied' conditions.",
+                    "why_it_matters": "Challenges existing models that treat 'Achieve Buoyancy' and 'Applied' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Applied' can scale linearly independent of 'Achieve Buoyancy'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Achieve Buoyancy'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Contradiction",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Archimedes' Principle can be applied to achieve buoyancy"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Achieve Buoyancy' trigger cascade failures in 'Applied'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Achieve Buoyancy' is constrained dynamically, then 'Applied' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Achieve Buoyancy' in a control simulation while applying extreme variance loads to 'Applied'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Applied' confirming the contradiction."
+                    ],
+                    "failure_conditions": [
+                        "If 'Applied' remains unaffected during 'Achieve Buoyancy' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Achieve Buoyancy' and 'Applied'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Achieve Buoyancy \u2194 Applied",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Achieve Buoyancy' to 'Applied'.",
+                    "why_it_matters": "Challenges existing models that treat 'Achieve Buoyancy' and 'Applied' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Applied' can scale linearly independent of 'Achieve Buoyancy'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Achieve Buoyancy'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Archimedes' Principle can be applied to achieve buoyancy"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Achieve Buoyancy' trigger cascade failures in 'Applied'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Achieve Buoyancy' is constrained dynamically, then 'Applied' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Achieve Buoyancy' in a control simulation while applying extreme variance loads to 'Applied'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Applied' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Applied' remains unaffected during 'Achieve Buoyancy' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Achieve Buoyancy' and 'Applied'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] Applied \u2194 Achieve Buoyancy",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Applied' to 'Achieve Buoyancy'.",
+                    "why_it_matters": "Challenges existing models that treat 'Applied' and 'Achieve Buoyancy' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Achieve Buoyancy' can scale linearly independent of 'Applied'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Applied'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Archimedes' Principle can be applied to achieve buoyancy"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Applied' trigger cascade failures in 'Achieve Buoyancy'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Applied' is constrained dynamically, then 'Achieve Buoyancy' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Applied' in a control simulation while applying extreme variance loads to 'Achieve Buoyancy'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Achieve Buoyancy' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Achieve Buoyancy' remains unaffected during 'Applied' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Applied' and 'Achieve Buoyancy'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_2",
+        "phase": "PRIMARY",
+        "r_level": 1,
+        "base_elements": [
+            "Bernoulli's Principle applies to aerodynamic lift",
+            "Archimedes' Principle applies to buoyancy"
+        ],
+        "predictions": [
+            "If 'Bernoulli' is constrained dynamically, then 'Aerodynamic Lift' stability will increase by >15%.",
+            "If 'Bernoulli' is constrained dynamically, then 'Aerodynamic Lift' stability will increase by >15%.",
+            "If 'Bernoulli' is constrained dynamically, then 'Principle Applies' stability will increase by >15%.",
+            "If 'Buoyancy' is constrained dynamically, then 'Principle Applies' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a foundational requirement: 'Bernoulli' execution is strictly bounded by 'Aerodynamic Lift'.",
+            "Identified a significant 'Inspiration' interaction mapping 'Bernoulli' to 'Aerodynamic Lift'.",
+            "Identified a significant 'Inspiration' interaction mapping 'Bernoulli' to 'Principle Applies'.",
+            "Identified a significant 'Inspiration' interaction mapping 'Buoyancy' to 'Principle Applies'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[DEPENDENCY] Bernoulli \u2194 Aerodynamic Lift",
+                "research_note": {
+                    "what_was_discovered": "Identified a foundational requirement: 'Bernoulli' execution is strictly bounded by 'Aerodynamic Lift'.",
+                    "why_it_matters": "Challenges existing models that treat 'Bernoulli' and 'Aerodynamic Lift' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Aerodynamic Lift' can scale linearly independent of 'Bernoulli'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Bernoulli'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Dependency",
+                "composite_score": 0.598,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Bernoulli's Principle applies to aerodynamic lift"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.7
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Bernoulli' trigger cascade failures in 'Aerodynamic Lift'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Bernoulli' is constrained dynamically, then 'Aerodynamic Lift' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Bernoulli' in a control simulation while applying extreme variance loads to 'Aerodynamic Lift'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Aerodynamic Lift' confirming the dependency."
+                    ],
+                    "failure_conditions": [
+                        "If 'Aerodynamic Lift' remains unaffected during 'Bernoulli' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Bernoulli' and 'Aerodynamic Lift'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[INSPIRATION] Bernoulli \u2194 Aerodynamic Lift",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Inspiration' interaction mapping 'Bernoulli' to 'Aerodynamic Lift'.",
+                    "why_it_matters": "Challenges existing models that treat 'Bernoulli' and 'Aerodynamic Lift' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Aerodynamic Lift' can scale linearly independent of 'Bernoulli'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Bernoulli'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Inspiration",
+                "composite_score": 0.598,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Bernoulli's Principle applies to aerodynamic lift"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.7
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Bernoulli' trigger cascade failures in 'Aerodynamic Lift'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Bernoulli' is constrained dynamically, then 'Aerodynamic Lift' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Bernoulli' in a control simulation while applying extreme variance loads to 'Aerodynamic Lift'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Aerodynamic Lift' confirming the inspiration."
+                    ],
+                    "failure_conditions": [
+                        "If 'Aerodynamic Lift' remains unaffected during 'Bernoulli' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Bernoulli' and 'Aerodynamic Lift'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[INSPIRATION] Bernoulli \u2194 Principle Applies",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Inspiration' interaction mapping 'Bernoulli' to 'Principle Applies'.",
+                    "why_it_matters": "Challenges existing models that treat 'Bernoulli' and 'Principle Applies' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Principle Applies' can scale linearly independent of 'Bernoulli'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Bernoulli'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Inspiration",
+                "composite_score": 0.598,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Bernoulli's Principle applies to aerodynamic lift"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.7
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Bernoulli' trigger cascade failures in 'Principle Applies'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Bernoulli' is constrained dynamically, then 'Principle Applies' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Bernoulli' in a control simulation while applying extreme variance loads to 'Principle Applies'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Principle Applies' confirming the inspiration."
+                    ],
+                    "failure_conditions": [
+                        "If 'Principle Applies' remains unaffected during 'Bernoulli' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Bernoulli' and 'Principle Applies'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[INSPIRATION] Buoyancy \u2194 Principle Applies",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Inspiration' interaction mapping 'Buoyancy' to 'Principle Applies'.",
+                    "why_it_matters": "Challenges existing models that treat 'Buoyancy' and 'Principle Applies' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Principle Applies' can scale linearly independent of 'Buoyancy'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Buoyancy'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Inspiration",
+                "composite_score": 0.598,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Archimedes' Principle applies to buoyancy"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.7
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Buoyancy' trigger cascade failures in 'Principle Applies'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Buoyancy' is constrained dynamically, then 'Principle Applies' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Buoyancy' in a control simulation while applying extreme variance loads to 'Principle Applies'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Principle Applies' confirming the inspiration."
+                    ],
+                    "failure_conditions": [
+                        "If 'Principle Applies' remains unaffected during 'Buoyancy' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Buoyancy' and 'Principle Applies'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_4",
+        "phase": "PRIMARY",
+        "r_level": 1,
+        "base_elements": [
+            "Control system malfunction",
+            "Control system design for stable hover and transition to flight",
+            "Control system simulation outputs"
+        ],
+        "predictions": [
+            "If 'Transition' is constrained dynamically, then 'Flight' stability will increase by >15%.",
+            "If 'Transition' is constrained dynamically, then 'Flight' stability will increase by >15%.",
+            "If 'Flight' is constrained dynamically, then 'Transition' stability will increase by >15%.",
+            "If 'Transition' is constrained dynamically, then 'Flight' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a foundational requirement: 'Transition' execution is strictly bounded by 'Flight'.",
+            "Identified a significant 'Extension' interaction mapping 'Transition' to 'Flight'.",
+            "Identified a significant 'Complementary' interaction mapping 'Flight' to 'Transition'.",
+            "Identified a significant 'Specialization' interaction mapping 'Transition' to 'Flight'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[DEPENDENCY] Transition \u2194 Flight",
+                "research_note": {
+                    "what_was_discovered": "Identified a foundational requirement: 'Transition' execution is strictly bounded by 'Flight'.",
+                    "why_it_matters": "Challenges existing models that treat 'Transition' and 'Flight' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Flight' can scale linearly independent of 'Transition'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Transition'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Dependency",
+                "composite_score": 0.955,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Control system design for stable hover and transition to flight",
+                        "Aerodynamic instability during transition to flight"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 1.05
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Transition' trigger cascade failures in 'Flight'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Transition' is constrained dynamically, then 'Flight' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Transition' in a control simulation while applying extreme variance loads to 'Flight'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Flight' confirming the dependency."
+                    ],
+                    "failure_conditions": [
+                        "If 'Flight' remains unaffected during 'Transition' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Transition' and 'Flight'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Transition \u2194 Flight",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Transition' to 'Flight'.",
+                    "why_it_matters": "Challenges existing models that treat 'Transition' and 'Flight' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Flight' can scale linearly independent of 'Transition'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Transition'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.888,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Control system design for stable hover and transition to flight",
+                        "Aerodynamic instability during transition to flight"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.99
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Transition' trigger cascade failures in 'Flight'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Transition' is constrained dynamically, then 'Flight' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Transition' in a control simulation while applying extreme variance loads to 'Flight'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Flight' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Flight' remains unaffected during 'Transition' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Transition' and 'Flight'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[COMPLEMENTARY] Flight \u2194 Transition",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Flight' to 'Transition'.",
+                    "why_it_matters": "Challenges existing models that treat 'Flight' and 'Transition' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Transition' can scale linearly independent of 'Flight'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Flight'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Complementary",
+                "composite_score": 0.888,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Control system design for stable hover and transition to flight",
+                        "Aerodynamic instability during transition to flight"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.99
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Flight' trigger cascade failures in 'Transition'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Flight' is constrained dynamically, then 'Transition' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Flight' in a control simulation while applying extreme variance loads to 'Transition'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Transition' confirming the complementary."
+                    ],
+                    "failure_conditions": [
+                        "If 'Transition' remains unaffected during 'Flight' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Flight' and 'Transition'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[SPECIALIZATION] Transition \u2194 Flight",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Specialization' interaction mapping 'Transition' to 'Flight'.",
+                    "why_it_matters": "Challenges existing models that treat 'Transition' and 'Flight' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Flight' can scale linearly independent of 'Transition'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Transition'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Specialization",
+                "composite_score": 0.83,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Control system design for stable hover and transition to flight",
+                        "Aerodynamic instability during transition to flight"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Transition' trigger cascade failures in 'Flight'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Transition' is constrained dynamically, then 'Flight' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Transition' in a control simulation while applying extreme variance loads to 'Flight'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Flight' confirming the specialization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Flight' remains unaffected during 'Transition' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Transition' and 'Flight'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "phase": "PRIMARY",
+        "r_level": 1,
+        "base_elements": [
+            "AerodynamicLiftOptimization: Wind tunnel testing and CFD simulations",
+            "StabilityControlAlgorithm: Simulation-based testing and real-world flight trials",
+            "Real-world flight test data",
+            "Wind tunnel test data"
+        ],
+        "predictions": [
+            "If 'Cfd Simulations' is constrained dynamically, then 'Aerodynamic' stability will increase by >15%.",
+            "If 'Cfd Simulations' is constrained dynamically, then 'Aerodynamic' stability will increase by >15%.",
+            "If 'Cfd Simulations' is constrained dynamically, then 'Aerodynamic' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Inspiration' interaction mapping 'Cfd Simulations' to 'Aerodynamic'.",
+            "Identified a significant 'Effect' interaction mapping 'Cfd Simulations' to 'Aerodynamic'.",
+            "Identified a significant 'Specialization' interaction mapping 'Cfd Simulations' to 'Aerodynamic'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[INSPIRATION] Cfd Simulations \u2194 Aerodynamic",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Inspiration' interaction mapping 'Cfd Simulations' to 'Aerodynamic'.",
+                    "why_it_matters": "Challenges existing models that treat 'Cfd Simulations' and 'Aerodynamic' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Aerodynamic' can scale linearly independent of 'Cfd Simulations'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Cfd Simulations'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Inspiration",
+                "composite_score": 0.598,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "AerodynamicLiftOptimization: Wind tunnel testing and CFD simulations"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.7
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Cfd Simulations' trigger cascade failures in 'Aerodynamic'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Cfd Simulations' is constrained dynamically, then 'Aerodynamic' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Cfd Simulations' in a control simulation while applying extreme variance loads to 'Aerodynamic'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Aerodynamic' confirming the inspiration."
+                    ],
+                    "failure_conditions": [
+                        "If 'Aerodynamic' remains unaffected during 'Cfd Simulations' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Cfd Simulations' and 'Aerodynamic'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EFFECT] Cfd Simulations \u2194 Aerodynamic",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Effect' interaction mapping 'Cfd Simulations' to 'Aerodynamic'.",
+                    "why_it_matters": "Challenges existing models that treat 'Cfd Simulations' and 'Aerodynamic' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Aerodynamic' can scale linearly independent of 'Cfd Simulations'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Cfd Simulations'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Effect",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "AerodynamicLiftOptimization: Wind tunnel testing and CFD simulations"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Cfd Simulations' trigger cascade failures in 'Aerodynamic'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Cfd Simulations' is constrained dynamically, then 'Aerodynamic' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Cfd Simulations' in a control simulation while applying extreme variance loads to 'Aerodynamic'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Aerodynamic' confirming the effect."
+                    ],
+                    "failure_conditions": [
+                        "If 'Aerodynamic' remains unaffected during 'Cfd Simulations' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Cfd Simulations' and 'Aerodynamic'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[SPECIALIZATION] Cfd Simulations \u2194 Aerodynamic",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Specialization' interaction mapping 'Cfd Simulations' to 'Aerodynamic'.",
+                    "why_it_matters": "Challenges existing models that treat 'Cfd Simulations' and 'Aerodynamic' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Aerodynamic' can scale linearly independent of 'Cfd Simulations'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Cfd Simulations'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Specialization",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "AerodynamicLiftOptimization: Wind tunnel testing and CFD simulations"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Cfd Simulations' trigger cascade failures in 'Aerodynamic'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Cfd Simulations' is constrained dynamically, then 'Aerodynamic' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Cfd Simulations' in a control simulation while applying extreme variance loads to 'Aerodynamic'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Aerodynamic' confirming the specialization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Aerodynamic' remains unaffected during 'Cfd Simulations' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Cfd Simulations' and 'Aerodynamic'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_2",
+        "phase": "PRIMARY",
+        "r_level": 2,
+        "base_elements": [
+            "BuoyancySystemDesign: Experimental testing in a water tank",
+            "Material properties and durability testing results"
+        ],
+        "predictions": [
+            "If 'Durability Testing Results' is constrained dynamically, then 'Material Properties' stability will increase by >15%.",
+            "If 'Durability Testing Results' is constrained dynamically, then 'Material Properties' stability will increase by >15%.",
+            "If 'Material Properties' is constrained dynamically, then 'Durability Testing Results' stability will increase by >15%.",
+            "If 'Material Properties' is constrained dynamically, then 'Durability Testing Results' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Extension' interaction mapping 'Durability Testing Results' to 'Material Properties'.",
+            "Identified a significant 'Complementary' interaction mapping 'Durability Testing Results' to 'Material Properties'.",
+            "Identified a significant 'Extension' interaction mapping 'Material Properties' to 'Durability Testing Results'.",
+            "Identified a significant 'Complementary' interaction mapping 'Material Properties' to 'Durability Testing Results'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[EXTENSION] Durability Testing Results \u2194 Material Properties",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Durability Testing Results' to 'Material Properties'.",
+                    "why_it_matters": "Challenges existing models that treat 'Durability Testing Results' and 'Material Properties' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Material Properties' can scale linearly independent of 'Durability Testing Results'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Durability Testing Results'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.556,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Material properties and durability testing results"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.66
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Durability Testing Results' trigger cascade failures in 'Material Properties'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Durability Testing Results' is constrained dynamically, then 'Material Properties' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Durability Testing Results' in a control simulation while applying extreme variance loads to 'Material Properties'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Material Properties' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Material Properties' remains unaffected during 'Durability Testing Results' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Durability Testing Results' and 'Material Properties'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[COMPLEMENTARY] Durability Testing Results \u2194 Material Properties",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Durability Testing Results' to 'Material Properties'.",
+                    "why_it_matters": "Challenges existing models that treat 'Durability Testing Results' and 'Material Properties' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Material Properties' can scale linearly independent of 'Durability Testing Results'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Durability Testing Results'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Complementary",
+                "composite_score": 0.556,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Material properties and durability testing results"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.66
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Durability Testing Results' trigger cascade failures in 'Material Properties'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Durability Testing Results' is constrained dynamically, then 'Material Properties' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Durability Testing Results' in a control simulation while applying extreme variance loads to 'Material Properties'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Material Properties' confirming the complementary."
+                    ],
+                    "failure_conditions": [
+                        "If 'Material Properties' remains unaffected during 'Durability Testing Results' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Durability Testing Results' and 'Material Properties'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EXTENSION] Material Properties \u2194 Durability Testing Results",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Material Properties' to 'Durability Testing Results'.",
+                    "why_it_matters": "Challenges existing models that treat 'Material Properties' and 'Durability Testing Results' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Durability Testing Results' can scale linearly independent of 'Material Properties'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Material Properties'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.556,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Material properties and durability testing results"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.66
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Material Properties' trigger cascade failures in 'Durability Testing Results'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Material Properties' is constrained dynamically, then 'Durability Testing Results' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Material Properties' in a control simulation while applying extreme variance loads to 'Durability Testing Results'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Durability Testing Results' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Durability Testing Results' remains unaffected during 'Material Properties' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Material Properties' and 'Durability Testing Results'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[COMPLEMENTARY] Material Properties \u2194 Durability Testing Results",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Material Properties' to 'Durability Testing Results'.",
+                    "why_it_matters": "Challenges existing models that treat 'Material Properties' and 'Durability Testing Results' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Durability Testing Results' can scale linearly independent of 'Material Properties'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Material Properties'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Complementary",
+                "composite_score": 0.556,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Material properties and durability testing results"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.66
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Material Properties' trigger cascade failures in 'Durability Testing Results'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Material Properties' is constrained dynamically, then 'Durability Testing Results' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Material Properties' in a control simulation while applying extreme variance loads to 'Durability Testing Results'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Durability Testing Results' confirming the complementary."
+                    ],
+                    "failure_conditions": [
+                        "If 'Durability Testing Results' remains unaffected during 'Material Properties' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Material Properties' and 'Durability Testing Results'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_3",
+        "phase": "PRIMARY",
+        "r_level": 2,
+        "base_elements": [
+            "Terrafugia Transition",
+            "Aerodynamic instability during transition to flight"
+        ],
+        "predictions": [
+            "If 'Flight' is constrained dynamically, then 'Transition' stability will increase by >15%.",
+            "If 'Transition' is constrained dynamically, then 'Flight' stability will increase by >15%.",
+            "If 'Transition' is constrained dynamically, then 'Flight' stability will increase by >15%.",
+            "If 'Flight' is constrained dynamically, then 'Transition' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Structural behaviors in 'Flight' provide a novel pathway to resolve bottlenecks in 'Transition'.",
+            "Structural behaviors in 'Transition' provide a novel pathway to resolve bottlenecks in 'Flight'.",
+            "Identified a significant 'Limitation' interaction mapping 'Transition' to 'Flight'.",
+            "Integration of 'Flight' demonstrably stabilizes the variance within 'Transition'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[ANALOGY] Flight \u2194 Transition",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Flight' provide a novel pathway to resolve bottlenecks in 'Transition'.",
+                    "why_it_matters": "Challenges existing models that treat 'Flight' and 'Transition' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Transition' can scale linearly independent of 'Flight'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Flight'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 1.079,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Control system design for stable hover and transition to flight",
+                        "Aerodynamic instability during transition to flight"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 1.18
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Flight' trigger cascade failures in 'Transition'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Flight' is constrained dynamically, then 'Transition' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Flight' in a control simulation while applying extreme variance loads to 'Transition'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Transition' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Transition' remains unaffected during 'Flight' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Flight' and 'Transition'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[ANALOGY] Transition \u2194 Flight",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Transition' provide a novel pathway to resolve bottlenecks in 'Flight'.",
+                    "why_it_matters": "Challenges existing models that treat 'Transition' and 'Flight' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Flight' can scale linearly independent of 'Transition'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Transition'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 1.079,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Control system design for stable hover and transition to flight",
+                        "Aerodynamic instability during transition to flight"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 1.18
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Transition' trigger cascade failures in 'Flight'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Transition' is constrained dynamically, then 'Flight' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Transition' in a control simulation while applying extreme variance loads to 'Flight'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Flight' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Flight' remains unaffected during 'Transition' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Transition' and 'Flight'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[LIMITATION] Transition \u2194 Flight",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Limitation' interaction mapping 'Transition' to 'Flight'.",
+                    "why_it_matters": "Challenges existing models that treat 'Transition' and 'Flight' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Flight' can scale linearly independent of 'Transition'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Transition'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Limitation",
+                "composite_score": 0.83,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Control system design for stable hover and transition to flight",
+                        "Aerodynamic instability during transition to flight"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Transition' trigger cascade failures in 'Flight'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Transition' is constrained dynamically, then 'Flight' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Transition' in a control simulation while applying extreme variance loads to 'Flight'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Flight' confirming the limitation."
+                    ],
+                    "failure_conditions": [
+                        "If 'Flight' remains unaffected during 'Transition' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Transition' and 'Flight'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Flight \u2194 Transition",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Flight' demonstrably stabilizes the variance within 'Transition'.",
+                    "why_it_matters": "Challenges existing models that treat 'Flight' and 'Transition' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Transition' can scale linearly independent of 'Flight'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Flight'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.764,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Control system design for stable hover and transition to flight",
+                        "Aerodynamic instability during transition to flight"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.86
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Flight' trigger cascade failures in 'Transition'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Flight' is constrained dynamically, then 'Transition' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Flight' in a control simulation while applying extreme variance loads to 'Transition'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Transition' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Transition' remains unaffected during 'Flight' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Flight' and 'Transition'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_4",
+        "phase": "PRIMARY",
+        "r_level": 2,
+        "base_elements": [
+            "Loss of buoyancy due to material failure",
+            "Propulsion system failure",
+            "Propulsion system performance metrics"
+        ],
+        "predictions": [
+            "If 'Buoyancy Due' is constrained dynamically, then 'Material Failure' stability will increase by >15%.",
+            "If 'Material Failure' is constrained dynamically, then 'Buoyancy Due' stability will increase by >15%.",
+            "If 'Material Failure' is constrained dynamically, then 'Buoyancy Due' stability will increase by >15%.",
+            "If 'Buoyancy Due' is constrained dynamically, then 'Material Failure' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Structural behaviors in 'Buoyancy Due' provide a novel pathway to resolve bottlenecks in 'Material Failure'.",
+            "Identified a significant 'Cause' interaction mapping 'Material Failure' to 'Buoyancy Due'.",
+            "Identified a significant 'Inspiration' interaction mapping 'Material Failure' to 'Buoyancy Due'.",
+            "Identified a significant 'Cause' interaction mapping 'Buoyancy Due' to 'Material Failure'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[ANALOGY] Buoyancy Due \u2194 Material Failure",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Buoyancy Due' provide a novel pathway to resolve bottlenecks in 'Material Failure'.",
+                    "why_it_matters": "Challenges existing models that treat 'Buoyancy Due' and 'Material Failure' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Material Failure' can scale linearly independent of 'Buoyancy Due'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Buoyancy Due'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 0.546,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [],
+                    "contradicting_evidence": [
+                        "Loss of buoyancy due to material failure"
+                    ]
+                },
+                "scores": {
+                    "evidence_support": 0.3,
+                    "novelty": 1.0,
+                    "confidence": 0.0,
+                    "expected_impact": 0.65
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Buoyancy Due' trigger cascade failures in 'Material Failure'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Buoyancy Due' is constrained dynamically, then 'Material Failure' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Buoyancy Due' in a control simulation while applying extreme variance loads to 'Material Failure'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Material Failure' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Material Failure' remains unaffected during 'Buoyancy Due' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Buoyancy Due' and 'Material Failure'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CAUSE] Material Failure \u2194 Buoyancy Due",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Material Failure' to 'Buoyancy Due'.",
+                    "why_it_matters": "Challenges existing models that treat 'Material Failure' and 'Buoyancy Due' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Buoyancy Due' can scale linearly independent of 'Material Failure'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Material Failure'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Cause",
+                "composite_score": 0.483,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [],
+                    "contradicting_evidence": [
+                        "Loss of buoyancy due to material failure"
+                    ]
+                },
+                "scores": {
+                    "evidence_support": 0.3,
+                    "novelty": 1.0,
+                    "confidence": 0.0,
+                    "expected_impact": 0.58
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Material Failure' trigger cascade failures in 'Buoyancy Due'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Material Failure' is constrained dynamically, then 'Buoyancy Due' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Material Failure' in a control simulation while applying extreme variance loads to 'Buoyancy Due'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Buoyancy Due' confirming the cause."
+                    ],
+                    "failure_conditions": [
+                        "If 'Buoyancy Due' remains unaffected during 'Material Failure' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Material Failure' and 'Buoyancy Due'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[INSPIRATION] Material Failure \u2194 Buoyancy Due",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Inspiration' interaction mapping 'Material Failure' to 'Buoyancy Due'.",
+                    "why_it_matters": "Challenges existing models that treat 'Material Failure' and 'Buoyancy Due' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Buoyancy Due' can scale linearly independent of 'Material Failure'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Material Failure'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Inspiration",
+                "composite_score": 0.483,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [],
+                    "contradicting_evidence": [
+                        "Loss of buoyancy due to material failure"
+                    ]
+                },
+                "scores": {
+                    "evidence_support": 0.3,
+                    "novelty": 1.0,
+                    "confidence": 0.0,
+                    "expected_impact": 0.58
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Material Failure' trigger cascade failures in 'Buoyancy Due'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Material Failure' is constrained dynamically, then 'Buoyancy Due' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Material Failure' in a control simulation while applying extreme variance loads to 'Buoyancy Due'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Buoyancy Due' confirming the inspiration."
+                    ],
+                    "failure_conditions": [
+                        "If 'Buoyancy Due' remains unaffected during 'Material Failure' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Material Failure' and 'Buoyancy Due'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CAUSE] Buoyancy Due \u2194 Material Failure",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Buoyancy Due' to 'Material Failure'.",
+                    "why_it_matters": "Challenges existing models that treat 'Buoyancy Due' and 'Material Failure' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Material Failure' can scale linearly independent of 'Buoyancy Due'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Buoyancy Due'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Cause",
+                "composite_score": 0.483,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [],
+                    "contradicting_evidence": [
+                        "Loss of buoyancy due to material failure"
+                    ]
+                },
+                "scores": {
+                    "evidence_support": 0.3,
+                    "novelty": 1.0,
+                    "confidence": 0.0,
+                    "expected_impact": 0.58
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Buoyancy Due' trigger cascade failures in 'Material Failure'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Buoyancy Due' is constrained dynamically, then 'Material Failure' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Buoyancy Due' in a control simulation while applying extreme variance loads to 'Material Failure'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Material Failure' confirming the cause."
+                    ],
+                    "failure_conditions": [
+                        "If 'Material Failure' remains unaffected during 'Buoyancy Due' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Buoyancy Due' and 'Material Failure'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "phase": "PRIMARY",
+        "r_level": 2,
+        "base_elements": [
+            "Euler's Equations describe fluid dynamics",
+            "Newton's Laws of Motion apply to vehicle dynamics"
+        ],
+        "predictions": [
+            "If 'Motion Apply' is constrained dynamically, then 'Newton' stability will increase by >15%.",
+            "If 'Newton' is constrained dynamically, then 'Motion Apply' stability will increase by >15%.",
+            "If 'Newton' is constrained dynamically, then 'Vehicle Dynamics' stability will increase by >15%.",
+            "If 'Vehicle Dynamics' is constrained dynamically, then 'Newton' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Structural behaviors in 'Motion Apply' provide a novel pathway to resolve bottlenecks in 'Newton'.",
+            "Structural behaviors in 'Newton' provide a novel pathway to resolve bottlenecks in 'Motion Apply'.",
+            "Structural behaviors in 'Newton' provide a novel pathway to resolve bottlenecks in 'Vehicle Dynamics'.",
+            "Structural behaviors in 'Vehicle Dynamics' provide a novel pathway to resolve bottlenecks in 'Newton'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[ANALOGY] Motion Apply \u2194 Newton",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Motion Apply' provide a novel pathway to resolve bottlenecks in 'Newton'.",
+                    "why_it_matters": "Challenges existing models that treat 'Motion Apply' and 'Newton' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Newton' can scale linearly independent of 'Motion Apply'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Motion Apply'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 0.676,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Newton's Laws of Motion apply to vehicle dynamics"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.78
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Motion Apply' trigger cascade failures in 'Newton'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Motion Apply' is constrained dynamically, then 'Newton' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Motion Apply' in a control simulation while applying extreme variance loads to 'Newton'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Newton' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Newton' remains unaffected during 'Motion Apply' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Motion Apply' and 'Newton'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[ANALOGY] Newton \u2194 Motion Apply",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Newton' provide a novel pathway to resolve bottlenecks in 'Motion Apply'.",
+                    "why_it_matters": "Challenges existing models that treat 'Newton' and 'Motion Apply' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Motion Apply' can scale linearly independent of 'Newton'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Newton'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 0.676,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Newton's Laws of Motion apply to vehicle dynamics"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.78
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Newton' trigger cascade failures in 'Motion Apply'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Newton' is constrained dynamically, then 'Motion Apply' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Newton' in a control simulation while applying extreme variance loads to 'Motion Apply'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Motion Apply' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Motion Apply' remains unaffected during 'Newton' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Newton' and 'Motion Apply'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[ANALOGY] Newton \u2194 Vehicle Dynamics",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Newton' provide a novel pathway to resolve bottlenecks in 'Vehicle Dynamics'.",
+                    "why_it_matters": "Challenges existing models that treat 'Newton' and 'Vehicle Dynamics' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Vehicle Dynamics' can scale linearly independent of 'Newton'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Newton'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 0.676,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Newton's Laws of Motion apply to vehicle dynamics"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.78
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Newton' trigger cascade failures in 'Vehicle Dynamics'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Newton' is constrained dynamically, then 'Vehicle Dynamics' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Newton' in a control simulation while applying extreme variance loads to 'Vehicle Dynamics'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Vehicle Dynamics' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Vehicle Dynamics' remains unaffected during 'Newton' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Newton' and 'Vehicle Dynamics'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[ANALOGY] Vehicle Dynamics \u2194 Newton",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Vehicle Dynamics' provide a novel pathway to resolve bottlenecks in 'Newton'.",
+                    "why_it_matters": "Challenges existing models that treat 'Vehicle Dynamics' and 'Newton' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Newton' can scale linearly independent of 'Vehicle Dynamics'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Vehicle Dynamics'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 0.676,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Newton's Laws of Motion apply to vehicle dynamics"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.78
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Vehicle Dynamics' trigger cascade failures in 'Newton'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Vehicle Dynamics' is constrained dynamically, then 'Newton' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Vehicle Dynamics' in a control simulation while applying extreme variance loads to 'Newton'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Newton' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Newton' remains unaffected during 'Vehicle Dynamics' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Vehicle Dynamics' and 'Newton'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "phase": "PRIMARY",
+        "r_level": 4,
+        "base_elements": [
+            "Material selection for lightweight and durable construction",
+            "Optimal shape and size for flotation and aerodynamics",
+            "PropulsionSystemEfficiency: Benchmarking against existing electric and hybrid propulsion systems",
+            "Emergency landing protocol ineffectiveness",
+            "Lilium Jet",
+            "Aeromobil 3.0",
+            "Design and development of a stable and efficient floating car using aerodynamic and buoyancy principles",
+            "Hoverbike"
+        ],
+        "predictions": [
+            "If 'Design' is constrained dynamically, then 'Stable' stability will increase by >15%.",
+            "If 'Design' is constrained dynamically, then 'Stable' stability will increase by >15%.",
+            "If 'Design' is constrained dynamically, then 'Stable' stability will increase by >15%.",
+            "If 'Aerodynamic' is constrained dynamically, then 'Buoyancy Principles' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a foundational requirement: 'Design' execution is strictly bounded by 'Stable'.",
+            "Identified a significant 'Effect' interaction mapping 'Design' to 'Stable'.",
+            "Identified a significant 'Limitation' interaction mapping 'Design' to 'Stable'.",
+            "Structural behaviors in 'Aerodynamic' provide a novel pathway to resolve bottlenecks in 'Buoyancy Principles'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[DEPENDENCY] Design \u2194 Stable",
+                "research_note": {
+                    "what_was_discovered": "Identified a foundational requirement: 'Design' execution is strictly bounded by 'Stable'.",
+                    "why_it_matters": "Challenges existing models that treat 'Design' and 'Stable' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Stable' can scale linearly independent of 'Design'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Design'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Dependency",
+                "composite_score": 0.955,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Design and development of a stable and efficient floating car using aerodynamic and buoyancy principles",
+                        "Control system design for stable hover and transition to flight"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 1.05
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Design' trigger cascade failures in 'Stable'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Design' is constrained dynamically, then 'Stable' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Design' in a control simulation while applying extreme variance loads to 'Stable'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Stable' confirming the dependency."
+                    ],
+                    "failure_conditions": [
+                        "If 'Stable' remains unaffected during 'Design' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Design' and 'Stable'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EFFECT] Design \u2194 Stable",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Effect' interaction mapping 'Design' to 'Stable'.",
+                    "why_it_matters": "Challenges existing models that treat 'Design' and 'Stable' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Stable' can scale linearly independent of 'Design'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Design'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Effect",
+                "composite_score": 0.83,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Design and development of a stable and efficient floating car using aerodynamic and buoyancy principles",
+                        "Control system design for stable hover and transition to flight"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Design' trigger cascade failures in 'Stable'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Design' is constrained dynamically, then 'Stable' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Design' in a control simulation while applying extreme variance loads to 'Stable'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Stable' confirming the effect."
+                    ],
+                    "failure_conditions": [
+                        "If 'Stable' remains unaffected during 'Design' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Design' and 'Stable'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[LIMITATION] Design \u2194 Stable",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Limitation' interaction mapping 'Design' to 'Stable'.",
+                    "why_it_matters": "Challenges existing models that treat 'Design' and 'Stable' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Stable' can scale linearly independent of 'Design'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Design'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Limitation",
+                "composite_score": 0.83,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Design and development of a stable and efficient floating car using aerodynamic and buoyancy principles",
+                        "Control system design for stable hover and transition to flight"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Design' trigger cascade failures in 'Stable'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Design' is constrained dynamically, then 'Stable' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Design' in a control simulation while applying extreme variance loads to 'Stable'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Stable' confirming the limitation."
+                    ],
+                    "failure_conditions": [
+                        "If 'Stable' remains unaffected during 'Design' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Design' and 'Stable'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[ANALOGY] Aerodynamic \u2194 Buoyancy Principles",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Aerodynamic' provide a novel pathway to resolve bottlenecks in 'Buoyancy Principles'.",
+                    "why_it_matters": "Challenges existing models that treat 'Aerodynamic' and 'Buoyancy Principles' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Buoyancy Principles' can scale linearly independent of 'Aerodynamic'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Aerodynamic'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 0.676,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Design and development of a stable and efficient floating car using aerodynamic and buoyancy principles"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.78
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Aerodynamic' trigger cascade failures in 'Buoyancy Principles'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Aerodynamic' is constrained dynamically, then 'Buoyancy Principles' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Aerodynamic' in a control simulation while applying extreme variance loads to 'Buoyancy Principles'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Buoyancy Principles' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Buoyancy Principles' remains unaffected during 'Aerodynamic' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Aerodynamic' and 'Buoyancy Principles'."
+                    ]
+                }
+            }
+        ]
+    }
+]

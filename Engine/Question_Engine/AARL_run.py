@@ -40,9 +40,7 @@ from DOSCAN import run_doscan_algorithm, run_doscan_deepening
 from Hypothesis.hypothesis import run_hypothesis_engine
 from Hypothesis.Question_back import run_questioning_engine, print_final_solution_report
 from Evidence import run_evidence_engine
-from Experiment import run_experiment_engine
 from Mathematics import run_mathematics_engine
-from Simulation import run_simulation_engine
 
 def _load_json(path: str) -> dict:
     """Safely load a JSON file, returning empty dict on failure."""
@@ -98,7 +96,6 @@ def main():
         "hypotheses_generated": 0,
         "hypotheses_approved": 0,
         "hypotheses_rejected": 0,
-        "experiments_designed": 0,
         "top_confidence": 0.0,
         "deepening_cycles": 0
     }
@@ -270,26 +267,11 @@ def main():
     print("\n>>> PHASE 7: Initializing Evidence Scoring Engine...")
     evidence_summary = run_evidence_engine(fallback_hypotheses)
     
-    # --- PHASE 8: EXPERIMENT DESIGN ---
-    # Designs rigorous, testable experiments from the available hypotheses
-    print("\n>>> PHASE 8: Initializing Experiment Engine...")
-    domain = analysis_summary if analysis_result else user_problem
-    experiment_designs = run_experiment_engine(fallback_hypotheses, domain_context=domain)
-    
-    # --- PHASE 9: MATHEMATICS DERIVATION ---
+    # --- PHASE 8: MATHEMATICS DERIVATION ---
     # Derives equations from hypotheses, checks dimensional consistency,
     # verifies mathematical constraints, estimates complexity, rejects impossible formulations
-    print("\n>>> PHASE 9: Initializing Mathematics Engine...")
+    print("\n>>> PHASE 8: Initializing Mathematics Engine...")
     equations = run_mathematics_engine(fallback_hypotheses)
-    
-    # --- PHASE 10: SIMULATION & EVIDENCE UPDATE ---
-    # Classifies problem domain, selects simulator, runs simulation,
-    # compares results with predictions, updates evidence confidence
-    print("\n>>> PHASE 10: Initializing Simulation Engine...")
-    simulation_results = run_simulation_engine(
-        problem=user_problem,
-        hypotheses=fallback_hypotheses
-    )
     
     # ---- Gather all stats from output files ----
     aarl_elapsed = time.time() - aarl_start
@@ -297,7 +279,6 @@ def main():
     kb_data = _load_json("deep_research_knowledge_base.json")
     doscan_data = _load_json("doscan_breakthroughs.json")
     verified_data = _load_json("verified_hypotheses.json")
-    experiment_data = _load_json("experiment_designs.json")
     equations_data = _load_json("derived_equations.json")
     evidence_data = _load_json("evidence_scoring_db.json")
     
@@ -333,9 +314,6 @@ def main():
             if v.get("classification") in ("Excellent", "Plausible", "Speculative")
         )
         stats["hypotheses_rejected"] = stats["hypotheses_generated"] - stats["hypotheses_approved"]
-    
-    # Experiments
-    stats["experiments_designed"] = experiment_data.get("total_experiments_designed", 0) if isinstance(experiment_data, dict) else 0
     
     # Top confidence from evidence scoring
     if isinstance(evidence_data, dict):
@@ -378,8 +356,7 @@ def main():
     print(f"    Rejected:                {stats['hypotheses_rejected']:>8,}")
     print(f"    Deepening Cycles:        {stats['deepening_cycles']:>8,}")
     print(f"")
-    print(f"  Experiments & Mathematics")
-    print(f"    Experiments Designed:    {stats['experiments_designed']:>8,}")
+    print(f"  Mathematics")
     print(f"    Validated Equations:     {math_validated:>8,}")
     print(f"    Rejected Equations:      {math_rejected:>8,}")
     print(f"")
@@ -397,7 +374,6 @@ def main():
         ("Verified Hypotheses","verified_hypotheses.json"),
         ("Final Solution",     "final_research_solution.json"),
         ("Evidence Scores",    "evidence_scoring_db.json"),
-        ("Experiment Designs", "experiment_designs.json"),
         ("Derived Equations",  "derived_equations.json"),
     ]
     for label, fname in files:
