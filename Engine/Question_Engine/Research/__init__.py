@@ -1,0 +1,1 @@
+# Research package — Groq-powered experimental comparison

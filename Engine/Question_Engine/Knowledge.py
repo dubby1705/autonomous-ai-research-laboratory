@@ -2,8 +2,8 @@ import os
 import json
 import re
 from typing import List, Dict
-from groq import Groq
 from pydantic import BaseModel, Field, ValidationError
+from GroqClient import groq_complete_json
 
 def _repair_json(raw: str) -> str:
     """
@@ -57,7 +57,6 @@ class ResearchKnowledge(BaseModel):
 
 def build_knowledge_base(problem_statement: str, analysis_summary: str) -> dict:
     print("\n[Knowledge Engine] Initializing deep academic extraction pipeline...")
-    client = Groq()
 
     system_prompt = (
         "You are the Core Knowledge and Epistemology Engine of an Autonomous Research Lab. "
@@ -85,17 +84,16 @@ def build_knowledge_base(problem_statement: str, analysis_summary: str) -> dict:
     )
 
     try:
-        completion = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": prompt}
-            ],
-            response_format={"type": "json_object"},
-            temperature=0.25,
+        result = groq_complete_json(
+            system_prompt=system_prompt,
+            user_prompt=prompt,
+            temperature=0.25
         )
-
-        raw_json = completion.choices[0].message.content
+        if not result:
+            print("❌ Failed to get knowledge base from LLM.")
+            return {}
+        
+        raw_json = json.dumps(result)
         # Attempt to repair common JSON formatting issues from LLM output
         repaired_json = _repair_json(raw_json)
         if repaired_json != raw_json:

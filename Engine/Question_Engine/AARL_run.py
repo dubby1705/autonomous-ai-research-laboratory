@@ -28,7 +28,7 @@ if engine_path not in sys.path:
 # ==========================================
 # CONFIGURATION
 # ==========================================
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "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"
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
 # ==========================================
@@ -41,6 +41,7 @@ from Hypothesis.hypothesis import run_hypothesis_engine
 from Hypothesis.Question_back import run_questioning_engine, print_final_solution_report
 from Evidence import run_evidence_engine
 from Mathematics import run_mathematics_engine
+from Research.compare import run_research_comparison
 
 def _load_json(path: str) -> dict:
     """Safely load a JSON file, returning empty dict on failure."""
@@ -272,6 +273,16 @@ def main():
     # verifies mathematical constraints, estimates complexity, rejects impossible formulations
     print("\n>>> PHASE 8: Initializing Mathematics Engine...")
     equations = run_mathematics_engine(fallback_hypotheses)
+    
+    # --- PHASE 9: RESEARCH COMPARISON (Groq-powered) ---
+    # Imports real Python libraries for the domain, builds standard vs AARL implementations,
+    # executes both, and compares numerical results
+    print("\n>>> PHASE 9: Initializing Research Comparison Engine...")
+    if fallback_hypotheses:
+        best_hypothesis = fallback_hypotheses[0]
+        comparison_report = run_research_comparison(user_problem, best_hypothesis)
+    else:
+        print("   ⏸️  No hypotheses available for research comparison.")
     
     # ---- Gather all stats from output files ----
     aarl_elapsed = time.time() - aarl_start

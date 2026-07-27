@@ -1,7 +1,8 @@
 import os
+import json
 from typing import List, Dict
-from groq import Groq
 from pydantic import BaseModel, Field, ValidationError
+from GroqClient import groq_complete_json
 
 class DomainAnalysis(BaseModel):
     main_domain: str = Field(description="Primary overarching academic or technical field.")
@@ -13,8 +14,6 @@ class DomainAnalysis(BaseModel):
     interdisciplinary_links: Dict[str, str] = Field(description="Mapping of secondary fields to what specific insight or cross-over data they provide.")
 
 def analyze_research_problem(problem_statement: str) -> DomainAnalysis:
-    client = Groq()
-    
     system_prompt = (
         "You are an Elite Research Strategy AI. Your job is to perform an exhaustive, multi-dimensional "
         "structural decomposition of a problem statement. Extract deep scientific properties and governing rules.\n\n"
@@ -32,17 +31,14 @@ def analyze_research_problem(problem_statement: str) -> DomainAnalysis:
     )
 
     try:
-        completion = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": f"Deconstruct this problem statement for an advanced scientific research lab. Output ONLY in the strict JSON template format:\n\n{problem_statement}"}
-            ],
-            response_format={"type": "json_object"},
-            temperature=0.15,
+        result = groq_complete_json(
+            system_prompt=system_prompt,
+            user_prompt=f"Deconstruct this problem statement for an advanced scientific research lab. Output ONLY in the strict JSON template format:\n\n{problem_statement}",
+            temperature=0.15
         )
-        raw_json = completion.choices[0].message.content
-        return DomainAnalysis.model_validate_json(raw_json)
+        if result:
+            return DomainAnalysis.model_validate_json(json.dumps(result))
+        return None
     except ValidationError as ve:
         print(f"\n❌ ANALYSER VALIDATION ERROR:\n{ve}")
         return None
