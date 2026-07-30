@@ -28,7 +28,7 @@ if engine_path not in sys.path:
 # ==========================================
 # CONFIGURATION
 # ==========================================
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "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"
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
 # ==========================================
@@ -41,6 +41,7 @@ from Hypothesis.hypothesis import run_hypothesis_engine
 from Hypothesis.Question_back import run_questioning_engine, print_final_solution_report
 from Evidence import run_evidence_engine
 from Mathematics import run_mathematics_engine
+from PhysicsMathematics import run_domain_aware_mathematics
 from Research.compare import run_research_comparison
 from Research.simulation_engine import run_simulation_comparison
 
@@ -253,42 +254,88 @@ def main():
     print("\n>>> PHASE 7: Initializing Evidence Scoring Engine...")
     evidence_summary = run_evidence_engine(fallback_hypotheses)
     
-    # --- PHASE 8: MATHEMATICS DERIVATION ---
-    # Derives equations from hypotheses, checks dimensional consistency,
-    # verifies mathematical constraints, estimates complexity, rejects impossible formulations
-    print("\n>>> PHASE 8: Initializing Mathematics Engine...")
-    equations = run_mathematics_engine(fallback_hypotheses)
+    # --- DOMAIN DETECTION (Before Phase 8 & 9) ---
+    # Analyze the research problem and knowledge graph to detect scientific domains
+    # This determines which specialized math engines and simulators to use
+    print("\n>>> DOMAIN DETECTION: Analyzing research problem for scientific domains...")
+    from DomainDetector import detect_domains, detect_simulator, format_domain_report, get_math_engines
     
-    # --- PHASE 9: FULLY AUDITABLE PHYSICS-BASED SIMULATION COMPARISON ---
-    # Generates standalone Python simulation files (baseline_model.py, hypothesis_model.py)
-    # that a researcher can inspect, modify, and run independently.
-    # Every metric, parameter change, and improvement is traceable and reproducible.
+    # Load knowledge base for enriched domain detection
+    kb_data = _load_json("deep_research_knowledge_base.json")
+    detected_domains = detect_domains(user_problem, kb_data)
+    print(format_domain_report(detected_domains))
+    
+    detected_simulator = detect_simulator(user_problem, kb_data)
+    math_engines = get_math_engines(detected_domains)
+    print(f"  -> Selected Simulator: {detected_simulator}")
+    print(f"  -> Activated Math Engines: {math_engines}")
+    
+    # --- PHASE 8: DOMAIN-AWARE MATHEMATICS DERIVATION ---
+    # Derives equations from hypotheses using specialized engines
+    # (Physics, Chemistry, Quantum) based on detected domains
+    print("\n>>> PHASE 8: Initializing Domain-Aware Mathematics Engine...")
+    if math_engines:
+        equations = run_domain_aware_mathematics(fallback_hypotheses, detected_domains)
+    else:
+        equations = run_mathematics_engine(fallback_hypotheses)
+    
+    # --- PHASE 9: DOMAIN-AWARE FULLY AUDITABLE SIMULATION ---
+    # Uses the correct simulator based on detected domains.
+    # Generates standalone Python simulation files that are fully auditable.
     # ONLY runs if we have genuinely verified hypotheses (>0 from hypothesis engine)
     if verified_count > 0:
-        print("\n>>> PHASE 9: Initializing Fully Auditable Simulation Comparison...")
+        print("\n>>> PHASE 9: Initializing Domain-Aware Simulation Comparison...")
         best_hypothesis = fallback_hypotheses[0]
         if isinstance(best_hypothesis, dict):
             best_hypothesis = best_hypothesis.get("refined_hypothesis", str(best_hypothesis))
         
-        # Import the new auditable comparison pipeline
-        # Research directory is at the project root, not under Engine/
+        # Route to the correct simulator based on domain detection
         research_dir = os.path.join(ROOT_DIR, "Research")
+        simulators_dir = os.path.join(ROOT_DIR, "Research", "simulators")
         if research_dir not in sys.path:
             sys.path.insert(0, research_dir)
-        from comparison import run_comparison
+        if simulators_dir not in sys.path:
+            sys.path.insert(0, simulators_dir)
         
-        try:
-            comparison_report = run_comparison(str(best_hypothesis))
-            print(f"\n   ✅ Phase 9 complete — All auditable files generated in Research/ directory")
-        except Exception as e:
-            print(f"   ⚠️ Auditable simulation failed: {e}")
-            print(f"   🔄 Falling back to original simulation comparison...")
+        # Try domain-specific simulator first, fall back to general comparison
+        if detected_simulator != "general_simulator.py":
+            sim_name = detected_simulator.replace(".py", "")
+            print(f"  Using domain-specific simulator: {detected_simulator}")
             try:
-                comparison_report = run_simulation_comparison(user_problem, str(best_hypothesis))
-            except Exception as e2:
-                print(f"   ⚠️ Physics simulation also failed: {e2}")
-                print(f"   🔄 Falling back to LLM-powered comparison...")
-                comparison_report = run_research_comparison(user_problem, str(best_hypothesis))
+                sim_module = __import__(sim_name)
+                comparison_report = sim_module.run_simulation(str(best_hypothesis))
+                print(f"\n   ✅ Phase 9 complete — Domain-specific simulation finished")
+            except Exception as e:
+                print(f"   ⚠️ Domain-specific simulator failed: {e}")
+                print(f"   🔄 Falling back to general comparison pipeline...")
+                from comparison import run_comparison
+                try:
+                    comparison_report = run_comparison(str(best_hypothesis))
+                    print(f"\n   ✅ Phase 9 complete — General comparison pipeline finished")
+                except Exception as e2:
+                    print(f"   ⚠️ General comparison failed: {e2}")
+                    print(f"   🔄 Falling back to original simulation...")
+                    try:
+                        comparison_report = run_simulation_comparison(user_problem, str(best_hypothesis))
+                    except Exception as e3:
+                        print(f"   ⚠️ Physics simulation also failed: {e3}")
+                        print(f"   🔄 Falling back to LLM-powered comparison...")
+                        comparison_report = run_research_comparison(user_problem, str(best_hypothesis))
+        else:
+            print(f"  Using general comparison pipeline (no domain-specific simulator available)")
+            from comparison import run_comparison
+            try:
+                comparison_report = run_comparison(str(best_hypothesis))
+                print(f"\n   ✅ Phase 9 complete — General comparison pipeline finished")
+            except Exception as e:
+                print(f"   ⚠️ General comparison failed: {e}")
+                print(f"   🔄 Falling back to original simulation...")
+                try:
+                    comparison_report = run_simulation_comparison(user_problem, str(best_hypothesis))
+                except Exception as e2:
+                    print(f"   ⚠️ Physics simulation also failed: {e2}")
+                    print(f"   🔄 Falling back to LLM-powered comparison...")
+                    comparison_report = run_research_comparison(user_problem, str(best_hypothesis))
     else:
         print("\n⏸️  >>> PHASE 9 SKIPPED — No verified hypotheses to simulate.")
         print("   The hypothesis engine produced 0 verified hypotheses.")

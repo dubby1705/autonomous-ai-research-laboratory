@@ -4,6 +4,16 @@ DomainDetector.py — Scientific Domain Detection for AARL
 ==========================================================
 Analyzes the research problem, knowledge graph, and literature review
 to detect which scientific domains are involved.
+
+A problem may activate multiple domains simultaneously.
+Example:
+  Battery           -> Physics + Chemistry
+  Carbon Capture    -> Chemistry
+  Solar Cell        -> Physics + Chemistry
+  Semiconductor     -> Quantum + Physics
+  Superconductor    -> Quantum + Physics
+  Aircraft Wing     -> Physics
+  Catalyst Design   -> Chemistry
 """
 
 import os
@@ -11,6 +21,9 @@ import json
 import re
 from typing import Dict, List, Set, Tuple, Any
 
+# =========================================================
+# DOMAIN DEFINITIONS
+# =========================================================
 DOMAIN_REGISTRY = {
     "physics": {
         "keywords": {
@@ -22,14 +35,16 @@ DOMAIN_REGISTRY = {
             "electromagnetism", "maxwell", "electric field", "magnetic field",
             "circuit", "voltage", "current", "resistance", "capacitance",
             "material mechanics", "stress", "strain", "elasticity", "modulus",
-            "aerodynamics", "lift", "drag", "airfoil",
+            "aerodynamics", "lift", "drag", "airfoil", "wind tunnel",
             "structural", "beam", "load", "deflection", "buckling",
             "acoustics", "wave", "frequency", "amplitude", "resonance",
             "optics", "lens", "refraction", "diffraction", "interference",
         },
-        "topics": ["Classical Mechanics", "Thermodynamics", "Heat Transfer",
-                   "Fluid Dynamics", "Electromagnetism", "Material Mechanics",
-                   "Acoustics", "Optics", "Aerodynamics"],
+        "topics": [
+            "Classical Mechanics", "Thermodynamics", "Heat Transfer",
+            "Fluid Dynamics", "Electromagnetism", "Material Mechanics",
+            "Acoustics", "Optics", "Aerodynamics",
+        ],
         "math_engine": "physics",
         "simulator": "physics",
     },
@@ -47,9 +62,11 @@ DOMAIN_REGISTRY = {
             "combustion", "oxidation", "reduction", "redox",
             "crystallization", "precipitation", "solubility",
         },
-        "topics": ["Chemical Kinetics", "Thermodynamics", "Electrochemistry",
-                   "Adsorption & Diffusion", "Catalysis", "Battery Chemistry",
-                   "Polymer Chemistry", "Analytical Chemistry"],
+        "topics": [
+            "Chemical Kinetics", "Thermodynamics", "Electrochemistry",
+            "Adsorption & Diffusion", "Catalysis", "Battery Chemistry",
+            "Polymer Chemistry", "Analytical Chemistry",
+        ],
         "math_engine": "chemistry",
         "simulator": "chemistry",
     },
@@ -65,9 +82,11 @@ DOMAIN_REGISTRY = {
             "condensed matter", "crystal structure", "lattice",
             "graphene", "nanotube", "nanostructure", "quantum dot",
         },
-        "topics": ["Quantum Mechanics", "Band Structure Theory",
-                   "Semiconductor Physics", "Superconductivity",
-                   "Quantum Chemistry", "Condensed Matter Physics"],
+        "topics": [
+            "Quantum Mechanics", "Band Structure Theory",
+            "Semiconductor Physics", "Superconductivity",
+            "Quantum Chemistry", "Condensed Matter Physics",
+        ],
         "math_engine": "quantum",
         "simulator": "physics",
     },
@@ -81,8 +100,10 @@ DOMAIN_REGISTRY = {
             "bioinformatics", "genomics", "proteomics",
             "biomedical", "tissue", "organ", "physiology",
         },
-        "topics": ["Molecular Biology", "Biochemistry", "Genetics",
-                   "Microbiology", "Ecology", "Neuroscience"],
+        "topics": [
+            "Molecular Biology", "Biochemistry", "Genetics",
+            "Microbiology", "Ecology", "Neuroscience",
+        ],
         "math_engine": "chemistry",
         "simulator": "chemistry",
     },
@@ -97,14 +118,20 @@ DOMAIN_REGISTRY = {
             "coating", "thin film", "surface", "interface",
             "metallurgy", "phase diagram", "diffusion",
         },
-        "topics": ["Nanomaterials", "Composites", "Metallurgy",
-                   "Surface Science", "Mechanical Properties"],
+        "topics": [
+            "Nanomaterials", "Composites", "Metallurgy",
+            "Surface Science", "Mechanical Properties",
+        ],
         "math_engine": "physics",
         "simulator": "physics",
     },
 }
 
+# =========================================================
+# DOMAIN KEYWORD -> SIMULATOR MAPPING
+# =========================================================
 DOMAIN_SIMULATOR_MAP = {
+    # Battery / Energy Storage
     "battery": "battery_simulator.py",
     "lithium": "battery_simulator.py",
     "electrode": "battery_simulator.py",
@@ -112,26 +139,36 @@ DOMAIN_SIMULATOR_MAP = {
     "energy density": "battery_simulator.py",
     "supercapacitor": "battery_simulator.py",
     "fuel cell": "battery_simulator.py",
+
+    # Carbon Capture
     "carbon capture": "carbon_capture_simulator.py",
     "co2": "carbon_capture_simulator.py",
     "sorbent": "carbon_capture_simulator.py",
     "carbon dioxide": "carbon_capture_simulator.py",
     "flue gas": "carbon_capture_simulator.py",
+
+    # Solar / Photovoltaics
     "solar": "solar_simulator.py",
     "photovoltaic": "solar_simulator.py",
     "solar cell": "solar_simulator.py",
     "perovskite": "solar_simulator.py",
+
+    # Thermal / Heat Transfer
     "heat transfer": "thermal_simulator.py",
     "thermal": "thermal_simulator.py",
     "heat exchanger": "thermal_simulator.py",
     "cooling": "thermal_simulator.py",
     "thermoelectric": "thermal_simulator.py",
+
+    # Structural / Civil
     "bridge": "structural_simulator.py",
     "building": "structural_simulator.py",
     "structural": "structural_simulator.py",
     "beam": "structural_simulator.py",
     "column": "structural_simulator.py",
     "seismic": "structural_simulator.py",
+
+    # Aerodynamics
     "wing": "aerodynamics_simulator.py",
     "airfoil": "aerodynamics_simulator.py",
     "aerodynamics": "aerodynamics_simulator.py",
@@ -148,8 +185,13 @@ DOMAIN_SIMULATOR_MAP = {
 
 
 def detect_domains(problem: str, knowledge_data: dict = None) -> List[dict]:
+    """
+    Detect which scientific domains are involved in the research problem.
+    Uses BOTH the research problem text AND the knowledge graph data.
+    """
     problem_lower = problem.lower()
     corpus = problem_lower
+    
     if knowledge_data:
         for key, value in knowledge_data.items():
             if isinstance(value, str):
@@ -188,11 +230,15 @@ def detect_domains(problem: str, knowledge_data: dict = None) -> List[dict]:
                 "math_engine": domain_info["math_engine"],
                 "simulator": domain_info["simulator"],
             })
+
     scores.sort(key=lambda x: x["score"], reverse=True)
     return scores
 
 
 def detect_simulator(problem: str, knowledge_data: dict = None) -> str:
+    """
+    Detect which domain-specific simulator to use for Phase 9.
+    """
     corpus = problem.lower()
     if knowledge_data:
         for key, value in knowledge_data.items():
@@ -207,12 +253,14 @@ def detect_simulator(problem: str, knowledge_data: dict = None) -> str:
     for keyword, simulator in DOMAIN_SIMULATOR_MAP.items():
         if keyword in corpus:
             sim_scores[simulator] = sim_scores.get(simulator, 0) + 1
+
     if sim_scores:
         return max(sim_scores, key=sim_scores.get)
     return "general_simulator.py"
 
 
 def get_math_engines(domains: List[dict]) -> List[str]:
+    """Get unique math engines needed based on detected domains."""
     engines = set()
     for domain in domains:
         engines.add(domain["math_engine"])
@@ -220,11 +268,13 @@ def get_math_engines(domains: List[dict]) -> List[str]:
 
 
 def format_domain_report(domains: List[dict]) -> str:
+    """Format domain detection results for display."""
     lines = []
     lines.append("  Domain Detection Results:")
     if not domains:
         lines.append("    (No specific domains detected)")
         return "\n".join(lines)
+        
     for d in domains:
         kw = ", ".join(d["matched_keywords"][:5])
         lines.append(f"    [{d['domain'].upper():20s}] score={d['score']}, engine={d['math_engine']}")
@@ -240,13 +290,15 @@ if __name__ == "__main__":
         "Perovskite solar cell with improved efficiency and stability",
         "Quantum computing with superconducting qubits",
         "Aircraft wing design with reduced drag and improved lift",
+        "Novel catalyst for hydrogen production through water splitting",
     ]
+    
     for problem in test_cases:
         print(f"\n{'='*60}")
         print(f"Problem: {problem}")
         print(f"{'='*60}")
-        domains = detect_domains(problem)
-        print(format_domain_report(domains))
+        detected_domains = detect_domains(problem)
+        print(format_domain_report(detected_domains))
         sim = detect_simulator(problem)
         print(f"  -> Simulator: {sim}")
-        print(f"  -> Math Engines: {get_math_engines(domains)}")
+        print(f"  -> Math Engines: {get_math_engines(detected_domains)}")

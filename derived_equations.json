@@ -1,146 +1,1340 @@
 {
-    "total_validated": 2,
-    "total_rejected": 16,
+    "total_validated": 56,
+    "total_rejected": 51,
     "validated_equations": [
         {
-            "hypothesis": "A bio-inspired, enzymatic catalyst integrated into the electrode-electrolyte interface of a battery, with properties optimized based on the Nernst equation and tailored electrolyte characteristics, could enhance electron transfer efficiency and increase battery capacity and cycle life by minimizing degradation over time and optimizing redox reactions under various operating conditions.",
-            "equation": "eta = 1 / (1 + exp(-k * (A_e - A_e_0)))",
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and a high-ionic-conductivity solid-state electrolyte infused with thermally conductive boron nitride nanotubes can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety.",
+            "equation": "N = k * exp(-t / tau)",
             "variables": {
-                "r": "Rate (r, mol/(L*s))",
-                "k_cat": "Catalyst (k_cat, 1/s)",
-                "Q": "Capacity (Q, Ah)",
-                "eta": "Efficiency (eta, %)",
+                "E": "Energy (E, J)",
+                "rho": "Density (rho, kg/m^3)",
+                "pH": "Ph (pH, )",
+                "sigma": "Conductivity (sigma, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "exponential",
+            "cluster": "M_Cluster_2_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: exponential, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:51:50.858682"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and a high-ionic-conductivity solid-state electrolyte infused with thermally conductive boron nitride nanotubes can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety.",
+            "equation": "t = k * rho + rho_offset",
+            "variables": {
+                "t": "Deepened: Time (s)",
+                "rho": "Deepened: Density (rho, kg/m^3)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "proportional",
+            "cluster": "M_Cluster_2_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: proportional, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:51:54.947099"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and a high-ionic-conductivity solid-state electrolyte infused with thermally conductive boron nitride nanotubes can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety.",
+            "equation": "T = 1 / (1 + exp(-k * (pH - pH_0)))",
+            "variables": {
+                "T": "Deepened: Temperature (K)",
+                "pH": "Deepened: Ph (pH, )",
+                "N": "Deepened: Cycle (N, cycles)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "exponential",
+            "cluster": "M_Cluster_2_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: exponential, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:52:07.168520"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes can achieve an energy density above 500 Wh/kg, fast charging in under 15 minutes, and a long cycle life exceeding 2000 cycles, with thermal runaway resistance validated through simulation and testing, ensuring improved thermal safety and reducing fire hazards",
+            "equation": "N = k * exp(-k_th / tau)",
+            "variables": {
+                "E": "Energy (E, J)",
+                "R": "Resistance (R, Ohm)",
+                "rho": "Density (rho, kg/m^3)",
+                "pH": "Ph (pH, )",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "proportional",
+            "cluster": "M_Cluster_1_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: proportional, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:52:23.496173"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes can achieve an energy density above 500 Wh/kg, fast charging in under 15 minutes, and a long cycle life exceeding 2000 cycles, with thermal runaway resistance validated through simulation and testing, ensuring improved thermal safety and reducing fire hazards",
+            "equation": "E = 1 / (1 + exp(-k * (T - T_0)))",
+            "variables": {
+                "E": "Energy (E, J)",
+                "R": "Resistance (R, Ohm)",
+                "rho": "Density (rho, kg/m^3)",
+                "pH": "Ph (pH, )",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "sigmoid",
+            "cluster": "M_Cluster_2_r3",
+            "r_level": 3,
+            "validation_reasoning": "Deterministic: sigmoid, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:52:27.542460"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes can achieve an energy density above 500 Wh/kg, fast charging in under 15 minutes, and a long cycle life exceeding 2000 cycles, with thermal runaway resistance validated through simulation and testing, ensuring improved thermal safety and reducing fire hazards",
+            "equation": "k = (t_max - t) / (t_max - t_min)",
+            "variables": {
+                "k": "Proportionality constant",
+                "t": "Deepened: Time (s)",
+                "rho": "Deepened: Density (rho, kg/m^3)"
+            },
+            "relationship_type": "inverse",
+            "cluster": "M_Cluster_2_r3_deepened",
+            "r_level": 4,
+            "validation_reasoning": "Deterministic: inverse, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:52:31.617640"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes can achieve an energy density above 500 Wh/kg, fast charging in under 15 minutes, and a long cycle life exceeding 2000 cycles, with thermal runaway resistance validated through simulation and testing, ensuring improved thermal safety and reducing fire hazards",
+            "equation": "T = k * (E)^n",
+            "variables": {
+                "T": "Deepened: Temperature (K)",
+                "E": "Deepened: Energy (E, J)",
+                "rho": "Deepened: Density (rho, kg/m^3)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "polynomial",
+            "cluster": "M_Cluster_2_r3_deepened",
+            "r_level": 4,
+            "validation_reasoning": "Deterministic: polynomial, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:53:43.531194"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes can achieve an energy density above 500 Wh/kg, fast charging in under 15 minutes, and a long cycle life exceeding 2000 cycles, with thermal runaway resistance validated through simulation and testing, ensuring improved thermal safety and reducing fire hazards",
+            "equation": "E = k * k + k_offset",
+            "variables": {
+                "E": "Deepened: Energy (E, J)",
+                "k": "Proportionality constant",
+                "rho": "Deepened: Density (rho, kg/m^3)"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_2_r3_deepened",
+            "r_level": 4,
+            "validation_reasoning": "Deterministic: linear, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:53:52.047276"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes, optimized for thermal conductivity and ionic transport, can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety",
+            "equation": "sigma_e = 1 / (1 + exp(-k * (pH - pH_0)))",
+            "variables": {
+                "E": "Energy (E, J)",
+                "rho": "Density (rho, kg/m^3)",
+                "pH": "Ph (pH, )",
+                "sigma": "Conductivity (sigma, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "polynomial",
+            "cluster": "M_Cluster_2_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: polynomial, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:54:00.184733"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes, optimized for thermal conductivity and ionic transport, can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety",
+            "equation": "pH = k * (E)^n",
+            "variables": {
+                "pH": "Deepened: Ph (pH, )",
+                "E": "Deepened: Energy (E, J)",
+                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_2_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: linear, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:54:12.407376"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes, optimized for thermal conductivity and ionic transport, can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety",
+            "equation": "sigma_e = k / sigma",
+            "variables": {
+                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)",
+                "sigma": "Deepened: Conductivity (sigma, S/m)",
+                "pH": "Deepened: Ph (pH, )",
                 "k": "Proportionality constant"
             },
             "relationship_type": "inverse",
-            "cluster": "M_Cluster_1_r1",
-            "r_level": 1,
-            "validation_reasoning": "The equation models efficiency as a sigmoid function of the difference between actual and equilibrium electrode activity, which aligns with optimizing redox reactions in the hypothesis",
-            "dimension_hint": "Dimensionless for efficiency, but electrode activity terms should be in volts or similar units",
-            "timestamp": "2026-07-31T00:30:57.449582"
+            "cluster": "M_Cluster_2_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: inverse, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:54:24.660158"
         },
         {
-            "hypothesis": "A solid-state battery incorporating a metamaterial-based electrolyte with a tailored nanostructure, optimized for high ionic conductivity (>10^-3 S/cm) and low viscosity (<10 cP), could exhibit enhanced energy storage capabilities and improved mechanical strength, potentially leading to increased cycle life (>1000 cycles) and reduced self-discharge rates (<5% per month).",
-            "equation": "r = k * log(E / E_0)",
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes, optimized for thermal conductivity and ionic transport, can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety",
+            "equation": "rho = k * sqrt(k)",
+            "variables": {
+                "rho": "Deepened: Density (rho, kg/m^3)",
+                "k": "Proportionality constant",
+                "E": "Deepened: Energy (E, J)"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_2_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: linear, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:54:28.736955"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes, optimized for thermal conductivity and ionic transport, can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety",
+            "equation": "k_th = k * log(E)",
+            "variables": {
+                "k_th": "Deepened: Thermal (k_th, W/(m*K))",
+                "E": "Deepened: Energy (E, J)",
+                "t": "Deepened: Time (s)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "proportional",
+            "cluster": "M_Cluster_2_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: proportional, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:54:32.789966"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes, optimized for thermal conductivity and ionic transport, can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety",
+            "equation": "sigma = k * exp(-N / tau)",
             "variables": {
                 "E": "Energy (E, J)",
-                "r": "Rate (r, mol/(L*s))",
+                "rho": "Density (rho, kg/m^3)",
+                "pH": "Ph (pH, )",
                 "sigma": "Conductivity (sigma, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_3_r3",
+            "r_level": 3,
+            "validation_reasoning": "Deterministic: linear, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:54:36.835825"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes, optimized for thermal conductivity and ionic transport, can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety",
+            "equation": "T = k1 * N + k2 * N^2 + k3 * N^3",
+            "variables": {
+                "T": "Deepened: Temperature (K)",
+                "N": "Deepened: Cycle (N, cycles)",
+                "rho": "Deepened: Density (rho, kg/m^3)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "power_law",
+            "cluster": "M_Cluster_3_r3_deepened",
+            "r_level": 4,
+            "validation_reasoning": "Deterministic: power_law, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:54:49.025102"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes, optimized for thermal conductivity and ionic transport, can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety",
+            "equation": "sigma = k * exp(T)",
+            "variables": {
+                "sigma": "Deepened: Conductivity (sigma, S/m)",
+                "T": "Deepened: Temperature (K)",
+                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_3_r3_deepened",
+            "r_level": 4,
+            "validation_reasoning": "Deterministic: linear, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:54:54.206799"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes, optimized for thermal conductivity and ionic transport, can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety",
+            "equation": "k = k / (rho + c)",
+            "variables": {
+                "k": "Proportionality constant",
+                "rho": "Deepened: Density (rho, kg/m^3)",
+                "sigma": "Deepened: Conductivity (sigma, S/m)"
+            },
+            "relationship_type": "polynomial",
+            "cluster": "M_Cluster_3_r3_deepened",
+            "r_level": 4,
+            "validation_reasoning": "Deterministic: polynomial, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:54:58.268657"
+        },
+        {
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC with optimized particle size, morphology, and surface coating can enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery by improving energy density and electrochemical performance.",
+            "equation": "E = k * (pH)^2",
+            "variables": {
+                "E": "Energy (E, J)",
+                "rho": "Density (rho, kg/m^3)",
+                "pH": "Ph (pH, )",
                 "sigma_e": "Electrolyte (sigma_e, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_1_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: linear, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:55:02.356911"
+        },
+        {
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC with optimized particle size, morphology, and surface coating can enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery by improving energy density and electrochemical performance.",
+            "equation": "T = 1 / (1 + exp(-k * (pH - pH_0)))",
+            "variables": {
+                "T": "Temperature (K)",
+                "pH": "Ph (pH, )",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "exponential",
+            "cluster": "M_Cluster_2_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: exponential, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:55:06.410912"
+        },
+        {
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC with optimized particle size, morphology, and surface coating can enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery by improving energy density and electrochemical performance.",
+            "equation": "sigma_e = 1 / (1 + exp(-k * (E - E_0)))",
+            "variables": {
+                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)",
+                "E": "Deepened: Energy (E, J)",
+                "pH": "Deepened: Ph (pH, )",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "proportional",
+            "cluster": "M_Cluster_2_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: proportional, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:55:34.873140"
+        },
+        {
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, the microstructure of the cathode, and the surface area and morphology of the lithium-metal anode, can enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery",
+            "equation": "t = k * exp(-pH / tau)",
+            "variables": {
+                "pH": "Ph (pH, )",
+                "A_e": "Electrode (A_e, m^2)",
+                "sigma_e": "Electrolyte (sigma_e, S/m)",
+                "N": "Cycle (N, cycles)",
                 "k": "Proportionality constant"
             },
             "relationship_type": "exponential",
             "cluster": "M_Cluster_1_r1",
             "r_level": 1,
-            "validation_reasoning": "The equation models a relationship between rate and energy, which could represent the battery's performance",
-            "dimension_hint": "Rate (r) in mol/(L*s), Energy (E) in J",
-            "timestamp": "2026-07-31T00:31:02.984711"
+            "validation_reasoning": "Deterministic: exponential, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:55:43.000852"
+        },
+        {
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, the microstructure of the cathode, and implementing effective thermal management strategies, can synergistically enhance cycle life, fast charging capabilities, and thermal safety in a scalable solid-state lithium-metal battery.",
+            "equation": "N = 1 / (1 + exp(-k * (r - r_0)))",
+            "variables": {
+                "r": "Rate (r, mol/(L*s))",
+                "k_th": "Thermal (k_th, W/(m*K))",
+                "A_e": "Electrode (A_e, m^2)",
+                "sigma_e": "Electrolyte (sigma_e, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_2_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: linear, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:56:03.757406"
+        },
+        {
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, the microstructure of the cathode, and implementing effective thermal management strategies, can synergistically enhance cycle life, fast charging capabilities, and thermal safety in a scalable solid-state lithium-metal battery.",
+            "equation": "k_th = k / (k + c)",
+            "variables": {
+                "k_th": "Deepened: Thermal (k_th, W/(m*K))",
+                "k": "Proportionality constant",
+                "r": "Deepened: Rate (r, mol/(L*s))"
+            },
+            "relationship_type": "inverse",
+            "cluster": "M_Cluster_2_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: inverse, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:56:11.912287"
+        },
+        {
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, the microstructure of the cathode, and implementing effective thermal management strategies, can synergistically enhance cycle life, fast charging capabilities, and thermal safety in a scalable solid-state lithium-metal battery.",
+            "equation": "r = 1 / (1 + exp(-k * (k - k_0)))",
+            "variables": {
+                "r": "Deepened: Rate (r, mol/(L*s))",
+                "k": "Proportionality constant",
+                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)"
+            },
+            "relationship_type": "exponential",
+            "cluster": "M_Cluster_2_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: exponential, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:56:36.309978"
+        },
+        {
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, microstructure of the cathode, and mitigating thermal and ionic transport limitations, can enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery by minimizing solid-state electrolyte cracking and failure.",
+            "equation": "t = k * log(k_th)",
+            "variables": {
+                "k_th": "Thermal (k_th, W/(m*K))",
+                "A_e": "Electrode (A_e, m^2)",
+                "sigma_e": "Electrolyte (sigma_e, S/m)",
+                "N": "Cycle (N, cycles)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "logarithmic",
+            "cluster": "M_Cluster_1_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: logarithmic, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:56:40.381270"
+        },
+        {
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, microstructure of the cathode, and mitigating thermal and ionic transport limitations, can enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery by minimizing solid-state electrolyte cracking and failure.",
+            "equation": "k_th = 1 / (1 + exp(-k * (sigma_e - sigma_e_0)))",
+            "variables": {
+                "k_th": "Thermal (k_th, W/(m*K))",
+                "sigma_e": "Electrolyte (sigma_e, S/m)",
+                "T": "Temperature (K)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "exponential",
+            "cluster": "M_Cluster_3_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: exponential, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:56:48.503521"
+        },
+        {
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, microstructure of the cathode, and mitigating thermal and ionic transport limitations, can enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery by minimizing solid-state electrolyte cracking and failure.",
+            "equation": "A_e = k1 * T + k2 * T^2",
+            "variables": {
+                "A_e": "Deepened: Electrode (A_e, m^2)",
+                "T": "Deepened: Temperature (K)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_3_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: linear, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:56:52.630500"
+        },
+        {
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, microstructure of the cathode, and mitigating thermal and ionic transport limitations, can enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery by minimizing solid-state electrolyte cracking and failure.",
+            "equation": "T = k1 * k_th + k2 * k_th^2",
+            "variables": {
+                "T": "Deepened: Temperature (K)",
+                "k_th": "Deepened: Thermal (k_th, W/(m*K))",
+                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "power_law",
+            "cluster": "M_Cluster_3_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: power_law, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:57:13.374145"
+        },
+        {
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, microstructure of the cathode, and mitigating thermal and ionic transport limitations, can enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery by minimizing solid-state electrolyte cracking and failure.",
+            "equation": "k = k1 * N + k2 * N^2 + k3 * N^3",
+            "variables": {
+                "k": "Proportionality constant",
+                "N": "Deepened: Cycle (N, cycles)",
+                "k_th": "Deepened: Thermal (k_th, W/(m*K))"
+            },
+            "relationship_type": "power_law",
+            "cluster": "M_Cluster_3_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: power_law, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:57:17.450724"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with optimized composition and structure for high ionic conductivity, infused with ionic liquids, and coupled with an optimized phase-change material-based thermal management system, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, while ensuring improved thermal safety through reduced thermal runaway risk, with ionic conductivity enhanced by tailored electrolyte design",
+            "equation": "sigma_e = k1 * k_th + k2 * k_th^2 + k3 * k_th^3",
+            "variables": {
+                "E": "Energy (E, J)",
+                "rho": "Density (rho, kg/m^3)",
+                "pH": "Ph (pH, )",
+                "Q": "Capacity (Q, Ah)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "polynomial",
+            "cluster": "M_Cluster_1_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: polynomial, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:57:25.587092"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with optimized composition and structure for high ionic conductivity, infused with ionic liquids, and coupled with an optimized phase-change material-based thermal management system, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, while ensuring improved thermal safety through reduced thermal runaway risk, with ionic conductivity enhanced by tailored electrolyte design",
+            "equation": "sigma_e = k * (t)^2",
+            "variables": {
+                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)",
+                "t": "Deepened: Time (s)",
+                "pH": "Deepened: Ph (pH, )",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "polynomial",
+            "cluster": "M_Cluster_1_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: polynomial, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:57:29.677475"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with optimized composition and structure for high ionic conductivity, infused with ionic liquids, and coupled with an optimized phase-change material-based thermal management system, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, while ensuring improved thermal safety through reduced thermal runaway risk, with ionic conductivity enhanced by tailored electrolyte design",
+            "equation": "k = k1 * sigma_e + k2 * sigma_e^2",
+            "variables": {
+                "k": "Proportionality constant",
+                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)",
+                "E": "Deepened: Energy (E, J)"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_1_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: linear, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:57:37.794590"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with optimized composition and structure for high ionic conductivity, infused with ionic liquids, and coupled with an optimized phase-change material-based thermal management system, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, while ensuring improved thermal safety through reduced thermal runaway risk, with ionic conductivity enhanced by tailored electrolyte design",
+            "equation": "k = k / (rho + c)",
+            "variables": {
+                "k": "Proportionality constant",
+                "rho": "Deepened: Density (rho, kg/m^3)",
+                "t": "Deepened: Time (s)"
+            },
+            "relationship_type": "polynomial",
+            "cluster": "M_Cluster_1_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: polynomial, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:57:54.053347"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with ionic liquid infusion and a high-surface-area lithium-metal anode, coupled with an optimized phase-change material-based thermal management system, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, while ensuring improved thermal safety through reduced thermal runaway risk due to the enhanced anode design.",
+            "equation": "N = k * (Q)^n",
+            "variables": {
+                "E": "Energy (E, J)",
+                "rho": "Density (rho, kg/m^3)",
+                "pH": "Ph (pH, )",
+                "Q": "Capacity (Q, Ah)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_1_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: linear, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:58:03.421988"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with ionic liquid infusion, coupled with an optimized phase-change material-based thermal management system designed according to Fourier's law of heat conduction, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, while ensuring improved thermal safety through reduced thermal runaway risk by enhancing heat dissipation efficiency",
+            "equation": "Q = k * sqrt(t)",
+            "variables": {
+                "E": "Energy (E, J)",
+                "rho": "Density (rho, kg/m^3)",
+                "pH": "Ph (pH, )",
+                "Q": "Capacity (Q, Ah)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_1_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: linear, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:58:07.478055"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with ionic liquid infusion, exhibiting an ionic conductivity of at least 10^-3 S/cm and thermal conductivity of 1 W/mK, coupled with an optimized phase-change material-based thermal management system, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, while ensuring improved thermal safety through reduced thermal runaway risk.",
+            "equation": "t = k / (sigma_e + c)",
+            "variables": {
+                "E": "Energy (E, J)",
+                "rho": "Density (rho, kg/m^3)",
+                "pH": "Ph (pH, )",
+                "Q": "Capacity (Q, Ah)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_1_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: linear, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:58:35.968182"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with ionic liquid infusion and dendrite-suppressing additives, coupled with an optimized phase-change material-based thermal management system and electrolyte crack mitigation strategies, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 85% capacity after 2500 cycles, while ensuring improved thermal safety through reduced thermal runaway risk.",
+            "equation": "E = alpha * T + beta",
+            "variables": {
+                "E": "Energy (E, J)",
+                "rho": "Density (rho, kg/m^3)",
+                "r": "Rate (r, mol/(L*s))",
+                "pH": "Ph (pH, )",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "polynomial",
+            "cluster": "M_Cluster_2_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: polynomial, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T01:58:52.192868"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane with an optimized composition and structure for high ionic conductivity, focusing on interface engineering between the solid electrolyte and electrodes to enhance performance, safety, and overall battery efficiency.",
+            "equation": "t = k * sigma + sigma_offset",
+            "variables": {
+                "t": "Time (s)",
+                "sigma": "Conductivity (sigma, S/m)",
+                "T": "Temperature (K)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "proportional",
+            "cluster": "M_Cluster_5_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: proportional, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:00:28.431572"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane with an optimized composition and structure for high ionic conductivity, focusing on interface engineering between the solid electrolyte and electrodes to enhance performance, safety, and overall battery efficiency.",
+            "equation": "eta = k1 * T + k2 * T^2 + k3 * T^3",
+            "variables": {
+                "eta": "Deepened: Efficiency (eta, %)",
+                "T": "Deepened: Temperature (K)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "power_law",
+            "cluster": "M_Cluster_5_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: power_law, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:00:32.492883"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane with an optimized composition and structure for high ionic conductivity, focusing on interface engineering between the solid electrolyte and electrodes to enhance performance, safety, and overall battery efficiency.",
+            "equation": "T = k * (k)^n",
+            "variables": {
+                "T": "Deepened: Temperature (K)",
+                "k": "Proportionality constant",
+                "t": "Deepened: Time (s)"
+            },
+            "relationship_type": "proportional",
+            "cluster": "M_Cluster_5_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: proportional, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:00:40.648207"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane with an optimized composition and structure for high ionic conductivity, focusing on interface engineering between the solid electrolyte and electrodes to enhance performance, safety, and overall battery efficiency.",
+            "equation": "t = k * log(sigma)",
+            "variables": {
+                "t": "Deepened: Time (s)",
+                "sigma": "Deepened: Conductivity (sigma, S/m)",
+                "eta": "Deepened: Efficiency (eta, %)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "proportional",
+            "cluster": "M_Cluster_5_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: proportional, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:00:44.697279"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane with an optimized composition and structure for high ionic conductivity, focusing on interface engineering between the solid electrolyte and electrodes to enhance performance, safety, and overall battery efficiency.",
+            "equation": "sigma_e = k * log(A_e / A_e_0)",
+            "variables": {
+                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)",
+                "A_e": "Deepened: Electrode (A_e, m^2)",
+                "t": "Deepened: Time (s)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "proportional",
+            "cluster": "M_Cluster_5_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: proportional, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:01:01.004491"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane, with optimized thermal management and interface design to mitigate solid-state electrolyte cracking and enhance energy density, fast charging capabilities, and thermal safety",
+            "equation": "sigma_e = k * log(k / k_0)",
+            "variables": {
+                "E": "Energy (E, J)",
+                "rho": "Density (rho, kg/m^3)",
+                "k_th": "Thermal (k_th, W/(m*K))",
+                "sigma_e": "Electrolyte (sigma_e, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "logarithmic",
+            "cluster": "M_Cluster_1_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: logarithmic, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:01:05.444036"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with a cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, optimized for high energy density and electrochemical performance through tailored surface modification, nanostructuring, and precise control of cathode material properties such as particle size, morphology, and composition.",
+            "equation": "sigma_e = k * log(pH)",
+            "variables": {
+                "E": "Energy (E, J)",
+                "rho": "Density (rho, kg/m^3)",
+                "pH": "Ph (pH, )",
+                "sigma_e": "Electrolyte (sigma_e, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "logarithmic",
+            "cluster": "M_Cluster_1_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: logarithmic, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:01:13.561125"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with a cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring of both the cathode and a high-surface-area lithium-metal anode",
+            "equation": "pH = k * (A_e)^2",
+            "variables": {
+                "pH": "Ph (pH, )",
+                "A_e": "Electrode (A_e, m^2)",
+                "sigma_e": "Electrolyte (sigma_e, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "polynomial",
+            "cluster": "M_Cluster_1_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: polynomial, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:01:25.752726"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with a cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring of both the cathode and a high-surface-area lithium-metal anode",
+            "equation": "t = k / k",
+            "variables": {
+                "pH": "Ph (pH, )",
+                "A_e": "Electrode (A_e, m^2)",
+                "sigma_e": "Electrolyte (sigma_e, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "inverse",
+            "cluster": "M_Cluster_2_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: inverse, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:01:29.810929"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with a cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring of both the cathode and a high-surface-area lithium-metal anode",
+            "equation": "k = (sigma_e_max - sigma_e) / (sigma_e_max - sigma_e_min)",
+            "variables": {
+                "k": "Proportionality constant",
+                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)",
+                "T": "Deepened: Temperature (K)"
+            },
+            "relationship_type": "inverse",
+            "cluster": "M_Cluster_2_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: inverse, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:01:46.099093"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with a cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring of both the cathode and a high-surface-area lithium-metal anode",
+            "equation": "sigma_e = k * log(k / k_0)",
+            "variables": {
+                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)",
+                "k": "Proportionality constant",
+                "t": "Deepened: Time (s)"
+            },
+            "relationship_type": "proportional",
+            "cluster": "M_Cluster_2_r1_deepened",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: proportional, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:01:50.177210"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with optimized composition and nanostructure for high ionic conductivity, and a cathode material featuring a core-shell nanostructure with a lithium nickel manganese cobalt oxide core and a lithium iron phosphate shell, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring to enhance ionic conductivity and overall battery performance.",
+            "equation": "t = k * exp(sigma_e)",
+            "variables": {
+                "pH": "Ph (pH, )",
+                "sigma": "Conductivity (sigma, S/m)",
+                "A_e": "Electrode (A_e, m^2)",
+                "sigma_e": "Electrolyte (sigma_e, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_3_r4",
+            "r_level": 4,
+            "validation_reasoning": "Deterministic: linear, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:02:19.098598"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with optimized composition and nanostructure for high ionic conductivity, and a cathode material featuring a core-shell nanostructure with a lithium nickel manganese cobalt oxide core and a lithium iron phosphate shell, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring to enhance ionic conductivity and overall battery performance.",
+            "equation": "A_e = k * exp(-k / tau)",
+            "variables": {
+                "A_e": "Deepened: Electrode (A_e, m^2)",
+                "k": "Proportionality constant",
+                "pH": "Deepened: Ph (pH, )"
+            },
+            "relationship_type": "proportional",
+            "cluster": "M_Cluster_3_r4_deepened",
+            "r_level": 5,
+            "validation_reasoning": "Deterministic: proportional, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:02:23.169796"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with optimized composition and nanostructure for high ionic conductivity, and a cathode material featuring a core-shell nanostructure with a lithium nickel manganese cobalt oxide core and a lithium iron phosphate shell, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring to enhance ionic conductivity and overall battery performance.",
+            "equation": "sigma = k * exp(-A_e / tau)",
+            "variables": {
+                "sigma": "Deepened: Conductivity (sigma, S/m)",
+                "A_e": "Deepened: Electrode (A_e, m^2)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "sigmoid",
+            "cluster": "M_Cluster_3_r4_deepened",
+            "r_level": 5,
+            "validation_reasoning": "Deterministic: sigmoid, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:02:27.235745"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with optimized composition and nanostructure for high ionic conductivity, and a cathode material featuring a core-shell nanostructure with a lithium nickel manganese cobalt oxide core and a lithium iron phosphate shell, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring to enhance ionic conductivity and overall battery performance.",
+            "equation": "sigma_e = k * log(t / t_0)",
+            "variables": {
+                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)",
+                "t": "Deepened: Time (s)",
+                "A_e": "Deepened: Electrode (A_e, m^2)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "proportional",
+            "cluster": "M_Cluster_3_r4_deepened",
+            "r_level": 5,
+            "validation_reasoning": "Deterministic: proportional, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:02:35.358602"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with optimized composition and nanostructure for high ionic conductivity, and a cathode material featuring a core-shell nanostructure with a lithium nickel manganese cobalt oxide core and a lithium iron phosphate shell, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring to enhance ionic conductivity and overall battery performance.",
+            "equation": "k = k * exp(sigma_e)",
+            "variables": {
+                "k": "Proportionality constant",
+                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)",
+                "A_e": "Deepened: Electrode (A_e, m^2)"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_3_r4_deepened",
+            "r_level": 5,
+            "validation_reasoning": "Deterministic: linear, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:02:47.557495"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with a cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring, while incorporating strategies to mitigate lithium dendrite formation, such as modifying the electrolyte composition, applying a dendrite-suppressing coating, or utilizing a 3D nanostructured current collector",
+            "equation": "pH = k1 * t + k2 * t^2 + k3 * t^3",
+            "variables": {
+                "I": "Current (I, A)",
+                "r": "Rate (r, mol/(L*s))",
+                "pH": "Ph (pH, )",
+                "A_e": "Electrode (A_e, m^2)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "power_law",
+            "cluster": "M_Cluster_1_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: power_law, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:02:51.643265"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with an optimized cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification, nanostructuring, and galvanostatic cycling to mitigate cathode material degradation and capacity loss.",
+            "equation": "sigma_e = 1 / (1 + exp(-k * (A_e - A_e_0)))",
+            "variables": {
+                "pH": "Ph (pH, )",
+                "Q": "Capacity (Q, Ah)",
+                "d": "Degradation (d, %/cycle)",
+                "A_e": "Electrode (A_e, m^2)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "inverse",
+            "cluster": "M_Cluster_4_r4",
+            "r_level": 4,
+            "validation_reasoning": "Deterministic: inverse, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:03:24.599636"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with an optimized cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification, nanostructuring, and galvanostatic cycling to mitigate cathode material degradation and capacity loss.",
+            "equation": "Q = k * exp(-t / tau)",
+            "variables": {
+                "Q": "Deepened: Capacity (Q, Ah)",
+                "t": "Deepened: Time (s)",
+                "pH": "Deepened: Ph (pH, )",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "proportional",
+            "cluster": "M_Cluster_4_r4_deepened",
+            "r_level": 5,
+            "validation_reasoning": "Deterministic: proportional, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-07-31T02:03:36.765188"
         }
     ],
     "rejected_ideas": [
         {
-            "hypothesis": "A graphene-based, nanoscale, fractal-inspired electrode design, optimized through computational modeling and experimental testing for maximum surface area, minimal internal resistance, and tailored material composition, could achieve a significant increase in energy density and charging speed in lithium-ion batteries by leveraging a deep understanding of electrochemical principles and optimized energy storage mechanisms.",
-            "equation": "T = k * E + E_offset",
-            "reason": "The equation does not account for key variables like resistance, density, or pH, which are crucial for the electrochemical principles and energy storage mechanisms mentioned in the hypothesis.",
-            "filter": "llm_validation"
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode featuring a high surface area and optimized morphology, a 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety",
+            "equation": "sigma_e = k * log(pH / pH_0)",
+            "reason": "The equation relates energy to pH, which is unrelated to the battery's energy density, charging time, or cycle life",
+            "filter": "domain_validation"
         },
         {
-            "hypothesis": "A graphene-based, nanoscale, fractal-inspired electrode design, optimized through computational modeling and experimental testing for maximum surface area, minimal internal resistance, and tailored material composition, could achieve a significant increase in energy density and charging speed in lithium-ion batteries by leveraging a deep understanding of electrochemical principles and optimized energy storage mechanisms.",
-            "equation": "T = k * exp(R)",
-            "reason": "The equation T = k * exp(R) does not directly relate to the variables or the context of energy density and charging speed in lithium-ion batteries as described in the hypothesis.",
-            "filter": "llm_validation"
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode featuring a high surface area and optimized morphology, a 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety",
+            "equation": "k_th = k * exp(-N / tau)",
+            "reason": "The equation does not relate to the hypothesis's main claims of energy density, charging time, or cycle life.",
+            "filter": "domain_validation"
         },
         {
-            "hypothesis": "A graphene-based, nanoscale, fractal-inspired electrode design, optimized through computational modeling and experimental testing for maximum surface area, minimal internal resistance, and tailored material composition, could achieve a significant increase in energy density and charging speed in lithium-ion batteries by leveraging a deep understanding of electrochemical principles and optimized energy storage mechanisms.",
-            "equation": "k = (A_e_max - A_e) / (A_e_max - A_e_min)",
-            "reason": "The equation does not account for time or energy density, which are crucial factors in the hypothesis",
-            "filter": "llm_validation"
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and a high-ionic-conductivity solid-state electrolyte infused with thermally conductive boron nitride nanotubes can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety.",
+            "equation": "pH = k / k_th",
+            "reason": "Structure mismatch for polynomial",
+            "filter": "domain_validation"
         },
         {
-            "hypothesis": "A graphene-based, nanoscale, fractal-inspired electrode design, optimized through computational modeling and experimental testing for maximum surface area, minimal internal resistance, and tailored material composition, could achieve a significant increase in energy density and charging speed in lithium-ion batteries by leveraging a deep understanding of electrochemical principles and optimized energy storage mechanisms.",
-            "equation": "A_e = k * log(k / k_0)",
-            "reason": "The equation does not relate to the variables relevant to the hypothesis, such as energy density or charging speed in lithium-ion batteries.",
-            "filter": "llm_validation"
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and a high-ionic-conductivity solid-state electrolyte infused with thermally conductive boron nitride nanotubes can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety.",
+            "equation": "pH = k * log(N)",
+            "reason": "Structure mismatch for sigmoid",
+            "filter": "domain_validation"
         },
         {
-            "hypothesis": "Incorporating a phase-change material with a melting point close to the battery's operating temperature into the electrolyte, and optimizing its concentration and distribution to maximize thermal energy management without compromising electrochemical performance, while considering the impact of concentration on electrode potential as described by the Nernst equation to mitigate thermal runaway",
-            "equation": "A_e = k * log(E)",
-            "reason": "The proposed equation does not directly relate to the hypothesis, which involves thermal energy management, phase-change materials, and electrochemical performance, particularly as described by the Nernst equation.",
-            "filter": "llm_validation"
+            "hypothesis": "A scalable solid-state lithium-metal battery with a nanostructured lithium-metal anode, 3D graphene framework, and solid-state electrolyte infused with thermally conductive boron nitride nanotubes, optimized for thermal conductivity and ionic transport, can achieve an energy density above 550 Wh/kg, fast charging in under 10 minutes, and a long cycle life exceeding 2500 cycles, while maintaining improved thermal safety",
+            "equation": "T = k1 * sigma + k2 * sigma^2",
+            "reason": "Structure mismatch for inverse",
+            "filter": "domain_validation"
         },
         {
-            "hypothesis": "Incorporating a phase-change material with a melting point close to the battery's operating temperature into the electrolyte, and optimizing its concentration and distribution to maximize thermal energy management without compromising electrochemical performance, while considering the impact of concentration on electrode potential as described by the Nernst equation to mitigate thermal runaway",
-            "equation": "sigma_e = 1 / (1 + exp(-k * (k - k_0)))",
-            "reason": "The equation does not directly relate to the hypothesis of thermal energy management in batteries using phase-change materials and the Nernst equation",
-            "filter": "llm_validation"
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, the microstructure of the cathode, and the surface area and morphology of the lithium-metal anode, can enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery",
+            "equation": "A_e = 1 / (1 + exp(-k * (T - T_0)))",
+            "reason": "Structure mismatch for logarithmic",
+            "filter": "domain_validation"
         },
         {
-            "hypothesis": "Designing a battery with a spiral or helical cell architecture, incorporating optimized electrode material compositions and electrolyte properties, could lead to a 25-35% increase in power output and a 15-25% reduction in internal resistance, while maintaining or improving overall energy density and cycle life.",
-            "equation": "t = k / R",
-            "reason": "The equation t = k / R does not directly relate to the hypothesis, which discusses power output, internal resistance, energy density, and cycle life.",
-            "filter": "llm_validation"
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, the microstructure of the cathode, and the surface area and morphology of the lithium-metal anode, can enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery",
+            "equation": "t = k * T + T_offset",
+            "reason": "Too many undefined variables: t",
+            "filter": "domain_validation"
         },
         {
-            "hypothesis": "Designing a battery with a spiral or helical cell architecture, incorporating optimized electrode material compositions and electrolyte properties, could lead to a 25-35% increase in power output and a 15-25% reduction in internal resistance, while maintaining or improving overall energy density and cycle life.",
-            "equation": "t = k * log(rho / rho_0)",
-            "reason": "The equation does not directly relate to power output or internal resistance, which are key components of the hypothesis",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "Designing a battery with a spiral or helical cell architecture, incorporating optimized electrode material compositions and electrolyte properties, could lead to a 25-35% increase in power output and a 15-25% reduction in internal resistance, while maintaining or improving overall energy density and cycle life.",
-            "equation": "t = (P_max - P) / (P_max - P_min)",
-            "reason": "The equation does not relate to the hypothesis variables or the described relationship between power output, internal resistance, and energy density.",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "Designing a battery with a spiral or helical cell architecture, incorporating optimized materials and surface treatments that minimize capacity fade and internal resistance according to Ohm's law, could lead to a 20-30% increase in power output and a 10-20% reduction in internal resistance, while maintaining or improving overall energy density and cycle life, with a targeted 15% extension in lifespan",
-            "equation": "k = k / Q",
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface, optimized for high ionic conductivity through compositional and structural enhancements, and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface and the microstructure of the cathode, can significantly enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery.",
+            "equation": "k = k * sigma",
             "reason": "Circular: k appears on both sides with no meaningful transformation",
             "filter": "rubbish_filter"
         },
         {
-            "hypothesis": "Designing a battery with a spiral or helical cell architecture, incorporating optimized materials and surface treatments that minimize capacity fade and internal resistance according to Ohm's law, could lead to a 20-30% increase in power output and a 10-20% reduction in internal resistance, while maintaining or improving overall energy density and cycle life, with a targeted 15% extension in lifespan",
-            "equation": "E = k * log(T)",
-            "reason": "The proposed equation E = k * log(T) does not relate to the variables described in the hypothesis, such as power output, internal resistance, energy density, and cycle life.",
-            "filter": "llm_validation"
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface, optimized for high ionic conductivity through compositional and structural enhancements, and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface and the microstructure of the cathode, can significantly enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery.",
+            "equation": "sigma_e = k * sigma",
+            "reason": "Structure mismatch for polynomial",
+            "filter": "domain_validation"
         },
         {
-            "hypothesis": "Designing a battery with a spiral or helical cell architecture, incorporating optimized materials and surface treatments that minimize capacity fade and internal resistance according to Ohm's law, could lead to a 20-30% increase in power output and a 10-20% reduction in internal resistance, while maintaining or improving overall energy density and cycle life, with a targeted 15% extension in lifespan",
-            "equation": "Q = (rho_max - rho) / (rho_max - rho_min)",
-            "reason": "The proposed equation does not relate to power output, internal resistance, or energy density, which are key aspects of the hypothesis",
-            "filter": "llm_validation"
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, the microstructure of the cathode, and implementing effective thermal management strategies, can synergistically enhance cycle life, fast charging capabilities, and thermal safety in a scalable solid-state lithium-metal battery.",
+            "equation": "T = k / N",
+            "reason": "Structure mismatch for sigmoid",
+            "filter": "domain_validation"
         },
         {
-            "hypothesis": "A bio-inspired, enzymatic catalyst integrated into the electrode-electrolyte interface of a battery, with properties optimized based on the Nernst equation and tailored electrolyte characteristics, could enhance electron transfer efficiency and increase battery capacity and cycle life by minimizing degradation over time and optimizing redox reactions under various operating conditions.",
-            "equation": "eta = alpha * sigma_e + beta",
-            "reason": "The equation does not directly relate to the Nernst equation or battery capacity and cycle life",
-            "filter": "llm_validation"
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, microstructure of the cathode, and mitigating thermal and ionic transport limitations, can enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery by minimizing solid-state electrolyte cracking and failure.",
+            "equation": "k = k / T",
+            "reason": "Circular: k appears on both sides with no meaningful transformation",
+            "filter": "rubbish_filter"
         },
         {
-            "hypothesis": "A bio-inspired, enzymatic catalyst integrated into the electrode-electrolyte interface of a battery, with properties optimized based on the Nernst equation and tailored electrolyte characteristics, could enhance electron transfer efficiency and increase battery capacity and cycle life by minimizing degradation over time and optimizing redox reactions under various operating conditions.",
-            "equation": "t = k * (r)^2",
-            "reason": "The proposed equation does not directly relate to the variables described in the hypothesis, such as capacity, efficiency, or catalyst properties.",
-            "filter": "llm_validation"
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, microstructure of the cathode, and mitigating thermal and ionic transport limitations, can enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery by minimizing solid-state electrolyte cracking and failure.",
+            "equation": "A_e = k * exp(-sigma_e / tau)",
+            "reason": "Structure mismatch for logarithmic",
+            "filter": "domain_validation"
         },
         {
-            "hypothesis": "A solid-state battery incorporating a metamaterial-based electrolyte with a tailored nanostructure, optimized for high ionic conductivity (>10^-3 S/cm) and low viscosity (<10 cP), could exhibit enhanced energy storage capabilities and improved mechanical strength, potentially leading to increased cycle life (>1000 cycles) and reduced self-discharge rates (<5% per month).",
-            "equation": "t = k * T",
+            "hypothesis": "Incorporating a sulfide-based solid electrolyte with a tailored LLZO interface and a cathode composed of a high-nickel content NMC, while optimizing the electrode-electrolyte interface, mitigating lithium dendrite formation through controlled current density and electrolyte design, and considering Butler-Volmer kinetics, can enhance cycle life and fast charging capabilities in a scalable solid-state lithium-metal battery by reducing cathode material degradation and capacity loss.",
+            "equation": "A_e = k * (t)^2",
+            "reason": "Structure mismatch for sigmoid",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with optimized composition and structure for high ionic conductivity, infused with ionic liquids, and coupled with an optimized phase-change material-based thermal management system, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, while ensuring improved thermal safety through reduced thermal runaway risk, with ionic conductivity enhanced by tailored electrolyte design",
+            "equation": "N = k * exp(-k / tau)",
+            "reason": "The equation N = k * exp(-k / tau) does not directly relate to the variables or the context provided in the hypothesis, which focuses on energy density, charging time, capacity, and thermal safety in lithium-metal batteries.",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with optimized composition and structure for high ionic conductivity, infused with ionic liquids, and coupled with an optimized phase-change material-based thermal management system, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, while ensuring improved thermal safety through reduced thermal runaway risk, with ionic conductivity enhanced by tailored electrolyte design",
+            "equation": "N = k * T + T_offset",
+            "reason": "Too many undefined variables: T_offset",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with ionic liquid infusion, coupled with an optimized phase-change material-based thermal management system designed according to Fourier's law of heat conduction, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, while ensuring improved thermal safety through reduced thermal runaway risk by enhancing heat dissipation efficiency",
+            "equation": "E = k * log(k_th / k_th_0)",
+            "reason": "Structure mismatch for power_law",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with ionic liquid infusion, coupled with an optimized phase-change material-based thermal management system designed according to Fourier's law of heat conduction, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, while ensuring improved thermal safety through reduced thermal runaway risk by enhancing heat dissipation efficiency",
+            "equation": "eta = k * N + N_offset",
+            "reason": "Structure mismatch for logarithmic",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with ionic liquid infusion and an optimized cathode material, coupled with an optimized phase-change material-based thermal management system, can achieve an energy density of 600 Wh/kg, charge to 80% in under 8 minutes, and maintain over 85% capacity after 2500 cycles, while ensuring improved thermal safety through reduced thermal runaway risk.",
+            "equation": "sigma_e = k1 * N + k2 * N^2",
+            "reason": "Structure mismatch for inverse",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with ionic liquid infusion, coupled with an optimized phase-change material-based thermal management system designed with thermal runaway testing and simulation, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, with a reduced thermal runaway risk of less than 1% as validated through comprehensive thermal safety design and testing protocols.",
+            "equation": "T = k * N",
+            "reason": "Structure mismatch for inverse",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with ionic liquid infusion, coupled with an optimized phase-change material-based thermal management system designed with thermal runaway testing and simulation, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, with a reduced thermal runaway risk of less than 1% as validated through comprehensive thermal safety design and testing protocols.",
+            "equation": "T = k * exp(t)",
+            "reason": "Structure mismatch for polynomial",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with ionic liquid infusion, coupled with an optimized phase-change material-based thermal management system designed with thermal runaway testing and simulation, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, with a reduced thermal runaway risk of less than 1% as validated through comprehensive thermal safety design and testing protocols.",
+            "equation": "T = (sigma_e_max - sigma_e) / (sigma_e_max - sigma_e_min)",
+            "reason": "Too many undefined variables: T",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with ionic liquid infusion, exhibiting an ionic conductivity of at least 10^-3 S/cm and thermal conductivity of 1 W/mK, coupled with an optimized phase-change material-based thermal management system, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, while ensuring improved thermal safety through reduced thermal runaway risk.",
+            "equation": "rho = k * sigma_e + sigma_e_offset",
+            "reason": "Structure mismatch for logarithmic",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with ionic liquid infusion, exhibiting an ionic conductivity of at least 10^-3 S/cm and thermal conductivity of 1 W/mK, coupled with an optimized phase-change material-based thermal management system, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 80% capacity after 2000 cycles, while ensuring improved thermal safety through reduced thermal runaway risk.",
+            "equation": "N = k * log(k_th)",
+            "reason": "Structure mismatch for exponential",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with ionic liquid infusion and dendrite-suppressing additives, coupled with an optimized phase-change material-based thermal management system and electrolyte crack mitigation strategies, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 85% capacity after 2500 cycles, while ensuring improved thermal safety through reduced thermal runaway risk.",
+            "equation": "k_th = k / T",
+            "reason": "Structure mismatch for exponential",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A lithium-metal battery featuring a hierarchical solid-state electrolyte with ionic liquid infusion and dendrite-suppressing additives, coupled with an optimized phase-change material-based thermal management system and electrolyte crack mitigation strategies, can achieve an energy density of 550 Wh/kg, charge to 80% in under 10 minutes, and maintain over 85% capacity after 2500 cycles, while ensuring improved thermal safety through reduced thermal runaway risk.",
+            "equation": "k_th = (rho_max - rho) / (rho_max - rho_min)",
+            "reason": "Too many undefined variables: k_th",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, an optimized lithium-rich cobalt oxide cathode with tailored material properties for enhanced energy density and electrochemical performance, and a thin, flexible, highly conductive solid electrolyte membrane, with a focus on optimizing the interface between the solid electrolyte and the electrodes for improved safety and efficiency",
+            "equation": "A_e = k / (sigma_e + c)",
+            "reason": "Structure mismatch for proportional",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, an optimized lithium-rich cobalt oxide cathode with tailored material properties for enhanced energy density and electrochemical performance, and a thin, flexible, highly conductive solid electrolyte membrane, with a focus on optimizing the interface between the solid electrolyte and the electrodes for improved safety and efficiency",
+            "equation": "t = (sigma_e_max - sigma_e) / (sigma_e_max - sigma_e_min)",
+            "reason": "Too many undefined variables: t",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a high-surface-area lithium-tin alloy anode with optimized morphology, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane, with a focus on optimizing the interface between the solid electrolyte and the electrodes for enhanced performance and safety",
+            "equation": "T = k / (t + c)",
+            "reason": "The variables provided do not match the equation given",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a high-surface-area lithium-tin alloy anode with optimized morphology, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane, with a focus on optimizing the interface between the solid electrolyte and the electrodes for enhanced performance and safety",
+            "equation": "T = k * sigma_e + sigma_e_offset",
+            "reason": "Structure mismatch for exponential",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a high-surface-area lithium-tin alloy anode with optimized morphology, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane, with a focus on optimizing the interface between the solid electrolyte and the electrodes for enhanced performance and safety",
+            "equation": "sigma_e = (t_max - t) / (t_max - t_min)",
+            "reason": "Too many undefined variables: t_max",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane with an optimized composition and structure for high ionic conductivity, focusing on interface engineering between the solid electrolyte and electrodes to enhance performance, safety, and overall battery efficiency.",
+            "equation": "t = k / T",
             "reason": "Circular: t appears on both sides with no meaningful transformation",
             "filter": "rubbish_filter"
         },
         {
-            "hypothesis": "A solid-state battery incorporating a metamaterial-based electrolyte with a tailored nanostructure, optimized for high ionic conductivity (>10^-3 S/cm) and low viscosity (<10 cP), could exhibit enhanced energy storage capabilities and improved mechanical strength, potentially leading to increased cycle life (>1000 cycles) and reduced self-discharge rates (<5% per month).",
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane with an optimized composition and structure for high ionic conductivity, focusing on interface engineering between the solid electrolyte and electrodes to enhance performance, safety, and overall battery efficiency.",
+            "equation": "t = k * sqrt(sigma)",
+            "reason": "Structure mismatch for logarithmic",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane with an optimized composition and structure for high ionic conductivity, focusing on interface engineering between the solid electrolyte and electrodes to enhance performance, safety, and overall battery efficiency.",
+            "equation": "sigma = k * A_e",
+            "reason": "Structure mismatch for logarithmic",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane with an optimized composition and structure for high ionic conductivity, focusing on interface engineering between the solid electrolyte and electrodes to enhance performance, safety, and overall battery efficiency.",
+            "equation": "sigma = k * exp(-k / tau)",
+            "reason": "Structure mismatch for logarithmic",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane with an optimized composition and structure for high ionic conductivity, focusing on interface engineering between the solid electrolyte and electrodes to enhance performance, safety, and overall battery efficiency.",
+            "equation": "sigma = k * t + t_offset",
+            "reason": "Structure mismatch for power_law",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane, with optimized thermal management and interface design to mitigate solid-state electrolyte cracking and enhance energy density, fast charging capabilities, and thermal safety",
             "equation": "k = k * sigma_e",
             "reason": "Circular: k appears on both sides with no meaningful transformation",
             "filter": "rubbish_filter"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery featuring a lithium-tin alloy anode, a lithium-rich cobalt oxide cathode, and a thin, flexible, highly conductive solid electrolyte membrane, with optimized thermal management and interface design to mitigate solid-state electrolyte cracking and enhance energy density, fast charging capabilities, and thermal safety",
+            "equation": "t = (sigma_e_max - sigma_e) / (sigma_e_max - sigma_e_min)",
+            "reason": "Too many undefined variables: t",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with a cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, optimized for high energy density and electrochemical performance through tailored surface modification, nanostructuring, and precise control of cathode material properties such as particle size, morphology, and composition.",
+            "equation": "pH = k / (T + c)",
+            "reason": "Structure mismatch for exponential",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with a cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, optimized for high energy density and electrochemical performance through tailored surface modification, nanostructuring, and precise control of cathode material properties such as particle size, morphology, and composition.",
+            "equation": "t = k * k + k_offset",
+            "reason": "Structure mismatch for inverse",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with a cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring of both the cathode and a high-surface-area lithium-metal anode",
+            "equation": "A_e = k * k + k_offset",
+            "reason": "Structure mismatch for exponential",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with optimized composition and nanostructure for high ionic conductivity, and a cathode material featuring a core-shell nanostructure with a lithium nickel manganese cobalt oxide core and a lithium iron phosphate shell, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring to enhance ionic conductivity and overall battery performance.",
+            "equation": "T = k / t",
+            "reason": "Circular: t appears on both sides with no meaningful transformation",
+            "filter": "rubbish_filter"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with optimized composition and nanostructure for high ionic conductivity, and a cathode material featuring a core-shell nanostructure with a lithium nickel manganese cobalt oxide core and a lithium iron phosphate shell, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring to enhance ionic conductivity and overall battery performance.",
+            "equation": "T = k * log(pH)",
+            "reason": "Structure mismatch for polynomial",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with optimized composition and nanostructure for high ionic conductivity, and a cathode material featuring a core-shell nanostructure with a lithium nickel manganese cobalt oxide core and a lithium iron phosphate shell, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring to enhance ionic conductivity and overall battery performance.",
+            "equation": "sigma_e = k * (t)^n",
+            "reason": "Structure mismatch for sigmoid",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with a cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification and nanostructuring, while incorporating strategies to mitigate lithium dendrite formation, such as modifying the electrolyte composition, applying a dendrite-suppressing coating, or utilizing a 3D nanostructured current collector",
+            "equation": "k = k * T + T_offset",
+            "reason": "Structure mismatch for power_law",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with a cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification, nanostructuring, and thermal management strategies that enhance ionic transport and heat dissipation.",
+            "equation": "t = k / T",
+            "reason": "Circular: t appears on both sides with no meaningful transformation",
+            "filter": "rubbish_filter"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with a cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification, nanostructuring, and thermal management strategies that enhance ionic transport and heat dissipation.",
+            "equation": "sigma_e = k * (r)^2",
+            "reason": "Structure mismatch for sigmoid",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with a cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification, nanostructuring, and thermal management strategies that enhance ionic transport and heat dissipation.",
+            "equation": "k_th = (T_max - T) / (T_max - T_min)",
+            "reason": "Too many undefined variables: T_min",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with a cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification, nanostructuring, and thermal management strategies that enhance ionic transport and heat dissipation.",
+            "equation": "k_th = (A_e_max - A_e) / (A_e_max - A_e_min)",
+            "reason": "Structure mismatch for power_law",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with an optimized cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification, nanostructuring, and galvanostatic cycling to mitigate cathode material degradation and capacity loss.",
+            "equation": "pH = k * sqrt(t)",
+            "reason": "Structure mismatch for sigmoid",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with an optimized cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification, nanostructuring, and galvanostatic cycling to mitigate cathode material degradation and capacity loss.",
+            "equation": "Q = k * (pH)^n",
+            "reason": "Structure mismatch for exponential",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "A scalable solid-state lithium-metal battery can be achieved by integrating a garnet-type LLZO solid-state electrolyte with an optimized cathode material featuring a core-shell nanostructure, where the core consists of lithium nickel manganese cobalt oxide and the shell is composed of lithium iron phosphate, and by optimizing the electrode-electrolyte interface through surface modification, nanostructuring, and galvanostatic cycling to mitigate cathode material degradation and capacity loss.",
+            "equation": "sigma_e = (Q_max - Q) / (Q_max - Q_min)",
+            "reason": "Structure mismatch for logarithmic",
+            "filter": "domain_validation"
         }
     ],
+    "domains_detected": [
+        "chemistry",
+        "physics",
+        "materials_science"
+    ],
+    "engines_used": [
+        "physics",
+        "chemistry"
+    ],
     "summary": {
-        "validated_count": 2,
-        "rejected_count": 16,
+        "validated_count": 56,
+        "rejected_count": 51,
         "rejection_breakdown": {
-            "rubbish_filter": 3,
-            "llm_validation": 13,
+            "rubbish_filter": 6,
+            "domain_validation": 45,
+            "llm_validation": 0,
             "llm_unavailable": 0,
             "parser_error": 0
         }
