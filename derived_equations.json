@@ -1,311 +1,146 @@
 {
-    "total_validated": 6,
-    "total_rejected": 33,
+    "total_validated": 2,
+    "total_rejected": 16,
     "validated_equations": [
         {
-            "hypothesis": "A lithium-air battery design incorporating nanoscale metal-organic frameworks as catalysts, with optimized framework structure, catalyst loading, electrode architecture, and electrolyte additives, to achieve high energy density, long cycle life, and enhanced safety",
-            "equation": "sigma_e = k / A_e",
+            "hypothesis": "A bio-inspired, enzymatic catalyst integrated into the electrode-electrolyte interface of a battery, with properties optimized based on the Nernst equation and tailored electrolyte characteristics, could enhance electron transfer efficiency and increase battery capacity and cycle life by minimizing degradation over time and optimizing redox reactions under various operating conditions.",
+            "equation": "eta = 1 / (1 + exp(-k * (A_e - A_e_0)))",
             "variables": {
-                "E": "Energy (E, J)",
-                "rho": "Density (rho, kg/m^3)",
+                "r": "Rate (r, mol/(L*s))",
                 "k_cat": "Catalyst (k_cat, 1/s)",
-                "A_e": "Electrode (A_e, m^2)",
+                "Q": "Capacity (Q, Ah)",
+                "eta": "Efficiency (eta, %)",
                 "k": "Proportionality constant"
             },
-            "relationship_type": "power_law",
+            "relationship_type": "inverse",
             "cluster": "M_Cluster_1_r1",
             "r_level": 1,
-            "validation_reasoning": "The equation relates electrode area to a proportionality constant, which could represent a relationship between electrode properties and performance in a lithium-air battery",
-            "dimension_hint": "sigma_e (conductivity) in S/m, k in S*m",
-            "timestamp": "2026-07-30T15:05:20.971562"
+            "validation_reasoning": "The equation models efficiency as a sigmoid function of the difference between actual and equilibrium electrode activity, which aligns with optimizing redox reactions in the hypothesis",
+            "dimension_hint": "Dimensionless for efficiency, but electrode activity terms should be in volts or similar units",
+            "timestamp": "2026-07-31T00:30:57.449582"
         },
         {
-            "hypothesis": "Investigating the application of specifically designed metamaterials and optimized electrolyte additives to enhance the ionic conductivity in solid-state batteries, focusing on materials that can be scaled up and integrated with current battery manufacturing processes to improve cell performance and safety.",
-            "equation": "t = k * (sigma_e)^n",
+            "hypothesis": "A solid-state battery incorporating a metamaterial-based electrolyte with a tailored nanostructure, optimized for high ionic conductivity (>10^-3 S/cm) and low viscosity (<10 cP), could exhibit enhanced energy storage capabilities and improved mechanical strength, potentially leading to increased cycle life (>1000 cycles) and reduced self-discharge rates (<5% per month).",
+            "equation": "r = k * log(E / E_0)",
             "variables": {
-                "I": "Current (I, A)",
+                "E": "Energy (E, J)",
                 "r": "Rate (r, mol/(L*s))",
                 "sigma": "Conductivity (sigma, S/m)",
                 "sigma_e": "Electrolyte (sigma_e, S/m)",
                 "k": "Proportionality constant"
             },
-            "relationship_type": "sigmoid",
-            "cluster": "M_Cluster_2_r1",
-            "r_level": 1,
-            "validation_reasoning": "The equation relates time (t) to electrolyte conductivity (sigma_e) with a proportionality constant (k) and exponent (n), which could model the ionic conductivity in solid-state batteries",
-            "dimension_hint": "Time (s) = Constant * (Conductivity (S/m))^n",
-            "timestamp": "2026-07-30T15:05:30.699339"
-        },
-        {
-            "hypothesis": "Investigating the application of specifically designed metamaterials and optimized electrolyte additives to enhance the ionic conductivity in solid-state batteries, focusing on materials that can be scaled up and integrated with current battery manufacturing processes to improve cell performance and safety.",
-            "equation": "sigma = k * sigma_e",
-            "variables": {
-                "sigma": "Deepened: Conductivity (sigma, S/m)",
-                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)",
-                "T": "Deepened: Temperature (K)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "proportional",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "The equation represents a proportional relationship between conductivity and electrolyte conductivity, which aligns with the hypothesis of enhancing ionic conductivity in solid-state batteries.",
-            "dimension_hint": "S/m",
-            "timestamp": "2026-07-30T15:05:32.647926"
-        },
-        {
-            "hypothesis": "Investigating the application of specifically designed metamaterials and optimized electrolyte additives to enhance the ionic conductivity in solid-state batteries, focusing on materials that can be scaled up and integrated with current battery manufacturing processes to improve cell performance and safety.",
-            "equation": "T = k * exp(-r / tau)",
-            "variables": {
-                "T": "Deepened: Temperature (K)",
-                "r": "Deepened: Rate (r, mol/(L*s))",
-                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "proportional",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "The equation resembles an Arrhenius-type relationship, which is commonly used to describe the temperature dependence of ionic conductivity and reaction rates in electrochemical systems.",
-            "dimension_hint": "Temperature (K), rate (mol/(L*s)), time constant (tau, s)",
-            "timestamp": "2026-07-30T15:05:41.453475"
-        },
-        {
-            "hypothesis": "Investigating the application of specifically designed metamaterials and optimized electrolyte additives to enhance the ionic conductivity in solid-state batteries, focusing on materials that can be scaled up and integrated with current battery manufacturing processes to improve cell performance and safety.",
-            "equation": "sigma = k1 * k + k2 * k^2",
-            "variables": {
-                "sigma": "Deepened: Conductivity (sigma, S/m)",
-                "k": "Proportionality constant",
-                "sigma_e": "Deepened: Electrolyte (sigma_e, S/m)"
-            },
-            "relationship_type": "power_law",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "The equation represents a power-law relationship between conductivity and a proportionality constant, which is plausible in the context of materials science and ionic conductivity",
-            "dimension_hint": "S/m = (S/m) * (unitless) + (S/m) * (unitless)^2",
-            "timestamp": "2026-07-30T15:05:43.499059"
-        },
-        {
-            "hypothesis": "Investigating the application of specifically designed metamaterials and optimized electrolyte additives to enhance the ionic conductivity in solid-state batteries, focusing on materials that can be scaled up and integrated with current battery manufacturing processes to improve cell performance and safety.",
-            "equation": "r = k * exp(sigma_e)",
-            "variables": {
-                "r": "Rate (r, mol/(L*s))",
-                "sigma_e": "Electrolyte (sigma_e, S/m)",
-                "I": "Current (I, A)",
-                "k": "Proportionality constant"
-            },
             "relationship_type": "exponential",
-            "cluster": "M_Cluster_3_r1",
+            "cluster": "M_Cluster_1_r1",
             "r_level": 1,
-            "validation_reasoning": "Exponential relationship between rate and electrolyte conductivity is plausible in the context of ionic conductivity in solid-state batteries",
-            "dimension_hint": "Rate (mol/(L*s)), Conductivity (S/m)",
-            "timestamp": "2026-07-30T15:05:45.455208"
+            "validation_reasoning": "The equation models a relationship between rate and energy, which could represent the battery's performance",
+            "dimension_hint": "Rate (r) in mol/(L*s), Energy (E) in J",
+            "timestamp": "2026-07-31T00:31:02.984711"
         }
     ],
     "rejected_ideas": [
         {
-            "hypothesis": "A graphene-based battery integrated with a microbial fuel cell, utilizing specific microorganisms and informed by scalable manufacturing techniques, long-term durability assessments, and interdisciplinary design principles, could potentially enhance energy storage capacity, cycling stability, and overall system efficiency",
-            "equation": "pH = k1 * r + k2 * r^2 + k3 * r^3",
-            "reason": "The equation relates pH to rate (r), but pH is a measure of acidity and does not directly relate to rate in the context of energy storage or microbial fuel cells",
+            "hypothesis": "A graphene-based, nanoscale, fractal-inspired electrode design, optimized through computational modeling and experimental testing for maximum surface area, minimal internal resistance, and tailored material composition, could achieve a significant increase in energy density and charging speed in lithium-ion batteries by leveraging a deep understanding of electrochemical principles and optimized energy storage mechanisms.",
+            "equation": "T = k * E + E_offset",
+            "reason": "The equation does not account for key variables like resistance, density, or pH, which are crucial for the electrochemical principles and energy storage mechanisms mentioned in the hypothesis.",
             "filter": "llm_validation"
         },
         {
-            "hypothesis": "A graphene-based battery integrated with a microbial fuel cell, utilizing specific microorganisms and informed by scalable manufacturing techniques, long-term durability assessments, and interdisciplinary design principles, could potentially enhance energy storage capacity, cycling stability, and overall system efficiency",
-            "equation": "pH = 1 / (1 + exp(-k * (t - t_0)))",
-            "reason": "The equation provided describes a sigmoidal relationship for pH, which doesn't directly relate to energy storage capacity, cycling stability, or system efficiency in the context of a graphene-based battery and microbial fuel cell.",
+            "hypothesis": "A graphene-based, nanoscale, fractal-inspired electrode design, optimized through computational modeling and experimental testing for maximum surface area, minimal internal resistance, and tailored material composition, could achieve a significant increase in energy density and charging speed in lithium-ion batteries by leveraging a deep understanding of electrochemical principles and optimized energy storage mechanisms.",
+            "equation": "T = k * exp(R)",
+            "reason": "The equation T = k * exp(R) does not directly relate to the variables or the context of energy density and charging speed in lithium-ion batteries as described in the hypothesis.",
             "filter": "llm_validation"
         },
         {
-            "hypothesis": "A graphene-based battery integrated with a microbial fuel cell, utilizing specific microorganisms and optimized electrolyte additives, could potentially enhance energy storage capacity and cycling stability by mitigating electrode material degradation and capacity fade.",
-            "equation": "sigma_e = k * (S)^2",
-            "reason": "The proposed equation does not relate to the variables described in the hypothesis",
+            "hypothesis": "A graphene-based, nanoscale, fractal-inspired electrode design, optimized through computational modeling and experimental testing for maximum surface area, minimal internal resistance, and tailored material composition, could achieve a significant increase in energy density and charging speed in lithium-ion batteries by leveraging a deep understanding of electrochemical principles and optimized energy storage mechanisms.",
+            "equation": "k = (A_e_max - A_e) / (A_e_max - A_e_min)",
+            "reason": "The equation does not account for time or energy density, which are crucial factors in the hypothesis",
             "filter": "llm_validation"
         },
         {
-            "hypothesis": "A graphene-based battery integrated with a microbial fuel cell, utilizing specific microorganisms and optimized electrolyte additives, could potentially enhance energy storage capacity and cycling stability by mitigating electrode material degradation and capacity fade.",
-            "equation": "S = (A_e_max - A_e) / (A_e_max - A_e_min)",
-            "reason": "The equation does not relate to energy storage capacity or cycling stability",
+            "hypothesis": "A graphene-based, nanoscale, fractal-inspired electrode design, optimized through computational modeling and experimental testing for maximum surface area, minimal internal resistance, and tailored material composition, could achieve a significant increase in energy density and charging speed in lithium-ion batteries by leveraging a deep understanding of electrochemical principles and optimized energy storage mechanisms.",
+            "equation": "A_e = k * log(k / k_0)",
+            "reason": "The equation does not relate to the variables relevant to the hypothesis, such as energy density or charging speed in lithium-ion batteries.",
             "filter": "llm_validation"
         },
         {
-            "hypothesis": "A graphene-based battery integrated with a microbial fuel cell, utilizing specific microorganisms and optimized electrolyte additives, could potentially enhance energy storage capacity and cycling stability by mitigating electrode material degradation and capacity fade.",
-            "equation": "k = k * log(S / S_0)",
-            "reason": "The equation lacks a clear relationship with time (t) and does not directly address energy storage capacity or cycling stability",
+            "hypothesis": "Incorporating a phase-change material with a melting point close to the battery's operating temperature into the electrolyte, and optimizing its concentration and distribution to maximize thermal energy management without compromising electrochemical performance, while considering the impact of concentration on electrode potential as described by the Nernst equation to mitigate thermal runaway",
+            "equation": "A_e = k * log(E)",
+            "reason": "The proposed equation does not directly relate to the hypothesis, which involves thermal energy management, phase-change materials, and electrochemical performance, particularly as described by the Nernst equation.",
             "filter": "llm_validation"
         },
         {
-            "hypothesis": "A lithium-air battery design incorporating nanoscale metal-organic frameworks as catalysts, with optimized framework structure, catalyst loading, electrode architecture, and electrolyte additives, to achieve high energy density, long cycle life, and enhanced safety",
-            "equation": "k = k * A_e",
+            "hypothesis": "Incorporating a phase-change material with a melting point close to the battery's operating temperature into the electrolyte, and optimizing its concentration and distribution to maximize thermal energy management without compromising electrochemical performance, while considering the impact of concentration on electrode potential as described by the Nernst equation to mitigate thermal runaway",
+            "equation": "sigma_e = 1 / (1 + exp(-k * (k - k_0)))",
+            "reason": "The equation does not directly relate to the hypothesis of thermal energy management in batteries using phase-change materials and the Nernst equation",
+            "filter": "llm_validation"
+        },
+        {
+            "hypothesis": "Designing a battery with a spiral or helical cell architecture, incorporating optimized electrode material compositions and electrolyte properties, could lead to a 25-35% increase in power output and a 15-25% reduction in internal resistance, while maintaining or improving overall energy density and cycle life.",
+            "equation": "t = k / R",
+            "reason": "The equation t = k / R does not directly relate to the hypothesis, which discusses power output, internal resistance, energy density, and cycle life.",
+            "filter": "llm_validation"
+        },
+        {
+            "hypothesis": "Designing a battery with a spiral or helical cell architecture, incorporating optimized electrode material compositions and electrolyte properties, could lead to a 25-35% increase in power output and a 15-25% reduction in internal resistance, while maintaining or improving overall energy density and cycle life.",
+            "equation": "t = k * log(rho / rho_0)",
+            "reason": "The equation does not directly relate to power output or internal resistance, which are key components of the hypothesis",
+            "filter": "llm_validation"
+        },
+        {
+            "hypothesis": "Designing a battery with a spiral or helical cell architecture, incorporating optimized electrode material compositions and electrolyte properties, could lead to a 25-35% increase in power output and a 15-25% reduction in internal resistance, while maintaining or improving overall energy density and cycle life.",
+            "equation": "t = (P_max - P) / (P_max - P_min)",
+            "reason": "The equation does not relate to the hypothesis variables or the described relationship between power output, internal resistance, and energy density.",
+            "filter": "llm_validation"
+        },
+        {
+            "hypothesis": "Designing a battery with a spiral or helical cell architecture, incorporating optimized materials and surface treatments that minimize capacity fade and internal resistance according to Ohm's law, could lead to a 20-30% increase in power output and a 10-20% reduction in internal resistance, while maintaining or improving overall energy density and cycle life, with a targeted 15% extension in lifespan",
+            "equation": "k = k / Q",
             "reason": "Circular: k appears on both sides with no meaningful transformation",
             "filter": "rubbish_filter"
         },
         {
-            "hypothesis": "A lithium-air battery design incorporating nanoscale metal-organic frameworks as catalysts, with optimized framework structure, catalyst loading, electrode architecture, and electrolyte additives, to achieve high energy density, long cycle life, and enhanced safety",
-            "equation": "t = k * exp(-rho / tau)",
-            "reason": "The equation provided does not directly relate to the variables described in the hypothesis, such as energy, catalyst, electrode, and electrolyte additives.",
+            "hypothesis": "Designing a battery with a spiral or helical cell architecture, incorporating optimized materials and surface treatments that minimize capacity fade and internal resistance according to Ohm's law, could lead to a 20-30% increase in power output and a 10-20% reduction in internal resistance, while maintaining or improving overall energy density and cycle life, with a targeted 15% extension in lifespan",
+            "equation": "E = k * log(T)",
+            "reason": "The proposed equation E = k * log(T) does not relate to the variables described in the hypothesis, such as power output, internal resistance, energy density, and cycle life.",
             "filter": "llm_validation"
         },
         {
-            "hypothesis": "A lithium-air battery design incorporating nanoscale metal-organic frameworks as catalysts, with optimized framework structure, catalyst loading, electrode architecture, and electrolyte additives, to achieve high energy density, long cycle life, and enhanced safety",
-            "equation": "t = k * sqrt(k)",
-            "reason": "The equation t = k * sqrt(k) does not relate to the variables provided or the context of a lithium-air battery design",
+            "hypothesis": "Designing a battery with a spiral or helical cell architecture, incorporating optimized materials and surface treatments that minimize capacity fade and internal resistance according to Ohm's law, could lead to a 20-30% increase in power output and a 10-20% reduction in internal resistance, while maintaining or improving overall energy density and cycle life, with a targeted 15% extension in lifespan",
+            "equation": "Q = (rho_max - rho) / (rho_max - rho_min)",
+            "reason": "The proposed equation does not relate to power output, internal resistance, or energy density, which are key aspects of the hypothesis",
             "filter": "llm_validation"
         },
         {
-            "hypothesis": "A lithium-air battery design incorporating nanoscale metal-organic frameworks as catalysts, with optimized electrode material composition and microstructure, and tailored framework structure, catalyst loading, and electrode architecture to maximize energy density and cycle life, guided by the Nernst Equation",
-            "equation": "T = k * N + N_offset",
-            "reason": "The equation T = k * N + N_offset does not relate to the variables provided in the hypothesis, which are focused on energy, density, catalyst activity, and electrode area.",
+            "hypothesis": "A bio-inspired, enzymatic catalyst integrated into the electrode-electrolyte interface of a battery, with properties optimized based on the Nernst equation and tailored electrolyte characteristics, could enhance electron transfer efficiency and increase battery capacity and cycle life by minimizing degradation over time and optimizing redox reactions under various operating conditions.",
+            "equation": "eta = alpha * sigma_e + beta",
+            "reason": "The equation does not directly relate to the Nernst equation or battery capacity and cycle life",
             "filter": "llm_validation"
         },
         {
-            "hypothesis": "Investigating the application of specifically designed metamaterials and optimized electrolyte additives to enhance the ionic conductivity in solid-state batteries, focusing on materials that can be scaled up and integrated with current battery manufacturing processes to improve cell performance and safety.",
-            "equation": "k = k * r",
-            "reason": "Circular: k appears on both sides with no meaningful transformation",
-            "filter": "rubbish_filter"
-        },
-        {
-            "hypothesis": "Investigating the application of specifically designed metamaterials and optimized electrolyte additives to enhance the ionic conductivity in solid-state batteries, focusing on materials that can be scaled up and integrated with current battery manufacturing processes to improve cell performance and safety.",
-            "equation": "t = k * I + I_offset",
-            "reason": "The equation does not directly relate to ionic conductivity or the variables mentioned in the hypothesis",
+            "hypothesis": "A bio-inspired, enzymatic catalyst integrated into the electrode-electrolyte interface of a battery, with properties optimized based on the Nernst equation and tailored electrolyte characteristics, could enhance electron transfer efficiency and increase battery capacity and cycle life by minimizing degradation over time and optimizing redox reactions under various operating conditions.",
+            "equation": "t = k * (r)^2",
+            "reason": "The proposed equation does not directly relate to the variables described in the hypothesis, such as capacity, efficiency, or catalyst properties.",
             "filter": "llm_validation"
         },
         {
-            "hypothesis": "Investigating the application of specifically designed metamaterials and optimized electrolyte additives to enhance the ionic conductivity in solid-state batteries, focusing on materials that can be scaled up and integrated with current battery manufacturing processes to improve cell performance and safety.",
-            "equation": "t = k * log(r)",
-            "reason": "The proposed equation does not directly relate to the variables relevant to the hypothesis, such as conductivity or current.",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "Investigating the application of specifically designed metamaterials to enhance the ionic conductivity in solid-state batteries, with a focus on materials that can be scaled up, integrated with current battery manufacturing processes, and ensure long-term durability under various operating conditions.",
-            "equation": "T = k / t",
+            "hypothesis": "A solid-state battery incorporating a metamaterial-based electrolyte with a tailored nanostructure, optimized for high ionic conductivity (>10^-3 S/cm) and low viscosity (<10 cP), could exhibit enhanced energy storage capabilities and improved mechanical strength, potentially leading to increased cycle life (>1000 cycles) and reduced self-discharge rates (<5% per month).",
+            "equation": "t = k * T",
             "reason": "Circular: t appears on both sides with no meaningful transformation",
             "filter": "rubbish_filter"
         },
         {
-            "hypothesis": "Investigating the application of specifically designed metamaterials to enhance the ionic conductivity in solid-state batteries, with a focus on materials that can be scaled up, integrated with current battery manufacturing processes, and ensure long-term durability under various operating conditions.",
-            "equation": "I = 1 / (1 + exp(-k * (T - T_0)))",
-            "reason": "The equation is nonlinear due to the exponential term, contradicting the stated linear relationship type",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "Investigating the application of specifically designed metamaterials to enhance the ionic conductivity in solid-state batteries, with a focus on materials that can be scaled up, integrated with current battery manufacturing processes, and ensure long-term durability under various operating conditions.",
-            "equation": "sigma = k1 * I + k2 * I^2 + k3 * I^3",
-            "reason": "The equation does not account for the relationship between conductivity and ionic rate, and the variable 'r' is not included in the equation",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "Investigating the application of specifically designed metamaterials to enhance the ionic conductivity in solid-state batteries, with a focus on materials that can be scaled up, integrated with current battery manufacturing processes, and ensure long-term durability under various operating conditions.",
-            "equation": "I = k * (t)^n",
-            "reason": "The proposed equation does not account for conductivity or rate, which are crucial for ionic conductivity in solid-state batteries.",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "Investigating the application of specifically designed metamaterials to enhance the ionic conductivity in solid-state batteries by optimizing electrode potential and mass transport in electrolytes, focusing on materials that can be scaled up and integrated with current battery manufacturing processes, while adhering to the principles outlined by the Nernst Equation and Fick's Laws of Diffusion.",
-            "equation": "k = k / T",
+            "hypothesis": "A solid-state battery incorporating a metamaterial-based electrolyte with a tailored nanostructure, optimized for high ionic conductivity (>10^-3 S/cm) and low viscosity (<10 cP), could exhibit enhanced energy storage capabilities and improved mechanical strength, potentially leading to increased cycle life (>1000 cycles) and reduced self-discharge rates (<5% per month).",
+            "equation": "k = k * sigma_e",
             "reason": "Circular: k appears on both sides with no meaningful transformation",
             "filter": "rubbish_filter"
-        },
-        {
-            "hypothesis": "Investigating the application of specifically designed metamaterials to enhance the ionic conductivity in solid-state batteries by optimizing electrode potential and mass transport in electrolytes, focusing on materials that can be scaled up and integrated with current battery manufacturing processes, while adhering to the principles outlined by the Nernst Equation and Fick's Laws of Diffusion.",
-            "equation": "m = (I_max - I) / (I_max - I_min)",
-            "reason": "The equation does not relate to ionic conductivity, electrode potential, or mass transport in electrolytes as described in the hypothesis",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "Investigating the application of specifically designed metamaterials to enhance the ionic conductivity in solid-state batteries by optimizing electrode potential and mass transport in electrolytes, focusing on materials that can be scaled up and integrated with current battery manufacturing processes, while adhering to the principles outlined by the Nernst Equation and Fick's Laws of Diffusion.",
-            "equation": "t = k * A_e",
-            "reason": "The proposed equation does not relate to the variables or principles mentioned in the hypothesis",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "Investigating the application of specifically designed metamaterials to enhance the ionic conductivity in solid-state batteries by optimizing electrode potential and mass transport in electrolytes, focusing on materials that can be scaled up and integrated with current battery manufacturing processes, while adhering to the principles outlined by the Nernst Equation and Fick's Laws of Diffusion.",
-            "equation": "I = k * log(sigma / sigma_0)",
-            "reason": "The equation does not directly relate to the Nernst Equation or Fick's Laws of Diffusion, and the variables do not match the proposed application",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "A hybrid battery design incorporating supercapacitor technology with advanced phase-change materials, optimized for high-power density applications through careful selection of electrode materials with tailored microstructure and properties, and implementation of thermal management strategies to mitigate degradation and capacity fade.",
-            "equation": "rho = 1 / (1 + exp(-k * (Q - Q_0)))",
-            "reason": "The equation appears to model a sigmoidal relationship, which doesn't directly relate to the physical properties of a hybrid battery design",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "A hybrid battery design incorporating supercapacitor technology with advanced phase-change materials, optimized for high-power density applications through careful selection of electrode materials with tailored microstructure and properties, and implementation of thermal management strategies to mitigate degradation and capacity fade.",
-            "equation": "pH = k * (P)^n",
-            "reason": "pH is a measure of acidity, not directly related to power density or battery performance",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "A hybrid battery design incorporating supercapacitor technology with advanced phase-change materials, optimized for high-power density applications through careful selection of electrode materials with tailored microstructure and properties, and implementation of thermal management strategies to mitigate degradation and capacity fade.",
-            "equation": "pH = alpha * Q + beta",
-            "reason": "The equation relates pH to charge (Q), but pH is a measure of acidity, not directly related to charge or power in the context of battery design",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "A hybrid battery design incorporating supercapacitor technology with advanced phase-change materials, optimized for high-power density applications through careful material selection, thermal management strategies, and consideration of electrochemical principles, cell design, and architecture parameters to mitigate thermal runaway and ensure safe operation",
-            "equation": "t = k * exp(P)",
-            "reason": "The equation does not relate to the variables described in the hypothesis",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "A hybrid battery design incorporating supercapacitor technology with advanced phase-change materials, optimized for high-power density applications through careful material selection, thermal management strategies, and consideration of electrochemical principles, cell design, and architecture parameters to mitigate thermal runaway and ensure safe operation",
-            "equation": "r = k * (P)^n",
-            "reason": "The proposed equation does not directly relate to the variables relevant to the hypothesis, such as thermal management, material properties, or electrochemical principles.",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "A hybrid battery design incorporating supercapacitor technology with advanced phase-change materials, optimized for high-power density applications through careful material selection, thermal management strategies, and consideration of electrochemical principles, cell design, and architecture parameters to mitigate thermal runaway and ensure safe operation",
-            "equation": "r = k * P + P_offset",
-            "reason": "The proposed equation does not relate to the hypothesis, as it lacks relevant variables such as density and does not account for thermal management or electrochemical principles.",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "A hybrid battery design incorporating supercapacitor technology with advanced phase-change materials, optimized for high-power density applications through careful material selection, thermal management strategies, and consideration of electrochemical principles, cell design, and architecture parameters to mitigate thermal runaway and ensure safe operation",
-            "equation": "r = k * sqrt(k)",
-            "reason": "The equation r = k * sqrt(k) does not relate to the variables described in the hypothesis, and the relationship type is sigmoid, which does not match the given equation.",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "The development of self-healing batteries through the integration of AI/ML and neuromorphic materials could initially focus on lithium-ion batteries, leveraging advancements in solid-state battery manufacturing and electrochemical principles to enhance durability and performance, before expanding to other chemistries and real-world applications.",
-            "equation": "k = k / pH",
-            "reason": "Circular: k appears on both sides with no meaningful transformation",
-            "filter": "rubbish_filter"
-        },
-        {
-            "hypothesis": "The development of self-healing batteries through the integration of AI/ML and neuromorphic materials could initially focus on lithium-ion batteries, leveraging advancements in solid-state battery manufacturing and electrochemical principles to enhance durability and performance, before expanding to other chemistries and real-world applications.",
-            "equation": "t = k1 * k + k2 * k^2",
-            "reason": "The equation does not directly relate to battery performance or durability",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "The development of self-healing batteries through the integration of AI/ML and neuromorphic materials could initially focus on lithium-ion batteries, leveraging advancements in solid-state battery manufacturing and electrochemical principles to enhance durability and performance, before expanding to other chemistries and real-world applications.",
-            "equation": "T = k * log(t / t_0)",
-            "reason": "The equation does not directly relate to battery performance or durability",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "The development of self-healing batteries through the integration of AI/ML and neuromorphic materials could focus on lithium-ion batteries by leveraging the Nernst Equation and Fick's Laws of Diffusion to optimize electrolyte additives, enhancing cell performance and safety, before expanding to other battery chemistries.",
-            "equation": "pH = alpha * T + beta",
-            "reason": "The equation provided does not relate to the Nernst Equation or Fick's Laws of Diffusion, and pH is not directly related to the variables described in the hypothesis.",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "The development of self-healing batteries through the integration of AI/ML and neuromorphic materials could focus on lithium-ion batteries by leveraging the Nernst Equation and Fick's Laws of Diffusion to optimize electrolyte additives, enhancing cell performance and safety, before expanding to other battery chemistries.",
-            "equation": "pH = k * log(T)",
-            "reason": "The equation pH = k * log(T) does not relate to the optimization of electrolyte additives in lithium-ion batteries or the application of the Nernst Equation and Fick's Laws of Diffusion as described in the hypothesis.",
-            "filter": "llm_validation"
-        },
-        {
-            "hypothesis": "The development of self-healing batteries through the integration of AI/ML and neuromorphic materials could focus on lithium-ion batteries by leveraging the Nernst Equation and Fick's Laws of Diffusion to optimize electrolyte additives, enhancing cell performance and safety, before expanding to other battery chemistries.",
-            "equation": "t = (pH_max - pH) / (pH_max - pH_min)",
-            "reason": "The proposed equation does not relate to the Nernst Equation or Fick's Laws of Diffusion, and the variables do not match the given equation",
-            "filter": "llm_validation"
         }
     ],
     "summary": {
-        "validated_count": 6,
-        "rejected_count": 33,
+        "validated_count": 2,
+        "rejected_count": 16,
         "rejection_breakdown": {
-            "rubbish_filter": 5,
-            "llm_validation": 28,
+            "rubbish_filter": 3,
+            "llm_validation": 13,
             "llm_unavailable": 0,
             "parser_error": 0
         }

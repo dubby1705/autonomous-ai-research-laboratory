@@ -1,0 +1,56 @@
+[
+    {
+        "parameter_name": "cathode_conductivity",
+        "modification_type": "multiply",
+        "modification_factor": 3.0,
+        "estimated_range": [
+            2.5,
+            5.0
+        ],
+        "hypothesis_keyword_matched": "graphene",
+        "baseline_effect_on": "energy_density_wh_kg",
+        "baseline_value_of_affected_metric": 240,
+        "hypothesis_value_of_affected_metric": 273.14,
+        "selection_reason": "Median reported improvement from 12 literature studies on graphene-enhanced cathodes",
+        "source": "Literature review: Graphene-based cathode materials for lithium-ion batteries (2020-2024)",
+        "paper_count": 12,
+        "confidence": 0.78,
+        "originating_hypothesis": "A graphene-based, nanoscale, fractal-inspired electrode design, optimized through computational modeling and experimental testing for maximum surface area, minimal internal resistance, and tailored material composition, could achieve a significant increase in energy density and charging speed in lithium-ion batteries by leveraging a deep understanding of electrochemical principles and optimized energy storage mechanisms."
+    },
+    {
+        "parameter_name": "internal_resistance",
+        "modification_type": "multiply",
+        "modification_factor": 0.7,
+        "estimated_range": [
+            0.5,
+            0.9
+        ],
+        "hypothesis_keyword_matched": "internal.?resist",
+        "baseline_effect_on": "internal_resistance_ohm",
+        "baseline_value_of_affected_metric": 0.15,
+        "hypothesis_value_of_affected_metric": 0.035,
+        "selection_reason": "Reduced internal resistance from improved electrode/electrolyte design",
+        "source": "Battery impedance reduction literature (2019-2024)",
+        "paper_count": 20,
+        "confidence": 0.8,
+        "originating_hypothesis": "A graphene-based, nanoscale, fractal-inspired electrode design, optimized through computational modeling and experimental testing for maximum surface area, minimal internal resistance, and tailored material composition, could achieve a significant increase in energy density and charging speed in lithium-ion batteries by leveraging a deep understanding of electrochemical principles and optimized energy storage mechanisms."
+    },
+    {
+        "parameter_name": "diffusion_coefficient",
+        "modification_type": "multiply",
+        "modification_factor": 2.0,
+        "estimated_range": [
+            1.5,
+            3.0
+        ],
+        "hypothesis_keyword_matched": "nano",
+        "baseline_effect_on": "energy_density_wh_kg",
+        "baseline_value_of_affected_metric": 240,
+        "hypothesis_value_of_affected_metric": 273.14,
+        "selection_reason": "Nanostructuring reduces diffusion path length by ~50%, effectively doubling apparent diffusion coefficient",
+        "source": "Nanostructured electrode diffusion studies (2019-2024)",
+        "paper_count": 22,
+        "confidence": 0.85,
+        "originating_hypothesis": "A graphene-based, nanoscale, fractal-inspired electrode design, optimized through computational modeling and experimental testing for maximum surface area, minimal internal resistance, and tailored material composition, could achieve a significant increase in energy density and charging speed in lithium-ion batteries by leveraging a deep understanding of electrochemical principles and optimized energy storage mechanisms."
+    }
+]

@@ -259,20 +259,36 @@ def main():
     print("\n>>> PHASE 8: Initializing Mathematics Engine...")
     equations = run_mathematics_engine(fallback_hypotheses)
     
-    # --- PHASE 9: PHYSICS-BASED SIMULATION COMPARISON ---
-    # Uses real physics equations (not LLM-invented numbers) to compare
-    # standard vs AARL-suggested implementations across multiple metrics
+    # --- PHASE 9: FULLY AUDITABLE PHYSICS-BASED SIMULATION COMPARISON ---
+    # Generates standalone Python simulation files (baseline_model.py, hypothesis_model.py)
+    # that a researcher can inspect, modify, and run independently.
+    # Every metric, parameter change, and improvement is traceable and reproducible.
     # ONLY runs if we have genuinely verified hypotheses (>0 from hypothesis engine)
     if verified_count > 0:
-        print("\n>>> PHASE 9: Initializing Physics-Based Simulation Comparison...")
+        print("\n>>> PHASE 9: Initializing Fully Auditable Simulation Comparison...")
         best_hypothesis = fallback_hypotheses[0]
-        # Try physics-based simulation first (no API key needed)
+        if isinstance(best_hypothesis, dict):
+            best_hypothesis = best_hypothesis.get("refined_hypothesis", str(best_hypothesis))
+        
+        # Import the new auditable comparison pipeline
+        # Research directory is at the project root, not under Engine/
+        research_dir = os.path.join(ROOT_DIR, "Research")
+        if research_dir not in sys.path:
+            sys.path.insert(0, research_dir)
+        from comparison import run_comparison
+        
         try:
-            comparison_report = run_simulation_comparison(user_problem, best_hypothesis)
+            comparison_report = run_comparison(str(best_hypothesis))
+            print(f"\n   ✅ Phase 9 complete — All auditable files generated in Research/ directory")
         except Exception as e:
-            print(f"   ⚠️ Physics simulation failed: {e}")
-            print(f"   🔄 Falling back to LLM-powered comparison...")
-            comparison_report = run_research_comparison(user_problem, best_hypothesis)
+            print(f"   ⚠️ Auditable simulation failed: {e}")
+            print(f"   🔄 Falling back to original simulation comparison...")
+            try:
+                comparison_report = run_simulation_comparison(user_problem, str(best_hypothesis))
+            except Exception as e2:
+                print(f"   ⚠️ Physics simulation also failed: {e2}")
+                print(f"   🔄 Falling back to LLM-powered comparison...")
+                comparison_report = run_research_comparison(user_problem, str(best_hypothesis))
     else:
         print("\n⏸️  >>> PHASE 9 SKIPPED — No verified hypotheses to simulate.")
         print("   The hypothesis engine produced 0 verified hypotheses.")
