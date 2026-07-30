@@ -28,7 +28,7 @@ if engine_path not in sys.path:
 # ==========================================
 # CONFIGURATION
 # ==========================================
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "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"
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
 # ==========================================
@@ -42,6 +42,7 @@ from Hypothesis.Question_back import run_questioning_engine, print_final_solutio
 from Evidence import run_evidence_engine
 from Mathematics import run_mathematics_engine
 from Research.compare import run_research_comparison
+from Research.simulation_engine import run_simulation_comparison
 
 def _load_json(path: str) -> dict:
     """Safely load a JSON file, returning empty dict on failure."""
@@ -195,31 +196,20 @@ def main():
                         cluster_text = " | ".join(cluster["items"][:3])  # Top 3 items
                         print(f"         Cluster {ci}: '{cluster_text[:80]}...'")
                         
-                        # Use LLM to validate if this cluster's content deepens the hypothesis
-                        from groq import Groq
-                        v_client = Groq()
-                        try:
-                            from groq import Groq as _G
-                            
-                            completion = v_client.chat.completions.create(
-                                model="llama-3.3-70b-versatile",
-                                messages=[
-                                    {"role": "system", "content": "You validate if a knowledge cluster deepens a hypothesis. Answer ONLY with JSON: {\"deepens\": true/false, \"reason\": \"brief\", \"refined_hypothesis\": \"improved version if deepens\"}"},
-                                    {"role": "user", "content": f"Hypothesis: {hyp}\n\nNew knowledge cluster: {cluster_text}\n\nDoes this knowledge deepen the hypothesis? If yes, produce a refined hypothesis."}
-                                ],
-                                response_format={"type": "json_object"},
-                                temperature=0.1,
-                            )
-                            result = json.loads(completion.choices[0].message.content)
-                            
-                            if result.get("deepens", False):
-                                refined = result.get("refined_hypothesis", hyp)
-                                deepened_hypotheses.append(refined)
-                                print(f"            ✅ Deepens: {refined[:100]}...")
-                            else:
-                                print(f"            ❌ Does not deepen: {result.get('reason', '')[:80]}")
-                        except Exception as e:
-                            print(f"            ⚠️ Validation error: {e}")
+                        # Use shared GroqClient with Ollama fallback
+                        from GroqClient import groq_complete_json
+                        result = groq_complete_json(
+                            system_prompt="You validate if a knowledge cluster deepens a hypothesis. Answer ONLY with JSON: {\"deepens\": true/false, \"reason\": \"brief\", \"refined_hypothesis\": \"improved version if deepens\"}",
+                            user_prompt=f"Hypothesis: {hyp}\n\nNew knowledge cluster: {cluster_text}\n\nDoes this knowledge deepen the hypothesis? If yes, produce a refined hypothesis.",
+                            temperature=0.1
+                        )
+                        if result and result.get("deepens", False):
+                            refined = result.get("refined_hypothesis", hyp)
+                            deepened_hypotheses.append(refined)
+                            print(f"            ✅ Deepens: {refined[:100]}...")
+                        else:
+                            reason = result.get("reason", "No improvement") if result else "LLM unavailable"
+                            print(f"            ❌ Does not deepen: {reason[:80]}")
                     
                     # Noise becomes input for next round
                     current_items = noise
@@ -237,30 +227,25 @@ def main():
     final_solution = run_questioning_engine(user_problem)
     print_final_solution_report(final_solution)
     
-    # Build a multi-tier fallback chain for hypotheses so we NEVER skip Phases 7-9
+    # Build fallback hypotheses for Phases 7-9
+    # Only use ACTUALLY verified hypotheses — never the raw research problem
     # Tier 1: approved from hypothesis engine (Excellent/Plausible/Speculative)
     # Tier 2: refined from Socratic questioning
-    # Tier 3: proven facts from knowledge base
-    # Tier 4: the original problem itself
-    fallback_hypotheses = list(approved_hypotheses) if approved_hypotheses else []
+    verified_hypotheses = list(approved_hypotheses) if approved_hypotheses else []
     
-    if not fallback_hypotheses:
+    if not verified_hypotheses:
         fs_hs = final_solution.get("approved_hypotheses_questioned", [])
-        fallback_hypotheses = list(fs_hs) if fs_hs else []
+        verified_hypotheses = list(fs_hs) if fs_hs else []
     
-    if not fallback_hypotheses:
-        kb_path = "deep_research_knowledge_base.json"
-        if os.path.exists(kb_path):
-            with open(kb_path, "r", encoding="utf-8") as f:
-                kb_data = json.load(f)
-            kb_facts = kb_data.get("proven_facts", [])
-            if kb_facts:
-                fallback_hypotheses = [f"HYPOTHESIS: {f}" for f in kb_facts[:3]]
+    # Count genuine verified hypotheses (not fallback garbage)
+    verified_count = len(verified_hypotheses)
     
-    if not fallback_hypotheses:
-        fallback_hypotheses = [f"Investigate: {user_problem}"]
-    
-    print(f"\n[AARL] Using {len(fallback_hypotheses)} hypotheses for Phases 7-9 (tier-based fallback).")
+    if verified_count > 0:
+        fallback_hypotheses = verified_hypotheses
+        print(f"\n[AARL] Using {verified_count} verified hypotheses for Phases 7-9.")
+    else:
+        fallback_hypotheses = []
+        print(f"\n[AARL] ⚠️ No verified hypotheses generated. Phases 7-9 will be skipped.")
     
     # --- PHASE 7: EVIDENCE SCORING ---
     # Scores each hypothesis with structured evidence tracking
@@ -274,15 +259,24 @@ def main():
     print("\n>>> PHASE 8: Initializing Mathematics Engine...")
     equations = run_mathematics_engine(fallback_hypotheses)
     
-    # --- PHASE 9: RESEARCH COMPARISON (Groq-powered) ---
-    # Imports real Python libraries for the domain, builds standard vs AARL implementations,
-    # executes both, and compares numerical results
-    print("\n>>> PHASE 9: Initializing Research Comparison Engine...")
-    if fallback_hypotheses:
+    # --- PHASE 9: PHYSICS-BASED SIMULATION COMPARISON ---
+    # Uses real physics equations (not LLM-invented numbers) to compare
+    # standard vs AARL-suggested implementations across multiple metrics
+    # ONLY runs if we have genuinely verified hypotheses (>0 from hypothesis engine)
+    if verified_count > 0:
+        print("\n>>> PHASE 9: Initializing Physics-Based Simulation Comparison...")
         best_hypothesis = fallback_hypotheses[0]
-        comparison_report = run_research_comparison(user_problem, best_hypothesis)
+        # Try physics-based simulation first (no API key needed)
+        try:
+            comparison_report = run_simulation_comparison(user_problem, best_hypothesis)
+        except Exception as e:
+            print(f"   ⚠️ Physics simulation failed: {e}")
+            print(f"   🔄 Falling back to LLM-powered comparison...")
+            comparison_report = run_research_comparison(user_problem, best_hypothesis)
     else:
-        print("   ⏸️  No hypotheses available for research comparison.")
+        print("\n⏸️  >>> PHASE 9 SKIPPED — No verified hypotheses to simulate.")
+        print("   The hypothesis engine produced 0 verified hypotheses.")
+        print("   Simulation requires at least 1 verified hypothesis.")
     
     # ---- Gather all stats from output files ----
     aarl_elapsed = time.time() - aarl_start

@@ -21,8 +21,8 @@ import concurrent.futures
 from collections import Counter
 from typing import List, Dict, Any, Tuple, Optional, Set
 from datetime import datetime
-from groq import Groq
 from pydantic import BaseModel, Field, ValidationError
+from GroqClient import groq_complete_json
 
 # =========================================================
 # PYDANTIC SCHEMAS
@@ -189,30 +189,210 @@ RELATIONSHIP_TYPES = [
     "logarithmic", "polynomial", "sigmoid", "linear"
 ]
 
-def extract_keywords(hypothesis: str) -> List[str]:
-    """Extract meaningful keywords from a hypothesis for variable generation."""
-    words = tokenize(hypothesis)
-    # Filter to longer, more meaningful words
-    keywords = [w for w in words if len(w) > 3]
-    # Add some common variable names
-    common_vars = ["x", "y", "z", "t", "k", "n", "alpha", "beta", "gamma", "theta", "lambda", "mu", "sigma", "tau", "omega"]
-    return keywords + common_vars
+# =========================================================
+# STRUCTURED SCIENTIFIC CONCEPT → VARIABLE MAPPING
+# =========================================================
+# Maps scientific concepts to their standard symbols and equations
+# This replaces random word selection with structured concept derivation
+SCIENTIFIC_CONCEPT_MAP = {
+    # Physics concepts
+    "energy": {"symbol": "E", "unit": "J", "equations": ["E = 0.5 * m * v^2", "E = m * c^2", "E = h * f", "E = k * T"]},
+    "power": {"symbol": "P", "unit": "W", "equations": ["P = V * I", "P = F * v", "P = E / t"]},
+    "force": {"symbol": "F", "unit": "N", "equations": ["F = m * a", "F = k * x", "F = mu * N"]},
+    "voltage": {"symbol": "V", "unit": "V", "equations": ["V = I * R", "V = E / Q"]},
+    "current": {"symbol": "I", "unit": "A", "equations": ["I = V / R", "I = Q / t"]},
+    "resistance": {"symbol": "R", "unit": "Ohm", "equations": ["R = V / I", "R = rho * L / A"]},
+    "capacitance": {"symbol": "C", "unit": "F", "equations": ["C = Q / V", "C = epsilon * A / d"]},
+    "temperature": {"symbol": "T", "unit": "K", "equations": ["T = E / (k_B)", "T = P * V / (n * R)"]},
+    "pressure": {"symbol": "P", "unit": "Pa", "equations": ["P = F / A", "P = rho * g * h"]},
+    "velocity": {"symbol": "v", "unit": "m/s", "equations": ["v = d / t", "v = f * lambda"]},
+    "frequency": {"symbol": "f", "unit": "Hz", "equations": ["f = 1 / T", "f = v / lambda"]},
+    "wavelength": {"symbol": "lambda", "unit": "m", "equations": ["lambda = v / f", "lambda = c / f"]},
+    "mass": {"symbol": "m", "unit": "kg", "equations": ["m = rho * V", "m = F / a"]},
+    "density": {"symbol": "rho", "unit": "kg/m^3", "equations": ["rho = m / V", "rho = P / (R * T)"]},
+    "momentum": {"symbol": "p", "unit": "kg*m/s", "equations": ["p = m * v", "p = F * t"]},
+    # Chemistry concepts
+    "concentration": {"symbol": "C", "unit": "M", "equations": ["C = n / V", "rate = k * C^n"]},
+    "rate": {"symbol": "r", "unit": "mol/(L*s)", "equations": ["r = k * [A]^m", "r = A * exp(-Ea/(R*T))"]},
+    "yield": {"symbol": "Y", "unit": "%", "equations": ["Y = (actual / theoretical) * 100"]},
+    "catalyst": {"symbol": "k_cat", "unit": "1/s", "equations": ["k_cat = k * exp(-Ea_cat/(R*T))"]},
+    "equilibrium": {"symbol": "K_eq", "unit": "", "equations": ["K_eq = [products] / [reactants]", "dG = -R*T*ln(K_eq)"]},
+    "ph": {"symbol": "pH", "unit": "", "equations": ["pH = -log10([H+])", "pH = pKa + log([A-]/[HA])"]},
+    # Battery-specific concepts
+    "capacity": {"symbol": "Q", "unit": "Ah", "equations": ["Q = I * t", "Q = C * V"]},
+    "efficiency": {"symbol": "eta", "unit": "%", "equations": ["eta = (P_out / P_in) * 100", "eta = (V_t / V_oc) * 100"]},
+    "conductivity": {"symbol": "sigma", "unit": "S/m", "equations": ["sigma = 1 / rho", "sigma = n * e * mu"]},
+    "thermal": {"symbol": "k_th", "unit": "W/(m*K)", "equations": ["k_th = Q * L / (A * dT)", "k_th = k_base * (1 + alpha*T)"]},
+    "degradation": {"symbol": "d", "unit": "%/cycle", "equations": ["d = d0 * exp(-Ea/(R*T))", "d = k * DOD^2"]},
+    "stability": {"symbol": "S", "unit": "%", "equations": ["S = 100 - d * N", "S = S0 * exp(-t/tau)"]},
+    "electrode": {"symbol": "A_e", "unit": "m^2", "equations": ["A_e = 4 * pi * r^2", "Q = k * A_e"]},
+    "electrolyte": {"symbol": "sigma_e", "unit": "S/m", "equations": ["sigma_e = sigma0 * exp(-Ea/(R*T))"]},
+    "cycle": {"symbol": "N", "unit": "cycles", "equations": ["N = 20 / d", "N = N0 * (1 - d)^n"]},
+    # Materials concepts
+    "stress": {"symbol": "sigma_s", "unit": "Pa", "equations": ["sigma_s = F / A", "sigma_s = E * epsilon"]},
+    "strain": {"symbol": "epsilon", "unit": "", "equations": ["epsilon = dL / L", "epsilon = sigma_s / E"]},
+    "tensile": {"symbol": "sigma_uts", "unit": "Pa", "equations": ["sigma_uts = F_max / A"]},
+    "modulus": {"symbol": "E", "unit": "Pa", "equations": ["E = sigma_s / epsilon"]},
+}
 
-def generate_random_math_ideas(hypothesis: str, num_ideas: int = 20) -> List[MathIdea]:
+# Standard physical constants
+PHYSICAL_CONSTANTS = {
+    "R": ("Gas constant", 8.314, "J/(mol*K)"),
+    "k_B": ("Boltzmann constant", 1.381e-23, "J/K"),
+    "h": ("Planck constant", 6.626e-34, "J*s"),
+    "c": ("Speed of light", 3e8, "m/s"),
+    "e": ("Elementary charge", 1.602e-19, "C"),
+    "F": ("Faraday constant", 96485, "C/mol"),
+    "epsilon_0": ("Vacuum permittivity", 8.854e-12, "F/m"),
+    "g": ("Gravitational acceleration", 9.81, "m/s^2"),
+}
+
+
+def extract_scientific_variables(hypothesis: str, domain: str = "general") -> List[Dict[str, str]]:
     """
-    Generate random mathematical formulations from hypothesis keywords.
-    No LLM involved — purely combinatorial.
+    Extract STRUCTURED scientific variables from a hypothesis.
+    Instead of random words, maps hypothesis keywords to real scientific concepts
+    with proper symbols, units, and known equations.
+    
+    Returns list of dicts: [{"name": symbol, "concept": concept, "unit": unit, "equations": [...]}]
     """
-    keywords = extract_keywords(hypothesis)
-    if len(keywords) < 3:
-        keywords = ["x", "y", "k", "n", "alpha", "beta", hypothesis[:5].lower()]
+    hyp_lower = hypothesis.lower()
+    variables = []
+    used_symbols = set()
+    
+    # Match hypothesis keywords to scientific concepts
+    for concept, info in SCIENTIFIC_CONCEPT_MAP.items():
+        if concept in hyp_lower:
+            symbol = info["symbol"]
+            # Avoid duplicate symbols
+            if symbol in used_symbols:
+                symbol = f"{symbol}_{concept[:3]}"
+            used_symbols.add(symbol)
+            variables.append({
+                "name": symbol,
+                "concept": concept,
+                "unit": info["unit"],
+                "equations": info["equations"],
+                "description": f"{concept.capitalize()} ({symbol}, {info['unit']})"
+            })
+    
+    # If no concepts matched, use generic scientific variables
+    if not variables:
+        # Try to extract any meaningful words and map them
+        words = tokenize(hypothesis)
+        meaningful = [w for w in words if len(w) > 4]
+        for w in meaningful[:3]:
+            symbol = w[0] if w[0] not in used_symbols else f"{w[0]}_{w[:2]}"
+            used_symbols.add(symbol)
+            variables.append({
+                "name": symbol,
+                "concept": w,
+                "unit": "variable",
+                "equations": [f"{symbol} = k * {w}"],
+                "description": f"Variable from: {w}"
+            })
+    
+    # Always add common parameters
+    common_params = [
+        {"name": "k", "concept": "proportionality_constant", "unit": "varies", "equations": [], "description": "Proportionality constant"},
+        {"name": "T", "concept": "temperature", "unit": "K", "equations": ["T = E/k_B"], "description": "Temperature (K)"},
+        {"name": "t", "concept": "time", "unit": "s", "equations": ["t = d/v"], "description": "Time (s)"},
+    ]
+    for p in common_params:
+        if p["name"] not in used_symbols:
+            variables.append(p)
+            used_symbols.add(p["name"])
+    
+    return variables
+
+
+def generate_random_math_ideas(hypothesis: str, num_ideas: int = 20, domain: str = "general") -> List[MathIdea]:
+    """
+    Generate mathematical formulations from STRUCTURED scientific concepts.
+    
+    Instead of picking random words, this:
+    1. Extracts scientific concepts from the hypothesis (e.g., "thermal conductivity" → κ)
+    2. Uses known equations for those concepts as starting points
+    3. Creates candidate modifications (variations of known equations)
+    4. Combines concepts to form novel relationships
+    
+    No LLM involved — purely structured scientific derivation.
+    """
+    variables = extract_scientific_variables(hypothesis, domain=domain)
+    
+    if len(variables) < 2:
+        # Fallback: use generic variables
+        variables = [
+            {"name": "x", "concept": "variable_1", "unit": "", "equations": [], "description": "Variable 1"},
+            {"name": "y", "concept": "variable_2", "unit": "", "equations": [], "description": "Variable 2"},
+            {"name": "k", "concept": "constant", "unit": "", "equations": [], "description": "Constant"},
+        ]
     
     ideas = []
-    for i in range(num_ideas):
-        # Pick 2-3 random keywords as variables
-        vars_picked = random.sample(keywords, min(3, len(keywords)))
-        a = vars_picked[0]
-        b = vars_picked[1] if len(vars_picked) > 1 else "x"
+    
+    # Strategy 1: Use known equations from matched concepts (50% of ideas)
+    known_eq_count = num_ideas // 2
+    for i in range(known_eq_count):
+        # Pick a variable that has known equations
+        vars_with_eqs = [v for v in variables if v["equations"]]
+        if vars_with_eqs:
+            source_var = random.choice(vars_with_eqs)
+            base_eq = random.choice(source_var["equations"])
+            
+            # Create a modification of the known equation
+            # Pick another variable to combine with
+            other_vars = [v for v in variables if v != source_var]
+            if other_vars:
+                other = random.choice(other_vars)
+                # Apply a random modification template
+                template = random.choice(RELATIONSHIP_TEMPLATES)
+                try:
+                    eq_text = template(source_var["name"], other["name"])
+                except Exception:
+                    eq_text = base_eq
+            else:
+                eq_text = base_eq
+            
+            rel_type = random.choice(RELATIONSHIP_TYPES)
+            
+            # Build variable descriptions from structured data
+            var_desc = {}
+            for v in variables[:4]:
+                var_desc[v["name"]] = v["description"]
+            var_desc["k"] = "Proportionality constant"
+            
+            ideas.append(MathIdea(
+                idea_id=f"MID-{i+1:03d}",
+                equation_text=eq_text,
+                variables=var_desc,
+                relationship_type=rel_type
+            ))
+        else:
+            # No known equations, use template
+            a = variables[0]["name"]
+            b = variables[1]["name"] if len(variables) > 1 else "x"
+            template = random.choice(RELATIONSHIP_TEMPLATES)
+            try:
+                eq_text = template(a, b)
+            except Exception:
+                eq_text = f"{a} = k * {b}"
+            
+            var_desc = {v["name"]: v["description"] for v in variables[:4]}
+            var_desc["k"] = "Proportionality constant"
+            
+            ideas.append(MathIdea(
+                idea_id=f"MID-{i+1:03d}",
+                equation_text=eq_text,
+                variables=var_desc,
+                relationship_type=random.choice(RELATIONSHIP_TYPES)
+            ))
+    
+    # Strategy 2: Combine concepts in novel ways (remaining ideas)
+    for i in range(known_eq_count, num_ideas):
+        # Pick 2-3 structured variables
+        vars_picked = random.sample(variables, min(3, len(variables)))
+        a = vars_picked[0]["name"]
+        b = vars_picked[1]["name"] if len(vars_picked) > 1 else "x"
         
         # Pick a random relationship template
         template = random.choice(RELATIONSHIP_TEMPLATES)
@@ -223,10 +403,10 @@ def generate_random_math_ideas(hypothesis: str, num_ideas: int = 20) -> List[Mat
         
         rel_type = random.choice(RELATIONSHIP_TYPES)
         
-        # Build variable descriptions
+        # Build variable descriptions from structured data
         var_desc = {}
         for v in vars_picked:
-            var_desc[v] = f"Variable derived from: {hypothesis[:50]}"
+            var_desc[v["name"]] = v["description"]
         var_desc["k"] = "Proportionality constant"
         if "alpha" in eq_text:
             var_desc["alpha"] = "Scaling factor"
@@ -297,10 +477,55 @@ def is_rubbish_idea(idea: MathIdea) -> Tuple[bool, str]:
 # =========================================================
 # LLM VALIDATION (Only for "Does this make sense?")
 # =========================================================
-def validate_math_idea_llm(client: Groq, hypothesis: str, idea: MathIdea) -> MathValidation:
+def _deterministic_validation(hypothesis: str, idea: MathIdea) -> MathValidation:
+    """
+    Deterministic fallback when LLM is unavailable.
+    Validates equations based on variable consistency, structure, and plausibility.
+    """
+    eq = idea.equation_text
+    rel_type = idea.relationship_type
+    variables = idea.variables
+
+    # Check 1: Variable consistency — equation should reference defined variables
+    eq_vars = set(re.findall(r'[a-zA-Z_][a-zA-Z0-9_]*', eq))
+    eq_vars -= {'k', 'k1', 'k2', 'k3', 'alpha', 'beta', 'gamma', 'tau', 'n', 'c', 'exp', 'log', 'sqrt'}
+    defined_vars = set(variables.keys())
+    undefined_vars = eq_vars - defined_vars
+    if len(undefined_vars) > 2:
+        return MathValidation(makes_sense=False, reasoning=f"Too many undefined variables: {list(undefined_vars)[0]}", dimension_hint="")
+
+    # Check 2: Structure matches relationship type
+    rhs = eq.split('=')[1].strip() if '=' in eq else ''
+    type_ok = True
+    if rel_type == 'proportional': type_ok = '*' in rhs
+    elif rel_type == 'inverse': type_ok = '/' in rhs
+    elif rel_type == 'exponential': type_ok = 'exp' in rhs
+    elif rel_type == 'power_law': type_ok = '^' in rhs or 'sqrt' in rhs
+    elif rel_type == 'logarithmic': type_ok = 'log' in rhs
+    elif rel_type == 'sigmoid': type_ok = 'exp' in rhs and '/' in rhs
+    elif rel_type == 'polynomial': type_ok = '^' in rhs or '+' in rhs
+    elif rel_type == 'linear': type_ok = '+' in rhs or '*' in rhs
+
+    if not type_ok:
+        return MathValidation(makes_sense=False, reasoning=f"Structure mismatch for {rel_type}", dimension_hint="")
+
+    # Check 3: Physical plausibility — must have constant, operation, and variable
+    has_constant = any(c in eq for c in ['k', 'k1', 'k2', 'alpha', 'beta', 'tau'])
+    has_operation = any(op in eq for op in ['*', '/', '+', '^', 'exp', 'log', 'sqrt'])
+    has_variable = len(defined_vars) >= 1
+
+    if not (has_constant and has_operation and has_variable):
+        return MathValidation(makes_sense=False, reasoning="Missing components", dimension_hint="")
+
+    return MathValidation(makes_sense=True, reasoning=f"Deterministic: {rel_type}, {len(defined_vars)} vars", dimension_hint="Standard")
+
+
+def validate_math_idea_llm(hypothesis: str, idea: MathIdea) -> MathValidation:
     """
     LLM is ONLY used to answer: "Does this mathematical relationship make sense?"
     Not to generate equations — just to validate them.
+    Uses shared GroqClient with automatic Ollama fallback.
+    Falls back to deterministic validation when LLM is unavailable.
     """
     system_prompt = (
         "You are a strict Mathematical Validator. Your ONLY job is to answer:\n"
@@ -317,7 +542,7 @@ def validate_math_idea_llm(client: Groq, hypothesis: str, idea: MathIdea) -> Mat
         "}\n"
     )
     
-    prompt = (
+    user_prompt = (
         f"Original hypothesis: {hypothesis}\n"
         f"Proposed equation: {idea.equation_text}\n"
         f"Relationship type: {idea.relationship_type}\n"
@@ -326,47 +551,49 @@ def validate_math_idea_llm(client: Groq, hypothesis: str, idea: MathIdea) -> Mat
     )
     
     try:
-        completion = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": prompt}
-            ],
-            response_format={"type": "json_object"},
-            temperature=0.1,
-        )
-        raw_json = completion.choices[0].message.content
-        return MathValidation.model_validate_json(raw_json)
+        result = groq_complete_json(system_prompt, user_prompt, temperature=0.1)
+        if result:
+            return MathValidation.model_validate_json(json.dumps(result))
+        return _deterministic_validation(hypothesis, idea)
     except Exception as e:
-        return MathValidation(makes_sense=False, reasoning=f"LLM error: {e}", dimension_hint="")
+        return _deterministic_validation(hypothesis, idea)
 
 # =========================================================
 # DEEPENING: Generate more ideas around a validated cluster
 # =========================================================
-def deepen_cluster(hypothesis: str, cluster_docs: List[str], num_new: int = 10) -> List[MathIdea]:
+def deepen_cluster(hypothesis: str, cluster_docs: List[str], num_new: int = 10, domain: str = "general") -> List[MathIdea]:
     """
-    When a cluster is validated, generate MORE random ideas 
+    When a cluster is validated, generate MORE ideas
     that are variations of the validated equations in that cluster.
+    Uses structured scientific variables instead of random words.
     """
+    variables = extract_scientific_variables(hypothesis, domain=domain)
+    if len(variables) < 2:
+        variables = [
+            {"name": "x", "concept": "var", "unit": "", "equations": [], "description": "Variable"},
+            {"name": "y", "concept": "var", "unit": "", "equations": [], "description": "Variable"},
+            {"name": "k", "concept": "const", "unit": "", "equations": [], "description": "Constant"},
+        ]
+    
     new_ideas = []
     for doc in cluster_docs:
-        # Extract the equation pattern from the cluster document
-        # Generate variations by tweaking the relationship type
         for _ in range(num_new // max(len(cluster_docs), 1)):
-            keywords = extract_keywords(hypothesis)
-            vars_picked = random.sample(keywords, min(3, len(keywords)))
-            a = vars_picked[0]
-            b = vars_picked[1] if len(vars_picked) > 1 else "x"
+            vars_picked = random.sample(variables, min(3, len(variables)))
+            a = vars_picked[0]["name"]
+            b = vars_picked[1]["name"] if len(vars_picked) > 1 else "x"
             template = random.choice(RELATIONSHIP_TEMPLATES)
             try:
                 eq_text = template(a, b)
             except Exception:
                 eq_text = f"{a} = k * {b}"
             
+            var_desc = {v["name"]: f"Deepened: {v['description']}" for v in vars_picked}
+            var_desc["k"] = "Proportionality constant"
+            
             new_ideas.append(MathIdea(
                 idea_id=f"MID-DEEP-{len(new_ideas)+1:03d}",
                 equation_text=eq_text,
-                variables={v: f"Deepened variable from {hypothesis[:30]}" for v in vars_picked},
+                variables=var_desc,
                 relationship_type=random.choice(RELATIONSHIP_TYPES)
             ))
     return new_ideas
@@ -395,7 +622,6 @@ def run_mathematics_engine(
     print("📐 MATHEMATICS ENGINE — DBSCAN-Driven Random Generation + Validation")
     print("="*80)
     
-    client = Groq()
     all_validated = []
     all_rejected = []
     
@@ -451,7 +677,7 @@ def run_mathematics_engine(
             
             # Step 5: LLM validation — only "does this make sense?"
             print(f"         🔍 Validating {cname} (representative: {best_idea.equation_text[:60]}...)")
-            validation = validate_math_idea_llm(client, hypothesis, best_idea)
+            validation = validate_math_idea_llm(hypothesis, best_idea)
             
             if validation.makes_sense:
                 validated_this_hypothesis += 1
@@ -470,14 +696,14 @@ def run_mathematics_engine(
                 
                 # Step 6: Deepen this cluster
                 print(f"            🔄 Deepening cluster with more variations...")
-                deepened_ideas = deepen_cluster(hypothesis, cinfo['documents'], num_new=8)
+                deepened_ideas = deepen_cluster(hypothesis, cinfo['documents'], num_new=8, domain="general")
                 
                 # Filter deepened ideas
                 for d_idea in deepened_ideas:
                     is_rubbish, reason = is_rubbish_idea(d_idea)
                     if not is_rubbish:
                         # Validate deepened idea
-                        d_validation = validate_math_idea_llm(client, hypothesis, d_idea)
+                        d_validation = validate_math_idea_llm(hypothesis, d_idea)
                         if d_validation.makes_sense:
                             deepened_clusters += 1
                             all_validated.append({
@@ -493,13 +719,21 @@ def run_mathematics_engine(
                             })
                             print(f"            ✅ Deepened: {d_idea.equation_text[:60]}...")
             else:
+                rejection_reason = validation.reasoning
+                if "LLM returned no result" in rejection_reason or "LLM error" in rejection_reason:
+                    rejection_filter = "llm_unavailable"
+                elif "returned no result" in rejection_reason:
+                    rejection_filter = "llm_unavailable"
+                else:
+                    rejection_filter = "llm_validation"
                 all_rejected.append({
                     "hypothesis": hypothesis,
                     "equation": best_idea.equation_text,
-                    "reason": validation.reasoning,
-                    "filter": "llm_validation"
+                    "reason": rejection_reason,
+                    "filter": rejection_filter
                 })
-                print(f"            ❌ RUBBISH — {validation.reasoning[:80]}")
+                label = "LLM UNAVAILABLE" if rejection_filter == "llm_unavailable" else "RUBBISH"
+                print(f"            ❌ {label} — {rejection_reason[:80]}")
         
         print(f"      📊 Results for this hypothesis: {validated_this_hypothesis} validated, {deepened_clusters} deepened")
     
@@ -514,7 +748,9 @@ def run_mathematics_engine(
             "rejected_count": len(all_rejected),
             "rejection_breakdown": {
                 "rubbish_filter": sum(1 for r in all_rejected if r.get("filter") == "rubbish_filter"),
-                "llm_validation": sum(1 for r in all_rejected if r.get("filter") == "llm_validation")
+                "llm_validation": sum(1 for r in all_rejected if r.get("filter") == "llm_validation"),
+                "llm_unavailable": sum(1 for r in all_rejected if r.get("filter") == "llm_unavailable"),
+                "parser_error": sum(1 for r in all_rejected if r.get("filter") == "parser_error")
             }
         }
     }

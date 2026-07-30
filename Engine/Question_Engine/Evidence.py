@@ -1,13 +1,18 @@
 """
-EVIDENCE SCORING ENGINE
+EVIDENCE SCORING ENGINE — Multi-Factor Weighted Confidence
 Replaces binary Approved/Rejected/Deferred with rich, structured evidence tracking.
 
-For each hypothesis-concept pair, stores:
-- Evidence sources (Literature, Experiment, Simulation, Logical Deduction)
-- Missing evidence gaps
-- Confidence score (0.0 - 1.0)
-- Next recommended action
-- Historical accuracy tracking for self-calibration
+Confidence is computed from MULTIPLE weighted factors:
+  1. Paper/Literature support (from KB mining)         — weight 0.20
+  2. Knowledge graph support (from DOSCAN insights)     — weight 0.20
+  3. Equation validation (from Phase 8)                 — weight 0.15
+  4. Simulation success (from Phase 9)                  — weight 0.20
+  5. Experimental agreement (from historical data)      — weight 0.10
+  6. Novelty score (conflict-based)                     — weight 0.10
+  7. Falsifiability score (Popperian)                   — weight 0.05
+
+This replaces the old approach that relied mostly on LLM judgment and
+TF-IDF cosine similarity alone (which produced ~8% confidence).
 """
 
 import os
@@ -68,7 +73,16 @@ class EvidenceEntry:
 
 class EvidenceScore:
     """
-    Rich evidence score replacing the old composite_score.
+    Rich evidence score with MULTI-FACTOR weighted confidence.
+    
+    Confidence is computed from 7 weighted factors:
+      1. Paper/Literature support (from KB mining)         — weight 0.20
+      2. Knowledge graph support (from DOSCAN insights)     — weight 0.20
+      3. Equation validation (from Phase 8)                 — weight 0.15
+      4. Simulation success (from Phase 9)                  — weight 0.20
+      5. Experimental agreement (from historical data)      — weight 0.10
+      6. Novelty score (conflict-based)                     — weight 0.10
+      7. Falsifiability score (Popperian)                   — weight 0.05
     
     Attributes:
         claim: The scientific claim being scored
@@ -78,6 +92,10 @@ class EvidenceScore:
         contradictions: List of contradictory evidence
         next_action: Recommended next step
         historical_accuracy: How often similar claims were correct
+        kg_support_score: Knowledge graph support (0.0-1.0)
+        equation_validation_score: Equation validation (0.0-1.0)
+        simulation_success_score: Simulation success (0.0-1.0)
+        factor_breakdown: Dict showing each factor's contribution
     """
     
     def __init__(self, claim: str):
@@ -95,6 +113,11 @@ class EvidenceScore:
         self.historical_accuracy: float = 0.0
         self.novelty_score: float = 0.0
         self.falsifiability_score: float = 0.0
+        # New multi-factor scores
+        self.kg_support_score: float = 0.0
+        self.equation_validation_score: float = 0.0
+        self.simulation_success_score: float = 0.0
+        self.factor_breakdown: Dict[str, float] = {}
 
     def add_evidence(self, entry: EvidenceEntry):
         etype = entry.evidence_type
@@ -104,43 +127,99 @@ class EvidenceScore:
 
     def _recompute_confidence(self):
         """
-        Weighted confidence aggregation:
-        - literature: 0.25 weight
-        - experiment: 0.40 weight (most trustworthy)
-        - simulation: 0.20 weight
-        - logical_deduction: 0.15 weight
+        MULTI-FACTOR weighted confidence aggregation.
         
-        Each evidence type's contribution = average confidence of its entries * weight.
-        Missing types contribute 0.
+        Factors and weights:
+          1. Literature support (from KB mining)         — 0.20
+          2. Knowledge graph support (from DOSCAN)        — 0.20
+          3. Equation validation (from Phase 8)           — 0.15
+          4. Simulation success (from Phase 9)            — 0.20
+          5. Experimental agreement (historical)          — 0.10
+          6. Novelty score                                — 0.10
+          7. Falsifiability score                         — 0.05
+        
+        Each factor contributes 0.0-1.0, multiplied by its weight.
+        Missing evidence types are tracked but don't zero out other factors.
         """
-        weights = {
-            "literature": 0.25,
-            "experiment": 0.40,
-            "simulation": 0.20,
-            "logical_deduction": 0.15
-        }
-        
-        total_weight = 0.0
-        weighted_sum = 0.0
-        
-        # Track which types have evidence and which are missing
+        # Track which evidence types are missing
         self.missing_evidence = []
-        
-        for etype, weight in weights.items():
-            entries = self.evidence_sources[etype]
-            if entries:
-                avg_conf = sum(e.confidence for e in entries) / len(entries)
-                weighted_sum += avg_conf * weight
-                total_weight += weight
-            else:
+        for etype in ["literature", "experiment", "simulation", "logical_deduction"]:
+            if not self.evidence_sources[etype]:
                 self.missing_evidence.append(etype)
-        
-        # Penalize for missing evidence types (max 25% penalty)
-        missing_penalty = len(self.missing_evidence) * 0.06
-        missing_penalty = min(0.25, missing_penalty)
-        
-        self.confidence = weighted_sum * (1.0 - missing_penalty) if total_weight > 0 else 0.0
+
+        # --- Factor 1: Literature Support (0.20) ---
+        lit_entries = self.evidence_sources["literature"]
+        if lit_entries:
+            literature_score = sum(e.confidence for e in lit_entries) / len(lit_entries)
+        else:
+            literature_score = 0.0
+
+        # --- Factor 2: Knowledge Graph Support (0.20) ---
+        kg_score = self.kg_support_score
+
+        # --- Factor 3: Equation Validation (0.15) ---
+        eq_score = self.equation_validation_score
+
+        # --- Factor 4: Simulation Success (0.20) ---
+        sim_entries = self.evidence_sources["simulation"]
+        if sim_entries:
+            sim_from_entries = sum(e.confidence for e in sim_entries) / len(sim_entries)
+            simulation_score = max(sim_from_entries, self.simulation_success_score)
+        else:
+            simulation_score = self.simulation_success_score
+
+        # --- Factor 5: Experimental Agreement (0.10) ---
+        exp_entries = self.evidence_sources["experiment"]
+        if exp_entries:
+            experimental_score = sum(e.confidence for e in exp_entries) / len(exp_entries)
+        else:
+            experimental_score = self.historical_accuracy
+
+        # --- Factor 6: Novelty (0.10) ---
+        novelty = self.novelty_score if self.novelty_score > 0 else 0.3  # default moderate
+
+        # --- Factor 7: Falsifiability (0.05) ---
+        falsifiability = self.falsifiability_score if self.falsifiability_score > 0 else 0.3
+
+        # --- Weighted Sum ---
+        weights = {
+            "literature": 0.20,
+            "knowledge_graph": 0.20,
+            "equation_validation": 0.15,
+            "simulation": 0.20,
+            "experimental": 0.10,
+            "novelty": 0.10,
+            "falsifiability": 0.05,
+        }
+
+        factor_values = {
+            "literature": literature_score,
+            "knowledge_graph": kg_score,
+            "equation_validation": eq_score,
+            "simulation": simulation_score,
+            "experimental": experimental_score,
+            "novelty": novelty,
+            "falsifiability": falsifiability,
+        }
+
+        # Compute weighted sum
+        weighted_sum = sum(factor_values[k] * weights[k] for k in weights)
+
+        # Small penalty for missing evidence types (max 15% penalty, reduced from 25%)
+        # This is gentler so that having literature + KG + equations still gives decent confidence
+        # even without experiment/simulation
+        missing_penalty = min(0.15, len(self.missing_evidence) * 0.04)
+
+        self.confidence = weighted_sum * (1.0 - missing_penalty)
         self.confidence = min(1.0, max(0.0, self.confidence))
+
+        # Store breakdown for transparency
+        self.factor_breakdown = {
+            k: round(v * weights[k], 4) for k, v in factor_values.items()
+        }
+        self.factor_breakdown["_total_weighted"] = round(weighted_sum, 4)
+        self.factor_breakdown["_missing_penalty"] = round(missing_penalty, 4)
+        self.factor_breakdown["_final_confidence"] = round(self.confidence, 4)
 
     def set_novelty(self, conflict_ratio: float):
         """
@@ -170,7 +249,11 @@ class EvidenceScore:
             "next_action": self.next_action,
             "historical_accuracy": round(self.historical_accuracy, 4),
             "novelty_score": round(self.novelty_score, 4),
-            "falsifiability_score": round(self.falsifiability_score, 4)
+            "falsifiability_score": round(self.falsifiability_score, 4),
+            "kg_support_score": round(self.kg_support_score, 4),
+            "equation_validation_score": round(self.equation_validation_score, 4),
+            "simulation_success_score": round(self.simulation_success_score, 4),
+            "factor_breakdown": self.factor_breakdown
         }
 
     def get_verdict(self) -> str:
@@ -216,6 +299,10 @@ class EvidenceDatabase:
                         score.historical_accuracy = score_dict.get("historical_accuracy", 0.0)
                         score.novelty_score = score_dict.get("novelty_score", 0.0)
                         score.falsifiability_score = score_dict.get("falsifiability_score", 0.0)
+                        score.kg_support_score = score_dict.get("kg_support_score", 0.0)
+                        score.equation_validation_score = score_dict.get("equation_validation_score", 0.0)
+                        score.simulation_success_score = score_dict.get("simulation_success_score", 0.0)
+                        score.factor_breakdown = score_dict.get("factor_breakdown", {})
                         # Restore evidence entries
                         for etype, entries in score_dict.get("evidence_sources", {}).items():
                             for e in entries:
@@ -483,17 +570,164 @@ def _mine_knowledge_base_for_evidence(claim: str) -> List[EvidenceEntry]:
     return entries[:5]
 
 
+# =========================================================
+# CROSS-PHASE DATA LOADING (DOSCAN, Equations, Simulation)
+# =========================================================
+
+def _load_doscan_kg_support(claim: str) -> float:
+    """
+    Load knowledge graph support score from DOSCAN breakthroughs.
+    Checks if the claim's concepts appear in DOSCAN insights with high composite scores.
+    Returns 0.0-1.0.
+    """
+    doscan_path = "doscan_breakthroughs.json"
+    if not os.path.exists(doscan_path):
+        return 0.0
+
+    try:
+        with open(doscan_path, "r", encoding="utf-8") as f:
+            breakthroughs = json.load(f)
+    except Exception:
+        return 0.0
+
+    if not isinstance(breakthroughs, list):
+        return 0.0
+
+    claim_words = set(_tokenize(claim))
+    if not claim_words:
+        return 0.0
+
+    max_score = 0.0
+    match_count = 0
+
+    for entry in breakthroughs:
+        insights = entry.get("scientific_research_insights", [])
+        for insight in insights:
+            insight_text = insight.get("insight_title", "") + " " + \
+                           insight.get("research_note", {}).get("what_was_discovered", "")
+            insight_words = set(_tokenize(insight_text))
+            overlap = len(claim_words & insight_words)
+            if overlap >= 2:
+                composite = insight.get("composite_score", 0.0)
+                # Normalize: composite scores are typically 0.4-0.9
+                normalized = min(1.0, composite / 0.8)
+                max_score = max(max_score, normalized)
+                match_count += 1
+
+    # If multiple insights match, boost the score
+    if match_count >= 3:
+        max_score = min(1.0, max_score + 0.1)
+    elif match_count >= 1:
+        max_score = min(1.0, max_score + 0.05)
+
+    return max_score
+
+
+def _load_equation_validation_score(claim: str) -> float:
+    """
+    Load equation validation score from derived_equations.json.
+    Checks if validated equations are associated with this claim's hypothesis.
+    Returns 0.0-1.0.
+    """
+    eq_path = "derived_equations.json"
+    if not os.path.exists(eq_path):
+        return 0.0
+
+    try:
+        with open(eq_path, "r", encoding="utf-8") as f:
+            eq_data = json.load(f)
+    except Exception:
+        return 0.0
+
+    validated = eq_data.get("validated_equations", [])
+    rejected = eq_data.get("rejected_ideas", [])
+
+    if not validated and not rejected:
+        return 0.0
+
+    claim_words = set(_tokenize(claim))
+    if not claim_words:
+        return 0.0
+
+    # Check how many validated equations relate to this claim
+    relevant_validated = 0
+    for eq in validated:
+        hyp = eq.get("hypothesis", "")
+        hyp_words = set(_tokenize(hyp))
+        overlap = len(claim_words & hyp_words)
+        if overlap >= 2:
+            relevant_validated += 1
+
+    # Check rejected equations for this claim
+    relevant_rejected = 0
+    for eq in rejected:
+        hyp = eq.get("hypothesis", "")
+        hyp_words = set(_tokenize(hyp))
+        overlap = len(claim_words & hyp_words)
+        if overlap >= 2:
+            relevant_rejected += 1
+
+    total = relevant_validated + relevant_rejected
+    if total == 0:
+        return 0.0
+
+    # Score = ratio of validated to total, with bonus for absolute count
+    validation_ratio = relevant_validated / total
+    count_bonus = min(0.2, relevant_validated * 0.05)
+
+    return min(1.0, validation_ratio * 0.8 + count_bonus)
+
+
+def _load_simulation_success_score(claim: str) -> float:
+    """
+    Load simulation success score from comparison_report.json.
+    If the simulation showed AARL is better, the claim gets support.
+    Returns 0.0-1.0.
+    """
+    # Try multiple possible paths
+    for report_path in ["Research/comparison_report.json",
+                        os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Research", "comparison_report.json")]:
+        if os.path.exists(report_path):
+            try:
+                with open(report_path, "r", encoding="utf-8") as f:
+                    report = json.load(f)
+            except Exception:
+                continue
+
+            success = report.get("success", False)
+            overall_better = report.get("overall_better", False)
+            metrics_improved = report.get("metrics_improved", 0)
+            metrics_total = report.get("metrics_total", 0)
+            avg_improvement = report.get("average_improvement_pct", 0)
+
+            if not success:
+                return 0.1  # Simulation ran but didn't succeed
+
+            if overall_better and metrics_total > 0:
+                # Score based on fraction of metrics improved
+                fraction = metrics_improved / metrics_total
+                # Bonus for large average improvement
+                improvement_bonus = min(0.2, max(0, avg_improvement) / 100)
+                return min(1.0, fraction * 0.8 + improvement_bonus)
+            else:
+                return 0.3  # Simulation ran but AARL wasn't clearly better
+
+    return 0.0  # No simulation report found
+
+
 def run_evidence_engine(claims: List[str], 
                         doscan_scores: Optional[List[Dict[str, float]]] = None) -> Dict[str, Any]:
     """
-    Main entry point for the Evidence Engine.
+    Main entry point for the Evidence Engine with MULTI-FACTOR confidence.
     
     For each claim:
     1. Mines the knowledge base for relevant literature evidence
-    2. Loads any existing evidence from the database
-    3. Computes weighted confidence across 4 evidence types
-    4. Identifies missing evidence gaps
-    5. Recommends next action
+    2. Loads DOSCAN knowledge graph support (Phase 3)
+    3. Loads equation validation scores (Phase 8)
+    4. Loads simulation success scores (Phase 9)
+    5. Computes multi-factor weighted confidence
+    6. Identifies missing evidence gaps
+    7. Recommends next action
     
     Args:
         claims: List of scientific claims to score
@@ -503,11 +737,14 @@ def run_evidence_engine(claims: List[str],
         Dict with evidence results per claim
     """
     print("\n" + "="*80)
-    print("📊 EVIDENCE SCORING ENGINE — Mining Knowledge Base + Structured Tracking")
+    print("📊 EVIDENCE SCORING ENGINE — Multi-Factor Weighted Confidence")
     print("="*80)
     
     db = EvidenceDatabase()
     results = {}
+    
+    # Pre-load cross-phase data once
+    print("   [Cross-Phase] Loading DOSCAN, Equation, and Simulation data...")
     
     for i, claim in enumerate(claims):
         score = db.get_or_create(claim)
@@ -519,6 +756,38 @@ def run_evidence_engine(claims: List[str],
                 score.add_evidence(entry)
             if kb_entries:
                 print(f"   [KB Mining] Found {len(kb_entries)} evidence entries for claim {i+1}")
+        
+        # Step 2: Load DOSCAN knowledge graph support
+        kg_score = _load_doscan_kg_support(claim)
+        if kg_score > score.kg_support_score:
+            score.kg_support_score = kg_score
+            if kg_score > 0:
+                print(f"   [DOSCAN] KG support score: {kg_score:.3f} for claim {i+1}")
+        
+        # Step 3: Load equation validation score
+        eq_score = _load_equation_validation_score(claim)
+        if eq_score > score.equation_validation_score:
+            score.equation_validation_score = eq_score
+            if eq_score > 0:
+                print(f"   [Equations] Validation score: {eq_score:.3f} for claim {i+1}")
+        
+        # Step 4: Load simulation success score
+        sim_score = _load_simulation_success_score(claim)
+        if sim_score > score.simulation_success_score:
+            score.simulation_success_score = sim_score
+            if sim_score > 0:
+                print(f"   [Simulation] Success score: {sim_score:.3f} for claim {i+1}")
+        
+        # Step 5: Set novelty based on contradictions
+        if score.contradictions:
+            score.set_novelty(len(score.contradictions) / max(1, len(score.evidence_sources["literature"])))
+        else:
+            score.set_novelty(0.3)  # default moderate novelty
+        
+        # Step 6: Set falsifiability (claims with testable hypotheses are more falsifiable)
+        has_testable = bool(score.evidence_sources["logical_deduction"])
+        num_conditions = len(score.evidence_sources["literature"]) + len(score.evidence_sources["logical_deduction"])
+        score.set_falsifiability(has_testable, num_conditions)
         
         # If old scores provided, migrate them
         if doscan_scores and i < len(doscan_scores):
@@ -550,12 +819,20 @@ def run_evidence_engine(claims: List[str],
             "missing_evidence": score.missing_evidence,
             "next_action": score.next_action,
             "novelty": round(score.novelty_score, 4),
-            "falsifiability": round(score.falsifiability_score, 4)
+            "falsifiability": round(score.falsifiability_score, 4),
+            "kg_support": round(score.kg_support_score, 4),
+            "equation_validation": round(score.equation_validation_score, 4),
+            "simulation_success": round(score.simulation_success_score, 4),
+            "factor_breakdown": score.factor_breakdown
         }
         
         print(f"\n  [{i+1}] Claim: {claim[:100]}...")
         print(f"      Verdict: {verdict}")
-        print(f"      Confidence: {score.confidence:.3f}")
+        print(f"      Confidence: {score.confidence:.1%}")
+        print(f"      Factors: Lit={score.factor_breakdown.get('literature',0):.3f} "
+              f"KG={score.factor_breakdown.get('knowledge_graph',0):.3f} "
+              f"Eq={score.factor_breakdown.get('equation_validation',0):.3f} "
+              f"Sim={score.factor_breakdown.get('simulation',0):.3f}")
         print(f"      Evidence: {', '.join(results[claim]['evidence_types_present']) or 'NONE'}")
         print(f"      Missing: {', '.join(score.missing_evidence) or 'NONE'}")
         print(f"      Next: {score.next_action}")
@@ -574,18 +851,29 @@ def run_evidence_engine(claims: List[str],
     
     db.save()
     
+    avg_conf = round(
+        sum(r["confidence"] for r in results.values()) / len(results), 4
+    ) if results else 0.0
+    
     summary = {
         "total_claims": len(claims),
         "verdicts": {claim: r["verdict"] for claim, r in results.items()},
-        "average_confidence": round(
-            sum(r["confidence"] for r in results.values()) / len(results), 4
-        ) if results else 0.0,
+        "average_confidence": avg_conf,
         "calibrated_threshold": round(threshold, 4),
         "action_items": [r["next_action"] for r in results.values()],
-        "total_missing_evidence": sum(len(r["missing_evidence"]) for r in results.values())
+        "total_missing_evidence": sum(len(r["missing_evidence"]) for r in results.values()),
+        "factor_weights": {
+            "literature": 0.20,
+            "knowledge_graph": 0.20,
+            "equation_validation": 0.15,
+            "simulation": 0.20,
+            "experimental": 0.10,
+            "novelty": 0.10,
+            "falsifiability": 0.05,
+        }
     }
     
-    print(f"\n📋 Summary: {summary['average_confidence']:.2f} avg confidence, {summary['total_missing_evidence']} gaps identified")
+    print(f"\n📋 Summary: {avg_conf:.1%} avg confidence, {summary['total_missing_evidence']} gaps identified")
     print("="*80)
     
     return summary
