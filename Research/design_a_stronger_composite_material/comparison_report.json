@@ -1,0 +1,126 @@
+{
+    "metadata": {
+        "timestamp": "2026-08-01T17:08:15.432145",
+        "hypothesis": "Using graphene-reinforced polymer increases strength",
+        "problem": "Design a stronger composite material",
+        "simulation_engine": "domain_aware_materials_v1",
+        "domain": "materials",
+        "domain_description": "Materials Science \u2014 mechanical, thermal, structural properties",
+        "simulator": "general_simulator.py"
+    },
+    "extracted_hypothesis_params": {
+        "tensile_strength_mpa": 3.432
+    },
+    "metrics": {
+        "tensile_strength_mpa": {
+            "baseline_value": 250.0,
+            "hypothesis_value": 858.0,
+            "absolute_change": 608.0,
+            "percentage_change": 243.2,
+            "improvement_pct": 243.2,
+            "is_improvement": true,
+            "direction": "higher_better",
+            "unit": "MPa",
+            "description": "Ultimate tensile strength"
+        }
+    },
+    "summary": {
+        "metrics_improved": 1,
+        "metrics_total": 1,
+        "average_improvement_pct": 243.2,
+        "overall_better": true,
+        "verdict": "HYPOTHESIS IMPROVES BASELINE"
+    },
+    "baseline_summary": {
+        "tensile_strength_mpa": 250.0,
+        "elastic_modulus_gpa": 70.0,
+        "thermal_conductivity_w_mk": 45.0,
+        "hardness_hv": 120.0,
+        "fracture_toughness_mpa_m05": 25.0,
+        "corrosion_rate_mm_yr": 0.5,
+        "density_g_cm3": 2.7,
+        "applied_modifications": {},
+        "simulation_type": "baseline"
+    },
+    "hypothesis_summary": {
+        "tensile_strength_mpa": 858.0,
+        "elastic_modulus_gpa": 70.0,
+        "thermal_conductivity_w_mk": 45.0,
+        "hardness_hv": 120.0,
+        "fracture_toughness_mpa_m05": 25.0,
+        "corrosion_rate_mm_yr": 0.5,
+        "density_g_cm3": 2.7,
+        "applied_modifications": {
+            "tensile_strength_mpa": 3.432
+        },
+        "simulation_type": "hypothesis_driven"
+    },
+    "parameter_changes": [
+        {
+            "parameter_name": "tensile_strength_mpa",
+            "modification_type": "multiply",
+            "modification_factor": 3.432,
+            "hypothesis_keyword_matched": "tensile_strength_mpa",
+            "selection_reason": "Domain-specific parameter identified from materials hypothesis analysis",
+            "source": "Domain-aware hypothesis analysis (materials)",
+            "paper_count": 0,
+            "confidence": 0.6
+        }
+    ],
+    "simulation_results": {
+        "metadata": {
+            "timestamp": "2026-08-01T17:08:15.432168",
+            "simulation_engine": "domain_aware_materials_v1",
+            "domain": "materials",
+            "hypothesis": "Using graphene-reinforced polymer increases strength"
+        },
+        "baseline_model": {
+            "simulation_type": "baseline",
+            "parameter_modifications": {},
+            "results": {
+                "tensile_strength_mpa": 250.0,
+                "elastic_modulus_gpa": 70.0,
+                "thermal_conductivity_w_mk": 45.0,
+                "hardness_hv": 120.0,
+                "fracture_toughness_mpa_m05": 25.0,
+                "corrosion_rate_mm_yr": 0.5,
+                "density_g_cm3": 2.7,
+                "applied_modifications": {},
+                "simulation_type": "baseline"
+            }
+        },
+        "hypothesis_model": {
+            "simulation_type": "hypothesis-driven",
+            "parameter_modifications": {
+                "tensile_strength_mpa": 3.432
+            },
+            "results": {
+                "tensile_strength_mpa": 858.0,
+                "elastic_modulus_gpa": 70.0,
+                "thermal_conductivity_w_mk": 45.0,
+                "hardness_hv": 120.0,
+                "fracture_toughness_mpa_m05": 25.0,
+                "corrosion_rate_mm_yr": 0.5,
+                "density_g_cm3": 2.7,
+                "applied_modifications": {
+                    "tensile_strength_mpa": 3.432
+                },
+                "simulation_type": "hypothesis_driven"
+            }
+        },
+        "verification": {
+            "same_engine": true,
+            "same_domain": true,
+            "only_difference_is_hypothesis_params": true,
+            "reproducible": true,
+            "files_generated": [
+                "comparison_report.json",
+                "parameter_changes.json"
+            ]
+        }
+    },
+    "files_generated": [
+        "comparison_report.json",
+        "parameter_changes.json"
+    ]
+}

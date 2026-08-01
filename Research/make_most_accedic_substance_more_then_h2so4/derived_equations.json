@@ -1,0 +1,65 @@
+{
+    "total_validated": 0,
+    "total_rejected": 6,
+    "validated_equations": [],
+    "rejected_ideas": [
+        {
+            "hypothesis": "Core problem:     make most accedic substance more then H2SO4",
+            "equation": "a = alpha * k + beta",
+            "reason": "The equation does not directly relate to the properties of H2SO4 or the accedic substance",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "Core problem:     make most accedic substance more then H2SO4",
+            "equation": "t = k / (T + c)",
+            "reason": "The equation does not relate to the variables from the problem, and the relationship type is stated as logarithmic but the equation is not logarithmic.",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "Core problem:     make most accedic substance more then H2SO4",
+            "equation": "p = k * exp(T)",
+            "reason": "The equation does not relate to the variables of the problem (accedic substance, H2SO4) and the relationship type is stated as logarithmic but the equation is exponential",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "Core problem:     make most accedic substance more then H2SO4",
+            "equation": "a = k * (k)^2",
+            "reason": "The equation does not relate to the variables of the problem (accedic substance, H2SO4) and lacks physical context",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "Core problem:     make most accedic substance more then H2SO4",
+            "equation": "p = k * (a)^n",
+            "reason": "Lacks relevant variables and context for acid strength comparison",
+            "filter": "domain_validation"
+        },
+        {
+            "hypothesis": "Core problem:     make most accedic substance more then H2SO4",
+            "equation": "p = (t_max - t) / (t_max - t_min)",
+            "reason": "The equation does not relate to the hypothesis of making the most accedic substance more than H2SO4",
+            "filter": "domain_validation"
+        }
+    ],
+    "domains_detected": [
+        "chemistry",
+        "physics",
+        "quantum",
+        "materials_science"
+    ],
+    "engines_used": [
+        "quantum",
+        "physics",
+        "chemistry"
+    ],
+    "summary": {
+        "validated_count": 0,
+        "rejected_count": 6,
+        "rejection_breakdown": {
+            "rubbish_filter": 0,
+            "domain_validation": 6,
+            "llm_validation": 0,
+            "llm_unavailable": 0,
+            "parser_error": 0
+        }
+    }
+}

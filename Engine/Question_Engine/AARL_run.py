@@ -28,8 +28,22 @@ if engine_path not in sys.path:
 # ==========================================
 # CONFIGURATION
 # ==========================================
-GROQ_API_KEY = "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"
-os.environ["GROQ_API_KEY"] = GROQ_API_KEY
+# Read the Groq API key from the environment first, then fall back to
+# prompting the user interactively. A placeholder is used as the final
+# fallback so the error is clear and actionable instead of a 401 crash.
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "").strip()
+if not GROQ_API_KEY:
+    try:
+        GROQ_API_KEY = input("\nEnter your Groq API key (or press Enter to use Ollama local fallback): ").strip()
+        if GROQ_API_KEY:
+            os.environ["GROQ_API_KEY"] = GROQ_API_KEY
+        else:
+            print("[AARL] No API key provided — pipeline will use deterministic fallbacks.")
+    except EOFError:
+        # Non-interactive mode (e.g., piped input) — skip prompt and use fallbacks
+        print("[AARL] Non-interactive mode — no API key provided. Using deterministic fallbacks.")
+else:
+    os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
 # ==========================================
 # AARL PIPELINE IMPORTS
@@ -42,6 +56,7 @@ from Hypothesis.Question_back import run_questioning_engine, print_final_solutio
 from Evidence import run_evidence_engine
 from Mathematics import run_mathematics_engine
 from PhysicsMathematics import run_domain_aware_mathematics
+from ResearchOutputGenerator import run_research_output_generator
 from Research.compare import run_research_comparison
 from Research.simulation_engine import run_simulation_comparison
 
@@ -66,6 +81,26 @@ def _count_items(data, key: str) -> int:
         return 1
     return 0
 
+
+def _slugify(text: str, max_len: int = 60) -> str:
+    """Convert a research problem into a safe directory name."""
+    import re
+    slug = re.sub(r'[^a-z0-9]+', '_', text.lower())
+    slug = slug.strip('_')
+    if len(slug) > max_len:
+        slug = slug[:max_len]
+    if not slug:
+        slug = "research_problem"
+    return slug
+
+
+def _get_problem_output_dir(problem: str) -> str:
+    """Get the problem-specific output directory for all research outputs."""
+    problem_slug = _slugify(problem)
+    output_dir = os.path.join(ROOT_DIR, "Research", problem_slug)
+    os.makedirs(output_dir, exist_ok=True)
+    return output_dir
+
 def main():
     aarl_start = time.time()
     
@@ -81,6 +116,10 @@ def main():
     if not user_problem.strip():
         print("Error: Target statement is empty. Terminating.")
         return
+
+    # Create problem-specific output directory for all research outputs
+    problem_output_dir = _get_problem_output_dir(user_problem)
+    print(f"\n📁 Research output directory: {problem_output_dir}")
 
     # Ask user how many deepening cycles to run (0 = no feedback loop)
     deepen_depth_input = input("\nDOSCAN deepening cycles (how many recursive hypothesis feedback rounds? [0-5], default=1): ").strip()
@@ -127,7 +166,7 @@ def main():
     run_doscan_algorithm()
     
     # --- PHASE 4: HYPOTHESIS GENERATION & VERIFICATION ---
-    print("\n>>> PHASE 4: Initializing Lateral Hypothesis Engine...")
+    print("\n>>> PHASE 4: Initializing Lateral Hypothsis Engine...")
     approved_hypotheses = run_hypothesis_engine(user_problem)
     
     # --- PHASE 5: DEEPENING FEEDBACK LOOP (Knowledge Base + DBSCAN + LLM Validation) ---
@@ -198,8 +237,8 @@ def main():
                         print(f"         Cluster {ci}: '{cluster_text[:80]}...'")
                         
                         # Use shared GroqClient with Ollama fallback
-                        from GroqClient import groq_complete_json
-                        result = groq_complete_json(
+                        from GroqClient import llm_complete_json
+                        result = llm_complete_json(
                             system_prompt="You validate if a knowledge cluster deepens a hypothesis. Answer ONLY with JSON: {\"deepens\": true/false, \"reason\": \"brief\", \"refined_hypothesis\": \"improved version if deepens\"}",
                             user_prompt=f"Hypothesis: {hyp}\n\nNew knowledge cluster: {cluster_text}\n\nDoes this knowledge deepen the hypothesis? If yes, produce a refined hypothesis.",
                             temperature=0.1
@@ -252,7 +291,7 @@ def main():
     # Scores each hypothesis with structured evidence tracking
     # Identifies missing evidence types and recommends next actions
     print("\n>>> PHASE 7: Initializing Evidence Scoring Engine...")
-    evidence_summary = run_evidence_engine(fallback_hypotheses)
+    evidence_summary = run_evidence_engine(fallback_hypotheses, research_problem=user_problem)
     
     # --- DOMAIN DETECTION (Before Phase 8 & 9) ---
     # Analyze the research problem and knowledge graph to detect scientific domains
@@ -296,46 +335,58 @@ def main():
             sys.path.insert(0, research_dir)
         if simulators_dir not in sys.path:
             sys.path.insert(0, simulators_dir)
-        
-        # Try domain-specific simulator first, fall back to general comparison
-        if detected_simulator != "general_simulator.py":
+
+        # Determine which simulator files actually exist.
+        # Only use a domain-specific simulator if the actual file exists.
+        # Otherwise fall back to the domain-agnostic generic simulator.
+        # NOTE: We never fall back to the battery-based pipeline for
+        # non-battery problems (this was the source of battery contamination).
+        simulator_file = os.path.join(simulators_dir, detected_simulator)
+        if not os.path.exists(simulator_file):
+            print(f"  ⚠️ Domain-specific simulator '{detected_simulator}' not found.")
+            detected_simulator = "general_simulator.py"
+
+        print(f"  Using simulator: {detected_simulator}")
+        comparison_report = None
+        errors = []
+
+        # Attempt 1: The selected simulator (domain-specific or generic)
+        try:
             sim_name = detected_simulator.replace(".py", "")
-            print(f"  Using domain-specific simulator: {detected_simulator}")
+            sim_module = __import__(sim_name)
+            comparison_report = sim_module.run_simulation(str(best_hypothesis), user_problem)
+            print(f"\n   ✅ Phase 9 complete — {detected_simulator} finished")
+        except Exception as e:
+            errors.append(f"{detected_simulator}: {e}")
+            print(f"   ⚠️ Simulator '{detected_simulator}' failed: {e}")
+
+        # Attempt 2: Generic domain-agnostic simulator (if not already tried)
+        if comparison_report is None and detected_simulator != "general_simulator.py":
+            print(f"   🔄 Falling back to generic domain-agnostic simulator...")
             try:
-                sim_module = __import__(sim_name)
-                comparison_report = sim_module.run_simulation(str(best_hypothesis))
-                print(f"\n   ✅ Phase 9 complete — Domain-specific simulation finished")
+                sim_module = __import__("general_simulator")
+                comparison_report = sim_module.run_simulation(str(best_hypothesis), user_problem)
+                print(f"\n   ✅ Phase 9 complete — generic domain-agnostic simulation finished")
             except Exception as e:
-                print(f"   ⚠️ Domain-specific simulator failed: {e}")
-                print(f"   🔄 Falling back to general comparison pipeline...")
-                from comparison import run_comparison
-                try:
-                    comparison_report = run_comparison(str(best_hypothesis))
-                    print(f"\n   ✅ Phase 9 complete — General comparison pipeline finished")
-                except Exception as e2:
-                    print(f"   ⚠️ General comparison failed: {e2}")
-                    print(f"   🔄 Falling back to original simulation...")
-                    try:
-                        comparison_report = run_simulation_comparison(user_problem, str(best_hypothesis))
-                    except Exception as e3:
-                        print(f"   ⚠️ Physics simulation also failed: {e3}")
-                        print(f"   🔄 Falling back to LLM-powered comparison...")
-                        comparison_report = run_research_comparison(user_problem, str(best_hypothesis))
-        else:
-            print(f"  Using general comparison pipeline (no domain-specific simulator available)")
-            from comparison import run_comparison
+                errors.append(f"general_simulator: {e}")
+                print(f"   ⚠️ Generic simulator failed: {e}")
+
+        # Attempt 3: LLM-powered domain comparison (never battery-specific)
+        if comparison_report is None:
+            print(f"   🔄 Falling back to LLM-powered domain comparison...")
             try:
-                comparison_report = run_comparison(str(best_hypothesis))
-                print(f"\n   ✅ Phase 9 complete — General comparison pipeline finished")
+                comparison_report = run_research_comparison(user_problem, str(best_hypothesis))
+                print(f"\n   ✅ Phase 9 complete — LLM-powered comparison finished")
             except Exception as e:
-                print(f"   ⚠️ General comparison failed: {e}")
-                print(f"   🔄 Falling back to original simulation...")
-                try:
-                    comparison_report = run_simulation_comparison(user_problem, str(best_hypothesis))
-                except Exception as e2:
-                    print(f"   ⚠️ Physics simulation also failed: {e2}")
-                    print(f"   🔄 Falling back to LLM-powered comparison...")
-                    comparison_report = run_research_comparison(user_problem, str(best_hypothesis))
+                errors.append(f"LLM comparison: {e}")
+                print(f"   ⚠️ LLM comparison also failed: {e}")
+
+        if comparison_report is None:
+            print(f"   ❌ Phase 9 failed after all attempts:")
+            for err in errors:
+                print(f"      - {err}")
+            print(f"   The battery-based comparison pipeline is intentionally NOT used")
+            print(f"   for non-battery research problems (battery contamination fix).")
     else:
         print("\n⏸️  >>> PHASE 9 SKIPPED — No verified hypotheses to simulate.")
         print("   The hypothesis engine produced 0 verified hypotheses.")
@@ -397,7 +448,43 @@ def main():
     # Mathematics: count validated equations
     math_validated = len(equations_data.get("validated_equations", [])) if isinstance(equations_data, dict) else 0
     math_rejected = len(equations_data.get("rejected_ideas", [])) if isinstance(equations_data, dict) else 0
-    
+    stats["math_validated"] = math_validated
+    stats["math_rejected"] = math_rejected
+
+    # ---- Copy all output files to problem-specific directory ----
+    print("\n📁 Organizing research outputs into problem-specific directory...")
+    import shutil
+    output_files = [
+        "deep_research_knowledge_base.json",
+        "doscan_breakthroughs.json",
+        "doscan_exploration_weights.json",
+        "verified_hypotheses.json",
+        "final_research_solution.json",
+        "evidence_scoring_db.json",
+        "derived_equations.json",
+    ]
+    for fname in output_files:
+        src = os.path.join(ROOT_DIR, fname)
+        if os.path.exists(src):
+            dst = os.path.join(problem_output_dir, fname)
+            try:
+                shutil.copy2(src, dst)
+                print(f"    ✅ {fname} → {problem_output_dir}")
+            except Exception as e:
+                print(f"    ⚠️ Could not copy {fname}: {e}")
+
+    # Also copy simulation reports if they exist
+    sim_files = ["comparison_report.json", "parameter_changes.json"]
+    for fname in sim_files:
+        src = os.path.join(ROOT_DIR, "Research", fname)
+        if os.path.exists(src):
+            dst = os.path.join(problem_output_dir, fname)
+            try:
+                shutil.copy2(src, dst)
+                print(f"    ✅ {fname} → {problem_output_dir}")
+            except Exception as e:
+                print(f"    ⚠️ Could not copy {fname}: {e}")
+
     # ---- Print professional summary ----
     mins = int(aarl_elapsed // 60)
     secs = int(aarl_elapsed % 60)
@@ -449,6 +536,43 @@ def main():
         print(f"    {exists} {label:20s} → {fname}")
     print("="*80)
     print(f"  🔬 AARL Research Cycle Complete — {runtime_str}")
+    print("="*80)
+
+    # --- PHASE 10: RESEARCH OUTPUT GENERATOR ---
+    # Collects all existing AARL outputs and generates human-readable
+    # text reports in Research/Research_Output/
+    # Does NOT regenerate hypotheses, rerun simulations, or call the LLM.
+    print("\n>>> PHASE 10: Generating Human-Readable Research Output Package...")
+    try:
+        output_dir = run_research_output_generator(
+            root_dir=ROOT_DIR,
+            user_problem=user_problem,
+            runtime_str=runtime_str,
+            stats=stats,
+        )
+        print(f"\n   ✅ Phase 10 complete — Research output package generated")
+        print(f"   📁 Reports saved to: {output_dir}")
+        report_files = [
+            "01_Research_Summary.txt",
+            "02_Final_Design_Report.txt",
+            "03_Design_Architecture.txt",
+            "04_Engineering_Calculations.txt",
+            "05_Materials_and_Technologies.txt",
+            "06_Simulation_Report.txt",
+            "07_Evidence_and_Confidence.txt",
+            "08_Hypotheses_Analysis.txt",
+            "09_Knowledge_Graph_Summary.txt",
+            "10_Limitations_and_Next_Steps.txt",
+        ]
+        for rf in report_files:
+            exists = "✅" if os.path.exists(os.path.join(output_dir, rf)) else "❌"
+            print(f"      {exists} {rf}")
+    except Exception as e:
+        print(f"   ⚠️ Phase 10 failed: {e}")
+        print(f"   📝 JSON outputs remain available for manual report generation.")
+
+    print("\n" + "="*80)
+    print("  🎓 AARL COMPLETE — Research package ready for review")
     print("="*80)
 
 if __name__ == "__main__":

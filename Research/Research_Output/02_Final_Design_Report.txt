@@ -1,0 +1,72 @@
+================================================================================
+  02 — FINAL DESIGN REPORT
+================================================================================
+
+1. SELECTED HYPOTHESIS
+----------------------------------------
+  Classification: Plausible
+  Confidence Score: 6.70/10
+
+2. WHY THIS HYPOTHESIS WAS SELECTED
+----------------------------------------
+  The hypothesis is intriguing as it combines insights from neuromorphic computing and swarm intelligence, both of which have shown promise in specific applications. The idea of mimicking the brain's efficient processing methods is well-founded, given the brain's remarkable ability to perform complex tasks with low power consumption. However, the challenge lies in translating these biological principles into a scalable, manufacturable, and programmable CPU architecture. Current research in neuromorphic chips and swarm robotics provides a foundation, but significant technical hurdles must be overcome, including the development of suitable programming models, efficient communication between cores, and ensuring scalability without sacrificing performance or increasing power consumption.
+
+3. PROPOSED DESIGN
+----------------------------------------
+  A hybrid CPU architecture that integrates a swarm of tiny, insect-inspired, neuromorphic cores with traditional computing elements could offer a balanced approach, leveraging the strengths of both paradigms to achieve high performance and low power consumption.
+
+4. MAIN TECHNOLOGIES
+----------------------------------------
+  • Thermal Management
+  • Hypothesis1
+      Verification through simulation and emulation of CPU architectures
+  • Hypothesis2
+      Experimental validation of ALU and register designs using FPGA prototypes
+  • Hypothesis3
+      Performance and power consumption analysis of different instruction pipelines and caching systems
+  • Hypothesis4
+      Thermal management optimization through experimental testing of various cooling systems
+
+5. MATERIALS
+----------------------------------------
+  • Liquid-Metal Cooled D-Stacked
+
+6. EXPECTED PERFORMANCE
+----------------------------------------
+  Ipc:
+    Baseline:  1.50 IPC
+    Hypothesis: 1.80 IPC (+20.0%)
+  Power Consumption W:
+    Baseline:  65 W
+    Hypothesis: 22.80 W (-64.9%)
+  Pipeline Stalls Per 1000:
+    Baseline:  45 stalls/1k
+    Hypothesis: 27 stalls/1k (-40.0%)
+
+7. ADVANTAGES
+----------------------------------------
+  • The idea of mimicking the brain's efficient processing methods is well-founded, given the brain's remarkable ability to perform complex tasks with low power consumption
+  • Current research in neuromorphic chips and swarm robotics provides a foundation, but significant technical hurdles must be overcome, including the development of suitable programming models, effici...
+
+8. RISKS
+----------------------------------------
+  Primary Weakness: The primary weakness of this hypothesis is the lack of a clear, detailed architecture for how these neuromorphic cores would be designed, interconnected, and programmed to achieve the desired performance and efficiency, which poses significant challenges in scalability, manufacturability, and usability.
+
+  Additional Risk Factors:
+    • Thermal throttling and overheating
+    • Power consumption exceeding design specifications
+    • Instruction pipeline stalls and bottlenecks
+    • Memory management and caching system inefficiencies
+
+9. CONFIDENCE
+----------------------------------------
+  Overall Confidence Score: 6.70/10
+  Classification: Plausible
+  Novelty: 8/10
+  Feasibility: 6/10
+  Evidence: 5/10
+  Consistency: 9/10
+  Testability: 7/10
+  Risk: 6/10
+
+================================================================================

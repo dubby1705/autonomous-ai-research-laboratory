@@ -1,0 +1,15 @@
+{
+    "Dependency": 0.9799999999999999,
+    "Cause": 0.8400000000000001,
+    "Effect": 0.8400000000000001,
+    "Improvement": 2.5,
+    "Limitation": 0.6800000000000002,
+    "Trade-off": 0.8400000000000001,
+    "Extension": 0.8400000000000001,
+    "Generalization": 0.6399999999999993,
+    "Specialization": 0.9799999999999999,
+    "Inspiration": 0.6800000000000002,
+    "Analogy": 0.6800000000000002,
+    "Contradiction": 0.82,
+    "Complementary": 0.92
+}

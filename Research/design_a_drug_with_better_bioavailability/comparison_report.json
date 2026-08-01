@@ -1,0 +1,126 @@
+{
+    "metadata": {
+        "timestamp": "2026-08-01T17:08:15.425160",
+        "hypothesis": "Using nanoparticle delivery improves bioavailability",
+        "problem": "Design a drug with better bioavailability",
+        "simulation_engine": "domain_aware_medicine_v1",
+        "domain": "medicine",
+        "domain_description": "Medicine & Pharmacology \u2014 drug efficacy, bioavailability, toxicity",
+        "simulator": "general_simulator.py"
+    },
+    "extracted_hypothesis_params": {
+        "bioavailability_pct": 1.95
+    },
+    "metrics": {
+        "bioavailability_pct": {
+            "baseline_value": 45.0,
+            "hypothesis_value": 87.75,
+            "absolute_change": 42.75,
+            "percentage_change": 95.0,
+            "improvement_pct": 95.0,
+            "is_improvement": true,
+            "direction": "higher_better",
+            "unit": "%",
+            "description": "Fraction of drug reaching systemic circulation"
+        }
+    },
+    "summary": {
+        "metrics_improved": 1,
+        "metrics_total": 1,
+        "average_improvement_pct": 95.0,
+        "overall_better": true,
+        "verdict": "HYPOTHESIS IMPROVES BASELINE"
+    },
+    "baseline_summary": {
+        "drug_efficacy_pct": 65.0,
+        "bioavailability_pct": 45.0,
+        "toxicity_index": 0.4,
+        "half_life_hours": 6.0,
+        "ic50_nm": 250.0,
+        "selectivity_index": 2.0,
+        "side_effect_severity": 0.5,
+        "applied_modifications": {},
+        "simulation_type": "baseline"
+    },
+    "hypothesis_summary": {
+        "drug_efficacy_pct": 65.0,
+        "bioavailability_pct": 87.75,
+        "toxicity_index": 0.4,
+        "half_life_hours": 6.0,
+        "ic50_nm": 250.0,
+        "selectivity_index": 2.0,
+        "side_effect_severity": 0.5,
+        "applied_modifications": {
+            "bioavailability_pct": 1.95
+        },
+        "simulation_type": "hypothesis_driven"
+    },
+    "parameter_changes": [
+        {
+            "parameter_name": "bioavailability_pct",
+            "modification_type": "multiply",
+            "modification_factor": 1.95,
+            "hypothesis_keyword_matched": "bioavailability_pct",
+            "selection_reason": "Domain-specific parameter identified from medicine hypothesis analysis",
+            "source": "Domain-aware hypothesis analysis (medicine)",
+            "paper_count": 0,
+            "confidence": 0.6
+        }
+    ],
+    "simulation_results": {
+        "metadata": {
+            "timestamp": "2026-08-01T17:08:15.425181",
+            "simulation_engine": "domain_aware_medicine_v1",
+            "domain": "medicine",
+            "hypothesis": "Using nanoparticle delivery improves bioavailability"
+        },
+        "baseline_model": {
+            "simulation_type": "baseline",
+            "parameter_modifications": {},
+            "results": {
+                "drug_efficacy_pct": 65.0,
+                "bioavailability_pct": 45.0,
+                "toxicity_index": 0.4,
+                "half_life_hours": 6.0,
+                "ic50_nm": 250.0,
+                "selectivity_index": 2.0,
+                "side_effect_severity": 0.5,
+                "applied_modifications": {},
+                "simulation_type": "baseline"
+            }
+        },
+        "hypothesis_model": {
+            "simulation_type": "hypothesis-driven",
+            "parameter_modifications": {
+                "bioavailability_pct": 1.95
+            },
+            "results": {
+                "drug_efficacy_pct": 65.0,
+                "bioavailability_pct": 87.75,
+                "toxicity_index": 0.4,
+                "half_life_hours": 6.0,
+                "ic50_nm": 250.0,
+                "selectivity_index": 2.0,
+                "side_effect_severity": 0.5,
+                "applied_modifications": {
+                    "bioavailability_pct": 1.95
+                },
+                "simulation_type": "hypothesis_driven"
+            }
+        },
+        "verification": {
+            "same_engine": true,
+            "same_domain": true,
+            "only_difference_is_hypothesis_params": true,
+            "reproducible": true,
+            "files_generated": [
+                "comparison_report.json",
+                "parameter_changes.json"
+            ]
+        }
+    },
+    "files_generated": [
+        "comparison_report.json",
+        "parameter_changes.json"
+    ]
+}

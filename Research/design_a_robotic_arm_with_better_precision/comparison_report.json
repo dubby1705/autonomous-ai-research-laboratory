@@ -1,0 +1,151 @@
+{
+    "metadata": {
+        "timestamp": "2026-08-01T17:08:15.409909",
+        "hypothesis": "Using high-resolution encoders improves accuracy",
+        "problem": "Design a robotic arm with better precision",
+        "simulation_engine": "domain_aware_robotics_v1",
+        "domain": "robotics",
+        "domain_description": "Robotics \u2014 control, precision, autonomy, manipulation",
+        "simulator": "general_simulator.py"
+    },
+    "extracted_hypothesis_params": {
+        "position_accuracy_mm": 0.9,
+        "response_time_ms": 0.9
+    },
+    "metrics": {
+        "position_accuracy_mm": {
+            "baseline_value": 2.5,
+            "hypothesis_value": 2.25,
+            "absolute_change": -0.25,
+            "percentage_change": -10.0,
+            "improvement_pct": 10.0,
+            "is_improvement": true,
+            "direction": "lower_better",
+            "unit": "mm",
+            "description": "End-effector position accuracy"
+        },
+        "response_time_ms": {
+            "baseline_value": 120.0,
+            "hypothesis_value": 108.0,
+            "absolute_change": -12.0,
+            "percentage_change": -10.0,
+            "improvement_pct": 10.0,
+            "is_improvement": true,
+            "direction": "lower_better",
+            "unit": "ms",
+            "description": "Control loop response time"
+        }
+    },
+    "summary": {
+        "metrics_improved": 2,
+        "metrics_total": 2,
+        "average_improvement_pct": 10.0,
+        "overall_better": true,
+        "verdict": "HYPOTHESIS IMPROVES BASELINE"
+    },
+    "baseline_summary": {
+        "position_accuracy_mm": 2.5,
+        "repeatability_mm": 1.2,
+        "payload_capacity_kg": 5.0,
+        "response_time_ms": 120.0,
+        "energy_efficiency_pct": 72.0,
+        "trajectory_tracking_error_mm": 3.0,
+        "autonomy_level": 0.6,
+        "applied_modifications": {},
+        "simulation_type": "baseline"
+    },
+    "hypothesis_summary": {
+        "position_accuracy_mm": 2.25,
+        "repeatability_mm": 1.2,
+        "payload_capacity_kg": 5.0,
+        "response_time_ms": 108.0,
+        "energy_efficiency_pct": 72.0,
+        "trajectory_tracking_error_mm": 3.0,
+        "autonomy_level": 0.6,
+        "applied_modifications": {
+            "position_accuracy_mm": 0.9,
+            "response_time_ms": 0.9
+        },
+        "simulation_type": "hypothesis_driven"
+    },
+    "parameter_changes": [
+        {
+            "parameter_name": "position_accuracy_mm",
+            "modification_type": "multiply",
+            "modification_factor": 0.9,
+            "hypothesis_keyword_matched": "position_accuracy_mm",
+            "selection_reason": "Domain-specific parameter identified from robotics hypothesis analysis",
+            "source": "Domain-aware hypothesis analysis (robotics)",
+            "paper_count": 0,
+            "confidence": 0.6
+        },
+        {
+            "parameter_name": "response_time_ms",
+            "modification_type": "multiply",
+            "modification_factor": 0.9,
+            "hypothesis_keyword_matched": "response_time_ms",
+            "selection_reason": "Domain-specific parameter identified from robotics hypothesis analysis",
+            "source": "Domain-aware hypothesis analysis (robotics)",
+            "paper_count": 0,
+            "confidence": 0.6
+        }
+    ],
+    "simulation_results": {
+        "metadata": {
+            "timestamp": "2026-08-01T17:08:15.409936",
+            "simulation_engine": "domain_aware_robotics_v1",
+            "domain": "robotics",
+            "hypothesis": "Using high-resolution encoders improves accuracy"
+        },
+        "baseline_model": {
+            "simulation_type": "baseline",
+            "parameter_modifications": {},
+            "results": {
+                "position_accuracy_mm": 2.5,
+                "repeatability_mm": 1.2,
+                "payload_capacity_kg": 5.0,
+                "response_time_ms": 120.0,
+                "energy_efficiency_pct": 72.0,
+                "trajectory_tracking_error_mm": 3.0,
+                "autonomy_level": 0.6,
+                "applied_modifications": {},
+                "simulation_type": "baseline"
+            }
+        },
+        "hypothesis_model": {
+            "simulation_type": "hypothesis-driven",
+            "parameter_modifications": {
+                "position_accuracy_mm": 0.9,
+                "response_time_ms": 0.9
+            },
+            "results": {
+                "position_accuracy_mm": 2.25,
+                "repeatability_mm": 1.2,
+                "payload_capacity_kg": 5.0,
+                "response_time_ms": 108.0,
+                "energy_efficiency_pct": 72.0,
+                "trajectory_tracking_error_mm": 3.0,
+                "autonomy_level": 0.6,
+                "applied_modifications": {
+                    "position_accuracy_mm": 0.9,
+                    "response_time_ms": 0.9
+                },
+                "simulation_type": "hypothesis_driven"
+            }
+        },
+        "verification": {
+            "same_engine": true,
+            "same_domain": true,
+            "only_difference_is_hypothesis_params": true,
+            "reproducible": true,
+            "files_generated": [
+                "comparison_report.json",
+                "parameter_changes.json"
+            ]
+        }
+    },
+    "files_generated": [
+        "comparison_report.json",
+        "parameter_changes.json"
+    ]
+}

@@ -1,0 +1,43 @@
+{
+    "research_problem": "make most accedic substance more then H2SO4",
+    "scores": {
+        "Core problem:     make most accedic substance more then H2SO4": {
+            "claim": "Core problem:     make most accedic substance more then H2SO4",
+            "confidence": 0.0561,
+            "evidence_sources": {
+                "literature": [],
+                "experiment": [],
+                "simulation": [],
+                "logical_deduction": []
+            },
+            "missing_evidence": [
+                "literature",
+                "experiment",
+                "simulation",
+                "logical_deduction"
+            ],
+            "contradictions": [],
+            "next_action": "Run_Experiment",
+            "historical_accuracy": 0.0,
+            "novelty_score": 0.51,
+            "falsifiability_score": 0.0,
+            "kg_support_score": 0.0,
+            "equation_validation_score": 0.0,
+            "simulation_success_score": 0.0,
+            "factor_breakdown": {
+                "literature": 0.0,
+                "knowledge_graph": 0.0,
+                "equation_validation": 0.0,
+                "simulation": 0.0,
+                "experimental": 0.0,
+                "novelty": 0.051,
+                "falsifiability": 0.015,
+                "_total_weighted": 0.066,
+                "_missing_penalty": 0.15,
+                "_final_confidence": 0.0561
+            }
+        }
+    },
+    "accuracy_history": [],
+    "last_updated": "2026-08-01T17:12:06.546192"
+}

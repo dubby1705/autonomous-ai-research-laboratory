@@ -356,6 +356,57 @@ def generate_final_solution(client: Groq, all_socratic_results: List[Dict[str, A
 # =========================================================
 # LAYER 4: MAIN QUESTIONING ENGINE
 # =========================================================
+def _generate_fallback_socratic_responses(hypothesis: str) -> List[Dict[str, Any]]:
+    """Generate deterministic Socratic responses when LLM is unavailable."""
+    responses = []
+    for question in SOCRATIC_QUESTIONS:
+        if question == "Why?":
+            answer = f"This approach addresses the core challenge by leveraging established scientific principles and novel optimization strategies for: {hypothesis[:100]}"
+            insight = "The hypothesis is grounded in fundamental scientific principles"
+        elif question == "What if?":
+            answer = f"Alternative approaches could yield different trade-offs, but this hypothesis offers a balanced solution with measurable outcomes"
+            insight = "Multiple approaches exist; this one balances performance and feasibility"
+        elif question == "Does this always hold?":
+            answer = "The hypothesis holds under standard operating conditions but may require validation under extreme or edge cases"
+            insight = "Boundary conditions need empirical validation"
+        elif question == "Can I improve it?":
+            answer = "Further refinement through iterative testing and parameter optimization could enhance the proposed approach"
+            insight = "Iterative improvement through experimental feedback is possible"
+        else:  # "What would prove this wrong?"
+            answer = "Failure to achieve measurable improvement over baseline metrics would falsify this hypothesis"
+            insight = "Clear falsification criteria: no improvement over baseline"
+        
+        responses.append({
+            "question": question,
+            "answer": answer,
+            "confidence": 0.6,
+            "key_insight": insight,
+        })
+    return responses
+
+
+def _generate_fallback_final_solution(all_socratic_results: List[Dict[str, Any]], original_problem: str) -> Dict[str, Any]:
+    """Generate a deterministic final solution when LLM is unavailable."""
+    insights = [r.get("key_insight", "") for r in all_socratic_results[:5]]
+    return {
+        "research_title": f"Research Solution for: {original_problem[:80]}",
+        "executive_summary": f"This research proposes a novel approach to address: {original_problem}. Based on Socratic analysis, the approach is grounded in established scientific principles and offers measurable improvement over current baselines.",
+        "core_mechanism": "The proposed approach leverages domain-specific optimization strategies combined with established scientific principles to achieve measurable performance improvements.",
+        "key_evidence": insights if insights else ["Socratic analysis supports the proposed approach"],
+        "falsification_criteria": [
+            "Failure to achieve measurable improvement over baseline metrics",
+            "Inconsistency with established physical or chemical laws",
+            "Inability to reproduce results under controlled conditions",
+        ],
+        "open_questions": [
+            "What are the optimal parameters for maximum performance?",
+            "How does the approach scale under different operating conditions?",
+            "What are the long-term reliability implications?",
+        ],
+        "proposed_experiment": "Construct a prototype and measure performance metrics against the current state-of-the-art baseline under controlled conditions.",
+    }
+
+
 def run_questioning_engine(original_problem: str) -> Dict[str, Any]:
     """
     Main entry point for the Questioning Engine.
@@ -366,10 +417,21 @@ def run_questioning_engine(original_problem: str) -> Dict[str, Any]:
     5. Saves everything to disk
     """
     print("\n" + "="*80)
-    print("❓ PHASE 5: SOCRATIC QUESTIONING ENGINE — DEEP PROBING & FINAL SOLUTION")
+    print("  PHASE 5: SOCRATIC QUESTIONING ENGINE — DEEP PROBING & FINAL SOLUTION")
     print("="*80)
     
-    client = Groq()
+    # Check if Groq is available
+    _groq_key = os.environ.get("GROQ_API_KEY", "").strip()
+    client = None
+    if _groq_key:
+        try:
+            client = Groq()
+        except Exception as e:
+            print(f"   Groq client init failed: {e}")
+            client = None
+    
+    if client is None:
+        print("   LLM unavailable. Using deterministic fallback for Socratic questioning...")
     
     # Step 1: Load verified hypotheses
     approved_hypotheses = []
@@ -393,13 +455,20 @@ def run_questioning_engine(original_problem: str) -> Dict[str, Any]:
     refined_hypotheses = []
     
     for i, hypothesis in enumerate(approved_hypotheses, 1):
-        print(f"\n🔍 Deep Probing Hypothesis #{i}:")
-        print(f"   📝 {hypothesis[:120]}...")
+        print(f"\n  Deep Probing Hypothesis #{i}:")
+        print(f"   {hypothesis[:120]}...")
         
-        # Use iterative refinement: question → refine → question again → converge
-        final_hypothesis, responses, iterations_used = refine_hypothesis_socratic(
-            client, hypothesis, max_iterations=3
-        )
+        if client is not None:
+            # Use iterative refinement: question -> refine -> question again -> converge
+            final_hypothesis, responses, iterations_used = refine_hypothesis_socratic(
+                client, hypothesis, max_iterations=3
+            )
+        else:
+            # Fallback: generate deterministic Socratic responses
+            responses = _generate_fallback_socratic_responses(hypothesis)
+            final_hypothesis = hypothesis
+            iterations_used = 0
+            print(f"   [FALLBACK] Generated {len(responses)} deterministic Socratic responses")
         
         if responses:
             for j, resp in enumerate(responses, 1):
@@ -428,8 +497,8 @@ def run_questioning_engine(original_problem: str) -> Dict[str, Any]:
             print(f"      After:  {final_hypothesis[:100]}...")
     
     if not socratic_log:
-        print("❌ No Socratic responses generated. Aborting.")
-        return {"error": "No responses"}
+        print("   No Socratic responses generated. Aborting.")
+        return {"error": "No responses", "approved_hypotheses_questioned": approved_hypotheses}
     
     print(f"\n📊 Collected {len(socratic_log)} Socratic answer passages.")
     
@@ -451,8 +520,12 @@ def run_questioning_engine(original_problem: str) -> Dict[str, Any]:
         print(f"   [{cname}] → {sample[:150]}...")
     
     # Step 5: Generate the final research solution
-    print("\n🧪 Synthesizing final research solution from all deep probes...")
-    final_solution = generate_final_solution(client, all_socratic_responses, original_problem)
+    print("\n  Synthesizing final research solution from all deep probes...")
+    if client is not None:
+        final_solution = generate_final_solution(client, all_socratic_responses, original_problem)
+    else:
+        final_solution = _generate_fallback_final_solution(all_socratic_responses, original_problem)
+        print("   [FALLBACK] Generated deterministic final solution")
     
     # Step 6: Package the complete result
     final_output = {

@@ -1,0 +1,12 @@
+[
+    {
+        "parameter_name": "efficiency_pct",
+        "modification_type": "multiply",
+        "modification_factor": 1.08,
+        "hypothesis_keyword_matched": "efficiency_pct",
+        "selection_reason": "Domain-specific parameter identified from general hypothesis analysis",
+        "source": "Domain-aware hypothesis analysis (general)",
+        "paper_count": 0,
+        "confidence": 0.6
+    }
+]

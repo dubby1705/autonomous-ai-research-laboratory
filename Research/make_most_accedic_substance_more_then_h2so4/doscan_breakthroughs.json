@@ -1,0 +1,2661 @@
+[
+    {
+        "cluster": "Node_3",
+        "phase": "PRIMARY",
+        "r_level": 1,
+        "base_elements": [
+            "H2SO4 is a strong acid with pKa of -3",
+            "H2SO4 as a strong acid"
+        ],
+        "predictions": [
+            "If 'Strong Acid' is constrained dynamically, then 'H2So4' stability will increase by >15%.",
+            "If 'Strong Acid' is constrained dynamically, then 'H2So4' stability will increase by >15%.",
+            "If 'Strong Acid' is constrained dynamically, then 'H2So4' stability will increase by >15%.",
+            "If 'H2So4' is constrained dynamically, then 'Strong Acid' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Generalization' interaction mapping 'Strong Acid' to 'H2So4'.",
+            "Integration of 'Strong Acid' demonstrably stabilizes the variance within 'H2So4'.",
+            "Identified a foundational requirement: 'Strong Acid' execution is strictly bounded by 'H2So4'.",
+            "Found empirical conflict: Theoretical models of 'H2So4' fail under 'Strong Acid' conditions."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[GENERALIZATION] Strong Acid \u2194 H2So4",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Strong Acid' to 'H2So4'.",
+                    "why_it_matters": "Challenges existing models that treat 'Strong Acid' and 'H2So4' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'H2So4' can scale linearly independent of 'Strong Acid'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Strong Acid'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.83,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "H2SO4 is a strong acid with pKa of -3",
+                        "H2SO4 as a strong acid"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Strong Acid' trigger cascade failures in 'H2So4'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Strong Acid' is constrained dynamically, then 'H2So4' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Strong Acid' in a control simulation while applying extreme variance loads to 'H2So4'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'H2So4' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'H2So4' remains unaffected during 'Strong Acid' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Strong Acid' and 'H2So4'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Strong Acid \u2194 H2So4",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Strong Acid' demonstrably stabilizes the variance within 'H2So4'.",
+                    "why_it_matters": "Challenges existing models that treat 'Strong Acid' and 'H2So4' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'H2So4' can scale linearly independent of 'Strong Acid'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Strong Acid'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.83,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "H2SO4 is a strong acid with pKa of -3",
+                        "H2SO4 as a strong acid"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Strong Acid' trigger cascade failures in 'H2So4'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Strong Acid' is constrained dynamically, then 'H2So4' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Strong Acid' in a control simulation while applying extreme variance loads to 'H2So4'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'H2So4' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'H2So4' remains unaffected during 'Strong Acid' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Strong Acid' and 'H2So4'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[DEPENDENCY] Strong Acid \u2194 H2So4",
+                "research_note": {
+                    "what_was_discovered": "Identified a foundational requirement: 'Strong Acid' execution is strictly bounded by 'H2So4'.",
+                    "why_it_matters": "Challenges existing models that treat 'Strong Acid' and 'H2So4' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'H2So4' can scale linearly independent of 'Strong Acid'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Strong Acid'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Dependency",
+                "composite_score": 0.83,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "H2SO4 is a strong acid with pKa of -3",
+                        "H2SO4 as a strong acid"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Strong Acid' trigger cascade failures in 'H2So4'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Strong Acid' is constrained dynamically, then 'H2So4' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Strong Acid' in a control simulation while applying extreme variance loads to 'H2So4'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'H2So4' confirming the dependency."
+                    ],
+                    "failure_conditions": [
+                        "If 'H2So4' remains unaffected during 'Strong Acid' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Strong Acid' and 'H2So4'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CONTRADICTION] H2So4 \u2194 Strong Acid",
+                "research_note": {
+                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'H2So4' fail under 'Strong Acid' conditions.",
+                    "why_it_matters": "Challenges existing models that treat 'H2So4' and 'Strong Acid' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Strong Acid' can scale linearly independent of 'H2So4'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'H2So4'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Contradiction",
+                "composite_score": 0.83,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "H2SO4 is a strong acid with pKa of -3",
+                        "H2SO4 as a strong acid"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'H2So4' trigger cascade failures in 'Strong Acid'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'H2So4' is constrained dynamically, then 'Strong Acid' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'H2So4' in a control simulation while applying extreme variance loads to 'Strong Acid'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Strong Acid' confirming the contradiction."
+                    ],
+                    "failure_conditions": [
+                        "If 'Strong Acid' remains unaffected during 'H2So4' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'H2So4' and 'Strong Acid'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_2",
+        "phase": "PRIMARY",
+        "r_level": 1,
+        "base_elements": [
+            "Bronsted-Lowry theory of acid-base chemistry",
+            "Bronsted-Lowry theory explains acid-base reactions"
+        ],
+        "predictions": [
+            "If 'Bronsted-Lowry Theory Explains Acid-Base Reactions' is constrained dynamically, then 'Bronsted-Lowry Theory' stability will increase by >15%.",
+            "If 'Bronsted-Lowry Theory Explains Acid-Base Reactions' is constrained dynamically, then 'Bronsted-Lowry Theory' stability will increase by >15%.",
+            "If 'Bronsted-Lowry Theory Explains Acid-Base Reactions' is constrained dynamically, then 'Bronsted-Lowry Theory' stability will increase by >15%.",
+            "If 'Bronsted-Lowry Theory' is constrained dynamically, then 'Bronsted-Lowry Theory Explains Acid-Base Reactions' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Observed a critical tension where optimizing 'Bronsted-Lowry Theory Explains Acid-Base Reactions' inversely degrades 'Bronsted-Lowry Theory'.",
+            "Found empirical conflict: Theoretical models of 'Bronsted-Lowry Theory Explains Acid-Base Reactions' fail under 'Bronsted-Lowry Theory' conditions.",
+            "Structural behaviors in 'Bronsted-Lowry Theory Explains Acid-Base Reactions' provide a novel pathway to resolve bottlenecks in 'Bronsted-Lowry Theory'.",
+            "Identified a significant 'Inspiration' interaction mapping 'Bronsted-Lowry Theory' to 'Bronsted-Lowry Theory Explains Acid-Base Reactions'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[TRADE-OFF] Bronsted-Lowry Theory Explains Acid-Base Reactions \u2194 Bronsted-Lowry Theory",
+                "research_note": {
+                    "what_was_discovered": "Observed a critical tension where optimizing 'Bronsted-Lowry Theory Explains Acid-Base Reactions' inversely degrades 'Bronsted-Lowry Theory'.",
+                    "why_it_matters": "Challenges existing models that treat 'Bronsted-Lowry Theory Explains Acid-Base Reactions' and 'Bronsted-Lowry Theory' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Bronsted-Lowry Theory' can scale linearly independent of 'Bronsted-Lowry Theory Explains Acid-Base Reactions'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Bronsted-Lowry Theory Explains Acid-Base Reactions'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Trade-off",
+                "composite_score": 0.52,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Bronsted-Lowry theory explains acid-base reactions"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Bronsted-Lowry Theory Explains Acid-Base Reactions' trigger cascade failures in 'Bronsted-Lowry Theory'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Bronsted-Lowry Theory Explains Acid-Base Reactions' is constrained dynamically, then 'Bronsted-Lowry Theory' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Bronsted-Lowry Theory Explains Acid-Base Reactions' in a control simulation while applying extreme variance loads to 'Bronsted-Lowry Theory'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Bronsted-Lowry Theory' confirming the trade-off."
+                    ],
+                    "failure_conditions": [
+                        "If 'Bronsted-Lowry Theory' remains unaffected during 'Bronsted-Lowry Theory Explains Acid-Base Reactions' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Bronsted-Lowry Theory Explains Acid-Base Reactions' and 'Bronsted-Lowry Theory'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CONTRADICTION] Bronsted-Lowry Theory Explains Acid-Base Reactions \u2194 Bronsted-Lowry Theory",
+                "research_note": {
+                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'Bronsted-Lowry Theory Explains Acid-Base Reactions' fail under 'Bronsted-Lowry Theory' conditions.",
+                    "why_it_matters": "Challenges existing models that treat 'Bronsted-Lowry Theory Explains Acid-Base Reactions' and 'Bronsted-Lowry Theory' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Bronsted-Lowry Theory' can scale linearly independent of 'Bronsted-Lowry Theory Explains Acid-Base Reactions'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Bronsted-Lowry Theory Explains Acid-Base Reactions'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Contradiction",
+                "composite_score": 0.52,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Bronsted-Lowry theory explains acid-base reactions"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Bronsted-Lowry Theory Explains Acid-Base Reactions' trigger cascade failures in 'Bronsted-Lowry Theory'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Bronsted-Lowry Theory Explains Acid-Base Reactions' is constrained dynamically, then 'Bronsted-Lowry Theory' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Bronsted-Lowry Theory Explains Acid-Base Reactions' in a control simulation while applying extreme variance loads to 'Bronsted-Lowry Theory'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Bronsted-Lowry Theory' confirming the contradiction."
+                    ],
+                    "failure_conditions": [
+                        "If 'Bronsted-Lowry Theory' remains unaffected during 'Bronsted-Lowry Theory Explains Acid-Base Reactions' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Bronsted-Lowry Theory Explains Acid-Base Reactions' and 'Bronsted-Lowry Theory'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[ANALOGY] Bronsted-Lowry Theory Explains Acid-Base Reactions \u2194 Bronsted-Lowry Theory",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Bronsted-Lowry Theory Explains Acid-Base Reactions' provide a novel pathway to resolve bottlenecks in 'Bronsted-Lowry Theory'.",
+                    "why_it_matters": "Challenges existing models that treat 'Bronsted-Lowry Theory Explains Acid-Base Reactions' and 'Bronsted-Lowry Theory' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Bronsted-Lowry Theory' can scale linearly independent of 'Bronsted-Lowry Theory Explains Acid-Base Reactions'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Bronsted-Lowry Theory Explains Acid-Base Reactions'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 0.52,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Bronsted-Lowry theory explains acid-base reactions"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Bronsted-Lowry Theory Explains Acid-Base Reactions' trigger cascade failures in 'Bronsted-Lowry Theory'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Bronsted-Lowry Theory Explains Acid-Base Reactions' is constrained dynamically, then 'Bronsted-Lowry Theory' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Bronsted-Lowry Theory Explains Acid-Base Reactions' in a control simulation while applying extreme variance loads to 'Bronsted-Lowry Theory'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Bronsted-Lowry Theory' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Bronsted-Lowry Theory' remains unaffected during 'Bronsted-Lowry Theory Explains Acid-Base Reactions' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Bronsted-Lowry Theory Explains Acid-Base Reactions' and 'Bronsted-Lowry Theory'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[INSPIRATION] Bronsted-Lowry Theory \u2194 Bronsted-Lowry Theory Explains Acid-Base Reactions",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Inspiration' interaction mapping 'Bronsted-Lowry Theory' to 'Bronsted-Lowry Theory Explains Acid-Base Reactions'.",
+                    "why_it_matters": "Challenges existing models that treat 'Bronsted-Lowry Theory' and 'Bronsted-Lowry Theory Explains Acid-Base Reactions' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Bronsted-Lowry Theory Explains Acid-Base Reactions' can scale linearly independent of 'Bronsted-Lowry Theory'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Bronsted-Lowry Theory'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Inspiration",
+                "composite_score": 0.52,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Bronsted-Lowry theory explains acid-base reactions"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Bronsted-Lowry Theory' trigger cascade failures in 'Bronsted-Lowry Theory Explains Acid-Base Reactions'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Bronsted-Lowry Theory' is constrained dynamically, then 'Bronsted-Lowry Theory Explains Acid-Base Reactions' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Bronsted-Lowry Theory' in a control simulation while applying extreme variance loads to 'Bronsted-Lowry Theory Explains Acid-Base Reactions'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Bronsted-Lowry Theory Explains Acid-Base Reactions' confirming the inspiration."
+                    ],
+                    "failure_conditions": [
+                        "If 'Bronsted-Lowry Theory Explains Acid-Base Reactions' remains unaffected during 'Bronsted-Lowry Theory' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Bronsted-Lowry Theory' and 'Bronsted-Lowry Theory Explains Acid-Base Reactions'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_4",
+        "phase": "PRIMARY",
+        "r_level": 1,
+        "base_elements": [
+            "inaccurate measurement of acidity",
+            "What are the limitations of current acidity measurement methods"
+        ],
+        "predictions": [
+            "If 'Inaccurate Measurement' is constrained dynamically, then 'Acidity' stability will increase by >15%.",
+            "If 'Inaccurate Measurement' is constrained dynamically, then 'Acidity' stability will increase by >15%.",
+            "If 'Inaccurate Measurement' is constrained dynamically, then 'Acidity' stability will increase by >15%.",
+            "If 'Acidity' is constrained dynamically, then 'Inaccurate Measurement' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Extension' interaction mapping 'Inaccurate Measurement' to 'Acidity'.",
+            "Integration of 'Inaccurate Measurement' demonstrably stabilizes the variance within 'Acidity'.",
+            "Identified a significant 'Generalization' interaction mapping 'Inaccurate Measurement' to 'Acidity'.",
+            "Found empirical conflict: Theoretical models of 'Acidity' fail under 'Inaccurate Measurement' conditions."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[EXTENSION] Inaccurate Measurement \u2194 Acidity",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Extension' interaction mapping 'Inaccurate Measurement' to 'Acidity'.",
+                    "why_it_matters": "Challenges existing models that treat 'Inaccurate Measurement' and 'Acidity' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Acidity' can scale linearly independent of 'Inaccurate Measurement'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Inaccurate Measurement'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Extension",
+                "composite_score": 0.52,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "inaccurate measurement of acidity"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Inaccurate Measurement' trigger cascade failures in 'Acidity'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Inaccurate Measurement' is constrained dynamically, then 'Acidity' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Inaccurate Measurement' in a control simulation while applying extreme variance loads to 'Acidity'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Acidity' confirming the extension."
+                    ],
+                    "failure_conditions": [
+                        "If 'Acidity' remains unaffected during 'Inaccurate Measurement' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Inaccurate Measurement' and 'Acidity'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Inaccurate Measurement \u2194 Acidity",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Inaccurate Measurement' demonstrably stabilizes the variance within 'Acidity'.",
+                    "why_it_matters": "Challenges existing models that treat 'Inaccurate Measurement' and 'Acidity' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Acidity' can scale linearly independent of 'Inaccurate Measurement'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Inaccurate Measurement'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.52,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "inaccurate measurement of acidity"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Inaccurate Measurement' trigger cascade failures in 'Acidity'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Inaccurate Measurement' is constrained dynamically, then 'Acidity' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Inaccurate Measurement' in a control simulation while applying extreme variance loads to 'Acidity'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Acidity' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Acidity' remains unaffected during 'Inaccurate Measurement' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Inaccurate Measurement' and 'Acidity'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] Inaccurate Measurement \u2194 Acidity",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Inaccurate Measurement' to 'Acidity'.",
+                    "why_it_matters": "Challenges existing models that treat 'Inaccurate Measurement' and 'Acidity' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Acidity' can scale linearly independent of 'Inaccurate Measurement'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Inaccurate Measurement'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.52,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "inaccurate measurement of acidity"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Inaccurate Measurement' trigger cascade failures in 'Acidity'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Inaccurate Measurement' is constrained dynamically, then 'Acidity' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Inaccurate Measurement' in a control simulation while applying extreme variance loads to 'Acidity'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Acidity' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Acidity' remains unaffected during 'Inaccurate Measurement' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Inaccurate Measurement' and 'Acidity'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CONTRADICTION] Acidity \u2194 Inaccurate Measurement",
+                "research_note": {
+                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'Acidity' fail under 'Inaccurate Measurement' conditions.",
+                    "why_it_matters": "Challenges existing models that treat 'Acidity' and 'Inaccurate Measurement' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Inaccurate Measurement' can scale linearly independent of 'Acidity'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Acidity'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Contradiction",
+                "composite_score": 0.52,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "inaccurate measurement of acidity"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Acidity' trigger cascade failures in 'Inaccurate Measurement'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Acidity' is constrained dynamically, then 'Inaccurate Measurement' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Acidity' in a control simulation while applying extreme variance loads to 'Inaccurate Measurement'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Inaccurate Measurement' confirming the contradiction."
+                    ],
+                    "failure_conditions": [
+                        "If 'Inaccurate Measurement' remains unaffected during 'Acidity' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Acidity' and 'Inaccurate Measurement'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "phase": "PRIMARY",
+        "r_level": 1,
+        "base_elements": [
+            "How to design and synthesize new acidic compounds with higher acidity",
+            "inability to synthesize new compounds",
+            "Design and synthesis of acidic substances with higher acidity than H2SO4",
+            "NMR spectra of new compounds"
+        ],
+        "predictions": [
+            "If 'Higher Acidity' is constrained dynamically, then 'Design' stability will increase by >15%.",
+            "If 'Higher Acidity' is constrained dynamically, then 'Design' stability will increase by >15%.",
+            "If 'Higher Acidity' is constrained dynamically, then 'Design' stability will increase by >15%.",
+            "If 'Design' is constrained dynamically, then 'Higher Acidity' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Generalization' interaction mapping 'Higher Acidity' to 'Design'.",
+            "Identified a significant 'Specialization' interaction mapping 'Higher Acidity' to 'Design'.",
+            "Integration of 'Higher Acidity' demonstrably stabilizes the variance within 'Design'.",
+            "Integration of 'Design' demonstrably stabilizes the variance within 'Higher Acidity'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[GENERALIZATION] Higher Acidity \u2194 Design",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Higher Acidity' to 'Design'.",
+                    "why_it_matters": "Challenges existing models that treat 'Higher Acidity' and 'Design' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Design' can scale linearly independent of 'Higher Acidity'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Higher Acidity'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.83,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "How to design and synthesize new acidic compounds with higher acidity",
+                        "Design and synthesis of acidic substances with higher acidity than H2SO4"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Higher Acidity' trigger cascade failures in 'Design'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Higher Acidity' is constrained dynamically, then 'Design' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Higher Acidity' in a control simulation while applying extreme variance loads to 'Design'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Design' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Design' remains unaffected during 'Higher Acidity' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Higher Acidity' and 'Design'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[SPECIALIZATION] Higher Acidity \u2194 Design",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Specialization' interaction mapping 'Higher Acidity' to 'Design'.",
+                    "why_it_matters": "Challenges existing models that treat 'Higher Acidity' and 'Design' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Design' can scale linearly independent of 'Higher Acidity'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Higher Acidity'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Specialization",
+                "composite_score": 0.83,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "How to design and synthesize new acidic compounds with higher acidity",
+                        "Design and synthesis of acidic substances with higher acidity than H2SO4"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Higher Acidity' trigger cascade failures in 'Design'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Higher Acidity' is constrained dynamically, then 'Design' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Higher Acidity' in a control simulation while applying extreme variance loads to 'Design'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Design' confirming the specialization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Design' remains unaffected during 'Higher Acidity' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Higher Acidity' and 'Design'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Higher Acidity \u2194 Design",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Higher Acidity' demonstrably stabilizes the variance within 'Design'.",
+                    "why_it_matters": "Challenges existing models that treat 'Higher Acidity' and 'Design' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Design' can scale linearly independent of 'Higher Acidity'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Higher Acidity'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.83,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "How to design and synthesize new acidic compounds with higher acidity",
+                        "Design and synthesis of acidic substances with higher acidity than H2SO4"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Higher Acidity' trigger cascade failures in 'Design'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Higher Acidity' is constrained dynamically, then 'Design' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Higher Acidity' in a control simulation while applying extreme variance loads to 'Design'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Design' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Design' remains unaffected during 'Higher Acidity' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Higher Acidity' and 'Design'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Design \u2194 Higher Acidity",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Design' demonstrably stabilizes the variance within 'Higher Acidity'.",
+                    "why_it_matters": "Challenges existing models that treat 'Design' and 'Higher Acidity' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Higher Acidity' can scale linearly independent of 'Design'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Design'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.83,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "How to design and synthesize new acidic compounds with higher acidity",
+                        "Design and synthesis of acidic substances with higher acidity than H2SO4"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.8,
+                    "novelty": 0.7,
+                    "confidence": 1.0,
+                    "expected_impact": 0.93
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Design' trigger cascade failures in 'Higher Acidity'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Design' is constrained dynamically, then 'Higher Acidity' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Design' in a control simulation while applying extreme variance loads to 'Higher Acidity'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Higher Acidity' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Higher Acidity' remains unaffected during 'Design' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Design' and 'Higher Acidity'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_2",
+        "phase": "PRIMARY",
+        "r_level": 3,
+        "base_elements": [
+            "What are the structural requirements for an acid to be stronger than H2SO4",
+            "Arrhenius equation relates acid dissociation to pH"
+        ],
+        "predictions": [
+            "If 'Stronger Than H2So4' is constrained dynamically, then 'Structural Requirements' stability will increase by >15%.",
+            "If 'Stronger Than H2So4' is constrained dynamically, then 'Structural Requirements' stability will increase by >15%.",
+            "If 'Stronger Than H2So4' is constrained dynamically, then 'Structural Requirements' stability will increase by >15%.",
+            "If 'Structural Requirements' is constrained dynamically, then 'H2So4' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Found empirical conflict: Theoretical models of 'Stronger Than H2So4' fail under 'Structural Requirements' conditions.",
+            "Structural behaviors in 'Stronger Than H2So4' provide a novel pathway to resolve bottlenecks in 'Structural Requirements'.",
+            "Integration of 'Stronger Than H2So4' demonstrably stabilizes the variance within 'Structural Requirements'.",
+            "Identified a significant 'Specialization' interaction mapping 'Structural Requirements' to 'H2So4'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[CONTRADICTION] Stronger Than H2So4 \u2194 Structural Requirements",
+                "research_note": {
+                    "what_was_discovered": "Found empirical conflict: Theoretical models of 'Stronger Than H2So4' fail under 'Structural Requirements' conditions.",
+                    "why_it_matters": "Challenges existing models that treat 'Stronger Than H2So4' and 'Structural Requirements' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Structural Requirements' can scale linearly independent of 'Stronger Than H2So4'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Stronger Than H2So4'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Contradiction",
+                "composite_score": 0.52,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "What are the structural requirements for an acid to be stronger than H2SO4"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Stronger Than H2So4' trigger cascade failures in 'Structural Requirements'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Stronger Than H2So4' is constrained dynamically, then 'Structural Requirements' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Stronger Than H2So4' in a control simulation while applying extreme variance loads to 'Structural Requirements'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Structural Requirements' confirming the contradiction."
+                    ],
+                    "failure_conditions": [
+                        "If 'Structural Requirements' remains unaffected during 'Stronger Than H2So4' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Stronger Than H2So4' and 'Structural Requirements'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[ANALOGY] Stronger Than H2So4 \u2194 Structural Requirements",
+                "research_note": {
+                    "what_was_discovered": "Structural behaviors in 'Stronger Than H2So4' provide a novel pathway to resolve bottlenecks in 'Structural Requirements'.",
+                    "why_it_matters": "Challenges existing models that treat 'Stronger Than H2So4' and 'Structural Requirements' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Structural Requirements' can scale linearly independent of 'Stronger Than H2So4'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Stronger Than H2So4'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Analogy",
+                "composite_score": 0.52,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "What are the structural requirements for an acid to be stronger than H2SO4"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Stronger Than H2So4' trigger cascade failures in 'Structural Requirements'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Stronger Than H2So4' is constrained dynamically, then 'Structural Requirements' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Stronger Than H2So4' in a control simulation while applying extreme variance loads to 'Structural Requirements'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Structural Requirements' confirming the analogy."
+                    ],
+                    "failure_conditions": [
+                        "If 'Structural Requirements' remains unaffected during 'Stronger Than H2So4' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Stronger Than H2So4' and 'Structural Requirements'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Stronger Than H2So4 \u2194 Structural Requirements",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Stronger Than H2So4' demonstrably stabilizes the variance within 'Structural Requirements'.",
+                    "why_it_matters": "Challenges existing models that treat 'Stronger Than H2So4' and 'Structural Requirements' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Structural Requirements' can scale linearly independent of 'Stronger Than H2So4'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Stronger Than H2So4'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.52,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "What are the structural requirements for an acid to be stronger than H2SO4"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Stronger Than H2So4' trigger cascade failures in 'Structural Requirements'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Stronger Than H2So4' is constrained dynamically, then 'Structural Requirements' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Stronger Than H2So4' in a control simulation while applying extreme variance loads to 'Structural Requirements'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Structural Requirements' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Structural Requirements' remains unaffected during 'Stronger Than H2So4' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Stronger Than H2So4' and 'Structural Requirements'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[SPECIALIZATION] Structural Requirements \u2194 H2So4",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Specialization' interaction mapping 'Structural Requirements' to 'H2So4'.",
+                    "why_it_matters": "Challenges existing models that treat 'Structural Requirements' and 'H2So4' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'H2So4' can scale linearly independent of 'Structural Requirements'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Structural Requirements'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Specialization",
+                "composite_score": 0.52,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "What are the structural requirements for an acid to be stronger than H2SO4"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Structural Requirements' trigger cascade failures in 'H2So4'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Structural Requirements' is constrained dynamically, then 'H2So4' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Structural Requirements' in a control simulation while applying extreme variance loads to 'H2So4'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'H2So4' confirming the specialization."
+                    ],
+                    "failure_conditions": [
+                        "If 'H2So4' remains unaffected during 'Structural Requirements' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Structural Requirements' and 'H2So4'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "phase": "PRIMARY",
+        "r_level": 3,
+        "base_elements": [
+            "expanded_conjugation: UV-Vis spectroscopy",
+            "enhanced_hydrogen_bonding: IR spectroscopy",
+            "increased_electronegativity: NMR spectroscopy"
+        ],
+        "predictions": [
+            "If 'Enhanced_Hydrogen_Bonding' is constrained dynamically, then 'Spectroscopy' stability will increase by >15%.",
+            "If 'Enhanced_Hydrogen_Bonding' is constrained dynamically, then 'Spectroscopy' stability will increase by >15%.",
+            "If 'Enhanced_Hydrogen_Bonding' is constrained dynamically, then 'Spectroscopy' stability will increase by >15%.",
+            "If 'Spectroscopy' is constrained dynamically, then 'Enhanced_Hydrogen_Bonding' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Inspiration' interaction mapping 'Enhanced_Hydrogen_Bonding' to 'Spectroscopy'.",
+            "Identified a significant 'Limitation' interaction mapping 'Enhanced_Hydrogen_Bonding' to 'Spectroscopy'.",
+            "Identified a significant 'Effect' interaction mapping 'Enhanced_Hydrogen_Bonding' to 'Spectroscopy'.",
+            "Identified a significant 'Generalization' interaction mapping 'Spectroscopy' to 'Enhanced_Hydrogen_Bonding'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[INSPIRATION] Enhanced_Hydrogen_Bonding \u2194 Spectroscopy",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Inspiration' interaction mapping 'Enhanced_Hydrogen_Bonding' to 'Spectroscopy'.",
+                    "why_it_matters": "Challenges existing models that treat 'Enhanced_Hydrogen_Bonding' and 'Spectroscopy' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Spectroscopy' can scale linearly independent of 'Enhanced_Hydrogen_Bonding'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Enhanced_Hydrogen_Bonding'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Inspiration",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "enhanced_hydrogen_bonding: IR spectroscopy"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Enhanced_Hydrogen_Bonding' trigger cascade failures in 'Spectroscopy'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Enhanced_Hydrogen_Bonding' is constrained dynamically, then 'Spectroscopy' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Enhanced_Hydrogen_Bonding' in a control simulation while applying extreme variance loads to 'Spectroscopy'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Spectroscopy' confirming the inspiration."
+                    ],
+                    "failure_conditions": [
+                        "If 'Spectroscopy' remains unaffected during 'Enhanced_Hydrogen_Bonding' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Enhanced_Hydrogen_Bonding' and 'Spectroscopy'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[LIMITATION] Enhanced_Hydrogen_Bonding \u2194 Spectroscopy",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Limitation' interaction mapping 'Enhanced_Hydrogen_Bonding' to 'Spectroscopy'.",
+                    "why_it_matters": "Challenges existing models that treat 'Enhanced_Hydrogen_Bonding' and 'Spectroscopy' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Spectroscopy' can scale linearly independent of 'Enhanced_Hydrogen_Bonding'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Enhanced_Hydrogen_Bonding'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Limitation",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "enhanced_hydrogen_bonding: IR spectroscopy"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Enhanced_Hydrogen_Bonding' trigger cascade failures in 'Spectroscopy'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Enhanced_Hydrogen_Bonding' is constrained dynamically, then 'Spectroscopy' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Enhanced_Hydrogen_Bonding' in a control simulation while applying extreme variance loads to 'Spectroscopy'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Spectroscopy' confirming the limitation."
+                    ],
+                    "failure_conditions": [
+                        "If 'Spectroscopy' remains unaffected during 'Enhanced_Hydrogen_Bonding' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Enhanced_Hydrogen_Bonding' and 'Spectroscopy'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[EFFECT] Enhanced_Hydrogen_Bonding \u2194 Spectroscopy",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Effect' interaction mapping 'Enhanced_Hydrogen_Bonding' to 'Spectroscopy'.",
+                    "why_it_matters": "Challenges existing models that treat 'Enhanced_Hydrogen_Bonding' and 'Spectroscopy' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Spectroscopy' can scale linearly independent of 'Enhanced_Hydrogen_Bonding'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Enhanced_Hydrogen_Bonding'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Effect",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "enhanced_hydrogen_bonding: IR spectroscopy"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Enhanced_Hydrogen_Bonding' trigger cascade failures in 'Spectroscopy'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Enhanced_Hydrogen_Bonding' is constrained dynamically, then 'Spectroscopy' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Enhanced_Hydrogen_Bonding' in a control simulation while applying extreme variance loads to 'Spectroscopy'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Spectroscopy' confirming the effect."
+                    ],
+                    "failure_conditions": [
+                        "If 'Spectroscopy' remains unaffected during 'Enhanced_Hydrogen_Bonding' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Enhanced_Hydrogen_Bonding' and 'Spectroscopy'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] Spectroscopy \u2194 Enhanced_Hydrogen_Bonding",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Spectroscopy' to 'Enhanced_Hydrogen_Bonding'.",
+                    "why_it_matters": "Challenges existing models that treat 'Spectroscopy' and 'Enhanced_Hydrogen_Bonding' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Enhanced_Hydrogen_Bonding' can scale linearly independent of 'Spectroscopy'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Spectroscopy'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "enhanced_hydrogen_bonding: IR spectroscopy"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Spectroscopy' trigger cascade failures in 'Enhanced_Hydrogen_Bonding'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Spectroscopy' is constrained dynamically, then 'Enhanced_Hydrogen_Bonding' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Spectroscopy' in a control simulation while applying extreme variance loads to 'Enhanced_Hydrogen_Bonding'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Enhanced_Hydrogen_Bonding' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Enhanced_Hydrogen_Bonding' remains unaffected during 'Spectroscopy' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Spectroscopy' and 'Enhanced_Hydrogen_Bonding'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "phase": "PRIMARY",
+        "r_level": 4,
+        "base_elements": [
+            "X-ray crystal structures of acidic substances",
+            "pKa values of synthesized acids",
+            "limited understanding of acidity-structure relationships",
+            "Hammett acidity function for measuring acidity"
+        ],
+        "predictions": [
+            "If 'X-Ray Crystal Structures' is constrained dynamically, then 'Acidic Substances' stability will increase by >15%.",
+            "If 'X-Ray Crystal Structures' is constrained dynamically, then 'Acidic Substances' stability will increase by >15%.",
+            "If 'X-Ray Crystal Structures' is constrained dynamically, then 'Acidic Substances' stability will increase by >15%.",
+            "If 'Acidic Substances' is constrained dynamically, then 'Synthesis' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Identified a significant 'Specialization' interaction mapping 'X-Ray Crystal Structures' to 'Acidic Substances'.",
+            "Identified a foundational requirement: 'X-Ray Crystal Structures' execution is strictly bounded by 'Acidic Substances'.",
+            "Identified a significant 'Limitation' interaction mapping 'X-Ray Crystal Structures' to 'Acidic Substances'.",
+            "Identified a foundational requirement: 'Acidic Substances' execution is strictly bounded by 'Synthesis'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[SPECIALIZATION] X-Ray Crystal Structures \u2194 Acidic Substances",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Specialization' interaction mapping 'X-Ray Crystal Structures' to 'Acidic Substances'.",
+                    "why_it_matters": "Challenges existing models that treat 'X-Ray Crystal Structures' and 'Acidic Substances' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Acidic Substances' can scale linearly independent of 'X-Ray Crystal Structures'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'X-Ray Crystal Structures'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Specialization",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "X-ray crystal structures of acidic substances"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'X-Ray Crystal Structures' trigger cascade failures in 'Acidic Substances'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'X-Ray Crystal Structures' is constrained dynamically, then 'Acidic Substances' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'X-Ray Crystal Structures' in a control simulation while applying extreme variance loads to 'Acidic Substances'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Acidic Substances' confirming the specialization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Acidic Substances' remains unaffected during 'X-Ray Crystal Structures' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'X-Ray Crystal Structures' and 'Acidic Substances'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[DEPENDENCY] X-Ray Crystal Structures \u2194 Acidic Substances",
+                "research_note": {
+                    "what_was_discovered": "Identified a foundational requirement: 'X-Ray Crystal Structures' execution is strictly bounded by 'Acidic Substances'.",
+                    "why_it_matters": "Challenges existing models that treat 'X-Ray Crystal Structures' and 'Acidic Substances' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Acidic Substances' can scale linearly independent of 'X-Ray Crystal Structures'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'X-Ray Crystal Structures'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Dependency",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "X-ray crystal structures of acidic substances"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'X-Ray Crystal Structures' trigger cascade failures in 'Acidic Substances'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'X-Ray Crystal Structures' is constrained dynamically, then 'Acidic Substances' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'X-Ray Crystal Structures' in a control simulation while applying extreme variance loads to 'Acidic Substances'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Acidic Substances' confirming the dependency."
+                    ],
+                    "failure_conditions": [
+                        "If 'Acidic Substances' remains unaffected during 'X-Ray Crystal Structures' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'X-Ray Crystal Structures' and 'Acidic Substances'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[LIMITATION] X-Ray Crystal Structures \u2194 Acidic Substances",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Limitation' interaction mapping 'X-Ray Crystal Structures' to 'Acidic Substances'.",
+                    "why_it_matters": "Challenges existing models that treat 'X-Ray Crystal Structures' and 'Acidic Substances' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Acidic Substances' can scale linearly independent of 'X-Ray Crystal Structures'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'X-Ray Crystal Structures'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Limitation",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "X-ray crystal structures of acidic substances"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'X-Ray Crystal Structures' trigger cascade failures in 'Acidic Substances'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'X-Ray Crystal Structures' is constrained dynamically, then 'Acidic Substances' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'X-Ray Crystal Structures' in a control simulation while applying extreme variance loads to 'Acidic Substances'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Acidic Substances' confirming the limitation."
+                    ],
+                    "failure_conditions": [
+                        "If 'Acidic Substances' remains unaffected during 'X-Ray Crystal Structures' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'X-Ray Crystal Structures' and 'Acidic Substances'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[DEPENDENCY] Acidic Substances \u2194 Synthesis",
+                "research_note": {
+                    "what_was_discovered": "Identified a foundational requirement: 'Acidic Substances' execution is strictly bounded by 'Synthesis'.",
+                    "why_it_matters": "Challenges existing models that treat 'Acidic Substances' and 'Synthesis' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Synthesis' can scale linearly independent of 'Acidic Substances'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Acidic Substances'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Dependency",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Design and synthesis of acidic substances with higher acidity than H2SO4"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Acidic Substances' trigger cascade failures in 'Synthesis'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Acidic Substances' is constrained dynamically, then 'Synthesis' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Acidic Substances' in a control simulation while applying extreme variance loads to 'Synthesis'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Synthesis' confirming the dependency."
+                    ],
+                    "failure_conditions": [
+                        "If 'Synthesis' remains unaffected during 'Acidic Substances' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Acidic Substances' and 'Synthesis'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "phase": "PRIMARY",
+        "r_level": 2,
+        "base_elements": [
+            "H2SO4 has a high dissociation constant",
+            "H2SO4 as a strong acid",
+            "Arrhenius equation relates acid dissociation to temperature"
+        ],
+        "predictions": [
+            "If 'H2So4' is constrained dynamically, then 'High Dissociation Constant' stability will increase by >15%.",
+            "If 'H2So4' is constrained dynamically, then 'Synthesize Acidic Substances' stability will increase by >15%.",
+            "If 'H2So4' is constrained dynamically, then 'Higher Acidity Than H2So4' stability will increase by >15%.",
+            "If 'Strong Acid' is constrained dynamically, then 'H2So4' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Integration of 'H2So4' demonstrably stabilizes the variance within 'High Dissociation Constant'.",
+            "Identified a significant 'Generalization' interaction mapping 'H2So4' to 'Synthesize Acidic Substances'.",
+            "Identified a significant 'Generalization' interaction mapping 'H2So4' to 'Higher Acidity Than H2So4'.",
+            "Identified a significant 'Cause' interaction mapping 'Strong Acid' to 'H2So4'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[IMPROVEMENT] H2So4 \u2194 High Dissociation Constant",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'H2So4' demonstrably stabilizes the variance within 'High Dissociation Constant'.",
+                    "why_it_matters": "Challenges existing models that treat 'H2So4' and 'High Dissociation Constant' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'High Dissociation Constant' can scale linearly independent of 'H2So4'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'H2So4'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.671,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "H2SO4 has a high dissociation constant"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.77
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'H2So4' trigger cascade failures in 'High Dissociation Constant'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'H2So4' is constrained dynamically, then 'High Dissociation Constant' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'H2So4' in a control simulation while applying extreme variance loads to 'High Dissociation Constant'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'High Dissociation Constant' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'High Dissociation Constant' remains unaffected during 'H2So4' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'H2So4' and 'High Dissociation Constant'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] H2So4 \u2194 Synthesize Acidic Substances",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'H2So4' to 'Synthesize Acidic Substances'.",
+                    "why_it_matters": "Challenges existing models that treat 'H2So4' and 'Synthesize Acidic Substances' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Synthesize Acidic Substances' can scale linearly independent of 'H2So4'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'H2So4'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.593,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Design and synthesize acidic substances with higher acidity than H2SO4"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.69
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'H2So4' trigger cascade failures in 'Synthesize Acidic Substances'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'H2So4' is constrained dynamically, then 'Synthesize Acidic Substances' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'H2So4' in a control simulation while applying extreme variance loads to 'Synthesize Acidic Substances'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Synthesize Acidic Substances' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Synthesize Acidic Substances' remains unaffected during 'H2So4' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'H2So4' and 'Synthesize Acidic Substances'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] H2So4 \u2194 Higher Acidity Than H2So4",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'H2So4' to 'Higher Acidity Than H2So4'.",
+                    "why_it_matters": "Challenges existing models that treat 'H2So4' and 'Higher Acidity Than H2So4' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Higher Acidity Than H2So4' can scale linearly independent of 'H2So4'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'H2So4'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.593,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Design and synthesize acidic substances with higher acidity than H2SO4"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.69
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'H2So4' trigger cascade failures in 'Higher Acidity Than H2So4'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'H2So4' is constrained dynamically, then 'Higher Acidity Than H2So4' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'H2So4' in a control simulation while applying extreme variance loads to 'Higher Acidity Than H2So4'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Higher Acidity Than H2So4' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Higher Acidity Than H2So4' remains unaffected during 'H2So4' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'H2So4' and 'Higher Acidity Than H2So4'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CAUSE] Strong Acid \u2194 H2So4",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Strong Acid' to 'H2So4'.",
+                    "why_it_matters": "Challenges existing models that treat 'Strong Acid' and 'H2So4' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'H2So4' can scale linearly independent of 'Strong Acid'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Strong Acid'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Cause",
+                "composite_score": 0.52,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "H2SO4 as a strong acid"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Strong Acid' trigger cascade failures in 'H2So4'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Strong Acid' is constrained dynamically, then 'H2So4' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Strong Acid' in a control simulation while applying extreme variance loads to 'H2So4'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'H2So4' confirming the cause."
+                    ],
+                    "failure_conditions": [
+                        "If 'H2So4' remains unaffected during 'Strong Acid' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Strong Acid' and 'H2So4'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_2",
+        "phase": "PRIMARY",
+        "r_level": 2,
+        "base_elements": [
+            "X-ray crystal structures of acidic molecules",
+            "Electronegativity of oxygen affects acidity in molecules"
+        ],
+        "predictions": [
+            "If 'Electronegativity' is constrained dynamically, then 'Molecules' stability will increase by >15%.",
+            "If 'Acidic Molecules' is constrained dynamically, then 'Molecules' stability will increase by >15%.",
+            "If 'Oxygen Affects Acidity' is constrained dynamically, then 'Electronegativity' stability will increase by >15%.",
+            "If 'Molecules' is constrained dynamically, then 'Acidic Molecules' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Integration of 'Electronegativity' demonstrably stabilizes the variance within 'Molecules'.",
+            "Identified a significant 'Generalization' interaction mapping 'Acidic Molecules' to 'Molecules'.",
+            "Identified a significant 'Generalization' interaction mapping 'Oxygen Affects Acidity' to 'Electronegativity'.",
+            "Identified a significant 'Generalization' interaction mapping 'Molecules' to 'Acidic Molecules'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[IMPROVEMENT] Electronegativity \u2194 Molecules",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Electronegativity' demonstrably stabilizes the variance within 'Molecules'.",
+                    "why_it_matters": "Challenges existing models that treat 'Electronegativity' and 'Molecules' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Molecules' can scale linearly independent of 'Electronegativity'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Electronegativity'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.671,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Electronegativity of oxygen affects acidity in molecules"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.77
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Electronegativity' trigger cascade failures in 'Molecules'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Electronegativity' is constrained dynamically, then 'Molecules' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Electronegativity' in a control simulation while applying extreme variance loads to 'Molecules'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Molecules' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Molecules' remains unaffected during 'Electronegativity' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Electronegativity' and 'Molecules'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] Acidic Molecules \u2194 Molecules",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Acidic Molecules' to 'Molecules'.",
+                    "why_it_matters": "Challenges existing models that treat 'Acidic Molecules' and 'Molecules' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Molecules' can scale linearly independent of 'Acidic Molecules'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Acidic Molecules'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.593,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "X-ray crystal structures of acidic molecules"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.69
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Acidic Molecules' trigger cascade failures in 'Molecules'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Acidic Molecules' is constrained dynamically, then 'Molecules' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Acidic Molecules' in a control simulation while applying extreme variance loads to 'Molecules'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Molecules' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Molecules' remains unaffected during 'Acidic Molecules' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Acidic Molecules' and 'Molecules'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] Oxygen Affects Acidity \u2194 Electronegativity",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Oxygen Affects Acidity' to 'Electronegativity'.",
+                    "why_it_matters": "Challenges existing models that treat 'Oxygen Affects Acidity' and 'Electronegativity' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Electronegativity' can scale linearly independent of 'Oxygen Affects Acidity'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Oxygen Affects Acidity'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.593,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Electronegativity of oxygen affects acidity in molecules"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.69
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Oxygen Affects Acidity' trigger cascade failures in 'Electronegativity'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Oxygen Affects Acidity' is constrained dynamically, then 'Electronegativity' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Oxygen Affects Acidity' in a control simulation while applying extreme variance loads to 'Electronegativity'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Electronegativity' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Electronegativity' remains unaffected during 'Oxygen Affects Acidity' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Oxygen Affects Acidity' and 'Electronegativity'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] Molecules \u2194 Acidic Molecules",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Molecules' to 'Acidic Molecules'.",
+                    "why_it_matters": "Challenges existing models that treat 'Molecules' and 'Acidic Molecules' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Acidic Molecules' can scale linearly independent of 'Molecules'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Molecules'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.593,
+                "source_cluster": "Node_2",
+                "evidence": {
+                    "supporting_evidence": [
+                        "X-ray crystal structures of acidic molecules"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.69
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Molecules' trigger cascade failures in 'Acidic Molecules'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Molecules' is constrained dynamically, then 'Acidic Molecules' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Molecules' in a control simulation while applying extreme variance loads to 'Acidic Molecules'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Acidic Molecules' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Acidic Molecules' remains unaffected during 'Molecules' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Molecules' and 'Acidic Molecules'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_3",
+        "phase": "PRIMARY",
+        "r_level": 2,
+        "base_elements": [
+            "Design and synthesize acidic substances with higher acidity than H2SO4",
+            "Stability and reactivity of highly acidic substances"
+        ],
+        "predictions": [
+            "If 'Design' is constrained dynamically, then 'Synthesize Acidic Substances' stability will increase by >15%.",
+            "If 'Highly Acidic Substances' is constrained dynamically, then 'Stability' stability will increase by >15%.",
+            "If 'Higher Acidity Than H2So4' is constrained dynamically, then 'Synthesize Acidic Substances' stability will increase by >15%.",
+            "If 'Design' is constrained dynamically, then 'Higher Acidity Than H2So4' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Integration of 'Design' demonstrably stabilizes the variance within 'Synthesize Acidic Substances'.",
+            "Integration of 'Highly Acidic Substances' demonstrably stabilizes the variance within 'Stability'.",
+            "Integration of 'Higher Acidity Than H2So4' demonstrably stabilizes the variance within 'Synthesize Acidic Substances'.",
+            "Identified a significant 'Generalization' interaction mapping 'Design' to 'Higher Acidity Than H2So4'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[IMPROVEMENT] Design \u2194 Synthesize Acidic Substances",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Design' demonstrably stabilizes the variance within 'Synthesize Acidic Substances'.",
+                    "why_it_matters": "Challenges existing models that treat 'Design' and 'Synthesize Acidic Substances' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Synthesize Acidic Substances' can scale linearly independent of 'Design'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Design'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.671,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Design and synthesize acidic substances with higher acidity than H2SO4"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.77
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Design' trigger cascade failures in 'Synthesize Acidic Substances'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Design' is constrained dynamically, then 'Synthesize Acidic Substances' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Design' in a control simulation while applying extreme variance loads to 'Synthesize Acidic Substances'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Synthesize Acidic Substances' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Synthesize Acidic Substances' remains unaffected during 'Design' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Design' and 'Synthesize Acidic Substances'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Highly Acidic Substances \u2194 Stability",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Highly Acidic Substances' demonstrably stabilizes the variance within 'Stability'.",
+                    "why_it_matters": "Challenges existing models that treat 'Highly Acidic Substances' and 'Stability' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Stability' can scale linearly independent of 'Highly Acidic Substances'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Highly Acidic Substances'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.671,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Stability and reactivity of highly acidic substances"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.77
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Highly Acidic Substances' trigger cascade failures in 'Stability'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Highly Acidic Substances' is constrained dynamically, then 'Stability' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Highly Acidic Substances' in a control simulation while applying extreme variance loads to 'Stability'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Stability' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Stability' remains unaffected during 'Highly Acidic Substances' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Highly Acidic Substances' and 'Stability'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Higher Acidity Than H2So4 \u2194 Synthesize Acidic Substances",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Higher Acidity Than H2So4' demonstrably stabilizes the variance within 'Synthesize Acidic Substances'.",
+                    "why_it_matters": "Challenges existing models that treat 'Higher Acidity Than H2So4' and 'Synthesize Acidic Substances' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Synthesize Acidic Substances' can scale linearly independent of 'Higher Acidity Than H2So4'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Higher Acidity Than H2So4'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.671,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Design and synthesize acidic substances with higher acidity than H2SO4"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.77
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Higher Acidity Than H2So4' trigger cascade failures in 'Synthesize Acidic Substances'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Higher Acidity Than H2So4' is constrained dynamically, then 'Synthesize Acidic Substances' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Higher Acidity Than H2So4' in a control simulation while applying extreme variance loads to 'Synthesize Acidic Substances'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Synthesize Acidic Substances' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Synthesize Acidic Substances' remains unaffected during 'Higher Acidity Than H2So4' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Higher Acidity Than H2So4' and 'Synthesize Acidic Substances'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] Design \u2194 Higher Acidity Than H2So4",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Design' to 'Higher Acidity Than H2So4'.",
+                    "why_it_matters": "Challenges existing models that treat 'Design' and 'Higher Acidity Than H2So4' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Higher Acidity Than H2So4' can scale linearly independent of 'Design'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Design'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.593,
+                "source_cluster": "Node_3",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Design and synthesize acidic substances with higher acidity than H2SO4"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.69
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Design' trigger cascade failures in 'Higher Acidity Than H2So4'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Design' is constrained dynamically, then 'Higher Acidity Than H2So4' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Design' in a control simulation while applying extreme variance loads to 'Higher Acidity Than H2So4'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Higher Acidity Than H2So4' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Higher Acidity Than H2So4' remains unaffected during 'Design' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Design' and 'Higher Acidity Than H2So4'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_4",
+        "phase": "PRIMARY",
+        "r_level": 2,
+        "base_elements": [
+            "NMR spectra of candidate compounds",
+            "Unstable or explosive compounds",
+            "extended_conjugation: UV-Vis spectroscopy",
+            "increased_electronegativity: NMR spectroscopy"
+        ],
+        "predictions": [
+            "If 'Explosive Compounds' is constrained dynamically, then 'Unstable' stability will increase by >15%.",
+            "If 'Candidate Compounds' is constrained dynamically, then 'Nmr Spectra' stability will increase by >15%.",
+            "If 'Unstable' is constrained dynamically, then 'Explosive Compounds' stability will increase by >15%.",
+            "If 'Candidate Compounds' is constrained dynamically, then 'Nmr Spectra' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Integration of 'Explosive Compounds' demonstrably stabilizes the variance within 'Unstable'.",
+            "Identified a significant 'Generalization' interaction mapping 'Candidate Compounds' to 'Nmr Spectra'.",
+            "Identified a significant 'Cause' interaction mapping 'Unstable' to 'Explosive Compounds'.",
+            "Identified a significant 'Complementary' interaction mapping 'Candidate Compounds' to 'Nmr Spectra'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[IMPROVEMENT] Explosive Compounds \u2194 Unstable",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Explosive Compounds' demonstrably stabilizes the variance within 'Unstable'.",
+                    "why_it_matters": "Challenges existing models that treat 'Explosive Compounds' and 'Unstable' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Unstable' can scale linearly independent of 'Explosive Compounds'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Explosive Compounds'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.671,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Unstable or explosive compounds"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.77
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Explosive Compounds' trigger cascade failures in 'Unstable'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Explosive Compounds' is constrained dynamically, then 'Unstable' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Explosive Compounds' in a control simulation while applying extreme variance loads to 'Unstable'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Unstable' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Unstable' remains unaffected during 'Explosive Compounds' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Explosive Compounds' and 'Unstable'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] Candidate Compounds \u2194 Nmr Spectra",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Candidate Compounds' to 'Nmr Spectra'.",
+                    "why_it_matters": "Challenges existing models that treat 'Candidate Compounds' and 'Nmr Spectra' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Nmr Spectra' can scale linearly independent of 'Candidate Compounds'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Candidate Compounds'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.593,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "NMR spectra of candidate compounds"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.69
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Candidate Compounds' trigger cascade failures in 'Nmr Spectra'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Candidate Compounds' is constrained dynamically, then 'Nmr Spectra' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Candidate Compounds' in a control simulation while applying extreme variance loads to 'Nmr Spectra'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Nmr Spectra' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Nmr Spectra' remains unaffected during 'Candidate Compounds' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Candidate Compounds' and 'Nmr Spectra'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[CAUSE] Unstable \u2194 Explosive Compounds",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Cause' interaction mapping 'Unstable' to 'Explosive Compounds'.",
+                    "why_it_matters": "Challenges existing models that treat 'Unstable' and 'Explosive Compounds' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Explosive Compounds' can scale linearly independent of 'Unstable'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Unstable'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Cause",
+                "composite_score": 0.52,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Unstable or explosive compounds"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Unstable' trigger cascade failures in 'Explosive Compounds'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Unstable' is constrained dynamically, then 'Explosive Compounds' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Unstable' in a control simulation while applying extreme variance loads to 'Explosive Compounds'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Explosive Compounds' confirming the cause."
+                    ],
+                    "failure_conditions": [
+                        "If 'Explosive Compounds' remains unaffected during 'Unstable' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Unstable' and 'Explosive Compounds'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[COMPLEMENTARY] Candidate Compounds \u2194 Nmr Spectra",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Complementary' interaction mapping 'Candidate Compounds' to 'Nmr Spectra'.",
+                    "why_it_matters": "Challenges existing models that treat 'Candidate Compounds' and 'Nmr Spectra' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Nmr Spectra' can scale linearly independent of 'Candidate Compounds'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Candidate Compounds'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Complementary",
+                "composite_score": 0.52,
+                "source_cluster": "Node_4",
+                "evidence": {
+                    "supporting_evidence": [
+                        "NMR spectra of candidate compounds"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.62
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Candidate Compounds' trigger cascade failures in 'Nmr Spectra'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Candidate Compounds' is constrained dynamically, then 'Nmr Spectra' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Candidate Compounds' in a control simulation while applying extreme variance loads to 'Nmr Spectra'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Nmr Spectra' confirming the complementary."
+                    ],
+                    "failure_conditions": [
+                        "If 'Nmr Spectra' remains unaffected during 'Candidate Compounds' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Candidate Compounds' and 'Nmr Spectra'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "phase": "PRIMARY",
+        "r_level": 3,
+        "base_elements": [
+            "Hammett acidity function for measuring acidity",
+            "Inability to accurately measure acidity",
+            "Role of molecular structure in enhancing acidity"
+        ],
+        "predictions": [
+            "If 'Inability' is constrained dynamically, then 'Accurately Measure Acidity' stability will increase by >15%.",
+            "If 'Measuring Acidity' is constrained dynamically, then 'Hammett Acidity Function' stability will increase by >15%.",
+            "If 'Accurately Measure Acidity' is constrained dynamically, then 'Inability' stability will increase by >15%.",
+            "If 'Hammett Acidity Function' is constrained dynamically, then 'Measuring Acidity' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Integration of 'Inability' demonstrably stabilizes the variance within 'Accurately Measure Acidity'.",
+            "Integration of 'Measuring Acidity' demonstrably stabilizes the variance within 'Hammett Acidity Function'.",
+            "Integration of 'Accurately Measure Acidity' demonstrably stabilizes the variance within 'Inability'.",
+            "Integration of 'Hammett Acidity Function' demonstrably stabilizes the variance within 'Measuring Acidity'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[IMPROVEMENT] Inability \u2194 Accurately Measure Acidity",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Inability' demonstrably stabilizes the variance within 'Accurately Measure Acidity'.",
+                    "why_it_matters": "Challenges existing models that treat 'Inability' and 'Accurately Measure Acidity' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Accurately Measure Acidity' can scale linearly independent of 'Inability'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Inability'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.671,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Inability to accurately measure acidity"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.77
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Inability' trigger cascade failures in 'Accurately Measure Acidity'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Inability' is constrained dynamically, then 'Accurately Measure Acidity' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Inability' in a control simulation while applying extreme variance loads to 'Accurately Measure Acidity'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Accurately Measure Acidity' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Accurately Measure Acidity' remains unaffected during 'Inability' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Inability' and 'Accurately Measure Acidity'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Measuring Acidity \u2194 Hammett Acidity Function",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Measuring Acidity' demonstrably stabilizes the variance within 'Hammett Acidity Function'.",
+                    "why_it_matters": "Challenges existing models that treat 'Measuring Acidity' and 'Hammett Acidity Function' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Hammett Acidity Function' can scale linearly independent of 'Measuring Acidity'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Measuring Acidity'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.671,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Hammett acidity function for measuring acidity"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.77
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Measuring Acidity' trigger cascade failures in 'Hammett Acidity Function'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Measuring Acidity' is constrained dynamically, then 'Hammett Acidity Function' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Measuring Acidity' in a control simulation while applying extreme variance loads to 'Hammett Acidity Function'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Hammett Acidity Function' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Hammett Acidity Function' remains unaffected during 'Measuring Acidity' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Measuring Acidity' and 'Hammett Acidity Function'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Accurately Measure Acidity \u2194 Inability",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Accurately Measure Acidity' demonstrably stabilizes the variance within 'Inability'.",
+                    "why_it_matters": "Challenges existing models that treat 'Accurately Measure Acidity' and 'Inability' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Inability' can scale linearly independent of 'Accurately Measure Acidity'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Accurately Measure Acidity'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.671,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Inability to accurately measure acidity"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.77
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Accurately Measure Acidity' trigger cascade failures in 'Inability'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Accurately Measure Acidity' is constrained dynamically, then 'Inability' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Accurately Measure Acidity' in a control simulation while applying extreme variance loads to 'Inability'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Inability' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Inability' remains unaffected during 'Accurately Measure Acidity' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Accurately Measure Acidity' and 'Inability'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Hammett Acidity Function \u2194 Measuring Acidity",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Hammett Acidity Function' demonstrably stabilizes the variance within 'Measuring Acidity'.",
+                    "why_it_matters": "Challenges existing models that treat 'Hammett Acidity Function' and 'Measuring Acidity' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Measuring Acidity' can scale linearly independent of 'Hammett Acidity Function'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Hammett Acidity Function'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.671,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Hammett acidity function for measuring acidity"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.77
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Hammett Acidity Function' trigger cascade failures in 'Measuring Acidity'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Hammett Acidity Function' is constrained dynamically, then 'Measuring Acidity' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Hammett Acidity Function' in a control simulation while applying extreme variance loads to 'Measuring Acidity'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Measuring Acidity' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Measuring Acidity' remains unaffected during 'Hammett Acidity Function' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Hammett Acidity Function' and 'Measuring Acidity'."
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "cluster": "Node_1",
+        "phase": "PRIMARY",
+        "r_level": 4,
+        "base_elements": [
+            "Toxicity and handling risks",
+            "Bronsted-Lowry theory of acid-base chemistry",
+            "Mechanisms of superacid formation",
+            "fluorination: mass spectrometry",
+            "pKa values of synthesized acids"
+        ],
+        "predictions": [
+            "If 'Bronsted-Lowry Theory' is constrained dynamically, then 'Acid-Base Chemistry' stability will increase by >15%.",
+            "If 'Mechanisms' is constrained dynamically, then 'Superacid Formation' stability will increase by >15%.",
+            "If 'Pka Values' is constrained dynamically, then 'Synthesized Acids' stability will increase by >15%.",
+            "If 'Bronsted-Lowry Theory' is constrained dynamically, then 'Acid-Base Chemistry' stability will increase by >15%."
+        ],
+        "random_thoughts": [
+            "Integration of 'Bronsted-Lowry Theory' demonstrably stabilizes the variance within 'Acid-Base Chemistry'.",
+            "Integration of 'Mechanisms' demonstrably stabilizes the variance within 'Superacid Formation'.",
+            "Integration of 'Pka Values' demonstrably stabilizes the variance within 'Synthesized Acids'.",
+            "Identified a significant 'Generalization' interaction mapping 'Bronsted-Lowry Theory' to 'Acid-Base Chemistry'."
+        ],
+        "scientific_research_insights": [
+            {
+                "insight_title": "[IMPROVEMENT] Bronsted-Lowry Theory \u2194 Acid-Base Chemistry",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Bronsted-Lowry Theory' demonstrably stabilizes the variance within 'Acid-Base Chemistry'.",
+                    "why_it_matters": "Challenges existing models that treat 'Bronsted-Lowry Theory' and 'Acid-Base Chemistry' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Acid-Base Chemistry' can scale linearly independent of 'Bronsted-Lowry Theory'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Bronsted-Lowry Theory'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.671,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Bronsted-Lowry theory of acid-base chemistry"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.77
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Bronsted-Lowry Theory' trigger cascade failures in 'Acid-Base Chemistry'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Bronsted-Lowry Theory' is constrained dynamically, then 'Acid-Base Chemistry' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Bronsted-Lowry Theory' in a control simulation while applying extreme variance loads to 'Acid-Base Chemistry'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Acid-Base Chemistry' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Acid-Base Chemistry' remains unaffected during 'Bronsted-Lowry Theory' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Bronsted-Lowry Theory' and 'Acid-Base Chemistry'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Mechanisms \u2194 Superacid Formation",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Mechanisms' demonstrably stabilizes the variance within 'Superacid Formation'.",
+                    "why_it_matters": "Challenges existing models that treat 'Mechanisms' and 'Superacid Formation' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Superacid Formation' can scale linearly independent of 'Mechanisms'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Mechanisms'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.671,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Mechanisms of superacid formation"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.77
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Mechanisms' trigger cascade failures in 'Superacid Formation'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Mechanisms' is constrained dynamically, then 'Superacid Formation' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Mechanisms' in a control simulation while applying extreme variance loads to 'Superacid Formation'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Superacid Formation' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Superacid Formation' remains unaffected during 'Mechanisms' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Mechanisms' and 'Superacid Formation'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[IMPROVEMENT] Pka Values \u2194 Synthesized Acids",
+                "research_note": {
+                    "what_was_discovered": "Integration of 'Pka Values' demonstrably stabilizes the variance within 'Synthesized Acids'.",
+                    "why_it_matters": "Challenges existing models that treat 'Pka Values' and 'Synthesized Acids' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Synthesized Acids' can scale linearly independent of 'Pka Values'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Pka Values'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Improvement",
+                "composite_score": 0.671,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "pKa values of synthesized acids"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.77
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Pka Values' trigger cascade failures in 'Synthesized Acids'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Pka Values' is constrained dynamically, then 'Synthesized Acids' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Pka Values' in a control simulation while applying extreme variance loads to 'Synthesized Acids'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Synthesized Acids' confirming the improvement."
+                    ],
+                    "failure_conditions": [
+                        "If 'Synthesized Acids' remains unaffected during 'Pka Values' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Pka Values' and 'Synthesized Acids'."
+                    ]
+                }
+            },
+            {
+                "insight_title": "[GENERALIZATION] Bronsted-Lowry Theory \u2194 Acid-Base Chemistry",
+                "research_note": {
+                    "what_was_discovered": "Identified a significant 'Generalization' interaction mapping 'Bronsted-Lowry Theory' to 'Acid-Base Chemistry'.",
+                    "why_it_matters": "Challenges existing models that treat 'Bronsted-Lowry Theory' and 'Acid-Base Chemistry' as isolated variables.",
+                    "assumptions_challenged": "The assumption that 'Acid-Base Chemistry' can scale linearly independent of 'Bronsted-Lowry Theory'.",
+                    "potential_implications": "Could require fundamental re-architecting of systems relying on 'Bronsted-Lowry Theory'.",
+                    "possible_weaknesses": "Evidence relies on contextual co-occurrence; causal mechanism requires isolation testing."
+                },
+                "insight_type": "Generalization",
+                "composite_score": 0.593,
+                "source_cluster": "Node_1",
+                "evidence": {
+                    "supporting_evidence": [
+                        "Bronsted-Lowry theory of acid-base chemistry"
+                    ],
+                    "contradicting_evidence": []
+                },
+                "scores": {
+                    "evidence_support": 0.4,
+                    "novelty": 0.7,
+                    "confidence": 0.5,
+                    "expected_impact": 0.69
+                },
+                "next_steps": {
+                    "research_questions": [
+                        "What precise parameter thresholds in 'Bronsted-Lowry Theory' trigger cascade failures in 'Acid-Base Chemistry'?"
+                    ],
+                    "testable_hypotheses": [
+                        "If 'Bronsted-Lowry Theory' is constrained dynamically, then 'Acid-Base Chemistry' stability will increase by >15%."
+                    ],
+                    "possible_experiments": [
+                        "Isolate 'Bronsted-Lowry Theory' in a control simulation while applying extreme variance loads to 'Acid-Base Chemistry'."
+                    ],
+                    "predicted_outcomes": [
+                        "Non-linear behavioral shift in 'Acid-Base Chemistry' confirming the generalization."
+                    ],
+                    "failure_conditions": [
+                        "If 'Acid-Base Chemistry' remains unaffected during 'Bronsted-Lowry Theory' perturbation, the hypothesis is nullified."
+                    ],
+                    "future_directions": [
+                        "Investigate mathematical formulations unifying 'Bronsted-Lowry Theory' and 'Acid-Base Chemistry'."
+                    ]
+                }
+            }
+        ]
+    }
+]

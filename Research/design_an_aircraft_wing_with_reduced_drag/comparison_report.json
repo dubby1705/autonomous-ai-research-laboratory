@@ -1,0 +1,141 @@
+{
+    "metadata": {
+        "timestamp": "2026-08-01T17:08:15.401850",
+        "hypothesis": "Using active winglets improves efficiency",
+        "problem": "Design an aircraft wing with reduced drag",
+        "simulation_engine": "domain_aware_aerospace_v1",
+        "domain": "aerospace",
+        "domain_description": "Aerospace \u2014 aerodynamics, propulsion, flight dynamics",
+        "simulator": "general_simulator.py"
+    },
+    "extracted_hypothesis_params": {
+        "lift_coefficient": 1.15
+    },
+    "metrics": {
+        "lift_coefficient": {
+            "baseline_value": 1.0,
+            "hypothesis_value": 1.15,
+            "absolute_change": 0.15,
+            "percentage_change": 15.0,
+            "improvement_pct": 15.0,
+            "is_improvement": true,
+            "direction": "higher_better",
+            "unit": "CL",
+            "description": "Lift coefficient of the airfoil"
+        },
+        "lift_to_drag_ratio": {
+            "baseline_value": 2.857,
+            "hypothesis_value": 3.286,
+            "absolute_change": 0.429,
+            "percentage_change": 15.02,
+            "improvement_pct": 15.02,
+            "is_improvement": true,
+            "direction": "higher_better",
+            "unit": "L/D",
+            "description": "Lift-to-drag ratio (aerodynamic efficiency)"
+        }
+    },
+    "summary": {
+        "metrics_improved": 2,
+        "metrics_total": 2,
+        "average_improvement_pct": 15.01,
+        "overall_better": true,
+        "verdict": "HYPOTHESIS IMPROVES BASELINE"
+    },
+    "baseline_summary": {
+        "lift_coefficient": 1.0,
+        "drag_coefficient": 0.35,
+        "lift_to_drag_ratio": 2.857,
+        "thrust_force_n": 500.0,
+        "max_speed_mps": 22.0,
+        "fuel_efficiency_km_kg": 1.2,
+        "stall_speed_mps": 15.0,
+        "structural_margin": 1.5,
+        "applied_modifications": {},
+        "simulation_type": "baseline"
+    },
+    "hypothesis_summary": {
+        "lift_coefficient": 1.15,
+        "drag_coefficient": 0.35,
+        "lift_to_drag_ratio": 3.286,
+        "thrust_force_n": 500.0,
+        "max_speed_mps": 22.0,
+        "fuel_efficiency_km_kg": 1.2,
+        "stall_speed_mps": 15.0,
+        "structural_margin": 1.5,
+        "applied_modifications": {
+            "lift_coefficient": 1.15
+        },
+        "simulation_type": "hypothesis_driven"
+    },
+    "parameter_changes": [
+        {
+            "parameter_name": "lift_coefficient",
+            "modification_type": "multiply",
+            "modification_factor": 1.15,
+            "hypothesis_keyword_matched": "lift_coefficient",
+            "selection_reason": "Domain-specific parameter identified from aerospace hypothesis analysis",
+            "source": "Domain-aware hypothesis analysis (aerospace)",
+            "paper_count": 0,
+            "confidence": 0.6
+        }
+    ],
+    "simulation_results": {
+        "metadata": {
+            "timestamp": "2026-08-01T17:08:15.401876",
+            "simulation_engine": "domain_aware_aerospace_v1",
+            "domain": "aerospace",
+            "hypothesis": "Using active winglets improves efficiency"
+        },
+        "baseline_model": {
+            "simulation_type": "baseline",
+            "parameter_modifications": {},
+            "results": {
+                "lift_coefficient": 1.0,
+                "drag_coefficient": 0.35,
+                "lift_to_drag_ratio": 2.857,
+                "thrust_force_n": 500.0,
+                "max_speed_mps": 22.0,
+                "fuel_efficiency_km_kg": 1.2,
+                "stall_speed_mps": 15.0,
+                "structural_margin": 1.5,
+                "applied_modifications": {},
+                "simulation_type": "baseline"
+            }
+        },
+        "hypothesis_model": {
+            "simulation_type": "hypothesis-driven",
+            "parameter_modifications": {
+                "lift_coefficient": 1.15
+            },
+            "results": {
+                "lift_coefficient": 1.15,
+                "drag_coefficient": 0.35,
+                "lift_to_drag_ratio": 3.286,
+                "thrust_force_n": 500.0,
+                "max_speed_mps": 22.0,
+                "fuel_efficiency_km_kg": 1.2,
+                "stall_speed_mps": 15.0,
+                "structural_margin": 1.5,
+                "applied_modifications": {
+                    "lift_coefficient": 1.15
+                },
+                "simulation_type": "hypothesis_driven"
+            }
+        },
+        "verification": {
+            "same_engine": true,
+            "same_domain": true,
+            "only_difference_is_hypothesis_params": true,
+            "reproducible": true,
+            "files_generated": [
+                "comparison_report.json",
+                "parameter_changes.json"
+            ]
+        }
+    },
+    "files_generated": [
+        "comparison_report.json",
+        "parameter_changes.json"
+    ]
+}

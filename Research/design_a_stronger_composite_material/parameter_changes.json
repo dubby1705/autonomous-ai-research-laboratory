@@ -1,0 +1,12 @@
+[
+    {
+        "parameter_name": "tensile_strength_mpa",
+        "modification_type": "multiply",
+        "modification_factor": 3.432,
+        "hypothesis_keyword_matched": "tensile_strength_mpa",
+        "selection_reason": "Domain-specific parameter identified from materials hypothesis analysis",
+        "source": "Domain-aware hypothesis analysis (materials)",
+        "paper_count": 0,
+        "confidence": 0.6
+    }
+]

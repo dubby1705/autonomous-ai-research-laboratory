@@ -22,7 +22,7 @@ from collections import Counter
 from typing import List, Dict, Any, Tuple, Optional, Set
 from datetime import datetime
 from pydantic import BaseModel, Field, ValidationError
-from GroqClient import groq_complete_json
+from GroqClient import llm_complete_json
 
 # =========================================================
 # PYDANTIC SCHEMAS
@@ -551,7 +551,7 @@ def validate_math_idea_llm(hypothesis: str, idea: MathIdea) -> MathValidation:
     )
     
     try:
-        result = groq_complete_json(system_prompt, user_prompt, temperature=0.1)
+        result = llm_complete_json(system_prompt, user_prompt, temperature=0.1)
         if result:
             return MathValidation.model_validate_json(json.dumps(result))
         return _deterministic_validation(hypothesis, idea)

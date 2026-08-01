@@ -28,6 +28,68 @@ from datetime import datetime
 # =========================================================
 EVIDENCE_DB_FILE = "evidence_scoring_db.json"
 
+EVIDENCE_DEBUG = os.environ.get("AARL_EVIDENCE_DEBUG", "").lower() in ("1", "true", "yes")
+
+# Domain markers used to block cross-topic KB snippets (e.g. battery facts on a floating-car run).
+DOMAIN_MARKER_GROUPS: Dict[str, set] = {
+    "battery": {
+        "battery", "batteries", "electrode", "electrolyte", "lithium", "anode", "cathode",
+        "wh/kg", "nernst", "butler-volmer", "thermal runaway", "solid-state electrolyte",
+        "lithium-ion", "li-ion", "supercapacitor", "mof", "cycle life", "coulombic",
+    },
+    "levitation_transport": {
+        "levitation", "maglev", "hover", "floating car", "aerodynamic", "hydrofoil",
+        "electromagnetic lift", "superconducting magnet",
+    },
+}
+
+
+def _log_evidence_debug(title: str, **sections: Any) -> None:
+    if not EVIDENCE_DEBUG:
+        return
+    print(f"\n[EVIDENCE DEBUG] === {title} ===")
+    for key, value in sections.items():
+        print(f"[EVIDENCE DEBUG] {key}:")
+        if isinstance(value, (dict, list)):
+            print(json.dumps(value, indent=2, ensure_ascii=False)[:8000])
+        else:
+            text = str(value)
+            print(text[:8000] + ("..." if len(text) > 8000 else ""))
+
+
+def _normalize_problem(problem: Optional[str]) -> str:
+    return (problem or "").strip().lower()
+
+
+def _problem_domain_flags(problem: str) -> set:
+    p = problem.lower()
+    flags = set()
+    for domain, markers in DOMAIN_MARKER_GROUPS.items():
+        if any(m in p for m in markers):
+            flags.add(domain)
+    return flags
+
+
+def _snippet_domain_flags(text: str) -> set:
+    t = text.lower()
+    flags = set()
+    for domain, markers in DOMAIN_MARKER_GROUPS.items():
+        if any(m in t for m in markers):
+            flags.add(domain)
+    return flags
+
+
+def _snippet_allowed_for_problem(snippet: str, research_problem: Optional[str]) -> bool:
+    """Reject KB lines whose domain markers conflict with the current research problem."""
+    if not research_problem:
+        return True
+    prob_domains = _problem_domain_flags(research_problem)
+    snippet_domains = _snippet_domain_flags(snippet)
+    if not snippet_domains:
+        return True
+    foreign = snippet_domains - prob_domains
+    return len(foreign) == 0
+
 class EvidenceEntry:
     """Structured evidence for one scientific claim."""
     
@@ -283,6 +345,7 @@ class EvidenceDatabase:
         self.db_path = db_path
         self.scores: Dict[str, EvidenceScore] = {}
         self.accuracy_history: List[Dict[str, Any]] = []
+        self.research_problem: str = ""
         self._load()
 
     def _load(self):
@@ -290,6 +353,7 @@ class EvidenceDatabase:
             try:
                 with open(self.db_path, "r", encoding="utf-8") as f:
                     data = json.load(f)
+                    self.research_problem = data.get("research_problem", "") or ""
                     for claim, score_dict in data.get("scores", {}).items():
                         score = EvidenceScore(claim)
                         score.confidence = score_dict.get("confidence", 0.0)
@@ -312,9 +376,39 @@ class EvidenceDatabase:
             except Exception:
                 self.scores = {}
                 self.accuracy_history = []
+                self.research_problem = ""
+
+    def purge_stale_claims(self, active_claims: List[str]) -> int:
+        """Drop scores for claims not in the current research session."""
+        active = set(active_claims)
+        stale = [claim for claim in self.scores if claim not in active]
+        for claim in stale:
+            del self.scores[claim]
+        return len(stale)
+
+    def begin_session(self, research_problem: Optional[str], active_claims: List[str]) -> None:
+        """
+        Scope persistence to the current research problem and hypothesis set.
+        Clears all stored evidence when the problem changes so prior domains cannot leak in.
+        """
+        normalized_new = _normalize_problem(research_problem)
+        normalized_old = _normalize_problem(self.research_problem)
+        if normalized_new and normalized_old and normalized_new != normalized_old:
+            removed = len(self.scores)
+            self.scores = {}
+            print(
+                f"   [Evidence] Research problem changed — cleared {removed} stale scored claim(s) "
+                f"from prior topic."
+            )
+        if research_problem:
+            self.research_problem = research_problem.strip()
+        purged = self.purge_stale_claims(active_claims)
+        if purged:
+            print(f"   [Evidence] Removed {purged} claim(s) not in the current hypothesis set.")
 
     def save(self):
         data = {
+            "research_problem": self.research_problem,
             "scores": {claim: score.to_dict() for claim, score in self.scores.items()},
             "accuracy_history": self.accuracy_history,
             "last_updated": datetime.now().isoformat()
@@ -473,7 +567,10 @@ def _cosine_sim(vec1: Dict[str, float], vec2: Dict[str, float]) -> float:
     mag2 = math.sqrt(sum(v**2 for v in vec2.values()))
     return 0.0 if mag1 == 0 or mag2 == 0 else dot / (mag1 * mag2)
 
-def _mine_knowledge_base_for_evidence(claim: str) -> List[EvidenceEntry]:
+def _mine_knowledge_base_for_evidence(
+    claim: str,
+    research_problem: Optional[str] = None,
+) -> List[EvidenceEntry]:
     """
     Mines the knowledge base for evidence using TF-IDF cosine similarity.
     Only returns entries with similarity > 0.15 (semantically relevant).
@@ -482,13 +579,22 @@ def _mine_knowledge_base_for_evidence(claim: str) -> List[EvidenceEntry]:
     entries = []
     kb_path = "deep_research_knowledge_base.json"
     if not os.path.exists(kb_path):
+        _log_evidence_debug("KB mining — no file", kb_path=kb_path, claim=claim)
         return entries
     
     try:
         with open(kb_path, "r", encoding="utf-8") as f:
             kb_data = json.load(f)
-    except Exception:
+    except Exception as exc:
+        _log_evidence_debug("KB mining — load failed", error=str(exc))
         return entries
+
+    _log_evidence_debug(
+        "KB mining — inputs",
+        research_problem=research_problem or "(not set)",
+        claim=claim,
+        kb_thesis=kb_data.get("core_research_thesis", ""),
+    )
     
     # Collect all KB texts for IDF computation
     all_kb_texts = []
@@ -512,62 +618,67 @@ def _mine_knowledge_base_for_evidence(claim: str) -> List[EvidenceEntry]:
     # Threshold: only accept matches above this similarity
     SIMILARITY_THRESHOLD = 0.15
     
-    # Search proven_facts (highest weight)
-    for fact in kb_data.get("proven_facts", []):
-        fact_vec = _tfidf_vector(fact, all_kb_texts + [fact])
-        sim = _cosine_sim(claim_vec, fact_vec)
+    retrieved_documents: List[Dict[str, Any]] = []
+    rejected_domain: List[str] = []
+
+    def _consider(section: str, text: str, weight: float, prefix: str, etype: str):
+        if not _snippet_allowed_for_problem(text, research_problem):
+            rejected_domain.append(text)
+            return
+        text_vec = _tfidf_vector(text, all_kb_texts + [text])
+        sim = _cosine_sim(claim_vec, text_vec)
+        retrieved_documents.append({
+            "section": section,
+            "similarity": round(sim, 4),
+            "text": text,
+            "accepted": sim >= SIMILARITY_THRESHOLD,
+        })
         if sim >= SIMILARITY_THRESHOLD:
             entries.append(EvidenceEntry(
                 claim=claim,
-                evidence_type="literature",
-                content=f"Proven fact: {fact}",
-                confidence=round(sim * 0.85, 3),
-                source_details={"source": "knowledge_base", "section": "proven_facts", "similarity": round(sim, 3)}
+                evidence_type=etype,
+                content=f"{prefix}: {text}",
+                confidence=round(sim * weight, 3),
+                source_details={
+                    "source": "knowledge_base",
+                    "section": section,
+                    "similarity": round(sim, 3),
+                    "research_problem": research_problem or "",
+                }
             ))
+
+    # Search proven_facts (highest weight)
+    for fact in kb_data.get("proven_facts", []):
+        _consider("proven_facts", fact, 0.85, "Proven fact", "literature")
     
     # Search state_of_the_art_prior_art
     for art in kb_data.get("state_of_the_art_prior_art", []):
-        art_vec = _tfidf_vector(art, all_kb_texts + [art])
-        sim = _cosine_sim(claim_vec, art_vec)
-        if sim >= SIMILARITY_THRESHOLD:
-            entries.append(EvidenceEntry(
-                claim=claim,
-                evidence_type="literature",
-                content=f"Prior art: {art}",
-                confidence=round(sim * 0.70, 3),
-                source_details={"source": "knowledge_base", "section": "state_of_the_art_prior_art", "similarity": round(sim, 3)}
-            ))
+        _consider("state_of_the_art_prior_art", art, 0.70, "Prior art", "literature")
     
     # Search proposed_testable_hypotheses
     for hyp, method in kb_data.get("proposed_testable_hypotheses", {}).items():
         hyp_text = f"{hyp} {method}"
-        hyp_vec = _tfidf_vector(hyp_text, all_kb_texts + [hyp_text])
-        sim = _cosine_sim(claim_vec, hyp_vec)
-        if sim >= SIMILARITY_THRESHOLD:
-            entries.append(EvidenceEntry(
-                claim=claim,
-                evidence_type="logical_deduction",
-                content=f"Related hypothesis: {hyp} (test: {method})",
-                confidence=round(sim * 0.60, 3),
-                source_details={"source": "knowledge_base", "section": "proposed_testable_hypotheses", "similarity": round(sim, 3)}
-            ))
+        _consider("proposed_testable_hypotheses", hyp_text, 0.60, "Related hypothesis", "logical_deduction")
     
     # Search critical_unanswered_unknowns
     for gap in kb_data.get("critical_unanswered_unknowns", []):
-        gap_vec = _tfidf_vector(gap, all_kb_texts + [gap])
-        sim = _cosine_sim(claim_vec, gap_vec)
-        if sim >= SIMILARITY_THRESHOLD:
-            entries.append(EvidenceEntry(
-                claim=claim,
-                evidence_type="literature",
-                content=f"Known gap: {gap}",
-                confidence=round(sim * 0.50, 3),
-                source_details={"source": "knowledge_base", "section": "critical_unanswered_unknowns", "similarity": round(sim, 3)}
-            ))
+        _consider("critical_unanswered_unknowns", gap, 0.50, "Known gap", "literature")
     
+    _log_evidence_debug(
+        "KB mining — retrieved documents (pre-rank)",
+        retrieved=retrieved_documents,
+        rejected_cross_domain=rejected_domain,
+    )
+
     # Sort by confidence descending, keep top 5
     entries.sort(key=lambda e: e.confidence, reverse=True)
-    return entries[:5]
+    top = entries[:5]
+    _log_evidence_debug(
+        "KB mining — final evidence entries",
+        note="Evidence engine does not call an LLM; sources are TF-IDF matches from deep_research_knowledge_base.json (Phase 2).",
+        entries=[e.to_dict() for e in top],
+    )
+    return top
 
 
 # =========================================================
@@ -678,11 +789,14 @@ def _load_equation_validation_score(claim: str) -> float:
     return min(1.0, validation_ratio * 0.8 + count_bonus)
 
 
-def _load_simulation_success_score(claim: str) -> float:
+def _load_simulation_success_score(
+    claim: str,
+    research_problem: Optional[str] = None,
+) -> float:
     """
     Load simulation success score from comparison_report.json.
-    If the simulation showed AARL is better, the claim gets support.
-    Returns 0.0-1.0.
+    If the simulation report is from a different domain (e.g. battery chemistry for a
+    non-battery problem), returns 0.0 so it cannot contaminate evidence confidence.
     """
     # Try multiple possible paths
     for report_path in ["Research/comparison_report.json",
@@ -693,6 +807,34 @@ def _load_simulation_success_score(claim: str) -> float:
                     report = json.load(f)
             except Exception:
                 continue
+
+            metadata = report.get("metadata", {})
+            base_chemistry = (metadata.get("base_chemistry") or "").lower()
+            prob = (research_problem or "").lower()
+            battery_problem = any(
+                m in prob for m in ("battery", "lithium", "electrode", "electrolyte", "anode", "cathode")
+            )
+            if base_chemistry and "lithium" in base_chemistry and not battery_problem:
+                _log_evidence_debug(
+                    "Simulation score skipped — domain mismatch",
+                    research_problem=research_problem,
+                    base_chemistry=base_chemistry,
+                    report_path=report_path,
+                )
+                return 0.0
+
+            report_hypothesis = metadata.get("hypothesis", "")
+            if report_hypothesis:
+                claim_words = set(_tokenize(claim))
+                hyp_words = set(_tokenize(report_hypothesis))
+                overlap = len(claim_words & hyp_words)
+                if overlap < 2:
+                    _log_evidence_debug(
+                        "Simulation score skipped — hypothesis mismatch",
+                        claim=claim,
+                        report_hypothesis=report_hypothesis,
+                    )
+                    return 0.0
 
             success = report.get("success", False)
             overall_better = report.get("overall_better", False)
@@ -716,7 +858,8 @@ def _load_simulation_success_score(claim: str) -> float:
 
 
 def run_evidence_engine(claims: List[str], 
-                        doscan_scores: Optional[List[Dict[str, float]]] = None) -> Dict[str, Any]:
+                        doscan_scores: Optional[List[Dict[str, float]]] = None,
+                        research_problem: Optional[str] = None) -> Dict[str, Any]:
     """
     Main entry point for the Evidence Engine with MULTI-FACTOR confidence.
     
@@ -739,8 +882,17 @@ def run_evidence_engine(claims: List[str],
     print("\n" + "="*80)
     print("📊 EVIDENCE SCORING ENGINE — Multi-Factor Weighted Confidence")
     print("="*80)
+    if research_problem:
+        print(f"   Research problem: {research_problem}")
+    print(
+        "   Source: KB TF-IDF mining (deep_research_knowledge_base.json) — "
+        "no LLM in this phase."
+    )
+    if EVIDENCE_DEBUG:
+        print("   AARL_EVIDENCE_DEBUG=1 — verbose evidence trace enabled")
     
     db = EvidenceDatabase()
+    db.begin_session(research_problem, claims)
     results = {}
     
     # Pre-load cross-phase data once
@@ -749,13 +901,16 @@ def run_evidence_engine(claims: List[str],
     for i, claim in enumerate(claims):
         score = db.get_or_create(claim)
         
-        # Step 1: Mine knowledge base for evidence (only if not already populated)
-        if not score.evidence_sources["literature"] and not score.evidence_sources["logical_deduction"]:
-            kb_entries = _mine_knowledge_base_for_evidence(claim)
+        # Always refresh KB-mined evidence from the current knowledge base (never reuse stale DB literature)
+        score.evidence_sources["literature"] = []
+        score.evidence_sources["logical_deduction"] = []
+        kb_entries = _mine_knowledge_base_for_evidence(claim, research_problem=research_problem)
+        for entry in kb_entries:
+            score.add_evidence(entry)
+        if kb_entries:
+            print(f"   [KB Mining] Found {len(kb_entries)} evidence entries for claim {i+1}")
             for entry in kb_entries:
-                score.add_evidence(entry)
-            if kb_entries:
-                print(f"   [KB Mining] Found {len(kb_entries)} evidence entries for claim {i+1}")
+                print(f"      ↳ {entry.content[:120]}{'...' if len(entry.content) > 120 else ''}")
         
         # Step 2: Load DOSCAN knowledge graph support
         kg_score = _load_doscan_kg_support(claim)
@@ -772,7 +927,7 @@ def run_evidence_engine(claims: List[str],
                 print(f"   [Equations] Validation score: {eq_score:.3f} for claim {i+1}")
         
         # Step 4: Load simulation success score
-        sim_score = _load_simulation_success_score(claim)
+        sim_score = _load_simulation_success_score(claim, research_problem=research_problem)
         if sim_score > score.simulation_success_score:
             score.simulation_success_score = sim_score
             if sim_score > 0:
@@ -836,6 +991,15 @@ def run_evidence_engine(claims: List[str],
         print(f"      Evidence: {', '.join(results[claim]['evidence_types_present']) or 'NONE'}")
         print(f"      Missing: {', '.join(score.missing_evidence) or 'NONE'}")
         print(f"      Next: {score.next_action}")
+        _log_evidence_debug(
+            f"Claim {i+1} — scored",
+            claim=claim,
+            evidence_sources={
+                etype: [e.to_dict() for e in entries]
+                for etype, entries in score.evidence_sources.items() if entries
+            },
+            factor_breakdown=score.factor_breakdown,
+        )
     
     # Calibrate
     threshold = db.calibrate_confidence_threshold()

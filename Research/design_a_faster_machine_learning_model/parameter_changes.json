@@ -1,0 +1,22 @@
+[
+    {
+        "parameter_name": "inference_latency_ms",
+        "modification_type": "multiply",
+        "modification_factor": 0.5,
+        "hypothesis_keyword_matched": "inference_latency_ms",
+        "selection_reason": "Domain-specific parameter identified from machine_learning hypothesis analysis",
+        "source": "Domain-aware hypothesis analysis (machine_learning)",
+        "paper_count": 0,
+        "confidence": 0.6
+    },
+    {
+        "parameter_name": "memory_mb",
+        "modification_type": "multiply",
+        "modification_factor": 0.5,
+        "hypothesis_keyword_matched": "memory_mb",
+        "selection_reason": "Domain-specific parameter identified from machine_learning hypothesis analysis",
+        "source": "Domain-aware hypothesis analysis (machine_learning)",
+        "paper_count": 0,
+        "confidence": 0.6
+    }
+]

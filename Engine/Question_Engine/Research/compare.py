@@ -27,7 +27,10 @@ import traceback
 from typing import Dict, Any, Optional, List, Tuple
 from pydantic import BaseModel, Field, ValidationError
 from datetime import datetime
-from GroqClient import groq_complete, groq_complete_json
+from GroqClient import (
+    llm_complete_prefer_groq as groq_complete,
+    llm_complete_prefer_groq_json as groq_complete_json,
+)
 
 # =========================================================
 # PATH RESOLUTION (Robust relative to project root)

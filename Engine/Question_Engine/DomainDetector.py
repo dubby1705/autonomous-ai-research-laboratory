@@ -125,6 +125,27 @@ DOMAIN_REGISTRY = {
         "math_engine": "physics",
         "simulator": "physics",
     },
+    "computer_architecture": {
+        "keywords": {
+            "cpu", "processor", "architecture", "instruction set", "pipeline",
+            "cache", "branch prediction", "superscalar", "out-of-order",
+            "execution", "core", "thread", "clock", "frequency", "ipc",
+            "instructions per cycle", "microarchitecture", "register", "alu",
+            "fpga", "asic", "soc", "chip", "semiconductor", "transistor",
+            "power consumption", "area usage", "memory hierarchy", "tlb",
+            "prefetch", "speculative", "reorder buffer", "issue width",
+            "decode", "fetch", "hardware", "computer", "computing",
+            "processor design", "cpu design", "power efficiency",
+            "thermal design", "tdp", "moore", "amdahl", "bottleneck",
+        },
+        "topics": [
+            "Instruction Set Architecture", "Microarchitecture",
+            "Pipeline Design", "Cache Hierarchy", "Branch Prediction",
+            "Power-Efficient Computing", "Performance Analysis",
+        ],
+        "math_engine": "physics",
+        "simulator": "general",
+    },
 }
 
 # =========================================================
@@ -181,6 +202,28 @@ DOMAIN_SIMULATOR_MAP = {
     "aircraft": "aerodynamics_simulator.py",
     "rocket": "aerodynamics_simulator.py",
     "nozzle": "aerodynamics_simulator.py",
+
+    # Computer Architecture / CPU Design
+    "cpu": "general_simulator.py",
+    "processor": "general_simulator.py",
+    "architecture": "general_simulator.py",
+    "instruction set": "general_simulator.py",
+    "pipeline": "general_simulator.py",
+    "cache": "general_simulator.py",
+    "branch prediction": "general_simulator.py",
+    "superscalar": "general_simulator.py",
+    "out-of-order": "general_simulator.py",
+    "microarchitecture": "general_simulator.py",
+    "ipc": "general_simulator.py",
+    "instructions per cycle": "general_simulator.py",
+    "fpga": "general_simulator.py",
+    "asic": "general_simulator.py",
+    "soc": "general_simulator.py",
+    "chip": "general_simulator.py",
+    "semiconductor": "general_simulator.py",
+    "transistor": "general_simulator.py",
+    "clock": "general_simulator.py",
+    "tdp": "general_simulator.py",
 }
 
 

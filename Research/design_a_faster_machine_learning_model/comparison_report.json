@@ -1,0 +1,151 @@
+{
+    "metadata": {
+        "timestamp": "2026-08-01T17:08:15.438491",
+        "hypothesis": "Using model distillation reduces latency",
+        "problem": "Design a faster machine learning model",
+        "simulation_engine": "domain_aware_machine_learning_v1",
+        "domain": "machine_learning",
+        "domain_description": "Machine Learning \u2014 model performance, efficiency, accuracy",
+        "simulator": "general_simulator.py"
+    },
+    "extracted_hypothesis_params": {
+        "inference_latency_ms": 0.5,
+        "memory_mb": 0.5
+    },
+    "metrics": {
+        "inference_latency_ms": {
+            "baseline_value": 45.0,
+            "hypothesis_value": 22.5,
+            "absolute_change": -22.5,
+            "percentage_change": -50.0,
+            "improvement_pct": 50.0,
+            "is_improvement": true,
+            "direction": "lower_better",
+            "unit": "ms",
+            "description": "Inference latency"
+        },
+        "memory_mb": {
+            "baseline_value": 512.0,
+            "hypothesis_value": 256.0,
+            "absolute_change": -256.0,
+            "percentage_change": -50.0,
+            "improvement_pct": 50.0,
+            "is_improvement": true,
+            "direction": "lower_better",
+            "unit": "MB",
+            "description": "Memory footprint"
+        }
+    },
+    "summary": {
+        "metrics_improved": 2,
+        "metrics_total": 2,
+        "average_improvement_pct": 50.0,
+        "overall_better": true,
+        "verdict": "HYPOTHESIS IMPROVES BASELINE"
+    },
+    "baseline_summary": {
+        "accuracy_pct": 84.5,
+        "inference_latency_ms": 45.0,
+        "training_time_min": 120.0,
+        "memory_mb": 512.0,
+        "generalization_error": 0.15,
+        "f1_score": 0.82,
+        "throughput_samples_s": 1000.0,
+        "applied_modifications": {},
+        "simulation_type": "baseline"
+    },
+    "hypothesis_summary": {
+        "accuracy_pct": 84.5,
+        "inference_latency_ms": 22.5,
+        "training_time_min": 120.0,
+        "memory_mb": 256.0,
+        "generalization_error": 0.15,
+        "f1_score": 0.82,
+        "throughput_samples_s": 1000.0,
+        "applied_modifications": {
+            "inference_latency_ms": 0.5,
+            "memory_mb": 0.5
+        },
+        "simulation_type": "hypothesis_driven"
+    },
+    "parameter_changes": [
+        {
+            "parameter_name": "inference_latency_ms",
+            "modification_type": "multiply",
+            "modification_factor": 0.5,
+            "hypothesis_keyword_matched": "inference_latency_ms",
+            "selection_reason": "Domain-specific parameter identified from machine_learning hypothesis analysis",
+            "source": "Domain-aware hypothesis analysis (machine_learning)",
+            "paper_count": 0,
+            "confidence": 0.6
+        },
+        {
+            "parameter_name": "memory_mb",
+            "modification_type": "multiply",
+            "modification_factor": 0.5,
+            "hypothesis_keyword_matched": "memory_mb",
+            "selection_reason": "Domain-specific parameter identified from machine_learning hypothesis analysis",
+            "source": "Domain-aware hypothesis analysis (machine_learning)",
+            "paper_count": 0,
+            "confidence": 0.6
+        }
+    ],
+    "simulation_results": {
+        "metadata": {
+            "timestamp": "2026-08-01T17:08:15.438512",
+            "simulation_engine": "domain_aware_machine_learning_v1",
+            "domain": "machine_learning",
+            "hypothesis": "Using model distillation reduces latency"
+        },
+        "baseline_model": {
+            "simulation_type": "baseline",
+            "parameter_modifications": {},
+            "results": {
+                "accuracy_pct": 84.5,
+                "inference_latency_ms": 45.0,
+                "training_time_min": 120.0,
+                "memory_mb": 512.0,
+                "generalization_error": 0.15,
+                "f1_score": 0.82,
+                "throughput_samples_s": 1000.0,
+                "applied_modifications": {},
+                "simulation_type": "baseline"
+            }
+        },
+        "hypothesis_model": {
+            "simulation_type": "hypothesis-driven",
+            "parameter_modifications": {
+                "inference_latency_ms": 0.5,
+                "memory_mb": 0.5
+            },
+            "results": {
+                "accuracy_pct": 84.5,
+                "inference_latency_ms": 22.5,
+                "training_time_min": 120.0,
+                "memory_mb": 256.0,
+                "generalization_error": 0.15,
+                "f1_score": 0.82,
+                "throughput_samples_s": 1000.0,
+                "applied_modifications": {
+                    "inference_latency_ms": 0.5,
+                    "memory_mb": 0.5
+                },
+                "simulation_type": "hypothesis_driven"
+            }
+        },
+        "verification": {
+            "same_engine": true,
+            "same_domain": true,
+            "only_difference_is_hypothesis_params": true,
+            "reproducible": true,
+            "files_generated": [
+                "comparison_report.json",
+                "parameter_changes.json"
+            ]
+        }
+    },
+    "files_generated": [
+        "comparison_report.json",
+        "parameter_changes.json"
+    ]
+}

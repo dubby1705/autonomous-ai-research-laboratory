@@ -1,0 +1,47 @@
+================================================================================
+  01 — RESEARCH SUMMARY
+================================================================================
+
+RESEARCH PROBLEM
+----------------------------------------
+  Designing an optimal CPU architecture that balances performance, power consumption, and thermal management
+
+RUNTIME
+----------------------------------------
+  Total pipeline runtime: 1m 15s
+
+KNOWLEDGE GRAPH
+----------------------------------------
+  Knowledge Nodes:               26
+  Relationships Found:           85
+  DOSCAN Clusters:               23
+
+HYPOTHESES
+----------------------------------------
+  Hypotheses Generated:           5
+  Approved:                       5
+  Rejected:                       0
+
+MATHEMATICS
+----------------------------------------
+  Validated Equations:          278
+  Rejected Equations:            37
+
+SIMULATION
+----------------------------------------
+  Status:                  COMPLETED
+  Verdict:                 HYPOTHESIS IMPROVES BASELINE
+  Metrics Improved:        3/3
+  Average Improvement:     41.6%
+
+OVERALL CONFIDENCE
+----------------------------------------
+  Top Hypothesis Confidence: 45%
+
+FINAL RECOMMENDATION
+----------------------------------------
+  Selected Hypothesis: Plausible
+  Confidence Score:    6.70/10
+  Refined Design:      A hybrid CPU architecture that integrates a swarm of tiny, insect-inspired, neuromorphic cores with traditional computing elements could offer a balanced approach, leveraging the strengths of both paradigms to achieve high performance and low power consumption.
+
+================================================================================
