@@ -4,71 +4,53 @@
 
 SIMULATION METADATA
 ----------------------------------------
-  Hypothesis: A hybrid CPU architecture integrating insect-inspired neuromorphic cores with traditional computing elements, optimized through tailored instruction pipelines and caching systems, can achieve high ...
-  Simulation Engine: domain_aware_computer_architecture_v1
-  Timestamp: 2026-08-01T20:38:43.717840
+  Hypothesis: A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal m...
+  Simulation Engine: domain_aware_general_v1
+  Timestamp: 2026-08-01T21:22:18.810511
 
 BASELINE METRICS (Current State-of-the-Art)
 ----------------------------------------
-  Ipc: 1.50 IPC
-  Clock Frequency Ghz: 3.50
-  Power Consumption W: 65 W
-  Performance Per Watt: 2.50
-  Area Mm2: 150
-  Cache Hit Rate Pct: 92
-  Branch Prediction Accuracy Pct: 95
-  Pipeline Stalls Per 1000: 45 stalls/1k
-  Memory Latency Ns: 80
-  Throughput Gops: 50
+  Ph Value: 1
+  Acid Strength Ka: 0.01
+  Reaction Rate Constant: 0.05
+  Yield Percent: 78.50
+  Selectivity Percent: 80
+  Activation Energy Kj Mol: 85
+  Turnover Frequency: 0.80
+  Thermal Stability C: 250
+  Solubility G L: 45
+  Purity Percent: 95
 
 FINAL METRICS (Hypothesis-Driven Design)
 ----------------------------------------
-  Ipc: 1.80 IPC
-  Clock Frequency Ghz: 3.50
-  Power Consumption W: 22.80 W
-  Performance Per Watt: 2.50
-  Area Mm2: 150
-  Cache Hit Rate Pct: 92
-  Branch Prediction Accuracy Pct: 95
-  Pipeline Stalls Per 1000: 27 stalls/1k
-  Memory Latency Ns: 80
-  Throughput Gops: 50
+  Ph Value: 1
+  Acid Strength Ka: 0.01
+  Reaction Rate Constant: 0.05
+  Yield Percent: 78.50
+  Selectivity Percent: 80
+  Activation Energy Kj Mol: 85
+  Turnover Frequency: 0.80
+  Thermal Stability C: 250
+  Solubility G L: 45
+  Purity Percent: 95
 
 PERCENTAGE IMPROVEMENTS
 ----------------------------------------
-  ✅ Ipc: 1.50 → 1.80 (+20.0%) [IPC]
-  ✅ Power Consumption W: 65 → 22.80 (-64.9%) [W]
-  ✅ Pipeline Stalls Per 1000: 45 → 27 (-40.0%) [stalls/1k]
+  No improvement data available.
 
 OVERALL COMPARISON
 ----------------------------------------
-  Metrics Improved:    3/3
-  Average Improvement: 41.6%
-  Verdict:             HYPOTHESIS IMPROVES BASELINE
+  Metrics Improved:    0/0
+  Average Improvement: 0.0%
+  Verdict:             HYPOTHESIS DOES NOT IMPROVE BASELINE
 
 PARAMETER CHANGES
 ----------------------------------------
-  • ipc
-    Modification: multiply × 1.2
-    Keyword Matched: ipc
-    Selection Reason: Domain-specific parameter identified from computer_architecture hypothesis analysis
-    Source: Domain-aware hypothesis analysis (computer_architecture)
-    Papers: 0
-    Confidence: 0.60
-
-  • pipeline_stalls_per_1000
-    Modification: multiply × 0.6
-    Keyword Matched: pipeline_stalls_per_1000
-    Selection Reason: Domain-specific parameter identified from computer_architecture hypothesis analysis
-    Source: Domain-aware hypothesis analysis (computer_architecture)
-    Papers: 0
-    Confidence: 0.60
-
-  • power_consumption_w
-    Modification: multiply × 0.35
-    Keyword Matched: power_consumption_w
-    Selection Reason: Domain-specific parameter identified from computer_architecture hypothesis analysis
-    Source: Domain-aware hypothesis analysis (computer_architecture)
+  • efficiency_pct
+    Modification: multiply × 1.08
+    Keyword Matched: efficiency_pct
+    Selection Reason: Domain-specific parameter identified from general hypothesis analysis
+    Source: Domain-aware hypothesis analysis (general)
     Papers: 0
     Confidence: 0.60
 

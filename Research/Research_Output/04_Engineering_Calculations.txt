@@ -4,482 +4,42 @@
 
 1. VALIDATED EQUATIONS
 ----------------------------------------
-  Equation: F = k * m
-    Relationship Type: quadratic
-    Variables: F, m, v, k
-    Validation: Physics: quadratic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k / (k + c)
-    Relationship Type: linear
-    Variables: t, k, pH
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * log(t / t_0)
-    Relationship Type: inverse
-    Variables: T, t, k
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k / P
-    Relationship Type: inverse
-    Variables: t, P, k
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: P = 1 / (1 + exp(-k * (T - T_0)))
-    Relationship Type: logarithmic
-    Variables: P, T, k
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: P = k * log(k)
-    Relationship Type: exponential
-    Variables: P, k, t
-    Validation: Physics: exponential
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: P = k1 * pH + k2 * pH^2
-    Relationship Type: polynomial
-    Variables: P, pH, t, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
   Equation: F + 0.5 * rho * v^2 = m
-    Relationship Type: power_law
+    Relationship Type: proportional
     Variables: F, m, v, k
     Validation: Kinetic energy form: 0.5*m*v^2
     Dimension Hint: J
     Domain: computer_architecture
     Engine: physics
 
-  Equation: t = k / (pH + c)
-    Relationship Type: inverse
-    Variables: t, pH, T, k
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * (t)^n
-    Relationship Type: sigmoid
-    Variables: T, t, P, k
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * sqrt(k)
-    Relationship Type: sigmoid
-    Variables: T, k, pH
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * (pH)^n
-    Relationship Type: logarithmic
-    Variables: T, pH, t, k
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: pH = k * (k)^2
-    Relationship Type: logarithmic
-    Variables: pH, k, P
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: P = k * log(t / t_0)
-    Relationship Type: sigmoid
-    Variables: P, t, pH, k
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: pH = k1 * k + k2 * k^2 + k3 * k^3
-    Relationship Type: inverse
-    Variables: pH, k, T
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: F = m * g * h
-    Relationship Type: inverse
-    Variables: F, m, v, k
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k * sqrt(k)
-    Relationship Type: power_law
-    Variables: t, k, pH
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * log(P)
-    Relationship Type: sigmoid
-    Variables: T, P, k
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * (P)^n
-    Relationship Type: inverse
-    Variables: T, P, t, k
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k1 * t + k2 * t^2
-    Relationship Type: sigmoid
-    Variables: T, t, pH, k
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = (k_max - k) / (k_max - k_min)
-    Relationship Type: polynomial
-    Variables: t, k, P
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: F = mu_0 * m / (2*pi*r)
-    Relationship Type: power_law
-    Variables: F, m, v, k
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: pH = (k_max - k) / (k_max - k_min)
-    Relationship Type: exponential
-    Variables: pH, k, P
-    Validation: Physics: exponential
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k * (pH)^n
-    Relationship Type: logarithmic
-    Variables: k, pH, t
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = (k_max - k) / (k_max - k_min)
-    Relationship Type: linear
-    Variables: T, k, pH
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: pH = k * log(P / P_0)
-    Relationship Type: polynomial
-    Variables: pH, P, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k1 * t + k2 * t^2 + k3 * t^3
-    Relationship Type: power_law
-    Variables: T, t, pH, k
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k1 * P + k2 * P^2 + k3 * P^3
-    Relationship Type: power_law
-    Variables: k, P, t
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * exp(-k / tau)
-    Relationship Type: inverse
-    Variables: T, k, r
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k * exp(-P / tau)
-    Relationship Type: power_law
-    Variables: k, P, T
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * log(pH / pH_0)
-    Relationship Type: linear
-    Variables: r, pH, t, k
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: P = k * r + r_offset
-    Relationship Type: polynomial
-    Variables: P, r, pH, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * T
-    Relationship Type: exponential
-    Variables: r, T, pH, k
-    Validation: Physics: exponential
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: Re = rho * v * F / mu
-    Relationship Type: proportional
-    Variables: F, m, v, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * exp(-T / tau)
-    Relationship Type: linear
-    Variables: r, T, t, k
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: pH = k1 * t + k2 * t^2
-    Relationship Type: logarithmic
-    Variables: pH, t, P, k
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k / (t + c)
-    Relationship Type: sigmoid
-    Variables: k, t, P
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * exp(-pH / tau)
-    Relationship Type: proportional
-    Variables: T, pH, P, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: P = k * exp(-k / tau)
-    Relationship Type: linear
-    Variables: P, k, pH
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k * (P)^2
-    Relationship Type: proportional
-    Variables: t, P, pH, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * sqrt(P)
-    Relationship Type: sigmoid
-    Variables: r, P, k
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: F = m * a
-    Relationship Type: inverse
-    Variables: F, m, v, k
-    Validation: Newton's Second Law: F=ma
-    Dimension Hint: N
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * P + P_offset
-    Relationship Type: exponential
-    Variables: r, P, T, k
-    Validation: Physics: exponential
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: pH = k1 * P + k2 * P^2
-    Relationship Type: logarithmic
-    Variables: pH, P, r, k
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: pH = k * (T)^2
-    Relationship Type: proportional
-    Variables: pH, T, t, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * t
-    Relationship Type: inverse
-    Variables: r, t, T, k
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: pH = 1 / (1 + exp(-k * (t - t_0)))
-    Relationship Type: proportional
-    Variables: pH, t, P, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k * (pH)^2
-    Relationship Type: sigmoid
-    Variables: k, pH, t
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
   Equation: pH = k1 * t + k2 * t^2 + k3 * t^3
-    Relationship Type: proportional
-    Variables: pH, t, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = 1 / (1 + exp(-k * (P - P_0)))
     Relationship Type: linear
-    Variables: t, P, T, k
+    Variables: pH, t, T, k
     Validation: Physics: linear
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: T = k * exp(pH)
-    Relationship Type: proportional
-    Variables: T, pH, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * P
+  Equation: k_th = k * exp(k)
     Relationship Type: sigmoid
-    Variables: T, P, k
+    Variables: k_th, k, t
     Validation: Physics: sigmoid
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: pH = k * exp(-k / tau)
-    Relationship Type: power_law
-    Variables: pH, k, T
-    Validation: Physics: power_law
+  Equation: pH = k / (t + c)
+    Relationship Type: linear
+    Variables: pH, t, P, k
+    Validation: Physics: linear
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: F = rho * m * v^2
-    Relationship Type: proportional
-    Variables: F, m, v, k
-    Validation: Fluid dynamics equation
-    Dimension Hint: N
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k * exp(-t / tau)
-    Relationship Type: polynomial
-    Variables: k, t, T
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * (P)^2
-    Relationship Type: sigmoid
-    Variables: T, P, t, k
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k * exp(-T / tau)
-    Relationship Type: proportional
-    Variables: k, T, t
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: P = k * sqrt(t)
+  Equation: T = k1 * k_th + k2 * k_th^2
     Relationship Type: inverse
-    Variables: P, t, T, k
+    Variables: T, k_th, k
     Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = 1 / (1 + exp(-k * (T - T_0)))
-    Relationship Type: power_law
-    Variables: t, T, P, k
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: P = 1 / (1 + exp(-k * (k - k_0)))
-    Relationship Type: logarithmic
-    Variables: P, k, t
-    Validation: Physics: logarithmic
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
@@ -492,50 +52,74 @@
     Domain: computer_architecture
     Engine: physics
 
-  Equation: k = k1 * t + k2 * t^2 + k3 * t^3
-    Relationship Type: inverse
-    Variables: k, t, P
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: P = k / (T + c)
-    Relationship Type: polynomial
-    Variables: P, T, t, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k * (T)^2
+  Equation: t = k / k
     Relationship Type: exponential
-    Variables: t, T, k
+    Variables: t, k, pH
     Validation: Physics: exponential
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: t = k1 * P + k2 * P^2
+  Equation: P = k * (k)^2
+    Relationship Type: power_law
+    Variables: P, k, k_th
+    Validation: Physics: power_law
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: k = k * (P)^2
+    Relationship Type: exponential
+    Variables: k, P, t
+    Validation: Physics: exponential
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: P = k1 * T + k2 * T^2 + k3 * T^3
+    Relationship Type: exponential
+    Variables: P, T, pH, k
+    Validation: Physics: exponential
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: pH = k * exp(-T / tau)
     Relationship Type: logarithmic
-    Variables: t, P, T, k
+    Variables: pH, T, k_th, k
     Validation: Physics: logarithmic
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: k = k * (T)^n
-    Relationship Type: proportional
-    Variables: k, T, P
-    Validation: Physics: proportional
+  Equation: F = m * a
+    Relationship Type: linear
+    Variables: F, m, v, k
+    Validation: Newton's Second Law: F=ma
+    Dimension Hint: N
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: t = k * P
+    Relationship Type: exponential
+    Variables: t, P, k_th, k
+    Validation: Physics: exponential
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: T = k1 * k + k2 * k^2 + k3 * k^3
-    Relationship Type: sigmoid
-    Variables: T, k, P
-    Validation: Physics: sigmoid
+  Equation: pH = k1 * k + k2 * k^2 + k3 * k^3
+    Relationship Type: polynomial
+    Variables: pH, k, P
+    Validation: Physics: polynomial
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: t = k * exp(T)
+    Relationship Type: power_law
+    Variables: t, T, k
+    Validation: Physics: power_law
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
@@ -548,402 +132,266 @@
     Domain: computer_architecture
     Engine: physics
 
-  Equation: k = k * t + t_offset
-    Relationship Type: exponential
-    Variables: k, t, P
-    Validation: Physics: exponential
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k / (P + c)
-    Relationship Type: polynomial
-    Variables: t, P, T, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = alpha * k + beta
-    Relationship Type: proportional
-    Variables: T, k, P
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: P = k * (k)^2
-    Relationship Type: logarithmic
-    Variables: P, k, t
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * (k)^2
-    Relationship Type: proportional
-    Variables: T, k, t
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
   Equation: sigma = F * epsilon
-    Relationship Type: exponential
+    Relationship Type: linear
     Variables: F, m, v, k
     Validation: Stress-strain relationship
     Dimension Hint: Pa
     Domain: computer_architecture
     Engine: physics
 
-  Equation: k = k * exp(t)
-    Relationship Type: logarithmic
-    Variables: k, t, P
-    Validation: Physics: logarithmic
+  Equation: pH = k1 * T + k2 * T^2 + k3 * T^3
+    Relationship Type: exponential
+    Variables: pH, T, t, k
+    Validation: Physics: exponential
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: k = k * (P)^2
-    Relationship Type: linear
-    Variables: k, P, T
-    Validation: Physics: linear
+  Equation: k = k * exp(-t / tau)
+    Relationship Type: inverse
+    Variables: k, t, pH
+    Validation: Physics: inverse
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: k = (T_max - T) / (T_max - T_min)
+  Equation: k = k1 * t + k2 * t^2 + k3 * t^3
     Relationship Type: power_law
-    Variables: k, T, P
+    Variables: k, t, T
     Validation: Physics: power_law
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: k = k * (P)^n
-    Relationship Type: sigmoid
-    Variables: k, P, t
-    Validation: Physics: sigmoid
+  Equation: pH = k * sqrt(k)
+    Relationship Type: power_law
+    Variables: pH, k, t
+    Validation: Physics: power_law
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: t = k * exp(-k / tau)
+    Relationship Type: exponential
+    Variables: t, k, pH
+    Validation: Physics: exponential
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: pH = k * log(t)
+    Relationship Type: proportional
+    Variables: pH, t, T, k
+    Validation: Physics: proportional
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: T = k * pH + pH_offset
+    Relationship Type: proportional
+    Variables: T, pH, t, k
+    Validation: Physics: proportional
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: pH = alpha * k + beta
+    Relationship Type: proportional
+    Variables: pH, k, T
+    Validation: Physics: proportional
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: F = k * m
+    Relationship Type: power_law
+    Variables: F, m, v, k
+    Validation: Physics: power_law
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: pH = k * (P)^n
+    Relationship Type: power_law
+    Variables: pH, P, k
+    Validation: Physics: power_law
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: k = k1 * P + k2 * P^2
+    Relationship Type: proportional
+    Variables: k, P, pH
+    Validation: Physics: proportional
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: P = k1 * pH + k2 * pH^2
+    Relationship Type: logarithmic
+    Variables: P, pH, k
+    Validation: Physics: logarithmic
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: F = m * g * h
+    Relationship Type: inverse
+    Variables: F, m, v, k
+    Validation: Physics: inverse
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
   Equation: k = k / (T + c)
-    Relationship Type: inverse
+    Relationship Type: logarithmic
     Variables: k, T, P
-    Validation: Physics: inverse
+    Validation: Physics: logarithmic
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: T = k * k
-    Relationship Type: polynomial
-    Variables: T, k, P
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: h = k * c + c_offset
+  Equation: t = k * (pH)^n
     Relationship Type: inverse
-    Variables: h, c, a, k
+    Variables: t, pH, k
     Validation: Physics: inverse
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: c = k1 * h + k2 * h^2
-    Relationship Type: power_law
-    Variables: c, h, T, k
-    Validation: Physics: power_law
+  Equation: P = k * sqrt(t)
+    Relationship Type: linear
+    Variables: P, t, k
+    Validation: Physics: linear
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: h = k * t + t_offset
-    Relationship Type: polynomial
-    Variables: h, t, T, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k * (T)^n
+  Equation: t = k * (T)^2
     Relationship Type: logarithmic
+    Variables: t, T, P, k
+    Validation: Physics: logarithmic
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: t = k * sqrt(T)
+    Relationship Type: inverse
     Variables: t, T, k
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k1 * a + k2 * a^2
-    Relationship Type: linear
-    Variables: t, a, T, k
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: a = k / k
-    Relationship Type: linear
-    Variables: a, k, h
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: h = k1 * a + k2 * a^2 + k3 * a^3
-    Relationship Type: power_law
-    Variables: h, a, T, k
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: a = k * (h)^2
-    Relationship Type: logarithmic
-    Variables: a, h, t, k
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k * exp(-a / tau)
-    Relationship Type: linear
-    Variables: t, a, c, k
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * (h)^2
-    Relationship Type: logarithmic
-    Variables: T, h, a, k
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k1 * h + k2 * h^2
-    Relationship Type: inverse
-    Variables: T, h, a, k
     Validation: Physics: inverse
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: a = k1 * h + k2 * h^2 + k3 * h^3
-    Relationship Type: inverse
-    Variables: a, h, T, k
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = 1 / (1 + exp(-k * (h - h_0)))
-    Relationship Type: logarithmic
-    Variables: k, h, c
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k * exp(-a / tau)
-    Relationship Type: exponential
-    Variables: k, a, h
-    Validation: Physics: exponential
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: a = k * h
-    Relationship Type: exponential
-    Variables: a, h, T, k
-    Validation: Physics: exponential
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: a = k / (T + c)
-    Relationship Type: linear
-    Variables: a, T, t, k
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * log(a / a_0)
+  Equation: t = k * (k)^2
     Relationship Type: proportional
-    Variables: T, a, k
+    Variables: t, k, pH
     Validation: Physics: proportional
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: T = k * t + t_offset
+  Equation: Re = rho * v * F / mu
+    Relationship Type: inverse_square
+    Variables: F, m, v, k
+    Validation: Physics: inverse_square
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: P = k * t + t_offset
     Relationship Type: logarithmic
-    Variables: T, t, c, k
+    Variables: P, t, pH, k
     Validation: Physics: logarithmic
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: c = k1 * t + k2 * t^2 + k3 * t^3
-    Relationship Type: linear
-    Variables: c, t, a, k
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: a = k * exp(-c / tau)
-    Relationship Type: exponential
-    Variables: a, c, T, k
-    Validation: Physics: exponential
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k * a + a_offset
-    Relationship Type: logarithmic
-    Variables: t, a, c, k
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = 1 / (1 + exp(-k * (a - a_0)))
-    Relationship Type: power_law
-    Variables: k, a, T
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: a = k * log(t)
-    Relationship Type: proportional
-    Variables: a, t, h, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k * log(c)
+  Equation: k = k * T + T_offset
     Relationship Type: sigmoid
-    Variables: t, c, a, k
+    Variables: k, T, t
     Validation: Physics: sigmoid
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: t = k * h
-    Relationship Type: proportional
-    Variables: t, h, T, k
-    Validation: Physics: proportional
+  Equation: pH = k * t + t_offset
+    Relationship Type: inverse
+    Variables: pH, t, T, k
+    Validation: Physics: inverse
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: P = k * (k)^n
+    Relationship Type: inverse
+    Variables: P, k, T
+    Validation: Physics: inverse
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: P = k / t
+    Relationship Type: exponential
+    Variables: P, t, k
+    Validation: Physics: exponential
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: t = k1 * T + k2 * T^2 + k3 * T^3
+    Relationship Type: sigmoid
+    Variables: t, T, pH, k
+    Validation: Physics: sigmoid
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: T = k * (t)^n
+    Relationship Type: logarithmic
+    Variables: T, t, k
+    Validation: Physics: logarithmic
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: t = k * log(k)
+    Relationship Type: inverse
+    Variables: t, k, pH
+    Validation: Physics: inverse
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
   Equation: t = alpha * k + beta
-    Relationship Type: polynomial
-    Variables: t, k, c
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k1 * h + k2 * h^2 + k3 * h^3
-    Relationship Type: linear
-    Variables: T, h, t, k
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: a = k * log(t / t_0)
     Relationship Type: exponential
-    Variables: a, t, k
+    Variables: t, k, T
     Validation: Physics: exponential
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: T = k * log(a)
+  Equation: pH = k * exp(-t / tau)
     Relationship Type: inverse
-    Variables: T, a, c, k
+    Variables: pH, t, T, k
     Validation: Physics: inverse
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: c = k * k + k_offset
-    Relationship Type: logarithmic
-    Variables: c, k, a
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: h = 1 / (1 + exp(-k * (c - c_0)))
-    Relationship Type: polynomial
-    Variables: h, c, a, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: c = k1 * T + k2 * T^2
-    Relationship Type: sigmoid
-    Variables: c, T, k
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: a = 1 / (1 + exp(-k * (c - c_0)))
-    Relationship Type: polynomial
-    Variables: a, c, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k1 * t + k2 * t^2
+  Equation: F = rho * m * v^2
     Relationship Type: power_law
-    Variables: r, t, P, k
-    Validation: Physics: power_law
-    Dimension Hint: Standard
+    Variables: F, m, v, k
+    Validation: Fluid dynamics equation
+    Dimension Hint: N
     Domain: computer_architecture
     Engine: physics
 
-  Equation: pH = k * r
+  Equation: k = k1 * T + k2 * T^2 + k3 * T^3
     Relationship Type: sigmoid
-    Variables: pH, r, P, k
+    Variables: k, T, t
     Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = k * log(t)
-    Relationship Type: power_law
-    Variables: k_th, t, P, k
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * log(k / k_0)
-    Relationship Type: proportional
-    Variables: r, k, k_th
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = k1 * pH + k2 * pH^2 + k3 * pH^3
-    Relationship Type: exponential
-    Variables: k_th, pH, r, k
-    Validation: Physics: exponential
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
@@ -956,708 +404,212 @@
     Domain: computer_architecture
     Engine: physics
 
-  Equation: r = k1 * pH + k2 * pH^2
-    Relationship Type: exponential
-    Variables: r, pH, T, k
-    Validation: Physics: exponential
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: P = k1 * t + k2 * t^2 + k3 * t^3
-    Relationship Type: linear
-    Variables: P, t, T, k
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = 1 / (1 + exp(-k * (t - t_0)))
-    Relationship Type: linear
-    Variables: T, t, k
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * exp(-r / tau)
-    Relationship Type: polynomial
-    Variables: T, r, pH, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * pH
-    Relationship Type: inverse
-    Variables: r, pH, k_th, k
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = alpha * T + beta
-    Relationship Type: inverse
-    Variables: k, T, k_th
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = alpha * T + beta
-    Relationship Type: polynomial
-    Variables: k_th, T, r, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: pH = k1 * r + k2 * r^2 + k3 * r^3
-    Relationship Type: sigmoid
-    Variables: pH, r, k_th, k
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k1 * k + k2 * k^2
-    Relationship Type: sigmoid
-    Variables: T, k, pH
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k * (k_th)^2
+  Equation: pH = k * (t)^2
     Relationship Type: logarithmic
-    Variables: t, k_th, T, k
+    Variables: pH, t, k
     Validation: Physics: logarithmic
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: k = k * sqrt(T)
+  Equation: T = k * k
     Relationship Type: exponential
-    Variables: k, T, k_th
+    Variables: T, k, t
     Validation: Physics: exponential
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: k = k1 * r + k2 * r^2 + k3 * r^3
-    Relationship Type: power_law
-    Variables: k, r, pH
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: pH = k * (k)^n
-    Relationship Type: logarithmic
-    Variables: pH, k, r
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = k1 * k + k2 * k^2 + k3 * k^3
-    Relationship Type: power_law
-    Variables: k_th, k, T
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k1 * k_th + k2 * k_th^2
+  Equation: T = k / (pH + c)
     Relationship Type: inverse
-    Variables: t, k_th, pH, k
+    Variables: T, pH, k
     Validation: Physics: inverse
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: pH = k * k
+    Relationship Type: polynomial
+    Variables: pH, k, t
+    Validation: Physics: polynomial
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: pH = k * T
+    Relationship Type: power_law
+    Variables: pH, T, t, k
+    Validation: Physics: power_law
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: t = k1 * T + k2 * T^2
+    Relationship Type: power_law
+    Variables: t, T, pH, k
+    Validation: Physics: power_law
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: k = k * (t)^2
+    Relationship Type: exponential
+    Variables: k, t, pH
+    Validation: Physics: exponential
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
   Equation: F = 0.5 * m * v^2
-    Relationship Type: inverse_square
+    Relationship Type: exponential
     Variables: F, m, v, k
     Validation: Kinetic energy form: 0.5*m*v^2
     Dimension Hint: J
     Domain: computer_architecture
     Engine: physics
 
-  Equation: k_th = alpha * t + beta
-    Relationship Type: polynomial
-    Variables: k_th, t, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = k * sqrt(r)
-    Relationship Type: logarithmic
-    Variables: k_th, r, T, k
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = k * pH
-    Relationship Type: sigmoid
-    Variables: k_th, pH, k
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = k1 * T + k2 * T^2
-    Relationship Type: sigmoid
-    Variables: k_th, T, k
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * sqrt(k_th)
-    Relationship Type: proportional
-    Variables: r, k_th, pH, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = 1 / (1 + exp(-k * (pH - pH_0)))
-    Relationship Type: polynomial
-    Variables: t, pH, r, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k * (T)^2
-    Relationship Type: power_law
-    Variables: k, T, t
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * (k_th)^n
-    Relationship Type: inverse
-    Variables: T, k_th, k
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = k1 * T + k2 * T^2 + k3 * T^3
+  Equation: P = k * log(eta / eta_0)
     Relationship Type: exponential
-    Variables: k_th, T, pH, k
+    Variables: P, eta, k
     Validation: Physics: exponential
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: k = k * (t)^n
-    Relationship Type: inverse
-    Variables: k, t, pH
-    Validation: Physics: inverse
+  Equation: k = k * (T)^n
+    Relationship Type: polynomial
+    Variables: k, T, t
+    Validation: Physics: polynomial
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: r = k * exp(-k / tau)
+  Equation: k = k * log(t)
     Relationship Type: linear
-    Variables: r, k, k_th
+    Variables: k, t, r
     Validation: Physics: linear
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: k_th = k1 * r + k2 * r^2 + k3 * r^3
-    Relationship Type: exponential
-    Variables: k_th, r, pH, k
-    Validation: Physics: exponential
+  Equation: eta = k * log(k)
+    Relationship Type: linear
+    Variables: eta, k, T
+    Validation: Physics: linear
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: k = alpha * eta + beta
+    Relationship Type: polynomial
+    Variables: k, eta, T
+    Validation: Physics: polynomial
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
   Equation: r = k / (T + c)
-    Relationship Type: polynomial
-    Variables: r, T, t, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k * (k)^2
-    Relationship Type: polynomial
-    Variables: t, k, r
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = (r_max - r) / (r_max - r_min)
-    Relationship Type: polynomial
-    Variables: k, r, T
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = k / (T + c)
-    Relationship Type: logarithmic
-    Variables: k_th, T, k
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: pH = k * log(T)
-    Relationship Type: logarithmic
-    Variables: pH, T, t, k
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k / (k + c)
-    Relationship Type: power_law
-    Variables: T, k, k_th
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = k * log(T / T_0)
-    Relationship Type: exponential
-    Variables: k_th, T, t, k
-    Validation: Physics: exponential
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: pH = k / (k_th + c)
-    Relationship Type: polynomial
-    Variables: pH, k_th, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = k * exp(t)
     Relationship Type: inverse
-    Variables: k_th, t, T, k
+    Variables: r, T, eta, k
     Validation: Physics: inverse
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: r = k * k + k_offset
-    Relationship Type: polynomial
-    Variables: r, k, T
-    Validation: Physics: polynomial
+  Equation: T = k * sqrt(k)
+    Relationship Type: logarithmic
+    Variables: T, k, eta
+    Validation: Physics: logarithmic
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: k = k * (t)^2
-    Relationship Type: inverse
-    Variables: k, t, r
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * (t)^2
+  Equation: eta = k * sqrt(r)
     Relationship Type: proportional
-    Variables: r, t, k
+    Variables: eta, r, k
     Validation: Physics: proportional
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: t = k1 * r + k2 * r^2 + k3 * r^3
+  Equation: k = k * exp(r)
+    Relationship Type: proportional
+    Variables: k, r, eta
+    Validation: Physics: proportional
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: t = (k_max - k) / (k_max - k_min)
+    Relationship Type: proportional
+    Variables: t, k, T
+    Validation: Physics: proportional
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: F = mu_0 * m / (2*pi*r)
     Relationship Type: power_law
-    Variables: t, r, k
+    Variables: F, m, v, k
     Validation: Physics: power_law
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: T = k * exp(t)
-    Relationship Type: polynomial
-    Variables: T, t, k
-    Validation: Physics: polynomial
+  Equation: eta = k1 * T + k2 * T^2
+    Relationship Type: logarithmic
+    Variables: eta, T, k
+    Validation: Physics: logarithmic
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: t = k * (k)^n
-    Relationship Type: polynomial
-    Variables: t, k, T
-    Validation: Physics: polynomial
+  Equation: eta = k * sqrt(T)
+    Relationship Type: exponential
+    Variables: eta, T, r, k
+    Validation: Physics: exponential
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: T = k * exp(k)
-    Relationship Type: polynomial
-    Variables: T, k, r
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k / (r + c)
+  Equation: P = 1 / (1 + exp(-k * (T - T_0)))
     Relationship Type: inverse
-    Variables: T, r, t, k
+    Variables: P, T, t, k
     Validation: Physics: inverse
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
-  Equation: t = k * (r)^n
-    Relationship Type: sigmoid
-    Variables: t, r, k
-    Validation: Physics: sigmoid
+  Equation: eta = k / (t + c)
+    Relationship Type: inverse
+    Variables: eta, t, r, k
+    Validation: Physics: inverse
+    Dimension Hint: Standard
+    Domain: computer_architecture
+    Engine: physics
+
+  Equation: r = k * (T)^2
+    Relationship Type: polynomial
+    Variables: r, T, P, k
+    Validation: Physics: polynomial
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
   Equation: T = k * log(t)
-    Relationship Type: polynomial
+    Relationship Type: power_law
     Variables: T, t, r, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k * exp(r)
-    Relationship Type: proportional
-    Variables: t, r, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k * log(r)
-    Relationship Type: inverse
-    Variables: k, r, t
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * log(t)
-    Relationship Type: power_law
-    Variables: r, t, k
     Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k * sqrt(r)
-    Relationship Type: power_law
-    Variables: t, r, T, k
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k / (r + c)
-    Relationship Type: inverse
-    Variables: t, r, T, k
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k1 * T + k2 * T^2
-    Relationship Type: logarithmic
-    Variables: k, T, t
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = 1 / (1 + exp(-k * (T - T_0)))
-    Relationship Type: proportional
-    Variables: r, T, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = 1 / (1 + exp(-k * (k - k_0)))
-    Relationship Type: sigmoid
-    Variables: T, k, t
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = 1 / (1 + exp(-k * (k - k_0)))
-    Relationship Type: logarithmic
-    Variables: r, k, T
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k / (r + c)
-    Relationship Type: linear
-    Variables: k, r, T
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = 1 / (1 + exp(-k * (r - r_0)))
-    Relationship Type: exponential
-    Variables: T, r, k
-    Validation: Physics: exponential
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * exp(t)
-    Relationship Type: polynomial
-    Variables: r, t, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * exp(r)
-    Relationship Type: linear
-    Variables: T, r, k
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k / (T + c)
-    Relationship Type: proportional
-    Variables: t, T, k_th, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k * log(k_th / k_th_0)
-    Relationship Type: linear
-    Variables: k, k_th, P
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: P = k * sqrt(r)
-    Relationship Type: inverse
-    Variables: P, r, T, k
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * exp(P)
-    Relationship Type: polynomial
-    Variables: r, P, k_th, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = k1 * P + k2 * P^2 + k3 * P^3
-    Relationship Type: polynomial
-    Variables: k_th, P, k
-    Validation: Physics: polynomial
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * P + P_offset
-    Relationship Type: inverse
-    Variables: T, P, k
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = k / (r + c)
-    Relationship Type: inverse
-    Variables: k_th, r, k
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = alpha * r + beta
-    Relationship Type: power_law
-    Variables: k, r, T
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * exp(T)
-    Relationship Type: proportional
-    Variables: r, T, t, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k1 * r + k2 * r^2
-    Relationship Type: power_law
-    Variables: T, r, k
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = k / k
-    Relationship Type: sigmoid
-    Variables: k_th, k, T
-    Validation: Physics: sigmoid
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: t = k * exp(-T / tau)
-    Relationship Type: linear
-    Variables: t, T, P, k
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = 1 / (1 + exp(-k * (k_th - k_th_0)))
-    Relationship Type: logarithmic
-    Variables: T, k_th, P, k
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k_th = k * log(r)
-    Relationship Type: proportional
-    Variables: k_th, r, P, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * log(k / k_0)
-    Relationship Type: inverse
-    Variables: T, k, r
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k * log(r)
-    Relationship Type: power_law
-    Variables: T, r, t, k
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * T + T_offset
-    Relationship Type: proportional
-    Variables: r, T, t, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k / T
-    Relationship Type: proportional
-    Variables: r, T, t, k
-    Validation: Physics: proportional
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k / r
-    Relationship Type: linear
-    Variables: T, r, k
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * sqrt(k)
-    Relationship Type: inverse
-    Variables: r, k, t
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k * exp(-r / tau)
-    Relationship Type: inverse
-    Variables: k, r, T
-    Validation: Physics: inverse
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k / k
-    Relationship Type: power_law
-    Variables: r, k, t
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * exp(-t / tau)
-    Relationship Type: linear
-    Variables: r, t, k
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: r = k * (T)^n
-    Relationship Type: logarithmic
-    Variables: r, T, k
-    Validation: Physics: logarithmic
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k1 * r + k2 * r^2
-    Relationship Type: linear
-    Variables: k, r, t
-    Validation: Physics: linear
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: k = k * sqrt(r)
-    Relationship Type: power_law
-    Variables: k, r, t
-    Validation: Physics: power_law
-    Dimension Hint: Standard
-    Domain: computer_architecture
-    Engine: physics
-
-  Equation: T = k / (t + c)
-    Relationship Type: linear
-    Variables: T, t, r, k
-    Validation: Physics: linear
     Dimension Hint: Standard
     Domain: computer_architecture
     Engine: physics
 
 2. REJECTED EQUATIONS
 ----------------------------------------
-  Total rejected: 37
+  Total rejected: 15
   Rejection breakdown:
     • rubbish_filter: 0
-    • domain_validation: 37
+    • domain_validation: 15
     • llm_validation: 0
     • llm_unavailable: 0
     • parser_error: 0
@@ -1666,46 +618,43 @@
     • F = m / m_0
       Reason: Not physically meaningful
       Filter: domain_validation
-    • F = m / A
-      Reason: Not physically meaningful
-      Filter: domain_validation
-    • dF = dQ / m
-      Reason: Not physically meaningful
-      Filter: domain_validation
     • F = m * R
       Reason: Not physically meaningful
       Filter: domain_validation
     • F = m * v
       Reason: Not physically meaningful
       Filter: domain_validation
-    • F = m * R
-      Reason: Not physically meaningful
-      Filter: domain_validation
-    • dF = dQ / m
-      Reason: Not physically meaningful
-      Filter: domain_validation
-    • eta = 1 - m / F
-      Reason: Not physically meaningful
-      Filter: domain_validation
-    • eta = 1 - m / F
-      Reason: Not physically meaningful
-      Filter: domain_validation
     • F = m / m_0
       Reason: Not physically meaningful
       Filter: domain_validation
-    ... and 27 more
+    • F = m * R
+      Reason: Not physically meaningful
+      Filter: domain_validation
+    • F = m * c * dT
+      Reason: Not physically meaningful
+      Filter: domain_validation
+    • F = m / A
+      Reason: Not physically meaningful
+      Filter: domain_validation
+    • F = m * R
+      Reason: Not physically meaningful
+      Filter: domain_validation
+    • epsilon = dF / m
+      Reason: Not physically meaningful
+      Filter: domain_validation
+    • eta = 1 - m / F
+      Reason: Not physically meaningful
+      Filter: domain_validation
+    ... and 5 more
 
 3. RELATIONSHIP TO FINAL DESIGN
 ----------------------------------------
   The final design hypothesis is:
-  A hybrid CPU architecture that integrates a swarm of tiny, insect-inspired, neuromorphic cores with traditional computing elements could offer a balanced approach, leveraging the strengths of both ...
+  A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal m...
 
   The validated equations above support the mathematical
   relationships described in this hypothesis.
 
   Simulation metrics confirm the mathematical predictions:
-    • Ipc: 1.50 → 1.80 (+20.0%)
-    • Power Consumption W: 65 → 22.80 (-64.9%)
-    • Pipeline Stalls Per 1000: 45 → 27 (-40.0%)
 
 ================================================================================
