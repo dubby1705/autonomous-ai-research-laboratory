@@ -1,0 +1,55 @@
+{
+  "paper_id": "PAPER-002",
+  "title": "A parameterized complexity view on non-preemptively scheduling interval-constrained jobs: few machines, small looseness, and small slack",
+  "authors": [
+    "René van Bevern",
+    "Rolf Niedermeier",
+    "Ondřej Suchý"
+  ],
+  "year": 2015,
+  "domain": "",
+  "provided_by": "researcher",
+  "input_format": "structured",
+  "source_file": "",
+  "extraction": {
+    "title": "A parameterized complexity view on non-preemptively scheduling interval-constrained jobs: few machines, small looseness, and small slack",
+    "research_problem": "",
+    "hypothesis": "",
+    "experimental_setup": "",
+    "domain": "",
+    "authors": [
+      "René van Bevern",
+      "Rolf Niedermeier",
+      "Ondřej Suchý"
+    ],
+    "methodology": [],
+    "important_methods": [],
+    "equations": [],
+    "assumptions": [],
+    "datasets": [],
+    "results": [],
+    "limitations": [],
+    "failures": [],
+    "conclusions": [],
+    "supporting_evidence": [],
+    "contradictory_evidence": [],
+    "references": [],
+    "relationships_to_other_research": [],
+    "year": 2015,
+    "structured_data": {
+      "identifier": "1508.01657v2",
+      "license_note": "Metadata + abstract via the arXiv API; full text at the link.",
+      "source": "arXiv",
+      "url": "http://arxiv.org/abs/1508.01657v2"
+    }
+  },
+  "provenance": {
+    "origin": "researcher_provided_paper",
+    "extraction_method": "structured_passthrough",
+    "generated_by": "aarl.lab.papers.PaperIngestor"
+  },
+  "timestamp": "2026-09-22T00:10:12",
+  "record_id": "PAPER-002",
+  "collection": "papers",
+  "stored_at": "2026-09-22T00:10:12"
+}

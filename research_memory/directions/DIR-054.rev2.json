@@ -1,0 +1,1136 @@
+{
+  "direction_id": "DIR-054",
+  "run_id": "RUN-08B56F2A",
+  "order": 3,
+  "title": "Alternative-Substrate GPU Compute Model",
+  "base_title": "Alternative-Substrate GPU Compute Model",
+  "one_line": "Would moving the cost-dominant operation of GPU onto a different physical carrier improve achievable operations per second once interface overhead is included?",
+  "core_question": "Would moving the cost-dominant operation of GPU onto a different physical carrier improve achievable operations per second once interface overhead is included?",
+  "research_problem": "Design a new GPU for AI",
+  "subject": "GPU",
+  "claim_class": "DIRECTION_PROPOSAL",
+  "claim_class_label": "RESEARCH DIRECTION (AARL PROPOSAL)",
+  "facet": {
+    "facet_id": "computing_model",
+    "label": "Computing Model",
+    "title_noun": "Compute Model",
+    "framing": "what kind of computation the system performs and how",
+    "metric": "achievable operations per second",
+    "assumed_limitation": "The dominant computing model is uniform and synchronous, so it spends energy on operations whose result the application does not actually need.",
+    "keywords": [
+      "compute",
+      "comput",
+      "arithmetic",
+      "matrix",
+      "tensor",
+      "parallelism",
+      "simd",
+      "accelerat",
+      "precision",
+      "algorithm",
+      "inference",
+      "training",
+      "operation"
+    ],
+    "domains": [
+      "computer_architecture",
+      "machine_learning",
+      "quantum"
+    ]
+  },
+  "concept": {
+    "concept_id": "substrate_substitution",
+    "name": "Substrate substitution",
+    "title_adjective": "Alternative-Substrate",
+    "source_domains": [
+      "photonics",
+      "neuromorphic engineering",
+      "analog computing",
+      "condensed matter physics"
+    ],
+    "description": "Change the physical carrier that performs the operation instead of optimising the existing carrier further.",
+    "mechanism_steps": [
+      "Identify the operation in {subject} that dominates cost or energy",
+      "Select a physical carrier better matched to that operation",
+      "Design the interface between the new carrier and the existing stack",
+      "Move only the dominant operation onto the new carrier",
+      "Measure the offsetting cost of the new interface",
+      "Decide whether the net budget improves"
+    ],
+    "core_question": "Would moving the cost-dominant operation of {subject} onto a different physical carrier improve {metric} once interface overhead is included?",
+    "uncertainties": [
+      "Interface and conversion overhead between carriers",
+      "Availability and maturity of the alternative carrier",
+      "Whether measured gains survive at production scale"
+    ],
+    "library_metadata": {
+      "testability": "MEDIUM",
+      "novelty": "HIGH",
+      "implementation_risk": "HIGH",
+      "note": "Library metadata describing the mechanism in the abstract. It is NOT a score of scientific truth and is NOT evidence for any direction."
+    },
+    "facet_affinity": [
+      "computing_model",
+      "materials",
+      "architecture",
+      "energy_thermal",
+      "manufacturing",
+      "data_representation"
+    ],
+    "literature_terms": [
+      "photonic computing",
+      "neuromorphic hardware",
+      "analog in-memory computing"
+    ]
+  },
+  "mechanism_key": "computing_model:substrate_substitution",
+  "inspiration": {
+    "domains": [
+      "photonics",
+      "neuromorphic engineering",
+      "analog computing",
+      "condensed matter physics"
+    ],
+    "concepts": [
+      "Substrate substitution"
+    ],
+    "library_entry": "aarl.discovery.concepts:substrate_substitution",
+    "library_metadata": {
+      "testability": "MEDIUM",
+      "novelty": "HIGH",
+      "implementation_risk": "HIGH",
+      "note": "Library metadata describing the mechanism in the abstract. It is NOT a score of scientific truth and is NOT evidence for any direction."
+    },
+    "papers": [],
+    "display": "photonics + neuromorphic engineering + analog computing"
+  },
+  "why_interesting": "The problem's 'Computing Model' dimension (what kind of computation the system performs and how) is where the conventional approach carries a structural assumption: The dominant computing model is uniform and synchronous, so it spends energy on operations whose result the application does not actually need. AARL took a mechanism that already works in photonics, neuromorphic engineering, analog computing, condensed matter physics - Change the physical carrier that performs the operation instead of optimising the existing carrier further. - and asked what happens if it is applied to GPU. If the mechanism transfers, the gain would come from removing that assumption rather than from tuning the existing design. Whether it transfers is exactly what is not established here.",
+  "why_this_idea": {
+    "stages": [
+      {
+        "stage": "Research problem",
+        "value": "Design a new GPU for AI",
+        "claim_class": "STATED_BY_USER",
+        "claim_class_label": "STATED BY RESEARCHER",
+        "source": "user input",
+        "provenance": {},
+        "note": "The exact problem text AARL was given."
+      },
+      {
+        "stage": "Observed limitation",
+        "value": "The dominant computing model is uniform and synchronous, so it spends energy on operations whose result the application does not actually need.",
+        "claim_class": "INFERENCE",
+        "claim_class_label": "INFERENCE (AARL - NOT SOURCED)",
+        "source": "aarl.discovery.facets (facet assumption)",
+        "provenance": {
+          "facet_id": "computing_model"
+        },
+        "note": "AARL states this as an assumed limitation of the conventional approach. No stored source-linked limitation was found for this facet, so it must not be read as a literature fact."
+      },
+      {
+        "stage": "Cross-domain concept",
+        "value": "Substrate substitution - Change the physical carrier that performs the operation instead of optimising the existing carrier further.",
+        "claim_class": "LIBRARY_ENTRY",
+        "claim_class_label": "LIBRARY ENTRY",
+        "source": "photonics, neuromorphic engineering, analog computing, condensed matter physics",
+        "provenance": {
+          "concept_id": "substrate_substitution",
+          "library": "aarl.discovery.concepts"
+        },
+        "note": "A curated cross-domain mechanism. Its transfer to GPU is AARL's proposal, not an established result."
+      },
+      {
+        "stage": "Mechanism",
+        "value": "Change the physical carrier that performs the operation instead of optimising the existing carrier further.",
+        "claim_class": "LIBRARY_ENTRY",
+        "claim_class_label": "LIBRARY ENTRY",
+        "source": "aarl.discovery.concepts:substrate_substitution",
+        "provenance": {
+          "steps": 6
+        },
+        "note": "Expanded stage by stage in the mechanism view below."
+      },
+      {
+        "stage": "Hypothesis",
+        "value": "(no hypothesis generated in this run)",
+        "claim_class": "HYPOTHESIS_UNTESTED",
+        "claim_class_label": "HYPOTHESIS (UNTESTED)",
+        "source": "aarl.lab.hypotheses",
+        "provenance": {},
+        "note": "AARL-generated proposal. It is not a finding."
+      }
+    ],
+    "cross_domains": [
+      "photonics",
+      "neuromorphic engineering",
+      "analog computing",
+      "condensed matter physics"
+    ],
+    "flow": "Research problem > Observed limitation > Cross-domain concept > Mechanism > Hypothesis",
+    "why_readable": "AARL started from the stated problem, picked the 'Computing Model' dimension of it, took the 'Substrate substitution' mechanism from photonics, neuromorphic engineering, analog computing, condensed matter physics, and proposed applying it there.",
+    "honesty_note": "Each stage is labelled with what it is. A limitation marked INFERENCE is an AARL assumption and is the first thing a reviewer should check."
+  },
+  "mechanism": {
+    "label": "PROPOSED MECHANISM",
+    "implementation_status": "CONCEPTUAL - NOT IMPLEMENTED",
+    "source_concept": "substrate_substitution",
+    "source_concept_name": "Substrate substitution",
+    "source_domains": [
+      "photonics",
+      "neuromorphic engineering",
+      "analog computing",
+      "condensed matter physics"
+    ],
+    "steps": [
+      {
+        "index": 1,
+        "text": "Identify the operation in GPU that dominates cost or energy",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 2,
+        "text": "Select a physical carrier better matched to that operation",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 3,
+        "text": "Design the interface between the new carrier and the existing stack",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 4,
+        "text": "Move only the dominant operation onto the new carrier",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 5,
+        "text": "Measure the offsetting cost of the new interface",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 6,
+        "text": "Decide whether the net budget improves",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      }
+    ],
+    "unsupported_stages": 6,
+    "note": "This chain is the mechanism AARL is proposing, expressed conceptually. No implementation of it was built or measured, and an unsupported stage is a research target - not a hidden assumption."
+  },
+  "already_failed": false,
+  "prior_failures": [],
+  "refinement": null,
+  "hypothesis_ids": [
+    "HYP-112",
+    "HYP-113",
+    "HYP-114"
+  ],
+  "experiment_ids": [
+    "EXP-111",
+    "EXP-112",
+    "EXP-113"
+  ],
+  "failure_ids": [
+    "FAIL-111",
+    "FAIL-112",
+    "FAIL-113"
+  ],
+  "lesson_ids": [
+    "LESSON-001",
+    "LESSON-002",
+    "LESSON-003",
+    "LESSON-004",
+    "LESSON-005",
+    "LESSON-006",
+    "LESSON-007",
+    "LESSON-008",
+    "LESSON-009",
+    "LESSON-010",
+    "LESSON-011",
+    "LESSON-012",
+    "LESSON-013",
+    "LESSON-014",
+    "LESSON-015",
+    "LESSON-016",
+    "LESSON-017",
+    "LESSON-018",
+    "LESSON-019",
+    "LESSON-020",
+    "LESSON-021",
+    "LESSON-022",
+    "LESSON-023",
+    "LESSON-024",
+    "LESSON-025",
+    "LESSON-026",
+    "LESSON-027",
+    "LESSON-028",
+    "LESSON-029",
+    "LESSON-030",
+    "LESSON-031",
+    "LESSON-032",
+    "LESSON-033",
+    "LESSON-034",
+    "LESSON-035",
+    "LESSON-036",
+    "LESSON-037",
+    "LESSON-038",
+    "LESSON-039",
+    "LESSON-040",
+    "LESSON-041",
+    "LESSON-042",
+    "LESSON-043",
+    "LESSON-044",
+    "LESSON-045",
+    "LESSON-046",
+    "LESSON-047",
+    "LESSON-048",
+    "LESSON-049",
+    "LESSON-050",
+    "LESSON-051",
+    "LESSON-052",
+    "LESSON-053",
+    "LESSON-054",
+    "LESSON-055",
+    "LESSON-056",
+    "LESSON-057",
+    "LESSON-058",
+    "LESSON-059",
+    "LESSON-060",
+    "LESSON-061",
+    "LESSON-062",
+    "LESSON-063",
+    "LESSON-064",
+    "LESSON-065",
+    "LESSON-066",
+    "LESSON-067",
+    "LESSON-068",
+    "LESSON-069",
+    "LESSON-070",
+    "LESSON-071",
+    "LESSON-072",
+    "LESSON-073",
+    "LESSON-074",
+    "LESSON-075",
+    "LESSON-076",
+    "LESSON-077",
+    "LESSON-078",
+    "LESSON-079",
+    "LESSON-080",
+    "LESSON-081",
+    "LESSON-082",
+    "LESSON-083",
+    "LESSON-084",
+    "LESSON-085",
+    "LESSON-086",
+    "LESSON-087",
+    "LESSON-088",
+    "LESSON-089",
+    "LESSON-090",
+    "LESSON-091",
+    "LESSON-092",
+    "LESSON-093",
+    "LESSON-094",
+    "LESSON-095",
+    "LESSON-096",
+    "LESSON-097",
+    "LESSON-098",
+    "LESSON-099",
+    "LESSON-100",
+    "LESSON-101",
+    "LESSON-102",
+    "LESSON-103",
+    "LESSON-104"
+  ],
+  "status": {
+    "status": "SPECULATIVE",
+    "label": "SPECULATIVE",
+    "dot": "#c084fc",
+    "css": "status-speculative",
+    "meaning": "AARL identified an interesting research possibility, but current evidence is insufficient to establish that the proposed idea works. Speculative does NOT mean useless, fake or wrong.",
+    "does_not_mean": [
+      "'useless' — a speculative direction is a research opportunity",
+      "'fake' — the mechanism is real; its transferred effect is not shown",
+      "'wrong' — no contradiction has been established either"
+    ],
+    "rule_id": "R9_insufficient_evidence_novel_combination",
+    "rule_description": "The direction is a novel combination with a described mechanism and no direct supporting evidence yet. Insufficient evidence — not refuted.",
+    "reasons": [
+      "Novel combination with a described mechanism and no directly linked supporting evidence yet.",
+      "Classification uses recorded evidence and simulation records only — model prose and text similarity are never counted as evidence."
+    ],
+    "counters": {
+      "direct_evidence": 0,
+      "indirect_evidence": 0,
+      "contradicting_evidence": 0,
+      "missing_evidence": 9,
+      "simulations_supporting": 3,
+      "simulations_failed": 0,
+      "simulations_partial": 0,
+      "simulations_unavailable": 0,
+      "real_world_results": 0,
+      "source_of_counters": "Provenance-linked knowledge items and stored Simulation JSON records. Nothing else feeds this classification."
+    },
+    "why_status_is_not_a_verdict": "AARL statuses describe how much *stored* evidence currently exists for a direction. They are not a judgement that the idea is true or false.",
+    "what_would_change_it": [
+      "Add at least two independent source-linked evidence items to the knowledge base (papers or researcher data)."
+    ]
+  },
+  "dimensions": {
+    "potential_novelty": {
+      "key": "potential_novelty",
+      "label": "Potential novelty",
+      "level": "LOW",
+      "level_scale": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "rationale": "3 stored knowledge items already overlap this direction's wording, so AARL's memory already covers part of it.",
+      "basis": [
+        "concept:substrate_substitution"
+      ],
+      "descriptive_only": true,
+      "what_this_is_not": "Not a score of scientific truth and not a probability.",
+      "explanation": "How new this combination looks *relative to AARL's own memory*. Novelty is not a virtue by itself and not a claim of originality in the literature."
+    },
+    "mechanistic_plausibility": {
+      "key": "mechanistic_plausibility",
+      "label": "Mechanistic plausibility",
+      "level": "MEDIUM",
+      "level_scale": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "rationale": "A mechanism is described, but AARL's own runs disagree: 3 supported it while 3 failed or violated a constraint.",
+      "basis": [
+        "EXP-111",
+        "EXP-112",
+        "EXP-113"
+      ],
+      "descriptive_only": true,
+      "what_this_is_not": "Not a score of scientific truth and not a probability.",
+      "explanation": "Whether a mechanism can be described and whether anything AARL ran agreed with it. A described mechanism is not a demonstrated one."
+    },
+    "evidence_strength": {
+      "key": "evidence_strength",
+      "label": "Evidence strength",
+      "level": "LOW",
+      "level_scale": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "rationale": "0 directly linked sourced item(s), 0 indirectly related item(s), 0 contradicting item(s). Text similarity is never counted.",
+      "basis": [
+        "direct:0",
+        "indirect:0",
+        "contradicting:0"
+      ],
+      "descriptive_only": true,
+      "what_this_is_not": "Not a score of scientific truth and not a probability.",
+      "explanation": "The amount of provenance-linked evidence recorded for this direction. Similar wording is never counted as evidence."
+    },
+    "testability": {
+      "key": "testability",
+      "label": "Testability",
+      "level": "MEDIUM",
+      "level_scale": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "rationale": "Library metadata rates the mechanism class MEDIUM for testability, and 3 run(s) were executed for this direction.",
+      "basis": [
+        "EXP-111",
+        "EXP-112",
+        "EXP-113"
+      ],
+      "descriptive_only": true,
+      "what_this_is_not": "Not a score of scientific truth and not a probability.",
+      "explanation": "Whether AARL could actually test this with the executable models it has."
+    },
+    "implementation_risk": {
+      "key": "implementation_risk",
+      "label": "Implementation risk",
+      "level": "HIGH",
+      "level_scale": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "rationale": "Library metadata for the mechanism class rates realisation cost HIGH (source fields: photonics, neuromorphic engineering, analog computing, condensed matter physics).",
+      "basis": [
+        "concept:substrate_substitution"
+      ],
+      "descriptive_only": true,
+      "what_this_is_not": "Not a score of scientific truth and not a probability.",
+      "explanation": "Library metadata for the mechanism class (what it typically costs to realise) — a design consideration, not a scientific judgement."
+    },
+    "research_uncertainty": {
+      "key": "research_uncertainty",
+      "label": "Research uncertainty",
+      "level": "HIGH",
+      "level_scale": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "rationale": "Direct evidence is absent, so most of what would need to be known is unknown.",
+      "basis": [
+        "missing_evidence:9",
+        "non_discriminating_runs:0"
+      ],
+      "descriptive_only": true,
+      "what_this_is_not": "Not a score of scientific truth and not a probability.",
+      "explanation": "How much remains unknown about this direction, in plain terms."
+    }
+  },
+  "evidence": {
+    "direct": [],
+    "indirect": [],
+    "contradicting": [],
+    "missing": [
+      {
+        "gap_id": "MISSING-MECH-01",
+        "kind": "mechanism_step_unsupported",
+        "statement": "Identify the operation in GPU that dominates cost or energy",
+        "what_is_needed": "Direct (source-linked) evidence that this stage behaves as described.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Nothing in the stored knowledge base addresses this stage."
+      },
+      {
+        "gap_id": "MISSING-MECH-02",
+        "kind": "mechanism_step_unsupported",
+        "statement": "Select a physical carrier better matched to that operation",
+        "what_is_needed": "Direct (source-linked) evidence that this stage behaves as described.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Nothing in the stored knowledge base addresses this stage."
+      },
+      {
+        "gap_id": "MISSING-MECH-03",
+        "kind": "mechanism_step_unsupported",
+        "statement": "Design the interface between the new carrier and the existing stack",
+        "what_is_needed": "Direct (source-linked) evidence that this stage behaves as described.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Nothing in the stored knowledge base addresses this stage."
+      },
+      {
+        "gap_id": "MISSING-MECH-04",
+        "kind": "mechanism_step_unsupported",
+        "statement": "Move only the dominant operation onto the new carrier",
+        "what_is_needed": "Direct (source-linked) evidence that this stage behaves as described.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Nothing in the stored knowledge base addresses this stage."
+      },
+      {
+        "gap_id": "MISSING-MECH-05",
+        "kind": "mechanism_step_unsupported",
+        "statement": "Measure the offsetting cost of the new interface",
+        "what_is_needed": "Direct (source-linked) evidence that this stage behaves as described.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Nothing in the stored knowledge base addresses this stage."
+      },
+      {
+        "gap_id": "MISSING-MECH-06",
+        "kind": "mechanism_step_unsupported",
+        "statement": "Decide whether the net budget improves",
+        "what_is_needed": "Direct (source-linked) evidence that this stage behaves as described.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Nothing in the stored knowledge base addresses this stage."
+      },
+      {
+        "gap_id": "MISSING-Q-01",
+        "kind": "open_question",
+        "statement": "Interface and conversion overhead between carriers",
+        "what_is_needed": "A measurement or a sourced result that bounds this quantity.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Recorded as an open question for this mechanism class."
+      },
+      {
+        "gap_id": "MISSING-Q-02",
+        "kind": "open_question",
+        "statement": "Availability and maturity of the alternative carrier",
+        "what_is_needed": "A measurement or a sourced result that bounds this quantity.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Recorded as an open question for this mechanism class."
+      },
+      {
+        "gap_id": "MISSING-Q-03",
+        "kind": "open_question",
+        "statement": "Whether measured gains survive at production scale",
+        "what_is_needed": "A measurement or a sourced result that bounds this quantity.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Recorded as an open question for this mechanism class."
+      }
+    ],
+    "counts": {
+      "direct": 0,
+      "indirect": 0,
+      "contradicting": 0,
+      "missing": 9
+    },
+    "direct_requires": "A provenance link in the hypothesis record. Wording similarity alone never produces direct evidence.",
+    "honesty_note": "AARL never converts semantic similarity into scientific evidence. Indirect items are shown as leads, not as support."
+  },
+  "gaps": [
+    {
+      "kind": "threshold",
+      "question": "At what value of the driving parameter does this mechanism stop paying off? A failure was recorded as: {\"baseline\": {\"converged_count\": 5, \"convergence_rate\": 1.0, \"elapsed_seconds\": 0.1608, \"max_iters_cap\": 4000, \"mean_final_loss\": 9.9e-05, \"mean_iterations\": 550.8, \"std_iterations\": 120.1306}, \"loss_curve_baseline\": [3.",
+      "why_it_matters": "A mechanism that works only inside an unstated range is a trap for whoever implements it next.",
+      "derived_from": [
+        "FAIL-111",
+        "EXP-111",
+        "HYP-112"
+      ],
+      "how_to_start": "Sweep the suspected parameter across its plausible range and record where achievable operations per second crosses over.",
+      "status": "OPEN",
+      "gap_id": "GAP-01"
+    },
+    {
+      "kind": "threshold",
+      "question": "At what value of the driving parameter does this mechanism stop paying off? A failure was recorded as: {\"baseline\": {\"converged_count\": 5, \"convergence_rate\": 1.0, \"elapsed_seconds\": 0.1577, \"max_iters_cap\": 4000, \"mean_final_loss\": 9.9e-05, \"mean_iterations\": 550.8, \"std_iterations\": 120.1306}, \"loss_curve_baseline\": [3.",
+      "why_it_matters": "A mechanism that works only inside an unstated range is a trap for whoever implements it next.",
+      "derived_from": [
+        "FAIL-112",
+        "EXP-112",
+        "HYP-112"
+      ],
+      "how_to_start": "Sweep the suspected parameter across its plausible range and record where achievable operations per second crosses over.",
+      "status": "OPEN",
+      "gap_id": "GAP-02"
+    },
+    {
+      "kind": "scaling",
+      "question": "How does achievable operations per second scale as the number of computing model participants grows beyond the tested range (num_runs=5, dimensionality=12, max_iterations=4000)?",
+      "why_it_matters": "Coordination mechanisms usually show their real cost only once the participant count grows.",
+      "derived_from": [
+        "EXP-111",
+        "EXP-112",
+        "EXP-113"
+      ],
+      "how_to_start": "Repeat the comparison at several participant counts and fit the curve.",
+      "status": "OPEN",
+      "gap_id": "GAP-03"
+    },
+    {
+      "kind": "robustness",
+      "question": "Interface and conversion overhead between carriers - and how does that depend on the workload being uniform?",
+      "why_it_matters": "An unquantified uncertainty is the likeliest reason a plausible mechanism would fail in practice.",
+      "derived_from": [
+        "library:substrate_substitution",
+        "HYP-112"
+      ],
+      "how_to_start": "Construct two workload classes (uniform and heterogeneous) and compare achievable operations per second between them.",
+      "status": "OPEN",
+      "gap_id": "GAP-04"
+    },
+    {
+      "kind": "robustness",
+      "question": "Availability and maturity of the alternative carrier - and how does that depend on the workload being uniform?",
+      "why_it_matters": "An unquantified uncertainty is the likeliest reason a plausible mechanism would fail in practice.",
+      "derived_from": [
+        "library:substrate_substitution",
+        "HYP-112"
+      ],
+      "how_to_start": "Construct two workload classes (uniform and heterogeneous) and compare achievable operations per second between them.",
+      "status": "OPEN",
+      "gap_id": "GAP-05"
+    },
+    {
+      "kind": "robustness",
+      "question": "Whether measured gains survive at production scale - and how does that depend on the workload being uniform?",
+      "why_it_matters": "An unquantified uncertainty is the likeliest reason a plausible mechanism would fail in practice.",
+      "derived_from": [
+        "library:substrate_substitution",
+        "HYP-112"
+      ],
+      "how_to_start": "Construct two workload classes (uniform and heterogeneous) and compare achievable operations per second between them.",
+      "status": "OPEN",
+      "gap_id": "GAP-06"
+    },
+    {
+      "kind": "evidence",
+      "question": "The mechanism stage 'Identify the operation in GPU that dominates cost or energy' has no source-linked support. What would demonstrate it?",
+      "why_it_matters": "An unsupported stage is where the proposed mechanism can break without anyone noticing.",
+      "derived_from": [
+        "MISSING-MECH-01",
+        "HYP-112"
+      ],
+      "how_to_start": "Direct (source-linked) evidence that this stage behaves as described.",
+      "status": "OPEN",
+      "gap_id": "GAP-07"
+    },
+    {
+      "kind": "evidence",
+      "question": "The mechanism stage 'Select a physical carrier better matched to that operation' has no source-linked support. What would demonstrate it?",
+      "why_it_matters": "An unsupported stage is where the proposed mechanism can break without anyone noticing.",
+      "derived_from": [
+        "MISSING-MECH-02",
+        "HYP-112"
+      ],
+      "how_to_start": "Direct (source-linked) evidence that this stage behaves as described.",
+      "status": "OPEN",
+      "gap_id": "GAP-08"
+    },
+    {
+      "kind": "evidence",
+      "question": "The mechanism stage 'Design the interface between the new carrier and the existing stack' has no source-linked support. What would demonstrate it?",
+      "why_it_matters": "An unsupported stage is where the proposed mechanism can break without anyone noticing.",
+      "derived_from": [
+        "MISSING-MECH-03",
+        "HYP-112"
+      ],
+      "how_to_start": "Direct (source-linked) evidence that this stage behaves as described.",
+      "status": "OPEN",
+      "gap_id": "GAP-09"
+    },
+    {
+      "kind": "refinement",
+      "question": "The recorded lesson is: Do not assume the failed assumption holds unconditionally: The constraint '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \" What modified mechanism would avoid it?",
+      "why_it_matters": "AARL keeps failures so that the next direction is an improvement rather than a repeat.",
+      "derived_from": [
+        "LESSON-001",
+        "FAIL-001"
+      ],
+      "how_to_start": "Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied",
+      "status": "OPEN",
+      "gap_id": "GAP-10"
+    },
+    {
+      "kind": "refinement",
+      "question": "The recorded lesson is: Do not assume the failed assumption holds unconditionally: The constraint '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \" What modified mechanism would avoid it?",
+      "why_it_matters": "AARL keeps failures so that the next direction is an improvement rather than a repeat.",
+      "derived_from": [
+        "LESSON-002",
+        "FAIL-002"
+      ],
+      "how_to_start": "Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied",
+      "status": "OPEN",
+      "gap_id": "GAP-11"
+    },
+    {
+      "kind": "first_experiment",
+      "question": "What is the smallest experiment that would change this direction's status?",
+      "why_it_matters": "AARL's statuses are updated only by records, so the fastest route to a stronger status is a deciding measurement.",
+      "derived_from": [
+        "HYP-112",
+        "EXP-111",
+        "EXP-112"
+      ],
+      "how_to_start": "See 'Suggested first experiment' in the research opportunity report.",
+      "status": "OPEN"
+    }
+  ],
+  "speculative_aspects": [
+    "The mechanism is transferred from photonics, neuromorphic engineering, analog computing, condensed matter physics and has not been demonstrated for GPU.",
+    "AARL has no implemented prototype of this mechanism for this problem."
+  ],
+  "unknowns": [
+    "Interface and conversion overhead between carriers",
+    "Availability and maturity of the alternative carrier",
+    "Whether measured gains survive at production scale"
+  ],
+  "risks": [
+    "Interface and conversion overhead between carriers (open question for this mechanism class)",
+    "Availability and maturity of the alternative carrier (open question for this mechanism class)",
+    "Whether measured gains survive at production scale (open question for this mechanism class)"
+  ],
+  "failure_conditions": [
+    {
+      "condition": "Interface and conversion overhead between carriers",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "Availability and maturity of the alternative carrier",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "Whether measured gains survive at production scale",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "The assumed limitation of the Computing Model facet does not actually hold for this system.",
+      "why_it_would_break_the_direction": "The direction exists to remove that limitation; if the limitation is not real, the direction has no target (this is the first assumption to check)."
+    }
+  ],
+  "first_experiment": {
+    "objective": "Establish whether the mechanism moves achievable operations per second for GPU at all, before tuning anything.",
+    "design": "Baseline A: the conventional computing model approach. Variant B: the Substrate substitution mechanism applied only to the compute model dimension. Keep every other parameter identical and use the same seed/warm-up.",
+    "metrics": [
+      "achievable operations per second",
+      "coordination or overhead cost introduced"
+    ],
+    "decision_rule": "Only claim support if B moves achievable operations per second outside the run-to-run spread of A; if the spread is larger than the effect, report INCONCLUSIVE rather than a direction.",
+    "what_would_make_it_stop": "If A is already at the physical or structural limit of achievable operations per second, the comparison cannot discriminate and the design must change.",
+    "claim_class": "EXPERIMENT_PROPOSAL"
+  },
+  "alternatives": [
+    {
+      "direction_id": "DIR-055",
+      "title": "Oscillator-Synchronized GPU Compute Model",
+      "status": "",
+      "shared_facet": "computing_model",
+      "why_related": "Same facet ('Computing Model'), different mechanism."
+    }
+  ],
+  "possibility_space_path": [
+    "Research problem",
+    "Computing Model",
+    "Substrate substitution (substrate_substitution)",
+    "Alternative-Substrate GPU Compute Model"
+  ],
+  "provenance": {
+    "constructed_by": "aarl.discovery.directions.DirectionDiscovery",
+    "research_question": "Design a new GPU for AI",
+    "facet_selection": {
+      "facet_id": "computing_model",
+      "score": 1.0,
+      "matched_keywords": [],
+      "matched_domains": [
+        "machine_learning"
+      ],
+      "selection_basis": "keyword overlap with the problem statement + detected-domain affinity + editorial exploration priority (order only)",
+      "selection_score_note": "Selection score for ordering the possibility space only — not evidence and not confidence."
+    },
+    "concept_library_entry": "aarl.discovery.concepts:substrate_substitution",
+    "knowledge_items_consulted": 21,
+    "prior_failure_memory_consulted": 0,
+    "subject_label_heuristic": "The object of study was labelled 'GPU' by a documented text heuristic (lab/discovery/text.py:subject_of). It is a label only.",
+    "what_this_is": "A constructed research direction, not a result. Evidence for it is attached later and only from provenance-linked records."
+  },
+  "timestamp": "2026-09-22T00:13:11",
+  "result_provenance": [
+    {
+      "result_class": "SIMULATION_RESULT",
+      "label": "SIMULATION RESULT",
+      "css": "prov-simulation",
+      "meaning": "Produced by executing a seeded model. A model output under stated parameters - never real-world evidence.",
+      "why": "Executed by adapter 'ml_optimizer:momentum' with seed 11.",
+      "status": "success",
+      "simulation_type": "ml_optimizer:momentum",
+      "experiment_id": "EXP-111",
+      "hypothesis_id": "HYP-112",
+      "is_reproducible": true,
+      "input_hash": "cb869df28c6f283c",
+      "how_to_reproduce": "Re-run hypothesis HYP-112 with the stored parameter block and seed 11 through adapter 'ml_optimizer_simulation'.",
+      "assumed_modifiers": {},
+      "constraints_violated": [
+        {
+          "constraint": {
+            "name": "improvement_pct",
+            "op": ">=",
+            "value": 0.0,
+            "source": "generated hypothesis expectation"
+          },
+          "observed": null,
+          "violated": null,
+          "reason": "not verifiable from this simulation's metrics"
+        }
+      ],
+      "errors": [],
+      "notes": [],
+      "assumptions": [
+        {
+          "name": "optimizer",
+          "value": "momentum",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_source",
+          "value": "request.parameters['optimizer']",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_params_requested",
+          "value": {},
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_params_applied",
+          "value": {
+            "lr": 0.03,
+            "momentum": 0.9
+          },
+          "source": "recorded parameter"
+        },
+        {
+          "name": "problem",
+          "value": "quadratic",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "num_runs",
+          "value": 5,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "dimensionality",
+          "value": 12,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "max_iterations",
+          "value": 4000,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "convergence_tol",
+          "value": 0.0001,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "seed",
+          "value": 11,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "baseline",
+          "value": {
+            "optimizer": "sgd",
+            "params": {
+              "lr": 0.1
+            }
+          },
+          "source": "recorded parameter"
+        }
+      ],
+      "must_not_be_called": [
+        "validated",
+        "experimentally confirmed",
+        "scientifically proven"
+      ]
+    },
+    {
+      "result_class": "SIMULATION_RESULT",
+      "label": "SIMULATION RESULT",
+      "css": "prov-simulation",
+      "meaning": "Produced by executing a seeded model. A model output under stated parameters - never real-world evidence.",
+      "why": "Executed by adapter 'ml_optimizer:momentum' with seed 11.",
+      "status": "success",
+      "simulation_type": "ml_optimizer:momentum",
+      "experiment_id": "EXP-112",
+      "hypothesis_id": "HYP-113",
+      "is_reproducible": true,
+      "input_hash": "9a48c869d76499f5",
+      "how_to_reproduce": "Re-run hypothesis HYP-113 with the stored parameter block and seed 11 through adapter 'ml_optimizer_simulation'.",
+      "assumed_modifiers": {},
+      "constraints_violated": [
+        {
+          "constraint": {
+            "name": "improvement_pct",
+            "op": ">=",
+            "value": 0.0,
+            "source": "generated hypothesis expectation"
+          },
+          "observed": null,
+          "violated": null,
+          "reason": "not verifiable from this simulation's metrics"
+        }
+      ],
+      "errors": [],
+      "notes": [],
+      "assumptions": [
+        {
+          "name": "optimizer",
+          "value": "momentum",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_source",
+          "value": "request.parameters['optimizer']",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_params_requested",
+          "value": {},
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_params_applied",
+          "value": {
+            "lr": 0.03,
+            "momentum": 0.9
+          },
+          "source": "recorded parameter"
+        },
+        {
+          "name": "problem",
+          "value": "quadratic",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "num_runs",
+          "value": 5,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "dimensionality",
+          "value": 12,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "max_iterations",
+          "value": 4000,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "convergence_tol",
+          "value": 0.0001,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "seed",
+          "value": 11,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "baseline",
+          "value": {
+            "optimizer": "sgd",
+            "params": {
+              "lr": 0.1
+            }
+          },
+          "source": "recorded parameter"
+        }
+      ],
+      "must_not_be_called": [
+        "validated",
+        "experimentally confirmed",
+        "scientifically proven"
+      ]
+    },
+    {
+      "result_class": "SIMULATION_RESULT",
+      "label": "SIMULATION RESULT",
+      "css": "prov-simulation",
+      "meaning": "Produced by executing a seeded model. A model output under stated parameters - never real-world evidence.",
+      "why": "Executed by adapter 'ml_optimizer:momentum' with seed 11.",
+      "status": "success",
+      "simulation_type": "ml_optimizer:momentum",
+      "experiment_id": "EXP-113",
+      "hypothesis_id": "HYP-114",
+      "is_reproducible": true,
+      "input_hash": "32ff8ed050ec5d3b",
+      "how_to_reproduce": "Re-run hypothesis HYP-114 with the stored parameter block and seed 11 through adapter 'ml_optimizer_simulation'.",
+      "assumed_modifiers": {},
+      "constraints_violated": [
+        {
+          "constraint": {
+            "name": "improvement_pct",
+            "op": ">=",
+            "value": 0.0,
+            "source": "generated hypothesis expectation"
+          },
+          "observed": null,
+          "violated": null,
+          "reason": "not verifiable from this simulation's metrics"
+        }
+      ],
+      "errors": [],
+      "notes": [],
+      "assumptions": [
+        {
+          "name": "optimizer",
+          "value": "momentum",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_source",
+          "value": "request.parameters['optimizer']",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_params_requested",
+          "value": {},
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_params_applied",
+          "value": {
+            "lr": 0.03,
+            "momentum": 0.9
+          },
+          "source": "recorded parameter"
+        },
+        {
+          "name": "problem",
+          "value": "quadratic",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "num_runs",
+          "value": 5,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "dimensionality",
+          "value": 12,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "max_iterations",
+          "value": 4000,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "convergence_tol",
+          "value": 0.0001,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "seed",
+          "value": 11,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "baseline",
+          "value": {
+            "optimizer": "sgd",
+            "params": {
+              "lr": 0.1
+            }
+          },
+          "source": "recorded parameter"
+        }
+      ],
+      "must_not_be_called": [
+        "validated",
+        "experimentally confirmed",
+        "scientifically proven"
+      ]
+    }
+  ],
+  "is_assumption_based": false,
+  "evaluated_at": "2026-09-22T00:13:35",
+  "record_id": "DIR-054",
+  "collection": "directions",
+  "stored_at": "2026-09-22T00:13:35"
+}

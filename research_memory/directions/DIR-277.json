@@ -1,0 +1,317 @@
+{
+  "direction_id": "DIR-277",
+  "run_id": "RUN-669A3610",
+  "order": 2,
+  "title": "Oscillator-Synchronized Battery Power Management",
+  "base_title": "Oscillator-Synchronized Battery Power Management",
+  "one_line": "Can emergent phase alignment replace an explicit global barrier to improve energy per operation for Battery?",
+  "core_question": "Can emergent phase alignment replace an explicit global barrier to improve energy per operation for Battery?",
+  "research_problem": "design a battery",
+  "subject": "Battery",
+  "claim_class": "DIRECTION_PROPOSAL",
+  "claim_class_label": "RESEARCH DIRECTION (AARL PROPOSAL)",
+  "facet": {
+    "facet_id": "energy_thermal",
+    "label": "Power and Thermal",
+    "title_noun": "Power Management",
+    "framing": "how energy is consumed, converted and removed",
+    "metric": "energy per operation",
+    "assumed_limitation": "Power density is limited by heat removal, so performance is capped by thermals rather than by the logic itself.",
+    "keywords": [
+      "power",
+      "energy",
+      "thermal",
+      "heat",
+      "watt",
+      "cool",
+      "temperature",
+      "efficiency",
+      "sustainab",
+      "consumption",
+      "battery"
+    ],
+    "domains": [
+      "computer_architecture",
+      "chemistry",
+      "materials_science",
+      "biology"
+    ]
+  },
+  "concept": {
+    "concept_id": "oscillator_synchronization",
+    "name": "Oscillator synchronization",
+    "title_adjective": "Oscillator-Synchronized",
+    "source_domains": [
+      "coupled oscillator physics",
+      "chronobiology",
+      "clock distribution"
+    ],
+    "description": "Replace an explicit global clock or barrier with emergent phase alignment between participants.",
+    "mechanism_steps": [
+      "Give each participant of {subject} a local timing source",
+      "Let neighbours nudge each other's phase slightly",
+      "Observe whether global phase alignment emerges",
+      "Use alignment as the coordination signal instead of a broadcast barrier",
+      "Bound the phase drift the system tolerates",
+      "Measure the energy spent maintaining alignment"
+    ],
+    "core_question": "Can emergent phase alignment replace an explicit global barrier to improve {metric} for {subject}?",
+    "uncertainties": [
+      "Lock-in time versus workload duration",
+      "Energy cost of maintaining alignment",
+      "Behaviour when coupling is interrupted"
+    ],
+    "library_metadata": {
+      "testability": "MEDIUM",
+      "novelty": "HIGH",
+      "implementation_risk": "HIGH",
+      "note": "Library metadata describing the mechanism in the abstract. It is NOT a score of scientific truth and is NOT evidence for any direction."
+    },
+    "facet_affinity": [
+      "interconnect_communication",
+      "computing_model",
+      "architecture",
+      "control_adaptation",
+      "energy_thermal"
+    ],
+    "literature_terms": [
+      "coupled oscillator computing",
+      "clockless synchronization"
+    ]
+  },
+  "mechanism_key": "energy_thermal:oscillator_synchronization",
+  "inspiration": {
+    "domains": [
+      "coupled oscillator physics",
+      "chronobiology",
+      "clock distribution"
+    ],
+    "concepts": [
+      "Oscillator synchronization"
+    ],
+    "library_entry": "aarl.discovery.concepts:oscillator_synchronization",
+    "library_metadata": {
+      "testability": "MEDIUM",
+      "novelty": "HIGH",
+      "implementation_risk": "HIGH",
+      "note": "Library metadata describing the mechanism in the abstract. It is NOT a score of scientific truth and is NOT evidence for any direction."
+    },
+    "papers": [],
+    "display": "coupled oscillator physics + chronobiology + clock distribution"
+  },
+  "why_interesting": "The problem's 'Power and Thermal' dimension (how energy is consumed, converted and removed) is where the conventional approach carries a structural assumption: Power density is limited by heat removal, so performance is capped by thermals rather than by the logic itself. AARL took a mechanism that already works in coupled oscillator physics, chronobiology, clock distribution - Replace an explicit global clock or barrier with emergent phase alignment between participants. - and asked what happens if it is applied to Battery. If the mechanism transfers, the gain would come from removing that assumption rather than from tuning the existing design. Whether it transfers is exactly what is not established here.",
+  "why_this_idea": {
+    "stages": [
+      {
+        "stage": "Research problem",
+        "value": "design a battery",
+        "claim_class": "STATED_BY_USER",
+        "claim_class_label": "STATED BY RESEARCHER",
+        "source": "user input",
+        "provenance": {},
+        "note": "The exact problem text AARL was given."
+      },
+      {
+        "stage": "Observed limitation",
+        "value": "Power density is limited by heat removal, so performance is capped by thermals rather than by the logic itself.",
+        "claim_class": "INFERENCE",
+        "claim_class_label": "INFERENCE (AARL - NOT SOURCED)",
+        "source": "aarl.discovery.facets (facet assumption)",
+        "provenance": {
+          "facet_id": "energy_thermal"
+        },
+        "note": "AARL states this as an assumed limitation of the conventional approach. No stored source-linked limitation was found for this facet, so it must not be read as a literature fact."
+      },
+      {
+        "stage": "Cross-domain concept",
+        "value": "Oscillator synchronization - Replace an explicit global clock or barrier with emergent phase alignment between participants.",
+        "claim_class": "LIBRARY_ENTRY",
+        "claim_class_label": "LIBRARY ENTRY",
+        "source": "coupled oscillator physics, chronobiology, clock distribution",
+        "provenance": {
+          "concept_id": "oscillator_synchronization",
+          "library": "aarl.discovery.concepts"
+        },
+        "note": "A curated cross-domain mechanism. Its transfer to Battery is AARL's proposal, not an established result."
+      },
+      {
+        "stage": "Mechanism",
+        "value": "Replace an explicit global clock or barrier with emergent phase alignment between participants.",
+        "claim_class": "LIBRARY_ENTRY",
+        "claim_class_label": "LIBRARY ENTRY",
+        "source": "aarl.discovery.concepts:oscillator_synchronization",
+        "provenance": {
+          "steps": 6
+        },
+        "note": "Expanded stage by stage in the mechanism view below."
+      },
+      {
+        "stage": "Hypothesis",
+        "value": "(no hypothesis generated in this run)",
+        "claim_class": "HYPOTHESIS_UNTESTED",
+        "claim_class_label": "HYPOTHESIS (UNTESTED)",
+        "source": "aarl.lab.hypotheses",
+        "provenance": {},
+        "note": "AARL-generated proposal. It is not a finding."
+      }
+    ],
+    "cross_domains": [
+      "coupled oscillator physics",
+      "chronobiology",
+      "clock distribution"
+    ],
+    "flow": "Research problem > Observed limitation > Cross-domain concept > Mechanism > Hypothesis",
+    "why_readable": "AARL started from the stated problem, picked the 'Power and Thermal' dimension of it, took the 'Oscillator synchronization' mechanism from coupled oscillator physics, chronobiology, clock distribution, and proposed applying it there.",
+    "honesty_note": "Each stage is labelled with what it is. A limitation marked INFERENCE is an AARL assumption and is the first thing a reviewer should check."
+  },
+  "mechanism": {
+    "label": "PROPOSED MECHANISM",
+    "implementation_status": "CONCEPTUAL - NOT IMPLEMENTED",
+    "source_concept": "oscillator_synchronization",
+    "source_concept_name": "Oscillator synchronization",
+    "source_domains": [
+      "coupled oscillator physics",
+      "chronobiology",
+      "clock distribution"
+    ],
+    "steps": [
+      {
+        "index": 1,
+        "text": "Give each participant of Battery a local timing source",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 2,
+        "text": "Let neighbours nudge each other's phase slightly",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 3,
+        "text": "Observe whether global phase alignment emerges",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 4,
+        "text": "Use alignment as the coordination signal instead of a broadcast barrier",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 5,
+        "text": "Bound the phase drift the system tolerates",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 6,
+        "text": "Measure the energy spent maintaining alignment",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      }
+    ],
+    "unsupported_stages": 6,
+    "note": "This chain is the mechanism AARL is proposing, expressed conceptually. No implementation of it was built or measured, and an unsupported stage is a research target - not a hidden assumption."
+  },
+  "already_failed": false,
+  "prior_failures": [],
+  "refinement": null,
+  "hypothesis_ids": [],
+  "experiment_ids": [],
+  "failure_ids": [],
+  "lesson_ids": [],
+  "status": null,
+  "dimensions": {},
+  "evidence": {},
+  "gaps": [],
+  "speculative_aspects": [
+    "The mechanism is transferred from coupled oscillator physics, chronobiology, clock distribution and has not been demonstrated for Battery.",
+    "AARL has no implemented prototype of this mechanism for this problem.",
+    "The facet (Power and Thermal) was selected using keyword overlap on: battery."
+  ],
+  "unknowns": [
+    "Lock-in time versus workload duration",
+    "Energy cost of maintaining alignment",
+    "Behaviour when coupling is interrupted"
+  ],
+  "risks": [
+    "Lock-in time versus workload duration (open question for this mechanism class)",
+    "Energy cost of maintaining alignment (open question for this mechanism class)",
+    "Behaviour when coupling is interrupted (open question for this mechanism class)"
+  ],
+  "failure_conditions": [
+    {
+      "condition": "Lock-in time versus workload duration",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "Energy cost of maintaining alignment",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "Behaviour when coupling is interrupted",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "The assumed limitation of the Power and Thermal facet does not actually hold for this system.",
+      "why_it_would_break_the_direction": "The direction exists to remove that limitation; if the limitation is not real, the direction has no target (this is the first assumption to check)."
+    }
+  ],
+  "first_experiment": {
+    "objective": "Establish whether the mechanism moves energy per operation for Battery at all, before tuning anything.",
+    "design": "Baseline A: the conventional power and thermal approach. Variant B: the Oscillator synchronization mechanism applied only to the power management dimension. Keep every other parameter identical and use the same seed/warm-up.",
+    "metrics": [
+      "energy per operation",
+      "coordination or overhead cost introduced"
+    ],
+    "decision_rule": "Only claim support if B moves energy per operation outside the run-to-run spread of A; if the spread is larger than the effect, report INCONCLUSIVE rather than a direction.",
+    "what_would_make_it_stop": "If A is already at the physical or structural limit of energy per operation, the comparison cannot discriminate and the design must change.",
+    "claim_class": "EXPERIMENT_PROPOSAL"
+  },
+  "alternatives": [],
+  "possibility_space_path": [
+    "Research problem",
+    "Power and Thermal",
+    "Oscillator synchronization (oscillator_synchronization)",
+    "Oscillator-Synchronized Battery Power Management"
+  ],
+  "provenance": {
+    "constructed_by": "aarl.discovery.directions.DirectionDiscovery",
+    "research_question": "design a battery",
+    "facet_selection": {
+      "facet_id": "energy_thermal",
+      "score": 2.0,
+      "matched_keywords": [
+        "battery"
+      ],
+      "matched_domains": [
+        "chemistry"
+      ],
+      "selection_basis": "keyword overlap with the problem statement + detected-domain affinity + editorial exploration priority (order only)",
+      "selection_score_note": "Selection score for ordering the possibility space only — not evidence and not confidence."
+    },
+    "concept_library_entry": "aarl.discovery.concepts:oscillator_synchronization",
+    "knowledge_items_consulted": 96,
+    "prior_failure_memory_consulted": 0,
+    "subject_label_heuristic": "The object of study was labelled 'Battery' by a documented text heuristic (lab/discovery/text.py:subject_of). It is a label only.",
+    "what_this_is": "A constructed research direction, not a result. Evidence for it is attached later and only from provenance-linked records."
+  },
+  "timestamp": "2026-09-22T21:44:48",
+  "record_id": "DIR-277",
+  "collection": "directions",
+  "stored_at": "2026-09-22T21:44:49"
+}

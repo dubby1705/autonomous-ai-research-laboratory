@@ -1,0 +1,320 @@
+{
+  "direction_id": "DIR-146",
+  "run_id": "RUN-6E52D842",
+  "order": 7,
+  "title": "Alternative-Substrate GPU Data Representation",
+  "base_title": "Alternative-Substrate GPU Data Representation",
+  "one_line": "Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is included?",
+  "core_question": "Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is included?",
+  "research_problem": "Design a new GPU for AI",
+  "subject": "GPU",
+  "claim_class": "DIRECTION_PROPOSAL",
+  "claim_class_label": "RESEARCH DIRECTION (AARL PROPOSAL)",
+  "facet": {
+    "facet_id": "data_representation",
+    "label": "Data Representation",
+    "title_noun": "Data Representation",
+    "framing": "how information is encoded, stored and transported",
+    "metric": "information density per unit cost",
+    "assumed_limitation": "The representation is uniform across the whole tensor or molecule, so a few significant elements pay for many insignificant ones.",
+    "keywords": [
+      "represent",
+      "encod",
+      "format",
+      "precision",
+      "quantiz",
+      "compress",
+      "spars",
+      "datatype",
+      "bit",
+      "tensor",
+      "structure",
+      "embed"
+    ],
+    "domains": [
+      "computer_architecture",
+      "machine_learning",
+      "chemistry"
+    ]
+  },
+  "concept": {
+    "concept_id": "substrate_substitution",
+    "name": "Substrate substitution",
+    "title_adjective": "Alternative-Substrate",
+    "source_domains": [
+      "photonics",
+      "neuromorphic engineering",
+      "analog computing",
+      "condensed matter physics"
+    ],
+    "description": "Change the physical carrier that performs the operation instead of optimising the existing carrier further.",
+    "mechanism_steps": [
+      "Identify the operation in {subject} that dominates cost or energy",
+      "Select a physical carrier better matched to that operation",
+      "Design the interface between the new carrier and the existing stack",
+      "Move only the dominant operation onto the new carrier",
+      "Measure the offsetting cost of the new interface",
+      "Decide whether the net budget improves"
+    ],
+    "core_question": "Would moving the cost-dominant operation of {subject} onto a different physical carrier improve {metric} once interface overhead is included?",
+    "uncertainties": [
+      "Interface and conversion overhead between carriers",
+      "Availability and maturity of the alternative carrier",
+      "Whether measured gains survive at production scale"
+    ],
+    "library_metadata": {
+      "testability": "MEDIUM",
+      "novelty": "HIGH",
+      "implementation_risk": "HIGH",
+      "note": "Library metadata describing the mechanism in the abstract. It is NOT a score of scientific truth and is NOT evidence for any direction."
+    },
+    "facet_affinity": [
+      "computing_model",
+      "materials",
+      "architecture",
+      "energy_thermal",
+      "manufacturing",
+      "data_representation"
+    ],
+    "literature_terms": [
+      "photonic computing",
+      "neuromorphic hardware",
+      "analog in-memory computing"
+    ]
+  },
+  "mechanism_key": "data_representation:substrate_substitution",
+  "inspiration": {
+    "domains": [
+      "photonics",
+      "neuromorphic engineering",
+      "analog computing",
+      "condensed matter physics"
+    ],
+    "concepts": [
+      "Substrate substitution"
+    ],
+    "library_entry": "aarl.discovery.concepts:substrate_substitution",
+    "library_metadata": {
+      "testability": "MEDIUM",
+      "novelty": "HIGH",
+      "implementation_risk": "HIGH",
+      "note": "Library metadata describing the mechanism in the abstract. It is NOT a score of scientific truth and is NOT evidence for any direction."
+    },
+    "papers": [],
+    "display": "photonics + neuromorphic engineering + analog computing"
+  },
+  "why_interesting": "The problem's 'Data Representation' dimension (how information is encoded, stored and transported) is where the conventional approach carries a structural assumption: The representation is uniform across the whole tensor or molecule, so a few significant elements pay for many insignificant ones. AARL took a mechanism that already works in photonics, neuromorphic engineering, analog computing, condensed matter physics - Change the physical carrier that performs the operation instead of optimising the existing carrier further. - and asked what happens if it is applied to GPU. If the mechanism transfers, the gain would come from removing that assumption rather than from tuning the existing design. Whether it transfers is exactly what is not established here.",
+  "why_this_idea": {
+    "stages": [
+      {
+        "stage": "Research problem",
+        "value": "Design a new GPU for AI",
+        "claim_class": "STATED_BY_USER",
+        "claim_class_label": "STATED BY RESEARCHER",
+        "source": "user input",
+        "provenance": {},
+        "note": "The exact problem text AARL was given."
+      },
+      {
+        "stage": "Observed limitation",
+        "value": "The representation is uniform across the whole tensor or molecule, so a few significant elements pay for many insignificant ones.",
+        "claim_class": "INFERENCE",
+        "claim_class_label": "INFERENCE (AARL - NOT SOURCED)",
+        "source": "aarl.discovery.facets (facet assumption)",
+        "provenance": {
+          "facet_id": "data_representation"
+        },
+        "note": "AARL states this as an assumed limitation of the conventional approach. No stored source-linked limitation was found for this facet, so it must not be read as a literature fact."
+      },
+      {
+        "stage": "Cross-domain concept",
+        "value": "Substrate substitution - Change the physical carrier that performs the operation instead of optimising the existing carrier further.",
+        "claim_class": "LIBRARY_ENTRY",
+        "claim_class_label": "LIBRARY ENTRY",
+        "source": "photonics, neuromorphic engineering, analog computing, condensed matter physics",
+        "provenance": {
+          "concept_id": "substrate_substitution",
+          "library": "aarl.discovery.concepts"
+        },
+        "note": "A curated cross-domain mechanism. Its transfer to GPU is AARL's proposal, not an established result."
+      },
+      {
+        "stage": "Mechanism",
+        "value": "Change the physical carrier that performs the operation instead of optimising the existing carrier further.",
+        "claim_class": "LIBRARY_ENTRY",
+        "claim_class_label": "LIBRARY ENTRY",
+        "source": "aarl.discovery.concepts:substrate_substitution",
+        "provenance": {
+          "steps": 6
+        },
+        "note": "Expanded stage by stage in the mechanism view below."
+      },
+      {
+        "stage": "Hypothesis",
+        "value": "(no hypothesis generated in this run)",
+        "claim_class": "HYPOTHESIS_UNTESTED",
+        "claim_class_label": "HYPOTHESIS (UNTESTED)",
+        "source": "aarl.lab.hypotheses",
+        "provenance": {},
+        "note": "AARL-generated proposal. It is not a finding."
+      }
+    ],
+    "cross_domains": [
+      "photonics",
+      "neuromorphic engineering",
+      "analog computing",
+      "condensed matter physics"
+    ],
+    "flow": "Research problem > Observed limitation > Cross-domain concept > Mechanism > Hypothesis",
+    "why_readable": "AARL started from the stated problem, picked the 'Data Representation' dimension of it, took the 'Substrate substitution' mechanism from photonics, neuromorphic engineering, analog computing, condensed matter physics, and proposed applying it there.",
+    "honesty_note": "Each stage is labelled with what it is. A limitation marked INFERENCE is an AARL assumption and is the first thing a reviewer should check."
+  },
+  "mechanism": {
+    "label": "PROPOSED MECHANISM",
+    "implementation_status": "CONCEPTUAL - NOT IMPLEMENTED",
+    "source_concept": "substrate_substitution",
+    "source_concept_name": "Substrate substitution",
+    "source_domains": [
+      "photonics",
+      "neuromorphic engineering",
+      "analog computing",
+      "condensed matter physics"
+    ],
+    "steps": [
+      {
+        "index": 1,
+        "text": "Identify the operation in GPU that dominates cost or energy",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 2,
+        "text": "Select a physical carrier better matched to that operation",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 3,
+        "text": "Design the interface between the new carrier and the existing stack",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 4,
+        "text": "Move only the dominant operation onto the new carrier",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 5,
+        "text": "Measure the offsetting cost of the new interface",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 6,
+        "text": "Decide whether the net budget improves",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      }
+    ],
+    "unsupported_stages": 6,
+    "note": "This chain is the mechanism AARL is proposing, expressed conceptually. No implementation of it was built or measured, and an unsupported stage is a research target - not a hidden assumption."
+  },
+  "already_failed": false,
+  "prior_failures": [],
+  "refinement": null,
+  "hypothesis_ids": [],
+  "experiment_ids": [],
+  "failure_ids": [],
+  "lesson_ids": [],
+  "status": null,
+  "dimensions": {},
+  "evidence": {},
+  "gaps": [],
+  "speculative_aspects": [
+    "The mechanism is transferred from photonics, neuromorphic engineering, analog computing, condensed matter physics and has not been demonstrated for GPU.",
+    "AARL has no implemented prototype of this mechanism for this problem."
+  ],
+  "unknowns": [
+    "Interface and conversion overhead between carriers",
+    "Availability and maturity of the alternative carrier",
+    "Whether measured gains survive at production scale"
+  ],
+  "risks": [
+    "Interface and conversion overhead between carriers (open question for this mechanism class)",
+    "Availability and maturity of the alternative carrier (open question for this mechanism class)",
+    "Whether measured gains survive at production scale (open question for this mechanism class)"
+  ],
+  "failure_conditions": [
+    {
+      "condition": "Interface and conversion overhead between carriers",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "Availability and maturity of the alternative carrier",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "Whether measured gains survive at production scale",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "The assumed limitation of the Data Representation facet does not actually hold for this system.",
+      "why_it_would_break_the_direction": "The direction exists to remove that limitation; if the limitation is not real, the direction has no target (this is the first assumption to check)."
+    }
+  ],
+  "first_experiment": {
+    "objective": "Establish whether the mechanism moves information density per unit cost for GPU at all, before tuning anything.",
+    "design": "Baseline A: the conventional data representation approach. Variant B: the Substrate substitution mechanism applied only to the data representation dimension. Keep every other parameter identical and use the same seed/warm-up.",
+    "metrics": [
+      "information density per unit cost",
+      "coordination or overhead cost introduced"
+    ],
+    "decision_rule": "Only claim support if B moves information density per unit cost outside the run-to-run spread of A; if the spread is larger than the effect, report INCONCLUSIVE rather than a direction.",
+    "what_would_make_it_stop": "If A is already at the physical or structural limit of information density per unit cost, the comparison cannot discriminate and the design must change.",
+    "claim_class": "EXPERIMENT_PROPOSAL"
+  },
+  "alternatives": [],
+  "possibility_space_path": [
+    "Research problem",
+    "Data Representation",
+    "Substrate substitution (substrate_substitution)",
+    "Alternative-Substrate GPU Data Representation"
+  ],
+  "provenance": {
+    "constructed_by": "aarl.discovery.directions.DirectionDiscovery",
+    "research_question": "Design a new GPU for AI",
+    "facet_selection": {
+      "facet_id": "data_representation",
+      "score": 1.0,
+      "matched_keywords": [],
+      "matched_domains": [
+        "machine_learning"
+      ],
+      "selection_basis": "keyword overlap with the problem statement + detected-domain affinity + editorial exploration priority (order only)",
+      "selection_score_note": "Selection score for ordering the possibility space only — not evidence and not confidence."
+    },
+    "concept_library_entry": "aarl.discovery.concepts:substrate_substitution",
+    "knowledge_items_consulted": 48,
+    "prior_failure_memory_consulted": 0,
+    "subject_label_heuristic": "The object of study was labelled 'GPU' by a documented text heuristic (lab/discovery/text.py:subject_of). It is a label only.",
+    "what_this_is": "A constructed research direction, not a result. Evidence for it is attached later and only from provenance-linked records."
+  },
+  "timestamp": "2026-09-22T01:32:31",
+  "record_id": "DIR-146",
+  "collection": "directions",
+  "stored_at": "2026-09-22T01:32:31"
+}

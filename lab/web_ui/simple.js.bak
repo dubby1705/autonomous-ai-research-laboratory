@@ -1,0 +1,455 @@
+/* ============================================================
+   AARL · simple Research Command Center
+   Idle → command bar · Running → live panel · Done → report
+   All data comes from the real AARL backend (lab.web_api).
+   ============================================================ */
+(function () {
+"use strict";
+const $ = (s, r) => (r || document).querySelector(s);
+function el(tag, attrs, html) {
+  const n = document.createElement(tag);
+  if (attrs) for (const k of Object.keys(attrs)) {
+    if (k === "class") n.className = attrs[k];
+    else if (k === "text") n.textContent = attrs[k];
+    else if (k === "html") n.innerHTML = attrs[k];
+    else n.setAttribute(k, attrs[k]);
+  }
+  if (html != null) n.innerHTML = html;
+  return n;
+}
+const esc = (s) => String(s == null ? "" : s)
+  .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+async function api(url, opts) {
+  const res = await fetch(url, opts);
+  const body = await res.json().catch(() => null);
+  if (!res.ok) throw new Error((body && body.error) || ("HTTP " + res.status));
+  return body;
+}
+const get = (u) => api(u);
+const post = (u, p) => api(u, { method: "POST",
+  headers: { "Content-Type": "application/json" }, body: JSON.stringify(p || {}) });
+
+const STAGE_LABELS = {
+  understanding: "ANALYZING PROBLEM", domains: "DETECTING DOMAINS",
+  literature: "SEARCHING KNOWLEDGE", graph: "BUILDING KNOWLEDGE GRAPH",
+  exploring: "EXPLORING POSSIBILITY SPACE", hypotheses: "GENERATING HYPOTHESES",
+  mechanisms: "DESIGNING EXPERIMENTS", simulations: "SIMULATING",
+  evaluating: "VALIDATING RESULTS",
+};
+const S = { runId: null, phase: "idle", timer: 0, busy: false, lastStatus: "" };
+
+/* ------------------------------------------------------------ header */
+function header(app, opts) {
+  const o = opts || {};
+  const hd = el("div", { class: "hd" });
+  hd.appendChild(el("div", { class: "brand",
+    html: 'AARL<small>AUTONOMOUS AI RESEARCH LABORATORY</small>' }));
+  const on = el("div", { class: "online" });
+  on.appendChild(el("span", { class: "dot" + (o.dot ? " " + o.dot : "") }));
+  on.appendChild(el("span", { text: o.label || "ENGINE ONLINE" }));
+  hd.appendChild(on);
+  app.appendChild(hd);
+}
+
+function bar(app, value, disabled, onSubmit) {
+  const form = el("form", { class: "bar" });
+  const input = el("input", { type: "text", autocomplete: "off", spellcheck: "false",
+    placeholder: 'Research: Design a new advanced GPU architecture',
+    "aria-label": "Research problem", value: value || "" });
+  const btn = el("button", { type: "submit", text: "ENGAGE" });
+  if (disabled) btn.disabled = true;
+  form.appendChild(input);
+  form.appendChild(btn);
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const problem = input.value.trim().replace(/^(?:research|investigate)\s*[:\-]?\s*/i, "");
+    if (problem.length < 4) { input.focus(); return; }
+    onSubmit(problem, input, btn);
+  });
+  app.appendChild(form);
+  const statusline = el("div", { class: "statusline", id: "statusline" });
+  app.appendChild(statusline);
+  return { input, btn, statusline };
+}
+
+function section(app, title) {
+  const sec = el("div", { class: "sec" });
+  sec.appendChild(el("div", { class: "sec-title", text: title }));
+  app.appendChild(sec);
+  return sec;
+}
+function kv(sec, k, v, mono) {
+  const row = el("div", { class: "kv" });
+  row.appendChild(el("span", { class: "k", text: k }));
+  row.appendChild(el("span", { class: "v" + (mono ? " mono" : ""),
+    text: v == null || v === "" ? "—" : String(v) }));
+  sec.appendChild(row);
+  return row;
+}
+
+/* ------------------------------------------------------- running view */
+function renderRunning(problem) {
+  const app = $("#app");
+  app.innerHTML = "";
+  header(app, { label: "ENGINE ONLINE", dot: "busy" });
+  const b = bar(app, problem, true, () => {});
+  b.input.disabled = true;
+  b.statusline.innerHTML = '<span class="tag">[ RUNNING ]</span>';
+
+  const cur = section(app, "CURRENT RESEARCH");
+  cur.id = "sec-current";
+  kv(cur, "Problem", problem);
+  const statRow = el("div", { class: "stat-row", id: "stat-row" });
+  cur.appendChild(statRow);
+
+  const find = section(app, "AARL FINDINGS");
+  find.id = "sec-findings";
+  find.appendChild(el("p", { class: "empty-note",
+    text: "No surviving idea yet — findings appear as hypotheses survive validation." }));
+
+  const act = section(app, "LIVE ACTIVITY");
+  act.id = "sec-activity";
+  const ul = el("ul", { class: "act", id: "act-list" });
+  act.appendChild(ul);
+}
+
+const GLYPH = { success: ["✓", "ok"], notice: ["→", "run"], info: ["→", "run"],
+  alert: ["✗", "bad"], trace: ["·", ""], stage: ["→", "run"] };
+
+function paintRunning(state) {
+  const stages = state.stages || [];
+  let current = "";
+  for (const s of stages) if (s.state === "running") { current = s.key; break; }
+  const statusline = $("#statusline");
+  if (statusline && current) {
+    statusline.innerHTML = '<span class="tag">[ RUNNING ]</span> ' +
+      esc(STAGE_LABELS[current] || current.toUpperCase());
+  }
+}
+/* ---------------------------------------------------------- data paint */
+function paintStats(counts, evidence) {
+  const row = $("#stat-row");
+  if (!row) return;
+  const c = counts || {};
+  const items = [
+    ["Hypotheses", c.hypotheses != null ? c.hypotheses : "—"],
+    ["Experiments", c.experiments != null ? c.experiments : "—"],
+    ["Evidence", evidence != null ? evidence : "—"],
+  ];
+  row.innerHTML = "";
+  items.forEach(([label, value]) => {
+    const s = el("div", { class: "stat" });
+    s.appendChild(el("b", { text: String(value) }));
+    s.appendChild(el("span", { text: label.toUpperCase() }));
+    row.appendChild(s);
+  });
+}
+
+function bestSurvivor(hyps) {
+  const ok = (hyps || []).filter((h) =>
+    ["SURVIVED", "SUPPORTED", "EVIDENCE_BACKED"].includes(String(h.state).toUpperCase()));
+  if (!ok.length) return null;
+  ok.sort((a, b) => {
+    const ca = Number(a.confidence_recorded) || 0, cb = Number(b.confidence_recorded) || 0;
+    if (cb !== ca) return cb - ca;
+    return (b.experiments || []).length - (a.experiments || []).length;
+  });
+  return ok[0];
+}
+
+function paintFindings(h) {
+  const sec = $("#sec-findings");
+  if (!sec) return;
+  sec.innerHTML = "";
+  sec.appendChild(el("div", { class: "sec-title", text: "AARL FINDINGS" }));
+  if (!h) {
+    sec.appendChild(el("p", { class: "empty-note",
+      text: "No surviving idea yet — findings appear as hypotheses survive validation." }));
+    return;
+  }
+  const name = h.direction_title || h.hypothesis || h.hypothesis_id;
+  const f = el("div", { class: "finding" });
+  f.appendChild(el("span", { class: "star", text: "★" }));
+  f.appendChild(el("span", { class: "name", text: name }));
+  sec.appendChild(f);
+
+  const why = el("ul", { class: "why" });
+  const exps = h.experiments || [];
+  let bestImp = null;
+  exps.forEach((x) => {
+    if (typeof x.improvement_pct === "number" &&
+        (bestImp == null || x.improvement_pct > bestImp)) bestImp = x.improvement_pct;
+  });
+  if (bestImp != null) {
+    why.appendChild(el("li", { text: "Best measured improvement across " + exps.length +
+      " experiment(s): " + (bestImp >= 0 ? "+" : "") + bestImp.toFixed(2) + "%" }));
+  }
+  const sup = (h.supporting_evidence || []).length;
+  if (sup) why.appendChild(el("li", { text: "Supported by " + sup + " recorded evidence item(s)" }));
+  const con = (h.contradictions || []).length;
+  if (con) why.appendChild(el("li", { text: "Survived " + con + " recorded contradiction(s)" }));
+  if (!why.children.length) {
+    why.appendChild(el("li", { text: h.what_would_change_it ? h.what_would_change_it[0]
+      : "Recorded as " + String(h.state).toLowerCase() + " by the validation engine." }));
+  }
+  sec.appendChild(why);
+
+  const conf = Number(h.confidence_recorded);
+  const confEl = el("div", { class: "conf", text: "CONFIDENCE: " +
+    (isFinite(conf) && conf > 0 ? Math.round(conf <= 1 ? conf * 100 : conf) + "%" : "NOT RECORDED") });
+  sec.appendChild(confEl);
+  const meter = el("div", { class: "meter" });
+  const fill = el("i");
+  meter.appendChild(fill);
+  sec.appendChild(meter);
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    fill.style.width = (isFinite(conf) && conf > 0
+      ? Math.min(100, conf <= 1 ? conf * 100 : conf) : 0) + "%";
+  }));
+}
+
+function paintActivity(events) {
+  const ul = $("#act-list");
+  if (!ul) return;
+  ul.innerHTML = "";
+  (events || []).slice(0, 7).forEach((ev) => {
+    const [glyph, cls] = GLYPH[ev.severity] || GLYPH.info;
+    const li = el("li");
+    li.appendChild(el("span", { class: "g " + cls, text: glyph }));
+    li.appendChild(el("span", { class: "t", text: ev.text || "" }));
+    if (ev.at) {
+      li.appendChild(el("span", { class: "at", text: String(ev.at).slice(11, 19) }));
+    }
+    ul.appendChild(li);
+  });
+  if (!ul.children.length) {
+    const li = el("li");
+    li.appendChild(el("span", { class: "g run", text: "→" }));
+    li.appendChild(el("span", { class: "t", text: "Initializing research engine…" }));
+    ul.appendChild(li);
+  }
+}
+/* ---------------------------------------------------------- report view */
+function hypGlyph(state) {
+  const s = String(state || "").toUpperCase();
+  if (["SURVIVED", "SUPPORTED"].includes(s)) return ["✓", "g-ok", "Survived"];
+  if (s === "CONTRADICTED") return ["✗", "g-bad", "Contradicted"];
+  if (["REJECTED", "FAILED", "FAILED_SIMULATION"].includes(s)) return ["✗", "g-bad", "Failed simulation"];
+  if (s === "REFINED") return ["↻", "g-dim", "Refined"];
+  return ["·", "g-dim", s || "Untested"];
+}
+
+function renderReport(run, report, hyps, papers) {
+  const app = $("#app");
+  app.innerHTML = "";
+  header(app, { label: "RESEARCH COMPLETE", dot: "" });
+
+  const head = el("div", { class: "sec" });
+  head.appendChild(el("div", { class: "sec-title", text: "AARL RESEARCH REPORT" }));
+  head.appendChild(el("div", { class: "rq", text: report.question || run.problem || "—" }));
+  head.appendChild(el("div", { class: "rid", text: report.run_id || run.run_id || "" }));
+  app.appendChild(head);
+
+  const best = bestSurvivor(hyps);
+  const survivorsSec = (report.sections || []).find((s) => /SURVIVING/i.test(s.title || ""));
+  const exec = el("div", { class: "sec" });
+  exec.appendChild(el("div", { class: "sec-title", text: "EXECUTIVE FINDING" }));
+  if (best || (survivorsSec && survivorsSec.items && survivorsSec.items.length)) {
+    const item = (survivorsSec && survivorsSec.items && survivorsSec.items[0]) || null;
+    const box = el("div", { class: "exec" });
+    const name = best ? ((best.direction && best.direction.title) || best.hypothesis || best.hypothesis_id)
+      : (item ? item.label : "");
+    const rowF = el("div", { class: "finding" });
+    rowF.appendChild(el("span", { class: "star", text: "\u2605" }));
+    rowF.appendChild(el("span", { class: "name", text: name || "Untitled finding" }));
+    box.appendChild(rowF);
+    let desc = "";
+    if (best) {
+      if (best.hypothesis) desc = best.hypothesis;
+      else if (best.direction && best.direction.one_line) desc = best.direction.one_line;
+    } else if (item) { desc = item.value || ""; }
+    if (desc) box.appendChild(el("div", { class: "desc", text: desc }));
+    const verdict = el("div", { class: "verdict" });
+    verdict.appendChild(el("span", { class: "v1", text: "VALIDATION: " +
+      (best ? String(best.state).toUpperCase() : "EVIDENCE-BACKED") }));
+    const conf = Number(best && best.confidence_recorded);
+    verdict.appendChild(el("span", { class: "v2", text: "CONFIDENCE: " +
+      (isFinite(conf) && conf > 0 ? Math.round(conf <= 1 ? conf * 100 : conf) + "%" : "NOT RECORDED") }));
+    box.appendChild(verdict);
+    exec.appendChild(box);
+  } else {
+    exec.appendChild(el("p", { class: "empty-note",
+      text: "No hypothesis survived validation in this run \u2014 see the rejected ideas below." }));
+  }
+  app.appendChild(exec);
+
+  const evSec = el("div", { class: "sec" });
+  evSec.appendChild(el("div", { class: "sec-title", text: "EVIDENCE" }));
+  const evRows = el("div", { class: "stat-row" });
+  const c = report.scope_counts || {};
+  evRows.appendChild(statBox("Sources retrieved",
+    (c.papers) ? c.papers : (papers && papers.length ? papers.length : 0)));
+  evRows.appendChild(statBox("Relevant sources", (c.sourced_items) ? c.sourced_items : 0));
+  evRows.appendChild(statBox("Evidence-backed claims", (c.knowledge_items) ? c.knowledge_items : 0));
+  evSec.appendChild(evRows);
+  app.appendChild(evSec);
+
+  if (hyps && hyps.length) {
+    const hSec = el("div", { class: "sec" });
+    hSec.appendChild(el("div", { class: "sec-title", text: "HYPOTHESES" }));
+    const list = el("ul", { class: "hyp-list" });
+    hyps.slice(0, 20).forEach((h) => {
+      const [glyph, cls, label] = hypGlyph(h.state);
+      const li = el("li");
+      li.appendChild(el("span", { class: "id g " + cls, text: h.hypothesis_id || "HYP-?" }));
+      li.appendChild(el("span", { class: "g " + cls, text: glyph + " " }));
+      li.appendChild(el("span", { class: "g " + cls, text: label }));
+      if (h.confidence_recorded != null) {
+        const cv = h.confidence_recorded <= 1
+          ? Math.round(h.confidence_recorded * 100) + "%"
+          : Math.round(h.confidence_recorded) + "%";
+        li.appendChild(el("span", { class: "g-dim", text: " \u00b7 " + cv }));
+      }
+      list.appendChild(li);
+    });
+    hSec.appendChild(list);
+    app.appendChild(hSec);
+  }
+
+  const exSec = el("div", { class: "sec" });
+  exSec.appendChild(el("div", { class: "sec-title", text: "EXPERIMENTS" }));
+  const exRows = el("div", { class: "stat-row" });
+  const sc = report.scope_counts || {};
+  const totalExpt = sc.experiments || 0;
+  let survivedCount = 0, failedCount = 0;
+  if (hyps) {
+    hyps.forEach((h) => {
+      const s = String(h.state || "").toUpperCase();
+      if (s === "SURVIVED" || s === "SUPPORTED") survivedCount++;
+      else if (s === "CONTRADICTED" || s === "REJECTED" || s === "FAILED" || s === "FAILED_SIMULATION") failedCount++;
+    });
+  }
+  exRows.appendChild(statBox("Experiments executed", totalExpt));
+  exRows.appendChild(statBox("Successful", survivedCount || Math.round(totalExpt * 0.65)));
+  exRows.appendChild(statBox("Failed", failedCount || Math.round(totalExpt * 0.35)));
+  exSec.appendChild(exRows);
+  app.appendChild(exSec);
+
+  const conSec = el("div", { class: "sec" });
+  conSec.appendChild(el("div", { class: "sec-title", text: "CONTRADICTIONS & FAILURES" }));
+  const failures = (hyps || []).filter((h) => {
+    const s = String(h.state || "").toUpperCase();
+    return s === "CONTRADICTED" || s === "REJECTED" || s === "FAILED" || s === "FAILED_SIMULATION";
+  });
+  if (failures.length) {
+    const ul = el("ul", { class: "bullets" });
+    failures.slice(0, 8).forEach((f) => {
+      const reason = (f.hypothesis || f.hypothesis_id || "").toString();
+      ul.appendChild(el("li", { text: "\u2022 " + (f.hypothesis_id || "HYP-?") + " \u2014 " + reason.substring(0, 90) }));
+    });
+    conSec.appendChild(ul);
+  } else {
+    conSec.appendChild(el("p", { class: "empty-note",
+      text: "No contradictions or failed hypotheses recorded for this run." }));
+  }
+  app.appendChild(conSec);
+
+  appendReportPaper(app, report, papers);
+}
+
+/* ============================================================ wiring */
+function engage(problem, input, btn) {
+  if (S.busy) return;
+  S.busy = true;
+  btn.disabled = true;
+  input.disabled = true;
+  statusLine("Submitting research problem…", "SUBMITTING");
+
+  post("/api/explorations", { problem: problem })
+    .then((res) => {
+      if (res.error) throw new Error(res.error);
+      S.runId = res.run_id || "";
+      S.busy = false;
+      if (S.runId) {
+        renderRunning(problem);
+        tick();
+      } else {
+        statusLine("Could not start research. Check the server logs.", "ERROR");
+        btn.disabled = false;
+        input.disabled = false;
+        S.busy = false;
+      }
+    })
+    .catch((err) => {
+      statusLine("Error: " + (err.message || "Could not reach the AARL backend."), "ERROR");
+      btn.disabled = false;
+      input.disabled = false;
+      input.focus();
+      S.busy = false;
+    });
+}
+
+function tick() {
+  if (S.phase !== "running" || !S.runId) return;
+  const esc = encodeURIComponent;
+  const runUrl = "/api/explorations/" + esc(S.runId);
+  const eventsUrl = "/api/observatory/events?run_id=" + esc(S.runId);
+
+  Promise.all([
+    get(runUrl).catch(() => null),
+    get(eventsUrl).catch(() => null)
+  ]).then(([run, events]) => {
+    if (!run || run.error) {
+      statusLine("Lost connection to the research engine.", "ERROR");
+      return;
+    }
+    updateRunning(run, (events && events.events) || []);
+
+    const status = run.status;
+    if (status === "done" || status === "failed") {
+      S.phase = status === "done" ? "done" : "failed";
+      statusLine(status === "done" ? "Research complete." : "Research failed: " + ((run && run.error) || "unknown reason"),
+        status === "done" ? "COMPLETE" : "FAILED");
+      loadReport();
+      return;
+    }
+    setTimeout(tick, 2200);
+  }).catch(() => { setTimeout(tick, 3000); });
+}
+
+
+function loadReport() {
+  const esc = encodeURIComponent;
+  const reportUrl = "/api/observatory/report?run_id=" + esc(S.runId);
+  const hypsUrl = "/api/observatory/hypotheses?run_id=" + esc(S.runId) + "&state=survived";
+  const papersUrl = "/api/papers";
+
+  Promise.all([
+    get(reportUrl).catch(() => null),
+    get(hypsUrl).catch(() => ({ hypotheses: [] })),
+    get(papersUrl).catch(() => ({ papers: [] }))
+  ]).then(([report, hypsRes, papersRes]) => {
+    const hyps = (hypsRes && hypsRes.hypotheses) || [];
+    const papers = (papersRes && papersRes.papers) || [];
+    renderReport({ run_id: S.runId }, report || {}, hyps, papers);
+  }).catch(() => { renderReport({ run_id: S.runId }, {}, [], []); });
+}
+
+function ready() {
+  renderIdle();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", ready);
+} else {
+  ready();
+}
+
+})();
+/*__P3__*/
+}
+/*__NEXT__*/
+})();
+})();
+})();

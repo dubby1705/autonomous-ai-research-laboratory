@@ -1,0 +1,66 @@
+{
+  "hypothesis_id": "HYP-066",
+  "hypothesis": "Improved variant of HYP-056 addressing lesson LESSON-055: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-031 addressing lesson LESSON-030: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-009 addressing lesson LESSON-008: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-019: Bistable GPU Data Representation. Can a non-volatile physical state improve information density per unit cost for GPU whose data representation state is currently refreshed continuously? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+  "research_question": "Direction DIR-038: Alternative-Substrate GPU Compute Model. Would moving the cost-dominant operation of GPU onto a different physical carrier improve achievable operations per second once interface overhead is included?",
+  "iteration": 1,
+  "domain": "machine_learning",
+  "supporting_evidence": [],
+  "contradictory_evidence": [],
+  "assumptions": [],
+  "expected_outcome": {
+    "improvement_pct": 5.0
+  },
+  "measurable_metrics": [
+    "improvement_pct"
+  ],
+  "related_papers": [],
+  "related_experiments": [
+    "EXP-055"
+  ],
+  "based_on_lessons": [
+    "LESSON-055"
+  ],
+  "based_on_knowledge": [],
+  "parent_hypothesis": "HYP-056",
+  "risks": [
+    "Lesson LESSON-055 derived from a high-severity constraint_violation; the correction may not fully remove the cause."
+  ],
+  "confidence": 0.4,
+  "parameters": {
+    "optimizer": "momentum",
+    "lr": 0.1
+  },
+  "constraints": [
+    {
+      "name": "improvement_pct",
+      "op": ">=",
+      "value": 0.0,
+      "source": "generated hypothesis expectation"
+    }
+  ],
+  "claim_type": "generated_hypothesis",
+  "provenance": {
+    "generated_by": "llm",
+    "iteration": 1,
+    "knowledge_items": [],
+    "lessons_applied": [
+      "LESSON-055"
+    ],
+    "experiments_considered": [
+      "EXP-052",
+      "EXP-053",
+      "EXP-054",
+      "EXP-055",
+      "EXP-056"
+    ],
+    "claim_type_note": "AI-generated proposal — NOT established fact"
+  },
+  "timestamp": "2026-09-22T00:08:55",
+  "knowledge_item_id": "K-0018",
+  "direction_id": "DIR-038",
+  "direction_mechanism_key": "computing_model:substrate_substitution",
+  "exploration_run_id": "RUN-A24AF584",
+  "record_id": "HYP-066",
+  "collection": "hypotheses",
+  "stored_at": "2026-09-22T00:08:55"
+}

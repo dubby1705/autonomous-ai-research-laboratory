@@ -1,0 +1,85 @@
+{
+  "paper_id": "PAPER-006",
+  "title": "Hybrid Hierarchical Scheduling for GPU Clusters",
+  "authors": [],
+  "year": 2022,
+  "domain": "",
+  "provided_by": "researcher",
+  "input_format": "text",
+  "source_file": "",
+  "extraction": {
+    "title": "Hybrid Hierarchical Scheduling for GPU Clusters",
+    "authors": [],
+    "year": 2022,
+    "domain": "",
+    "research_problem": "Centralized GPU schedulers become a bottleneck as cluster size grows.",
+    "hypothesis": "",
+    "methodology": [
+      "We implement a hierarchical scheduler with capability-aware placement."
+    ],
+    "important_methods": [],
+    "equations": [],
+    "assumptions": [],
+    "datasets": [],
+    "experimental_setup": "",
+    "results": [
+      "Utilization improved by 12 percent over the centralized baseline in simulation."
+    ],
+    "limitations": [
+      "The experiments assume a fixed communication latency of 5 microseconds."
+    ],
+    "failures": [],
+    "conclusions": [
+      "Hierarchical coordination reduces the synchronization burden."
+    ],
+    "supporting_evidence": [],
+    "contradictory_evidence": [],
+    "references": [],
+    "relationships_to_other_research": [],
+    "abstract": "We propose a hybrid scheduler combining local decentralized decisions with a lightweight global coordinator."
+  },
+  "provenance": {
+    "origin": "researcher_provided_paper",
+    "extraction_method": "deterministic_section_parsing",
+    "llm_service_present": false,
+    "llm_service_available": false,
+    "generated_by": "aarl.lab.papers.PaperIngestor"
+  },
+  "timestamp": "2026-09-22T01:19:53",
+  "integrated_items": [
+    {
+      "section": "findings",
+      "item_id": "K-0043",
+      "field": "abstract"
+    },
+    {
+      "section": "findings",
+      "item_id": "K-0044",
+      "field": "research_problem"
+    },
+    {
+      "section": "methods",
+      "item_id": "K-0045",
+      "field": "methodology"
+    },
+    {
+      "section": "evidence",
+      "item_id": "K-0046",
+      "field": "result_or_evidence"
+    },
+    {
+      "section": "limitations",
+      "item_id": "K-0047",
+      "field": "limitation"
+    },
+    {
+      "section": "findings",
+      "item_id": "K-0048",
+      "field": "conclusion"
+    }
+  ],
+  "contradictions": [],
+  "record_id": "PAPER-006",
+  "collection": "papers",
+  "stored_at": "2026-09-22T01:19:54"
+}

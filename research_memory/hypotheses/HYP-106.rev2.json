@@ -1,0 +1,66 @@
+{
+  "hypothesis_id": "HYP-106",
+  "hypothesis": "Improved variant of HYP-105 addressing lesson LESSON-104: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-080 addressing lesson LESSON-079: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-055 addressing lesson LESSON-054: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-033 addressing lesson LESSON-032: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-006 addressing lesson LESSON-005: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-016: Oscillator-Synchronized GPU Runtime Adaptation. Can emergent phase alignment replace an explicit global barrier to improve stability of achieved performance for GPU? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+  "research_question": "Direction DIR-052: Heterogeneity-Aware GPU Scheduling. Can capability-matched routing improve resource utilization for GPU made of deliberately non-uniform participants?",
+  "iteration": 1,
+  "domain": "machine_learning",
+  "supporting_evidence": [],
+  "contradictory_evidence": [],
+  "assumptions": [],
+  "expected_outcome": {
+    "improvement_pct": 5.0
+  },
+  "measurable_metrics": [
+    "improvement_pct"
+  ],
+  "related_papers": [],
+  "related_experiments": [
+    "EXP-104"
+  ],
+  "based_on_lessons": [
+    "LESSON-104"
+  ],
+  "based_on_knowledge": [],
+  "parent_hypothesis": "HYP-105",
+  "risks": [
+    "Lesson LESSON-104 derived from a high-severity constraint_violation; the correction may not fully remove the cause."
+  ],
+  "confidence": 0.4,
+  "parameters": {
+    "optimizer": "momentum",
+    "lr": 0.1
+  },
+  "constraints": [
+    {
+      "name": "improvement_pct",
+      "op": ">=",
+      "value": 0.0,
+      "source": "generated hypothesis expectation"
+    }
+  ],
+  "claim_type": "generated_hypothesis",
+  "provenance": {
+    "generated_by": "llm",
+    "iteration": 1,
+    "knowledge_items": [],
+    "lessons_applied": [
+      "LESSON-104"
+    ],
+    "experiments_considered": [
+      "EXP-100",
+      "EXP-101",
+      "EXP-102",
+      "EXP-103",
+      "EXP-104"
+    ],
+    "claim_type_note": "AI-generated proposal — NOT established fact"
+  },
+  "timestamp": "2026-09-22T00:13:12",
+  "knowledge_item_id": "K-0022",
+  "direction_id": "DIR-052",
+  "direction_mechanism_key": "scheduling:heterogeneity_awareness",
+  "exploration_run_id": "RUN-08B56F2A",
+  "record_id": "HYP-106",
+  "collection": "hypotheses",
+  "stored_at": "2026-09-22T00:13:12"
+}

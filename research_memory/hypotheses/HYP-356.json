@@ -1,0 +1,66 @@
+{
+  "hypothesis_id": "HYP-356",
+  "hypothesis": "Improved variant of HYP-347 addressing lesson LESSON-294: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-325 addressing lesson LESSON-272: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-302 addressing lesson LESSON-249: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-276 addressing lesson LESSON-223: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-225 addressing lesson LESSON-201: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-200 addressing lesson LESSON-176: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-153 addressing lesson LESSON-152: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-126 addressing lesson LESSON-125: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-104 addressing lesson LESSON-103: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-079 addressing lesson LESSON-078: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-057 addressing lesson LESSON-056: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-032 addressing lesson LESSON-031: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-008 addressing lesson LESSON-007: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-018: Alternative-Substrate GPU Data Representation. Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is included? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+  "research_question": "Direction DIR-149: Decentralized GPU Scheduling. Can decentralized coordination improve resource utilization for GPU in situations where a single centralized controller cannot observe the whole system quickly enough?",
+  "iteration": 1,
+  "domain": "machine_learning",
+  "supporting_evidence": [
+    "K-0042"
+  ],
+  "contradictory_evidence": [],
+  "assumptions": [],
+  "expected_outcome": {
+    "improvement_pct": 5.0
+  },
+  "measurable_metrics": [
+    "improvement_pct"
+  ],
+  "related_papers": [],
+  "related_experiments": [
+    "EXP-295"
+  ],
+  "based_on_lessons": [
+    "LESSON-294"
+  ],
+  "based_on_knowledge": [],
+  "parent_hypothesis": "HYP-347",
+  "risks": [
+    "Lesson LESSON-294 derived from a high-severity constraint_violation; the correction may not fully remove the cause."
+  ],
+  "confidence": 0.4,
+  "parameters": {
+    "optimizer": "momentum",
+    "lr": 0.1
+  },
+  "constraints": [
+    {
+      "name": "improvement_pct",
+      "op": ">=",
+      "value": 0.0,
+      "source": "generated hypothesis expectation"
+    }
+  ],
+  "claim_type": "generated_hypothesis",
+  "provenance": {
+    "generated_by": "deterministic_fallback",
+    "iteration": 1,
+    "knowledge_items": [
+      "K-0042"
+    ],
+    "lessons_applied": [
+      "LESSON-294"
+    ],
+    "experiments_considered": [
+      "EXP-294",
+      "EXP-295",
+      "EXP-296",
+      "EXP-297",
+      "EXP-298"
+    ],
+    "claim_type_note": "AI-generated proposal — NOT established fact"
+  },
+  "timestamp": "2026-09-22T01:39:21",
+  "record_id": "HYP-356",
+  "collection": "hypotheses",
+  "stored_at": "2026-09-22T01:39:21"
+}

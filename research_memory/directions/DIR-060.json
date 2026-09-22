@@ -1,0 +1,313 @@
+{
+  "direction_id": "DIR-060",
+  "run_id": "RUN-330B113D",
+  "order": 1,
+  "title": "Heterogeneity-Aware GPU Scheduling",
+  "base_title": "Heterogeneity-Aware GPU Scheduling",
+  "one_line": "Can capability-matched routing improve resource utilization for GPU made of deliberately non-uniform participants?",
+  "core_question": "Can capability-matched routing improve resource utilization for GPU made of deliberately non-uniform participants?",
+  "research_problem": "Design a new GPU for AI",
+  "subject": "GPU",
+  "claim_class": "DIRECTION_PROPOSAL",
+  "claim_class_label": "RESEARCH DIRECTION (AARL PROPOSAL)",
+  "facet": {
+    "facet_id": "scheduling",
+    "label": "Scheduling",
+    "title_noun": "Scheduling",
+    "framing": "how work is assigned to the available resources",
+    "metric": "resource utilization",
+    "assumed_limitation": "A single centralized scheduler must gather global state before it can decide, so its decisions are always slightly stale under fast-changing loads.",
+    "keywords": [
+      "schedul",
+      "dispatch",
+      "queue",
+      "load balanc",
+      "assign",
+      "task",
+      "workload",
+      "utilization",
+      "throughput",
+      "parallel",
+      "concurren"
+    ],
+    "domains": [
+      "computer_architecture",
+      "machine_learning",
+      "robotics"
+    ]
+  },
+  "concept": {
+    "concept_id": "heterogeneity_awareness",
+    "name": "Heterogeneity awareness",
+    "title_adjective": "Heterogeneity-Aware",
+    "source_domains": [
+      "ecology / niche partitioning",
+      "statistics",
+      "scheduling theory"
+    ],
+    "description": "Treat non-uniform participants as exploitable structure instead of averaging them away.",
+    "mechanism_steps": [
+      "Characterise how the participants of {subject} actually differ",
+      "Derive which work type each participant class does best",
+      "Route each work type toward its best-matching class",
+      "Track the per-class queue the routing creates",
+      "Rebalance when one class becomes the bottleneck",
+      "Re-measure the characterisation, which changes under load"
+    ],
+    "core_question": "Can capability-matched routing improve {metric} for {subject} made of deliberately non-uniform participants?",
+    "uncertainties": [
+      "Stability of the capability profiles under real load",
+      "Whether matching overhead outweighs the placement gain",
+      "Tail behaviour when one class is starved"
+    ],
+    "library_metadata": {
+      "testability": "HIGH",
+      "novelty": "MEDIUM",
+      "implementation_risk": "LOW",
+      "note": "Library metadata describing the mechanism in the abstract. It is NOT a score of scientific truth and is NOT evidence for any direction."
+    },
+    "facet_affinity": [
+      "scheduling",
+      "architecture",
+      "cost_scaling",
+      "interconnect_communication",
+      "control_adaptation"
+    ],
+    "literature_terms": [
+      "heterogeneous workload scheduling",
+      "capability matching"
+    ]
+  },
+  "mechanism_key": "scheduling:heterogeneity_awareness",
+  "inspiration": {
+    "domains": [
+      "ecology / niche partitioning",
+      "statistics",
+      "scheduling theory"
+    ],
+    "concepts": [
+      "Heterogeneity awareness"
+    ],
+    "library_entry": "aarl.discovery.concepts:heterogeneity_awareness",
+    "library_metadata": {
+      "testability": "HIGH",
+      "novelty": "MEDIUM",
+      "implementation_risk": "LOW",
+      "note": "Library metadata describing the mechanism in the abstract. It is NOT a score of scientific truth and is NOT evidence for any direction."
+    },
+    "papers": [],
+    "display": "ecology / niche partitioning + statistics + scheduling theory"
+  },
+  "why_interesting": "The problem's 'Scheduling' dimension (how work is assigned to the available resources) is where the conventional approach carries a structural assumption: A single centralized scheduler must gather global state before it can decide, so its decisions are always slightly stale under fast-changing loads. AARL took a mechanism that already works in ecology / niche partitioning, statistics, scheduling theory - Treat non-uniform participants as exploitable structure instead of averaging them away. - and asked what happens if it is applied to GPU. If the mechanism transfers, the gain would come from removing that assumption rather than from tuning the existing design. Whether it transfers is exactly what is not established here.",
+  "why_this_idea": {
+    "stages": [
+      {
+        "stage": "Research problem",
+        "value": "Design a new GPU for AI",
+        "claim_class": "STATED_BY_USER",
+        "claim_class_label": "STATED BY RESEARCHER",
+        "source": "user input",
+        "provenance": {},
+        "note": "The exact problem text AARL was given."
+      },
+      {
+        "stage": "Observed limitation",
+        "value": "A single centralized scheduler must gather global state before it can decide, so its decisions are always slightly stale under fast-changing loads.",
+        "claim_class": "INFERENCE",
+        "claim_class_label": "INFERENCE (AARL - NOT SOURCED)",
+        "source": "aarl.discovery.facets (facet assumption)",
+        "provenance": {
+          "facet_id": "scheduling"
+        },
+        "note": "AARL states this as an assumed limitation of the conventional approach. No stored source-linked limitation was found for this facet, so it must not be read as a literature fact."
+      },
+      {
+        "stage": "Cross-domain concept",
+        "value": "Heterogeneity awareness - Treat non-uniform participants as exploitable structure instead of averaging them away.",
+        "claim_class": "LIBRARY_ENTRY",
+        "claim_class_label": "LIBRARY ENTRY",
+        "source": "ecology / niche partitioning, statistics, scheduling theory",
+        "provenance": {
+          "concept_id": "heterogeneity_awareness",
+          "library": "aarl.discovery.concepts"
+        },
+        "note": "A curated cross-domain mechanism. Its transfer to GPU is AARL's proposal, not an established result."
+      },
+      {
+        "stage": "Mechanism",
+        "value": "Treat non-uniform participants as exploitable structure instead of averaging them away.",
+        "claim_class": "LIBRARY_ENTRY",
+        "claim_class_label": "LIBRARY ENTRY",
+        "source": "aarl.discovery.concepts:heterogeneity_awareness",
+        "provenance": {
+          "steps": 6
+        },
+        "note": "Expanded stage by stage in the mechanism view below."
+      },
+      {
+        "stage": "Hypothesis",
+        "value": "(no hypothesis generated in this run)",
+        "claim_class": "HYPOTHESIS_UNTESTED",
+        "claim_class_label": "HYPOTHESIS (UNTESTED)",
+        "source": "aarl.lab.hypotheses",
+        "provenance": {},
+        "note": "AARL-generated proposal. It is not a finding."
+      }
+    ],
+    "cross_domains": [
+      "ecology / niche partitioning",
+      "statistics",
+      "scheduling theory"
+    ],
+    "flow": "Research problem > Observed limitation > Cross-domain concept > Mechanism > Hypothesis",
+    "why_readable": "AARL started from the stated problem, picked the 'Scheduling' dimension of it, took the 'Heterogeneity awareness' mechanism from ecology / niche partitioning, statistics, scheduling theory, and proposed applying it there.",
+    "honesty_note": "Each stage is labelled with what it is. A limitation marked INFERENCE is an AARL assumption and is the first thing a reviewer should check."
+  },
+  "mechanism": {
+    "label": "PROPOSED MECHANISM",
+    "implementation_status": "CONCEPTUAL - NOT IMPLEMENTED",
+    "source_concept": "heterogeneity_awareness",
+    "source_concept_name": "Heterogeneity awareness",
+    "source_domains": [
+      "ecology / niche partitioning",
+      "statistics",
+      "scheduling theory"
+    ],
+    "steps": [
+      {
+        "index": 1,
+        "text": "Characterise how the participants of GPU actually differ",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 2,
+        "text": "Derive which work type each participant class does best",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 3,
+        "text": "Route each work type toward its best-matching class",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 4,
+        "text": "Track the per-class queue the routing creates",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 5,
+        "text": "Rebalance when one class becomes the bottleneck",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 6,
+        "text": "Re-measure the characterisation, which changes under load",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      }
+    ],
+    "unsupported_stages": 6,
+    "note": "This chain is the mechanism AARL is proposing, expressed conceptually. No implementation of it was built or measured, and an unsupported stage is a research target - not a hidden assumption."
+  },
+  "already_failed": false,
+  "prior_failures": [],
+  "refinement": null,
+  "hypothesis_ids": [],
+  "experiment_ids": [],
+  "failure_ids": [],
+  "lesson_ids": [],
+  "status": null,
+  "dimensions": {},
+  "evidence": {},
+  "gaps": [],
+  "speculative_aspects": [
+    "The mechanism is transferred from ecology / niche partitioning, statistics, scheduling theory and has not been demonstrated for GPU.",
+    "AARL has no implemented prototype of this mechanism for this problem."
+  ],
+  "unknowns": [
+    "Stability of the capability profiles under real load",
+    "Whether matching overhead outweighs the placement gain",
+    "Tail behaviour when one class is starved"
+  ],
+  "risks": [
+    "Stability of the capability profiles under real load (open question for this mechanism class)",
+    "Whether matching overhead outweighs the placement gain (open question for this mechanism class)",
+    "Tail behaviour when one class is starved (open question for this mechanism class)"
+  ],
+  "failure_conditions": [
+    {
+      "condition": "Stability of the capability profiles under real load",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "Whether matching overhead outweighs the placement gain",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "Tail behaviour when one class is starved",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "The assumed limitation of the Scheduling facet does not actually hold for this system.",
+      "why_it_would_break_the_direction": "The direction exists to remove that limitation; if the limitation is not real, the direction has no target (this is the first assumption to check)."
+    }
+  ],
+  "first_experiment": {
+    "objective": "Establish whether the mechanism moves resource utilization for GPU at all, before tuning anything.",
+    "design": "Baseline A: the conventional scheduling approach. Variant B: the Heterogeneity awareness mechanism applied only to the scheduling dimension. Keep every other parameter identical and use the same seed/warm-up.",
+    "metrics": [
+      "resource utilization",
+      "coordination or overhead cost introduced"
+    ],
+    "decision_rule": "Only claim support if B moves resource utilization outside the run-to-run spread of A; if the spread is larger than the effect, report INCONCLUSIVE rather than a direction.",
+    "what_would_make_it_stop": "If A is already at the physical or structural limit of resource utilization, the comparison cannot discriminate and the design must change.",
+    "claim_class": "EXPERIMENT_PROPOSAL"
+  },
+  "alternatives": [],
+  "possibility_space_path": [
+    "Research problem",
+    "Scheduling",
+    "Heterogeneity awareness (heterogeneity_awareness)",
+    "Heterogeneity-Aware GPU Scheduling"
+  ],
+  "provenance": {
+    "constructed_by": "aarl.discovery.directions.DirectionDiscovery",
+    "research_question": "Design a new GPU for AI",
+    "facet_selection": {
+      "facet_id": "scheduling",
+      "score": 1.0,
+      "matched_keywords": [],
+      "matched_domains": [
+        "machine_learning"
+      ],
+      "selection_basis": "keyword overlap with the problem statement + detected-domain affinity + editorial exploration priority (order only)",
+      "selection_score_note": "Selection score for ordering the possibility space only — not evidence and not confidence."
+    },
+    "concept_library_entry": "aarl.discovery.concepts:heterogeneity_awareness",
+    "knowledge_items_consulted": 25,
+    "prior_failure_memory_consulted": 0,
+    "subject_label_heuristic": "The object of study was labelled 'GPU' by a documented text heuristic (lab/discovery/text.py:subject_of). It is a label only.",
+    "what_this_is": "A constructed research direction, not a result. Evidence for it is attached later and only from provenance-linked records."
+  },
+  "timestamp": "2026-09-22T00:17:09",
+  "record_id": "DIR-060",
+  "collection": "directions",
+  "stored_at": "2026-09-22T00:17:09"
+}

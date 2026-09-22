@@ -1,0 +1,19 @@
+﻿TOTAL LINES: 456
+
+9: function el(tag, attrs, html) {
+43: function header(app, opts) {
+55: function bar(app, value, disabled, onSubmit) {
+76: function section(app, title) {
+82: function kv(sec, k, v, mono) {
+92: function renderRunning(problem) {
+120: function paintRunning(state) {
+131: function paintStats(counts, evidence) {
+149: function bestSurvivor(hyps) {
+161: function paintFindings(h) {
+212: function paintActivity(events) {
+234: function hypGlyph(state) {
+243: function renderReport(run, report, hyps, papers) {
+362: function engage(problem, input, btn) {
+393: function tick() {
+422: function loadReport() {
+439: function ready() {

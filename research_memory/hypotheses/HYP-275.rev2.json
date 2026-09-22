@@ -1,0 +1,66 @@
+{
+  "hypothesis_id": "HYP-275",
+  "hypothesis": "Improved variant of HYP-222 addressing lesson LESSON-198: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-200 addressing lesson LESSON-176: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-153 addressing lesson LESSON-152: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-126 addressing lesson LESSON-125: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-104 addressing lesson LESSON-103: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-079 addressing lesson LESSON-078: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-057 addressing lesson LESSON-056: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-032 addressing lesson LESSON-031: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-008 addressing lesson LESSON-007: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-018: Alternative-Substrate GPU Data Representation. Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is included? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+  "research_question": "Direction DIR-122: Alternative-Substrate GPU Data Representation. Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is included?",
+  "iteration": 1,
+  "domain": "machine_learning",
+  "supporting_evidence": [],
+  "contradictory_evidence": [],
+  "assumptions": [],
+  "expected_outcome": {
+    "improvement_pct": 5.0
+  },
+  "measurable_metrics": [
+    "improvement_pct"
+  ],
+  "related_papers": [],
+  "related_experiments": [
+    "EXP-199"
+  ],
+  "based_on_lessons": [
+    "LESSON-198"
+  ],
+  "based_on_knowledge": [],
+  "parent_hypothesis": "HYP-222",
+  "risks": [
+    "Lesson LESSON-198 derived from a high-severity constraint_violation; the correction may not fully remove the cause."
+  ],
+  "confidence": 0.4,
+  "parameters": {
+    "optimizer": "momentum",
+    "lr": 0.1
+  },
+  "constraints": [
+    {
+      "name": "improvement_pct",
+      "op": ">=",
+      "value": 0.0,
+      "source": "generated hypothesis expectation"
+    }
+  ],
+  "claim_type": "generated_hypothesis",
+  "provenance": {
+    "generated_by": "deterministic_fallback",
+    "iteration": 1,
+    "knowledge_items": [],
+    "lessons_applied": [
+      "LESSON-198"
+    ],
+    "experiments_considered": [
+      "EXP-198",
+      "EXP-199",
+      "EXP-200",
+      "EXP-201",
+      "EXP-202"
+    ],
+    "claim_type_note": "AI-generated proposal — NOT established fact"
+  },
+  "timestamp": "2026-09-22T01:15:26",
+  "knowledge_item_id": "K-0041",
+  "direction_id": "DIR-122",
+  "direction_mechanism_key": "data_representation:substrate_substitution",
+  "exploration_run_id": "RUN-E08013A5",
+  "record_id": "HYP-275",
+  "collection": "hypotheses",
+  "stored_at": "2026-09-22T01:15:26"
+}

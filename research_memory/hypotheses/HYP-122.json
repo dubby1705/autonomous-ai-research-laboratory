@@ -1,0 +1,62 @@
+{
+  "hypothesis_id": "HYP-122",
+  "hypothesis": "Improved variant of HYP-103 addressing lesson LESSON-102: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-081 addressing lesson LESSON-080: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-056 addressing lesson LESSON-055: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-031 addressing lesson LESSON-030: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-009 addressing lesson LESSON-008: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-019: Bistable GPU Data Representation. Can a non-volatile physical state improve information density per unit cost for GPU whose data representation state is currently refreshed continuously? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+  "research_question": "Direction DIR-057: Heterogeneity-Aware GPU Runtime Adaptation. Can capability-matched routing improve stability of achieved performance for GPU made of deliberately non-uniform participants?",
+  "iteration": 1,
+  "domain": "machine_learning",
+  "supporting_evidence": [],
+  "contradictory_evidence": [],
+  "assumptions": [],
+  "expected_outcome": {
+    "improvement_pct": 5.0
+  },
+  "measurable_metrics": [
+    "improvement_pct"
+  ],
+  "related_papers": [],
+  "related_experiments": [
+    "EXP-102"
+  ],
+  "based_on_lessons": [
+    "LESSON-102"
+  ],
+  "based_on_knowledge": [],
+  "parent_hypothesis": "HYP-103",
+  "risks": [
+    "Lesson LESSON-102 derived from a high-severity constraint_violation; the correction may not fully remove the cause."
+  ],
+  "confidence": 0.4,
+  "parameters": {
+    "optimizer": "momentum",
+    "lr": 0.1
+  },
+  "constraints": [
+    {
+      "name": "improvement_pct",
+      "op": ">=",
+      "value": 0.0,
+      "source": "generated hypothesis expectation"
+    }
+  ],
+  "claim_type": "generated_hypothesis",
+  "provenance": {
+    "generated_by": "llm",
+    "iteration": 1,
+    "knowledge_items": [],
+    "lessons_applied": [
+      "LESSON-102"
+    ],
+    "experiments_considered": [
+      "EXP-100",
+      "EXP-101",
+      "EXP-102",
+      "EXP-103",
+      "EXP-104"
+    ],
+    "claim_type_note": "AI-generated proposal — NOT established fact"
+  },
+  "timestamp": "2026-09-22T00:13:17",
+  "record_id": "HYP-122",
+  "collection": "hypotheses",
+  "stored_at": "2026-09-22T00:13:17"
+}

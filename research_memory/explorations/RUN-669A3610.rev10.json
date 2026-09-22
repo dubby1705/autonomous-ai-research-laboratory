@@ -1,0 +1,82 @@
+{
+  "run_id": "RUN-669A3610",
+  "problem": "design a battery",
+  "status": "running",
+  "stages": [
+    {
+      "key": "understanding",
+      "label": "Understanding problem",
+      "state": "done",
+      "detail": "design a battery",
+      "at": "2026-09-22T21:44:44"
+    },
+    {
+      "key": "domains",
+      "label": "Detecting research domain",
+      "state": "done",
+      "detail": "Primary: chemistry.",
+      "at": "2026-09-22T21:44:45"
+    },
+    {
+      "key": "literature",
+      "label": "Searching literature",
+      "state": "done",
+      "detail": "8 overlapping items.",
+      "at": "2026-09-22T21:44:45"
+    },
+    {
+      "key": "graph",
+      "label": "Building knowledge graph",
+      "state": "done",
+      "detail": "8 directions.",
+      "at": "2026-09-22T21:44:51"
+    }
+  ],
+  "directions": [],
+  "space": {},
+  "stats": {},
+  "error": "",
+  "created_at": "2026-09-22T21:44:43",
+  "updated_at": "2026-09-22T21:44:51",
+  "stage_template": [
+    {
+      "key": "understanding",
+      "label": "Understanding problem"
+    },
+    {
+      "key": "domains",
+      "label": "Detecting research domain"
+    },
+    {
+      "key": "literature",
+      "label": "Searching literature"
+    },
+    {
+      "key": "graph",
+      "label": "Building knowledge graph"
+    },
+    {
+      "key": "exploring",
+      "label": "Exploring alternative directions"
+    },
+    {
+      "key": "hypotheses",
+      "label": "Generating hypotheses"
+    },
+    {
+      "key": "mechanisms",
+      "label": "Testing mechanisms"
+    },
+    {
+      "key": "simulations",
+      "label": "Running simulations"
+    },
+    {
+      "key": "evaluating",
+      "label": "Evaluating research opportunities"
+    }
+  ],
+  "record_id": "RUN-669A3610",
+  "collection": "explorations",
+  "stored_at": "2026-09-22T21:44:51"
+}

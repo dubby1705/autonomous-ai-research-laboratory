@@ -1,0 +1,285 @@
+{
+  "experiment_id": "EXP-646",
+  "hypothesis_id": "HYP-739",
+  "simulation_type": "domain_model:chemistry",
+  "parameters": {
+    "domain": "chemistry",
+    "domain_parameter_modifications": {
+      "lr": 0.1
+    },
+    "extraction_source": "request.parameters",
+    "base_model": "domain_metrics baseline (no modifications)"
+  },
+  "expected_results": {},
+  "observed_results": {
+    "baseline_metrics": {
+      "ph_value": 1.0,
+      "acid_strength_ka": 0.01,
+      "reaction_rate_constant": 0.05,
+      "yield_percent": 78.5,
+      "selectivity_percent": 80.0,
+      "activation_energy_kj_mol": 85.0,
+      "turnover_frequency": 0.8,
+      "thermal_stability_c": 250.0,
+      "solubility_g_l": 45.0,
+      "purity_percent": 95.0
+    },
+    "hypothesis_metrics": {
+      "ph_value": 1.0,
+      "acid_strength_ka": 0.01,
+      "reaction_rate_constant": 0.05,
+      "yield_percent": 78.5,
+      "selectivity_percent": 80.0,
+      "activation_energy_kj_mol": 85.0,
+      "turnover_frequency": 0.8,
+      "thermal_stability_c": 250.0,
+      "solubility_g_l": 45.0,
+      "purity_percent": 95.0
+    },
+    "comparison": {
+      "acid_strength_ka": {
+        "baseline_value": 0.01,
+        "observed_value": 0.01,
+        "change_pct": 0.0,
+        "improvement_pct": 0.0,
+        "is_improvement": false,
+        "direction": "higher_better",
+        "unit": "Ka",
+        "description": "Acid dissociation constant (higher = stronger acid)"
+      },
+      "activation_energy_kj_mol": {
+        "baseline_value": 85.0,
+        "observed_value": 85.0,
+        "change_pct": 0.0,
+        "improvement_pct": -0.0,
+        "is_improvement": false,
+        "direction": "lower_better",
+        "unit": "kJ/mol",
+        "description": "Activation energy barrier for the reaction"
+      },
+      "ph_value": {
+        "baseline_value": 1.0,
+        "observed_value": 1.0,
+        "change_pct": 0.0,
+        "improvement_pct": -0.0,
+        "is_improvement": false,
+        "direction": "lower_better",
+        "unit": "pH",
+        "description": "Acidity level (lower = more acidic)"
+      },
+      "purity_percent": {
+        "baseline_value": 95.0,
+        "observed_value": 95.0,
+        "change_pct": 0.0,
+        "improvement_pct": 0.0,
+        "is_improvement": false,
+        "direction": "higher_better",
+        "unit": "%",
+        "description": "Purity of the synthesized compound"
+      },
+      "reaction_rate_constant": {
+        "baseline_value": 0.05,
+        "observed_value": 0.05,
+        "change_pct": 0.0,
+        "improvement_pct": 0.0,
+        "is_improvement": false,
+        "direction": "higher_better",
+        "unit": "s⁻¹",
+        "description": "Rate constant of the chemical reaction"
+      },
+      "selectivity_percent": {
+        "baseline_value": 80.0,
+        "observed_value": 80.0,
+        "change_pct": 0.0,
+        "improvement_pct": 0.0,
+        "is_improvement": false,
+        "direction": "higher_better",
+        "unit": "%",
+        "description": "Selectivity toward the desired product"
+      },
+      "solubility_g_l": {
+        "baseline_value": 45.0,
+        "observed_value": 45.0,
+        "change_pct": 0.0,
+        "improvement_pct": 0.0,
+        "is_improvement": false,
+        "direction": "higher_better",
+        "unit": "g/L",
+        "description": "Solubility in water at standard conditions"
+      },
+      "thermal_stability_c": {
+        "baseline_value": 250.0,
+        "observed_value": 250.0,
+        "change_pct": 0.0,
+        "improvement_pct": 0.0,
+        "is_improvement": false,
+        "direction": "higher_better",
+        "unit": "°C",
+        "description": "Decomposition temperature of the substance"
+      },
+      "turnover_frequency": {
+        "baseline_value": 0.8,
+        "observed_value": 0.8,
+        "change_pct": 0.0,
+        "improvement_pct": 0.0,
+        "is_improvement": false,
+        "direction": "higher_better",
+        "unit": "s⁻¹",
+        "description": "Catalytic turnover frequency (molecules per active site per second)"
+      },
+      "yield_percent": {
+        "baseline_value": 78.5,
+        "observed_value": 78.5,
+        "change_pct": 0.0,
+        "improvement_pct": 0.0,
+        "is_improvement": false,
+        "direction": "higher_better",
+        "unit": "%",
+        "description": "Percentage yield of the target product"
+      }
+    },
+    "applied_modifications": {
+      "lr": 0.1
+    }
+  },
+  "metrics": {
+    "acid_strength_ka": {
+      "baseline_value": 0.01,
+      "observed_value": 0.01,
+      "change_pct": 0.0,
+      "improvement_pct": 0.0,
+      "is_improvement": false,
+      "direction": "higher_better",
+      "unit": "Ka",
+      "description": "Acid dissociation constant (higher = stronger acid)"
+    },
+    "activation_energy_kj_mol": {
+      "baseline_value": 85.0,
+      "observed_value": 85.0,
+      "change_pct": 0.0,
+      "improvement_pct": -0.0,
+      "is_improvement": false,
+      "direction": "lower_better",
+      "unit": "kJ/mol",
+      "description": "Activation energy barrier for the reaction"
+    },
+    "ph_value": {
+      "baseline_value": 1.0,
+      "observed_value": 1.0,
+      "change_pct": 0.0,
+      "improvement_pct": -0.0,
+      "is_improvement": false,
+      "direction": "lower_better",
+      "unit": "pH",
+      "description": "Acidity level (lower = more acidic)"
+    },
+    "purity_percent": {
+      "baseline_value": 95.0,
+      "observed_value": 95.0,
+      "change_pct": 0.0,
+      "improvement_pct": 0.0,
+      "is_improvement": false,
+      "direction": "higher_better",
+      "unit": "%",
+      "description": "Purity of the synthesized compound"
+    },
+    "reaction_rate_constant": {
+      "baseline_value": 0.05,
+      "observed_value": 0.05,
+      "change_pct": 0.0,
+      "improvement_pct": 0.0,
+      "is_improvement": false,
+      "direction": "higher_better",
+      "unit": "s⁻¹",
+      "description": "Rate constant of the chemical reaction"
+    },
+    "selectivity_percent": {
+      "baseline_value": 80.0,
+      "observed_value": 80.0,
+      "change_pct": 0.0,
+      "improvement_pct": 0.0,
+      "is_improvement": false,
+      "direction": "higher_better",
+      "unit": "%",
+      "description": "Selectivity toward the desired product"
+    },
+    "solubility_g_l": {
+      "baseline_value": 45.0,
+      "observed_value": 45.0,
+      "change_pct": 0.0,
+      "improvement_pct": 0.0,
+      "is_improvement": false,
+      "direction": "higher_better",
+      "unit": "g/L",
+      "description": "Solubility in water at standard conditions"
+    },
+    "thermal_stability_c": {
+      "baseline_value": 250.0,
+      "observed_value": 250.0,
+      "change_pct": 0.0,
+      "improvement_pct": 0.0,
+      "is_improvement": false,
+      "direction": "higher_better",
+      "unit": "°C",
+      "description": "Decomposition temperature of the substance"
+    },
+    "turnover_frequency": {
+      "baseline_value": 0.8,
+      "observed_value": 0.8,
+      "change_pct": 0.0,
+      "improvement_pct": 0.0,
+      "is_improvement": false,
+      "direction": "higher_better",
+      "unit": "s⁻¹",
+      "description": "Catalytic turnover frequency (molecules per active site per second)"
+    },
+    "yield_percent": {
+      "baseline_value": 78.5,
+      "observed_value": 78.5,
+      "change_pct": 0.0,
+      "improvement_pct": 0.0,
+      "is_improvement": false,
+      "direction": "higher_better",
+      "unit": "%",
+      "description": "Percentage yield of the target product"
+    }
+  },
+  "status": "success",
+  "errors": [],
+  "constraints_violated": [],
+  "unexpected_results": [],
+  "timestamp": "2026-09-22T21:45:26",
+  "adapter": {
+    "name": "domain_metrics_simulation",
+    "version": "1.0",
+    "module": "lab.simulation.domain_adapter",
+    "description": "Domain-model comparison using the project's existing domain_metrics.py simulators (baseline vs hypothesis-derived parameters)."
+  },
+  "reproducibility": {
+    "seed": 11,
+    "input_hash": "8b3700ac7f270558",
+    "deterministic": true,
+    "how_to_reproduce": "Re-run hypothesis HYP-739 with the stored parameter block and seed 11 through adapter 'domain_metrics_simulation'.",
+    "inputs": {
+      "hypothesis_id": "HYP-739",
+      "hypothesis_text": "Improved variant of HYP-661 addressing lesson LESSON-584: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-637 addressing lesson LESSON-560: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-612 addressing lesson LESSON-535: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-590 addressing lesson LESSON-513: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-564 addressing lesson LESSON-487: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-542 addressing lesson LESSON-465: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-516 addressing lesson LESSON-439: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-494 addressing lesson LESSON-417: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-468 addressing lesson LESSON-391: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-446 addressing lesson LESSON-369: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-420 addressing lesson LESSON-343: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-398 addressing lesson LESSON-321: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-347 addressing lesson LESSON-294: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-325 addressing lesson LESSON-272: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-302 addressing lesson LESSON-249: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-276 addressing lesson LESSON-223: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-225 addressing lesson LESSON-201: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-200 addressing lesson LESSON-176: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-153 addressing lesson LESSON-152: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-126 addressing lesson LESSON-125: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-104 addressing lesson LESSON-103: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-079 addressing lesson LESSON-078: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-057 addressing lesson LESSON-056: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-032 addressing lesson LESSON-031: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-008 addressing lesson LESSON-007: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-018: Alternative-Substrate GPU Data Representation. Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is included? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "research_question": "design a battery",
+      "domain": "chemistry",
+      "parameters": {
+        "optimizer": "momentum",
+        "lr": 0.1
+      },
+      "expected_results": {},
+      "constraints": [],
+      "seed": 11
+    },
+    "constraints_used": []
+  },
+  "notes": [
+    "0 of 10 metrics improved; 0 worsened."
+  ],
+  "iteration": 1,
+  "record_id": "EXP-646",
+  "collection": "simulations",
+  "stored_at": "2026-09-22T21:45:26"
+}

@@ -1,0 +1,307 @@
+{
+  "experiment_id": "EXP-634",
+  "hypothesis_id": "HYP-727",
+  "simulation_type": "domain_model:computer_architecture",
+  "parameters": {
+    "domain": "computer_architecture",
+    "domain_parameter_modifications": {
+      "lr": 0.1
+    },
+    "extraction_source": "request.parameters",
+    "base_model": "domain_metrics baseline (no modifications)"
+  },
+  "expected_results": {},
+  "observed_results": {
+    "baseline_metrics": {
+      "ipc": 1.5,
+      "clock_frequency_ghz": 3.5,
+      "power_consumption_w": 65.0,
+      "performance_per_watt": 2.5,
+      "area_mm2": 150.0,
+      "cache_hit_rate_pct": 92.0,
+      "branch_prediction_accuracy_pct": 95.0,
+      "pipeline_stalls_per_1000": 45.0,
+      "memory_latency_ns": 80.0,
+      "throughput_gops": 50.0
+    },
+    "hypothesis_metrics": {
+      "ipc": 1.5,
+      "clock_frequency_ghz": 3.5,
+      "power_consumption_w": 65.0,
+      "performance_per_watt": 2.5,
+      "area_mm2": 150.0,
+      "cache_hit_rate_pct": 92.0,
+      "branch_prediction_accuracy_pct": 95.0,
+      "pipeline_stalls_per_1000": 45.0,
+      "memory_latency_ns": 80.0,
+      "throughput_gops": 50.0
+    },
+    "comparison": {
+      "area_mm2": {
+        "baseline_value": 150.0,
+        "observed_value": 150.0,
+        "change_pct": 0.0,
+        "improvement_pct": -0.0,
+        "is_improvement": false,
+        "direction": "lower_better",
+        "unit": "mm²",
+        "description": "Die area"
+      },
+      "branch_prediction_accuracy_pct": {
+        "baseline_value": 95.0,
+        "observed_value": 95.0,
+        "change_pct": 0.0,
+        "improvement_pct": 0.0,
+        "is_improvement": false,
+        "direction": "higher_better",
+        "unit": "%",
+        "description": "Branch prediction accuracy"
+      },
+      "cache_hit_rate_pct": {
+        "baseline_value": 92.0,
+        "observed_value": 92.0,
+        "change_pct": 0.0,
+        "improvement_pct": 0.0,
+        "is_improvement": false,
+        "direction": "higher_better",
+        "unit": "%",
+        "description": "Cache hit rate"
+      },
+      "clock_frequency_ghz": {
+        "baseline_value": 3.5,
+        "observed_value": 3.5,
+        "change_pct": 0.0,
+        "improvement_pct": 0.0,
+        "is_improvement": false,
+        "direction": "higher_better",
+        "unit": "GHz",
+        "description": "Clock frequency"
+      },
+      "ipc": {
+        "baseline_value": 1.5,
+        "observed_value": 1.5,
+        "change_pct": 0.0,
+        "improvement_pct": 0.0,
+        "is_improvement": false,
+        "direction": "higher_better",
+        "unit": "IPC",
+        "description": "Instructions per cycle (performance)"
+      },
+      "memory_latency_ns": {
+        "baseline_value": 80.0,
+        "observed_value": 80.0,
+        "change_pct": 0.0,
+        "improvement_pct": -0.0,
+        "is_improvement": false,
+        "direction": "lower_better",
+        "unit": "ns",
+        "description": "Memory access latency"
+      },
+      "performance_per_watt": {
+        "baseline_value": 2.5,
+        "observed_value": 2.5,
+        "change_pct": 0.0,
+        "improvement_pct": 0.0,
+        "is_improvement": false,
+        "direction": "higher_better",
+        "unit": "GFLOPS/W",
+        "description": "Performance per watt (efficiency)"
+      },
+      "pipeline_stalls_per_1000": {
+        "baseline_value": 45.0,
+        "observed_value": 45.0,
+        "change_pct": 0.0,
+        "improvement_pct": -0.0,
+        "is_improvement": false,
+        "direction": "lower_better",
+        "unit": "stalls/1k",
+        "description": "Pipeline stalls per 1000 instructions"
+      },
+      "power_consumption_w": {
+        "baseline_value": 65.0,
+        "observed_value": 65.0,
+        "change_pct": 0.0,
+        "improvement_pct": -0.0,
+        "is_improvement": false,
+        "direction": "lower_better",
+        "unit": "W",
+        "description": "Power consumption (TDP)"
+      },
+      "throughput_gops": {
+        "baseline_value": 50.0,
+        "observed_value": 50.0,
+        "change_pct": 0.0,
+        "improvement_pct": 0.0,
+        "is_improvement": false,
+        "direction": "higher_better",
+        "unit": "GOPS",
+        "description": "Throughput in giga-operations per second"
+      }
+    },
+    "applied_modifications": {
+      "lr": 0.1
+    }
+  },
+  "metrics": {
+    "area_mm2": {
+      "baseline_value": 150.0,
+      "observed_value": 150.0,
+      "change_pct": 0.0,
+      "improvement_pct": -0.0,
+      "is_improvement": false,
+      "direction": "lower_better",
+      "unit": "mm²",
+      "description": "Die area"
+    },
+    "branch_prediction_accuracy_pct": {
+      "baseline_value": 95.0,
+      "observed_value": 95.0,
+      "change_pct": 0.0,
+      "improvement_pct": 0.0,
+      "is_improvement": false,
+      "direction": "higher_better",
+      "unit": "%",
+      "description": "Branch prediction accuracy"
+    },
+    "cache_hit_rate_pct": {
+      "baseline_value": 92.0,
+      "observed_value": 92.0,
+      "change_pct": 0.0,
+      "improvement_pct": 0.0,
+      "is_improvement": false,
+      "direction": "higher_better",
+      "unit": "%",
+      "description": "Cache hit rate"
+    },
+    "clock_frequency_ghz": {
+      "baseline_value": 3.5,
+      "observed_value": 3.5,
+      "change_pct": 0.0,
+      "improvement_pct": 0.0,
+      "is_improvement": false,
+      "direction": "higher_better",
+      "unit": "GHz",
+      "description": "Clock frequency"
+    },
+    "ipc": {
+      "baseline_value": 1.5,
+      "observed_value": 1.5,
+      "change_pct": 0.0,
+      "improvement_pct": 0.0,
+      "is_improvement": false,
+      "direction": "higher_better",
+      "unit": "IPC",
+      "description": "Instructions per cycle (performance)"
+    },
+    "memory_latency_ns": {
+      "baseline_value": 80.0,
+      "observed_value": 80.0,
+      "change_pct": 0.0,
+      "improvement_pct": -0.0,
+      "is_improvement": false,
+      "direction": "lower_better",
+      "unit": "ns",
+      "description": "Memory access latency"
+    },
+    "performance_per_watt": {
+      "baseline_value": 2.5,
+      "observed_value": 2.5,
+      "change_pct": 0.0,
+      "improvement_pct": 0.0,
+      "is_improvement": false,
+      "direction": "higher_better",
+      "unit": "GFLOPS/W",
+      "description": "Performance per watt (efficiency)"
+    },
+    "pipeline_stalls_per_1000": {
+      "baseline_value": 45.0,
+      "observed_value": 45.0,
+      "change_pct": 0.0,
+      "improvement_pct": -0.0,
+      "is_improvement": false,
+      "direction": "lower_better",
+      "unit": "stalls/1k",
+      "description": "Pipeline stalls per 1000 instructions"
+    },
+    "power_consumption_w": {
+      "baseline_value": 65.0,
+      "observed_value": 65.0,
+      "change_pct": 0.0,
+      "improvement_pct": -0.0,
+      "is_improvement": false,
+      "direction": "lower_better",
+      "unit": "W",
+      "description": "Power consumption (TDP)"
+    },
+    "throughput_gops": {
+      "baseline_value": 50.0,
+      "observed_value": 50.0,
+      "change_pct": 0.0,
+      "improvement_pct": 0.0,
+      "is_improvement": false,
+      "direction": "higher_better",
+      "unit": "GOPS",
+      "description": "Throughput in giga-operations per second"
+    }
+  },
+  "status": "success",
+  "errors": [],
+  "constraints_violated": [],
+  "unexpected_results": [],
+  "timestamp": "2026-09-22T21:38:50",
+  "adapter": {
+    "name": "domain_metrics_simulation",
+    "version": "1.0",
+    "module": "lab.simulation.domain_adapter",
+    "description": "Domain-model comparison using the project's existing domain_metrics.py simulators (baseline vs hypothesis-derived parameters)."
+  },
+  "reproducibility": {
+    "seed": 11,
+    "input_hash": "bc8b30edcfbc5195",
+    "deterministic": true,
+    "how_to_reproduce": "Re-run hypothesis HYP-727 with the stored parameter block and seed 11 through adapter 'domain_metrics_simulation'.",
+    "inputs": {
+      "hypothesis_id": "HYP-727",
+      "hypothesis_text": "Improved variant of HYP-661 addressing lesson LESSON-584: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-637 addressing lesson LESSON-560: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-612 addressing lesson LESSON-535: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-590 addressing lesson LESSON-513: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-564 addressing lesson LESSON-487: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-542 addressing lesson LESSON-465: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-516 addressing lesson LESSON-439: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-494 addressing lesson LESSON-417: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-468 addressing lesson LESSON-391: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-446 addressing lesson LESSON-369: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-420 addressing lesson LESSON-343: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-398 addressing lesson LESSON-321: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-347 addressing lesson LESSON-294: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-325 addressing lesson LESSON-272: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-302 addressing lesson LESSON-249: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-276 addressing lesson LESSON-223: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-225 addressing lesson LESSON-201: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-200 addressing lesson LESSON-176: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-153 addressing lesson LESSON-152: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-126 addressing lesson LESSON-125: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-104 addressing lesson LESSON-103: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-079 addressing lesson LESSON-078: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-057 addressing lesson LESSON-056: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-032 addressing lesson LESSON-031: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-008 addressing lesson LESSON-007: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-018: Alternative-Substrate GPU Data Representation. Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is included? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "research_question": "Design a new advanced GPU architecture",
+      "domain": "computer_architecture",
+      "parameters": {
+        "optimizer": "momentum",
+        "lr": 0.1
+      },
+      "expected_results": {},
+      "constraints": [],
+      "seed": 11
+    },
+    "constraints_used": [
+      {
+        "name": "clock_frequency_ghz",
+        "op": "<=",
+        "value": 8.0,
+        "source": "human-declared practical CMOS clock envelope (lab constraint set v1)"
+      },
+      {
+        "name": "power_consumption_w",
+        "op": "<=",
+        "value": 400.0,
+        "source": "human-declared datacentre-socket power envelope (lab constraint set v1)"
+      },
+      {
+        "name": "area_mm2",
+        "op": "<=",
+        "value": 900.0,
+        "source": "human-declared reticle-limited die area (lab constraint set v1)"
+      }
+    ]
+  },
+  "notes": [
+    "0 of 10 metrics improved; 0 worsened."
+  ],
+  "iteration": 1,
+  "path": "C:\\Users\\Krish\\Downloads\\Autonomous AI Research Laboratory\\research_memory\\simulations\\EXP-634.json",
+  "direction_mechanism_key": "computing_model:oscillator_synchronization",
+  "direction_id": "DIR-275",
+  "record_id": "EXP-634",
+  "collection": "simulations",
+  "stored_at": "2026-09-22T21:38:51"
+}

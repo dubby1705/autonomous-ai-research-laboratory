@@ -1,0 +1,66 @@
+{
+  "hypothesis_id": "HYP-104",
+  "hypothesis": "Improved variant of HYP-079 addressing lesson LESSON-078: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-057 addressing lesson LESSON-056: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-032 addressing lesson LESSON-031: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-008 addressing lesson LESSON-007: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-018: Alternative-Substrate GPU Data Representation. Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is included? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+  "research_question": "Direction DIR-051: Bistable GPU Data Representation. Can a non-volatile physical state improve information density per unit cost for GPU whose data representation state is currently refreshed continuously?",
+  "iteration": 1,
+  "domain": "machine_learning",
+  "supporting_evidence": [],
+  "contradictory_evidence": [],
+  "assumptions": [],
+  "expected_outcome": {
+    "improvement_pct": 5.0
+  },
+  "measurable_metrics": [
+    "improvement_pct"
+  ],
+  "related_papers": [],
+  "related_experiments": [
+    "EXP-078"
+  ],
+  "based_on_lessons": [
+    "LESSON-078"
+  ],
+  "based_on_knowledge": [],
+  "parent_hypothesis": "HYP-079",
+  "risks": [
+    "Lesson LESSON-078 derived from a high-severity constraint_violation; the correction may not fully remove the cause."
+  ],
+  "confidence": 0.4,
+  "parameters": {
+    "optimizer": "momentum",
+    "lr": 0.1
+  },
+  "constraints": [
+    {
+      "name": "improvement_pct",
+      "op": ">=",
+      "value": 0.0,
+      "source": "generated hypothesis expectation"
+    }
+  ],
+  "claim_type": "generated_hypothesis",
+  "provenance": {
+    "generated_by": "llm",
+    "iteration": 1,
+    "knowledge_items": [],
+    "lessons_applied": [
+      "LESSON-078"
+    ],
+    "experiments_considered": [
+      "EXP-076",
+      "EXP-077",
+      "EXP-078",
+      "EXP-079",
+      "EXP-080"
+    ],
+    "claim_type_note": "AI-generated proposal — NOT established fact"
+  },
+  "timestamp": "2026-09-22T00:12:30",
+  "knowledge_item_id": "K-0020",
+  "direction_id": "DIR-051",
+  "direction_mechanism_key": "data_representation:phase_change_bistability",
+  "exploration_run_id": "RUN-9EE5808A",
+  "record_id": "HYP-104",
+  "collection": "hypotheses",
+  "stored_at": "2026-09-22T00:12:30"
+}

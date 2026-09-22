@@ -1,0 +1,62 @@
+{
+  "hypothesis_id": "HYP-033",
+  "hypothesis": "Improved variant of HYP-006 addressing lesson LESSON-005: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-016: Oscillator-Synchronized GPU Runtime Adaptation. Can emergent phase alignment replace an explicit global barrier to improve stability of achieved performance for GPU? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+  "research_question": "Direction DIR-027: Bistable GPU Data Representation. Can a non-volatile physical state improve information density per unit cost for GPU whose data representation state is currently refreshed continuously?",
+  "iteration": 1,
+  "domain": "machine_learning",
+  "supporting_evidence": [],
+  "contradictory_evidence": [],
+  "assumptions": [],
+  "expected_outcome": {
+    "improvement_pct": 5.0
+  },
+  "measurable_metrics": [
+    "improvement_pct"
+  ],
+  "related_papers": [],
+  "related_experiments": [
+    "EXP-005"
+  ],
+  "based_on_lessons": [
+    "LESSON-005"
+  ],
+  "based_on_knowledge": [],
+  "parent_hypothesis": "HYP-006",
+  "risks": [
+    "Lesson LESSON-005 derived from a high-severity constraint_violation; the correction may not fully remove the cause."
+  ],
+  "confidence": 0.4,
+  "parameters": {
+    "optimizer": "momentum",
+    "lr": 0.1
+  },
+  "constraints": [
+    {
+      "name": "improvement_pct",
+      "op": ">=",
+      "value": 0.0,
+      "source": "generated hypothesis expectation"
+    }
+  ],
+  "claim_type": "generated_hypothesis",
+  "provenance": {
+    "generated_by": "llm",
+    "iteration": 1,
+    "knowledge_items": [],
+    "lessons_applied": [
+      "LESSON-005"
+    ],
+    "experiments_considered": [
+      "EXP-004",
+      "EXP-005",
+      "EXP-006",
+      "EXP-007",
+      "EXP-008"
+    ],
+    "claim_type_note": "AI-generated proposal — NOT established fact"
+  },
+  "timestamp": "2026-09-22T00:03:03",
+  "record_id": "HYP-033",
+  "collection": "hypotheses",
+  "stored_at": "2026-09-22T00:03:03"
+}

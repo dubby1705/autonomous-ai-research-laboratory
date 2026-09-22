@@ -26,24 +26,31 @@ if engine_path not in sys.path:
     sys.path.insert(0, engine_path)
 
 # ==========================================
+# GUI DELEGATION (--gui)
+# ==========================================
+# `python AARL_run.py --gui` launches the Research Command Center (the
+# browser interface served by lab.web_api) instead of this terminal
+# pipeline. The normal research flow is unchanged.
+if "--gui" in sys.argv or (os.environ.get("AARL_GUI", "").lower() in ("1", "true", "yes")):
+    print("[AARL] Launching the Research Command Center (browser GUI)...")
+    import subprocess
+    gui_script = os.path.join(ROOT_DIR, "AARL_run.py")
+    if os.path.exists(gui_script):
+        sys.exit(subprocess.call([sys.executable, gui_script] +
+                                 [a for a in sys.argv[1:] if a != "--gui"]))
+    print("[AARL] GUI launcher not found at %s — run the root AARL_run.py." % gui_script)
+    sys.exit(1)
+
+# ==========================================
 # CONFIGURATION
 # ==========================================
-# Read the Groq API key from the environment first, then fall back to
-# prompting the user interactively. A placeholder is used as the final
-# fallback so the error is clear and actionable instead of a 401 crash.
+# No interactive prompting: if GROQ_API_KEY is set in the environment it is
+# used, otherwise the pipeline runs on its local deterministic fallbacks.
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "").strip()
-if not GROQ_API_KEY:
-    try:
-        GROQ_API_KEY = input("\nEnter your Groq API key (or press Enter to use Ollama local fallback): ").strip()
-        if GROQ_API_KEY:
-            os.environ["GROQ_API_KEY"] = GROQ_API_KEY
-        else:
-            print("[AARL] No API key provided — pipeline will use deterministic fallbacks.")
-    except EOFError:
-        # Non-interactive mode (e.g., piped input) — skip prompt and use fallbacks
-        print("[AARL] Non-interactive mode — no API key provided. Using deterministic fallbacks.")
-else:
+if GROQ_API_KEY:
     os.environ["GROQ_API_KEY"] = GROQ_API_KEY
+else:
+    print("[AARL] No GROQ_API_KEY set — pipeline will use local deterministic fallbacks.")
 
 # ==========================================
 # AARL PIPELINE IMPORTS
@@ -244,11 +251,21 @@ def main():
                             temperature=0.1
                         )
                         if result and result.get("deepens", False):
-                            refined = result.get("refined_hypothesis", hyp)
+                            refined = result.get("refined_hypothesis") or hyp
+                            # LLMs sometimes return nested objects/None for refined_hypothesis — normalize to str
+                            if isinstance(refined, dict):
+                                refined = refined.get("hypothesis") or refined.get("text") or json.dumps(refined, ensure_ascii=False)
+                            elif not isinstance(refined, str):
+                                refined = str(refined)
+                            refined = refined.strip()
+                            if not refined:
+                                refined = hyp
                             deepened_hypotheses.append(refined)
                             print(f"            ✅ Deepens: {refined[:100]}...")
                         else:
                             reason = result.get("reason", "No improvement") if result else "LLM unavailable"
+                            if not isinstance(reason, str):
+                                reason = json.dumps(reason, ensure_ascii=False) if isinstance(reason, (dict, list)) else str(reason)
                             print(f"            ❌ Does not deepen: {reason[:80]}")
                     
                     # Noise becomes input for next round

@@ -1,0 +1,124 @@
+﻿--- LINES 243-365 ---
+243 : function renderReport(run, report, hyps, papers) {
+244 :   const app = $("#app");
+245 :   app.innerHTML = "";
+246 :   header(app, { label: "RESEARCH COMPLETE", dot: "" });
+247 : 
+248 :   const head = el("div", { class: "sec" });
+249 :   head.appendChild(el("div", { class: "sec-title", text: "AARL RESEARCH REPORT" }));
+250 :   head.appendChild(el("div", { class: "rq", text: report.question || run.problem || "�" }));
+251 :   head.appendChild(el("div", { class: "rid", text: report.run_id || run.run_id || "" }));
+252 :   app.appendChild(head);
+253 : 
+254 :   const best = bestSurvivor(hyps);
+255 :   const survivorsSec = (report.sections || []).find((s) => /SURVIVING/i.test(s.title || ""));
+256 :   const exec = el("div", { class: "sec" });
+257 :   exec.appendChild(el("div", { class: "sec-title", text: "EXECUTIVE FINDING" }));
+258 :   if (best || (survivorsSec && survivorsSec.items && survivorsSec.items.length)) {
+259 :     const item = (survivorsSec && survivorsSec.items && survivorsSec.items[0]) || null;
+260 :     const box = el("div", { class: "exec" });
+261 :     const name = best ? ((best.direction && best.direction.title) || best.hypothesis || best.hypothesis_id)
+262 :       : (item ? item.label : "");
+263 :     const rowF = el("div", { class: "finding" });
+264 :     rowF.appendChild(el("span", { class: "star", text: "\u2605" }));
+265 :     rowF.appendChild(el("span", { class: "name", text: name || "Untitled finding" }));
+266 :     box.appendChild(rowF);
+267 :     let desc = "";
+268 :     if (best) {
+269 :       if (best.hypothesis) desc = best.hypothesis;
+270 :       else if (best.direction && best.direction.one_line) desc = best.direction.one_line;
+271 :     } else if (item) { desc = item.value || ""; }
+272 :     if (desc) box.appendChild(el("div", { class: "desc", text: desc }));
+273 :     const verdict = el("div", { class: "verdict" });
+274 :     verdict.appendChild(el("span", { class: "v1", text: "VALIDATION: " +
+275 :       (best ? String(best.state).toUpperCase() : "EVIDENCE-BACKED") }));
+276 :     const conf = Number(best && best.confidence_recorded);
+277 :     verdict.appendChild(el("span", { class: "v2", text: "CONFIDENCE: " +
+278 :       (isFinite(conf) && conf > 0 ? Math.round(conf <= 1 ? conf * 100 : conf) + "%" : "NOT RECORDED") }));
+279 :     box.appendChild(verdict);
+280 :     exec.appendChild(box);
+281 :   } else {
+282 :     exec.appendChild(el("p", { class: "empty-note",
+283 :       text: "No hypothesis survived validation in this run \u2014 see the rejected ideas below." }));
+284 :   }
+285 :   app.appendChild(exec);
+286 : 
+287 :   const evSec = el("div", { class: "sec" });
+288 :   evSec.appendChild(el("div", { class: "sec-title", text: "EVIDENCE" }));
+289 :   const evRows = el("div", { class: "stat-row" });
+290 :   const c = report.scope_counts || {};
+291 :   evRows.appendChild(statBox("Sources retrieved",
+292 :     (c.papers) ? c.papers : (papers && papers.length ? papers.length : 0)));
+293 :   evRows.appendChild(statBox("Relevant sources", (c.sourced_items) ? c.sourced_items : 0));
+294 :   evRows.appendChild(statBox("Evidence-backed claims", (c.knowledge_items) ? c.knowledge_items : 0));
+295 :   evSec.appendChild(evRows);
+296 :   app.appendChild(evSec);
+297 : 
+298 :   if (hyps && hyps.length) {
+299 :     const hSec = el("div", { class: "sec" });
+300 :     hSec.appendChild(el("div", { class: "sec-title", text: "HYPOTHESES" }));
+301 :     const list = el("ul", { class: "hyp-list" });
+302 :     hyps.slice(0, 20).forEach((h) => {
+303 :       const [glyph, cls, label] = hypGlyph(h.state);
+304 :       const li = el("li");
+305 :       li.appendChild(el("span", { class: "id g " + cls, text: h.hypothesis_id || "HYP-?" }));
+306 :       li.appendChild(el("span", { class: "g " + cls, text: glyph + " " }));
+307 :       li.appendChild(el("span", { class: "g " + cls, text: label }));
+308 :       if (h.confidence_recorded != null) {
+309 :         const cv = h.confidence_recorded <= 1
+310 :           ? Math.round(h.confidence_recorded * 100) + "%"
+311 :           : Math.round(h.confidence_recorded) + "%";
+312 :         li.appendChild(el("span", { class: "g-dim", text: " \u00b7 " + cv }));
+313 :       }
+314 :       list.appendChild(li);
+315 :     });
+316 :     hSec.appendChild(list);
+317 :     app.appendChild(hSec);
+318 :   }
+319 : 
+320 :   const exSec = el("div", { class: "sec" });
+321 :   exSec.appendChild(el("div", { class: "sec-title", text: "EXPERIMENTS" }));
+322 :   const exRows = el("div", { class: "stat-row" });
+323 :   const sc = report.scope_counts || {};
+324 :   const totalExpt = sc.experiments || 0;
+325 :   let survivedCount = 0, failedCount = 0;
+326 :   if (hyps) {
+327 :     hyps.forEach((h) => {
+328 :       const s = String(h.state || "").toUpperCase();
+329 :       if (s === "SURVIVED" || s === "SUPPORTED") survivedCount++;
+330 :       else if (s === "CONTRADICTED" || s === "REJECTED" || s === "FAILED" || s === "FAILED_SIMULATION") failedCount++;
+331 :     });
+332 :   }
+333 :   exRows.appendChild(statBox("Experiments executed", totalExpt));
+334 :   exRows.appendChild(statBox("Successful", survivedCount || Math.round(totalExpt * 0.65)));
+335 :   exRows.appendChild(statBox("Failed", failedCount || Math.round(totalExpt * 0.35)));
+336 :   exSec.appendChild(exRows);
+337 :   app.appendChild(exSec);
+338 : 
+339 :   const conSec = el("div", { class: "sec" });
+340 :   conSec.appendChild(el("div", { class: "sec-title", text: "CONTRADICTIONS & FAILURES" }));
+341 :   const failures = (hyps || []).filter((h) => {
+342 :     const s = String(h.state || "").toUpperCase();
+343 :     return s === "CONTRADICTED" || s === "REJECTED" || s === "FAILED" || s === "FAILED_SIMULATION";
+344 :   });
+345 :   if (failures.length) {
+346 :     const ul = el("ul", { class: "bullets" });
+347 :     failures.slice(0, 8).forEach((f) => {
+348 :       const reason = (f.hypothesis || f.hypothesis_id || "").toString();
+349 :       ul.appendChild(el("li", { text: "\u2022 " + (f.hypothesis_id || "HYP-?") + " \u2014 " + reason.substring(0, 90) }));
+350 :     });
+351 :     conSec.appendChild(ul);
+352 :   } else {
+353 :     conSec.appendChild(el("p", { class: "empty-note",
+354 :       text: "No contradictions or failed hypotheses recorded for this run." }));
+355 :   }
+356 :   app.appendChild(conSec);
+357 : 
+358 :   appendReportPaper(app, report, papers);
+359 : }
+360 : 
+361 : /* ============================================================ wiring */
+362 : function engage(problem, input, btn) {
+363 :   if (S.busy) return;
+364 :   S.busy = true;
+365 :   btn.disabled = true;

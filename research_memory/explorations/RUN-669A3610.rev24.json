@@ -1,0 +1,1266 @@
+{
+  "run_id": "RUN-669A3610",
+  "problem": "design a battery",
+  "status": "running",
+  "stages": [
+    {
+      "key": "understanding",
+      "label": "Understanding problem",
+      "state": "done",
+      "detail": "design a battery",
+      "at": "2026-09-22T21:44:44"
+    },
+    {
+      "key": "domains",
+      "label": "Detecting research domain",
+      "state": "done",
+      "detail": "Primary: chemistry.",
+      "at": "2026-09-22T21:44:45"
+    },
+    {
+      "key": "literature",
+      "label": "Searching literature",
+      "state": "done",
+      "detail": "8 overlapping items.",
+      "at": "2026-09-22T21:44:45"
+    },
+    {
+      "key": "graph",
+      "label": "Building knowledge graph",
+      "state": "done",
+      "detail": "8 directions.",
+      "at": "2026-09-22T21:44:51"
+    },
+    {
+      "key": "exploring",
+      "label": "Exploring alternative directions",
+      "state": "done",
+      "detail": "Proposals ready.",
+      "at": "2026-09-22T21:44:51"
+    },
+    {
+      "key": "hypotheses",
+      "label": "Generating hypotheses",
+      "state": "done",
+      "detail": "Hypotheses stored.",
+      "at": "2026-09-22T21:45:19"
+    },
+    {
+      "key": "mechanisms",
+      "label": "Testing mechanisms",
+      "state": "done",
+      "detail": "PROPOSED mechanisms only.",
+      "at": "2026-09-22T21:45:19"
+    },
+    {
+      "key": "simulations",
+      "label": "Running simulations",
+      "state": "running",
+      "detail": "Simulating.",
+      "at": "2026-09-22T21:45:19"
+    }
+  ],
+  "directions": [],
+  "space": {
+    "root": "design a battery",
+    "subject": "Battery",
+    "nodes": [
+      {
+        "id": "root",
+        "label": "design a battery",
+        "kind": "research_question",
+        "parent": null,
+        "detail": "The problem AARL was given.",
+        "domains": [
+          "chemistry"
+        ]
+      },
+      {
+        "id": "facet:energy_thermal",
+        "label": "Power and Thermal",
+        "kind": "facet",
+        "parent": "root",
+        "detail": "how energy is consumed, converted and removed (judged on energy per operation)",
+        "selection_score": 2.0,
+        "matched_keywords": [
+          "battery"
+        ],
+        "basis": "keyword overlap with the problem statement + detected-domain affinity + editorial exploration priority (order only)",
+        "assumed_limitation": "Power density is limited by heat removal, so performance is capped by thermals rather than by the logic itself."
+      },
+      {
+        "id": "facet:data_representation",
+        "label": "Data Representation",
+        "kind": "facet",
+        "parent": "root",
+        "detail": "how information is encoded, stored and transported (judged on information density per unit cost)",
+        "selection_score": 1.0,
+        "matched_keywords": [],
+        "basis": "keyword overlap with the problem statement + detected-domain affinity + editorial exploration priority (order only)",
+        "assumed_limitation": "The representation is uniform across the whole tensor or molecule, so a few significant elements pay for many insignificant ones."
+      },
+      {
+        "id": "facet:materials",
+        "label": "Material Stack",
+        "kind": "facet",
+        "parent": "root",
+        "detail": "which materials carry the function and why (judged on material performance limit)",
+        "selection_score": 1.0,
+        "matched_keywords": [],
+        "basis": "keyword overlap with the problem statement + detected-domain affinity + editorial exploration priority (order only)",
+        "assumed_limitation": "Material choice is constrained by what can be manufactured reliably at scale, not by the best measured property in the laboratory."
+      },
+      {
+        "id": "facet:cost_scaling",
+        "label": "Scaling Strategy",
+        "kind": "facet",
+        "parent": "root",
+        "detail": "what happens to cost and benefit as the system grows (judged on marginal cost of additional scale)",
+        "selection_score": 1.0,
+        "matched_keywords": [],
+        "basis": "keyword overlap with the problem statement + detected-domain affinity + editorial exploration priority (order only)",
+        "assumed_limitation": "Benefit saturates before cost does, so adding more of the same resource stops buying proportionate improvement."
+      },
+      {
+        "id": "dir:DIR-276",
+        "label": "Alternative-Substrate Battery Power Management",
+        "kind": "direction",
+        "parent": "facet:energy_thermal",
+        "direction_id": "DIR-276",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "substrate_substitution",
+        "already_failed": false,
+        "detail": "Would moving the cost-dominant operation of Battery onto a different physical carrier improve energy per operation once interface overhead is included?"
+      },
+      {
+        "id": "dir:DIR-277",
+        "label": "Oscillator-Synchronized Battery Power Management",
+        "kind": "direction",
+        "parent": "facet:energy_thermal",
+        "direction_id": "DIR-277",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "oscillator_synchronization",
+        "already_failed": false,
+        "detail": "Can emergent phase alignment replace an explicit global barrier to improve energy per operation for Battery?"
+      },
+      {
+        "id": "dir:DIR-278",
+        "label": "Alternative-Substrate Battery Data Representation",
+        "kind": "direction",
+        "parent": "facet:data_representation",
+        "direction_id": "DIR-278",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "substrate_substitution",
+        "already_failed": false,
+        "detail": "Would moving the cost-dominant operation of Battery onto a different physical carrier improve information density per unit cost once interface overhead is included?"
+      },
+      {
+        "id": "dir:DIR-279",
+        "label": "Bistable Battery Data Representation",
+        "kind": "direction",
+        "parent": "facet:data_representation",
+        "direction_id": "DIR-279",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "phase_change_bistability",
+        "already_failed": false,
+        "detail": "Can a non-volatile physical state improve information density per unit cost for Battery whose data representation state is currently refreshed continuously?"
+      },
+      {
+        "id": "dir:DIR-280",
+        "label": "Alternative-Substrate Battery Material Stack",
+        "kind": "direction",
+        "parent": "facet:materials",
+        "direction_id": "DIR-280",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "substrate_substitution",
+        "already_failed": false,
+        "detail": "Would moving the cost-dominant operation of Battery onto a different physical carrier improve material performance limit once interface overhead is included?"
+      },
+      {
+        "id": "dir:DIR-281",
+        "label": "Bistable Battery Material Stack",
+        "kind": "direction",
+        "parent": "facet:materials",
+        "direction_id": "DIR-281",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "phase_change_bistability",
+        "already_failed": false,
+        "detail": "Can a non-volatile physical state improve material performance limit for Battery whose material stack state is currently refreshed continuously?"
+      },
+      {
+        "id": "dir:DIR-282",
+        "label": "Heterogeneity-Aware Battery Scaling Strategy",
+        "kind": "direction",
+        "parent": "facet:cost_scaling",
+        "direction_id": "DIR-282",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "heterogeneity_awareness",
+        "already_failed": false,
+        "detail": "Can capability-matched routing improve marginal cost of additional scale for Battery made of deliberately non-uniform participants?"
+      },
+      {
+        "id": "dir:DIR-283",
+        "label": "Decentralized Battery Scaling Strategy",
+        "kind": "direction",
+        "parent": "facet:cost_scaling",
+        "direction_id": "DIR-283",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "decentralized_coordination",
+        "already_failed": false,
+        "detail": "Can decentralized coordination improve marginal cost of additional scale for Battery in situations where a single centralized controller cannot observe the whole system quickly enough?"
+      },
+      {
+        "id": "rejected:energy_thermal_phase_change_bistability",
+        "label": "Bistable Power Management",
+        "kind": "branch_not_taken",
+        "parent": "facet:energy_thermal",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "phase_change_bistability",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:energy_thermal_reversible_computing",
+        "label": "Reversible Power Management",
+        "kind": "branch_not_taken",
+        "parent": "facet:energy_thermal",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "reversible_computing",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:energy_thermal_sparsity_compression",
+        "label": "Sparsity-Driven Power Management",
+        "kind": "branch_not_taken",
+        "parent": "facet:energy_thermal",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "sparsity_compression",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:energy_thermal_approximate_computing",
+        "label": "Approximate Power Management",
+        "kind": "branch_not_taken",
+        "parent": "facet:energy_thermal",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "approximate_computing",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:energy_thermal_adaptive_reconfiguration",
+        "label": "Self-Reconfiguring Power Management",
+        "kind": "branch_not_taken",
+        "parent": "facet:energy_thermal",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "adaptive_reconfiguration",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:energy_thermal_closed_loop_feedback",
+        "label": "Closed-Loop Power Management",
+        "kind": "branch_not_taken",
+        "parent": "facet:energy_thermal",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "closed_loop_feedback",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:data_representation_topological_protection",
+        "label": "Topologically-Protected Data Representation",
+        "kind": "branch_not_taken",
+        "parent": "facet:data_representation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "topological_protection",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:data_representation_sparsity_compression",
+        "label": "Sparsity-Driven Data Representation",
+        "kind": "branch_not_taken",
+        "parent": "facet:data_representation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "sparsity_compression",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:data_representation_approximate_computing",
+        "label": "Approximate Data Representation",
+        "kind": "branch_not_taken",
+        "parent": "facet:data_representation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "approximate_computing",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:data_representation_predictive_prefetching",
+        "label": "Predictive Data Representation",
+        "kind": "branch_not_taken",
+        "parent": "facet:data_representation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "predictive_prefetching",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:data_representation_domain_specific_language",
+        "label": "Domain-Specific Data Representation",
+        "kind": "branch_not_taken",
+        "parent": "facet:data_representation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "domain_specific_language",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:data_representation_stochastic_sampling",
+        "label": "Stochastic-Sampling Data Representation",
+        "kind": "branch_not_taken",
+        "parent": "facet:data_representation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "stochastic_sampling",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:data_representation_locality_exploitation",
+        "label": "Locality-Aware Data Representation",
+        "kind": "branch_not_taken",
+        "parent": "facet:data_representation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "locality_exploitation",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:materials_self_assembly_emergence",
+        "label": "Self-Assembling Material Stack",
+        "kind": "branch_not_taken",
+        "parent": "facet:materials",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "self_assembly_emergence",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:materials_topological_protection",
+        "label": "Topologically-Protected Material Stack",
+        "kind": "branch_not_taken",
+        "parent": "facet:materials",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "topological_protection",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:materials_reversible_computing",
+        "label": "Reversible Material Stack",
+        "kind": "branch_not_taken",
+        "parent": "facet:materials",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "reversible_computing",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:materials_approximate_computing",
+        "label": "Approximate Material Stack",
+        "kind": "branch_not_taken",
+        "parent": "facet:materials",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "approximate_computing",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:materials_redundancy_error_correction",
+        "label": "Redundancy-Protected Material Stack",
+        "kind": "branch_not_taken",
+        "parent": "facet:materials",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "redundancy_error_correction",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:cost_scaling_market_mechanism",
+        "label": "Market-Based Scaling Strategy",
+        "kind": "branch_not_taken",
+        "parent": "facet:cost_scaling",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "market_mechanism",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:cost_scaling_hierarchical_decomposition",
+        "label": "Hierarchical Scaling Strategy",
+        "kind": "branch_not_taken",
+        "parent": "facet:cost_scaling",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "hierarchical_decomposition",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:cost_scaling_stochastic_sampling",
+        "label": "Stochastic-Sampling Scaling Strategy",
+        "kind": "branch_not_taken",
+        "parent": "facet:cost_scaling",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "stochastic_sampling",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:cost_scaling_closed_loop_feedback",
+        "label": "Closed-Loop Scaling Strategy",
+        "kind": "branch_not_taken",
+        "parent": "facet:cost_scaling",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "closed_loop_feedback",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:cost_scaling_redundancy_error_correction",
+        "label": "Redundancy-Protected Scaling Strategy",
+        "kind": "branch_not_taken",
+        "parent": "facet:cost_scaling",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "redundancy_error_correction",
+        "ranked_out": true
+      }
+    ],
+    "edges": [
+      {
+        "source": "root",
+        "target": "facet:energy_thermal",
+        "type": "has_dimension",
+        "note": "Facet selected for this problem."
+      },
+      {
+        "source": "root",
+        "target": "facet:data_representation",
+        "type": "has_dimension",
+        "note": "Facet selected for this problem."
+      },
+      {
+        "source": "root",
+        "target": "facet:materials",
+        "type": "has_dimension",
+        "note": "Facet selected for this problem."
+      },
+      {
+        "source": "root",
+        "target": "facet:cost_scaling",
+        "type": "has_dimension",
+        "note": "Facet selected for this problem."
+      },
+      {
+        "source": "facet:energy_thermal",
+        "target": "dir:DIR-276",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:energy_thermal",
+        "target": "dir:DIR-277",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "dir:DIR-278",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "dir:DIR-279",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:materials",
+        "target": "dir:DIR-280",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:materials",
+        "target": "dir:DIR-281",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:cost_scaling",
+        "target": "dir:DIR-282",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:cost_scaling",
+        "target": "dir:DIR-283",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:energy_thermal",
+        "target": "rejected:energy_thermal_phase_change_bistability",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:energy_thermal",
+        "target": "rejected:energy_thermal_reversible_computing",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:energy_thermal",
+        "target": "rejected:energy_thermal_sparsity_compression",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:energy_thermal",
+        "target": "rejected:energy_thermal_approximate_computing",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:energy_thermal",
+        "target": "rejected:energy_thermal_adaptive_reconfiguration",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:energy_thermal",
+        "target": "rejected:energy_thermal_closed_loop_feedback",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "rejected:data_representation_topological_protection",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "rejected:data_representation_sparsity_compression",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "rejected:data_representation_approximate_computing",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "rejected:data_representation_predictive_prefetching",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "rejected:data_representation_domain_specific_language",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "rejected:data_representation_stochastic_sampling",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "rejected:data_representation_locality_exploitation",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:materials",
+        "target": "rejected:materials_self_assembly_emergence",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:materials",
+        "target": "rejected:materials_topological_protection",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:materials",
+        "target": "rejected:materials_reversible_computing",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:materials",
+        "target": "rejected:materials_approximate_computing",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:materials",
+        "target": "rejected:materials_redundancy_error_correction",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:cost_scaling",
+        "target": "rejected:cost_scaling_market_mechanism",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:cost_scaling",
+        "target": "rejected:cost_scaling_hierarchical_decomposition",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:cost_scaling",
+        "target": "rejected:cost_scaling_stochastic_sampling",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:cost_scaling",
+        "target": "rejected:cost_scaling_closed_loop_feedback",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:cost_scaling",
+        "target": "rejected:cost_scaling_redundancy_error_correction",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      }
+    ],
+    "counts": {
+      "facets": 4,
+      "directions": 8,
+      "branches_not_taken": 23,
+      "nodes": 36,
+      "edges": 35
+    },
+    "legend": {
+      "research_question": "The problem AARL was given",
+      "facet": "A structural dimension of the problem",
+      "direction": "A discovered research direction",
+      "branch_not_taken": "Considered but not explored in this run"
+    },
+    "edge_types": [
+      "has_dimension",
+      "inspired_by",
+      "considered"
+    ],
+    "note": "This tree shows how the directions were constructed. Node counts are descriptive only and are never used as evidence strength."
+  },
+  "stats": {
+    "facets_explored": 4,
+    "concepts_considered": 31,
+    "directions": 8,
+    "candidates_rejected": 23,
+    "already_failed_in_memory": 0,
+    "subject_label": "Battery",
+    "domains_considered": [
+      "chemistry"
+    ],
+    "how_directions_were_built": "facet x cross-domain concept. Facets are selected by keyword/domain overlap with the problem; concepts come from the curated transferable mechanism library. The provenance block of each direction lists the exact inputs."
+  },
+  "error": "",
+  "created_at": "2026-09-22T21:44:43",
+  "updated_at": "2026-09-22T21:45:19",
+  "stage_template": [
+    {
+      "key": "understanding",
+      "label": "Understanding problem"
+    },
+    {
+      "key": "domains",
+      "label": "Detecting research domain"
+    },
+    {
+      "key": "literature",
+      "label": "Searching literature"
+    },
+    {
+      "key": "graph",
+      "label": "Building knowledge graph"
+    },
+    {
+      "key": "exploring",
+      "label": "Exploring alternative directions"
+    },
+    {
+      "key": "hypotheses",
+      "label": "Generating hypotheses"
+    },
+    {
+      "key": "mechanisms",
+      "label": "Testing mechanisms"
+    },
+    {
+      "key": "simulations",
+      "label": "Running simulations"
+    },
+    {
+      "key": "evaluating",
+      "label": "Evaluating research opportunities"
+    }
+  ],
+  "rejected": [
+    {
+      "mechanism_key": "energy_thermal:phase_change_bistability",
+      "facet_id": "energy_thermal",
+      "facet_label": "Power and Thermal",
+      "concept_id": "phase_change_bistability",
+      "concept_name": "Nonlinear bistability",
+      "title": "Bistable Power Management",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [
+        "battery"
+      ],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "energy_thermal:reversible_computing",
+      "facet_id": "energy_thermal",
+      "facet_label": "Power and Thermal",
+      "concept_id": "reversible_computing",
+      "concept_name": "Thermodynamic reversibility",
+      "title": "Reversible Power Management",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [
+        "battery"
+      ],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "energy_thermal:sparsity_compression",
+      "facet_id": "energy_thermal",
+      "facet_label": "Power and Thermal",
+      "concept_id": "sparsity_compression",
+      "concept_name": "Sparsity exploitation",
+      "title": "Sparsity-Driven Power Management",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [
+        "battery"
+      ],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "energy_thermal:approximate_computing",
+      "facet_id": "energy_thermal",
+      "facet_label": "Power and Thermal",
+      "concept_id": "approximate_computing",
+      "concept_name": "Approximate computing",
+      "title": "Approximate Power Management",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [
+        "battery"
+      ],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "energy_thermal:adaptive_reconfiguration",
+      "facet_id": "energy_thermal",
+      "facet_label": "Power and Thermal",
+      "concept_id": "adaptive_reconfiguration",
+      "concept_name": "Adaptive reconfiguration",
+      "title": "Self-Reconfiguring Power Management",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [
+        "battery"
+      ],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "energy_thermal:closed_loop_feedback",
+      "facet_id": "energy_thermal",
+      "facet_label": "Power and Thermal",
+      "concept_id": "closed_loop_feedback",
+      "concept_name": "Closed-loop feedback",
+      "title": "Closed-Loop Power Management",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [
+        "battery"
+      ],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "data_representation:topological_protection",
+      "facet_id": "data_representation",
+      "facet_label": "Data Representation",
+      "concept_id": "topological_protection",
+      "concept_name": "Topological protection",
+      "title": "Topologically-Protected Data Representation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "data_representation:sparsity_compression",
+      "facet_id": "data_representation",
+      "facet_label": "Data Representation",
+      "concept_id": "sparsity_compression",
+      "concept_name": "Sparsity exploitation",
+      "title": "Sparsity-Driven Data Representation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "data_representation:approximate_computing",
+      "facet_id": "data_representation",
+      "facet_label": "Data Representation",
+      "concept_id": "approximate_computing",
+      "concept_name": "Approximate computing",
+      "title": "Approximate Data Representation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "data_representation:predictive_prefetching",
+      "facet_id": "data_representation",
+      "facet_label": "Data Representation",
+      "concept_id": "predictive_prefetching",
+      "concept_name": "Predictive prefetching",
+      "title": "Predictive Data Representation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "data_representation:domain_specific_language",
+      "facet_id": "data_representation",
+      "facet_label": "Data Representation",
+      "concept_id": "domain_specific_language",
+      "concept_name": "Domain-specific representation",
+      "title": "Domain-Specific Data Representation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "data_representation:stochastic_sampling",
+      "facet_id": "data_representation",
+      "facet_label": "Data Representation",
+      "concept_id": "stochastic_sampling",
+      "concept_name": "Stochastic sampling",
+      "title": "Stochastic-Sampling Data Representation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "data_representation:locality_exploitation",
+      "facet_id": "data_representation",
+      "facet_label": "Data Representation",
+      "concept_id": "locality_exploitation",
+      "concept_name": "Locality exploitation",
+      "title": "Locality-Aware Data Representation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "materials:self_assembly_emergence",
+      "facet_id": "materials",
+      "facet_label": "Material Stack",
+      "concept_id": "self_assembly_emergence",
+      "concept_name": "Self-assembly",
+      "title": "Self-Assembling Material Stack",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "materials:topological_protection",
+      "facet_id": "materials",
+      "facet_label": "Material Stack",
+      "concept_id": "topological_protection",
+      "concept_name": "Topological protection",
+      "title": "Topologically-Protected Material Stack",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "materials:reversible_computing",
+      "facet_id": "materials",
+      "facet_label": "Material Stack",
+      "concept_id": "reversible_computing",
+      "concept_name": "Thermodynamic reversibility",
+      "title": "Reversible Material Stack",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "materials:approximate_computing",
+      "facet_id": "materials",
+      "facet_label": "Material Stack",
+      "concept_id": "approximate_computing",
+      "concept_name": "Approximate computing",
+      "title": "Approximate Material Stack",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "materials:redundancy_error_correction",
+      "facet_id": "materials",
+      "facet_label": "Material Stack",
+      "concept_id": "redundancy_error_correction",
+      "concept_name": "Structured redundancy",
+      "title": "Redundancy-Protected Material Stack",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "cost_scaling:market_mechanism",
+      "facet_id": "cost_scaling",
+      "facet_label": "Scaling Strategy",
+      "concept_id": "market_mechanism",
+      "concept_name": "Market-based allocation",
+      "title": "Market-Based Scaling Strategy",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "cost_scaling:hierarchical_decomposition",
+      "facet_id": "cost_scaling",
+      "facet_label": "Scaling Strategy",
+      "concept_id": "hierarchical_decomposition",
+      "concept_name": "Hierarchical decomposition",
+      "title": "Hierarchical Scaling Strategy",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "cost_scaling:stochastic_sampling",
+      "facet_id": "cost_scaling",
+      "facet_label": "Scaling Strategy",
+      "concept_id": "stochastic_sampling",
+      "concept_name": "Stochastic sampling",
+      "title": "Stochastic-Sampling Scaling Strategy",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "cost_scaling:closed_loop_feedback",
+      "facet_id": "cost_scaling",
+      "facet_label": "Scaling Strategy",
+      "concept_id": "closed_loop_feedback",
+      "concept_name": "Closed-loop feedback",
+      "title": "Closed-Loop Scaling Strategy",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "cost_scaling:redundancy_error_correction",
+      "facet_id": "cost_scaling",
+      "facet_label": "Scaling Strategy",
+      "concept_id": "redundancy_error_correction",
+      "concept_name": "Structured redundancy",
+      "title": "Redundancy-Protected Scaling Strategy",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    }
+  ],
+  "subject": "Battery",
+  "literature_overlap": [
+    {
+      "item_id": "K-0001",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-004: Heterogeneity-Aware GPU Scheduling. Can capability-matched routing improve resource utilization for GPU made of deliberately non-uniform participants? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:00:09",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-001",
+        "iteration": 1,
+        "lessons_applied": [],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-001"
+      }
+    },
+    {
+      "item_id": "K-0002",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-012: Heterogeneity-Aware GPU Scheduling. Can capability-matched routing improve resource utilization for GPU made of deliberately non-uniform participants? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "2"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-012",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-002",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-002"
+      }
+    },
+    {
+      "item_id": "K-0006",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-016: Oscillator-Synchronized GPU Runtime Adaptation. Can emergent phase alignment replace an explicit global barrier to improve stability of achieved performance for GPU? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "6"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-016",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-006",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-006"
+      }
+    },
+    {
+      "item_id": "K-0005",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-015: Oscillator-Synchronized GPU Compute Model. Can emergent phase alignment replace an explicit global barrier to improve achievable operations per second for GPU? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "5"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-015",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-005",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-005"
+      }
+    },
+    {
+      "item_id": "K-0007",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-017: Heterogeneity-Aware GPU Runtime Adaptation. Can capability-matched routing improve stability of achieved performance for GPU made of deliberately non-uniform participants? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:55",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "7"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-017",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-007",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-007"
+      }
+    },
+    {
+      "item_id": "K-0032",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-154 addressing lesson LESSON-153: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-153 addressing lesson LESSON-152: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:20:51",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "7",
+        "6"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-076",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-A67A96B4",
+        "hypothesis_id": "HYP-178",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-178"
+      }
+    },
+    {
+      "item_id": "K-0044",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-277 addressing lesson LESSON-224: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-224 addressing lesson LESSON-200: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T01:29:34",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "1",
+        "2",
+        "4"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-124",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-57A67587",
+        "hypothesis_id": "HYP-280",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-280"
+      }
+    },
+    {
+      "item_id": "K-0003",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-013: Decentralized GPU Scheduling. Can decentralized coordination improve resource utilization for GPU in situations where a single centralized controller cannot observe the whole system quickly enough? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "3"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-013",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-003",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-003"
+      }
+    }
+  ],
+  "domains": [
+    {
+      "domain": "chemistry",
+      "score": 1,
+      "matched_keywords": [
+        "battery"
+      ],
+      "topics": [
+        "Chemical Kinetics",
+        "Thermodynamics",
+        "Electrochemistry",
+        "Adsorption & Diffusion",
+        "Catalysis",
+        "Battery Chemistry",
+        "Polymer Chemistry",
+        "Analytical Chemistry"
+      ],
+      "math_engine": "chemistry",
+      "simulator": "chemistry",
+      "model_domain": "chemistry",
+      "simulation_available": true
+    }
+  ],
+  "primary_domain": "chemistry",
+  "record_id": "RUN-669A3610",
+  "collection": "explorations",
+  "stored_at": "2026-09-22T21:45:19"
+}

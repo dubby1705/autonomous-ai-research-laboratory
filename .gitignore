@@ -1,0 +1,16 @@
+# ---- secrets: NEVER commit these ------------------------------------------
+.env
+.env.*
+!.env.example
+*.key
+
+# ---- python ----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# ---- research run outputs (keep out of git; each machine has its own) -------
+runs/

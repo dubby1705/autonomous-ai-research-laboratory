@@ -1,0 +1,278 @@
+{
+  "schema_version": 2,
+  "research_question": "",
+  "created_at": "2026-09-22T00:00:08",
+  "last_updated": "2026-09-22T00:01:55",
+  "claim_types": [
+    "sourced",
+    "inferred",
+    "generated_hypothesis",
+    "simulation_observation",
+    "real_world_observation"
+  ],
+  "claim_type_notes": {
+    "sourced": "Extracted from a supplied document. Never LLM-authored text.",
+    "inferred": "Reasoning derived by a model or rule engine; NOT established fact.",
+    "generated_hypothesis": "Proposed by AARL; untested until an experiment runs.",
+    "simulation_observation": "Observed inside a simulator under stated parameters.",
+    "real_world_observation": "Reported by a human researcher from a physical experiment."
+  },
+  "sections": [
+    "papers",
+    "findings",
+    "methods",
+    "equations",
+    "assumptions",
+    "evidence",
+    "limitations",
+    "contradictions",
+    "relationships",
+    "hypotheses",
+    "experiments",
+    "lessons"
+  ],
+  "items": [
+    {
+      "item_id": "K-0001",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-004: Heterogeneity-Aware GPU Scheduling. Can capability-matched routing improve resource utilization for GPU made of deliberately non-uniform participants? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:00:09",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-001",
+        "iteration": 1,
+        "lessons_applied": [],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-001"
+      }
+    },
+    {
+      "item_id": "K-0002",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-012: Heterogeneity-Aware GPU Scheduling. Can capability-matched routing improve resource utilization for GPU made of deliberately non-uniform participants? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-002",
+        "iteration": 1,
+        "lessons_applied": [],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-002"
+      }
+    },
+    {
+      "item_id": "K-0003",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-013: Decentralized GPU Scheduling. Can decentralized coordination improve resource utilization for GPU in situations where a single centralized controller cannot observe the whole system quickly enough? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-003",
+        "iteration": 1,
+        "lessons_applied": [],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-003"
+      }
+    },
+    {
+      "item_id": "K-0004",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-014: Alternative-Substrate GPU Compute Model. Would moving the cost-dominant operation of GPU onto a different physical carrier improve achievable operations per second once interface overhead is included? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-004",
+        "iteration": 1,
+        "lessons_applied": [],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-004"
+      }
+    },
+    {
+      "item_id": "K-0005",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-015: Oscillator-Synchronized GPU Compute Model. Can emergent phase alignment replace an explicit global barrier to improve achievable operations per second for GPU? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-005",
+        "iteration": 1,
+        "lessons_applied": [],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-005"
+      }
+    },
+    {
+      "item_id": "K-0006",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-016: Oscillator-Synchronized GPU Runtime Adaptation. Can emergent phase alignment replace an explicit global barrier to improve stability of achieved performance for GPU? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-006",
+        "iteration": 1,
+        "lessons_applied": [],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-006"
+      }
+    },
+    {
+      "item_id": "K-0007",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-017: Heterogeneity-Aware GPU Runtime Adaptation. Can capability-matched routing improve stability of achieved performance for GPU made of deliberately non-uniform participants? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:55",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-007",
+        "iteration": 1,
+        "lessons_applied": [],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-007"
+      }
+    },
+    {
+      "item_id": "K-0008",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-018: Alternative-Substrate GPU Data Representation. Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is included? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:55",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-008",
+        "iteration": 1,
+        "lessons_applied": [],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-008"
+      }
+    },
+    {
+      "item_id": "K-0009",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-019: Bistable GPU Data Representation. Can a non-volatile physical state improve information density per unit cost for GPU whose data representation state is currently refreshed continuously? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:55",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-009",
+        "iteration": 1,
+        "lessons_applied": [],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-009"
+      }
+    }
+  ],
+  "dedupe_index": {
+    "25e981e1ff4dbdae": "K-0001",
+    "29b25437d755982d": "K-0002",
+    "c2d2f0e2c985a0fa": "K-0003",
+    "0491bbca3501ef0e": "K-0004",
+    "44754aabfad36704": "K-0005",
+    "77a2f55bba841b27": "K-0006",
+    "aa32c3bfd863cbba": "K-0007",
+    "f179938ab7459d77": "K-0008",
+    "c3765daa2d6e0763": "K-0009"
+  },
+  "counts": {
+    "papers": 0,
+    "findings": 0,
+    "methods": 0,
+    "equations": 0,
+    "assumptions": 0,
+    "evidence": 0,
+    "limitations": 0,
+    "contradictions": 0,
+    "relationships": 0,
+    "hypotheses": 9,
+    "experiments": 0,
+    "lessons": 0
+  },
+  "note": "Append-only. Claims are never silently removed; contradictions are recorded as explicit relationships and both claims are preserved."
+}

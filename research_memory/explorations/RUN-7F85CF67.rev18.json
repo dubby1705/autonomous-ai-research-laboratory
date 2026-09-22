@@ -1,0 +1,1384 @@
+{
+  "run_id": "RUN-7F85CF67",
+  "problem": "Design a new GPU for AI",
+  "status": "running",
+  "stages": [
+    {
+      "key": "understanding",
+      "label": "Understanding problem",
+      "state": "done",
+      "detail": "Design a new GPU for AI",
+      "at": "2026-09-22T02:05:38"
+    },
+    {
+      "key": "domains",
+      "label": "Detecting research domain",
+      "state": "done",
+      "detail": "Primary: machine_learning.",
+      "at": "2026-09-22T02:05:39"
+    },
+    {
+      "key": "literature",
+      "label": "Searching literature",
+      "state": "done",
+      "detail": "8 overlapping items.",
+      "at": "2026-09-22T02:05:39"
+    },
+    {
+      "key": "graph",
+      "label": "Building knowledge graph",
+      "state": "done",
+      "detail": "8 directions.",
+      "at": "2026-09-22T02:05:43"
+    },
+    {
+      "key": "exploring",
+      "label": "Exploring alternative directions",
+      "state": "done",
+      "detail": "Proposals ready.",
+      "at": "2026-09-22T02:05:43"
+    },
+    {
+      "key": "hypotheses",
+      "label": "Generating hypotheses",
+      "state": "running",
+      "detail": "Dir 5/8 done.",
+      "at": "2026-09-22T02:05:57"
+    }
+  ],
+  "directions": [],
+  "space": {
+    "root": "Design a new GPU for AI",
+    "subject": "GPU",
+    "nodes": [
+      {
+        "id": "root",
+        "label": "Design a new GPU for AI",
+        "kind": "research_question",
+        "parent": null,
+        "detail": "The problem AARL was given.",
+        "domains": [
+          "machine_learning"
+        ]
+      },
+      {
+        "id": "facet:scheduling",
+        "label": "Scheduling",
+        "kind": "facet",
+        "parent": "root",
+        "detail": "how work is assigned to the available resources (judged on resource utilization)",
+        "selection_score": 1.0,
+        "matched_keywords": [],
+        "basis": "keyword overlap with the problem statement + detected-domain affinity + editorial exploration priority (order only)",
+        "assumed_limitation": "A single centralized scheduler must gather global state before it can decide, so its decisions are always slightly stale under fast-changing loads."
+      },
+      {
+        "id": "facet:computing_model",
+        "label": "Computing Model",
+        "kind": "facet",
+        "parent": "root",
+        "detail": "what kind of computation the system performs and how (judged on achievable operations per second)",
+        "selection_score": 1.0,
+        "matched_keywords": [],
+        "basis": "keyword overlap with the problem statement + detected-domain affinity + editorial exploration priority (order only)",
+        "assumed_limitation": "The dominant computing model is uniform and synchronous, so it spends energy on operations whose result the application does not actually need."
+      },
+      {
+        "id": "facet:control_adaptation",
+        "label": "Runtime Adaptation",
+        "kind": "facet",
+        "parent": "root",
+        "detail": "how the system changes its own behaviour while running (judged on stability of achieved performance)",
+        "selection_score": 1.0,
+        "matched_keywords": [],
+        "basis": "keyword overlap with the problem statement + detected-domain affinity + editorial exploration priority (order only)",
+        "assumed_limitation": "Design-time parameters are tuned for an average case, so the system is rarely at its best for the case actually running."
+      },
+      {
+        "id": "facet:data_representation",
+        "label": "Data Representation",
+        "kind": "facet",
+        "parent": "root",
+        "detail": "how information is encoded, stored and transported (judged on information density per unit cost)",
+        "selection_score": 1.0,
+        "matched_keywords": [],
+        "basis": "keyword overlap with the problem statement + detected-domain affinity + editorial exploration priority (order only)",
+        "assumed_limitation": "The representation is uniform across the whole tensor or molecule, so a few significant elements pay for many insignificant ones."
+      },
+      {
+        "id": "dir:DIR-196",
+        "label": "Heterogeneity-Aware GPU Scheduling",
+        "kind": "direction",
+        "parent": "facet:scheduling",
+        "direction_id": "DIR-196",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "heterogeneity_awareness",
+        "already_failed": false,
+        "detail": "Can capability-matched routing improve resource utilization for GPU made of deliberately non-uniform participants?"
+      },
+      {
+        "id": "dir:DIR-197",
+        "label": "Decentralized GPU Scheduling",
+        "kind": "direction",
+        "parent": "facet:scheduling",
+        "direction_id": "DIR-197",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "decentralized_coordination",
+        "already_failed": false,
+        "detail": "Can decentralized coordination improve resource utilization for GPU in situations where a single centralized controller cannot observe the whole system quickly enough?"
+      },
+      {
+        "id": "dir:DIR-198",
+        "label": "Alternative-Substrate GPU Compute Model",
+        "kind": "direction",
+        "parent": "facet:computing_model",
+        "direction_id": "DIR-198",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "substrate_substitution",
+        "already_failed": false,
+        "detail": "Would moving the cost-dominant operation of GPU onto a different physical carrier improve achievable operations per second once interface overhead is included?"
+      },
+      {
+        "id": "dir:DIR-199",
+        "label": "Oscillator-Synchronized GPU Compute Model",
+        "kind": "direction",
+        "parent": "facet:computing_model",
+        "direction_id": "DIR-199",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "oscillator_synchronization",
+        "already_failed": false,
+        "detail": "Can emergent phase alignment replace an explicit global barrier to improve achievable operations per second for GPU?"
+      },
+      {
+        "id": "dir:DIR-200",
+        "label": "Oscillator-Synchronized GPU Runtime Adaptation",
+        "kind": "direction",
+        "parent": "facet:control_adaptation",
+        "direction_id": "DIR-200",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "oscillator_synchronization",
+        "already_failed": false,
+        "detail": "Can emergent phase alignment replace an explicit global barrier to improve stability of achieved performance for GPU?"
+      },
+      {
+        "id": "dir:DIR-201",
+        "label": "Heterogeneity-Aware GPU Runtime Adaptation",
+        "kind": "direction",
+        "parent": "facet:control_adaptation",
+        "direction_id": "DIR-201",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "heterogeneity_awareness",
+        "already_failed": false,
+        "detail": "Can capability-matched routing improve stability of achieved performance for GPU made of deliberately non-uniform participants?"
+      },
+      {
+        "id": "dir:DIR-202",
+        "label": "Alternative-Substrate GPU Data Representation",
+        "kind": "direction",
+        "parent": "facet:data_representation",
+        "direction_id": "DIR-202",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "substrate_substitution",
+        "already_failed": false,
+        "detail": "Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is included?"
+      },
+      {
+        "id": "dir:DIR-203",
+        "label": "Bistable GPU Data Representation",
+        "kind": "direction",
+        "parent": "facet:data_representation",
+        "direction_id": "DIR-203",
+        "status": "",
+        "status_label": "",
+        "status_dot": "#8b94a7",
+        "concept_id": "phase_change_bistability",
+        "already_failed": false,
+        "detail": "Can a non-volatile physical state improve information density per unit cost for GPU whose data representation state is currently refreshed continuously?"
+      },
+      {
+        "id": "rejected:scheduling_predictive_prefetching",
+        "label": "Predictive Scheduling",
+        "kind": "branch_not_taken",
+        "parent": "facet:scheduling",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "predictive_prefetching",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:scheduling_market_mechanism",
+        "label": "Market-Based Scheduling",
+        "kind": "branch_not_taken",
+        "parent": "facet:scheduling",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "market_mechanism",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:scheduling_adaptive_reconfiguration",
+        "label": "Self-Reconfiguring Scheduling",
+        "kind": "branch_not_taken",
+        "parent": "facet:scheduling",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "adaptive_reconfiguration",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:scheduling_hierarchical_decomposition",
+        "label": "Hierarchical Scheduling",
+        "kind": "branch_not_taken",
+        "parent": "facet:scheduling",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "hierarchical_decomposition",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:scheduling_stochastic_sampling",
+        "label": "Stochastic-Sampling Scheduling",
+        "kind": "branch_not_taken",
+        "parent": "facet:scheduling",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "stochastic_sampling",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:scheduling_locality_exploitation",
+        "label": "Locality-Aware Scheduling",
+        "kind": "branch_not_taken",
+        "parent": "facet:scheduling",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "locality_exploitation",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:scheduling_closed_loop_feedback",
+        "label": "Closed-Loop Scheduling",
+        "kind": "branch_not_taken",
+        "parent": "facet:scheduling",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "closed_loop_feedback",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:computing_model_phase_change_bistability",
+        "label": "Bistable Compute Model",
+        "kind": "branch_not_taken",
+        "parent": "facet:computing_model",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "phase_change_bistability",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:computing_model_topological_protection",
+        "label": "Topologically-Protected Compute Model",
+        "kind": "branch_not_taken",
+        "parent": "facet:computing_model",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "topological_protection",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:computing_model_reversible_computing",
+        "label": "Reversible Compute Model",
+        "kind": "branch_not_taken",
+        "parent": "facet:computing_model",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "reversible_computing",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:computing_model_sparsity_compression",
+        "label": "Sparsity-Driven Compute Model",
+        "kind": "branch_not_taken",
+        "parent": "facet:computing_model",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "sparsity_compression",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:computing_model_approximate_computing",
+        "label": "Approximate Compute Model",
+        "kind": "branch_not_taken",
+        "parent": "facet:computing_model",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "approximate_computing",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:computing_model_adaptive_reconfiguration",
+        "label": "Self-Reconfiguring Compute Model",
+        "kind": "branch_not_taken",
+        "parent": "facet:computing_model",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "adaptive_reconfiguration",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:computing_model_locality_exploitation",
+        "label": "Locality-Aware Compute Model",
+        "kind": "branch_not_taken",
+        "parent": "facet:computing_model",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "locality_exploitation",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:control_adaptation_decentralized_coordination",
+        "label": "Decentralized Runtime Adaptation",
+        "kind": "branch_not_taken",
+        "parent": "facet:control_adaptation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "decentralized_coordination",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:control_adaptation_predictive_prefetching",
+        "label": "Predictive Runtime Adaptation",
+        "kind": "branch_not_taken",
+        "parent": "facet:control_adaptation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "predictive_prefetching",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:control_adaptation_domain_specific_language",
+        "label": "Domain-Specific Runtime Adaptation",
+        "kind": "branch_not_taken",
+        "parent": "facet:control_adaptation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "domain_specific_language",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:control_adaptation_market_mechanism",
+        "label": "Market-Based Runtime Adaptation",
+        "kind": "branch_not_taken",
+        "parent": "facet:control_adaptation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "market_mechanism",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:control_adaptation_adaptive_reconfiguration",
+        "label": "Self-Reconfiguring Runtime Adaptation",
+        "kind": "branch_not_taken",
+        "parent": "facet:control_adaptation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "adaptive_reconfiguration",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:control_adaptation_hierarchical_decomposition",
+        "label": "Hierarchical Runtime Adaptation",
+        "kind": "branch_not_taken",
+        "parent": "facet:control_adaptation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "hierarchical_decomposition",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:control_adaptation_stochastic_sampling",
+        "label": "Stochastic-Sampling Runtime Adaptation",
+        "kind": "branch_not_taken",
+        "parent": "facet:control_adaptation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "stochastic_sampling",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:control_adaptation_closed_loop_feedback",
+        "label": "Closed-Loop Runtime Adaptation",
+        "kind": "branch_not_taken",
+        "parent": "facet:control_adaptation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "closed_loop_feedback",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:data_representation_topological_protection",
+        "label": "Topologically-Protected Data Representation",
+        "kind": "branch_not_taken",
+        "parent": "facet:data_representation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "topological_protection",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:data_representation_sparsity_compression",
+        "label": "Sparsity-Driven Data Representation",
+        "kind": "branch_not_taken",
+        "parent": "facet:data_representation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "sparsity_compression",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:data_representation_approximate_computing",
+        "label": "Approximate Data Representation",
+        "kind": "branch_not_taken",
+        "parent": "facet:data_representation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "approximate_computing",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:data_representation_predictive_prefetching",
+        "label": "Predictive Data Representation",
+        "kind": "branch_not_taken",
+        "parent": "facet:data_representation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "predictive_prefetching",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:data_representation_domain_specific_language",
+        "label": "Domain-Specific Data Representation",
+        "kind": "branch_not_taken",
+        "parent": "facet:data_representation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "domain_specific_language",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:data_representation_stochastic_sampling",
+        "label": "Stochastic-Sampling Data Representation",
+        "kind": "branch_not_taken",
+        "parent": "facet:data_representation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "stochastic_sampling",
+        "ranked_out": true
+      },
+      {
+        "id": "rejected:data_representation_locality_exploitation",
+        "label": "Locality-Aware Data Representation",
+        "kind": "branch_not_taken",
+        "parent": "facet:data_representation",
+        "detail": "candidate limit reached for this run",
+        "concept_id": "locality_exploitation",
+        "ranked_out": true
+      }
+    ],
+    "edges": [
+      {
+        "source": "root",
+        "target": "facet:scheduling",
+        "type": "has_dimension",
+        "note": "Facet selected for this problem."
+      },
+      {
+        "source": "root",
+        "target": "facet:computing_model",
+        "type": "has_dimension",
+        "note": "Facet selected for this problem."
+      },
+      {
+        "source": "root",
+        "target": "facet:control_adaptation",
+        "type": "has_dimension",
+        "note": "Facet selected for this problem."
+      },
+      {
+        "source": "root",
+        "target": "facet:data_representation",
+        "type": "has_dimension",
+        "note": "Facet selected for this problem."
+      },
+      {
+        "source": "facet:scheduling",
+        "target": "dir:DIR-196",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:scheduling",
+        "target": "dir:DIR-197",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:computing_model",
+        "target": "dir:DIR-198",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:computing_model",
+        "target": "dir:DIR-199",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:control_adaptation",
+        "target": "dir:DIR-200",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:control_adaptation",
+        "target": "dir:DIR-201",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "dir:DIR-202",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "dir:DIR-203",
+        "type": "inspired_by",
+        "note": "Cross-domain mechanism applied to this facet."
+      },
+      {
+        "source": "facet:scheduling",
+        "target": "rejected:scheduling_predictive_prefetching",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:scheduling",
+        "target": "rejected:scheduling_market_mechanism",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:scheduling",
+        "target": "rejected:scheduling_adaptive_reconfiguration",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:scheduling",
+        "target": "rejected:scheduling_hierarchical_decomposition",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:scheduling",
+        "target": "rejected:scheduling_stochastic_sampling",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:scheduling",
+        "target": "rejected:scheduling_locality_exploitation",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:scheduling",
+        "target": "rejected:scheduling_closed_loop_feedback",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:computing_model",
+        "target": "rejected:computing_model_phase_change_bistability",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:computing_model",
+        "target": "rejected:computing_model_topological_protection",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:computing_model",
+        "target": "rejected:computing_model_reversible_computing",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:computing_model",
+        "target": "rejected:computing_model_sparsity_compression",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:computing_model",
+        "target": "rejected:computing_model_approximate_computing",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:computing_model",
+        "target": "rejected:computing_model_adaptive_reconfiguration",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:computing_model",
+        "target": "rejected:computing_model_locality_exploitation",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:control_adaptation",
+        "target": "rejected:control_adaptation_decentralized_coordination",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:control_adaptation",
+        "target": "rejected:control_adaptation_predictive_prefetching",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:control_adaptation",
+        "target": "rejected:control_adaptation_domain_specific_language",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:control_adaptation",
+        "target": "rejected:control_adaptation_market_mechanism",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:control_adaptation",
+        "target": "rejected:control_adaptation_adaptive_reconfiguration",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:control_adaptation",
+        "target": "rejected:control_adaptation_hierarchical_decomposition",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:control_adaptation",
+        "target": "rejected:control_adaptation_stochastic_sampling",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:control_adaptation",
+        "target": "rejected:control_adaptation_closed_loop_feedback",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "rejected:data_representation_topological_protection",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "rejected:data_representation_sparsity_compression",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "rejected:data_representation_approximate_computing",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "rejected:data_representation_predictive_prefetching",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "rejected:data_representation_domain_specific_language",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "rejected:data_representation_stochastic_sampling",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      },
+      {
+        "source": "facet:data_representation",
+        "target": "rejected:data_representation_locality_exploitation",
+        "type": "considered",
+        "note": "candidate limit reached for this run"
+      }
+    ],
+    "counts": {
+      "facets": 4,
+      "directions": 8,
+      "branches_not_taken": 29,
+      "nodes": 42,
+      "edges": 41
+    },
+    "legend": {
+      "research_question": "The problem AARL was given",
+      "facet": "A structural dimension of the problem",
+      "direction": "A discovered research direction",
+      "branch_not_taken": "Considered but not explored in this run"
+    },
+    "edge_types": [
+      "has_dimension",
+      "inspired_by",
+      "considered"
+    ],
+    "note": "This tree shows how the directions were constructed. Node counts are descriptive only and are never used as evidence strength."
+  },
+  "stats": {
+    "facets_explored": 4,
+    "concepts_considered": 37,
+    "directions": 8,
+    "candidates_rejected": 29,
+    "already_failed_in_memory": 0,
+    "subject_label": "GPU",
+    "domains_considered": [
+      "machine_learning"
+    ],
+    "how_directions_were_built": "facet x cross-domain concept. Facets are selected by keyword/domain overlap with the problem; concepts come from the curated transferable mechanism library. The provenance block of each direction lists the exact inputs."
+  },
+  "error": "",
+  "created_at": "2026-09-22T02:05:38",
+  "updated_at": "2026-09-22T02:05:57",
+  "stage_template": [
+    {
+      "key": "understanding",
+      "label": "Understanding problem"
+    },
+    {
+      "key": "domains",
+      "label": "Detecting research domain"
+    },
+    {
+      "key": "literature",
+      "label": "Searching literature"
+    },
+    {
+      "key": "graph",
+      "label": "Building knowledge graph"
+    },
+    {
+      "key": "exploring",
+      "label": "Exploring alternative directions"
+    },
+    {
+      "key": "hypotheses",
+      "label": "Generating hypotheses"
+    },
+    {
+      "key": "mechanisms",
+      "label": "Testing mechanisms"
+    },
+    {
+      "key": "simulations",
+      "label": "Running simulations"
+    },
+    {
+      "key": "evaluating",
+      "label": "Evaluating research opportunities"
+    }
+  ],
+  "rejected": [
+    {
+      "mechanism_key": "scheduling:predictive_prefetching",
+      "facet_id": "scheduling",
+      "facet_label": "Scheduling",
+      "concept_id": "predictive_prefetching",
+      "concept_name": "Predictive prefetching",
+      "title": "Predictive Scheduling",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "scheduling:market_mechanism",
+      "facet_id": "scheduling",
+      "facet_label": "Scheduling",
+      "concept_id": "market_mechanism",
+      "concept_name": "Market-based allocation",
+      "title": "Market-Based Scheduling",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "scheduling:adaptive_reconfiguration",
+      "facet_id": "scheduling",
+      "facet_label": "Scheduling",
+      "concept_id": "adaptive_reconfiguration",
+      "concept_name": "Adaptive reconfiguration",
+      "title": "Self-Reconfiguring Scheduling",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "scheduling:hierarchical_decomposition",
+      "facet_id": "scheduling",
+      "facet_label": "Scheduling",
+      "concept_id": "hierarchical_decomposition",
+      "concept_name": "Hierarchical decomposition",
+      "title": "Hierarchical Scheduling",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "scheduling:stochastic_sampling",
+      "facet_id": "scheduling",
+      "facet_label": "Scheduling",
+      "concept_id": "stochastic_sampling",
+      "concept_name": "Stochastic sampling",
+      "title": "Stochastic-Sampling Scheduling",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "scheduling:locality_exploitation",
+      "facet_id": "scheduling",
+      "facet_label": "Scheduling",
+      "concept_id": "locality_exploitation",
+      "concept_name": "Locality exploitation",
+      "title": "Locality-Aware Scheduling",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "scheduling:closed_loop_feedback",
+      "facet_id": "scheduling",
+      "facet_label": "Scheduling",
+      "concept_id": "closed_loop_feedback",
+      "concept_name": "Closed-loop feedback",
+      "title": "Closed-Loop Scheduling",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "computing_model:phase_change_bistability",
+      "facet_id": "computing_model",
+      "facet_label": "Computing Model",
+      "concept_id": "phase_change_bistability",
+      "concept_name": "Nonlinear bistability",
+      "title": "Bistable Compute Model",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "computing_model:topological_protection",
+      "facet_id": "computing_model",
+      "facet_label": "Computing Model",
+      "concept_id": "topological_protection",
+      "concept_name": "Topological protection",
+      "title": "Topologically-Protected Compute Model",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "computing_model:reversible_computing",
+      "facet_id": "computing_model",
+      "facet_label": "Computing Model",
+      "concept_id": "reversible_computing",
+      "concept_name": "Thermodynamic reversibility",
+      "title": "Reversible Compute Model",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "computing_model:sparsity_compression",
+      "facet_id": "computing_model",
+      "facet_label": "Computing Model",
+      "concept_id": "sparsity_compression",
+      "concept_name": "Sparsity exploitation",
+      "title": "Sparsity-Driven Compute Model",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "computing_model:approximate_computing",
+      "facet_id": "computing_model",
+      "facet_label": "Computing Model",
+      "concept_id": "approximate_computing",
+      "concept_name": "Approximate computing",
+      "title": "Approximate Compute Model",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "computing_model:adaptive_reconfiguration",
+      "facet_id": "computing_model",
+      "facet_label": "Computing Model",
+      "concept_id": "adaptive_reconfiguration",
+      "concept_name": "Adaptive reconfiguration",
+      "title": "Self-Reconfiguring Compute Model",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "computing_model:locality_exploitation",
+      "facet_id": "computing_model",
+      "facet_label": "Computing Model",
+      "concept_id": "locality_exploitation",
+      "concept_name": "Locality exploitation",
+      "title": "Locality-Aware Compute Model",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "control_adaptation:decentralized_coordination",
+      "facet_id": "control_adaptation",
+      "facet_label": "Runtime Adaptation",
+      "concept_id": "decentralized_coordination",
+      "concept_name": "Decentralized coordination",
+      "title": "Decentralized Runtime Adaptation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "control_adaptation:predictive_prefetching",
+      "facet_id": "control_adaptation",
+      "facet_label": "Runtime Adaptation",
+      "concept_id": "predictive_prefetching",
+      "concept_name": "Predictive prefetching",
+      "title": "Predictive Runtime Adaptation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "control_adaptation:domain_specific_language",
+      "facet_id": "control_adaptation",
+      "facet_label": "Runtime Adaptation",
+      "concept_id": "domain_specific_language",
+      "concept_name": "Domain-specific representation",
+      "title": "Domain-Specific Runtime Adaptation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "control_adaptation:market_mechanism",
+      "facet_id": "control_adaptation",
+      "facet_label": "Runtime Adaptation",
+      "concept_id": "market_mechanism",
+      "concept_name": "Market-based allocation",
+      "title": "Market-Based Runtime Adaptation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "control_adaptation:adaptive_reconfiguration",
+      "facet_id": "control_adaptation",
+      "facet_label": "Runtime Adaptation",
+      "concept_id": "adaptive_reconfiguration",
+      "concept_name": "Adaptive reconfiguration",
+      "title": "Self-Reconfiguring Runtime Adaptation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "control_adaptation:hierarchical_decomposition",
+      "facet_id": "control_adaptation",
+      "facet_label": "Runtime Adaptation",
+      "concept_id": "hierarchical_decomposition",
+      "concept_name": "Hierarchical decomposition",
+      "title": "Hierarchical Runtime Adaptation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "control_adaptation:stochastic_sampling",
+      "facet_id": "control_adaptation",
+      "facet_label": "Runtime Adaptation",
+      "concept_id": "stochastic_sampling",
+      "concept_name": "Stochastic sampling",
+      "title": "Stochastic-Sampling Runtime Adaptation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "control_adaptation:closed_loop_feedback",
+      "facet_id": "control_adaptation",
+      "facet_label": "Runtime Adaptation",
+      "concept_id": "closed_loop_feedback",
+      "concept_name": "Closed-loop feedback",
+      "title": "Closed-Loop Runtime Adaptation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "data_representation:topological_protection",
+      "facet_id": "data_representation",
+      "facet_label": "Data Representation",
+      "concept_id": "topological_protection",
+      "concept_name": "Topological protection",
+      "title": "Topologically-Protected Data Representation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "data_representation:sparsity_compression",
+      "facet_id": "data_representation",
+      "facet_label": "Data Representation",
+      "concept_id": "sparsity_compression",
+      "concept_name": "Sparsity exploitation",
+      "title": "Sparsity-Driven Data Representation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "data_representation:approximate_computing",
+      "facet_id": "data_representation",
+      "facet_label": "Data Representation",
+      "concept_id": "approximate_computing",
+      "concept_name": "Approximate computing",
+      "title": "Approximate Data Representation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "data_representation:predictive_prefetching",
+      "facet_id": "data_representation",
+      "facet_label": "Data Representation",
+      "concept_id": "predictive_prefetching",
+      "concept_name": "Predictive prefetching",
+      "title": "Predictive Data Representation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "data_representation:domain_specific_language",
+      "facet_id": "data_representation",
+      "facet_label": "Data Representation",
+      "concept_id": "domain_specific_language",
+      "concept_name": "Domain-specific representation",
+      "title": "Domain-Specific Data Representation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "data_representation:stochastic_sampling",
+      "facet_id": "data_representation",
+      "facet_label": "Data Representation",
+      "concept_id": "stochastic_sampling",
+      "concept_name": "Stochastic sampling",
+      "title": "Stochastic-Sampling Data Representation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    },
+    {
+      "mechanism_key": "data_representation:locality_exploitation",
+      "facet_id": "data_representation",
+      "facet_label": "Data Representation",
+      "concept_id": "locality_exploitation",
+      "concept_name": "Locality exploitation",
+      "title": "Locality-Aware Data Representation",
+      "reason": "candidate limit reached for this run",
+      "matched_keywords": [],
+      "note": "This branch was considered and not explored in this run. It is recorded so the possibility space shows what was left out."
+    }
+  ],
+  "subject": "GPU",
+  "literature_overlap": [
+    {
+      "item_id": "K-0001",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-004: Heterogeneity-Aware GPU Scheduling. Can capability-matched routing improve resource utilization for GPU made of deliberately non-uniform participants? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:00:09",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-001",
+        "iteration": 1,
+        "lessons_applied": [],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-001"
+      }
+    },
+    {
+      "item_id": "K-0002",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-012: Heterogeneity-Aware GPU Scheduling. Can capability-matched routing improve resource utilization for GPU made of deliberately non-uniform participants? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "2"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-012",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-002",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-002"
+      }
+    },
+    {
+      "item_id": "K-0006",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-016: Oscillator-Synchronized GPU Runtime Adaptation. Can emergent phase alignment replace an explicit global barrier to improve stability of achieved performance for GPU? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "6"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-016",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-006",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-006"
+      }
+    },
+    {
+      "item_id": "K-0005",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-015: Oscillator-Synchronized GPU Compute Model. Can emergent phase alignment replace an explicit global barrier to improve achievable operations per second for GPU? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "5"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-015",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-005",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-005"
+      }
+    },
+    {
+      "item_id": "K-0007",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-017: Heterogeneity-Aware GPU Runtime Adaptation. Can capability-matched routing improve stability of achieved performance for GPU made of deliberately non-uniform participants? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:55",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "7"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-017",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-007",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-007"
+      }
+    },
+    {
+      "item_id": "K-0003",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-013: Decentralized GPU Scheduling. Can decentralized coordination improve resource utilization for GPU in situations where a single centralized controller cannot observe the whole system quickly enough? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "3"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-013",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-003",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-003"
+      }
+    },
+    {
+      "item_id": "K-0009",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-019: Bistable GPU Data Representation. Can a non-volatile physical state improve information density per unit cost for GPU whose data representation state is currently refreshed continuously? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:55",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "9"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-019",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-009",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-009"
+      }
+    },
+    {
+      "item_id": "K-0004",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-014: Alternative-Substrate GPU Compute Model. Would moving the cost-dominant operation of GPU onto a different physical carrier improve achievable operations per second once interface overhead is included? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "4"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-014",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-004",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-004"
+      }
+    }
+  ],
+  "domains": [
+    {
+      "domain": "machine_learning",
+      "score": 0,
+      "matched_keywords": [],
+      "topics": [],
+      "math_engine": "",
+      "simulator": "",
+      "model_domain": "machine_learning",
+      "simulation_available": true,
+      "detection_source": "domain_metrics.detect_domain (fallback)"
+    }
+  ],
+  "primary_domain": "machine_learning",
+  "record_id": "RUN-7F85CF67",
+  "collection": "explorations",
+  "stored_at": "2026-09-22T02:05:57"
+}

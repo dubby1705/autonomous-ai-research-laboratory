@@ -1,0 +1,66 @@
+{
+  "hypothesis_id": "HYP-065",
+  "hypothesis": "Improved variant of HYP-055 addressing lesson LESSON-054: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-033 addressing lesson LESSON-032: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-006 addressing lesson LESSON-005: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-016: Oscillator-Synchronized GPU Runtime Adaptation. Can emergent phase alignment replace an explicit global barrier to improve stability of achieved performance for GPU? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+  "research_question": "Direction DIR-038: Alternative-Substrate GPU Compute Model. Would moving the cost-dominant operation of GPU onto a different physical carrier improve achievable operations per second once interface overhead is included?",
+  "iteration": 1,
+  "domain": "machine_learning",
+  "supporting_evidence": [],
+  "contradictory_evidence": [],
+  "assumptions": [],
+  "expected_outcome": {
+    "improvement_pct": 5.0
+  },
+  "measurable_metrics": [
+    "improvement_pct"
+  ],
+  "related_papers": [],
+  "related_experiments": [
+    "EXP-054"
+  ],
+  "based_on_lessons": [
+    "LESSON-054"
+  ],
+  "based_on_knowledge": [],
+  "parent_hypothesis": "HYP-055",
+  "risks": [
+    "Lesson LESSON-054 derived from a high-severity constraint_violation; the correction may not fully remove the cause."
+  ],
+  "confidence": 0.4,
+  "parameters": {
+    "optimizer": "momentum",
+    "lr": 0.1
+  },
+  "constraints": [
+    {
+      "name": "improvement_pct",
+      "op": ">=",
+      "value": 0.0,
+      "source": "generated hypothesis expectation"
+    }
+  ],
+  "claim_type": "generated_hypothesis",
+  "provenance": {
+    "generated_by": "llm",
+    "iteration": 1,
+    "knowledge_items": [],
+    "lessons_applied": [
+      "LESSON-054"
+    ],
+    "experiments_considered": [
+      "EXP-052",
+      "EXP-053",
+      "EXP-054",
+      "EXP-055",
+      "EXP-056"
+    ],
+    "claim_type_note": "AI-generated proposal — NOT established fact"
+  },
+  "timestamp": "2026-09-22T00:08:54",
+  "knowledge_item_id": "K-0017",
+  "direction_id": "DIR-038",
+  "direction_mechanism_key": "computing_model:substrate_substitution",
+  "exploration_run_id": "RUN-A24AF584",
+  "record_id": "HYP-065",
+  "collection": "hypotheses",
+  "stored_at": "2026-09-22T00:08:55"
+}

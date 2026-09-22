@@ -1,0 +1,1595 @@
+{
+  "direction_id": "DIR-236",
+  "run_id": "RUN-9A0584BF",
+  "order": 1,
+  "title": "Heterogeneity-Aware GPU Scheduling",
+  "base_title": "Heterogeneity-Aware GPU Scheduling",
+  "one_line": "Can capability-matched routing improve resource utilization for GPU made of deliberately non-uniform participants?",
+  "core_question": "Can capability-matched routing improve resource utilization for GPU made of deliberately non-uniform participants?",
+  "research_problem": "Design a new GPU for AI",
+  "subject": "GPU",
+  "claim_class": "DIRECTION_PROPOSAL",
+  "claim_class_label": "RESEARCH DIRECTION (AARL PROPOSAL)",
+  "facet": {
+    "facet_id": "scheduling",
+    "label": "Scheduling",
+    "title_noun": "Scheduling",
+    "framing": "how work is assigned to the available resources",
+    "metric": "resource utilization",
+    "assumed_limitation": "A single centralized scheduler must gather global state before it can decide, so its decisions are always slightly stale under fast-changing loads.",
+    "keywords": [
+      "schedul",
+      "dispatch",
+      "queue",
+      "load balanc",
+      "assign",
+      "task",
+      "workload",
+      "utilization",
+      "throughput",
+      "parallel",
+      "concurren"
+    ],
+    "domains": [
+      "computer_architecture",
+      "machine_learning",
+      "robotics"
+    ]
+  },
+  "concept": {
+    "concept_id": "heterogeneity_awareness",
+    "name": "Heterogeneity awareness",
+    "title_adjective": "Heterogeneity-Aware",
+    "source_domains": [
+      "ecology / niche partitioning",
+      "statistics",
+      "scheduling theory"
+    ],
+    "description": "Treat non-uniform participants as exploitable structure instead of averaging them away.",
+    "mechanism_steps": [
+      "Characterise how the participants of {subject} actually differ",
+      "Derive which work type each participant class does best",
+      "Route each work type toward its best-matching class",
+      "Track the per-class queue the routing creates",
+      "Rebalance when one class becomes the bottleneck",
+      "Re-measure the characterisation, which changes under load"
+    ],
+    "core_question": "Can capability-matched routing improve {metric} for {subject} made of deliberately non-uniform participants?",
+    "uncertainties": [
+      "Stability of the capability profiles under real load",
+      "Whether matching overhead outweighs the placement gain",
+      "Tail behaviour when one class is starved"
+    ],
+    "library_metadata": {
+      "testability": "HIGH",
+      "novelty": "MEDIUM",
+      "implementation_risk": "LOW",
+      "note": "Library metadata describing the mechanism in the abstract. It is NOT a score of scientific truth and is NOT evidence for any direction."
+    },
+    "facet_affinity": [
+      "scheduling",
+      "architecture",
+      "cost_scaling",
+      "interconnect_communication",
+      "control_adaptation"
+    ],
+    "literature_terms": [
+      "heterogeneous workload scheduling",
+      "capability matching"
+    ]
+  },
+  "mechanism_key": "scheduling:heterogeneity_awareness",
+  "inspiration": {
+    "domains": [
+      "ecology / niche partitioning",
+      "statistics",
+      "scheduling theory"
+    ],
+    "concepts": [
+      "Heterogeneity awareness"
+    ],
+    "library_entry": "aarl.discovery.concepts:heterogeneity_awareness",
+    "library_metadata": {
+      "testability": "HIGH",
+      "novelty": "MEDIUM",
+      "implementation_risk": "LOW",
+      "note": "Library metadata describing the mechanism in the abstract. It is NOT a score of scientific truth and is NOT evidence for any direction."
+    },
+    "papers": [
+      {
+        "paper_id": "PAPER-005",
+        "title": "Decentralized Scheduling for Heterogeneous Accelerators",
+        "year": 2021,
+        "match": 0.4,
+        "note": "Lead only - not evidence for the direction."
+      }
+    ],
+    "display": "ecology / niche partitioning + statistics + scheduling theory"
+  },
+  "why_interesting": "The problem's 'Scheduling' dimension (how work is assigned to the available resources) is where the conventional approach carries a structural assumption: A single centralized scheduler must gather global state before it can decide, so its decisions are always slightly stale under fast-changing loads. AARL took a mechanism that already works in ecology / niche partitioning, statistics, scheduling theory - Treat non-uniform participants as exploitable structure instead of averaging them away. - and asked what happens if it is applied to GPU. If the mechanism transfers, the gain would come from removing that assumption rather than from tuning the existing design. Whether it transfers is exactly what is not established here.",
+  "why_this_idea": {
+    "stages": [
+      {
+        "stage": "Research problem",
+        "value": "Design a new GPU for AI",
+        "claim_class": "STATED_BY_USER",
+        "claim_class_label": "STATED BY RESEARCHER",
+        "source": "user input",
+        "provenance": {},
+        "note": "The exact problem text AARL was given."
+      },
+      {
+        "stage": "Observed limitation",
+        "value": "A single centralized scheduler must gather global state before it can decide, so its decisions are always slightly stale under fast-changing loads.",
+        "claim_class": "INFERENCE",
+        "claim_class_label": "INFERENCE (AARL - NOT SOURCED)",
+        "source": "aarl.discovery.facets (facet assumption)",
+        "provenance": {
+          "facet_id": "scheduling"
+        },
+        "note": "AARL states this as an assumed limitation of the conventional approach. No stored source-linked limitation was found for this facet, so it must not be read as a literature fact."
+      },
+      {
+        "stage": "Cross-domain concept",
+        "value": "Heterogeneity awareness - Treat non-uniform participants as exploitable structure instead of averaging them away.",
+        "claim_class": "LIBRARY_ENTRY",
+        "claim_class_label": "LIBRARY ENTRY",
+        "source": "ecology / niche partitioning, statistics, scheduling theory",
+        "provenance": {
+          "concept_id": "heterogeneity_awareness",
+          "library": "aarl.discovery.concepts"
+        },
+        "note": "A curated cross-domain mechanism. Its transfer to GPU is AARL's proposal, not an established result."
+      },
+      {
+        "stage": "Mechanism",
+        "value": "Treat non-uniform participants as exploitable structure instead of averaging them away.",
+        "claim_class": "LIBRARY_ENTRY",
+        "claim_class_label": "LIBRARY ENTRY",
+        "source": "aarl.discovery.concepts:heterogeneity_awareness",
+        "provenance": {
+          "steps": 6
+        },
+        "note": "Expanded stage by stage in the mechanism view below."
+      },
+      {
+        "stage": "Hypothesis",
+        "value": "(no hypothesis generated in this run)",
+        "claim_class": "HYPOTHESIS_UNTESTED",
+        "claim_class_label": "HYPOTHESIS (UNTESTED)",
+        "source": "aarl.lab.hypotheses",
+        "provenance": {},
+        "note": "AARL-generated proposal. It is not a finding."
+      }
+    ],
+    "cross_domains": [
+      "ecology / niche partitioning",
+      "statistics",
+      "scheduling theory"
+    ],
+    "flow": "Research problem > Observed limitation > Cross-domain concept > Mechanism > Hypothesis",
+    "why_readable": "AARL started from the stated problem, picked the 'Scheduling' dimension of it, took the 'Heterogeneity awareness' mechanism from ecology / niche partitioning, statistics, scheduling theory, and proposed applying it there.",
+    "honesty_note": "Each stage is labelled with what it is. A limitation marked INFERENCE is an AARL assumption and is the first thing a reviewer should check."
+  },
+  "mechanism": {
+    "label": "PROPOSED MECHANISM",
+    "implementation_status": "CONCEPTUAL - NOT IMPLEMENTED",
+    "source_concept": "heterogeneity_awareness",
+    "source_concept_name": "Heterogeneity awareness",
+    "source_domains": [
+      "ecology / niche partitioning",
+      "statistics",
+      "scheduling theory"
+    ],
+    "steps": [
+      {
+        "index": 1,
+        "text": "Characterise how the participants of GPU actually differ",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 2,
+        "text": "Derive which work type each participant class does best",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 3,
+        "text": "Route each work type toward its best-matching class",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 4,
+        "text": "Track the per-class queue the routing creates",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 5,
+        "text": "Rebalance when one class becomes the bottleneck",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 6,
+        "text": "Re-measure the characterisation, which changes under load",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      }
+    ],
+    "unsupported_stages": 6,
+    "note": "This chain is the mechanism AARL is proposing, expressed conceptually. No implementation of it was built or measured, and an unsupported stage is a research target - not a hidden assumption."
+  },
+  "already_failed": false,
+  "prior_failures": [],
+  "refinement": null,
+  "hypothesis_ids": [
+    "HYP-615",
+    "HYP-616",
+    "HYP-617"
+  ],
+  "experiment_ids": [
+    "EXP-540",
+    "EXP-541",
+    "EXP-542"
+  ],
+  "failure_ids": [
+    "FAIL-540",
+    "FAIL-541",
+    "FAIL-542"
+  ],
+  "lesson_ids": [
+    "LESSON-001",
+    "LESSON-002",
+    "LESSON-003",
+    "LESSON-004",
+    "LESSON-005",
+    "LESSON-006",
+    "LESSON-007",
+    "LESSON-008",
+    "LESSON-009",
+    "LESSON-010",
+    "LESSON-011",
+    "LESSON-012",
+    "LESSON-013",
+    "LESSON-014",
+    "LESSON-015",
+    "LESSON-016",
+    "LESSON-017",
+    "LESSON-018",
+    "LESSON-019",
+    "LESSON-020",
+    "LESSON-021",
+    "LESSON-022",
+    "LESSON-023",
+    "LESSON-024",
+    "LESSON-025",
+    "LESSON-026",
+    "LESSON-027",
+    "LESSON-028",
+    "LESSON-029",
+    "LESSON-030",
+    "LESSON-031",
+    "LESSON-032",
+    "LESSON-033",
+    "LESSON-034",
+    "LESSON-035",
+    "LESSON-036",
+    "LESSON-037",
+    "LESSON-038",
+    "LESSON-039",
+    "LESSON-040",
+    "LESSON-041",
+    "LESSON-042",
+    "LESSON-043",
+    "LESSON-044",
+    "LESSON-045",
+    "LESSON-046",
+    "LESSON-047",
+    "LESSON-048",
+    "LESSON-049",
+    "LESSON-050",
+    "LESSON-051",
+    "LESSON-052",
+    "LESSON-053",
+    "LESSON-054",
+    "LESSON-055",
+    "LESSON-056",
+    "LESSON-057",
+    "LESSON-058",
+    "LESSON-059",
+    "LESSON-060",
+    "LESSON-061",
+    "LESSON-062",
+    "LESSON-063",
+    "LESSON-064",
+    "LESSON-065",
+    "LESSON-066",
+    "LESSON-067",
+    "LESSON-068",
+    "LESSON-069",
+    "LESSON-070",
+    "LESSON-071",
+    "LESSON-072",
+    "LESSON-073",
+    "LESSON-074",
+    "LESSON-075",
+    "LESSON-076",
+    "LESSON-077",
+    "LESSON-078",
+    "LESSON-079",
+    "LESSON-080",
+    "LESSON-081",
+    "LESSON-082",
+    "LESSON-083",
+    "LESSON-084",
+    "LESSON-085",
+    "LESSON-086",
+    "LESSON-087",
+    "LESSON-088",
+    "LESSON-089",
+    "LESSON-090",
+    "LESSON-091",
+    "LESSON-092",
+    "LESSON-093",
+    "LESSON-094",
+    "LESSON-095",
+    "LESSON-096",
+    "LESSON-097",
+    "LESSON-098",
+    "LESSON-099",
+    "LESSON-100",
+    "LESSON-101",
+    "LESSON-102",
+    "LESSON-103",
+    "LESSON-104",
+    "LESSON-105",
+    "LESSON-106",
+    "LESSON-107",
+    "LESSON-108",
+    "LESSON-109",
+    "LESSON-110",
+    "LESSON-111",
+    "LESSON-112",
+    "LESSON-113",
+    "LESSON-114",
+    "LESSON-115",
+    "LESSON-116",
+    "LESSON-117",
+    "LESSON-118",
+    "LESSON-119",
+    "LESSON-120",
+    "LESSON-121",
+    "LESSON-122",
+    "LESSON-123",
+    "LESSON-124",
+    "LESSON-125",
+    "LESSON-126",
+    "LESSON-127",
+    "LESSON-128",
+    "LESSON-129",
+    "LESSON-130",
+    "LESSON-131",
+    "LESSON-132",
+    "LESSON-133",
+    "LESSON-134",
+    "LESSON-135",
+    "LESSON-136",
+    "LESSON-137",
+    "LESSON-138",
+    "LESSON-139",
+    "LESSON-140",
+    "LESSON-141",
+    "LESSON-142",
+    "LESSON-143",
+    "LESSON-144",
+    "LESSON-145",
+    "LESSON-146",
+    "LESSON-147",
+    "LESSON-148",
+    "LESSON-149",
+    "LESSON-150",
+    "LESSON-151",
+    "LESSON-152",
+    "LESSON-153",
+    "LESSON-154",
+    "LESSON-155",
+    "LESSON-156",
+    "LESSON-157",
+    "LESSON-158",
+    "LESSON-159",
+    "LESSON-160",
+    "LESSON-161",
+    "LESSON-162",
+    "LESSON-163",
+    "LESSON-164",
+    "LESSON-165",
+    "LESSON-166",
+    "LESSON-167",
+    "LESSON-168",
+    "LESSON-169",
+    "LESSON-170",
+    "LESSON-171",
+    "LESSON-172",
+    "LESSON-173",
+    "LESSON-174",
+    "LESSON-175",
+    "LESSON-176",
+    "LESSON-177",
+    "LESSON-178",
+    "LESSON-179",
+    "LESSON-180",
+    "LESSON-181",
+    "LESSON-182",
+    "LESSON-183",
+    "LESSON-184",
+    "LESSON-185",
+    "LESSON-186",
+    "LESSON-187",
+    "LESSON-188",
+    "LESSON-189",
+    "LESSON-190",
+    "LESSON-191",
+    "LESSON-192",
+    "LESSON-193",
+    "LESSON-194",
+    "LESSON-195",
+    "LESSON-196",
+    "LESSON-197",
+    "LESSON-198",
+    "LESSON-199",
+    "LESSON-200",
+    "LESSON-201",
+    "LESSON-202",
+    "LESSON-203",
+    "LESSON-204",
+    "LESSON-205",
+    "LESSON-206",
+    "LESSON-207",
+    "LESSON-208",
+    "LESSON-209",
+    "LESSON-210",
+    "LESSON-211",
+    "LESSON-212",
+    "LESSON-213",
+    "LESSON-214",
+    "LESSON-215",
+    "LESSON-216",
+    "LESSON-217",
+    "LESSON-218",
+    "LESSON-219",
+    "LESSON-220",
+    "LESSON-221",
+    "LESSON-222",
+    "LESSON-223",
+    "LESSON-224",
+    "LESSON-225",
+    "LESSON-226",
+    "LESSON-227",
+    "LESSON-228",
+    "LESSON-229",
+    "LESSON-230",
+    "LESSON-231",
+    "LESSON-232",
+    "LESSON-233",
+    "LESSON-234",
+    "LESSON-235",
+    "LESSON-236",
+    "LESSON-237",
+    "LESSON-238",
+    "LESSON-239",
+    "LESSON-240",
+    "LESSON-241",
+    "LESSON-242",
+    "LESSON-243",
+    "LESSON-244",
+    "LESSON-245",
+    "LESSON-246",
+    "LESSON-247",
+    "LESSON-248",
+    "LESSON-249",
+    "LESSON-250",
+    "LESSON-251",
+    "LESSON-252",
+    "LESSON-253",
+    "LESSON-254",
+    "LESSON-255",
+    "LESSON-256",
+    "LESSON-257",
+    "LESSON-258",
+    "LESSON-259",
+    "LESSON-260",
+    "LESSON-261",
+    "LESSON-262",
+    "LESSON-263",
+    "LESSON-264",
+    "LESSON-265",
+    "LESSON-266",
+    "LESSON-267",
+    "LESSON-268",
+    "LESSON-269",
+    "LESSON-270",
+    "LESSON-271",
+    "LESSON-272",
+    "LESSON-273",
+    "LESSON-274",
+    "LESSON-275",
+    "LESSON-276",
+    "LESSON-277",
+    "LESSON-278",
+    "LESSON-279",
+    "LESSON-280",
+    "LESSON-281",
+    "LESSON-282",
+    "LESSON-283",
+    "LESSON-284",
+    "LESSON-285",
+    "LESSON-286",
+    "LESSON-287",
+    "LESSON-288",
+    "LESSON-289",
+    "LESSON-290",
+    "LESSON-291",
+    "LESSON-292",
+    "LESSON-293",
+    "LESSON-294",
+    "LESSON-295",
+    "LESSON-296",
+    "LESSON-297",
+    "LESSON-298",
+    "LESSON-299",
+    "LESSON-300",
+    "LESSON-301",
+    "LESSON-302",
+    "LESSON-303",
+    "LESSON-304",
+    "LESSON-305",
+    "LESSON-306",
+    "LESSON-307",
+    "LESSON-308",
+    "LESSON-309",
+    "LESSON-310",
+    "LESSON-311",
+    "LESSON-312",
+    "LESSON-313",
+    "LESSON-314",
+    "LESSON-315",
+    "LESSON-316",
+    "LESSON-317",
+    "LESSON-318",
+    "LESSON-319",
+    "LESSON-320",
+    "LESSON-321",
+    "LESSON-322",
+    "LESSON-323",
+    "LESSON-324",
+    "LESSON-325",
+    "LESSON-326",
+    "LESSON-327",
+    "LESSON-328",
+    "LESSON-329",
+    "LESSON-330",
+    "LESSON-331",
+    "LESSON-332",
+    "LESSON-333",
+    "LESSON-334",
+    "LESSON-335",
+    "LESSON-336",
+    "LESSON-337",
+    "LESSON-338",
+    "LESSON-339",
+    "LESSON-340",
+    "LESSON-341",
+    "LESSON-342",
+    "LESSON-343",
+    "LESSON-344",
+    "LESSON-345",
+    "LESSON-346",
+    "LESSON-347",
+    "LESSON-348",
+    "LESSON-349",
+    "LESSON-350",
+    "LESSON-351",
+    "LESSON-352",
+    "LESSON-353",
+    "LESSON-354",
+    "LESSON-355",
+    "LESSON-356",
+    "LESSON-357",
+    "LESSON-358",
+    "LESSON-359",
+    "LESSON-360",
+    "LESSON-361",
+    "LESSON-362",
+    "LESSON-363",
+    "LESSON-364",
+    "LESSON-365",
+    "LESSON-366",
+    "LESSON-367",
+    "LESSON-368",
+    "LESSON-369",
+    "LESSON-370",
+    "LESSON-371",
+    "LESSON-372",
+    "LESSON-373",
+    "LESSON-374",
+    "LESSON-375",
+    "LESSON-376",
+    "LESSON-377",
+    "LESSON-378",
+    "LESSON-379",
+    "LESSON-380",
+    "LESSON-381",
+    "LESSON-382",
+    "LESSON-383",
+    "LESSON-384",
+    "LESSON-385",
+    "LESSON-386",
+    "LESSON-387",
+    "LESSON-388",
+    "LESSON-389",
+    "LESSON-390",
+    "LESSON-391",
+    "LESSON-392",
+    "LESSON-393",
+    "LESSON-394",
+    "LESSON-395",
+    "LESSON-396",
+    "LESSON-397",
+    "LESSON-398",
+    "LESSON-399",
+    "LESSON-400",
+    "LESSON-401",
+    "LESSON-402",
+    "LESSON-403",
+    "LESSON-404",
+    "LESSON-405",
+    "LESSON-406",
+    "LESSON-407",
+    "LESSON-408",
+    "LESSON-409",
+    "LESSON-410",
+    "LESSON-411",
+    "LESSON-412",
+    "LESSON-413",
+    "LESSON-414",
+    "LESSON-415",
+    "LESSON-416",
+    "LESSON-417",
+    "LESSON-418",
+    "LESSON-419",
+    "LESSON-420",
+    "LESSON-421",
+    "LESSON-422",
+    "LESSON-423",
+    "LESSON-424",
+    "LESSON-425",
+    "LESSON-426",
+    "LESSON-427",
+    "LESSON-428",
+    "LESSON-429",
+    "LESSON-430",
+    "LESSON-431",
+    "LESSON-432",
+    "LESSON-433",
+    "LESSON-434",
+    "LESSON-435",
+    "LESSON-436",
+    "LESSON-437",
+    "LESSON-438",
+    "LESSON-439",
+    "LESSON-440",
+    "LESSON-441",
+    "LESSON-442",
+    "LESSON-443",
+    "LESSON-444",
+    "LESSON-445",
+    "LESSON-446",
+    "LESSON-447",
+    "LESSON-448",
+    "LESSON-449",
+    "LESSON-450",
+    "LESSON-451",
+    "LESSON-452",
+    "LESSON-453",
+    "LESSON-454",
+    "LESSON-455",
+    "LESSON-456",
+    "LESSON-457",
+    "LESSON-458",
+    "LESSON-459",
+    "LESSON-460",
+    "LESSON-461",
+    "LESSON-462",
+    "LESSON-463",
+    "LESSON-464",
+    "LESSON-465",
+    "LESSON-466",
+    "LESSON-467",
+    "LESSON-468",
+    "LESSON-469",
+    "LESSON-470",
+    "LESSON-471",
+    "LESSON-472",
+    "LESSON-473",
+    "LESSON-474",
+    "LESSON-475",
+    "LESSON-476",
+    "LESSON-477",
+    "LESSON-478",
+    "LESSON-479",
+    "LESSON-480",
+    "LESSON-481",
+    "LESSON-482",
+    "LESSON-483",
+    "LESSON-484",
+    "LESSON-485",
+    "LESSON-486",
+    "LESSON-487",
+    "LESSON-488",
+    "LESSON-489",
+    "LESSON-490",
+    "LESSON-491",
+    "LESSON-492",
+    "LESSON-493",
+    "LESSON-494",
+    "LESSON-495",
+    "LESSON-496",
+    "LESSON-497",
+    "LESSON-498",
+    "LESSON-499",
+    "LESSON-500",
+    "LESSON-501",
+    "LESSON-502",
+    "LESSON-503",
+    "LESSON-504",
+    "LESSON-505",
+    "LESSON-506",
+    "LESSON-507",
+    "LESSON-508",
+    "LESSON-509",
+    "LESSON-510",
+    "LESSON-511",
+    "LESSON-512",
+    "LESSON-513",
+    "LESSON-514",
+    "LESSON-515",
+    "LESSON-516",
+    "LESSON-517",
+    "LESSON-518",
+    "LESSON-519",
+    "LESSON-520",
+    "LESSON-521",
+    "LESSON-522",
+    "LESSON-523",
+    "LESSON-524",
+    "LESSON-525",
+    "LESSON-526",
+    "LESSON-527",
+    "LESSON-528",
+    "LESSON-529",
+    "LESSON-530",
+    "LESSON-531",
+    "LESSON-532",
+    "LESSON-533",
+    "LESSON-534",
+    "LESSON-535",
+    "LESSON-536",
+    "LESSON-537"
+  ],
+  "status": {
+    "status": "EVIDENCE_BACKED",
+    "label": "EVIDENCE-BACKED",
+    "dot": "#4ade80",
+    "css": "status-evidence",
+    "meaning": "Existing evidence provides meaningful support for this direction. The proposed combination or hypothesis may still require testing.",
+    "does_not_mean": [
+      "that the proposed combination has been tested as a combination",
+      "that the direction is scientifically settled or 'proven'"
+    ],
+    "rule_id": "R5_supported_and_simulated",
+    "rule_description": "At least two independent sourced evidence items support the direction and a simulation supported it, with no recorded contradiction.",
+    "reasons": [
+      "3 directly linked sourced evidence item(s).",
+      "3 supporting simulation(s).",
+      "Classification uses recorded evidence and simulation records only — model prose and text similarity are never counted as evidence."
+    ],
+    "counters": {
+      "direct_evidence": 3,
+      "indirect_evidence": 0,
+      "contradicting_evidence": 0,
+      "missing_evidence": 9,
+      "simulations_supporting": 3,
+      "simulations_failed": 0,
+      "simulations_partial": 0,
+      "simulations_unavailable": 0,
+      "real_world_results": 0,
+      "source_of_counters": "Provenance-linked knowledge items and stored Simulation JSON records. Nothing else feeds this classification."
+    },
+    "why_status_is_not_a_verdict": "AARL statuses describe how much *stored* evidence currently exists for a direction. They are not a judgement that the idea is true or false.",
+    "what_would_change_it": [
+      "Independent replication outside the model, by a human researcher, is still required before any stronger wording is justified."
+    ]
+  },
+  "dimensions": {
+    "potential_novelty": {
+      "key": "potential_novelty",
+      "label": "Potential novelty",
+      "level": "LOW",
+      "level_scale": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "rationale": "3 stored knowledge items already overlap this direction's wording, so AARL's memory already covers part of it.",
+      "basis": [
+        "concept:heterogeneity_awareness"
+      ],
+      "descriptive_only": true,
+      "what_this_is_not": "Not a score of scientific truth and not a probability.",
+      "explanation": "How new this combination looks *relative to AARL's own memory*. Novelty is not a virtue by itself and not a claim of originality in the literature."
+    },
+    "mechanistic_plausibility": {
+      "key": "mechanistic_plausibility",
+      "label": "Mechanistic plausibility",
+      "level": "MEDIUM",
+      "level_scale": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "rationale": "A mechanism is described, but AARL's own runs disagree: 3 supported it while 3 failed or violated a constraint.",
+      "basis": [
+        "EXP-540",
+        "EXP-541",
+        "EXP-542"
+      ],
+      "descriptive_only": true,
+      "what_this_is_not": "Not a score of scientific truth and not a probability.",
+      "explanation": "Whether a mechanism can be described and whether anything AARL ran agreed with it. A described mechanism is not a demonstrated one."
+    },
+    "evidence_strength": {
+      "key": "evidence_strength",
+      "label": "Evidence strength",
+      "level": "HIGH",
+      "level_scale": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "rationale": "3 directly linked sourced item(s), 0 indirectly related item(s), 0 contradicting item(s). Text similarity is never counted.",
+      "basis": [
+        "direct:3",
+        "indirect:0",
+        "contradicting:0"
+      ],
+      "descriptive_only": true,
+      "what_this_is_not": "Not a score of scientific truth and not a probability.",
+      "explanation": "The amount of provenance-linked evidence recorded for this direction. Similar wording is never counted as evidence."
+    },
+    "testability": {
+      "key": "testability",
+      "label": "Testability",
+      "level": "HIGH",
+      "level_scale": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "rationale": "Library metadata rates the mechanism class HIGH for testability, and 3 run(s) were executed for this direction.",
+      "basis": [
+        "EXP-540",
+        "EXP-541",
+        "EXP-542"
+      ],
+      "descriptive_only": true,
+      "what_this_is_not": "Not a score of scientific truth and not a probability.",
+      "explanation": "Whether AARL could actually test this with the executable models it has."
+    },
+    "implementation_risk": {
+      "key": "implementation_risk",
+      "label": "Implementation risk",
+      "level": "LOW",
+      "level_scale": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "rationale": "Library metadata for the mechanism class rates realisation cost LOW (source fields: ecology / niche partitioning, statistics, scheduling theory).",
+      "basis": [
+        "concept:heterogeneity_awareness"
+      ],
+      "descriptive_only": true,
+      "what_this_is_not": "Not a score of scientific truth and not a probability.",
+      "explanation": "Library metadata for the mechanism class (what it typically costs to realise) — a design consideration, not a scientific judgement."
+    },
+    "research_uncertainty": {
+      "key": "research_uncertainty",
+      "label": "Research uncertainty",
+      "level": "MEDIUM",
+      "level_scale": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ],
+      "rationale": "Supporting evidence and a supporting run exist, but no real-world replication is recorded, so uncertainty cannot be called LOW.",
+      "basis": [
+        "missing_evidence:9",
+        "non_discriminating_runs:0"
+      ],
+      "descriptive_only": true,
+      "what_this_is_not": "Not a score of scientific truth and not a probability.",
+      "explanation": "How much remains unknown about this direction, in plain terms."
+    }
+  },
+  "evidence": {
+    "direct": [
+      {
+        "evidence_id": "K-0042",
+        "kind": "direct",
+        "evidence_class": "LITERATURE_EVIDENCE",
+        "evidence_class_label": "LITERATURE EVIDENCE",
+        "claim_type": "sourced",
+        "claim_type_note": "Extracted from a supplied document; never model-authored text.",
+        "statement": "We study decentralized workload coordination across heterogeneous accelerators. Local scheduling signals are exchanged through a lightweight gossip protocol and throughput improves in our simulations, but synchronization overhead grows with the number of participating devices.",
+        "source": "paper:PAPER-005",
+        "source_paper": "Decentralized Scheduling for Heterogeneous Accelerators (2021)",
+        "paper_id": "PAPER-005",
+        "date": 2021,
+        "locator": "paper:PAPER-005:abstract",
+        "supports_what": [
+          "HYP-615",
+          "HYP-616",
+          "HYP-617"
+        ],
+        "section": "findings",
+        "confidence": 0.7,
+        "limitations": [
+          "Extracted from a single document; AARL has not re-run or reproduced it."
+        ],
+        "note": "Direct evidence because the hypothesis record lists this item id in supporting_evidence / contradictory_evidence."
+      }
+    ],
+    "indirect": [],
+    "contradicting": [],
+    "missing": [
+      {
+        "gap_id": "MISSING-MECH-01",
+        "kind": "mechanism_step_unsupported",
+        "statement": "Characterise how the participants of GPU actually differ",
+        "what_is_needed": "Direct (source-linked) evidence that this stage behaves as described.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Nothing in the stored knowledge base addresses this stage."
+      },
+      {
+        "gap_id": "MISSING-MECH-02",
+        "kind": "mechanism_step_unsupported",
+        "statement": "Derive which work type each participant class does best",
+        "what_is_needed": "Direct (source-linked) evidence that this stage behaves as described.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Nothing in the stored knowledge base addresses this stage."
+      },
+      {
+        "gap_id": "MISSING-MECH-03",
+        "kind": "mechanism_step_unsupported",
+        "statement": "Route each work type toward its best-matching class",
+        "what_is_needed": "Direct (source-linked) evidence that this stage behaves as described.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Nothing in the stored knowledge base addresses this stage."
+      },
+      {
+        "gap_id": "MISSING-MECH-04",
+        "kind": "mechanism_step_unsupported",
+        "statement": "Track the per-class queue the routing creates",
+        "what_is_needed": "Direct (source-linked) evidence that this stage behaves as described.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Nothing in the stored knowledge base addresses this stage."
+      },
+      {
+        "gap_id": "MISSING-MECH-05",
+        "kind": "mechanism_step_unsupported",
+        "statement": "Rebalance when one class becomes the bottleneck",
+        "what_is_needed": "Direct (source-linked) evidence that this stage behaves as described.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Nothing in the stored knowledge base addresses this stage."
+      },
+      {
+        "gap_id": "MISSING-MECH-06",
+        "kind": "mechanism_step_unsupported",
+        "statement": "Re-measure the characterisation, which changes under load",
+        "what_is_needed": "Direct (source-linked) evidence that this stage behaves as described.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Nothing in the stored knowledge base addresses this stage."
+      },
+      {
+        "gap_id": "MISSING-Q-01",
+        "kind": "open_question",
+        "statement": "Stability of the capability profiles under real load",
+        "what_is_needed": "A measurement or a sourced result that bounds this quantity.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Recorded as an open question for this mechanism class."
+      },
+      {
+        "gap_id": "MISSING-Q-02",
+        "kind": "open_question",
+        "statement": "Whether matching overhead outweighs the placement gain",
+        "what_is_needed": "A measurement or a sourced result that bounds this quantity.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Recorded as an open question for this mechanism class."
+      },
+      {
+        "gap_id": "MISSING-Q-03",
+        "kind": "open_question",
+        "statement": "Tail behaviour when one class is starved",
+        "what_is_needed": "A measurement or a sourced result that bounds this quantity.",
+        "lead_only": 0.0,
+        "status": "MISSING",
+        "note": "Recorded as an open question for this mechanism class."
+      }
+    ],
+    "counts": {
+      "direct": 1,
+      "indirect": 0,
+      "contradicting": 0,
+      "missing": 9
+    },
+    "direct_requires": "A provenance link in the hypothesis record. Wording similarity alone never produces direct evidence.",
+    "honesty_note": "AARL never converts semantic similarity into scientific evidence. Indirect items are shown as leads, not as support."
+  },
+  "gaps": [
+    {
+      "kind": "threshold",
+      "question": "At what value of the driving parameter does this mechanism stop paying off? A failure was recorded as: {\"baseline\": {\"converged_count\": 5, \"convergence_rate\": 1.0, \"elapsed_seconds\": 0.2997, \"max_iters_cap\": 4000, \"mean_final_loss\": 9.9e-05, \"mean_iterations\": 550.8, \"std_iterations\": 120.1306}, \"loss_curve_baseline\": [3.",
+      "why_it_matters": "A mechanism that works only inside an unstated range is a trap for whoever implements it next.",
+      "derived_from": [
+        "FAIL-540",
+        "EXP-540",
+        "HYP-615"
+      ],
+      "how_to_start": "Sweep the suspected parameter across its plausible range and record where resource utilization crosses over.",
+      "status": "OPEN",
+      "gap_id": "GAP-01"
+    },
+    {
+      "kind": "threshold",
+      "question": "At what value of the driving parameter does this mechanism stop paying off? A failure was recorded as: {\"baseline\": {\"converged_count\": 5, \"convergence_rate\": 1.0, \"elapsed_seconds\": 0.2348, \"max_iters_cap\": 4000, \"mean_final_loss\": 9.9e-05, \"mean_iterations\": 550.8, \"std_iterations\": 120.1306}, \"loss_curve_baseline\": [3.",
+      "why_it_matters": "A mechanism that works only inside an unstated range is a trap for whoever implements it next.",
+      "derived_from": [
+        "FAIL-541",
+        "EXP-541",
+        "HYP-615"
+      ],
+      "how_to_start": "Sweep the suspected parameter across its plausible range and record where resource utilization crosses over.",
+      "status": "OPEN",
+      "gap_id": "GAP-02"
+    },
+    {
+      "kind": "scaling",
+      "question": "How does resource utilization scale as the number of scheduling participants grows beyond the tested range (num_runs=5, dimensionality=12, max_iterations=4000)?",
+      "why_it_matters": "Coordination mechanisms usually show their real cost only once the participant count grows.",
+      "derived_from": [
+        "EXP-540",
+        "EXP-541",
+        "EXP-542"
+      ],
+      "how_to_start": "Repeat the comparison at several participant counts and fit the curve.",
+      "status": "OPEN",
+      "gap_id": "GAP-03"
+    },
+    {
+      "kind": "robustness",
+      "question": "Stability of the capability profiles under real load - and how does that depend on the workload being uniform?",
+      "why_it_matters": "An unquantified uncertainty is the likeliest reason a plausible mechanism would fail in practice.",
+      "derived_from": [
+        "library:heterogeneity_awareness",
+        "HYP-615"
+      ],
+      "how_to_start": "Construct two workload classes (uniform and heterogeneous) and compare resource utilization between them.",
+      "status": "OPEN",
+      "gap_id": "GAP-04"
+    },
+    {
+      "kind": "robustness",
+      "question": "Whether matching overhead outweighs the placement gain - and how does that depend on the workload being uniform?",
+      "why_it_matters": "An unquantified uncertainty is the likeliest reason a plausible mechanism would fail in practice.",
+      "derived_from": [
+        "library:heterogeneity_awareness",
+        "HYP-615"
+      ],
+      "how_to_start": "Construct two workload classes (uniform and heterogeneous) and compare resource utilization between them.",
+      "status": "OPEN",
+      "gap_id": "GAP-05"
+    },
+    {
+      "kind": "robustness",
+      "question": "Tail behaviour when one class is starved - and how does that depend on the workload being uniform?",
+      "why_it_matters": "An unquantified uncertainty is the likeliest reason a plausible mechanism would fail in practice.",
+      "derived_from": [
+        "library:heterogeneity_awareness",
+        "HYP-615"
+      ],
+      "how_to_start": "Construct two workload classes (uniform and heterogeneous) and compare resource utilization between them.",
+      "status": "OPEN",
+      "gap_id": "GAP-06"
+    },
+    {
+      "kind": "evidence",
+      "question": "The mechanism stage 'Characterise how the participants of GPU actually differ' has no source-linked support. What would demonstrate it?",
+      "why_it_matters": "An unsupported stage is where the proposed mechanism can break without anyone noticing.",
+      "derived_from": [
+        "MISSING-MECH-01",
+        "HYP-615"
+      ],
+      "how_to_start": "Direct (source-linked) evidence that this stage behaves as described.",
+      "status": "OPEN",
+      "gap_id": "GAP-07"
+    },
+    {
+      "kind": "evidence",
+      "question": "The mechanism stage 'Derive which work type each participant class does best' has no source-linked support. What would demonstrate it?",
+      "why_it_matters": "An unsupported stage is where the proposed mechanism can break without anyone noticing.",
+      "derived_from": [
+        "MISSING-MECH-02",
+        "HYP-615"
+      ],
+      "how_to_start": "Direct (source-linked) evidence that this stage behaves as described.",
+      "status": "OPEN",
+      "gap_id": "GAP-08"
+    },
+    {
+      "kind": "evidence",
+      "question": "The mechanism stage 'Route each work type toward its best-matching class' has no source-linked support. What would demonstrate it?",
+      "why_it_matters": "An unsupported stage is where the proposed mechanism can break without anyone noticing.",
+      "derived_from": [
+        "MISSING-MECH-03",
+        "HYP-615"
+      ],
+      "how_to_start": "Direct (source-linked) evidence that this stage behaves as described.",
+      "status": "OPEN",
+      "gap_id": "GAP-09"
+    },
+    {
+      "kind": "refinement",
+      "question": "The recorded lesson is: Do not assume the failed assumption holds unconditionally: The constraint '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \" What modified mechanism would avoid it?",
+      "why_it_matters": "AARL keeps failures so that the next direction is an improvement rather than a repeat.",
+      "derived_from": [
+        "LESSON-001",
+        "FAIL-001"
+      ],
+      "how_to_start": "Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied",
+      "status": "OPEN",
+      "gap_id": "GAP-10"
+    },
+    {
+      "kind": "refinement",
+      "question": "The recorded lesson is: Do not assume the failed assumption holds unconditionally: The constraint '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \" What modified mechanism would avoid it?",
+      "why_it_matters": "AARL keeps failures so that the next direction is an improvement rather than a repeat.",
+      "derived_from": [
+        "LESSON-002",
+        "FAIL-002"
+      ],
+      "how_to_start": "Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied",
+      "status": "OPEN",
+      "gap_id": "GAP-11"
+    },
+    {
+      "kind": "first_experiment",
+      "question": "What is the smallest experiment that would change this direction's status?",
+      "why_it_matters": "AARL's statuses are updated only by records, so the fastest route to a stronger status is a deciding measurement.",
+      "derived_from": [
+        "HYP-615",
+        "EXP-540",
+        "EXP-541"
+      ],
+      "how_to_start": "See 'Suggested first experiment' in the research opportunity report.",
+      "status": "OPEN"
+    }
+  ],
+  "speculative_aspects": [
+    "The mechanism is transferred from ecology / niche partitioning, statistics, scheduling theory and has not been demonstrated for GPU.",
+    "AARL has no implemented prototype of this mechanism for this problem."
+  ],
+  "unknowns": [
+    "Stability of the capability profiles under real load",
+    "Whether matching overhead outweighs the placement gain",
+    "Tail behaviour when one class is starved"
+  ],
+  "risks": [
+    "Stability of the capability profiles under real load (open question for this mechanism class)",
+    "Whether matching overhead outweighs the placement gain (open question for this mechanism class)",
+    "Tail behaviour when one class is starved (open question for this mechanism class)"
+  ],
+  "failure_conditions": [
+    {
+      "condition": "Stability of the capability profiles under real load",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "Whether matching overhead outweighs the placement gain",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "Tail behaviour when one class is starved",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "The assumed limitation of the Scheduling facet does not actually hold for this system.",
+      "why_it_would_break_the_direction": "The direction exists to remove that limitation; if the limitation is not real, the direction has no target (this is the first assumption to check)."
+    }
+  ],
+  "first_experiment": {
+    "objective": "Establish whether the mechanism moves resource utilization for GPU at all, before tuning anything.",
+    "design": "Baseline A: the conventional scheduling approach. Variant B: the Heterogeneity awareness mechanism applied only to the scheduling dimension. Keep every other parameter identical and use the same seed/warm-up.",
+    "metrics": [
+      "resource utilization",
+      "coordination or overhead cost introduced"
+    ],
+    "decision_rule": "Only claim support if B moves resource utilization outside the run-to-run spread of A; if the spread is larger than the effect, report INCONCLUSIVE rather than a direction.",
+    "what_would_make_it_stop": "If A is already at the physical or structural limit of resource utilization, the comparison cannot discriminate and the design must change.",
+    "claim_class": "EXPERIMENT_PROPOSAL"
+  },
+  "alternatives": [
+    {
+      "direction_id": "DIR-237",
+      "title": "Decentralized GPU Scheduling",
+      "status": "",
+      "shared_facet": "scheduling",
+      "why_related": "Same facet ('Scheduling'), different mechanism."
+    }
+  ],
+  "possibility_space_path": [
+    "Research problem",
+    "Scheduling",
+    "Heterogeneity awareness (heterogeneity_awareness)",
+    "Heterogeneity-Aware GPU Scheduling"
+  ],
+  "provenance": {
+    "constructed_by": "aarl.discovery.directions.DirectionDiscovery",
+    "research_question": "Design a new GPU for AI",
+    "facet_selection": {
+      "facet_id": "scheduling",
+      "score": 1.0,
+      "matched_keywords": [],
+      "matched_domains": [
+        "machine_learning"
+      ],
+      "selection_basis": "keyword overlap with the problem statement + detected-domain affinity + editorial exploration priority (order only)",
+      "selection_score_note": "Selection score for ordering the possibility space only — not evidence and not confidence."
+    },
+    "concept_library_entry": "aarl.discovery.concepts:heterogeneity_awareness",
+    "knowledge_items_consulted": 84,
+    "prior_failure_memory_consulted": 0,
+    "subject_label_heuristic": "The object of study was labelled 'GPU' by a documented text heuristic (lab/discovery/text.py:subject_of). It is a label only.",
+    "what_this_is": "A constructed research direction, not a result. Evidence for it is attached later and only from provenance-linked records."
+  },
+  "timestamp": "2026-09-22T10:41:48",
+  "result_provenance": [
+    {
+      "result_class": "SIMULATION_RESULT",
+      "label": "SIMULATION RESULT",
+      "css": "prov-simulation",
+      "meaning": "Produced by executing a seeded model. A model output under stated parameters - never real-world evidence.",
+      "why": "Executed by adapter 'ml_optimizer:momentum' with seed 11.",
+      "status": "success",
+      "simulation_type": "ml_optimizer:momentum",
+      "experiment_id": "EXP-540",
+      "hypothesis_id": "HYP-615",
+      "is_reproducible": true,
+      "input_hash": "d999ca620126fd7e",
+      "how_to_reproduce": "Re-run hypothesis HYP-615 with the stored parameter block and seed 11 through adapter 'ml_optimizer_simulation'.",
+      "assumed_modifiers": {},
+      "constraints_violated": [
+        {
+          "constraint": {
+            "name": "improvement_pct",
+            "op": ">=",
+            "value": 0.0,
+            "source": "generated hypothesis expectation"
+          },
+          "observed": null,
+          "violated": null,
+          "reason": "not verifiable from this simulation's metrics"
+        }
+      ],
+      "errors": [],
+      "notes": [],
+      "assumptions": [
+        {
+          "name": "optimizer",
+          "value": "momentum",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_source",
+          "value": "request.parameters['optimizer']",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_params_requested",
+          "value": {},
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_params_applied",
+          "value": {
+            "lr": 0.03,
+            "momentum": 0.9
+          },
+          "source": "recorded parameter"
+        },
+        {
+          "name": "problem",
+          "value": "quadratic",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "num_runs",
+          "value": 5,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "dimensionality",
+          "value": 12,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "max_iterations",
+          "value": 4000,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "convergence_tol",
+          "value": 0.0001,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "seed",
+          "value": 11,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "baseline",
+          "value": {
+            "optimizer": "sgd",
+            "params": {
+              "lr": 0.1
+            }
+          },
+          "source": "recorded parameter"
+        }
+      ],
+      "must_not_be_called": [
+        "validated",
+        "experimentally confirmed",
+        "scientifically proven"
+      ]
+    },
+    {
+      "result_class": "SIMULATION_RESULT",
+      "label": "SIMULATION RESULT",
+      "css": "prov-simulation",
+      "meaning": "Produced by executing a seeded model. A model output under stated parameters - never real-world evidence.",
+      "why": "Executed by adapter 'ml_optimizer:momentum' with seed 11.",
+      "status": "success",
+      "simulation_type": "ml_optimizer:momentum",
+      "experiment_id": "EXP-541",
+      "hypothesis_id": "HYP-616",
+      "is_reproducible": true,
+      "input_hash": "1ee9b01b779058fc",
+      "how_to_reproduce": "Re-run hypothesis HYP-616 with the stored parameter block and seed 11 through adapter 'ml_optimizer_simulation'.",
+      "assumed_modifiers": {},
+      "constraints_violated": [
+        {
+          "constraint": {
+            "name": "improvement_pct",
+            "op": ">=",
+            "value": 0.0,
+            "source": "generated hypothesis expectation"
+          },
+          "observed": null,
+          "violated": null,
+          "reason": "not verifiable from this simulation's metrics"
+        }
+      ],
+      "errors": [],
+      "notes": [],
+      "assumptions": [
+        {
+          "name": "optimizer",
+          "value": "momentum",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_source",
+          "value": "request.parameters['optimizer']",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_params_requested",
+          "value": {},
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_params_applied",
+          "value": {
+            "lr": 0.03,
+            "momentum": 0.9
+          },
+          "source": "recorded parameter"
+        },
+        {
+          "name": "problem",
+          "value": "quadratic",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "num_runs",
+          "value": 5,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "dimensionality",
+          "value": 12,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "max_iterations",
+          "value": 4000,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "convergence_tol",
+          "value": 0.0001,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "seed",
+          "value": 11,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "baseline",
+          "value": {
+            "optimizer": "sgd",
+            "params": {
+              "lr": 0.1
+            }
+          },
+          "source": "recorded parameter"
+        }
+      ],
+      "must_not_be_called": [
+        "validated",
+        "experimentally confirmed",
+        "scientifically proven"
+      ]
+    },
+    {
+      "result_class": "SIMULATION_RESULT",
+      "label": "SIMULATION RESULT",
+      "css": "prov-simulation",
+      "meaning": "Produced by executing a seeded model. A model output under stated parameters - never real-world evidence.",
+      "why": "Executed by adapter 'ml_optimizer:momentum' with seed 11.",
+      "status": "success",
+      "simulation_type": "ml_optimizer:momentum",
+      "experiment_id": "EXP-542",
+      "hypothesis_id": "HYP-617",
+      "is_reproducible": true,
+      "input_hash": "fd25f3d775c9e2da",
+      "how_to_reproduce": "Re-run hypothesis HYP-617 with the stored parameter block and seed 11 through adapter 'ml_optimizer_simulation'.",
+      "assumed_modifiers": {},
+      "constraints_violated": [
+        {
+          "constraint": {
+            "name": "improvement_pct",
+            "op": ">=",
+            "value": 0.0,
+            "source": "generated hypothesis expectation"
+          },
+          "observed": null,
+          "violated": null,
+          "reason": "not verifiable from this simulation's metrics"
+        }
+      ],
+      "errors": [],
+      "notes": [],
+      "assumptions": [
+        {
+          "name": "optimizer",
+          "value": "momentum",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_source",
+          "value": "request.parameters['optimizer']",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_params_requested",
+          "value": {},
+          "source": "recorded parameter"
+        },
+        {
+          "name": "optimizer_params_applied",
+          "value": {
+            "lr": 0.03,
+            "momentum": 0.9
+          },
+          "source": "recorded parameter"
+        },
+        {
+          "name": "problem",
+          "value": "quadratic",
+          "source": "recorded parameter"
+        },
+        {
+          "name": "num_runs",
+          "value": 5,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "dimensionality",
+          "value": 12,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "max_iterations",
+          "value": 4000,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "convergence_tol",
+          "value": 0.0001,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "seed",
+          "value": 11,
+          "source": "recorded parameter"
+        },
+        {
+          "name": "baseline",
+          "value": {
+            "optimizer": "sgd",
+            "params": {
+              "lr": 0.1
+            }
+          },
+          "source": "recorded parameter"
+        }
+      ],
+      "must_not_be_called": [
+        "validated",
+        "experimentally confirmed",
+        "scientifically proven"
+      ]
+    }
+  ],
+  "is_assumption_based": false,
+  "evaluated_at": "2026-09-22T10:43:37",
+  "record_id": "DIR-236",
+  "collection": "directions",
+  "stored_at": "2026-09-22T10:43:37"
+}

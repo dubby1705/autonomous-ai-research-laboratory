@@ -1,0 +1,9 @@
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:8799
+Press CTRL+C to quit
+127.0.0.1 - - [22/Sep/2026 10:41:19] "GET /api/health HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2026 10:41:20] "GET /styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2026 10:41:20] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2026 10:41:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2026 10:41:41] "GET /api/explorations/ HTTP/1.1" 404 -
+127.0.0.1 - - [22/Sep/2026 10:41:41] "POST /api/explorations HTTP/1.1" 200 -

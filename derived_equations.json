@@ -1,1565 +1,229 @@
 {
-    "total_validated": 83,
-    "total_rejected": 15,
+    "total_validated": 8,
+    "total_rejected": 10,
     "validated_equations": [
         {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "F + 0.5 * rho * v^2 = m",
+            "hypothesis": "Nano-porous graphene coating on cathode improves conductivity and reduces internal resistance for: design a battery",
+            "equation": "R = k / (k + c)",
             "variables": {
-                "F": "Force (N)",
-                "m": "Mass (kg)",
-                "v": "Velocity (m/s)",
-                "k": "Constant"
+                "R": "Resistance (R, Ohm)",
+                "pH": "Ph (pH, )",
+                "sigma": "Conductivity (sigma, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "polynomial",
+            "cluster": "M_Cluster_2_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: polynomial, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-09-22T10:22:35.938650"
+        },
+        {
+            "hypothesis": "Nano-porous graphene coating on cathode improves conductivity and reduces internal resistance for: design a battery",
+            "equation": "t = k * (k)^n",
+            "variables": {
+                "R": "Resistance (R, Ohm)",
+                "pH": "Ph (pH, )",
+                "sigma": "Conductivity (sigma, S/m)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_3_r1",
+            "r_level": 1,
+            "validation_reasoning": "Deterministic: linear, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-09-22T10:22:35.939431"
+        },
+        {
+            "hypothesis": "Nano-porous graphene coating on cathode improves conductivity and reduces internal resistance for: design a battery",
+            "equation": "pH = k * sqrt(sigma)",
+            "variables": {
+                "pH": "Ph (pH, )",
+                "sigma": "Conductivity (sigma, S/m)",
+                "T": "Temperature (K)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "power_law",
+            "cluster": "M_Cluster_4_r2",
+            "r_level": 2,
+            "validation_reasoning": "Deterministic: power_law, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-09-22T10:22:35.939570"
+        },
+        {
+            "hypothesis": "Nano-porous graphene coating on cathode improves conductivity and reduces internal resistance for: design a battery",
+            "equation": "k = k * (t)^n",
+            "variables": {
+                "k": "Proportionality constant",
+                "t": "Deepened: Time (s)",
+                "pH": "Deepened: Ph (pH, )"
+            },
+            "relationship_type": "proportional",
+            "cluster": "M_Cluster_4_r2_deepened",
+            "r_level": 3,
+            "validation_reasoning": "Deterministic: proportional, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-09-22T10:22:35.939804"
+        },
+        {
+            "hypothesis": "Nano-porous graphene coating on cathode improves conductivity and reduces internal resistance for: design a battery",
+            "equation": "R = alpha * T + beta",
+            "variables": {
+                "R": "Deepened: Resistance (R, Ohm)",
+                "T": "Deepened: Temperature (K)",
+                "k": "Proportionality constant"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_4_r2_deepened",
+            "r_level": 3,
+            "validation_reasoning": "Deterministic: linear, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-09-22T10:22:35.939926"
+        },
+        {
+            "hypothesis": "Nano-porous graphene coating on cathode improves conductivity and reduces internal resistance for: design a battery",
+            "equation": "sigma = k * k",
+            "variables": {
+                "sigma": "Deepened: Conductivity (sigma, S/m)",
+                "k": "Proportionality constant",
+                "pH": "Deepened: Ph (pH, )"
+            },
+            "relationship_type": "linear",
+            "cluster": "M_Cluster_4_r2_deepened",
+            "r_level": 3,
+            "validation_reasoning": "Deterministic: linear, 3 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-09-22T10:22:35.940278"
+        },
+        {
+            "hypothesis": "Solid-state electrolyte with enhanced ionic conductivity increases energy density and cycle life for: design a battery",
+            "equation": "t = k1 * k + k2 * k^2",
+            "variables": {
+                "E": "Energy (E, J)",
+                "rho": "Density (rho, kg/m^3)",
+                "sigma": "Conductivity (sigma, S/m)",
+                "sigma_e": "Electrolyte (sigma_e, S/m)",
+                "k": "Proportionality constant"
             },
             "relationship_type": "proportional",
             "cluster": "M_Cluster_1_r1",
             "r_level": 1,
-            "validation_reasoning": "Kinetic energy form: 0.5*m*v^2",
-            "dimension_hint": "J",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.752590"
+            "validation_reasoning": "Deterministic: proportional, 5 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-09-22T10:22:35.942344"
         },
         {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "pH = k1 * t + k2 * t^2 + k3 * t^3",
+            "hypothesis": "Composite electrode with protective coating enhances stability and charging efficiency for: design a battery",
+            "equation": "S = k * T",
             "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "t": "Deepened: Time (s)",
-                "T": "Deepened: Temperature (K)",
+                "eta": "Efficiency (eta, %)",
+                "S": "Stability (S, %)",
+                "A_e": "Electrode (A_e, m^2)",
                 "k": "Proportionality constant"
             },
             "relationship_type": "linear",
-            "cluster": "M_Cluster_1_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: linear",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.754005"
-        },
-        {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "k_th = k * exp(k)",
-            "variables": {
-                "k_th": "Deepened: Thermal (k_th, W/(m*K))",
-                "k": "Proportionality constant",
-                "t": "Deepened: Time (s)"
-            },
-            "relationship_type": "sigmoid",
-            "cluster": "M_Cluster_1_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: sigmoid",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.754351"
-        },
-        {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "pH = k / (t + c)",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "t": "Deepened: Time (s)",
-                "P": "Deepened: Power (P, W)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "linear",
-            "cluster": "M_Cluster_1_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: linear",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.754691"
-        },
-        {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "T = k1 * k_th + k2 * k_th^2",
-            "variables": {
-                "T": "Deepened: Temperature (K)",
-                "k_th": "Deepened: Thermal (k_th, W/(m*K))",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_1_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.754963"
-        },
-        {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "F = k * dT / m",
-            "variables": {
-                "F": "Force (N)",
-                "m": "Mass (kg)",
-                "v": "Velocity (m/s)",
-                "k": "Constant"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_2_r1",
+            "cluster": "M_Cluster_1_r1",
             "r_level": 1,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.755267"
-        },
-        {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "t = k / k",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant",
-                "pH": "Deepened: Ph (pH, )"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: exponential",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.755726"
-        },
-        {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "P = k * (k)^2",
-            "variables": {
-                "P": "Deepened: Power (P, W)",
-                "k": "Proportionality constant",
-                "k_th": "Deepened: Thermal (k_th, W/(m*K))"
-            },
-            "relationship_type": "power_law",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: power_law",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.755915"
-        },
-        {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "k = k * (P)^2",
-            "variables": {
-                "k": "Proportionality constant",
-                "P": "Deepened: Power (P, W)",
-                "t": "Deepened: Time (s)"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: exponential",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.756042"
-        },
-        {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "P = k1 * T + k2 * T^2 + k3 * T^3",
-            "variables": {
-                "P": "Deepened: Power (P, W)",
-                "T": "Deepened: Temperature (K)",
-                "pH": "Deepened: Ph (pH, )",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: exponential",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.756201"
-        },
-        {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "pH = k * exp(-T / tau)",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "T": "Deepened: Temperature (K)",
-                "k_th": "Deepened: Thermal (k_th, W/(m*K))",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "logarithmic",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: logarithmic",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.756345"
-        },
-        {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "F = m * a",
-            "variables": {
-                "F": "Force (N)",
-                "m": "Mass (kg)",
-                "v": "Velocity (m/s)",
-                "k": "Constant"
-            },
-            "relationship_type": "linear",
-            "cluster": "M_Cluster_5_r4",
-            "r_level": 4,
-            "validation_reasoning": "Newton's Second Law: F=ma",
-            "dimension_hint": "N",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.757325"
-        },
-        {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "t = k * P",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "P": "Deepened: Power (P, W)",
-                "k_th": "Deepened: Thermal (k_th, W/(m*K))",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_5_r4_deepened",
-            "r_level": 5,
-            "validation_reasoning": "Physics: exponential",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.757682"
-        },
-        {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "pH = k1 * k + k2 * k^2 + k3 * k^3",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "k": "Proportionality constant",
-                "P": "Deepened: Power (P, W)"
-            },
-            "relationship_type": "polynomial",
-            "cluster": "M_Cluster_5_r4_deepened",
-            "r_level": 5,
-            "validation_reasoning": "Physics: polynomial",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.757901"
-        },
-        {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "t = k * exp(T)",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "T": "Deepened: Temperature (K)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "power_law",
-            "cluster": "M_Cluster_5_r4_deepened",
-            "r_level": 5,
-            "validation_reasoning": "Physics: power_law",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.758038"
-        },
-        {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "k = k * log(P / P_0)",
-            "variables": {
-                "k": "Proportionality constant",
-                "P": "Deepened: Power (P, W)",
-                "t": "Deepened: Time (s)"
-            },
-            "relationship_type": "logarithmic",
-            "cluster": "M_Cluster_5_r4_deepened",
-            "r_level": 5,
-            "validation_reasoning": "Physics: logarithmic",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.758137"
-        },
-        {
-            "hypothesis": "Implementing a hybrid memory system that combines traditional DRAM with phase-change memory and optical interconnects, with a focus on optimizing the memory hierarchy and interconnect architecture to achieve 50% higher bandwidth and 20% lower latency",
-            "equation": "sigma = F * epsilon",
-            "variables": {
-                "F": "Force (N)",
-                "m": "Mass (kg)",
-                "v": "Velocity (m/s)",
-                "k": "Constant"
-            },
-            "relationship_type": "linear",
-            "cluster": "M_Cluster_5_r4",
-            "r_level": 4,
-            "validation_reasoning": "Stress-strain relationship",
-            "dimension_hint": "Pa",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.763413"
-        },
-        {
-            "hypothesis": "Implementing a hybrid memory system that combines traditional DRAM with phase-change memory and optical interconnects, with a focus on optimizing the memory hierarchy and interconnect architecture to achieve 50% higher bandwidth and 20% lower latency",
-            "equation": "pH = k1 * T + k2 * T^2 + k3 * T^3",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "T": "Deepened: Temperature (K)",
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_5_r4_deepened",
-            "r_level": 5,
-            "validation_reasoning": "Physics: exponential",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.763907"
-        },
-        {
-            "hypothesis": "Implementing a hybrid memory system that combines traditional DRAM with phase-change memory and optical interconnects, with a focus on optimizing the memory hierarchy and interconnect architecture to achieve 50% higher bandwidth and 20% lower latency",
-            "equation": "k = k * exp(-t / tau)",
-            "variables": {
-                "k": "Proportionality constant",
-                "t": "Deepened: Time (s)",
-                "pH": "Deepened: Ph (pH, )"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_5_r4_deepened",
-            "r_level": 5,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.764045"
-        },
-        {
-            "hypothesis": "Implementing a hybrid memory system that combines traditional DRAM with phase-change memory and optical interconnects, with a focus on optimizing the memory hierarchy and interconnect architecture to achieve 50% higher bandwidth and 20% lower latency",
-            "equation": "k = k1 * t + k2 * t^2 + k3 * t^3",
-            "variables": {
-                "k": "Proportionality constant",
-                "t": "Deepened: Time (s)",
-                "T": "Deepened: Temperature (K)"
-            },
-            "relationship_type": "power_law",
-            "cluster": "M_Cluster_5_r4_deepened",
-            "r_level": 5,
-            "validation_reasoning": "Physics: power_law",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.764220"
-        },
-        {
-            "hypothesis": "Implementing a hybrid memory system that combines traditional DRAM with phase-change memory and optical interconnects, with a focus on optimizing the memory hierarchy and interconnect architecture to achieve 50% higher bandwidth and 20% lower latency",
-            "equation": "pH = k * sqrt(k)",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "k": "Proportionality constant",
-                "t": "Deepened: Time (s)"
-            },
-            "relationship_type": "power_law",
-            "cluster": "M_Cluster_5_r4_deepened",
-            "r_level": 5,
-            "validation_reasoning": "Physics: power_law",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.764351"
-        },
-        {
-            "hypothesis": "Implementing a hybrid memory system that combines traditional DRAM with phase-change memory and optical interconnects, with a focus on optimizing the memory hierarchy and interconnect architecture to achieve 50% higher bandwidth and 20% lower latency",
-            "equation": "t = k * exp(-k / tau)",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant",
-                "pH": "Deepened: Ph (pH, )"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_5_r4_deepened",
-            "r_level": 5,
-            "validation_reasoning": "Physics: exponential",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.764480"
-        },
-        {
-            "hypothesis": "Implementing a hybrid memory system that combines traditional DRAM with phase-change memory and optical interconnects, with a focus on optimizing the memory hierarchy and interconnect architecture to achieve 50% higher bandwidth and 20% lower latency",
-            "equation": "pH = k * log(t)",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "t": "Deepened: Time (s)",
-                "T": "Deepened: Temperature (K)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "proportional",
-            "cluster": "M_Cluster_5_r4_deepened",
-            "r_level": 5,
-            "validation_reasoning": "Physics: proportional",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.764640"
-        },
-        {
-            "hypothesis": "Implementing a hybrid memory system that combines traditional DRAM with phase-change memory and optical interconnects, with a focus on optimizing the memory hierarchy and interconnect architecture to achieve 50% higher bandwidth and 20% lower latency",
-            "equation": "T = k * pH + pH_offset",
-            "variables": {
-                "T": "Deepened: Temperature (K)",
-                "pH": "Deepened: Ph (pH, )",
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "proportional",
-            "cluster": "M_Cluster_5_r4_deepened",
-            "r_level": 5,
-            "validation_reasoning": "Physics: proportional",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.764797"
-        },
-        {
-            "hypothesis": "Implementing a hybrid memory system that combines traditional DRAM with phase-change memory and optical interconnects, with a focus on optimizing the memory hierarchy and interconnect architecture to achieve 50% higher bandwidth and 20% lower latency",
-            "equation": "pH = alpha * k + beta",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "k": "Proportionality constant",
-                "T": "Deepened: Temperature (K)"
-            },
-            "relationship_type": "proportional",
-            "cluster": "M_Cluster_5_r4_deepened",
-            "r_level": 5,
-            "validation_reasoning": "Physics: proportional",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.764953"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "F = k * m",
-            "variables": {
-                "F": "Force (N)",
-                "m": "Mass (kg)",
-                "v": "Velocity (m/s)",
-                "k": "Constant"
-            },
-            "relationship_type": "power_law",
-            "cluster": "M_Cluster_3_r1",
-            "r_level": 1,
-            "validation_reasoning": "Physics: power_law",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.770330"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "pH = k * (P)^n",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "P": "Deepened: Power (P, W)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "power_law",
-            "cluster": "M_Cluster_3_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: power_law",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.770944"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "k = k1 * P + k2 * P^2",
-            "variables": {
-                "k": "Proportionality constant",
-                "P": "Deepened: Power (P, W)",
-                "pH": "Deepened: Ph (pH, )"
-            },
-            "relationship_type": "proportional",
-            "cluster": "M_Cluster_3_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: proportional",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.771162"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "P = k1 * pH + k2 * pH^2",
-            "variables": {
-                "P": "Deepened: Power (P, W)",
-                "pH": "Deepened: Ph (pH, )",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "logarithmic",
-            "cluster": "M_Cluster_3_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: logarithmic",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.771298"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "pH = k * sqrt(k)",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "k": "Proportionality constant",
-                "t": "Deepened: Time (s)"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_3_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: exponential",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.771542"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "F = m * g * h",
-            "variables": {
-                "F": "Force (N)",
-                "m": "Mass (kg)",
-                "v": "Velocity (m/s)",
-                "k": "Constant"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_5_r1",
-            "r_level": 1,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.771995"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "k = k / (T + c)",
-            "variables": {
-                "k": "Proportionality constant",
-                "T": "Deepened: Temperature (K)",
-                "P": "Deepened: Power (P, W)"
-            },
-            "relationship_type": "logarithmic",
-            "cluster": "M_Cluster_5_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: logarithmic",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.772749"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "t = k * (pH)^n",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "pH": "Deepened: Ph (pH, )",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_5_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.773108"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "P = k * sqrt(t)",
-            "variables": {
-                "P": "Deepened: Power (P, W)",
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "linear",
-            "cluster": "M_Cluster_5_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: linear",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.773528"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "t = k * (T)^2",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "T": "Deepened: Temperature (K)",
-                "P": "Deepened: Power (P, W)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "logarithmic",
-            "cluster": "M_Cluster_5_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: logarithmic",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.773744"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "t = k * sqrt(T)",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "T": "Deepened: Temperature (K)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_5_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.773980"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "t = k * (k)^2",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant",
-                "pH": "Deepened: Ph (pH, )"
-            },
-            "relationship_type": "proportional",
-            "cluster": "M_Cluster_5_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: proportional",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.774276"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "Re = rho * v * F / mu",
-            "variables": {
-                "F": "Force (N)",
-                "m": "Mass (kg)",
-                "v": "Velocity (m/s)",
-                "k": "Constant"
-            },
-            "relationship_type": "inverse_square",
-            "cluster": "M_Cluster_6_r1",
-            "r_level": 1,
-            "validation_reasoning": "Physics: inverse_square",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.774527"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "P = k * t + t_offset",
-            "variables": {
-                "P": "Deepened: Power (P, W)",
-                "t": "Deepened: Time (s)",
-                "pH": "Deepened: Ph (pH, )",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "logarithmic",
-            "cluster": "M_Cluster_6_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: logarithmic",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.774921"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "k = k * T + T_offset",
-            "variables": {
-                "k": "Proportionality constant",
-                "T": "Deepened: Temperature (K)",
-                "t": "Deepened: Time (s)"
-            },
-            "relationship_type": "sigmoid",
-            "cluster": "M_Cluster_6_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: sigmoid",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.775020"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "pH = k * t + t_offset",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "t": "Deepened: Time (s)",
-                "T": "Deepened: Temperature (K)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_6_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.775169"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "P = k * (k)^n",
-            "variables": {
-                "P": "Deepened: Power (P, W)",
-                "k": "Proportionality constant",
-                "T": "Deepened: Temperature (K)"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_6_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.775334"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "P = k / t",
-            "variables": {
-                "P": "Deepened: Power (P, W)",
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_6_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: exponential",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.775471"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "F = m * a",
-            "variables": {
-                "F": "Force (N)",
-                "m": "Mass (kg)",
-                "v": "Velocity (m/s)",
-                "k": "Constant"
-            },
-            "relationship_type": "inverse_square",
-            "cluster": "M_Cluster_2_r1",
-            "r_level": 1,
-            "validation_reasoning": "Newton's Second Law: F=ma",
-            "dimension_hint": "N",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.780107"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "pH = k1 * T + k2 * T^2 + k3 * T^3",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "T": "Deepened: Temperature (K)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "linear",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: linear",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.780374"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "t = k1 * T + k2 * T^2 + k3 * T^3",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "T": "Deepened: Temperature (K)",
-                "pH": "Deepened: Ph (pH, )",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "sigmoid",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: sigmoid",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.780534"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "T = k * (t)^n",
-            "variables": {
-                "T": "Deepened: Temperature (K)",
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "logarithmic",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: logarithmic",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.780661"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "t = k * log(k)",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant",
-                "pH": "Deepened: Ph (pH, )"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.780731"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "t = alpha * k + beta",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant",
-                "T": "Deepened: Temperature (K)"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: exponential",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.780810"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "pH = k * exp(-t / tau)",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "t": "Deepened: Time (s)",
-                "T": "Deepened: Temperature (K)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.780910"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "F = rho * m * v^2",
-            "variables": {
-                "F": "Force (N)",
-                "m": "Mass (kg)",
-                "v": "Velocity (m/s)",
-                "k": "Constant"
-            },
-            "relationship_type": "power_law",
-            "cluster": "M_Cluster_3_r1",
-            "r_level": 1,
-            "validation_reasoning": "Fluid dynamics equation",
-            "dimension_hint": "N",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.781023"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "k = k1 * T + k2 * T^2 + k3 * T^3",
-            "variables": {
-                "k": "Proportionality constant",
-                "T": "Deepened: Temperature (K)",
-                "t": "Deepened: Time (s)"
-            },
-            "relationship_type": "sigmoid",
-            "cluster": "M_Cluster_3_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: sigmoid",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.781251"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "pH = k * t",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "t": "Deepened: Time (s)",
-                "T": "Deepened: Temperature (K)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "linear",
-            "cluster": "M_Cluster_3_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: linear",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.781334"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "pH = k * (t)^2",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "logarithmic",
-            "cluster": "M_Cluster_3_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: logarithmic",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.781411"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "T = k * k",
-            "variables": {
-                "T": "Deepened: Temperature (K)",
-                "k": "Proportionality constant",
-                "t": "Deepened: Time (s)"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_3_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: exponential",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.781573"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "t = k1 * T + k2 * T^2 + k3 * T^3",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "T": "Deepened: Temperature (K)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "power_law",
-            "cluster": "M_Cluster_3_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: power_law",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.781727"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "F = k * m",
-            "variables": {
-                "F": "Force (N)",
-                "m": "Mass (kg)",
-                "v": "Velocity (m/s)",
-                "k": "Constant"
-            },
-            "relationship_type": "linear",
-            "cluster": "M_Cluster_4_r1",
-            "r_level": 1,
-            "validation_reasoning": "Physics: linear",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.781913"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "T = k / (pH + c)",
-            "variables": {
-                "T": "Deepened: Temperature (K)",
-                "pH": "Deepened: Ph (pH, )",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_4_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.782236"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "pH = k * k",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "k": "Proportionality constant",
-                "t": "Deepened: Time (s)"
-            },
-            "relationship_type": "polynomial",
-            "cluster": "M_Cluster_4_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: polynomial",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.782344"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "pH = k * T",
-            "variables": {
-                "pH": "Deepened: Ph (pH, )",
-                "T": "Deepened: Temperature (K)",
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "power_law",
-            "cluster": "M_Cluster_4_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: power_law",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.782423"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "t = k1 * T + k2 * T^2",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "T": "Deepened: Temperature (K)",
-                "pH": "Deepened: Ph (pH, )",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "power_law",
-            "cluster": "M_Cluster_4_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: power_law",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.782562"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "k = k * (t)^2",
-            "variables": {
-                "k": "Proportionality constant",
-                "t": "Deepened: Time (s)",
-                "pH": "Deepened: Ph (pH, )"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_4_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: exponential",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.782673"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "t = alpha * k + beta",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant",
-                "T": "Deepened: Temperature (K)"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_4_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: exponential",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.782774"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "F = 0.5 * m * v^2",
-            "variables": {
-                "F": "Force (N)",
-                "m": "Mass (kg)",
-                "v": "Velocity (m/s)",
-                "k": "Constant"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_2_r1",
-            "r_level": 1,
-            "validation_reasoning": "Kinetic energy form: 0.5*m*v^2",
-            "dimension_hint": "J",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.789384"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "P = k * log(eta / eta_0)",
-            "variables": {
-                "P": "Deepened: Power (P, W)",
-                "eta": "Deepened: Efficiency (eta, %)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: exponential",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.789869"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "k = k * (T)^n",
-            "variables": {
-                "k": "Proportionality constant",
-                "T": "Deepened: Temperature (K)",
-                "t": "Deepened: Time (s)"
-            },
-            "relationship_type": "polynomial",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: polynomial",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.790048"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "k = k / (T + c)",
-            "variables": {
-                "k": "Proportionality constant",
-                "T": "Deepened: Temperature (K)",
-                "eta": "Deepened: Efficiency (eta, %)"
-            },
-            "relationship_type": "sigmoid",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: sigmoid",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.790230"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "k = k * log(t)",
-            "variables": {
-                "k": "Proportionality constant",
-                "t": "Deepened: Time (s)",
-                "r": "Deepened: Rate (r, mol/(L*s))"
-            },
-            "relationship_type": "linear",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: linear",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.790377"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "eta = k * log(k)",
-            "variables": {
-                "eta": "Deepened: Efficiency (eta, %)",
-                "k": "Proportionality constant",
-                "T": "Deepened: Temperature (K)"
-            },
-            "relationship_type": "linear",
-            "cluster": "M_Cluster_2_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: linear",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.790490"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "F = k * dT / m",
-            "variables": {
-                "F": "Force (N)",
-                "m": "Mass (kg)",
-                "v": "Velocity (m/s)",
-                "k": "Constant"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_4_r1",
-            "r_level": 1,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.790905"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "k = alpha * eta + beta",
-            "variables": {
-                "k": "Proportionality constant",
-                "eta": "Deepened: Efficiency (eta, %)",
-                "T": "Deepened: Temperature (K)"
-            },
-            "relationship_type": "polynomial",
-            "cluster": "M_Cluster_4_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: polynomial",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.791269"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "r = k / (T + c)",
-            "variables": {
-                "r": "Deepened: Rate (r, mol/(L*s))",
-                "T": "Deepened: Temperature (K)",
-                "eta": "Deepened: Efficiency (eta, %)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_4_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.791494"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "T = k * sqrt(k)",
-            "variables": {
-                "T": "Deepened: Temperature (K)",
-                "k": "Proportionality constant",
-                "eta": "Deepened: Efficiency (eta, %)"
-            },
-            "relationship_type": "logarithmic",
-            "cluster": "M_Cluster_4_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: logarithmic",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.791657"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "eta = k * sqrt(r)",
-            "variables": {
-                "eta": "Deepened: Efficiency (eta, %)",
-                "r": "Deepened: Rate (r, mol/(L*s))",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "proportional",
-            "cluster": "M_Cluster_4_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: proportional",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.791849"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "k = k * exp(r)",
-            "variables": {
-                "k": "Proportionality constant",
-                "r": "Deepened: Rate (r, mol/(L*s))",
-                "eta": "Deepened: Efficiency (eta, %)"
-            },
-            "relationship_type": "proportional",
-            "cluster": "M_Cluster_4_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: proportional",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.791972"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "t = (k_max - k) / (k_max - k_min)",
-            "variables": {
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant",
-                "T": "Deepened: Temperature (K)"
-            },
-            "relationship_type": "proportional",
-            "cluster": "M_Cluster_4_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: proportional",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.792150"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "F = mu_0 * m / (2*pi*r)",
-            "variables": {
-                "F": "Force (N)",
-                "m": "Mass (kg)",
-                "v": "Velocity (m/s)",
-                "k": "Constant"
-            },
-            "relationship_type": "power_law",
-            "cluster": "M_Cluster_5_r1",
-            "r_level": 1,
-            "validation_reasoning": "Physics: power_law",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.792335"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "eta = k1 * T + k2 * T^2",
-            "variables": {
-                "eta": "Deepened: Efficiency (eta, %)",
-                "T": "Deepened: Temperature (K)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "logarithmic",
-            "cluster": "M_Cluster_5_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: logarithmic",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.792839"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "eta = k * sqrt(T)",
-            "variables": {
-                "eta": "Deepened: Efficiency (eta, %)",
-                "T": "Deepened: Temperature (K)",
-                "r": "Deepened: Rate (r, mol/(L*s))",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "exponential",
-            "cluster": "M_Cluster_5_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: exponential",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.793014"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "P = 1 / (1 + exp(-k * (T - T_0)))",
-            "variables": {
-                "P": "Deepened: Power (P, W)",
-                "T": "Deepened: Temperature (K)",
-                "t": "Deepened: Time (s)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_5_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.793224"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "eta = k / (t + c)",
-            "variables": {
-                "eta": "Deepened: Efficiency (eta, %)",
-                "t": "Deepened: Time (s)",
-                "r": "Deepened: Rate (r, mol/(L*s))",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "inverse",
-            "cluster": "M_Cluster_5_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: inverse",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.793464"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "r = k * (T)^2",
-            "variables": {
-                "r": "Deepened: Rate (r, mol/(L*s))",
-                "T": "Deepened: Temperature (K)",
-                "P": "Deepened: Power (P, W)",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "polynomial",
-            "cluster": "M_Cluster_5_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: polynomial",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.793573"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "T = k * log(t)",
-            "variables": {
-                "T": "Deepened: Temperature (K)",
-                "t": "Deepened: Time (s)",
-                "r": "Deepened: Rate (r, mol/(L*s))",
-                "k": "Proportionality constant"
-            },
-            "relationship_type": "power_law",
-            "cluster": "M_Cluster_5_r1_deepened",
-            "r_level": 2,
-            "validation_reasoning": "Physics: power_law",
-            "dimension_hint": "Standard",
-            "domain": "computer_architecture",
-            "engine": "physics",
-            "timestamp": "2026-08-01T21:22:18.793769"
+            "validation_reasoning": "Deterministic: linear, 4 vars",
+            "dimension_hint": "Standard",
+            "domain": "chemistry",
+            "engine": "chemistry",
+            "timestamp": "2026-09-22T10:22:35.946372"
         }
     ],
     "rejected_ideas": [
         {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "F = m / m_0",
-            "reason": "Not physically meaningful",
+            "hypothesis": "Nano-porous graphene coating on cathode improves conductivity and reduces internal resistance for: design a battery",
+            "equation": "T = 1 / (1 + exp(-k * (k - k_0)))",
+            "reason": "Structure mismatch for power_law",
             "filter": "domain_validation"
         },
         {
-            "hypothesis": "A 3D stacked GPU architecture utilizing graphene-based interconnects for high-speed, low-power applications, with a focus on developing scalable manufacturing techniques and comprehensive thermal management systems.",
-            "equation": "F = m * R",
-            "reason": "Not physically meaningful",
+            "hypothesis": "Solid-state electrolyte with enhanced ionic conductivity increases energy density and cycle life for: design a battery",
+            "equation": "N = (T_max - T) / (T_max - T_min)",
+            "reason": "Too many undefined variables: T",
             "filter": "domain_validation"
         },
         {
-            "hypothesis": "Implementing a hybrid memory system that combines traditional DRAM with phase-change memory and optical interconnects, with a focus on optimizing the memory hierarchy and interconnect architecture to achieve 50% higher bandwidth and 20% lower latency",
-            "equation": "F = m * v",
-            "reason": "Not physically meaningful",
+            "hypothesis": "Silicon-based anode with nanostructure design improves capacity and reduces degradation for: design a battery",
+            "equation": "k = k / d",
+            "reason": "Circular: k appears on both sides with no meaningful transformation",
+            "filter": "rubbish_filter"
+        },
+        {
+            "hypothesis": "Silicon-based anode with nanostructure design improves capacity and reduces degradation for: design a battery",
+            "equation": "t = k * log(Q)",
+            "reason": "Structure mismatch for sigmoid",
             "filter": "domain_validation"
         },
         {
-            "hypothesis": "Implementing a hybrid memory system that combines traditional DRAM with phase-change memory and optical interconnects, with a focus on optimizing the memory hierarchy and interconnect architecture to achieve 50% higher bandwidth and 20% lower latency",
-            "equation": "F = m / m_0",
-            "reason": "Not physically meaningful",
+            "hypothesis": "Silicon-based anode with nanostructure design improves capacity and reduces degradation for: design a battery",
+            "equation": "t = alpha * k + beta",
+            "reason": "Structure mismatch for exponential",
             "filter": "domain_validation"
         },
         {
-            "hypothesis": "Implementing a hybrid memory system that combines traditional DRAM with phase-change memory and optical interconnects, with a focus on optimizing the memory hierarchy and interconnect architecture to achieve 50% higher bandwidth and 20% lower latency",
-            "equation": "F = m * R",
-            "reason": "Not physically meaningful",
+            "hypothesis": "Composite electrode with protective coating enhances stability and charging efficiency for: design a battery",
+            "equation": "t = k / T",
+            "reason": "Circular: t appears on both sides with no meaningful transformation",
+            "filter": "rubbish_filter"
+        },
+        {
+            "hypothesis": "Composite electrode with protective coating enhances stability and charging efficiency for: design a battery",
+            "equation": "t = k * T",
+            "reason": "Circular: t appears on both sides with no meaningful transformation",
+            "filter": "rubbish_filter"
+        },
+        {
+            "hypothesis": "Novel cathode material with improved surface area and diffusion coefficient for: design a battery",
+            "equation": "t = k / T",
+            "reason": "Circular: t appears on both sides with no meaningful transformation",
+            "filter": "rubbish_filter"
+        },
+        {
+            "hypothesis": "Novel cathode material with improved surface area and diffusion coefficient for: design a battery",
+            "equation": "T = k * log(t / t_0)",
+            "reason": "Too many undefined variables: t_0",
             "filter": "domain_validation"
         },
         {
-            "hypothesis": "Implementing a hybrid memory system that combines traditional DRAM with phase-change memory and optical interconnects, with a focus on optimizing the memory hierarchy and interconnect architecture to achieve 50% higher bandwidth and 20% lower latency",
-            "equation": "F = m * c * dT",
-            "reason": "Not physically meaningful",
-            "filter": "domain_validation"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "F = m / A",
-            "reason": "Not physically meaningful",
-            "filter": "domain_validation"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "F = m * R",
-            "reason": "Not physically meaningful",
-            "filter": "domain_validation"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "epsilon = dF / m",
-            "reason": "Not physically meaningful",
-            "filter": "domain_validation"
-        },
-        {
-            "hypothesis": "Integrating a neuromorphic processing unit with a hybrid approach, combining both digital and analog components, to enable adaptive reconfiguration of GPU resources. This could involve using machine learning algorithms to predict workload patterns and optimize resource allocation in real-time, with a focus on reducing power consumption and increasing throughput.",
-            "equation": "eta = 1 - m / F",
-            "reason": "Not physically meaningful",
-            "filter": "domain_validation"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "F = m / m_0",
-            "reason": "Not physically meaningful",
-            "filter": "domain_validation"
-        },
-        {
-            "hypothesis": "Developing a GPU with a hybrid optical-electrical network that utilizes silicon photonics for low-latency, high-bandwidth communication between GPUs and system components, while ensuring compatibility with existing computing frameworks and architectures.",
-            "equation": "dF = dQ / m",
-            "reason": "Not physically meaningful",
-            "filter": "domain_validation"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "dF = dQ / m",
-            "reason": "Not physically meaningful",
-            "filter": "domain_validation"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "F = m / m_0",
-            "reason": "Not physically meaningful",
-            "filter": "domain_validation"
-        },
-        {
-            "hypothesis": "A more refined approach might involve focusing on a specific aspect of quantum dot technology that could be realistically integrated into GPU design within the next few years, such as using quantum dots for memory elements or for enhancing the efficiency of power delivery systems.",
-            "equation": "F = m / A",
-            "reason": "Not physically meaningful",
+            "hypothesis": "Novel cathode material with improved surface area and diffusion coefficient for: design a battery",
+            "equation": "m = (k_max - k) / (k_max - k_min)",
+            "reason": "Structure mismatch for power_law",
             "filter": "domain_validation"
         }
     ],
     "domains_detected": [
-        "computer_architecture",
-        "physics",
         "chemistry",
-        "quantum",
+        "physics",
         "biology",
-        "materials_science"
+        "materials_science",
+        "computer_architecture"
     ],
     "engines_used": [
-        "quantum",
         "chemistry",
         "physics"
     ],
     "summary": {
-        "validated_count": 83,
-        "rejected_count": 15,
+        "validated_count": 8,
+        "rejected_count": 10,
         "rejection_breakdown": {
-            "rubbish_filter": 0,
-            "domain_validation": 15,
+            "rubbish_filter": 4,
+            "domain_validation": 6,
             "llm_validation": 0,
             "llm_unavailable": 0,
             "parser_error": 0

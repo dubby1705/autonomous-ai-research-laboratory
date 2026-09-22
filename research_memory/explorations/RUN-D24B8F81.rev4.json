@@ -1,0 +1,61 @@
+{
+  "run_id": "RUN-D24B8F81",
+  "problem": "Design a new GPU for AI",
+  "status": "running",
+  "stages": [
+    {
+      "key": "understanding",
+      "label": "Understanding problem",
+      "state": "done",
+      "detail": "Design a new GPU for AI",
+      "at": "2026-09-22T10:38:00"
+    }
+  ],
+  "directions": [],
+  "space": {},
+  "stats": {},
+  "error": "",
+  "created_at": "2026-09-22T10:38:00",
+  "updated_at": "2026-09-22T10:38:00",
+  "stage_template": [
+    {
+      "key": "understanding",
+      "label": "Understanding problem"
+    },
+    {
+      "key": "domains",
+      "label": "Detecting research domain"
+    },
+    {
+      "key": "literature",
+      "label": "Searching literature"
+    },
+    {
+      "key": "graph",
+      "label": "Building knowledge graph"
+    },
+    {
+      "key": "exploring",
+      "label": "Exploring alternative directions"
+    },
+    {
+      "key": "hypotheses",
+      "label": "Generating hypotheses"
+    },
+    {
+      "key": "mechanisms",
+      "label": "Testing mechanisms"
+    },
+    {
+      "key": "simulations",
+      "label": "Running simulations"
+    },
+    {
+      "key": "evaluating",
+      "label": "Evaluating research opportunities"
+    }
+  ],
+  "record_id": "RUN-D24B8F81",
+  "collection": "explorations",
+  "stored_at": "2026-09-22T10:38:00"
+}

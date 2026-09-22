@@ -1,0 +1,323 @@
+{
+  "direction_id": "DIR-229",
+  "run_id": "RUN-D24B8F81",
+  "order": 2,
+  "title": "Decentralized GPU Scheduling",
+  "base_title": "Decentralized GPU Scheduling",
+  "one_line": "Can decentralized coordination improve resource utilization for GPU in situations where a single centralized controller cannot observe the whole system quickly enough?",
+  "core_question": "Can decentralized coordination improve resource utilization for GPU in situations where a single centralized controller cannot observe the whole system quickly enough?",
+  "research_problem": "Design a new GPU for AI",
+  "subject": "GPU",
+  "claim_class": "DIRECTION_PROPOSAL",
+  "claim_class_label": "RESEARCH DIRECTION (AARL PROPOSAL)",
+  "facet": {
+    "facet_id": "scheduling",
+    "label": "Scheduling",
+    "title_noun": "Scheduling",
+    "framing": "how work is assigned to the available resources",
+    "metric": "resource utilization",
+    "assumed_limitation": "A single centralized scheduler must gather global state before it can decide, so its decisions are always slightly stale under fast-changing loads.",
+    "keywords": [
+      "schedul",
+      "dispatch",
+      "queue",
+      "load balanc",
+      "assign",
+      "task",
+      "workload",
+      "utilization",
+      "throughput",
+      "parallel",
+      "concurren"
+    ],
+    "domains": [
+      "computer_architecture",
+      "machine_learning",
+      "robotics"
+    ]
+  },
+  "concept": {
+    "concept_id": "decentralized_coordination",
+    "name": "Decentralized coordination",
+    "title_adjective": "Decentralized",
+    "source_domains": [
+      "distributed systems",
+      "swarm intelligence",
+      "multi-agent systems"
+    ],
+    "description": "Replace a single global controller with many local decision makers that coordinate through cheap local signals.",
+    "mechanism_steps": [
+      "Work arrives at {subject} as a stream of independent units",
+      "Each unit is placed on a participant that sees only its own local state",
+      "Participants exchange bounded local signals instead of global state",
+      "Local decisions redistribute work as conditions change",
+      "Participants process concurrently",
+      "Partial results are aggregated back into a single answer"
+    ],
+    "core_question": "Can decentralized coordination improve {metric} for {subject} in situations where a single centralized controller cannot observe the whole system quickly enough?",
+    "uncertainties": [
+      "Communication and synchronization overhead between participants",
+      "Convergence time of local decisions versus one global decision",
+      "Behaviour when participants are heterogeneous or unreliable"
+    ],
+    "library_metadata": {
+      "testability": "HIGH",
+      "novelty": "MEDIUM",
+      "implementation_risk": "MEDIUM",
+      "note": "Library metadata describing the mechanism in the abstract. It is NOT a score of scientific truth and is NOT evidence for any direction."
+    },
+    "facet_affinity": [
+      "scheduling",
+      "interconnect_communication",
+      "control_adaptation",
+      "reliability",
+      "software_stack",
+      "cost_scaling"
+    ],
+    "literature_terms": [
+      "decentralized scheduling",
+      "distributed coordination",
+      "swarm scheduling"
+    ]
+  },
+  "mechanism_key": "scheduling:decentralized_coordination",
+  "inspiration": {
+    "domains": [
+      "distributed systems",
+      "swarm intelligence",
+      "multi-agent systems"
+    ],
+    "concepts": [
+      "Decentralized coordination"
+    ],
+    "library_entry": "aarl.discovery.concepts:decentralized_coordination",
+    "library_metadata": {
+      "testability": "HIGH",
+      "novelty": "MEDIUM",
+      "implementation_risk": "MEDIUM",
+      "note": "Library metadata describing the mechanism in the abstract. It is NOT a score of scientific truth and is NOT evidence for any direction."
+    },
+    "papers": [
+      {
+        "paper_id": "PAPER-005",
+        "title": "Decentralized Scheduling for Heterogeneous Accelerators",
+        "year": 2021,
+        "match": 0.5,
+        "note": "Lead only - not evidence for the direction."
+      }
+    ],
+    "display": "distributed systems + swarm intelligence + multi-agent systems"
+  },
+  "why_interesting": "The problem's 'Scheduling' dimension (how work is assigned to the available resources) is where the conventional approach carries a structural assumption: A single centralized scheduler must gather global state before it can decide, so its decisions are always slightly stale under fast-changing loads. AARL took a mechanism that already works in distributed systems, swarm intelligence, multi-agent systems - Replace a single global controller with many local decision makers that coordinate through cheap local signals. - and asked what happens if it is applied to GPU. If the mechanism transfers, the gain would come from removing that assumption rather than from tuning the existing design. Whether it transfers is exactly what is not established here.",
+  "why_this_idea": {
+    "stages": [
+      {
+        "stage": "Research problem",
+        "value": "Design a new GPU for AI",
+        "claim_class": "STATED_BY_USER",
+        "claim_class_label": "STATED BY RESEARCHER",
+        "source": "user input",
+        "provenance": {},
+        "note": "The exact problem text AARL was given."
+      },
+      {
+        "stage": "Observed limitation",
+        "value": "A single centralized scheduler must gather global state before it can decide, so its decisions are always slightly stale under fast-changing loads.",
+        "claim_class": "INFERENCE",
+        "claim_class_label": "INFERENCE (AARL - NOT SOURCED)",
+        "source": "aarl.discovery.facets (facet assumption)",
+        "provenance": {
+          "facet_id": "scheduling"
+        },
+        "note": "AARL states this as an assumed limitation of the conventional approach. No stored source-linked limitation was found for this facet, so it must not be read as a literature fact."
+      },
+      {
+        "stage": "Cross-domain concept",
+        "value": "Decentralized coordination - Replace a single global controller with many local decision makers that coordinate through cheap local signals.",
+        "claim_class": "LIBRARY_ENTRY",
+        "claim_class_label": "LIBRARY ENTRY",
+        "source": "distributed systems, swarm intelligence, multi-agent systems",
+        "provenance": {
+          "concept_id": "decentralized_coordination",
+          "library": "aarl.discovery.concepts"
+        },
+        "note": "A curated cross-domain mechanism. Its transfer to GPU is AARL's proposal, not an established result."
+      },
+      {
+        "stage": "Mechanism",
+        "value": "Replace a single global controller with many local decision makers that coordinate through cheap local signals.",
+        "claim_class": "LIBRARY_ENTRY",
+        "claim_class_label": "LIBRARY ENTRY",
+        "source": "aarl.discovery.concepts:decentralized_coordination",
+        "provenance": {
+          "steps": 6
+        },
+        "note": "Expanded stage by stage in the mechanism view below."
+      },
+      {
+        "stage": "Hypothesis",
+        "value": "(no hypothesis generated in this run)",
+        "claim_class": "HYPOTHESIS_UNTESTED",
+        "claim_class_label": "HYPOTHESIS (UNTESTED)",
+        "source": "aarl.lab.hypotheses",
+        "provenance": {},
+        "note": "AARL-generated proposal. It is not a finding."
+      }
+    ],
+    "cross_domains": [
+      "distributed systems",
+      "swarm intelligence",
+      "multi-agent systems"
+    ],
+    "flow": "Research problem > Observed limitation > Cross-domain concept > Mechanism > Hypothesis",
+    "why_readable": "AARL started from the stated problem, picked the 'Scheduling' dimension of it, took the 'Decentralized coordination' mechanism from distributed systems, swarm intelligence, multi-agent systems, and proposed applying it there.",
+    "honesty_note": "Each stage is labelled with what it is. A limitation marked INFERENCE is an AARL assumption and is the first thing a reviewer should check."
+  },
+  "mechanism": {
+    "label": "PROPOSED MECHANISM",
+    "implementation_status": "CONCEPTUAL - NOT IMPLEMENTED",
+    "source_concept": "decentralized_coordination",
+    "source_concept_name": "Decentralized coordination",
+    "source_domains": [
+      "distributed systems",
+      "swarm intelligence",
+      "multi-agent systems"
+    ],
+    "steps": [
+      {
+        "index": 1,
+        "text": "Work arrives at GPU as a stream of independent units",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 2,
+        "text": "Each unit is placed on a participant that sees only its own local state",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 3,
+        "text": "Participants exchange bounded local signals instead of global state",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 4,
+        "text": "Local decisions redistribute work as conditions change",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 5,
+        "text": "Participants process concurrently",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      },
+      {
+        "index": 6,
+        "text": "Partial results are aggregated back into a single answer",
+        "evidence_state": "unsupported",
+        "evidence_state_label": "NO STORED EVIDENCE ADDRESSES THIS STAGE",
+        "supporting": [],
+        "contradicting": []
+      }
+    ],
+    "unsupported_stages": 6,
+    "note": "This chain is the mechanism AARL is proposing, expressed conceptually. No implementation of it was built or measured, and an unsupported stage is a research target - not a hidden assumption."
+  },
+  "already_failed": false,
+  "prior_failures": [],
+  "refinement": null,
+  "hypothesis_ids": [],
+  "experiment_ids": [],
+  "failure_ids": [],
+  "lesson_ids": [],
+  "status": null,
+  "dimensions": {},
+  "evidence": {},
+  "gaps": [],
+  "speculative_aspects": [
+    "The mechanism is transferred from distributed systems, swarm intelligence, multi-agent systems and has not been demonstrated for GPU.",
+    "AARL has no implemented prototype of this mechanism for this problem."
+  ],
+  "unknowns": [
+    "Communication and synchronization overhead between participants",
+    "Convergence time of local decisions versus one global decision",
+    "Behaviour when participants are heterogeneous or unreliable"
+  ],
+  "risks": [
+    "Communication and synchronization overhead between participants (open question for this mechanism class)",
+    "Convergence time of local decisions versus one global decision (open question for this mechanism class)",
+    "Behaviour when participants are heterogeneous or unreliable (open question for this mechanism class)"
+  ],
+  "failure_conditions": [
+    {
+      "condition": "Communication and synchronization overhead between participants",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "Convergence time of local decisions versus one global decision",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "Behaviour when participants are heterogeneous or unreliable",
+      "why_it_would_break_the_direction": "If this quantity grows faster than the benefit, the mechanism loses its advantage even though it stays technically correct."
+    },
+    {
+      "condition": "The assumed limitation of the Scheduling facet does not actually hold for this system.",
+      "why_it_would_break_the_direction": "The direction exists to remove that limitation; if the limitation is not real, the direction has no target (this is the first assumption to check)."
+    }
+  ],
+  "first_experiment": {
+    "objective": "Establish whether the mechanism moves resource utilization for GPU at all, before tuning anything.",
+    "design": "Baseline A: the conventional scheduling approach. Variant B: the Decentralized coordination mechanism applied only to the scheduling dimension. Keep every other parameter identical and use the same seed/warm-up.",
+    "metrics": [
+      "resource utilization",
+      "coordination or overhead cost introduced"
+    ],
+    "decision_rule": "Only claim support if B moves resource utilization outside the run-to-run spread of A; if the spread is larger than the effect, report INCONCLUSIVE rather than a direction.",
+    "what_would_make_it_stop": "If A is already at the physical or structural limit of resource utilization, the comparison cannot discriminate and the design must change.",
+    "claim_class": "EXPERIMENT_PROPOSAL"
+  },
+  "alternatives": [],
+  "possibility_space_path": [
+    "Research problem",
+    "Scheduling",
+    "Decentralized coordination (decentralized_coordination)",
+    "Decentralized GPU Scheduling"
+  ],
+  "provenance": {
+    "constructed_by": "aarl.discovery.directions.DirectionDiscovery",
+    "research_question": "Design a new GPU for AI",
+    "facet_selection": {
+      "facet_id": "scheduling",
+      "score": 1.0,
+      "matched_keywords": [],
+      "matched_domains": [
+        "machine_learning"
+      ],
+      "selection_basis": "keyword overlap with the problem statement + detected-domain affinity + editorial exploration priority (order only)",
+      "selection_score_note": "Selection score for ordering the possibility space only — not evidence and not confidence."
+    },
+    "concept_library_entry": "aarl.discovery.concepts:decentralized_coordination",
+    "knowledge_items_consulted": 81,
+    "prior_failure_memory_consulted": 0,
+    "subject_label_heuristic": "The object of study was labelled 'GPU' by a documented text heuristic (lab/discovery/text.py:subject_of). It is a label only.",
+    "what_this_is": "A constructed research direction, not a result. Evidence for it is attached later and only from provenance-linked records."
+  },
+  "timestamp": "2026-09-22T10:38:01",
+  "record_id": "DIR-229",
+  "collection": "directions",
+  "stored_at": "2026-09-22T10:38:02"
+}

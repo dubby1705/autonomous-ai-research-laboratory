@@ -1,0 +1,52 @@
+{
+  "hypothesis_id": "HYP-007",
+  "hypothesis": "Investigate the primary engineering trade-off of: Direction DIR-017: Heterogeneity-Aware GPU Runtime Adaptation. Can capability-matched routing improve stability of achieved performance for GPU made of deliberately non-uniform participants? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+  "research_question": "Direction DIR-017: Heterogeneity-Aware GPU Runtime Adaptation. Can capability-matched routing improve stability of achieved performance for GPU made of deliberately non-uniform participants?",
+  "iteration": 1,
+  "domain": "machine_learning",
+  "supporting_evidence": [],
+  "contradictory_evidence": [],
+  "assumptions": [],
+  "expected_outcome": {
+    "improvement_pct": 5.0
+  },
+  "measurable_metrics": [
+    "improvement_pct"
+  ],
+  "related_papers": [],
+  "related_experiments": [],
+  "based_on_lessons": [],
+  "based_on_knowledge": [],
+  "parent_hypothesis": "",
+  "risks": [],
+  "confidence": 0.4,
+  "parameters": {
+    "optimizer": "momentum",
+    "lr": 0.1
+  },
+  "constraints": [
+    {
+      "name": "improvement_pct",
+      "op": ">=",
+      "value": 0.0,
+      "source": "generated hypothesis expectation"
+    }
+  ],
+  "claim_type": "generated_hypothesis",
+  "provenance": {
+    "generated_by": "llm",
+    "iteration": 1,
+    "knowledge_items": [],
+    "lessons_applied": [],
+    "experiments_considered": [],
+    "claim_type_note": "AI-generated proposal — NOT established fact"
+  },
+  "timestamp": "2026-09-22T00:01:54",
+  "knowledge_item_id": "K-0007",
+  "direction_id": "DIR-017",
+  "direction_mechanism_key": "control_adaptation:heterogeneity_awareness",
+  "exploration_run_id": "RUN-BA26159C",
+  "record_id": "HYP-007",
+  "collection": "hypotheses",
+  "stored_at": "2026-09-22T00:01:55"
+}

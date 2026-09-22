@@ -1,0 +1,75 @@
+{
+  "run_id": "RUN-E802F542",
+  "problem": "Design a new GPU for AI",
+  "status": "running",
+  "stages": [
+    {
+      "key": "understanding",
+      "label": "Understanding problem",
+      "state": "done",
+      "detail": "Design a new GPU for AI",
+      "at": "2026-09-22T01:14:47"
+    },
+    {
+      "key": "domains",
+      "label": "Detecting research domain",
+      "state": "done",
+      "detail": "Primary: machine_learning.",
+      "at": "2026-09-22T01:14:47"
+    },
+    {
+      "key": "literature",
+      "label": "Searching literature",
+      "state": "running",
+      "detail": "Scanning knowledge.",
+      "at": "2026-09-22T01:14:47"
+    }
+  ],
+  "directions": [],
+  "space": {},
+  "stats": {},
+  "error": "",
+  "created_at": "2026-09-22T01:14:47",
+  "updated_at": "2026-09-22T01:14:47",
+  "stage_template": [
+    {
+      "key": "understanding",
+      "label": "Understanding problem"
+    },
+    {
+      "key": "domains",
+      "label": "Detecting research domain"
+    },
+    {
+      "key": "literature",
+      "label": "Searching literature"
+    },
+    {
+      "key": "graph",
+      "label": "Building knowledge graph"
+    },
+    {
+      "key": "exploring",
+      "label": "Exploring alternative directions"
+    },
+    {
+      "key": "hypotheses",
+      "label": "Generating hypotheses"
+    },
+    {
+      "key": "mechanisms",
+      "label": "Testing mechanisms"
+    },
+    {
+      "key": "simulations",
+      "label": "Running simulations"
+    },
+    {
+      "key": "evaluating",
+      "label": "Evaluating research opportunities"
+    }
+  ],
+  "record_id": "RUN-E802F542",
+  "collection": "explorations",
+  "stored_at": "2026-09-22T01:14:47"
+}

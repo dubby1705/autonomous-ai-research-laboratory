@@ -1,0 +1,1276 @@
+{
+  "schema_version": 2,
+  "research_question": "",
+  "created_at": "2026-09-22T00:00:08",
+  "last_updated": "2026-09-22T01:10:49",
+  "claim_types": [
+    "sourced",
+    "inferred",
+    "generated_hypothesis",
+    "simulation_observation",
+    "real_world_observation"
+  ],
+  "claim_type_notes": {
+    "sourced": "Extracted from a supplied document. Never LLM-authored text.",
+    "inferred": "Reasoning derived by a model or rule engine; NOT established fact.",
+    "generated_hypothesis": "Proposed by AARL; untested until an experiment runs.",
+    "simulation_observation": "Observed inside a simulator under stated parameters.",
+    "real_world_observation": "Reported by a human researcher from a physical experiment."
+  },
+  "sections": [
+    "papers",
+    "findings",
+    "methods",
+    "equations",
+    "assumptions",
+    "evidence",
+    "limitations",
+    "contradictions",
+    "relationships",
+    "hypotheses",
+    "experiments",
+    "lessons"
+  ],
+  "items": [
+    {
+      "item_id": "K-0001",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-004: Heterogeneity-Aware GPU Scheduling. Can capability-matched routing improve resource utilization for GPU made of deliberately non-uniform participants? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:00:09",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-001",
+        "iteration": 1,
+        "lessons_applied": [],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-001"
+      }
+    },
+    {
+      "item_id": "K-0002",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-012: Heterogeneity-Aware GPU Scheduling. Can capability-matched routing improve resource utilization for GPU made of deliberately non-uniform participants? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "2"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-012",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-002",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-002"
+      }
+    },
+    {
+      "item_id": "K-0003",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-013: Decentralized GPU Scheduling. Can decentralized coordination improve resource utilization for GPU in situations where a single centralized controller cannot observe the whole system quickly enough? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "3"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-013",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-003",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-003"
+      }
+    },
+    {
+      "item_id": "K-0004",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-014: Alternative-Substrate GPU Compute Model. Would moving the cost-dominant operation of GPU onto a different physical carrier improve achievable operations per second once interface overhead is included? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "4"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-014",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-004",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-004"
+      }
+    },
+    {
+      "item_id": "K-0005",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-015: Oscillator-Synchronized GPU Compute Model. Can emergent phase alignment replace an explicit global barrier to improve achievable operations per second for GPU? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "5"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-015",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-005",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-005"
+      }
+    },
+    {
+      "item_id": "K-0006",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-016: Oscillator-Synchronized GPU Runtime Adaptation. Can emergent phase alignment replace an explicit global barrier to improve stability of achieved performance for GPU? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:54",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "6"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-016",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-006",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-006"
+      }
+    },
+    {
+      "item_id": "K-0007",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-017: Heterogeneity-Aware GPU Runtime Adaptation. Can capability-matched routing improve stability of achieved performance for GPU made of deliberately non-uniform participants? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:55",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "7"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-017",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-007",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-007"
+      }
+    },
+    {
+      "item_id": "K-0008",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-018: Alternative-Substrate GPU Data Representation. Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is included? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:55",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "8"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-018",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-008",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-008"
+      }
+    },
+    {
+      "item_id": "K-0009",
+      "section": "hypotheses",
+      "statement": "Investigate the primary engineering trade-off of: Direction DIR-019: Bistable GPU Data Representation. Can a non-volatile physical state improve information density per unit cost for GPU whose data representation state is currently refreshed continuously? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:01:55",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "1",
+        "9"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-019",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-BA26159C",
+        "hypothesis_id": "HYP-009",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-009"
+      }
+    },
+    {
+      "item_id": "K-0010",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-009 addressing lesson LESSON-008: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-019: Bistable GPU Data Representation. Can a non-volatile physical state improve information density per unit cost for GPU whose data representation state is currently refreshed continuously? by adjusting",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:03:00",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "2",
+        "0"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-020",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-03E06A5E",
+        "hypothesis_id": "HYP-010",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-010"
+      }
+    },
+    {
+      "item_id": "K-0011",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-008 addressing lesson LESSON-007: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-018: Alternative-Substrate GPU Data Representation. Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is i",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:03:00",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "2",
+        "0"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-020",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-03E06A5E",
+        "hypothesis_id": "HYP-011",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-011"
+      }
+    },
+    {
+      "item_id": "K-0012",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-006 addressing lesson LESSON-005: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-016: Oscillator-Synchronized GPU Runtime Adaptation. Can emergent phase alignment replace an explicit global barrier to improve stability of achieved performance for GPU? by adjusting the dominant design",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:03:00",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "2",
+        "0"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-020",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-03E06A5E",
+        "hypothesis_id": "HYP-012",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-012"
+      }
+    },
+    {
+      "item_id": "K-0013",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-033 addressing lesson LESSON-032: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-006 addressing lesson LESSON-005: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:08:08",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "2",
+        "8"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-028",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-8B29ADBC",
+        "hypothesis_id": "HYP-034",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-034"
+      }
+    },
+    {
+      "item_id": "K-0014",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-031 addressing lesson LESSON-030: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-009 addressing lesson LESSON-008: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:08:08",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "2",
+        "8"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-028",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-8B29ADBC",
+        "hypothesis_id": "HYP-035",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-035"
+      }
+    },
+    {
+      "item_id": "K-0015",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-032 addressing lesson LESSON-031: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-008 addressing lesson LESSON-007: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:08:08",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "2",
+        "8"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-028",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-8B29ADBC",
+        "hypothesis_id": "HYP-036",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-036"
+      }
+    },
+    {
+      "item_id": "K-0016",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-057 addressing lesson LESSON-056: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-032 addressing lesson LESSON-031: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:08:52",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "3",
+        "6"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-036",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-A24AF584",
+        "hypothesis_id": "HYP-058",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-058"
+      }
+    },
+    {
+      "item_id": "K-0017",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-055 addressing lesson LESSON-054: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-033 addressing lesson LESSON-032: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:08:52",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "3",
+        "6"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-036",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-A24AF584",
+        "hypothesis_id": "HYP-059",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-059"
+      }
+    },
+    {
+      "item_id": "K-0018",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-056 addressing lesson LESSON-055: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-031 addressing lesson LESSON-030: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:08:53",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "3",
+        "6"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-036",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-A24AF584",
+        "hypothesis_id": "HYP-060",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-060"
+      }
+    },
+    {
+      "item_id": "K-0019",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-081 addressing lesson LESSON-080: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-056 addressing lesson LESSON-055: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:12:24",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "4",
+        "4"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-044",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-9EE5808A",
+        "hypothesis_id": "HYP-082",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-082"
+      }
+    },
+    {
+      "item_id": "K-0020",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-079 addressing lesson LESSON-078: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-057 addressing lesson LESSON-056: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:12:24",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "4",
+        "4"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-044",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-9EE5808A",
+        "hypothesis_id": "HYP-083",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-083"
+      }
+    },
+    {
+      "item_id": "K-0021",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-080 addressing lesson LESSON-079: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-055 addressing lesson LESSON-054: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:12:24",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "4",
+        "4"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-044",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-9EE5808A",
+        "hypothesis_id": "HYP-084",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-084"
+      }
+    },
+    {
+      "item_id": "K-0022",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-105 addressing lesson LESSON-104: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-080 addressing lesson LESSON-079: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:13:12",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "5",
+        "2"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-052",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-08B56F2A",
+        "hypothesis_id": "HYP-106",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-106"
+      }
+    },
+    {
+      "item_id": "K-0023",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-103 addressing lesson LESSON-102: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-081 addressing lesson LESSON-080: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:13:12",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "5",
+        "2"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-052",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-08B56F2A",
+        "hypothesis_id": "HYP-107",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-107"
+      }
+    },
+    {
+      "item_id": "K-0024",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-104 addressing lesson LESSON-103: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-079 addressing lesson LESSON-078: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:13:12",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "5",
+        "2"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-052",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-08B56F2A",
+        "hypothesis_id": "HYP-108",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-108"
+      }
+    },
+    {
+      "item_id": "K-0025",
+      "section": "evidence",
+      "statement": "Structured data provided by the researcher: {\"identifier\": \"1508.01657v2\", \"license_note\": \"Metadata + abstract via the arXiv API; full text at the link.\", \"source\": \"arXiv\", \"url\": \"http://arxiv.org/abs/1508.01657v2\"}",
+      "claim_type": "sourced",
+      "source": "paper:PAPER-003",
+      "source_paper": "A parameterized complexity view on non-preemptively scheduling interval-constrained jobs: few machines, small looseness, and small slack (2015)",
+      "confidence": 0.7,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:13:46",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "paper_id": "PAPER-003",
+        "citation": "A parameterized complexity view on non-preemptively scheduling interval-constrained jobs: few machines, small looseness, and small slack (2015)",
+        "extraction_method": "structured_passthrough",
+        "field": "structured_data",
+        "locator": "paper:PAPER-003:structured_data",
+        "source": "paper:PAPER-003",
+        "source_paper": "A parameterized complexity view on non-preemptively scheduling interval-constrained jobs: few machines, small looseness, and small slack (2015)"
+      },
+      "metadata": {
+        "paper_id": "PAPER-003",
+        "field": "structured_data"
+      }
+    },
+    {
+      "item_id": "K-0026",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-128 addressing lesson LESSON-127: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-103 addressing lesson LESSON-102: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:17:11",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "6",
+        "0"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-060",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-330B113D",
+        "hypothesis_id": "HYP-130",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-130"
+      }
+    },
+    {
+      "item_id": "K-0027",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-129 addressing lesson LESSON-128: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-104 addressing lesson LESSON-103: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:17:11",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "6",
+        "0"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-060",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-330B113D",
+        "hypothesis_id": "HYP-131",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-131"
+      }
+    },
+    {
+      "item_id": "K-0028",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-126 addressing lesson LESSON-125: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-104 addressing lesson LESSON-103: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:17:11",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "6",
+        "0"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-060",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-330B113D",
+        "hypothesis_id": "HYP-132",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-132"
+      }
+    },
+    {
+      "item_id": "K-0029",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-153 addressing lesson LESSON-152: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-126 addressing lesson LESSON-125: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:18:50",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "6",
+        "8"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-068",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-4E0990C8",
+        "hypothesis_id": "HYP-154",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-154"
+      }
+    },
+    {
+      "item_id": "K-0030",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-151 addressing lesson LESSON-150: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-128 addressing lesson LESSON-127: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:18:50",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "6",
+        "8"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-068",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-4E0990C8",
+        "hypothesis_id": "HYP-155",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-155"
+      }
+    },
+    {
+      "item_id": "K-0031",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-152 addressing lesson LESSON-151: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-129 addressing lesson LESSON-128: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:18:50",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "6",
+        "8"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-068",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-4E0990C8",
+        "hypothesis_id": "HYP-156",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-156"
+      }
+    },
+    {
+      "item_id": "K-0032",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-154 addressing lesson LESSON-153: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-153 addressing lesson LESSON-152: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:20:51",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "7",
+        "6"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-076",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-A67A96B4",
+        "hypothesis_id": "HYP-178",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-178"
+      }
+    },
+    {
+      "item_id": "K-0033",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-201 addressing lesson LESSON-177: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-151 addressing lesson LESSON-150: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:22:46",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "8",
+        "4"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-084",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-CA7F9E13",
+        "hypothesis_id": "HYP-202",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-202"
+      }
+    },
+    {
+      "item_id": "K-0034",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-199 addressing lesson LESSON-175: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-154 addressing lesson LESSON-153: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:22:46",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "8",
+        "4"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-084",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-CA7F9E13",
+        "hypothesis_id": "HYP-203",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-203"
+      }
+    },
+    {
+      "item_id": "K-0035",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-200 addressing lesson LESSON-176: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-153 addressing lesson LESSON-152: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this sim",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T00:22:46",
+      "relationship_type": "",
+      "derived_from": [
+        "D",
+        "I",
+        "R",
+        "-",
+        "0",
+        "8",
+        "4"
+      ],
+      "relationships": [],
+      "provenance": {
+        "derived_from": "DIR-084",
+        "generator": "aarl.hypothesis_engine",
+        "run_id": "RUN-CA7F9E13",
+        "hypothesis_id": "HYP-204",
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-204"
+      }
+    },
+    {
+      "item_id": "K-0036",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-225 addressing lesson LESSON-201: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-200 addressing lesson LESSON-176: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-153 addressing lesson LESSON-152: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-126 addressing lesson LESSON-125: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-104 addressing lesson LESSON-103: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-079 addressing lesson LESSON-078: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-057 addressing lesson LESSON-056: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-032 addressing lesson LESSON-031: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-008 addressing lesson LESSON-007: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-018: Alternative-Substrate GPU Data Representation. Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is included? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T01:10:48",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-226",
+        "iteration": 1,
+        "lessons_applied": [
+          "LESSON-201"
+        ],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-226"
+      }
+    },
+    {
+      "item_id": "K-0037",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-224 addressing lesson LESSON-200: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-199 addressing lesson LESSON-175: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-154 addressing lesson LESSON-153: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-153 addressing lesson LESSON-152: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-126 addressing lesson LESSON-125: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-104 addressing lesson LESSON-103: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-079 addressing lesson LESSON-078: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-057 addressing lesson LESSON-056: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-032 addressing lesson LESSON-031: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-008 addressing lesson LESSON-007: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-018: Alternative-Substrate GPU Data Representation. Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is included? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T01:10:49",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-227",
+        "iteration": 1,
+        "lessons_applied": [
+          "LESSON-200"
+        ],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-227"
+      }
+    },
+    {
+      "item_id": "K-0038",
+      "section": "hypotheses",
+      "statement": "Improved variant of HYP-222 addressing lesson LESSON-198: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-200 addressing lesson LESSON-176: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-153 addressing lesson LESSON-152: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-126 addressing lesson LESSON-125: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-104 addressing lesson LESSON-103: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-079 addressing lesson LESSON-078: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-057 addressing lesson LESSON-056: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-032 addressing lesson LESSON-031: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Improved variant of HYP-008 addressing lesson LESSON-007: Re-design the configuration so that '{\"constraint\": {\"name\": \"improvement_pct\", \"op\": \">=\", \"source\": \"generated hypothesis expectation\", \"value\": 0.0}, \"observed\": null, \"reason\": \"not verifiable from this simulation's metrics\", \"violated\": null}' is satisfied. Base idea: Investigate the primary engineering trade-off of: Direction DIR-018: Alternative-Substrate GPU Data Representation. Would moving the cost-dominant operation of GPU onto a different physical carrier improve information density per unit cost once interface overhead is included? by adjusting the dominant design parameter and measuring the impact on the domain metrics.",
+      "claim_type": "generated_hypothesis",
+      "source": "aarl.hypothesis_engine",
+      "source_paper": "",
+      "confidence": 0.4,
+      "evidence": [],
+      "timestamp": "2026-09-22T01:10:49",
+      "relationship_type": "",
+      "derived_from": [],
+      "relationships": [],
+      "provenance": {
+        "generated_by": "llm",
+        "hypothesis_id": "HYP-228",
+        "iteration": 1,
+        "lessons_applied": [
+          "LESSON-198"
+        ],
+        "source": "aarl.hypothesis_engine"
+      },
+      "metadata": {
+        "hypothesis_id": "HYP-228"
+      }
+    }
+  ],
+  "dedupe_index": {
+    "25e981e1ff4dbdae": "K-0001",
+    "29b25437d755982d": "K-0002",
+    "c2d2f0e2c985a0fa": "K-0003",
+    "0491bbca3501ef0e": "K-0004",
+    "44754aabfad36704": "K-0005",
+    "77a2f55bba841b27": "K-0006",
+    "aa32c3bfd863cbba": "K-0007",
+    "f179938ab7459d77": "K-0008",
+    "c3765daa2d6e0763": "K-0009",
+    "0faa5cab1b8b02f9": "K-0010",
+    "609a4337b0144675": "K-0011",
+    "15e74e515b9c6a5e": "K-0012",
+    "bd34b0c14fc6c31b": "K-0013",
+    "5d117b79bac92ca5": "K-0014",
+    "c813fd76dd8bf457": "K-0015",
+    "d8b2b0714c7921d3": "K-0016",
+    "37bd955a8e9d3bf9": "K-0017",
+    "b5e6f6f6638c1d27": "K-0018",
+    "3e04c9471aabcf4c": "K-0019",
+    "45af3d79e5dfb7dc": "K-0020",
+    "906f77b826a69195": "K-0021",
+    "10eaeb01265dcd40": "K-0022",
+    "084e7476c95d2b1d": "K-0023",
+    "46e03b57ae3445e0": "K-0024",
+    "0fc53aaa1ed77ebb": "K-0025",
+    "d48b346922c5aa28": "K-0026",
+    "797fdc4b4d937630": "K-0027",
+    "af5de3983b9a2c6c": "K-0028",
+    "eeaabcab59fe5457": "K-0029",
+    "6b19bab2ce11fb7e": "K-0030",
+    "85067f417cec6432": "K-0031",
+    "0b2533dbcbac73f3": "K-0032",
+    "90d122d8d69267ac": "K-0033",
+    "12d777a1351ada4c": "K-0034",
+    "2b6b34ed46a3641b": "K-0035",
+    "0e54fb67aed1e3b0": "K-0036",
+    "3a2f5a5446b78d4f": "K-0037",
+    "da24e34975ec056c": "K-0038"
+  },
+  "counts": {
+    "papers": 0,
+    "findings": 0,
+    "methods": 0,
+    "equations": 0,
+    "assumptions": 0,
+    "evidence": 1,
+    "limitations": 0,
+    "contradictions": 0,
+    "relationships": 0,
+    "hypotheses": 37,
+    "experiments": 0,
+    "lessons": 0
+  },
+  "note": "Append-only. Claims are never silently removed; contradictions are recorded as explicit relationships and both claims are preserved."
+}

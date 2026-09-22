@@ -1,0 +1,31 @@
+
+   ###    ###    ########  ##
+  ## ##  ## ##   ##     ## ##          AARL
+ ##   ####   ##  ########  ##          Autonomous AI Research Laboratory
+##     ##     ## ##   ##   ##
+##     ##     ## ##    ##  ########    Explore the possibility space of research.
+
+  AARL startup checks
+
+    OK   Configuration                      LabConfig loaded (question: How can gradient descent convergence be ...)
+    OK   knowledge.json                     84 items (C:\Users\Krish\Downloads\Autonomous AI Research Laboratory\research_memory\knowledge.json)
+    OK   Research memory                    papers=7, hypotheses=614, simulations=539, failures=539, lessons=537, directions=235, explorations=35, real_world_experiments=0
+    OK   web layer (Flask)                  3.1.3
+    OK   simulation engine (numpy)          2.4.3
+    OK   literature search (requests)       2.32.5
+    OK   PDF ingestion (pypdf)              6.13.0
+    OK   Research engine                    ResearchCycle + DirectionDiscovery import OK
+
+
+   ###    ###    ########  ##
+  ## ##  ## ##   ##     ## ##          AARL
+ ##   ####   ##  ########  ##          Autonomous AI Research Laboratory
+##     ##     ## ##   ##   ##
+##     ##     ## ##    ##  ########    Explore the possibility space of research.
+
+  AARL is live: http://127.0.0.1:8799
+  Memory: C:\Users\Krish\Downloads\Autonomous AI Research Laboratory\research_memory
+  Press Ctrl+C to stop.
+
+ * Serving Flask app 'lab.web_api'
+ * Debug mode: off
